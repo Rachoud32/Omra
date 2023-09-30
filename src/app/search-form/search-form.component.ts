@@ -11,14 +11,15 @@ export class SearchFormComponent implements OnInit {
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
   toDate: NgbDate | null;
-  searchForm?: FormGroup
+  searchFormPackage?: FormGroup
+  searchFormMap?: FormGroup
   omraType = 'package'
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
   ngOnInit(): void {
-    this.searchForm = new FormGroup({
+    this.searchFormPackage = new FormGroup({
       departureCity: new FormControl('', [Validators.required]),
       period: new FormControl('', [Validators.required]),
       omraDuration: new FormControl('', [Validators.required]),
@@ -70,7 +71,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   get passengers(): FormArray {
-    return this.searchForm?.get('passengers') as FormArray
+    return this.searchFormPackage?.get('passengers') as FormArray
   }
 
   addPassenger() {
@@ -82,5 +83,9 @@ export class SearchFormComponent implements OnInit {
   }
   deletePassenger(i: any) {
     this.passengers.removeAt(i)
+  }
+
+  searchPackage() {
+    console.log(this.searchFormPackage?.value);
   }
 }

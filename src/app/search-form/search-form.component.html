@@ -8,9 +8,9 @@
                 (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'">
             <label for="map">Omra on map</label>
         </div>
-        <form *ngIf="searchForm && omraType=='package'" [formGroup]="searchForm" class="mb-5">
+        <form *ngIf="searchFormPackage && omraType=='package'" [formGroup]="searchFormPackage" class="mb-5">
 
-            <div class="d-flex">
+            <div class="d-flex mb-3">
                 <div class="dropdown me-2">
                     <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                         aria-expanded="false">
@@ -121,6 +121,8 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-end"><button (click)="searchPackage()"
+                    class="btn btn-success">Search</button></div>
 
         </form>
         <form *ngIf="omraType=='map'" class="d-flex flex-column">
@@ -148,6 +150,7 @@
                     </div>
                 </button>
             </div>
+            <div><button class="btn btn-success">Search</button></div>
         </form>
     </div>
 
@@ -158,6 +161,6 @@
 <br>
 <br>
 <br>
-<pre>Search form : {{searchForm?.value | json}}</pre>
+<pre>Search form : {{searchFormPackage?.value | json}}</pre>
 <pre>From date model: {{ fromDate | json }}</pre>
 <pre>To date model: {{ toDate | json }}</pre>
