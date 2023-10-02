@@ -14,6 +14,8 @@ export class SearchFormComponent implements OnInit {
   searchFormPackage?: FormGroup
   searchFormMap?: FormGroup
   omraType = 'package'
+  numAdults = 1
+  numChildren = 0
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
@@ -25,8 +27,8 @@ export class SearchFormComponent implements OnInit {
       omraDuration: new FormControl('', [Validators.required]),
       passengers: new FormArray([new FormGroup({
         adults: new FormControl(1),
-        children: new FormControl(0),
-        rooms: new FormControl(1),
+        children: new FormArray([]),
+        room: new FormControl("Room 1"),
       })]),
     })
   }
@@ -74,15 +76,56 @@ export class SearchFormComponent implements OnInit {
     return this.searchFormPackage?.get('passengers') as FormArray
   }
 
-  addPassenger() {
-    this.passengers.push(new FormGroup({
-      adults: new FormControl(1),
-      children: new FormControl(0),
-      rooms: new FormControl(1),
-    }))
+  children(i: any): FormArray {
+    return this.passengers.at(i)?.get('children') as FormArray
   }
-  deletePassenger(i: any) {
-    this.passengers.removeAt(i)
+
+  addPassenger() {
+    if (this.passengers.length < 3) {
+      this.passengers.push(new FormGroup({
+        adults: new FormControl(1),
+        children: new FormArray([]),
+        room: new FormControl("Room " + (this.passengers.length + 1)),
+      }))
+      this.numAdults += 1
+    }
+  }
+  deletePassenger() {
+    if (this.passengers.length > 1) {
+      this.numAdults = this.numAdults - this.passengers.at(this.passengers.length - 1).get('adults')?.value
+      this.numChildren = this.numChildren - this.passengers.at(this.passengers.length - 1).get('children')?.value.length
+      this.passengers.removeAt(this.passengers.length - 1)
+    }
+  }
+
+  pluschildren(i: any) {
+    if (this.children(i).length < 4) {
+      this.children(i).push(new FormGroup({
+        age: new FormControl("0")
+      }))
+      this.numChildren += 1
+    }
+  }
+
+  minuschildren(i: any) {
+    if (this.children(i).length > 0) {
+      this.children(i).removeAt(this.children(i).length - 1)
+      this.numChildren -= 1
+    }
+  }
+
+  plusadults(i: any) {
+    if (this.passengers.at(i).get('adults')?.value < 5) {
+      this.passengers.at(i).get('adults')?.setValue(this.passengers.at(i).get('adults')?.value + 1)
+      this.numAdults += 1
+    }
+  }
+
+  minusadults(i: any) {
+    if (this.passengers.at(i).get('adults')?.value > 1) {
+      this.passengers.at(i).get('adults')?.setValue(this.passengers.at(i).get('adults')?.value - 1)
+      this.numAdults -= 1
+    }
   }
 
   searchPackage() {

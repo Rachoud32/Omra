@@ -1,406 +1,272 @@
 <section class="search-section">
-  <div class="container">
-    <div class="search-container mt-5 d-flex flex-column">
-      <div class="mb-4">
-        <input
-          type="radio"
-          name="omraType"
-          value="package"
-          id="package"
-          class="form-check-input me-2"
-          (change)="onChangeType()"
-          [(ngModel)]="omraType"
-          checked="omraType=='package'"
-        />
-        <label for="package" class="me-3">Omra package / Visa</label>
-        <input
-          type="radio"
-          name="omraType"
-          value="map"
-          id="map"
-          class="form-check-input me-2"
-          (change)="onChangeType()"
-          [(ngModel)]="omraType"
-          checked="omraType=='map'"
-        />
-        <label for="map">Omra on map</label>
-      </div>
-      <form
-        *ngIf="searchFormPackage && omraType == 'package'"
-        [formGroup]="searchFormPackage"
-        class="mb-5"
-      >
-        <div class="">
-          <div class="row">
-            <div class="col-lg-2 d-flex mb-3">
-              <div class="dropdown w-100">
-                <button
-                  class="btn btn-dark w-100"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                >
-                  <div class="d-flex me-4 justify-content-between w-100">
-                    <div class="d-flex">
-                      <i class="bi bi-geo-alt-fill me-3"></i>
-                      <p
-                        class="m-0"
-                        *ngIf="searchFormPackage.value.departureCity"
-                      >
-                        {{ searchFormPackage.value.departureCity }}
-                      </p>
-                      <p
-                        class="m-0 text-muted"
-                        *ngIf="!searchFormPackage.value.departureCity"
-                      >
-                        Destination
-                      </p>
-                    </div>
-                    <i class="bi bi-chevron-down"></i>
-                  </div>
-                </button>
-                <div class="dropdown-menu p-3 animate slideIn">
-                  <div class="select-container">
-                    <label for="Tunis" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        class="form-check-input me-2"
-                        name="departureCity"
-                        id="Tunis"
-                        value="Tunis"
-                        formControlName="departureCity"
-                      />
-                      <div class="list-item">Tunis</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Djerba" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        class="form-check-input me-2"
-                        name="departureCity"
-                        id="Djerba"
-                        value="Djerba"
-                        formControlName="departureCity"
-                      />
-                      <div class="list-item">Djerba</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
+    <div class="container">
+        <div class="search-container mt-5 d-flex flex-column">
+            <div class="mb-4">
+                <input type="radio" name="omraType" value="package" id="package" class="form-check-input me-2"
+                    (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='package'" />
+                <label for="package" class="me-3">Omra package / Visa</label>
+                <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2"
+                    (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
+                <label for="map">Omra on map</label>
             </div>
-            <div class="col-lg-3 d-flex mb-3">
-              <div class="dropdown w-100">
-                <button
-                  class="btn w-100"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                >
-                  <div class="d-flex me-4 justify-content-between w-100">
-                    <div class="d-flex">
-                      <i class="bi bi-calendar2-fill me-3"></i>
-                      <p class="m-0" *ngIf="searchFormPackage.value.period">
-                        {{ searchFormPackage.value.period }}
-                      </p>
-                      <p
-                        class="m-0 text-muted"
-                        *ngIf="!searchFormPackage.value.period"
-                      >
-                        Period
-                      </p>
-                    </div>
-                    <i class="bi bi-chevron-down"></i>
-                  </div>
-                </button>
-                <div class="dropdown-menu p-3 animate slideIn">
-                  <div class="select-container">
-                    <label for="Mouled" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Mouled"
-                        value="Mouled"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Mouled</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Ramadan" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Ramadan"
-                        value="Ramadan"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Ramadan</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Chawel" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Chawel"
-                        value="Chawel"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Chawel</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Winter holidays" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Winter holidays"
-                        value="Winter holidays"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Winter holidays</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Vacancy Spring" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Vacancy Spring"
-                        value="Vacancy Spring"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Spring holidays</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Other" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="period"
-                        class="form-check-input me-2"
-                        id="Other"
-                        value="Other"
-                        formControlName="period"
-                      />
-                      <div class="list-item">Other</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 d-flex mb-3">
-              <div class="dropdown w-100">
-                <button
-                  class="btn w-100"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                >
-                  <div class="d-flex me-4 justify-content-between w-100">
-                    <div class="d-flex">
-                      <i class="bi bi-clock-fill me-3"></i>
-                      <p
-                        class="m-0"
-                        *ngIf="searchFormPackage.value.omraDuration"
-                      >
-                        {{ searchFormPackage.value.omraDuration + " days" }}
-                      </p>
-                      <p
-                        class="m-0 text-muted"
-                        *ngIf="!searchFormPackage.value.omraDuration"
-                      >
-                        Duration
-                      </p>
-                    </div>
-                    <i class="bi bi-chevron-down"></i>
-                  </div>
-                </button>
-                <div class="dropdown-menu p-3 animate slideIn">
-                  <div class="select-container">
-                    <label for="15 days" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="omraDuration"
-                        class="form-check-input me-2"
-                        id="15 days"
-                        value="15"
-                        formControlName="omraDuration"
-                      />
-                      <div class="list-item">15 days</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="10 days" class="me-3 w-100">
-                      <input
-                        type="radio"
-                        name="omraDuration"
-                        class="form-check-input me-2"
-                        id="10 days"
-                        value="10"
-                        formControlName="omraDuration"
-                      />
-                      <div class="list-item">10 days</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 d-flex mb-3">
-              <div class="dropdown w-100">
-                <button
-                  class="btn w-100"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                >
-                  <div class="d-flex me-4 justify-content-between w-100">
-                    <div class="d-flex">
-                      <i class="bi bi-people-fill me-3"></i>
-                      <p
-                        class="m-0 text-muted"
-                        *ngIf="searchFormPackage.value.passengers"
-                      >
-                        Passengers
-                      </p>
-                      <p
-                        class="m-0 text-muted"
-                        *ngIf="!searchFormPackage.value.passengers"
-                      >
-                        Passengers
-                      </p>
-                    </div>
-                    <i class="bi bi-plus"></i>
-                  </div>
-                </button>
-                <div class="dropdown-menu p-3 animate slideIn">
-                  <div formArrayName="passengers">
-                    <div
-                      *ngFor="
-                        let passenger of passengers.controls;
-                        let i = index
-                      "
-                    >
-                      <div [formGroupName]="i" class="d-flex flex-column mb-2">
-                        <div class="d-flex flex-column">
-                          <div class="d-flex justify-content-between mb-2">
-                            <label for="">Room</label>
-                            <div class="d-flex object-quantity mt-1">
-                              <span class="minus">-</span>
-                              <div>1</div>
-                              <span class="plus">+</span>
+            <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="mb-5">
+                <div class="">
+                    <div class="row">
+                        <div class="col-lg-2 d-flex mb-3">
+                            <div class="dropdown w-100">
+                                <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100">
+                                        <div class="d-flex">
+                                            <i class="bi bi-geo-alt-fill me-3"></i>
+                                            <p class="m-0" *ngIf="searchFormPackage.value.departureCity">
+                                                {{ searchFormPackage.value.departureCity }}
+                                            </p>
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.departureCity">
+                                                Destination
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu p-3 animate slideIn">
+                                    <div class="select-container">
+                                        <label for="Tunis" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="departureCity"
+                                                id="Tunis" value="Tunis" formControlName="departureCity" />
+                                            <div class="list-item">Tunis</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Djerba" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="departureCity"
+                                                id="Djerba" value="Djerba" formControlName="departureCity" />
+                                            <div class="list-item">Djerba</div>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>  
-                        <hr>
-                       
-
-                        <div class="room-specifics d-flex flex-column">
-                          <div class="d-flex justify-content-between">
-                            <div class="room-quantity">Room {{ i + 1 }}</div>
-                            <div *ngIf="i != 0" (click)="deletePassenger(i)">
-                              <i class="bi bi-x"></i>
-                            </div>
-                          </div>
-                          <div class="room-adults d-flex justify-content-between mb-2">
-                            <label for="">Adults(in room)</label>
-                            <div class="d-flex object-quantity mt-1">
-                              <span class="minus">-</span>
-                              <div>1</div>
-                              <span class="plus">+</span>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-between mb-2">
-                            <label for="">Children(in room)</label>
-                            <div class="d-flex object-quantity mt-1">
-                              <span class="minus">-</span>
-                              <div>1</div>
-                              <span class="plus">+</span>
-                            </div>
-                          </div>
                         </div>
-                        <hr *ngIf="i != 0 && i != passengers.length - 1" />
-                      </div>
+                        <div class="col-lg-3 d-flex mb-3">
+                            <div class="dropdown w-100">
+                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100">
+                                        <div class="d-flex">
+                                            <i class="bi bi-calendar2-fill me-3"></i>
+                                            <p class="m-0" *ngIf="searchFormPackage.value.period">
+                                                {{ searchFormPackage.value.period }}
+                                            </p>
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.period">
+                                                Period
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu p-3 animate slideIn">
+                                    <div class="select-container">
+                                        <label for="Mouled" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2" id="Mouled"
+                                                value="Mouled" formControlName="period" />
+                                            <div class="list-item">Mouled</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Ramadan" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2" id="Ramadan"
+                                                value="Ramadan" formControlName="period" />
+                                            <div class="list-item">Ramadan</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Chawel" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2" id="Chawel"
+                                                value="Chawel" formControlName="period" />
+                                            <div class="list-item">Chawel</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Winter holidays" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2"
+                                                id="Winter holidays" value="Winter holidays" formControlName="period" />
+                                            <div class="list-item">Winter holidays</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Vacancy Spring" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2"
+                                                id="Vacancy Spring" value="Vacancy Spring" formControlName="period" />
+                                            <div class="list-item">Spring holidays</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Other" class="me-3 w-100">
+                                            <input type="radio" name="period" class="form-check-input me-2" id="Other"
+                                                value="Other" formControlName="period" />
+                                            <div class="list-item">Other</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 d-flex mb-3">
+                            <div class="dropdown w-100">
+                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100">
+                                        <div class="d-flex">
+                                            <i class="bi bi-clock-fill me-3"></i>
+                                            <p class="m-0" *ngIf="searchFormPackage.value.omraDuration">
+                                                {{ searchFormPackage.value.omraDuration + " days" }}
+                                            </p>
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.omraDuration">
+                                                Duration
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu p-3 animate slideIn">
+                                    <div class="select-container">
+                                        <label for="15 days" class="me-3 w-100">
+                                            <input type="radio" name="omraDuration" class="form-check-input me-2"
+                                                id="15 days" value="15" formControlName="omraDuration" />
+                                            <div class="list-item">15 days</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="10 days" class="me-3 w-100">
+                                            <input type="radio" name="omraDuration" class="form-check-input me-2"
+                                                id="10 days" value="10" formControlName="omraDuration" />
+                                            <div class="list-item">10 days</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 d-flex mb-3">
+                            <div class="dropdown w-100">
+                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100">
+                                        <div class="d-flex">
+                                            <i class="bi bi-people-fill me-3"></i>
+                                            <p class="m-0 text-muted" *ngIf="searchFormPackage.value.passengers">
+                                                {{searchFormPackage.value.passengers.length}}
+                                                &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
+                                                &nbsp;{{numAdults}} Adult{{numAdults>1?'s':''}}
+                                                &nbsp;{{numChildren}} Child{{numChildren>1?'ren':''}}
+                                            </p>
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.passengers">
+                                                Passengers
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-plus"></i>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu p-3 animate slideIn">
+                                    <div formArrayName="passengers">
+                                        <div class="d-flex flex-column">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <label for="">Room</label>
+                                                <div class="d-flex object-quantity mt-1">
+                                                    <span class="minus" (click)="deletePassenger()">-</span>
+                                                    <div>{{ passengers.length }}</div>
+                                                    <span class="plus" (click)="addPassenger()">+</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngFor="
+                                                let passenger of passengers.controls;
+                                                let i = index
+                                            ">
+                                            <div [formGroupName]="i" class="d-flex flex-column mb-2">
+                                                <hr>
+
+
+                                                <div class="room-specifics d-flex flex-column">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="room-quantity">{{passenger.get('room')?.value}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-adults d-flex justify-content-between mb-2">
+                                                        <label for="">Adults</label>
+                                                        <div class="d-flex object-quantity mt-1">
+                                                            <span class="minus" (click)="minusadults(i)">-</span>
+                                                            <div>{{passenger.get('adults')?.value}}</div>
+                                                            <span class="plus" (click)="plusadults(i)">+</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between mb-2">
+                                                        <label for="">Children</label>
+                                                        <div class="d-flex object-quantity mt-1">
+                                                            <span class="minus" (click)="minuschildren(i)">-</span>
+                                                            <div>{{passenger.get('children')?.value.length}}</div>
+                                                            <span class="plus" (click)="pluschildren(i)">+</span>
+                                                        </div>
+                                                    </div>
+                                                    <div formArrayName="children"
+                                                        *ngFor="let child of children(i).controls;let k = index">
+                                                        <div [formGroupName]="k">
+                                                            <select class="form-select" id="Age" formControlName="age">
+                                                                <option [value]="0" selected>
+                                                                    Less than one year</option>
+                                                                <option
+                                                                    *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0];let j=index"
+                                                                    [value]="j+1">
+                                                                    {{j+1}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr *ngIf="i != 0 && i != passengers.length - 1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <button class="btn btn-success" (click)="addPassenger()">
-                    <i class="bi bi-plus"></i>
-                  </button>
                 </div>
-              </div>
-            </div>
-          </div>
+                <hr />
+                <div class="d-flex justify-content-end">
+                    <button (click)="searchPackage()" class="thm-btn">Search</button>
+                </div>
+            </form>
+            <form *ngIf="omraType == 'map'" class="d-flex flex-column">
+                <div>
+                    <div class="dp-hidden position-absolute">
+                        <div class="input-group">
+                            <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
+                                [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2"
+                                [dayTemplate]="t" style="border: 0; padding: 0; height: 40px" outsideDays="hidden"
+                                [startDate]="fromDate!" tabindex="-1" />
+                            <ng-template #t let-date let-focused="focused">
+                                <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                    [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                                    (mouseleave)="hoveredDate = null">
+                                    {{ date.day }}
+                                </span>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary px-4 d-flex" style="position: relative; z-index: 100"
+                        (click)="datepicker.toggle()" type="button">
+                        <div class="me-4">
+                            {{ formatter.format(fromDate) }}
+                            <i class="bi bi-calendar4 ms-2"></i>
+                        </div>
+                        <div>
+                            {{ formatter.format(toDate) }}
+                            <i *ngIf="formatter.format(toDate)" class="bi bi-calendar4 ms-2"></i>
+                        </div>
+                    </button>
+                </div>
+                <div><button class="btn btn-success">Search</button></div>
+            </form>
         </div>
-        <hr />
-        <div class="d-flex justify-content-end">
-          <button (click)="searchPackage()" class="thm-btn">Search</button>
-        </div>
-      </form>
-      <form *ngIf="omraType == 'map'" class="d-flex flex-column">
-        <div>
-          <div class="dp-hidden position-absolute">
-            <div class="input-group">
-              <input
-                name="datepicker"
-                class="form-control"
-                ngbDatepicker
-                #datepicker="ngbDatepicker"
-                [autoClose]="'outside'"
-                (dateSelect)="onDateSelection($event)"
-                [displayMonths]="2"
-                [dayTemplate]="t"
-                style="border: 0; padding: 0; height: 40px"
-                outsideDays="hidden"
-                [startDate]="fromDate!"
-                tabindex="-1"
-              />
-              <ng-template #t let-date let-focused="focused">
-                <span
-                  class="custom-day"
-                  [class.focused]="focused"
-                  [class.range]="isRange(date)"
-                  [class.faded]="isHovered(date) || isInside(date)"
-                  (mouseenter)="hoveredDate = date"
-                  (mouseleave)="hoveredDate = null"
-                >
-                  {{ date.day }}
-                </span>
-              </ng-template>
-            </div>
-          </div>
-          <button
-            class="btn btn-primary px-4 d-flex"
-            style="position: relative; z-index: 100"
-            (click)="datepicker.toggle()"
-            type="button"
-          >
-            <div class="me-4">
-              {{ formatter.format(fromDate) }}
-              <i class="bi bi-calendar4 ms-2"></i>
-            </div>
-            <div>
-              {{ formatter.format(toDate) }}
-              <i
-                *ngIf="formatter.format(toDate)"
-                class="bi bi-calendar4 ms-2"
-              ></i>
-            </div>
-          </button>
-        </div>
-        <div><button class="btn btn-success">Search</button></div>
-      </form>
     </div>
-  </div>
 </section>
 
 <!-- <hr />
