@@ -175,7 +175,7 @@
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="TunisAir" class="me-3 w-100">
+                                        <label for="Tunisair" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="flight"
                                                 id="Tunisair" value="Tunisair" formControlName="flight" />
                                             <div class="list-item">Tunisair</div>
@@ -206,9 +206,6 @@
                                                 &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
                                                 &nbsp;{{numAdults}}&nbsp;&nbsp;Adult{{numAdults>1 ?'s':''}}
                                                 &nbsp;{{numChildren}}&nbsp;&nbsp;Child{{numChildren>1 ?'ren':''}}
-                                            </p>
-                                            <p class="m-0 " *ngIf="!searchFormPackage.value.passengers.length">
-                                                Passengers
                                             </p>
                                         </div>
                                         <i class="bi bi-plus"></i>
@@ -302,7 +299,6 @@
                         </div>
                     </div>
                 </div>
-                <hr />
 
             </form>
             <form *ngIf="omraType == 'map'" class="d-flex flex-column">
