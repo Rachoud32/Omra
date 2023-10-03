@@ -10,8 +10,8 @@
     --Omra-black-rgb: 72, 91, 92;
     --Omra-base: #003f7b;
     --Omra-base-rgb: 0, 63, 123;
-    --Omra-second: #ddbc79;
-    --Omra-second-rgb: 190, 160, 100;
+    --Omra-second: #c9a96a;
+    --Omra-second-rgb: 201, 169, 106;
     --Omra-third: #f37a2d;
     --Omra-third-rgb: 243, 122, 45;
     --Omra-extra: #f4f5f5;
@@ -152,17 +152,25 @@ hr {
 }
 
 .room-quantity {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
-    background: var(--Omra-base);
-    padding: 2px 14px;
+    background: var(--Omra-second);
+    display: block;
+    width: 100%;
+    padding: 0px 14px;
     color: var(--Omra-white);
-    margin-bottom: 5px;
-    border-radius: 3px 6px;
+    border-radius: 3px 6px 0px 0px;
 }
 
-.room-specifics label {
-    font-size: 16px;
+.room-passengers-details {
+    border-radius: 0px 0px 3px 6px;
+    border-top: 0px !important;
+    border: 1px solid #eee;
+    padding: 10px 10px 5px 10px;
+}
+
+.room-passengers-details label {
+    font-size: 15px;
     font-weight: 400;
 }
 
@@ -177,12 +185,44 @@ hr {
     transition: all .3s linear;
 }
 
+.passengers-nbr .minus, .passengers-nbr .plus {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #c9a96a;
+    color: #828282;
+    border-radius: 3px 6px;
+    line-height: 32px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease-out 0s;
+}
+
+.passengers-nbr .quantity {
+    height: 33px;
+    margin: 0 5px;
+    min-width: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 3px 6px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .animate {
     animation-duration: 0.3s;
     -webkit-animation-duration: 0.3s;
     animation-fill-mode: both;
     -webkit-animation-fill-mode: both;
-  }
+}
 
 @keyframes slideIn {
     0% {

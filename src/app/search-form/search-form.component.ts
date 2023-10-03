@@ -25,6 +25,7 @@ export class SearchFormComponent implements OnInit {
       departureCity: new FormControl('', [Validators.required]),
       period: new FormControl('', [Validators.required]),
       omraDuration: new FormControl('', [Validators.required]),
+      flight: new FormControl('', [Validators.required]),
       passengers: new FormArray([new FormGroup({
         adults: new FormControl(1),
         children: new FormArray([]),

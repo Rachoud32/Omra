@@ -12,7 +12,8 @@
             <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="mb-5">
                 <div class="">
                     <div class="row">
-                        <div class="col-lg-2 d-flex mb-3">
+                        <!-- Destination -->
+                        <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
                                 <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
@@ -47,7 +48,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 d-flex mb-3">
+                        <!-- Period -->
+                        <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
                                 <button class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
@@ -110,7 +112,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 d-flex mb-3">
+                        <!-- Duration -->
+                        <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
                                 <button class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
@@ -145,20 +148,64 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 d-flex mb-3">
+                        <!-- Flight -->
+                        <div class="col-lg-3 d-flex mb-3">
+                            <div class="dropdown w-100">
+                                <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100">
+                                        <div class="d-flex">
+                                            <i class="bi bi-geo-alt-fill me-3"></i>
+                                            <p class="m-0" *ngIf="searchFormPackage.value.flight">
+                                                {{ searchFormPackage.value.flight }}
+                                            </p>
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.flight">
+                                                Flight
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu p-3 animate slideIn">
+                                    <div class="select-container">
+                                        <label for="Nouvelair" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="flight"
+                                                id="Nouvelair" value="Nouvelair" formControlName="flight" />
+                                            <div class="list-item">Nouvelair</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="TunisAir" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="flight"
+                                                id="Tunisair" value="Tunisair" formControlName="flight" />
+                                            <div class="list-item">Tunisair</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Syphax" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="flight"
+                                                id="Syphax" value="Syphax" formControlName="flight" />
+                                            <div class="list-item">Syphax Airlines</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Passengers -->
+                        <div class="col-lg-6 d-flex mb-3">
                             <div class="dropdown w-100">
                                 <button class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
                                             <i class="bi bi-people-fill me-3"></i>
-                                            <p class="m-0 text-muted" *ngIf="searchFormPackage.value.passengers">
+                                            <p class="m-0 text-muted" *ngIf="searchFormPackage.value.passengers.length">
                                                 {{searchFormPackage.value.passengers.length}}
                                                 &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
-                                                &nbsp;{{numAdults}} Adult{{numAdults>1?'s':''}}
-                                                &nbsp;{{numChildren}} Child{{numChildren>1?'ren':''}}
+                                                &nbsp;{{numAdults}}&nbsp;&nbsp;Adult{{numAdults>1 ?'s':''}}
+                                                &nbsp;{{numChildren}}&nbsp;&nbsp;Child{{numChildren>1 ?'ren':''}}
                                             </p>
-                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.passengers">
+                                            <p class="m-0 " *ngIf="!searchFormPackage.value.passengers.length">
                                                 Passengers
                                             </p>
                                         </div>
@@ -168,12 +215,12 @@
                                 <div class="dropdown-menu p-3 animate slideIn">
                                     <div formArrayName="passengers">
                                         <div class="d-flex flex-column">
-                                            <div class="d-flex justify-content-between mb-2">
+                                            <div class="d-flex justify-content-between mb-3">
                                                 <label for="">Room</label>
-                                                <div class="d-flex object-quantity mt-1">
-                                                    <span class="minus" (click)="deletePassenger()">-</span>
-                                                    <div>{{ passengers.length }}</div>
-                                                    <span class="plus" (click)="addPassenger()">+</span>
+                                                <div class="d-flex object-quantity mt-1 passengers-nbr">
+                                                    <div class="minus" (click)="deletePassenger()">-</div>
+                                                    <div class="quantity">{{ passengers.length }}</div>
+                                                    <div class="plus" (click)="addPassenger()">+</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,44 +228,51 @@
                                                 let passenger of passengers.controls;
                                                 let i = index
                                             ">
-                                            <div [formGroupName]="i" class="d-flex flex-column mb-2">
-                                                <hr>
-
-
+                                            <div [formGroupName]="i" class="d-flex flex-column mb-1">
                                                 <div class="room-specifics d-flex flex-column">
                                                     <div class="d-flex justify-content-between">
                                                         <div class="room-quantity">{{passenger.get('room')?.value}}
                                                         </div>
                                                     </div>
-                                                    <div class="room-adults d-flex justify-content-between mb-2">
-                                                        <label for="">Adults</label>
-                                                        <div class="d-flex object-quantity mt-1">
-                                                            <span class="minus" (click)="minusadults(i)">-</span>
-                                                            <div>{{passenger.get('adults')?.value}}</div>
-                                                            <span class="plus" (click)="plusadults(i)">+</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex justify-content-between mb-2">
-                                                        <label for="">Children</label>
-                                                        <div class="d-flex object-quantity mt-1">
-                                                            <span class="minus" (click)="minuschildren(i)">-</span>
-                                                            <div>{{passenger.get('children')?.value.length}}</div>
-                                                            <span class="plus" (click)="pluschildren(i)">+</span>
-                                                        </div>
-                                                    </div>
-                                                    <div formArrayName="children"
-                                                        *ngFor="let child of children(i).controls;let k = index">
-                                                        <div [formGroupName]="k">
-                                                            <select class="form-select" id="Age" formControlName="age">
-                                                                <option [value]="0" selected>
-                                                                    Less than one year</option>
-                                                                <option
-                                                                    *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0];let j=index"
-                                                                    [value]="j+1">
-                                                                    {{j+1}}</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                    <div class="room-passengers-details">
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="room-adults d-flex justify-content-between align-items-center mb-2">
+                                                                    <label for="">Adults</label>
+                                                                    <div class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        <div class="minus" (click)="minusadults(i)">-</div>
+                                                                        <div class="quantity">{{passenger.get('adults')?.value}}</div>
+                                                                        <div class="plus" (click)="plusadults(i)">+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                    <label for="">Children</label>
+                                                                    <div class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        <div class="minus" (click)="minuschildren(i)">-</div>
+                                                                        <div class="quantity">{{passenger.get('children')?.value.length}}</div>
+                                                                        <div class="plus" (click)="pluschildren(i)">+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="row"> 
+                                                            <div class="col-lg-6 mb-2" formArrayName="children"
+                                                                *ngFor="let child of children(i).controls;let k = index">
+                                                                <div [formGroupName]="k">
+                                                                    <select class="form-select" id="Age" formControlName="age">
+                                                                        <option [value]="0" selected>
+                                                                            Less than one year</option>
+                                                                        <option
+                                                                            *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0];let j=index"
+                                                                            [value]="j+1">
+                                                                            {{j+1}}</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>   
+                                                    </div> 
                                                 </div>
                                                 <hr *ngIf="i != 0 && i != passengers.length - 1" />
                                             </div>
@@ -227,12 +281,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-3 d-flex mb-3">
+                            <div class="d-flex justify-content-end w-100">
+                                <button (click)="searchPackage()" class="thm-btn w-100">Search</button>
+                            </div>
+                        </div>    
                     </div>
                 </div>
                 <hr />
-                <div class="d-flex justify-content-end">
-                    <button (click)="searchPackage()" class="thm-btn">Search</button>
-                </div>
+                
             </form>
             <form *ngIf="omraType == 'map'" class="d-flex flex-column">
                 <div>
