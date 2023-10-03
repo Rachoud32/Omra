@@ -28,6 +28,10 @@ body {
     letter-spacing: .1em !important;
 }
 
+p {
+    letter-spacing: .1em !important;
+}
+
 a {
     color: var(--motion-gray);
 }
@@ -42,6 +46,16 @@ a:visited {
 ::placeholder {
     color: inherit;
     opacity: 1;
+}
+
+input:focus, select:focus, button:focus {
+    border-color: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0) !important;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+    -webkit-appearance: button;
 }
 
 hr {
@@ -81,7 +95,7 @@ hr {
 
 .search-section .dropdown .btn:hover,
 .search-section .dropdown .btn:active,
-.selected-item  {
+.search-section .dropdown .btn.selected-item  {
     background-color: var(--Omra-white);
     color: var(--Omra-base);
     border-color: var(--Omra-second);
@@ -187,13 +201,14 @@ hr {
 }
 
 .passengers-nbr .minus, .passengers-nbr .plus {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border: 1px solid #c9a96a;
     color: #828282;
     border-radius: 3px 6px;
-    line-height: 32px;
+    line-height: 28px;
     font-size: 16px;
+    font-weight: 400;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -221,6 +236,9 @@ hr {
 .child-age .form-select{
     border: 1px solid #dee2e6;
     font-size: 14px;
+    outline: 0 !important;
+    padding: 8px 15px;
+    border-radius: 3px 6px;
 }
 
 .animate {

@@ -51,7 +51,7 @@
                         <!-- Period -->
                         <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
-                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
@@ -115,15 +115,15 @@
                         <!-- Duration -->
                         <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
-                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                <button [class.selected-item]="searchFormPackage.value.duration" class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
                                             <i class="bi bi-clock-fill me-3"></i>
-                                            <p class="m-0" *ngIf="searchFormPackage.value.omraDuration">
-                                                {{ searchFormPackage.value.omraDuration + " days" }}
+                                            <p class="m-0" *ngIf="searchFormPackage.value.duration">
+                                                {{ searchFormPackage.value.duration + " days" }}
                                             </p>
-                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.omraDuration">
+                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.duration">
                                                 Duration
                                             </p>
                                         </div>
@@ -133,15 +133,15 @@
                                 <div class="dropdown-menu p-3 animate slideIn">
                                     <div class="select-container">
                                         <label for="15 days" class="me-3 w-100">
-                                            <input type="radio" name="omraDuration" class="form-check-input me-2"
-                                                id="15 days" value="15" formControlName="omraDuration" />
+                                            <input type="radio" name="duration" class="form-check-input me-2"
+                                                id="15 days" value="15" formControlName="duration" />
                                             <div class="list-item">15 days</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
                                         <label for="10 days" class="me-3 w-100">
-                                            <input type="radio" name="omraDuration" class="form-check-input me-2"
-                                                id="10 days" value="10" formControlName="omraDuration" />
+                                            <input type="radio" name="duration" class="form-check-input me-2"
+                                                id="10 days" value="10" formControlName="duration" />
                                             <div class="list-item">10 days</div>
                                         </label>
                                     </div>
@@ -149,9 +149,9 @@
                             </div>
                         </div>
                         <!-- Flight -->
-                        <div class="col-lg-3 d-flex mb-3">
+                        <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
-                                <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                <button [class.selected-item]="searchFormPackage.value.flight" class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
@@ -192,9 +192,9 @@
                             </div>
                         </div>
                         <!-- Passengers -->
-                        <div class="col-lg-6 d-flex mb-3">
+                        <div class="col-lg-8 d-flex mb-3">
                             <div class="dropdown w-100">
-                                <button class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                <button [class.selected-item]="searchFormPackage.value.passengers.length != 1 || numAdults != 1 || numChildren != 0" class="btn w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
@@ -202,10 +202,9 @@
                                             <p class="m-0"
                                                 [class.text-muted]="searchFormPackage.value.passengers.length === 1 && numAdults === 1 && numChildren === 0"
                                                 *ngIf="searchFormPackage.value.passengers.length">
-                                                {{searchFormPackage.value.passengers.length}}
-                                                &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
-                                                &nbsp;{{numAdults}}&nbsp;&nbsp;Adult{{numAdults>1 ?'s':''}}
-                                                &nbsp;{{ numChildren !== 0 ? numChildren + '&nbsp;&nbsp;Child' +
+                                                {{searchFormPackage.value.passengers.length}}&nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
+                                                &nbsp;{{numAdults}}&nbsp;Adult{{numAdults>1 ?'s':''}}
+                                                &nbsp;{{ numChildren !== 0 ? numChildren + '&nbsp;Child' +
                                                 (numChildren > 1 ? 'ren' : '') : '' }}
                                             </p>
                                         </div>
@@ -217,7 +216,7 @@
                                         <div class="d-flex flex-column">
                                             <div class="d-flex justify-content-between mb-3">
                                                 <label for="">Room</label>
-                                                <div class="d-flex object-quantity mt-1 passengers-nbr">
+                                                <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
                                                     <div class="minus" (click)="deletePassenger()">-</div>
                                                     <div class="quantity">{{ passengers.length }}</div>
                                                     <div class="plus" (click)="addPassenger()">+</div>
@@ -241,7 +240,7 @@
                                                                     class="room-adults d-flex justify-content-between align-items-center mb-2">
                                                                     <label for="">Adults</label>
                                                                     <div
-                                                                        class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
                                                                         <div class="minus" (click)="minusadults(i)">-
                                                                         </div>
                                                                         <div class="quantity">
@@ -256,7 +255,7 @@
                                                                     class="d-flex justify-content-between align-items-center mb-2">
                                                                     <label for="">Children</label>
                                                                     <div
-                                                                        class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
                                                                         <div class="minus" (click)="minuschildren(i)">-
                                                                         </div>
                                                                         <div class="quantity">
@@ -269,19 +268,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="child-age col-lg-6 mb-2"
+                                                            <div class="child-age col-6 mb-2"
                                                                 formArrayName="children"
                                                                 *ngFor="let child of children(i).controls;let k = index">
                                                                 <div [formGroupName]="k">
-                                                                    <select class="form-select" id="Age"
-                                                                        formControlName="age">
-                                                                        <option [value]="0" selected>
-                                                                            Less than one year</option>
-                                                                        <option
+                                                                    <div class="dropdown-menu p-3 animate slideIn" id="Age">
+                                                                        <input type="radio" value="Less than one year" class="select-container" formControlName="age">
+                                                                            
+                                                                        <input type="radio" class="select-container"
                                                                             *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0];let j=index"
-                                                                            [value]="j+1">
-                                                                            {{j+1}}</option>
-                                                                    </select>
+                                                                            [value]="j+1"
+                                                                            formControlName="age">
+                                                                            
+                                                                    </div>    
                                                                 </div>
                                                             </div>
                                                         </div>

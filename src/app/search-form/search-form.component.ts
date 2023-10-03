@@ -24,7 +24,7 @@ export class SearchFormComponent implements OnInit {
     this.searchFormPackage = new FormGroup({
       departureCity: new FormControl('', [Validators.required]),
       period: new FormControl('', [Validators.required]),
-      omraDuration: new FormControl('', [Validators.required]),
+      duration: new FormControl('', [Validators.required]),
       flight: new FormControl('', [Validators.required]),
       passengers: new FormArray([new FormGroup({
         adults: new FormControl(1),
