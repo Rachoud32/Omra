@@ -183,8 +183,8 @@
                                     </div>
                                     <div class="select-container">
                                         <label for="Syphax" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="flight"
-                                                id="Syphax" value="Syphax" formControlName="flight" />
+                                            <input type="radio" class="form-check-input me-2" name="flight" id="Syphax"
+                                                value="Syphax" formControlName="flight" />
                                             <div class="list-item">Syphax Airlines</div>
                                         </label>
                                     </div>
@@ -199,7 +199,9 @@
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
                                             <i class="bi bi-people-fill me-3"></i>
-                                            <p class="m-0 text-muted" *ngIf="searchFormPackage.value.passengers.length">
+                                            <p class="m-0"
+                                                [class.text-muted]="searchFormPackage.value.passengers.length === 1 && numAdults === 1 && numChildren === 0"
+                                                *ngIf="searchFormPackage.value.passengers.length">
                                                 {{searchFormPackage.value.passengers.length}}
                                                 &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
                                                 &nbsp;{{numAdults}}&nbsp;&nbsp;Adult{{numAdults>1 ?'s':''}}
@@ -237,31 +239,43 @@
                                                     <div class="room-passengers-details">
                                                         <div class="row">
                                                             <div class="col-lg-6">
-                                                                <div class="room-adults d-flex justify-content-between align-items-center mb-2">
+                                                                <div
+                                                                    class="room-adults d-flex justify-content-between align-items-center mb-2">
                                                                     <label for="">Adults</label>
-                                                                    <div class="d-flex object-quantity mt-1 passengers-nbr">
-                                                                        <div class="minus" (click)="minusadults(i)">-</div>
-                                                                        <div class="quantity">{{passenger.get('adults')?.value}}</div>
-                                                                        <div class="plus" (click)="plusadults(i)">+</div>
+                                                                    <div
+                                                                        class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        <div class="minus" (click)="minusadults(i)">-
+                                                                        </div>
+                                                                        <div class="quantity">
+                                                                            {{passenger.get('adults')?.value}}</div>
+                                                                        <div class="plus" (click)="plusadults(i)">+
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
-                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center mb-2">
                                                                     <label for="">Children</label>
-                                                                    <div class="d-flex object-quantity mt-1 passengers-nbr">
-                                                                        <div class="minus" (click)="minuschildren(i)">-</div>
-                                                                        <div class="quantity">{{passenger.get('children')?.value.length}}</div>
-                                                                        <div class="plus" (click)="pluschildren(i)">+</div>
+                                                                    <div
+                                                                        class="d-flex object-quantity mt-1 passengers-nbr">
+                                                                        <div class="minus" (click)="minuschildren(i)">-
+                                                                        </div>
+                                                                        <div class="quantity">
+                                                                            {{passenger.get('children')?.value.length}}
+                                                                        </div>
+                                                                        <div class="plus" (click)="pluschildren(i)">+
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> 
-                                                        <div class="row"> 
+                                                        </div>
+                                                        <div class="row">
                                                             <div class="col-lg-6 mb-2" formArrayName="children"
                                                                 *ngFor="let child of children(i).controls;let k = index">
                                                                 <div [formGroupName]="k">
-                                                                    <select class="form-select" id="Age" formControlName="age">
+                                                                    <select class="form-select" id="Age"
+                                                                        formControlName="age">
                                                                         <option [value]="0" selected>
                                                                             Less than one year</option>
                                                                         <option
@@ -271,8 +285,8 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                        </div>   
-                                                    </div> 
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <hr *ngIf="i != 0 && i != passengers.length - 1" />
                                             </div>
@@ -285,11 +299,11 @@
                             <div class="d-flex justify-content-end w-100">
                                 <button (click)="searchPackage()" class="thm-btn w-100">Search</button>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                 </div>
                 <hr />
-                
+
             </form>
             <form *ngIf="omraType == 'map'" class="d-flex flex-column">
                 <div>
