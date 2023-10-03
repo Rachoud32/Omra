@@ -54,13 +54,19 @@ input:focus, select:focus, button:focus {
     box-shadow: 0 0 0 0 rgba(0,0,0, 0) !important;
 }
 
-button, [type=button], [type=reset], [type=submit] {
-    -webkit-appearance: button;
-}
-
 hr {
     border-color: #eee !important;
     opacity: 1 !important;
+}
+
+.search-section {
+    margin-top: 50px;
+}
+
+.search-category {
+    background: var(--Omra-second);
+    border-radius: 3px 6px 0 0;
+    padding: 15px 50px;
 }
 
 .search-container {
@@ -140,6 +146,41 @@ hr {
     width: 100%;
 }
 
+.category-btn label {
+    background: var(--Omra-white);
+    border: 1px solid var(--Omra-second);
+    padding: 10px 50px;
+    border-radius: 3px 0 0 6px;
+    color: var(--Omra-base);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--Omra-gray);
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.category-btn:last-child label {
+    border-radius: 0 3px 6px 0;
+    border-left: 0px;
+}
+
+.category-btn label:hover {
+    background: var(--Omra-second);
+    border: 1px solid var(--Omra-second);
+    color: #fff;
+}
+
+.category-btn:last-child label:hover {
+    border-left: 0px;
+}
+
+.category-active {
+    background: var(--Omra-base) !important;
+    border: 1px solid var(--Omra-base) !important;
+    color: #fff !important;
+}
+
 .search-container form input[type=radio] {
     display: none;
 }
@@ -200,9 +241,14 @@ hr {
     transition: all .3s linear;
 }
 
+.child-age .dropdown-menu.show {
+    margin-top: 45px !important;
+}
+
 .passengers-nbr .minus, .passengers-nbr .plus {
     width: 30px;
     height: 30px;
+    background: transparent;
     border: 1px solid #c9a96a;
     color: #828282;
     border-radius: 3px 6px;
@@ -214,6 +260,12 @@ hr {
     text-align: center;
     cursor: pointer;
     transition: all 0.4s ease-out 0s;
+}
+
+.passengers-nbr .minus:hover, .passengers-nbr .plus:hover {
+    background: var(--Omra-second);
+    border: 1px solid var(--Omra-second);
+    color: var(--Omra-white);
 }
 
 .passengers-nbr .quantity {
@@ -233,7 +285,7 @@ hr {
     user-select: none;
 }
 
-.child-age .form-select{
+.search-section .dropdown .child-age button {
     border: 1px solid #dee2e6;
     font-size: 14px;
     outline: 0 !important;

@@ -1,13 +1,29 @@
 <section class="search-section">
     <div class="container">
-        <div class="search-container mt-5 d-flex flex-column">
-            <div class="mb-4">
-                <input type="radio" name="omraType" value="package" id="package" class="form-check-input me-2"
-                    (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='package'" />
-                <label for="package" class="me-3">Omra package / Visa</label>
-                <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2"
-                    (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
-                <label for="map">Omra on map</label>
+        <div class="search-category">
+            <div class="d-flex">
+                <div class="d-flex me-5">
+                    <i class="bi bi-diamond-fill me-3"></i>
+                    <div class="">Hotels</div>
+                </div>
+                <div class="d-flex">
+                    <i class="bi bi-diamond-fill me-3"></i>
+                    <div class="">Omra</div>
+                </div>
+            </div>
+        </div>
+        <div class="search-container d-flex flex-column">
+            <div class="d-flex mb-4">
+                <div class="category-btn">
+                    <input type="radio" name="omraType" value="package" id="package" class="form-check-input me-2 d-none"
+                        (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='package'" />
+                    <label for="package"  [class.category-active]="omraType=='package'" class="">Omra package</label>
+                </div>
+                <div class="category-btn">
+                    <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2 d-none"
+                        (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
+                    <label for="map" [class.category-active]="omraType=='map'">Omra on map</label>
+                </div>
             </div>
             <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="">
                 <div class="">
@@ -280,7 +296,7 @@
                                                                 *ngFor="let child of children(i).controls;let k = index">
                                                                 <div [formGroupName]="k" class="dropdown">
                                                                     <button
-                                                                        [class.selected-item]="searchFormPackage.value.flight"
+                                                                        [class.selected-item]="child.get('age')?.value"
                                                                         class="btn btn-dark w-100" type="button"
                                                                         data-bs-toggle="dropdown"
                                                                         data-bs-auto-close="outside"
@@ -288,9 +304,8 @@
                                                                         <div
                                                                             class="d-flex me-4 justify-content-between w-100">
                                                                             <div class="d-flex">
-                                                                                <i class="bi bi-geo-alt-fill me-3"></i>
                                                                                 <p class="m-0">
-                                                                                    {{ child.get('age')?.value ==='0' ?
+                                                                                    {{ child.get('age')?.value ==='' ?
                                                                                     'Less
                                                                                     than one year' :
                                                                                     child.get('age')?.value}}
@@ -299,7 +314,7 @@
                                                                             <i class="bi bi-chevron-down"></i>
                                                                         </div>
                                                                     </button>
-                                                                    <div class="dropdown-menu p-3 animate slideIn">
+                                                                    <div class="dropdown-menu dropdown-menu-end p-3 animate slideIn">
                                                                         <div class="select-container"
                                                                             *ngFor="let item of ['Less than one year',1,2,3,4,5,6,7,8,9,10,11,12];let j=index">
 
@@ -326,43 +341,249 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 d-flex mb-3">
-                            <div class="d-flex justify-content-end w-100">
-                                <button (click)="searchPackage()" class="thm-btn w-100">Search</button>
-                            </div>
+                        <div class="col-lg-3 mb-3 d-flex w-100 justify-content-end">
+                            <button (click)="searchPackage()" class="thm-btn">Search</button>
                         </div>
                     </div>
                 </div>
 
             </form>
             <form *ngIf="omraType == 'map'" class="d-flex flex-column">
-                <div>
-                    <div class="dp-hidden position-absolute">
-                        <div class="input-group">
-                            <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
-                                [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2"
-                                [dayTemplate]="t" style="border: 0; padding: 0; height: 40px" outsideDays="hidden"
-                                [startDate]="fromDate!" tabindex="-1" />
-                            <ng-template #t let-date let-focused="focused">
-                                <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
-                                    [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
-                                    (mouseleave)="hoveredDate = null">
-                                    {{ date.day }}
-                                </span>
-                            </ng-template>
+                <div class="row">
+                    <!-- Calendar -->
+                    <div class="col-6">
+                        <div class="dp-hidden position-absolute">
+                            <div class="input-group">
+                                <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
+                                    [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2"
+                                    [dayTemplate]="t" style="border: 0; padding: 0; height: 40px" outsideDays="hidden"
+                                    [startDate]="fromDate!" tabindex="-1" />
+                                <ng-template #t let-date let-focused="focused">
+                                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                        [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                                        (mouseleave)="hoveredDate = null">
+                                        {{ date.day }}
+                                    </span>
+                                </ng-template>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary px-4 d-flex" style="position: relative; z-index: 100"
+                            (click)="datepicker.toggle()" type="button">
+                            <div class="me-4">
+                                {{ formatter.format(fromDate) }}
+                                <i class="bi bi-calendar4 ms-2"></i>
+                            </div>
+                            <div>
+                                {{ formatter.format(toDate) }}
+                                <i *ngIf="formatter.format(toDate)" class="bi bi-calendar4 ms-2"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Destination 1 -->
+                    <div class="col-3">
+                        <div class="dropdown w-100">
+                            <button
+                                class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-geo-alt-fill me-3"></i>
+                                        <p class="m-0">
+                                            
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Destination
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div class="select-container">
+                                    <label for="Tunis" class="me-3 w-100">
+                                        <input type="radio" class="form-check-input me-2" name=""
+                                            id="" value="Tunis" formControlName="" />
+                                        <div class="list-item">Tunis</div>
+                                    </label>
+                                </div>
+                                <div class="select-container">
+                                    <label for="Djerba" class="me-3 w-100">
+                                        <input type="radio" class="form-check-input me-2" name="departureCity"
+                                            id="Djerba" value="Djerba" formControlName="departureCity" />
+                                        <div class="list-item">Djerba</div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary px-4 d-flex" style="position: relative; z-index: 100"
-                        (click)="datepicker.toggle()" type="button">
-                        <div class="me-4">
-                            {{ formatter.format(fromDate) }}
-                            <i class="bi bi-calendar4 ms-2"></i>
+                    <!-- Destination 2 -->
+                    <div class="col-3">
+                        <div class="dropdown w-100">
+                            <button
+                                class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-geo-alt-fill me-3"></i>
+                                        <p class="m-0">
+                                            
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Destination
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div class="select-container">
+                                    <label for="Tunis" class="me-3 w-100">
+                                        <input type="radio" class="form-check-input me-2" name=""
+                                            id="" value="Tunis" formControlName="" />
+                                        <div class="list-item">Tunis</div>
+                                    </label>
+                                </div>
+                                <div class="select-container">
+                                    <label for="Djerba" class="me-3 w-100">
+                                        <input type="radio" class="form-check-input me-2" name="departureCity"
+                                            id="Djerba" value="Djerba" formControlName="departureCity" />
+                                        <div class="list-item">Djerba</div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            {{ formatter.format(toDate) }}
-                            <i *ngIf="formatter.format(toDate)" class="bi bi-calendar4 ms-2"></i>
+                    </div>
+                    <!-- Passengers -->
+                    <!-- <div class="col-lg-8 d-flex mb-3">
+                        <div class="dropdown w-100">
+                            <button
+                                [class.selected-item]="searchFormMap.value.passengersmap.length != 1 || numAdults != 1 || numChildren != 0"
+                                class="btn w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-people-fill me-3"></i>
+                                        <p class="m-0"
+                                            [class.text-muted]="searchFormMap.value.passengersmap.length === 1 && numAdults === 1 && numChildren === 0"
+                                            *ngIf="searchFormMap.value.passengers.length">
+                                            {{searchFormMap.value.passengersmap.length}}&nbsp;Room{{searchFormMap.value.passengersmap.length>1
+                                            ? 's' : ''}}
+                                            &nbsp;{{numAdults}}&nbsp;Adult{{numAdults>1 ?'s':''}}
+                                            &nbsp;{{ numChildren !== 0 ? numChildren + '&nbsp;Child' +
+                                            (numChildren > 1 ? 'ren' : '') : '' }}
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div formArrayName="passengers">
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <label for="">Room</label>
+                                            <div
+                                                class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                                <div class="minus" (click)="deletePassenger()">-</div>
+                                                <div class="quantity">{{ passengersmap.length }}</div>
+                                                <div class="plus" (click)="addPassenger()">+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="
+                                            let passenger of passengers.controls;
+                                            let i = index
+                                        ">
+                                        <div [formGroupName]="i" class="d-flex flex-column mb-1">
+                                            <div class="room-specifics d-flex flex-column">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="room-quantity">{{passenger.get('room')?.value}}
+                                                    </div>
+                                                </div>
+                                                <div class="room-passengers-details">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div
+                                                                class="room-adults d-flex justify-content-between align-items-center mb-2">
+                                                                <label for="">Adults</label>
+                                                                <div
+                                                                    class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                                                    <div class="minus" (click)="minusadultsmap(i)">-
+                                                                    </div>
+                                                                    <div class="quantity">
+                                                                        {{passenger.get('adults')?.value}}</div>
+                                                                    <div class="plus" (click)="plusadultsmap(i)">+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center mb-2">
+                                                                <label for="">Children</label>
+                                                                <div
+                                                                    class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                                                    <div class="minus" (click)="minuschildrenmap(i)">-
+                                                                    </div>
+                                                                    <div class="quantity">
+                                                                        {{passenger.get('children')?.value.length}}
+                                                                    </div>
+                                                                    <div class="plus" (click)="pluschildrenmap(i)">+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="child-age col-6 mb-2" formArrayName="children"
+                                                            *ngFor="let child of children(i).controls;let k = index">
+                                                            <div [formGroupName]="k" class="dropdown">
+                                                                <button
+                                                                    [class.selected-item]="child.get('age')?.value"
+                                                                    class="btn btn-dark w-100" type="button"
+                                                                    data-bs-toggle="dropdown"
+                                                                    data-bs-auto-close="outside"
+                                                                    aria-expanded="false">
+                                                                    <div
+                                                                        class="d-flex me-4 justify-content-between w-100">
+                                                                        <div class="d-flex">
+                                                                            <p class="m-0">
+                                                                                {{ child.get('age')?.value ==='' ?
+                                                                                'Less
+                                                                                than one year' :
+                                                                                child.get('age')?.value}}
+                                                                            </p>
+                                                                        </div>
+                                                                        <i class="bi bi-chevron-down"></i>
+                                                                    </div>
+                                                                </button>
+                                                                <div class="dropdown-menu dropdown-menu-end p-3 animate slideIn">
+                                                                    <div class="select-container"
+                                                                        *ngFor="let item of ['Less than one year',1,2,3,4,5,6,7,8,9,10,11,12];let j=index">
+
+                                                                        <input type="radio" [value]="item"
+                                                                            [id]="'k' + k + 'j' + j"
+                                                                            class="form-check-input me-2"
+                                                                            formControlName="age">
+                                                                        <label [for]="'k' + k + 'j' + j"
+                                                                            class="list-item w-100">
+                                                                            {{ item}}</label>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr *ngIf="i != 0 && i != passengers.length - 1" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </button>
+                    </div> -->
+
                 </div>
                 <div><button class="btn btn-success">Search</button></div>
             </form>
