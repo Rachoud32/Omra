@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --Omra-font: 'Rubik', sans-serif;
+    --Omra-font: 'Jost', sans-serif;
     --Omra-gray: #828282;
     --Omra-gray-rgb: 130, 130, 130;
     --Omra-white: #ffffff;
@@ -80,7 +80,8 @@ hr {
 }
 
 .search-section .dropdown .btn:hover,
-.search-section .dropdown .btn:active  {
+.search-section .dropdown .btn:active,
+.selected-item  {
     background-color: var(--Omra-white);
     color: var(--Omra-base);
     border-color: var(--Omra-second);
@@ -143,7 +144,7 @@ hr {
 .select-container input[type=radio]:checked + .list-item {
     background: var(--Omra-base);
     border-color: var(--Omra-base);
-    color: var(--Omra-second);
+    color: var(--Omra-white);
 }
 
 .search-container form .list-item {

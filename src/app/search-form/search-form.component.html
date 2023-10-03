@@ -9,13 +9,13 @@
                     (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
                 <label for="map">Omra on map</label>
             </div>
-            <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="mb-5">
+            <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="">
                 <div class="">
                     <div class="row">
                         <!-- Destination -->
                         <div class="col-lg-4 d-flex mb-3">
                             <div class="dropdown w-100">
-                                <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                <button [class.selected-item]="searchFormPackage.value.departureCity" class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100">
                                         <div class="d-flex">
