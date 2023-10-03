@@ -16,10 +16,12 @@ export class SearchFormComponent implements OnInit {
   omraType = 'package'
   numAdults = 1
   numChildren = 0
+  dropdownOpen = false;
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
+
   ngOnInit(): void {
     this.searchFormPackage = new FormGroup({
       departureCity: new FormControl('', [Validators.required]),

@@ -290,9 +290,10 @@
                                                                             <div class="d-flex">
                                                                                 <i class="bi bi-geo-alt-fill me-3"></i>
                                                                                 <p class="m-0">
-                                                                                    {{
-                                                                                    child.get('age')?.value
-                                                                                    }}
+                                                                                    {{ child.get('age')?.value ==='0' ?
+                                                                                    'Less
+                                                                                    than one year' :
+                                                                                    child.get('age')?.value}}
                                                                                 </p>
                                                                             </div>
                                                                             <i class="bi bi-chevron-down"></i>
@@ -307,8 +308,8 @@
                                                                                 class="form-check-input me-2"
                                                                                 formControlName="age">
                                                                             <label [for]="'k' + k + 'j' + j"
-                                                                                class="list-item w-100">{{ item
-                                                                                }}</label>
+                                                                                class="list-item w-100">
+                                                                                {{ item}}</label>
 
                                                                         </div>
                                                                     </div>
