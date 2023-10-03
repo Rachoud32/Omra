@@ -217,6 +217,11 @@ hr {
     user-select: none;
 }
 
+.child-age .form-select{
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+}
+
 .animate {
     animation-duration: 0.3s;
     -webkit-animation-duration: 0.3s;
