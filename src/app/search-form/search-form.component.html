@@ -205,7 +205,8 @@
                                                 {{searchFormPackage.value.passengers.length}}
                                                 &nbsp;Room{{searchFormPackage.value.passengers.length>1 ? 's' : ''}}
                                                 &nbsp;{{numAdults}}&nbsp;&nbsp;Adult{{numAdults>1 ?'s':''}}
-                                                &nbsp;{{numChildren}}&nbsp;&nbsp;Child{{numChildren>1 ?'ren':''}}
+                                                &nbsp;{{ numChildren !== 0 ? numChildren + '&nbsp;&nbsp;Child' +
+                                                (numChildren > 1 ? 'ren' : '') : '' }}
                                             </p>
                                         </div>
                                         <i class="bi bi-plus"></i>
@@ -268,7 +269,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="child-age col-lg-6 mb-2" formArrayName="children"
+                                                            <div class="child-age col-lg-6 mb-2"
+                                                                formArrayName="children"
                                                                 *ngFor="let child of children(i).controls;let k = index">
                                                                 <div [formGroupName]="k">
                                                                     <select class="form-select" id="Age"
