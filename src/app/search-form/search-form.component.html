@@ -2,14 +2,27 @@
     <div class="container">
         <div class="search-category">
             <div class="d-flex">
-                <div class="d-flex me-5">
+                <div class="d-flex category-item">
                     <i class="bi bi-diamond-fill me-3"></i>
                     <div class="">Hotels</div>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex category-item active-category">
                     <i class="bi bi-diamond-fill me-3"></i>
-                    <div class="">Omra</div>
+                    <div class="">Umrah</div>
                 </div>
+                <div class="d-flex category-item">
+                    <i class="bi bi-diamond-fill me-3"></i>
+                    <div class="">Flights</div>
+                </div>
+                <div class="d-flex category-item">
+                    <i class="bi bi-diamond-fill me-3"></i>
+                    <div class="">Forms</div>
+                </div>
+                <div class="d-flex category-item">
+                    <i class="bi bi-diamond-fill me-3"></i>
+                    <div class="">Activities</div>
+                </div>
+                
             </div>
         </div>
         <div class="search-container d-flex flex-column">
@@ -18,12 +31,12 @@
                     <input type="radio" name="omraType" value="package" id="package"
                         class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="omraType"
                         checked="omraType=='package'" />
-                    <label for="package" [class.category-active]="omraType=='package'" class="">Omra package</label>
+                    <label for="package" [class.category-active]="omraType=='package'" class="">Umrah package</label>
                 </div>
                 <div class="category-btn">
                     <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2 d-none"
                         (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
-                    <label for="map" [class.category-active]="omraType=='map'">Omra on map</label>
+                    <label for="map" [class.category-active]="omraType=='map'">Umrah on map</label>
                 </div>
             </div>
             <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="first-tab">
@@ -354,7 +367,7 @@
                 class="d-flex flex-column second-tab">
                 <div class="row">
                     <!-- Calendar -->
-                    <div class="col-6 mb-3">
+                    <div class="col-lg-6 mb-3">
                         <div class="dp-hidden position-absolute">
                             <div class="input-group">
                                 <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
@@ -384,7 +397,7 @@
                         </button>
                     </div>
                     <!-- Destination 1 -->
-                    <div class="col-3 mb-3" formGroupName="firstDestination">
+                    <div class="col-lg-3 mb-3" formGroupName="firstDestination">
                         <div class="dropdown w-100">
                             <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" aria-expanded="false">
@@ -435,7 +448,7 @@
                         </div>
                     </div>
                     <!-- Destination 2 -->
-                    <div class="col-3 mb-3" formGroupName="secondDestination">
+                    <div class="col-lg-3 mb-3" formGroupName="secondDestination">
                         <div class="dropdown w-100">
                             <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" aria-expanded="false">
@@ -484,7 +497,7 @@
                         </div>
                     </div>
                     <!-- Passengers -->
-                    <div class="col-lg-8 d-flex mb-3">
+                    <div class="col-lg-6 d-flex mb-3">
                         <div class="dropdown w-100">
                             <button
                                 [class.selected-item]="searchFormMap.value.passengersmap.length != 1 || numAdultsMap != 1 || numChildrenMap != 0"
@@ -611,6 +624,134 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Route -->
+                    <div class="col-lg-6 mb-3">
+                        <div class="dropdown w-100">
+                            <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-geo-alt-fill me-3"></i>
+                                        <p class="m-0">
+
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Path
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div>
+                                    <div class="select-container">
+                                        <label for="firstPath" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="path"
+                                                id="firstPath" value="Jeddah - Makkah - Madinah - Madinah Airport" formControlName="path" />
+                                            <div class="list-item">Jeddah - Makkah - Madinah - Madinah Airport</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="SecondPath" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="path"
+                                                id="SecondPath" value="Jeddah - Makkah - Jeddah" formControlName="path" />
+                                            <div class="list-item">Jeddah - Makkah - Jeddah</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nationality -->
+                    <div class="col-lg-6 mb-3">
+                        <div class="dropdown w-100">
+                            <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-geo-alt-fill me-3"></i>
+                                        <p class="m-0">
+
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Nationality
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div>
+                                    <div class="select-container">
+                                        <label for="Tunisia" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="nationality"
+                                                id="Tunisia" value="Tunisia" formControlName="nationality" />
+                                            <div class="list-item">Tunisia</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Algeria" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="nationality"
+                                                id="Algeria" value="Algeria" formControlName="nationality" />
+                                            <div class="list-item">Algeria</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Morocco" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="nationality"
+                                                id="Morocco" value="Morocco" formControlName="nationality" />
+                                            <div class="list-item">Morocco</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Country -->
+                    <div class="col-lg-6 mb-3">
+                        <div class="dropdown w-100">
+                            <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100">
+                                    <div class="d-flex">
+                                        <i class="bi bi-geo-alt-fill me-3"></i>
+                                        <p class="m-0">
+
+                                        </p>
+                                        <p class="m-0 text-muted">
+                                            Country
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu p-3 animate slideIn">
+                                <div>
+                                    <div class="select-container">
+                                        <label for="Tunisia" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
+                                                id="Tunisia" value="Tunisia" formControlName="residenceCountry" />
+                                            <div class="list-item">Tunisia</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Algeria" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
+                                                id="Algeria" value="Algeria" formControlName="residenceCountry" />
+                                            <div class="list-item">Algeria</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="Morocco" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
+                                                id="Morocco" value="Morocco" formControlName="residenceCountry" />
+                                            <div class="list-item">Morocco</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-3 mb-3 d-flex w-100 justify-content-end">
                         <button (click)="searchMap()" class="thm-btn">Search</button>
                     </div>
@@ -620,11 +761,11 @@
     </div>
 </section>
 
-<hr />
+<!-- <hr />
 <br>
 <br>
 <br>
 <br>
 <pre>Search form : {{searchFormMap?.value | json}}</pre>
 <pre>From date model: {{ fromDate | json }}</pre>
-<pre>To date model: {{ toDate | json }}</pre>
+<pre>To date model: {{ toDate | json }}</pre> -->
