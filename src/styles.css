@@ -8,7 +8,7 @@
     --Omra-white-rgb: 255, 255, 255;
     --Omra-black: #485b5c;
     --Omra-black-rgb: 72, 91, 92;
-    --Omra-base: #003f7b;
+    --Omra-base: #7d6a4c;
     --Omra-base-rgb: 0, 63, 123;
     --Omra-second: #c9a96a;
     --Omra-second-rgb: 201, 169, 106;
@@ -94,7 +94,8 @@ hr {
     transition: all .3s linear;
 }
 
-.search-section .dropdown .btn i {
+.search-section .dropdown .btn i,
+.picker i {
     color: var(--Omra-second);
     transition: all .3s linear;
 }
@@ -158,6 +159,10 @@ hr {
     color: var(--Omra-gray);
     cursor: pointer;
     transition: all .3s linear;
+}
+
+.category-btn:first-child label {
+    border-right: 0px;
 }
 
 .category-btn:last-child label {
@@ -315,23 +320,49 @@ hr {
     }
   }
   
-  @-webkit-keyframes slideIn {
+@-webkit-keyframes slideIn {
     0% {
-      -webkit-transform: transform;
-      -webkit-opacity: 0;
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
     }
     100% {
-      -webkit-transform: translateY(0);
-      -webkit-opacity: 1;
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
     }
     0% {
-      -webkit-transform: translateY(1rem);
-      -webkit-opacity: 0;
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
     }
-  }
+}
   
-  .slideIn {
+.slideIn {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
-  }
+}
 
+.second-tab .date-picker-btn {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    background: transparent;
+    color: var(--Omra-gray);
+}  
+
+.second-tab .date-picker-btn:hover,
+.second-tab .date-picker-btn:active {
+    background-color: var(--Omra-white) !important;
+    color: var(--Omra-base) !important;
+    border-color: var(--Omra-second) !important;
+    transition: all .3s linear;
+}
+
+.second-tab .date-picker-btn .picker {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    grid-gap: 16px;
+    gap: 16px;
+}

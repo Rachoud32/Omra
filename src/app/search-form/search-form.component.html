@@ -25,7 +25,7 @@
                     <label for="map" [class.category-active]="omraType=='map'">Omra on map</label>
                 </div>
             </div>
-            <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="">
+            <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="first-tab">
                 <div class="">
                     <div class="row">
                         <!-- Destination -->
@@ -348,10 +348,10 @@
                 </div>
 
             </form>
-            <form *ngIf="omraType == 'map'" class="d-flex flex-column">
+            <form *ngIf="omraType == 'map'" class="d-flex flex-column second-tab">
                 <div class="row">
                     <!-- Calendar -->
-                    <div class="col-6">
+                    <div class="col-6 mb-3">
                         <div class="dp-hidden position-absolute">
                             <div class="input-group">
                                 <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
@@ -367,20 +367,21 @@
                                 </ng-template>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-4 d-flex" style="position: relative; z-index: 100"
+                        <button class="btn btn-primary px-4 d-flex date-picker-btn"
                             (click)="datepicker.toggle()" type="button">
-                            <div class="me-4">
+                            <div class="picker me-4">
+                                <i class="bi bi-calendar2-fill me-2"></i>
                                 {{ formatter.format(fromDate) }}
-                                <i class="bi bi-calendar4 ms-2"></i>
                             </div>
-                            <div>
+                            <div class="picker">
+                                <i *ngIf="formatter.format(toDate)" class="bi bi-calendar2-fill me-2"></i>
                                 {{ formatter.format(toDate) }}
-                                <i *ngIf="formatter.format(toDate)" class="bi bi-calendar4 ms-2"></i>
+                                
                             </div>
                         </button>
                     </div>
                     <!-- Destination 1 -->
-                    <div class="col-3">
+                    <div class="col-3 mb-3">
                         <div class="dropdown w-100">
                             <button
                                 class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
@@ -417,7 +418,7 @@
                         </div>
                     </div>
                     <!-- Destination 2 -->
-                    <div class="col-3">
+                    <div class="col-3 mb-3">
                         <div class="dropdown w-100">
                             <button
                                 class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
@@ -583,9 +584,10 @@
                             </div>
                         </div>
                     </div> -->
-
+                    <div class="col-lg-3 mb-3 d-flex w-100 justify-content-end">
+                        <button (click)="searchPackage()" class="thm-btn">Search</button>
+                    </div>
                 </div>
-                <div><button class="btn btn-success">Search</button></div>
             </form>
         </div>
     </div>

@@ -13,7 +13,7 @@ export class SearchFormComponent implements OnInit {
   toDate: NgbDate | null;
   searchFormPackage?: FormGroup
   searchFormMap?: FormGroup
-  omraType = 'package'
+  omraType = 'map'
   numAdults = 1
   numChildren = 0
   dropdownOpen = false;
