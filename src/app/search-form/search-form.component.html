@@ -36,7 +36,7 @@
                 <div class="category-btn">
                     <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2 d-none"
                         (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
-                    <label for="map" [class.category-active]="omraType=='map'">Umrah on map</label>
+                    <label for="map" [class.category-active]="omraType=='map'">Umrah customized</label>
                 </div>
             </div>
             <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="first-tab">
