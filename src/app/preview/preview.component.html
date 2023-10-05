@@ -21,13 +21,16 @@
                 class="list-steps list-group list-group-horizontal d-flex justify-content-center"
                 role="tablist"
               >
-              <a
+                <a
                   class="list-group-item list-group-item-action d-flex active align-items-center flex-column"
                   data-bs-toggle="list"
                   href="#rooms-list"
                   role="tab"
-                  >
-                  <fa-icon class="step-icon mb-2" [icon]="faLocationDot"></fa-icon>
+                >
+                  <fa-icon
+                    class="step-icon mb-2"
+                    [icon]="faLocationDot"
+                  ></fa-icon>
                   <span>First Destination</span></a
                 >
                 <a
@@ -35,16 +38,19 @@
                   data-bs-toggle="list"
                   href="#rooms-list"
                   role="tab"
-                  >
-                  <fa-icon class="step-icon mb-2" [icon]="faLocationDot"></fa-icon>
+                >
+                  <fa-icon
+                    class="step-icon mb-2"
+                    [icon]="faLocationDot"
+                  ></fa-icon>
                   <span>Second Destination</span></a
                 >
                 <a
-                  class="list-group-item list-group-item-action d-flex align-items-center flex-column "
+                  class="list-group-item list-group-item-action d-flex align-items-center flex-column"
                   data-bs-toggle="list"
                   href="#rooms-list"
                   role="tab"
-                  >
+                >
                   <fa-icon class="step-icon mb-2" [icon]="faCar"></fa-icon>
                   <span>Transport</span></a
                 >
@@ -53,8 +59,11 @@
                   data-bs-toggle="list"
                   href="#extras-list"
                   role="tab"
-                  >
-                  <fa-icon class="step-icon mb-2" [icon]="faBellConcierge"></fa-icon>
+                >
+                  <fa-icon
+                    class="step-icon mb-2"
+                    [icon]="faBellConcierge"
+                  ></fa-icon>
                   <span>Ground services for Umrah</span></a
                 >
                 <a
@@ -62,88 +71,65 @@
                   data-bs-toggle="list"
                   href="#booking-form"
                   role="tab"
-                  >
-                  <fa-icon class="step-icon mb-2" [icon]="faUserLarge"></fa-icon>
+                >
+                  <fa-icon
+                    class="step-icon mb-2"
+                    [icon]="faUserLarge"
+                  ></fa-icon>
                   <span>Pilgrim(s) Informations </span></a
                 >
               </div>
             </div>
           </div>
 
-        <div class="container">
+          <div class="container">
             <div class="row">
-                <div class="col-lg-12 pt-5">
+              <div class="col-lg-12 pt-5">
                 <form class="check-form search-results">
-                    <div class="row align-items-center input-daterange">
+                  <div class="row align-items-center input-daterange">
                     <div class="col-lg-12">
-                        <div class="d-flex search-results-list">
-                            <div class="d-flex mb-0 me-3">
-                                <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                                <div><span>2</span> Travelers</div>
-                            </div>
-                        <div class="d-flex me-4">
-                            <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                            <div>from <span>November 1, 2023</span> to <span>November 15, 2023</span></div>
+                      <div class="d-flex search-results-list">
+                        <div class="d-flex mb-0 me-3">
+                          <fa-icon
+                            class="result-icon"
+                            [icon]="faCaretRight"
+                          ></fa-icon>
+                          <div><span>2</span> Travelers</div>
                         </div>
                         <div class="d-flex me-4">
-                            <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                            <div><span>2</span> night(s)</div>
+                          <fa-icon
+                            class="result-icon"
+                            [icon]="faCaretRight"
+                          ></fa-icon>
+                          <div>
+                            from <span>November 1, 2023</span> to
+                            <span>November 15, 2023</span>
+                          </div>
+                        </div>
+                        <div class="d-flex me-4">
+                          <fa-icon
+                            class="result-icon"
+                            [icon]="faCaretRight"
+                          ></fa-icon>
+                          <div><span>2</span> night(s)</div>
                         </div>
                         <div class="d-flex">
-                            <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                            <div><span>2</span> adult(s), <span>0</span> child(s)</div>   
+                          <fa-icon
+                            class="result-icon"
+                            [icon]="faCaretRight"
+                          ></fa-icon>
+                          <div>
+                            <span>2</span> adult(s), <span>0</span> child(s)
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-                </form>
-                </div>
-            </div>
-        </div>
-
-          <div class="tab-content" id="nav-tabContent">
-            <div
-              class="tab-pane pt-5 fade show active"
-              id="pills-room"
-              role="tabpanel"
-              aria-labelledby="pills-room-tab"
-            >
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="tab-content" id="nav-tabContent">
-                    <!--------------------- tab 1 ------------------------->
-                    <div
-                      class="tab-pane fade show active"
-                      id="rooms-list"
-                      role="tabpanel"
-                      aria-labelledby="rooms-list"
-                    >
-    
-                    </div>
-
-                    <!--------------------- tab 2 ------------------------->
-                    <div
-                      class="tab-pane fade"
-                      id="extras-list"
-                      role="tabpanel"
-                      aria-labelledby="extras-list"
-                    >
-  
-                    </div>
-                    <!--------------------- tab 3 ------------------------->
-                    <div
-                      class="tab-pane fade"
-                      id="booking-form"
-                      role="tabpanel"
-                      aria-labelledby="booking-form"
-                    >
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
-
           </div>
+          
         </div>
       </div>
     </div>
