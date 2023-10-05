@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css']
 })
+
 export class SearchFormComponent implements OnInit {
+  faHotel= faHotel
+  faPlane= faPlane
+  faKaaba= faKaaba
+  faSuitcase= faSuitcase
+  faCamera= faCamera
+
+  ageNumbers : any [] = ['Less than one year',1,2,3,4,5,6,7,8,9,10,11,12];
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
   toDate: NgbDate | null;

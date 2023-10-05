@@ -7,6 +7,7 @@ import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { PreviewComponent } from './preview/preview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbDatepickerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

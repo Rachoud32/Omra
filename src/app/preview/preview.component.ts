@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faLocationDot, faCar, faBellConcierge, faUserLarge, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-preview',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./preview.component.css']
 })
 export class PreviewComponent {
-
+  faLocationDot= faLocationDot
+  faCar= faCar
+  faBellConcierge= faBellConcierge
+  faUserLarge= faUserLarge
+  faCaretRight= faCaretRight
 }

@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --Omra-font: 'Jost', sans-serif;
-    --Omra-gray: #828282;
-    --Omra-gray-rgb: 130, 130, 130;
-    --Omra-white: #ffffff;
-    --Omra-white-rgb: 255, 255, 255;
-    --Omra-black: #485b5c;
-    --Omra-black-rgb: 72, 91, 92;
-    --Omra-base: #7d6a4c;
-    --Omra-base-rgb: 0, 63, 123;
-    --Omra-second: #c9a96a;
-    --Omra-second-rgb: 201, 169, 106;
-    --Omra-third: #f37a2d;
-    --Omra-third-rgb: 243, 122, 45;
-    --Omra-extra: #f4f5f5;
-    --Omra-extra-rgb: 244, 245, 245;
-    --Omra-bdr-radius: 3px;
+    --omra-font: 'Jost', sans-serif;
+    --omra-gray: #828282;
+    --omra-gray-rgb: 130, 130, 130;
+    --omra-white: #ffffff;
+    --omra-white-rgb: 255, 255, 255;
+    --omra-black: #485b5c;
+    --omra-black-rgb: 72, 91, 92;
+    --omra-base: #7d6a4c;
+    --omra-base-rgb: 0, 63, 123;
+    --omra-second: #c9a96a;
+    --omra-second-rgb: 201, 169, 106;
+    --omra-third: #f37a2d;
+    --omra-third-rgb: 243, 122, 45;
+    --omra-extra: #f4f5f5;
+    --omra-extra-rgb: 244, 245, 245;
+    --omra-bdr-radius: 3px;
 }
 
 body {
-    font-family: var(--Omra-font) !important;
+    font-family: var(--omra-font) !important;
     font-weight: 500 !important;
     font-size: 18px !important;
     line-height: 34px !important;
@@ -59,21 +59,36 @@ hr {
     opacity: 1 !important;
 }
 
+.logo {
+    width: 370px;
+    padding: 160px 0px;
+    position: relative;
+}
+
 .search-section {
-    margin-top: 50px;
+    position: relative;
+    top: -220px;
+}
+
+.search-section-title.page-title {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 40%;
 }
 
 .search-category {
-    background: var(--Omra-second);
+    background: var(--omra-second);
     border-radius: 3px 6px 0 0;
 }
 
 .search-container {
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 2%);
-    background: #fff !important;
-    /* background: url();
+    background: url(assets/bg-search.jpg) #fff ;
     background-size: cover;
-    background-position: 100% 100%; */
+    background-position: 100% 100%;
     padding: 50px 50px;
 }
 
@@ -88,8 +103,8 @@ hr {
 }
 
 .search-section .dropdown .btn {
-    background: var(--Omra-white);
-    color: var(--Omra-gray);
+    background: var(--omra-white);
+    color: var(--omra-gray);
     border: 1px solid #eee ;
     border-radius: 3px 6px 3px 6px;
     padding: 15px 20px;
@@ -98,22 +113,22 @@ hr {
 
 .search-section .dropdown .btn i,
 .picker i {
-    color: var(--Omra-second);
+    color: var(--omra-second);
     transition: all .3s linear;
 }
 
 .search-section .dropdown .btn:hover,
 .search-section .dropdown .btn:active,
 .search-section .dropdown .btn.selected-item  {
-    background-color: var(--Omra-white);
-    color: var(--Omra-base);
-    border-color: var(--Omra-second);
+    background-color: var(--omra-white);
+    color: var(--omra-base);
+    border-color: var(--omra-second);
     transition: all .3s linear;
 }
 
 .thm-btn {
-    background-color: var(--Omra-base);
-    color: var(--Omra-white);
+    background-color: var(--omra-base);
+    color: var(--omra-white);
     border-radius: 3px 6px 3px 6px;
     border: 0;
     display: inline-block;
@@ -131,7 +146,7 @@ hr {
 }
 
 .thm-btn:before {
-    background-color: var(--Omra-second);
+    background-color: var(--omra-second);
     content: "";
     height: 100%;
     position: absolute;
@@ -151,18 +166,28 @@ hr {
 
 .category-item {
     position: relative;
-    background: var(--Omra-second);
+    background: var(--omra-second);
     padding: 15px 45px;
     font-weight: 400;
     font-size: 15px;
     text-transform: uppercase;
+    justify-content: center;
     cursor: pointer;
     transition: all .3s linear;
 }
 
+.category-item fa-icon {
+    color: var(--omra-base);
+    transition: all .3s linear;
+}
+
 .category-item:hover {
-    background: var(--Omra-base);
-    color: var(--Omra-white);
+    background: var(--omra-base);
+    color: var(--omra-white);
+}
+
+.category-item:hover fa-icon {
+    color: var(--omra-white);
 }
 
 .category-item:after {
@@ -181,29 +206,35 @@ hr {
 
 .category-item i {
     font-size: 10px;
-    color: var(--Omra-base);
+    color: var(--omra-base);
     transition: all .3s linear;
 }
 
 .category-item:hover i {
-    color: var(--Omra-white);
+    color: var(--omra-white);
 }
 
 .active-category {
-    background-color: var(--Omra-white);
-    color: var(--Omra-base);
+    background-color: var(--omra-white);
+    color: var(--omra-base);
+}
+
+.category-btn {
+    flex: 1;
 }
 
 .category-btn label {
-    background: var(--Omra-white);
-    border: 1px solid var(--Omra-second);
+    background: var(--omra-white);
+    border: 1px solid var(--omra-second);
     padding: 6px 62px;
+    width: 100%;
+    text-align: center;
     border-radius: 3px 0 0 6px;
-    color: var(--Omra-base);
+    color: var(--omra-base);
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
-    color: var(--Omra-gray);
+    color: var(--omra-gray);
     cursor: pointer;
     transition: all .3s linear;
 }
@@ -218,8 +249,8 @@ hr {
 }
 
 .category-btn label:hover {
-    background: var(--Omra-second);
-    border: 1px solid var(--Omra-second);
+    background: var(--omra-second);
+    border: 1px solid var(--omra-second);
     color: #fff;
 }
 
@@ -228,8 +259,8 @@ hr {
 }
 
 .category-active {
-    background: var(--Omra-base) !important;
-    border: 1px solid var(--Omra-base) !important;
+    background: var(--omra-base) !important;
+    border: 1px solid var(--omra-base) !important;
     color: #fff !important;
 }
 
@@ -238,20 +269,20 @@ hr {
 }
 
 .list-item {
-    background: var(--Omra-white);
+    background: var(--omra-white);
     border: 1px solid #eee;
     border-radius: 3px 6px 3px 6px;
     padding: 2px 20px;
-    color: var(--Omra-gray);
+    color: var(--omra-gray);
     margin-bottom: 5px;
     transition: all .3s linear;
 }
 
 .list-item:hover,
 .select-container input[type=radio]:checked + .list-item {
-    background: var(--Omra-base);
-    border-color: var(--Omra-base);
-    color: var(--Omra-white);
+    background: var(--omra-base);
+    border-color: var(--omra-base);
+    color: var(--omra-white);
 }
 
 .search-container form .list-item {
@@ -262,11 +293,11 @@ hr {
 .room-quantity {
     font-size: 15px;
     font-weight: 300;
-    background: var(--Omra-second);
+    background: var(--omra-second);
     display: block;
     width: 100%;
     padding: 0px 14px;
-    color: var(--Omra-white);
+    color: var(--omra-white);
     border-radius: 3px 6px 0px 0px;
 }
 
@@ -277,20 +308,83 @@ hr {
     padding: 10px 10px 5px 10px;
 }
 
-.room-passengers-details label {
+.room-passengers-details label, .nights-nbr label {
     font-size: 15px;
     font-weight: 400;
+}
+
+.calendar .dropdown-menu.show {
+    width: auto !important;
+    margin-top: 37px !important;
+    margin-bottom: 5px !important;
+    padding: 20px;
+}
+
+.custom-day {
+    font-weight: 400 !important;
+    width: 32px !important;
+    padding: 0 !important;
+    height: 32px !important;
+    font-size: 14px;
+}
+
+.custom-day.range, .custom-day:hover {
+    background-color: var(--omra-base) !important;
+    color: white;
+}
+
+.custom-day.faded {
+    background-color: rgb(125 106 76 / 33%) !important;
+}
+
+.ngb-dp-month-name {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    margin: 8px 0 !important;
+}
+
+.ngb-dp-navigation-chevron {
+    color: #fff;
+    border: solid var(--omra-base);
+    border-width: 0 2px 2px 0;
+    border-radius: 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.ngb-dp-weekday {
+    color: var(--omra-base) !important;
+}
+
+.ngb-dp-weekday, .ngb-dp-week-number {
+    line-height: 2rem !important;
+    text-align: center !important;
+    font-style: normal !important;
+}
+
+.ngb-dp-header, .ngb-dp-month-name, .ngb-dp-weekdays {
+    background: var(--omra-white) !important;
 }
 
 .dropdown-menu.show {
     width: 100%;
     margin-top: 65px !important;
-    background: var(--Omra-white);
-    color: var(--Omra-gray);
+    margin-bottom: 65px !important;
+    background: var(--omra-white);
+    color: var(--omra-gray);
     border: 1px solid #eee ;
     border-radius: 3px 6px 3px 6px;
     padding: 15px 20px;
     transition: all .3s linear;
+}
+
+.search-section .drop-menu-sm-margin.show {
+    margin-top: 8px !important;
 }
 
 .child-age .dropdown-menu.show {
@@ -315,9 +409,9 @@ hr {
 }
 
 .passengers-nbr .minus:hover, .passengers-nbr .plus:hover {
-    background: var(--Omra-second);
-    border: 1px solid var(--Omra-second);
-    color: var(--Omra-white);
+    background: var(--omra-second);
+    border: 1px solid var(--omra-second);
+    color: var(--omra-white);
 }
 
 .passengers-nbr .quantity {
@@ -394,14 +488,14 @@ hr {
     padding: 15px 20px;
     border: 1px solid #eee;
     background: transparent;
-    color: var(--Omra-gray);
+    color: var(--omra-gray);
 }  
 
 .second-tab .date-picker-btn:hover,
 .second-tab .date-picker-btn:active {
-    background-color: var(--Omra-white) !important;
-    color: var(--Omra-base) !important;
-    border-color: var(--Omra-second) !important;
+    background-color: var(--omra-white) !important;
+    color: var(--omra-base) !important;
+    border-color: var(--omra-second) !important;
     transition: all .3s linear;
 }
 
