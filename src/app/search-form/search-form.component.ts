@@ -11,13 +11,11 @@ import { DaterangepickerDirective } from 'ngx-daterangepicker-material'
 })
 
 export class SearchFormComponent implements OnInit {
-  @ViewChild(DaterangepickerDirective, { static: true }) pickerDirective?: DaterangepickerDirective;
   faHotel = faHotel
   faPlane = faPlane
   faKaaba = faKaaba
   faSuitcase = faSuitcase
   faCamera = faCamera
-  selected?: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs };
   ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
@@ -30,9 +28,11 @@ export class SearchFormComponent implements OnInit {
   numChildren = 0
   numChildrenMap = 0
   dropdownOpen = false;
+  todayDate: NgbDate | null;
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getToday();
+    this.todayDate = calendar.getToday();
   }
 
   ngOnInit(): void {
@@ -67,9 +67,6 @@ export class SearchFormComponent implements OnInit {
         room: new FormControl("Room 1"),
       })]),
     })
-  }
-  open(e: MouseEvent): void {
-    this.pickerDirective?.open(e);
   }
   onChangeType() {
     console.log(this.omraType);

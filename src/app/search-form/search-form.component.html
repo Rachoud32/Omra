@@ -441,9 +441,6 @@
         class="d-flex flex-column second-tab">
         <div class="row">
           <!-- Calendar -->
-          <div>
-            <input type="text" ngxDaterangepickerMd [(ngModel)]="selected" class="form-control" />
-          </div>
           <div class="col-lg-6 mb-3">
             <label class="form-label">Duration</label>
             <div class="dp-hidden position-absolute calendar">
@@ -461,13 +458,17 @@
               </div>
             </div>
             <button class="btn btn-primary px-4 d-flex date-picker-btn" (click)="datepicker.toggle()" type="button">
-              <div class="picker me-4">
+              <div class="picker me-4"
+                [class.text-muted]="formatter.format(fromDate) === formatter.format(todayDate) && formatter.format(toDate) === formatter.format(todayDate)">
                 <i class="bi bi-calendar2-fill me-2"></i>
-                {{ formatter.format(fromDate) }}
+                {{ formatter.format(fromDate) == formatter.format(todayDate) ? 'yyyy - mm - dd' :
+                formatter.format(fromDate) }}
               </div>
-              <div class="picker">
+              <div class="picker"
+                [class.text-muted]="formatter.format(toDate) === formatter.format(todayDate) && formatter.format(fromDate) === formatter.format(todayDate)">
                 <i *ngIf="formatter.format(toDate)" class="bi bi-calendar2-fill me-2"></i>
-                {{ formatter.format(toDate) }}
+                {{ formatter.format(toDate) == formatter.format(todayDate) ? 'yyyy - mm - dd' :
+                formatter.format(toDate) }}
               </div>
             </button>
           </div>
