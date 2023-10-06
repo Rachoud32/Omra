@@ -31,7 +31,6 @@ export class SearchFormComponent implements OnInit {
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
-
   }
 
   ngOnInit(): void {
@@ -69,7 +68,6 @@ export class SearchFormComponent implements OnInit {
     this.searchFormMap?.get('fromDate')?.setValue(this.fromDate)
     this.searchFormMap?.get('toDate')?.setValue(this.toDate)
   }
-
 
   onChangeType() {
     console.log(this.omraType);
@@ -121,8 +119,6 @@ export class SearchFormComponent implements OnInit {
     return this.passengers.at(i)?.get('children') as FormArray
   }
 
-
-
   addPassenger() {
     if (this.passengers.length < 3) {
       this.passengers.push(new FormGroup({
@@ -142,8 +138,6 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-
-
   pluschildren(i: any) {
     if (this.children(i).length < 4) {
       this.children(i).push(new FormGroup({
@@ -153,16 +147,12 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-
-
   minuschildren(i: any) {
     if (this.children(i).length > 0) {
       this.children(i).removeAt(this.children(i).length - 1)
       this.numChildren -= 1
     }
   }
-
-
 
   plusadults(i: any) {
     if (this.passengers.at(i).get('adults')?.value < 5) {
@@ -171,15 +161,12 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-
-
   minusadults(i: any) {
     if (this.passengers.at(i).get('adults')?.value > 1) {
       this.passengers.at(i).get('adults')?.setValue(this.passengers.at(i).get('adults')?.value - 1)
       this.numAdults -= 1
     }
   }
-
 
   searchPackage() {
     console.log(this.searchFormPackage?.value);
