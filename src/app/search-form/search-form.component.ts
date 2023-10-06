@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import dayjs from 'dayjs/esm';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/free-solid-svg-icons';
-
+import { DaterangepickerDirective } from 'ngx-daterangepicker-material'
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
@@ -10,13 +11,14 @@ import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/fr
 })
 
 export class SearchFormComponent implements OnInit {
-  faHotel= faHotel
-  faPlane= faPlane
-  faKaaba= faKaaba
-  faSuitcase= faSuitcase
-  faCamera= faCamera
-
-  ageNumbers : any [] = ['Less than one year',1,2,3,4,5,6,7,8,9,10,11,12];
+  @ViewChild(DaterangepickerDirective, { static: true }) pickerDirective?: DaterangepickerDirective;
+  faHotel = faHotel
+  faPlane = faPlane
+  faKaaba = faKaaba
+  faSuitcase = faSuitcase
+  faCamera = faCamera
+  selected?: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs };
+  ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
   toDate: NgbDate | null;
@@ -30,7 +32,7 @@ export class SearchFormComponent implements OnInit {
   dropdownOpen = false;
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.toDate = calendar.getToday();
   }
 
   ngOnInit(): void {
@@ -65,10 +67,10 @@ export class SearchFormComponent implements OnInit {
         room: new FormControl("Room 1"),
       })]),
     })
-    this.searchFormMap?.get('fromDate')?.setValue(this.fromDate)
-    this.searchFormMap?.get('toDate')?.setValue(this.toDate)
   }
-
+  open(e: MouseEvent): void {
+    this.pickerDirective?.open(e);
+  }
   onChangeType() {
     console.log(this.omraType);
 
@@ -105,6 +107,8 @@ export class SearchFormComponent implements OnInit {
 
   validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
     const parsed = this.formatter.parse(input);
+    console.log({ parsed });
+
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
   // **************************
