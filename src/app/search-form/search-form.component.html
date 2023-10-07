@@ -465,9 +465,10 @@
                 formatter.format(fromDate) }}
               </div>
               <div class="picker"
-                [class.text-muted]="formatter.format(toDate) === formatter.format(todayDate) && formatter.format(fromDate) === formatter.format(todayDate)">
-                <i *ngIf="formatter.format(toDate)" class="bi bi-calendar2-fill me-2"></i>
-                {{ formatter.format(toDate) == formatter.format(todayDate) ? 'yyyy - mm - dd' :
+                [class.text-muted]="(formatter.format(toDate) == formatter.format(todayDate) || !formatter.format(toDate) )">
+                <i class="bi bi-calendar2-fill me-2"></i>
+                {{ (formatter.format(toDate) == formatter.format(todayDate) || !formatter.format(toDate) )? 'yyyy - mm -
+                dd' :
                 formatter.format(toDate) }}
               </div>
             </button>
