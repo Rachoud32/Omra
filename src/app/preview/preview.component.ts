@@ -9,7 +9,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./preview.component.css']
 })
 export class PreviewComponent implements OnInit {
-  linkValue!: string
+  linkValue: string = ''
   faLocationDot = faLocationDot
   faCar = faCar
   faBellConcierge = faBellConcierge
