@@ -9,16 +9,20 @@ import { PreviewComponent } from './preview/preview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
-import { TestComponent } from './test/test.component';
-import { Test2Component } from './test2/test2.component';
+import { FlightComponent } from './flight/flight.component';
+import { FirstDestinationComponent } from './first-destination/first-destination.component';
+import { TransferComponent } from './transfer/transfer.component';
+import { GroundServicesComponent } from './ground-services/ground-services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     PreviewComponent,
-    TestComponent,
-    Test2Component
+    FlightComponent,
+    FirstDestinationComponent,
+    TransferComponent,
+    GroundServicesComponent
   ],
   imports: [
     BrowserModule,
