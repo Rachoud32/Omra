@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faLocationDot, faCar, faBellConcierge, faUserLarge, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faCar, faBellConcierge, faUserLarge, faCaretRight, faPlane, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 
@@ -15,6 +15,8 @@ export class PreviewComponent implements OnInit {
   faBellConcierge = faBellConcierge
   faUserLarge = faUserLarge
   faCaretRight = faCaretRight
+  faPlane = faPlane
+  faCaretDown = faCaretDown
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
   ngOnInit(): void {
     this.updateLinkValue(); // Initialize the linkValue property

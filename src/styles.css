@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'css/responsive.css';
 
 :root {
     --omra-font: 'Jost', sans-serif;
@@ -36,7 +37,7 @@ body {
     font-family: var(--omra-font) !important;
     font-weight: 500 !important;
     font-size: 18px !important;
-    line-height: 1.5 !important;
+    line-height: 32px !important;
     background: #f4f5f5 !important;
     letter-spacing: 1px;
 }
@@ -381,6 +382,9 @@ h6 {
     font-size: 15px;
 }
 
+.search-section label {
+    margin-bottom: 0;
+}
 
 .room-quantity {
     font-size: 15px;
@@ -778,6 +782,24 @@ label {
     transition: all .3s linear;
 }
 
+.list-group-item::before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    background: var(--omra-base);
+    transition: all .3s linear;
+}
+
+.list-group-item:hover::before,
+.list-group-item:active::before,
+.list-group-item:focus::before,
+.list-group-item.active::before {
+    width: 100%;
+}
+
 .list-steps .list-group-item {
     border-right: 1px solid #eee !important;
 }
@@ -810,6 +832,13 @@ label {
     align-items: center !important;
     line-height: 18px;
     text-align: center;
+    transition: all .3s linear;
+}
+
+.list-group-item:hover span,
+.list-group-item:active span,
+.list-group-item:focus span {
+    color: #fff !important;
 }
 
 .list-group-item-action:hover,
@@ -831,6 +860,27 @@ label {
 .list-group-item.active .step-icon {
     transform: scale(1.2) !important;
 }
+
+.list-group-item .caret-icon {
+    margin: 0;
+    padding: 0;
+    line-height: 1px;
+    font-size: 12px;
+    position: relative;
+    transform: translate(0px, -120%);
+    opacity: 0;
+    color: var(--omra-base);
+    transition: all .3s linear;
+}
+
+.list-group-item.active .caret-icon, 
+.list-group-item:hover .caret-icon,
+.list-group-item:focus .caret-icon,
+.list-group-item:active .caret-icon {
+    opacity: 1;
+    transform: translate(0px, 50%);
+}
+
 
 .input-group .input-group-text {
     padding: 10px 20px !important;
@@ -944,6 +994,44 @@ label {
     transition: all .3s ease;
 }
 
+
+.service-details {
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.service-details:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,30%) 100%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.service-details::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(assets/islamic-pattern.png) repeat;
+    background-size: auto;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.service-details .row {
+    position: relative;;
+    z-index: 10;
+}
+
 .services-list input[type=checkbox]:checked + .box {
     background-color: #fff;
     border: 2px solid #c9a96a;
@@ -987,6 +1075,7 @@ label {
 
 .service-details {
     padding: 20px 20px 20px 0px !important;
+    line-height: 20px;
 }
 
 .service-details h3 {
@@ -1004,7 +1093,7 @@ label {
 
 .service-details p {
     line-height: 1.5 !important;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     color: var(--omra-gray);
 }
@@ -1061,6 +1150,7 @@ label {
     color: var(--omra-gray);
     font-size: 14px;
     font-weight: 400;
+    text-transform: capitalize;
     order: 2;
 }
 
@@ -1075,7 +1165,8 @@ label {
     white-space: nowrap;
 }
 
-.flight-label fa-icon {
+.flight-label fa-icon,
+.transfer-label fa-icon {
     margin-right: 10px;
     font-size: 10px;
     color: var(--omra-base);
@@ -1107,7 +1198,8 @@ label {
     display: block;
 }
 
-.details-row .middle-block .flight-line-icon {
+.details-row .middle-block .flight-line-icon,
+.details-row .middle-block .transfer-line-icon {
     width: calc(100% - 90px);
     border: 1px dashed #eee;
     margin: 4px auto;
@@ -1146,6 +1238,36 @@ label {
     top: -10px;
 }
 
+.details-row .middle-block .transfer-line-icon::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(assets/car.svg) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+}
+
+.details-row .middle-block .transfer-line-icon:before {
+    position: absolute;
+    left: -30px;
+    top: -10px;
+}
+
+.details-row .middle-block .transfer-line-icon::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(assets/car.svg) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+}
+
+.details-row .middle-block .transfer-line-icon:after {
+    position: absolute;
+    right: -30px;
+    top: -10px;
+}
+
 
 
 .search-sidebar-details {
@@ -1156,11 +1278,42 @@ label {
 }
 
 .search-sidebar-details .search-sidebar-header {
+    display: block;
+    height: 100%;
+    position: relative;
     padding: 25px 30px 20px;
     background: var(--omra-second);
 }
 
+.search-sidebar-header::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(201,169,106,1) 40%, rgba(201,169,106,30%) 100%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.search-sidebar-header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(assets/islamic-pattern.png) repeat;
+    background-size: 28%;
+    mix-blend-mode: color-burn;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .search-sidebar-header h5 {
+    position: relative;
+    z-index: 10;
     color: var(--omra-white);
     font-size: 25px;
     text-align: center;
@@ -1169,6 +1322,8 @@ label {
 }
 
 .search-sidebar-header p {
+    position: relative;
+    z-index: 10;
     font-weight: 300;
     font-size: 16px;
     color: var(--omra-white);
@@ -1180,6 +1335,10 @@ label {
     font-weight: 300;
     padding: 0;
     color: #828282;
+}
+
+.search-details-block {
+    line-height: 20px;
 }
 
 .search-details-block-right {
@@ -1213,7 +1372,7 @@ label {
 
 .search-total-price {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 400;
     color: #562403;
 }
 

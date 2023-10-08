@@ -4,6 +4,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { PreviewComponent } from './preview/preview.component';
 import { FlightComponent } from './flight/flight.component';
 import { FirstDestinationComponent } from './first-destination/first-destination.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 const routes: Routes = [
   { path: '', component: SearchFormComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     children: [
       { path: 'flight', component: FlightComponent },
       { path: 'first-destination', component: FirstDestinationComponent },
+      { path: 'transfer', component: TransferComponent },
     ]
   }];
 

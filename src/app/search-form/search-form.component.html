@@ -330,7 +330,7 @@
                     <div class="d-flex flex-column">
                       <div class="d-flex justify-content-between mb-3">
                         <label for="">Room</label>
-                        <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                        <div class="d-flex object-quantity passengers-nbr align-items-center">
                           <div class="minus" (click)="deletePassenger()">-</div>
                           <div class="quantity">{{ passengers.length }}</div>
                           <div class="plus" (click)="addPassenger()">+</div>
@@ -353,7 +353,7 @@
                               <div class="col-lg-6">
                                 <div class="room-adults d-flex justify-content-between align-items-center mb-2">
                                   <label for="">Adults</label>
-                                  <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                  <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minusadults(i)">
                                       -
                                     </div>
@@ -369,7 +369,7 @@
                               <div class="col-lg-6">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                   <label for="">Children</label>
-                                  <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                  <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minuschildren(i)">
                                       -
                                     </div>
@@ -508,7 +508,7 @@
                 <hr />
                 <div class="d-flex flex-column justify-content-between nights-nbr align-items-center mb-2">
                   <label for="">Nights</label>
-                  <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                  <div class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsFirstDestionation()">
                       -
                     </div>
@@ -556,7 +556,7 @@
                 <hr />
                 <div class="d-flex flex-column justify-content-between nights-nbr align-items-center mb-2">
                   <label for="">Nights</label>
-                  <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                  <div class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsSecondDestionation()">
                       -
                     </div>
@@ -610,9 +610,9 @@
               <div class="dropdown-menu drop-menu-sm-margin p-3 animate slideIn">
                 <div formArrayName="passengersmap">
                   <div class="d-flex flex-column">
-                    <div class="d-flex justify-content-between mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
                       <label for="">Room</label>
-                      <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                      <div class="d-flex object-quantity passengers-nbr align-items-center">
                         <div class="minus" (click)="deletePassengermap()">
                           -
                         </div>
@@ -637,7 +637,7 @@
                             <div class="col-lg-6">
                               <div class="room-adults d-flex justify-content-between align-items-center mb-2">
                                 <label for="">Adults</label>
-                                <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minusadultsmap(i)">
                                     -
                                   </div>
@@ -653,7 +653,7 @@
                             <div class="col-lg-6">
                               <div class="d-flex justify-content-between align-items-center mb-2">
                                 <label for="">Children</label>
-                                <div class="d-flex object-quantity mt-1 passengers-nbr align-items-center">
+                                <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minuschildrenmap(i)">
                                     -
                                   </div>
