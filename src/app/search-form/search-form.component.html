@@ -66,7 +66,7 @@
   </div>
 </section>
 
-<section class="search-section bg-pattern">
+<section class="search-section bg-pattern-2">
   <div class="container search-box">
     <div class="search-category">
       <div class="row m-0">
@@ -85,20 +85,20 @@
       </div>
     </div>
     <div class="search-container d-flex flex-column">
-      <div class="d-flex mb-4">
+      <div class="d-flex mb-4 z-index-3">
         <div class="category-btn">
           <input type="radio" name="omraType" value="package" id="package" class="form-check-input me-2 d-none"
             (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='package'" />
           <label for="package" [class.category-active]="omraType == 'package'" class="sub-category">Umrah
             package</label>
         </div>
-        <div class="category-btn">
+        <div class="category-btn ">
           <input type="radio" name="omraType" value="map" id="map" class="form-check-input me-2 d-none"
             (change)="onChangeType()" [(ngModel)]="omraType" checked="omraType=='map'" />
           <label for="map" [class.category-active]="omraType == 'map'" class="sub-category">Umrah customized</label>
         </div>
       </div>
-      <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="first-tab">
+      <form *ngIf="searchFormPackage && omraType == 'package'" [formGroup]="searchFormPackage" class="first-tab z-index-3">
         <div class="">
           <div class="row">
             <!-- Destination -->
