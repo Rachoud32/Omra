@@ -121,9 +121,9 @@
   <div class="content-wrap pt-0">
     <div id="section-room-booking" class="content">
       <div class="content-wrap pt-0 pb-0">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12 mt-5">
+            <div class="col-lg-12 list-steps-container">
               <div class="list-steps list-group list-group-horizontal d-flex">
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column"
@@ -133,129 +133,121 @@
                   routerLinkActive="router-link-active"
                 >
                   <div class="d-flex flex-column align-items-center">
-                    <fa-icon class="step-icon mb-2" [icon]="faPlane"></fa-icon>
+                    <i class="step-icon icon-line2-plane"></i>
                     <span>Flight</span>
                   </div>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column"
                   [class.active]="linkValue === 'first-destination' && true"
                   data-bs-toggle="list"
                   [routerLink]="['first-destination']"
                 >
-                  <fa-icon
-                    class="step-icon mb-2"
-                    [icon]="faLocationDot"
-                  ></fa-icon>
+                  <i class="step-icon icon-line-map-pin"></i>
                   <span>First Destination</span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column"
                   [class.active]="linkValue === 'first-destination-2' && true"
                   data-bs-toggle="list"
                   [routerLink]="['first-destination-2']"
                 >
-                  <fa-icon
-                    class="step-icon mb-2"
-                    [icon]="faLocationDot"
-                  ></fa-icon>
+                  <i class="step-icon icon-line-map-pin"></i>
                   <span>Second Destination</span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column"
                   [class.active]="linkValue === 'transfer' && true"
                   data-bs-toggle="list"
                   [routerLink]="['transfer']"
                 >
-                  <fa-icon class="step-icon mb-2" [icon]="faCar"></fa-icon>
+                  <div class="custom-step-icon"><svg id="a" viewBox="0 0 252.9 125.87"><path d="m238.82,41.85l-47.31-7.22c-1.2-.18-2.32-.78-3.13-1.68l-25.16-27.55c-3.13-3.43-7.6-5.4-12.24-5.4h-80.72c-5.59,0-10.77,2.79-13.85,7.46l-16.47,25.02c-.66,1-1.65,1.76-2.79,2.13l-25.76,8.49c-6.81,2.25-11.39,8.57-11.39,15.74v26.43c0,9.14,7.44,16.58,16.58,16.58h9.7c2.72,13.67,14.81,24.01,29.27,24.01s26.55-10.34,29.27-24.01h84.69c2.72,13.67,14.81,24.01,29.27,24.01s26.54-10.34,29.27-24.01h8.28c9.14,0,16.58-7.44,16.58-16.58v-27.04c0-8.25-5.92-15.14-14.08-16.39ZM55.55,114.63c-10.26,0-18.61-8.35-18.61-18.61s8.35-18.61,18.61-18.61,18.61,8.35,18.61,18.61-8.35,18.61-18.61,18.61Zm143.23,0c-10.26,0-18.61-8.35-18.61-18.61s8.35-18.61,18.61-18.61,18.61,8.35,18.61,18.61-8.35,18.61-18.61,18.61Zm42.89-29.35c0,2.94-2.4,5.34-5.34,5.34h-8.21c-2.55-13.88-14.72-24.45-29.33-24.45s-26.78,10.56-29.34,24.45h-84.56c-2.55-13.88-14.72-24.45-29.34-24.45s-26.78,10.56-29.33,24.45h-9.63c-2.94,0-5.34-2.4-5.34-5.34v-26.43c0-2.31,1.47-4.35,3.67-5.07l25.76-8.49c3.54-1.17,6.61-3.52,8.66-6.63l16.47-25.02c.99-1.51,2.66-2.4,4.46-2.4h80.72c1.49,0,2.93.64,3.94,1.74l25.16,27.55c2.55,2.79,6.01,4.64,9.74,5.21l47.3,7.22c2.63.4,4.54,2.62,4.54,5.28v27.04Z"/></svg></div>
                   <span>Transfer</span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column item-disabled"
                   data-bs-toggle="list"
                   role="tab"
                 >
-                  <fa-icon
-                    class="step-icon mb-2"
-                    [icon]="faBellConcierge"
-                  ></fa-icon>
+                  <i class="step-icon icon-line-flag"></i>
                   <span>Ground services</span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column item-disabled"
                   data-bs-toggle="list"
                   href="#booking-form"
                   role="tab"
                 >
-                  <fa-icon
-                    class="step-icon mb-2"
-                    [icon]="faUserLarge"
-                  ></fa-icon>
+                  <i class="step-icon icon-line-map"></i>
+                  <span>Visits</span>
+                  <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
+                ></a>
+
+                <a
+                  class="list-group-item list-group-item-action d-flex align-items-center flex-column item-disabled"
+                  data-bs-toggle="list"
+                  href="#booking-form"
+                  role="tab"
+                >
+                  <i class="step-icon icon-line-users"></i>
                   <span>Motamirin Informations </span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
                 <a
                   class="list-group-item list-group-item-action d-flex align-items-center flex-column item-disabled"
                   data-bs-toggle="list"
                   href="#booking-form"
                   role="tab"
                 >
-                  <fa-icon
-                    class="step-icon mb-2"
-                    [icon]="faUserLarge"
-                  ></fa-icon>
-                  <span>Summary</span>
+                <i class="step-icon icon-line-credit-card"></i>
+                  <span>Visa</span>
                   <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
                 ></a>
+
+                <a
+                  class="list-group-item list-group-item-action d-flex align-items-center flex-column item-disabled"
+                  data-bs-toggle="list"
+                  href="#booking-form"
+                  role="tab"
+                >
+                  <i class="step-icon icon-line-credit-card"></i>
+                  <span>Payment</span>
+                  <fa-icon class="caret-icon" [icon]="faCaretDown"></fa-icon
+                ></a>
+
               </div>
             </div>
           </div>
-
+         </div> 
+         
+         <div class="container">
           <div class="row">
             <div class="col-lg-12 pt-5">
               <form class="check-form search-results">
                 <div class="row align-items-center input-daterange">
-                  <div class="col-lg-12">
-                    <div class="d-flex search-results-list">
-                      <div class="d-flex mb-0 me-3">
-                        <fa-icon
-                          class="result-icon"
-                          [icon]="faCaretRight"
-                        ></fa-icon>
-                        <div><span>2</span> Travelers</div>
-                      </div>
-                      <div class="d-flex me-4">
-                        <fa-icon
-                          class="result-icon"
-                          [icon]="faCaretRight"
-                        ></fa-icon>
-                        <div>
-                          from <span>November 1, 2023</span> to
-                          <span>November 15, 2023</span>
-                        </div>
-                      </div>
-                      <div class="d-flex me-4">
-                        <fa-icon
-                          class="result-icon"
-                          [icon]="faCaretRight"
-                        ></fa-icon>
-                        <div><span>2</span> night(s)</div>
-                      </div>
-                      <div class="d-flex">
-                        <fa-icon
-                          class="result-icon"
-                          [icon]="faCaretRight"
-                        ></fa-icon>
-                        <div>
-                          <span>2</span> adult(s), <span>0</span> child(s)
-                        </div>
-                      </div>
-                    </div>
+                  <div class="col-lg-5 border-end">
+                    <p class="mb-0">
+                      <i class="icon-line-search"></i>
+                      4 Flights Found according to your search.
+                    </p>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="d-flex justify-content-end search-results-list">
+                      <div class="me-4"><i class="icon-line-calendar"></i>Mon, 16 Aug to Wed, 18 Aug</div>
+                      <div class="me-4"><i class="icon-line-moon"></i>2 night(s)</div>
+                      <div><i class="icon-line-head"></i>2 adult(s), 0 child(s)</div>
+                    </div>	
                   </div>
                 </div>
               </form>
@@ -272,15 +264,5 @@
       </div>
       
     </div>
-    <footer style="    font-weight: 400;
-    background: #fff;
-    padding: 10px 40px;
-    color: #828282;
-    font-size: 14px;
-    text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;">This is still a work in progress...Not yet responsive.</footer>
   </div>
 </section>

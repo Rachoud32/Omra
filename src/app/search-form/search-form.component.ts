@@ -1,16 +1,44 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import dayjs from 'dayjs/esm';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/free-solid-svg-icons';
-import { DaterangepickerDirective } from 'ngx-daterangepicker-material'
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+  styleUrls: ['./search-form.component.css'],
 })
 
 export class SearchFormComponent implements OnInit {
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    dots: false,
+    navSpeed: 1000,
+    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: true
+  }
+
   faHotel = faHotel
   faPlane = faPlane
   faKaaba = faKaaba
@@ -48,9 +76,11 @@ export class SearchFormComponent implements OnInit {
       })]),
     })
     this.searchFormMap = new FormGroup({
+      flightmode: new FormControl(''),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
       residenceCountry: new FormControl('', [Validators.required]),
+      departureCountry: new FormControl('', [Validators.required]),
       nationality: new FormControl('', [Validators.required]),
       path: new FormControl('', [Validators.required]),
       firstDestination: new FormGroup({
