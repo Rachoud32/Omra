@@ -2,6 +2,7 @@
 @import 'css/responsive.css';
 @import 'node_modules/bootstrap/dist/css/bootstrap.css';
 @import 'css/font-icons.css';
+@import '~animate.css/animate.min.css';
 
 :root {
     --omra-font: 'Jost', sans-serif;
@@ -254,7 +255,7 @@ input[type=checkbox]:disabled {
 ----------------------------------------------------*/
 .search-section {
     position: relative;
-    height: 920px;
+    height: 750px;
 }
 
 .search-box {
@@ -1158,23 +1159,23 @@ input[type=checkbox]:disabled {
     position: relative;
     width: 100%;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 60vh;
 }
 
 .owl-stage-outer, .owl-stage {
-    height: 100vh;
-    min-height: 100vh;
+    height: 60vh;
+    min-height: 60vh;
 }
 
 .slider-slide-bg {
     z-index: 1;
     background-size: cover!important;
-    background-position: 80% 50%!important;
-    min-height: 100vh;
+    background-position: 0% 70%!important;
+    min-height: 60vh;
     width: 100vw!important;
 }
 
-.swiper-slide-bg:before {
+.slider-slide-bg:before {
     content: "";
     background: linear-gradient(20deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.02) 50%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dab171",endColorstr="#dab171",GradientType=1);
@@ -1195,8 +1196,9 @@ input[type=checkbox]:disabled {
     z-index: 20;
     font-size: 1.375rem;
     font-weight: 300;
-    padding-top: 380px;
-    max-width: 650px;
+    padding-top: 210px;
+    padding-left: 80px;
+    max-width: 820px;
     height: 100%;
     transition: top .3s ease;
 }
@@ -1222,9 +1224,9 @@ input[type=checkbox]:disabled {
 }
 
 #slider .slider-caption h3 {
-    margin-bottom: 0px;
+    margin-bottom: 8px;
     display: inline-block;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 300 !important;
     color: #fff;
     background: transparent;
@@ -1236,8 +1238,8 @@ input[type=checkbox]:disabled {
 }
 
 #slider .slider-caption h2 {
-    font-size: 64px;
-    letter-spacing: 2px;
+    font-size: 60px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
@@ -1265,10 +1267,10 @@ input[type=checkbox]:disabled {
     left: 0.5%;
     width: 60px;
     height: 60px;
-    line-height: 70px;
+    line-height: 53px;
     color: #fff;
     background: #7d6a4c;
-    font-size: 18px;
+    font-size: 24px;
     border-radius: 0;
     opacity: 1;
    	transform: translateY(0px);
@@ -1280,17 +1282,16 @@ input[type=checkbox]:disabled {
     right: .5%!important;
 }
 
-.slider-arrow-left:hover,
-.slider-arrow-left:active,
-.slider-arrow-right:hover,
-.slider-arrow-right:active {
+.owl-next:hover,
+.owl-next:active,
+.owl-prev:hover,
+.owl-prev:active {
     color: #fff;
-    background: #562403 !important;
-    background: linear-gradient(270deg, #562403 0%, #854922 100%);
+    background: var(--omra-second) !important;
 }
 
-.slider-arrow-left i, .slider-arrow-right i, .flex-prev i, .flex-next i, .slider-arrow-top-sm i, .slider-arrow-bottom-sm i {
-    line-height: 48px;
+.owl-next i, .owl-prev i, .flex-prev i, .flex-next i, .slider-arrow-top-sm i, .slider-arrow-bottom-sm i {
+    line-height: 54px;
     width: 100%;
     height: 100%;
     color: rgba(255,255,255,0.8);
@@ -1386,6 +1387,22 @@ input[type=checkbox]:disabled {
 
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     z-index: 2;
+}
+
+.fade-in-title {
+    animation: fadeInDown 1s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*----------------------------------------------------
@@ -1880,7 +1897,7 @@ input[type=checkbox]:disabled {
 }
 
 .search-sidebar-footer .color-btn {
-    padding: 15px 60px;
+    padding: 10px 30px;
 }
 
 

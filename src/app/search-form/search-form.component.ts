@@ -17,11 +17,11 @@ export class SearchFormComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    autoplay: false,
-    autoplaySpeed: 5000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     dots: false,
     navSpeed: 1000,
-    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right"></i>'],
+    navText: [ '<i class="icon-line-chevron-left"></i>', '<i class="icon-line-chevron-right"></i>'],
     responsive: {
       0: {
         items: 1
