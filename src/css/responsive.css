@@ -105,33 +105,33 @@
         width: auto !important;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         line-height: initial;
     }
 
-    #rooms-list-section .room .room-type {
+    .room-box .room .room-type {
         letter-spacing: 1px;
         font-size: 14px;
         max-width: 230px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 22px 15px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         padding: 13px 15px;
         left: 20px;
         bottom: 10px;
     }
 
-    #rooms-list-section .carousel-controls {
+    .room-box .carousel-controls {
         top: -5px;
         left: 20px;
     }
 
-    #rooms-list-section .room .btn-resize {
+    .room-box .room .btn-resize {
         top: 15px;
         right: 20px;
     }
@@ -256,33 +256,33 @@
         width: auto !important;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         line-height: initial;
     }
 
-    #rooms-list-section .room .room-type {
+    .room-box .room .room-type {
         letter-spacing: 1px;
         font-size: 14px;
         max-width: 230px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 22px 15px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         padding: 13px 15px;
         left: 20px;
         bottom: 10px;
     }
 
-    #rooms-list-section .carousel-controls {
+    .room-box .carousel-controls {
         top: -5px;
         left: 20px;
     }
 
-    #rooms-list-section .room .btn-resize {
+    .room-box .room .btn-resize {
         top: 15px;
         right: 20px;
     }
@@ -525,34 +525,34 @@
         margin: 0px 20px;
     }
 
-    #rooms-list-section .room .room-content .room-content-left {
+    .room-box .room .room-content .room-content-left {
         padding: 12px 30px;
         justify-content: space-between;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 20px 30px;
         width: 100%;
         font-size: 16px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:first-child {
+    .room-box .room .btn-sec .read-btn:first-child {
         border-right: 1px solid #c9a96a;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         text-align: center;
         width: 100%;
         background: #7d6a4c;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover {
+    .room-box .room .btn-sec .read-btn:hover {
         background-color: #562403;
         color: #fff;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover i {
+    .room-box .room .btn-sec .read-btn:hover i {
         color: #fff;
     }
 
@@ -709,33 +709,33 @@
         width: auto !important;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         line-height: initial;
     }
 
-    #rooms-list-section .room .room-type {
+    .room-box .room .room-type {
         letter-spacing: 1px;
         font-size: 14px;
         max-width: 230px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 22px 15px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         padding: 13px 15px;
         left: 20px;
         bottom: 10px;
     }
 
-    #rooms-list-section .carousel-controls {
+    .room-box .carousel-controls {
         top: -5px;
         left: 20px;
     }
 
-    #rooms-list-section .room .btn-resize {
+    .room-box .room .btn-resize {
         top: 15px;
         right: 20px;
     }
@@ -982,34 +982,34 @@
         margin: 0px 20px;
     }
 
-    #rooms-list-section .room .room-content .room-content-left {
+    .room-box .room .room-content .room-content-left {
         padding: 12px 30px;
         justify-content: space-between;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 20px 30px;
         width: 100%;
         font-size: 16px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:first-child {
+    .room-box .room .btn-sec .read-btn:first-child {
         border-right: 1px solid #c9a96a;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         text-align: center;
         width: 100%;
         background: #7d6a4c;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover {
+    .room-box .room .btn-sec .read-btn:hover {
         background-color: #562403;
         color: #fff;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover i {
+    .room-box .room .btn-sec .read-btn:hover i {
         color: #fff;
     }
 
@@ -1329,10 +1329,6 @@ only screen and (                min-resolution: 2dppx) {
         width: 340px;
     }
 
-    .guests-inputs-container .row {
-        padding: 0;
-    }
-
     .daterangepicker .drp-calendar {
         min-width: 270px;
         max-width: 330px;
@@ -1368,10 +1364,6 @@ only screen and (                min-resolution: 2dppx) {
         padding: 50px 0;
     }
 
-    .row {
-        padding: 0 20px;
-    }
-
     .owl-carousel .owl-stage {
         padding: 0;
     }
@@ -1391,10 +1383,6 @@ only screen and (                min-resolution: 2dppx) {
 
     #section-rooms .owl-nav {
         display: none;
-    }
-
-    #section-rooms .container-fluid .row .rooms-carousel {
-        padding: 0;
     }
 
     #section-rooms .room-box .room .room-content {
@@ -1468,11 +1456,6 @@ only screen and (                min-resolution: 2dppx) {
 
     .resto-time-table .resto-time span:nth-child(2) {
         text-align: right;
-    }
-
-    #section-restaurant-3 .row .col-lg-4 {
-        padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
-        padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
     }
 
     .read-more-btn {
@@ -1594,10 +1577,6 @@ only screen and (                min-resolution: 2dppx) {
         top: 0px;
     }
 
-    #section-newsletter .row {
-        padding: 60px 20px !important;
-    }
-
     #section-newsletter .heading-box .heading-title {
         font-size: 25px;
         margin-bottom: 20px !important;
@@ -1681,22 +1660,18 @@ only screen and (                min-resolution: 2dppx) {
         padding: 30px 20px;
     }
 
-    #rooms-list-section .room .room-content .row {
-        padding: 0;
-    }
-
-    #rooms-list-section .room .room-content .room-content-left {
+    .room-box .room .room-content .room-content-left {
         flex-direction: column;
         padding: 20px 0px;
     }
 
-    #rooms-list-section .room .room-type {
+    .room-box .room .room-type {
         font-size: 16px;
         margin-bottom: 10px;
         max-width: 260px;
     }
 
-    #rooms-list-section .room .custom-select-trigger {
+    .room-box .room .custom-select-trigger {
         min-width: 250px;
         padding: 0 50px 0 20px;
     }
@@ -1710,15 +1685,15 @@ only screen and (                min-resolution: 2dppx) {
         padding: 15px 35px;
     }
 
-    #rooms-list-section .room .image-box img {
+    .room-box .room .image-box img {
         height: 300px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:first-child {
+    .room-box .room .btn-sec .read-btn:first-child {
         border-right: 1px solid #c9a96a;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 15px 10px;
         text-align: center;
@@ -1726,26 +1701,26 @@ only screen and (                min-resolution: 2dppx) {
         background: #7d6a4c;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover {
+    .room-box .room .btn-sec .read-btn:hover {
         background-color: #562403;
         color: #fff;
     }
 
-    #rooms-list-section .carousel-controls {
+    .room-box .carousel-controls {
         top: -10px;
         left: 10px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         left: 10px;
         bottom: 10px;
     }
 
-    #rooms-list-section .room-details .room-features-content-box {
+    .room-box .room-details .room-features-content-box {
         padding: 0px 20px;
     }
 
-    #rooms-list-section .carousel-control-prev, #rooms-list-section .carousel-control-next {
+    .room-box .carousel-control-prev, .room-box .carousel-control-next {
         top: 20px;
         bottom: 0;
         width: 40px;
@@ -1754,11 +1729,11 @@ only screen and (                min-resolution: 2dppx) {
         font-size: 18px;
     }
 
-    #rooms-list-section .carousel-control-next {
+    .room-box .carousel-control-next {
         left: 40px;
     }
 
-    #rooms-list-section .room .btn-resize {
+    .room-box .room .btn-resize {
         top: 10px;
         right: 10px;
         width: 40px;
@@ -1767,7 +1742,7 @@ only screen and (                min-resolution: 2dppx) {
         font-size: 18px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         padding: 10px 12px;
         font-size: 12px;
     }
@@ -1826,7 +1801,7 @@ only screen and (                min-resolution: 2dppx) {
         padding: 20px 0px;
     }
 
-    #rooms-list-section .plans-container .box .price-content .link .color-btn,
+    .room-box .plans-container .box .price-content .link .color-btn,
     .extra-details .link .color-btn {
         width: 100%;
     }
@@ -1841,11 +1816,7 @@ only screen and (                min-resolution: 2dppx) {
     .extra-details {
         padding: 20px 0;
     }
-
-    .extra-details .row {
-        padding: 0 !important;
-    }
-
+    
     .extras-list .extra {
         padding: 20px 0px 10px;
     }
@@ -1885,25 +1856,8 @@ only screen and (                min-resolution: 2dppx) {
         margin-bottom: 20px !important;
     }
 
-    .booked-room-content .row {
-        padding: 20px 0px 0px 0px;
-    }
-
     .all-content-box {
         padding: 20px 0px 0px;
-    }
-
-    .all-content-box .row {
-        padding: 0px 20px !important;
-    }
-    
-
-    #booking-section .row {
-        padding: 0;
-    }
-
-    #rooms-list-section .row {
-        padding: 0;
     }
 
     .booked-room {
@@ -2021,28 +1975,28 @@ only screen and (                min-resolution: 2dppx) {
         height: 320px;
     }
 
-    #rooms-list-section .modal .modal-content .room-description {
+    .room-box .modal .modal-content .room-description {
         flex-direction: column;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-description-left {
+    .room-box .modal .modal-content .room-description .room-description-left {
         padding-right: 0px;
         border-bottom: 1px solid #dbdbdb;
         margin-bottom: 20px;
     }
 
-    #rooms-list-section .modal .modal-content .room-features .room-features-list li {
+    .room-box .modal .modal-content .room-features .room-features-list li {
         width: 100%;
         margin-bottom: 18px;
         padding-left: 30px;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-details-right {
+    .room-box .modal .modal-content .room-description .room-details-right {
         border-bottom: 1px solid #dbdbdb;
         margin-bottom: 20px !important;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-details-right ul {
+    .room-box .modal .modal-content .room-description .room-details-right ul {
         margin-bottom: 20px;
     }
 
@@ -2124,10 +2078,6 @@ only screen and (                min-resolution: 2dppx) {
         margin-left: -10px !important;
     }
 
-    .package-box .row {
-        padding: 0;
-    }
-
     .package-box-content {
         padding: 30px 40px;
     }
@@ -2152,10 +2102,6 @@ only screen and (                min-resolution: 2dppx) {
     .package-box .color-btn {
         width: 100%;
     }
-
-    .room-item-box .row {
-        padding: 0;
-    } 
 
     .room-item-details .room-item-type {
         font-size: 18px;
@@ -2211,10 +2157,6 @@ only screen and (                min-resolution: 2dppx) {
     #booking-section .p0-row,
     .p0-row {
         padding: 0 !important;
-    }
-
-    .payment-form .row {
-        padding: 0 10px !important;
     }
 
     .payment-form .user-infos label,
@@ -2490,10 +2432,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         width: 340px;
     }
 
-    .guests-inputs-container .row {
-        padding: 0;
-    }
-
     .daterangepicker .drp-calendar {
         min-width: 270px;
         max-width: 330px;
@@ -2528,10 +2466,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         padding: 50px 0;
     }
 
-    .row {
-        padding: 0 20px;
-    }
-
     .owl-carousel .owl-stage {
         padding: 0;
     }
@@ -2551,10 +2485,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
 
     #section-rooms .owl-nav {
         display: none;
-    }
-
-    #section-rooms .container-fluid .row .rooms-carousel {
-        padding: 0;
     }
 
     #section-rooms .room-box .room .room-content {
@@ -2754,10 +2684,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         top: 0px;
     }
 
-    #section-newsletter .row {
-        padding: 60px 20px !important;
-    }
-
     #section-newsletter .heading-box .heading-title {
         font-size: 25px;
         margin-bottom: 20px !important;
@@ -2837,22 +2763,18 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         padding: 30px 20px;
     }
 
-    #rooms-list-section .room .room-content .row {
-        padding: 0;
-    }
-
-    #rooms-list-section .room .room-content .room-content-left {
+    .room-box .room .room-content .room-content-left {
         flex-direction: column;
         padding: 20px 0px;
     }
 
-    #rooms-list-section .room .room-type {
+    .room-box .room .room-type {
         font-size: 16px;
         margin-bottom: 10px;
         max-width: 260px;
     }
 
-    #rooms-list-section .room .custom-select-trigger {
+    .room-box .room .custom-select-trigger {
         min-width: 250px;
         padding: 0 50px 0 20px;
     }
@@ -2866,15 +2788,15 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         padding: 15px 35px;
     }
 
-    #rooms-list-section .room .image-box img {
+    .room-box .room .image-box img {
         height: 300px;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:first-child {
+    .room-box .room .btn-sec .read-btn:first-child {
         border-right: 1px solid #c9a96a;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn {
+    .room-box .room .btn-sec .read-btn {
         font-size: 14px;
         padding: 15px 10px;
         text-align: center;
@@ -2882,26 +2804,26 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         background: #7d6a4c;
     }
 
-    #rooms-list-section .room .btn-sec .read-btn:hover {
+    .room-box .room .btn-sec .read-btn:hover {
         background-color: #562403;
         color: #fff;
     }
 
-    #rooms-list-section .carousel-controls {
+    .room-box .carousel-controls {
         top: -10px;
         left: 10px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         left: 10px;
         bottom: 10px;
     }
 
-    #rooms-list-section .room-details .room-features-content-box {
+    .room-box .room-details .room-features-content-box {
         padding: 30px 20px;
     }
 
-    #rooms-list-section .carousel-control-prev, #rooms-list-section .carousel-control-next {
+    .room-box .carousel-control-prev, .room-box .carousel-control-next {
         top: 20px;
         bottom: 0;
         width: 40px;
@@ -2910,11 +2832,11 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         font-size: 18px;
     }
 
-    #rooms-list-section .carousel-control-next {
+    .room-box .carousel-control-next {
         left: 40px;
     }
 
-    #rooms-list-section .room .btn-resize {
+    .room-box .room .btn-resize {
         top: 10px;
         right: 10px;
         width: 40px;
@@ -2923,7 +2845,7 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         font-size: 18px;
     }
 
-    #rooms-list-section .room .available-notice {
+    .room-box .room .available-notice {
         padding: 10px 12px;
         font-size: 12px;
     }
@@ -2982,7 +2904,7 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         padding: 20px 0px;
     }
 
-    #rooms-list-section .plans-container .box .price-content .link .color-btn,
+    .room-box .plans-container .box .price-content .link .color-btn,
     .extra-details .link .color-btn {
         width: 100%;
     }
@@ -2996,10 +2918,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
 
     .extra-details {
         padding: 20px 0;
-    }
-
-    .extra-details .row {
-        padding: 0 !important;
     }
 
     .extras-list .extra {
@@ -3041,24 +2959,8 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         margin-bottom: 20px !important;
     }
 
-    .booked-room-content .row {
-        padding: 20px 0px 0px 0px;
-    }
-
     .all-content-box {
         padding: 20px 0px 0px;
-    }
-
-    .all-content-box .row {
-        padding: 0px 20px !important;
-    }
-
-    #booking-section .row {
-        padding: 0;
-    }
-
-    #rooms-list-section .row {
-        padding: 0;
     }
 
     .booked-room {
@@ -3176,28 +3078,28 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         height: 320px;
     }
 
-    #rooms-list-section .modal .modal-content .room-description {
+    .room-box .modal .modal-content .room-description {
         flex-direction: column;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-description-left {
+    .room-box .modal .modal-content .room-description .room-description-left {
         padding-right: 0px;
         border-bottom: 1px solid #dbdbdb;
         margin-bottom: 20px;
     }
 
-    #rooms-list-section .modal .modal-content .room-features .room-features-list li {
+    .room-box .modal .modal-content .room-features .room-features-list li {
         width: 100%;
         margin-bottom: 18px;
         padding-left: 30px;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-details-right {
+    .room-box .modal .modal-content .room-description .room-details-right {
         border-bottom: 1px solid #dbdbdb;
         margin-bottom: 20px !important;
     }
 
-    #rooms-list-section .modal .modal-content .room-description .room-details-right ul {
+    .room-box .modal .modal-content .room-description .room-details-right ul {
         margin-bottom: 20px;
     }
 
@@ -3279,10 +3181,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
         margin-left: -10px !important;
     }
 
-    .package-box .row {
-        padding: 0;
-    }
-
     .package-box-content {
         padding: 30px 40px;
     }
@@ -3307,10 +3205,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
     .package-box .color-btn {
         width: 100%;
     }
-
-    .room-item-box .row {
-        padding: 0;
-    } 
 
     .room-item-details .room-item-type {
         font-size: 18px;
@@ -3366,10 +3260,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
     #booking-section .p0-row,
     .p0-row {
         padding: 0 !important;
-    }
-
-    .payment-form .row {
-        padding: 0 10px !important;
     }
 
     .payment-form .user-infos label,

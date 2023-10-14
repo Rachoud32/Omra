@@ -3,6 +3,8 @@
 @import 'node_modules/bootstrap/dist/css/bootstrap.css';
 @import 'css/font-icons.css';
 @import '~animate.css/animate.min.css';
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css');
 
 :root {
     --omra-font: 'Jost', sans-serif;
@@ -23,6 +25,24 @@
     --omra-bdr-radius: 3px;
 }
 
+::selection {
+	background: #876F4B;
+	color: #FFF;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: #876F4B; /* Firefox */
+	color: #FFF;
+	text-shadow: none;
+}
+
+::-webkit-selection {
+	background: #876F4B; /* Safari */
+	color: #FFF;
+	text-shadow: none;
+}
+
 ::-webkit-scrollbar {
     width: 2px;
 }
@@ -33,7 +53,7 @@
 }
  
 ::-webkit-scrollbar-thumb {
-    background-color: #c9a96a;
+    background-color: var(--omra-second);
 }
 
 body {
@@ -49,6 +69,12 @@ p {
     color: #828282;
     font-weight: 300;
     font-size: 16px;
+}
+
+ul, ol {
+    margin: 0px;
+    padding: 0px !important;
+    list-style-type: none;
 }
 
 a {
@@ -67,6 +93,9 @@ a:visited {
     text-decoration: none;
 }
 
+img {
+    width: 100%;
+}
 
 .page-section {
     padding: 120px 0;
@@ -127,7 +156,7 @@ h6 {
     line-height: 1.5;
     margin: 0 0 30px 0;
     font-family: 'Jost', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 0.6px;
 }
 
 .logo {
@@ -152,7 +181,7 @@ h6 {
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
+    color: var(--omra-gray);
 }
 
 [type="radio"]:checked + label:before,
@@ -173,7 +202,7 @@ h6 {
     content: '';
     width: 10px;
     height: 10px;
-    background: #c9a96a;
+    background: var(--omra-second);
     position: absolute;
     top: 4px;
     left: 4px;
@@ -219,7 +248,7 @@ input[type=checkbox] {
     transform: scale(0);
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
-    background-color: #7d6a4c;
+    background-color: var(--omra-base);
 }
   
 input[type=checkbox]:checked::before {
@@ -333,7 +362,7 @@ input[type=checkbox]:disabled {
     border-radius: 0 !important;
     background: #ffffff !important;
     border-color: #eee;
-    color: #c9a96a !important;
+    color: var(--omra-second) !important;
     font-size: 18px !important;
     transition: all .3s linear;
 }
@@ -387,7 +416,7 @@ input[type=checkbox]:disabled {
     text-transform: uppercase;
     margin: 0;
     font-weight: 400;
-    color: #7d6a4c;
+    color: var(--omra-base);
     letter-spacing: 1px;
 }
 
@@ -730,7 +759,7 @@ input[type=checkbox]:disabled {
     width: 30px;
     height: 30px;
     background: transparent;
-    border: 1px solid #c9a96a;
+    border: 1px solid var(--omra-second);
     color: #828282;
     line-height: 28px;
     font-size: 16px;
@@ -854,7 +883,7 @@ input[type=checkbox]:disabled {
 .divider a {
     font-size: 16px !important;
     font-weight: 300;
-    color: #c9a96a;
+    color: var(--omra-second);
     transition: all 0.4s ease-out 0s;
 }
 
@@ -914,6 +943,19 @@ input[type=checkbox]:disabled {
     color: #bababa !important;
     font-weight: 400;
     font-size: 16px;
+}
+
+.criteria-group:hover .input-group span,
+.criteria-group:hover .input-group input,
+.criteria-group:focus .input-group-text,
+.criteria-group:focus .input-group input  {
+    border: 1px solid var(--omra-second);
+    cursor: pointer;
+}
+
+.form-control:focus,
+.form-control:focus .input-group-text {
+    border-color: var(--omra-second) !important;
 }
 
 /*----------------------------------------------------
@@ -1040,7 +1082,7 @@ input[type=checkbox]:disabled {
     display: block;
     margin-top: 10px;
     width: 50px;
-    border-top: 5px solid #c9a96a;
+    border-top: 5px solid var(--omra-second);
 }
 
 .page-title .content-box .bread-crumb li:before {
@@ -1048,7 +1090,7 @@ input[type=checkbox]:disabled {
     content: '|';
     font-family: 'font-icons';
     font-size: 15px;
-    color: #7d6a4c;
+    color: var(--omra-base);
     top: -2px;
     right: 3px;
 }
@@ -1061,7 +1103,7 @@ input[type=checkbox]:disabled {
     position: relative;
     display: inline-block;
     font-size: 15px;
-    color: #c9a96a;
+    color: var(--omra-second);
     padding-right: 13px;
     margin-right: 3px;
 }
@@ -1084,7 +1126,7 @@ input[type=checkbox]:disabled {
 
 .form-group label {
     margin-bottom: 5px;
-    color: #7d6a4c !important;
+    color: var(--omra-base) !important;
     font-size: 14px;
 }
 
@@ -1219,7 +1261,7 @@ input[type=checkbox]:disabled {
     border-radius: 0 !important;
     background: #ffffff !important;
     border-color: #eee !important;
-    color: #c9a96a !important;
+    color: var(--omra-second) !important;
     font-size: 18px !important;
 } */
 
@@ -1312,7 +1354,7 @@ input[type=checkbox]:disabled {
 #slider .slider-caption h3::before {
     content: '';
     display: inline-block;
-    background-color: #c9a96a;
+    background-color: var(--omra-second);
     height: 3px;
     width: 25px;
     vertical-align: middle;
@@ -1366,7 +1408,7 @@ input[type=checkbox]:disabled {
     height: 60px;
     line-height: 53px;
     color: #fff;
-    background: #7d6a4c;
+    background: var(--omra-base);
     font-size: 24px;
     border-radius: 0;
     opacity: 1;
@@ -1463,7 +1505,7 @@ input[type=checkbox]:disabled {
 #ksar-slider .slider-caption h3::before {
     content: '';
     display: inline-block;
-    background-color: #c9a96a;
+    background-color: var(--omra-second);
     height: 3px;
     width: 25px;
     vertical-align: middle;
@@ -1532,7 +1574,6 @@ input[type=checkbox]:disabled {
     font-weight: 300 !important;
     color: #fff;
     width: auto;
-    text-align: justify;
     border-radius: 0;
     font-family: "Jost", sans-serif;
 }
@@ -1620,13 +1661,13 @@ input[type=checkbox]:disabled {
 
 .services-list input[type=checkbox]:checked + .box {
     background-color: #fff;
-    border: 2px solid #c9a96a;
+    border: 2px solid var(--omra-second);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
 .services-list input[type=radio]:checked + .box {
     background-color: #fff;
-    border: 2px solid #c9a96a;
+    border: 2px solid var(--omra-second);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
@@ -1718,7 +1759,7 @@ input[type=checkbox]:disabled {
 .service-price {
     font-size: 26px;
     font-weight: 400;
-    color: #7d6a4c;
+    color: var(--omra-base);
 }
 
 .service-price span {
@@ -1983,7 +2024,7 @@ input[type=checkbox]:disabled {
 .search-sidebar-details .search-total-label {
     font-size: 22px;
     font-weight: 500;
-    color: #7d6a4c;
+    color: var(--omra-base);
 }
 
 .search-sidebar-details .search-total-label .price-tax {
@@ -2021,9 +2062,16 @@ input[type=checkbox]:disabled {
     transition: transform 0.6s ease-in-out;
 }
 
+.room-box .room a {
+    border: 0;
+    color: #828282;
+    font-weight: 300;
+}
+
 .room-box .image-box img {
-    height: 350px;
+    height: 420px;
     object-fit: cover;
+    object-position: center;
     width: 100%;
 }
 
@@ -2033,13 +2081,13 @@ input[type=checkbox]:disabled {
     right: 30px;
     left: unset;
     background: #f8f8f8;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    color: #7d6a4c;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: var(--omra-base);
     text-align: center;
-    transition: all .5s linear;
+    transition: all 0.4s ease-out 0s;
 }
 
 .room-box .room .btn-resize:hover,
@@ -2051,7 +2099,7 @@ input[type=checkbox]:disabled {
 .room-box .room .room-content {
     bottom: 0px;
     width: 100%;
-    background: #c9a96a;
+    background: var(--omra-second);
     position: relative;
     z-index: 5;
     transition: all .5s linear;
@@ -2096,9 +2144,9 @@ input[type=checkbox]:disabled {
 
 .room-box .room .room-type {
     color: #fff;
-    letter-spacing: 2px;
-    font-size: 16px;
-    font-weight: 500 !important;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 400 !important;
     text-transform: uppercase;
     margin-bottom: 0;
     position: relative;
@@ -2122,7 +2170,7 @@ input[type=checkbox]:disabled {
 
 .room-box .room .btn-sec .read-btn {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 20px;
     border: 0;
     line-height: 42px;
@@ -2131,15 +2179,57 @@ input[type=checkbox]:disabled {
 }
 
 .room-box .room .btn-sec .rate-btn {
-    background-color: #7d6a4c;
+    background-color: var(--omra-base);
     color: #fff;
     padding: 10px 20px;
     transition: all 0.4s ease-out 0s;
 }
 
+.room-box .room .available-notice {
+    position: absolute;
+    background: #ec3949;
+    padding: 5px 15px;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    left: 30px;
+    bottom: 20px;
+    z-index: 4;
+}
+
+.room-box .room  .rating-container i {
+    color: var(--omra-second);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.room-box .room  .clear-rating,
+.room-box .room  .caption {
+	display: none;
+}
+
+.room-box .room .rating-disabled .rating-stars {
+    cursor: unset !important;
+}
+
+.room-box .room .rating-sm {
+    font-size: 14px !important;
+}
+
+.room-box .room .rating-input {
+    display: none;
+}
+
+.room-box .room .available-notice p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
 .room-box .carousel-controls {
-    position: relative;
-    top: -410px;
+    position: absolute;
+    top: 0;
     left: 30px;
     z-index: 4;
 }
@@ -2159,10 +2249,10 @@ input[type=checkbox]:disabled {
     bottom: 0;
     z-index: 1;
     display: block;
-    width: 40px;
-    height: 40px;
-    line-height: 43px;
-    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
     color: var(--omra-base);
     text-align: center;
     background: #f8f8f8;
@@ -2174,6 +2264,8 @@ input[type=checkbox]:disabled {
 
 .room-box .carousel-control-prev:hover,
 .room-box .carousel-control-next:hover,
+.room-box .carousel-control-prev:focus,
+.room-box .carousel-control-next:focus,
 .room-box .carousel-control-prev:active,
 .room-box .carousel-control-next:active {
     color: #fff;
@@ -2207,6 +2299,12 @@ input[type=checkbox]:disabled {
     margin-bottom: 0;
 }
 
+.room-box .accordion-item {
+    border: 0;
+    color: #828282;
+    font-weight: 300;
+}
+
 .room-box .room-details .tariff-plan-box .tariff-plan-item {
     background: transparent;
 }
@@ -2222,11 +2320,10 @@ input[type=checkbox]:disabled {
 .room-box label {
     font-size: 14px;
     font-weight: 600;
-    text-transform: uppercase;
     margin: 0;
     font-weight: 400;
     margin-bottom: 20px;
-    color: #7d6a4c;
+    color: var(--omra-base);
     letter-spacing: 1px;
     cursor: default !important;
 }
@@ -2242,10 +2339,230 @@ input[type=checkbox]:disabled {
     will-change: transition;
     display: inline-block;
     position: relative;
+    line-height: normal;
     border: 2px solid #eee;
+}
+
+.plans-container .box a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--omra-base);
+    transition: all 0.4s ease-out 0s;
+    width: fit-content;
+}
+
+.plans-container .box a:hover,
+.plans-container .box a:focus,
+.plans-container .box a:active {
+    color: var(--omra-second);
+}    
+
+.plan-read-more {
+    line-height: 8px;
+}
+
+.plan-read-more::before {
+    content: '';
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 100%;
+    bottom: -25px;
+    background: var(--omra-second);
+    transform: scale(0, 1);
+    margin: 0;
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plan-read-more::after {
+    content: "\e92e";
+    position: absolute;
+    font-family: 'lined-icons';
+    flex-shrink: 0;
+    margin: 0px 5px;
+    font-size: 15px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    transform-origin: center;
+    transition: transform .2s ease-in-out;
+}
+
+.plan-read-more[aria-expanded="false"]::after {
+    transform: rotate(0deg);
+}
+
+.plan-read-more[aria-expanded="true"]::after {
+    transform: rotate(-180deg);
 }
 
 .plans-container .box .plan-checkbox {
     padding: 20px;
     cursor: pointer;
 }
+
+.room-details-content {
+    padding: 15px;
+}
+
+.plans-container .box .title {
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+    width: fit-content;
+    color: var(--omra-base);
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.plans-container .box .price-content {
+    font-weight: 400;
+    color: #828282;
+    text-align: right;
+    padding: 15px 15px 15px 0px;
+}
+
+.plans-container .box .price-content .price {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--omra-base);
+}
+
+.plans-container .box .price-content .price span {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.plans-container .box .price-content .link .color-btn, .extra-details .link .color-btn {
+    padding: 0px 10px;
+    font-size: 11px;
+    line-height: 35px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid var(--omra-second);
+    background: var(--omra-second);
+    transition: all 0.4s ease-out 0s;
+}
+
+.plans-container .box .room-picture {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.plans-container .box .room-picture img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.room-picture-overlay {
+    position: relative;
+    bottom: 35px;
+    display: inline-block;
+    left: 3px;
+    padding: 6px 15px;
+    background-color: var(--omra-second);
+}
+
+.plans-container .box .room-picture {
+    color: #fff;
+}
+
+.room-picture-icon {
+    color: #fff;
+    position: relative;
+    padding: 0;
+    text-align: center;
+}
+
+.plans-container .room-option {
+    padding: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--omra-gray);
+}
+
+.plans-container .room-option i {
+    color: var(--omra-second);
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.plans-container .reservation-details, .plans-container .tva {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+}
+
+.plans-container .box .plan-details {
+    background: #fbfbfb;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.pension-label {
+    display: block;
+    padding-bottom: 6px;
+    color: var(--omra-base);
+}
+
+.pension-list label {
+   margin-bottom: 5px;
+   cursor: pointer;
+}
+
+.pension-list [type="radio"]:checked + label, .pension-list [type="radio"]:not(:checked) + label {
+    line-height: 13px;
+}
+
+.pension-list [type="radio"]:checked + label:before, .pension-list [type="radio"]:not(:checked) + label:before {
+    width: 14px;
+    height: 14px;
+}
+
+.pension-list [type="radio"]:checked + label:after, .pension-list [type="radio"]:not(:checked) + label:after {
+    width: 6px;
+    height: 6px;
+    top: 4px;
+    left: 4px;
+}
+
+.room-amenities {
+    font-weight: 400 !important;
+    font-size: 20px;
+    color: var(--omra-base);
+}
+
+.room-amenitie-type {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--omra-second);
+    margin-bottom: 0px;
+}
+
+.room-amenitie-icon {
+    width: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.plan-details li .amenitie-item {
+    font-size: 13px;
+    color: var(--omra-gray);
+}
+
+.plan-details li .amenitie-item::before {
+    content: '';
+    background-color: var(--omra-second);
+    height: 2px;
+    width: 2px;
+    margin-right: 10px;
+    position: relative;
+    bottom: 0px;
+    display: inline-block;
+}
+
+

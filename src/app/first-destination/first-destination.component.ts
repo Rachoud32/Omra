@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, VERSION, ViewEncapsulation } from '@angular/core';
 import { faPlane, faArrowRightLong, faCaretRight, faMagnifyingGlass, faInfoCircle, faTag, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import lgZoom from 'lightgallery/plugins/zoom';
+import { BeforeSlideDetail } from 'lightgallery/lg-events';
 
 @Component({
   selector: 'app-first-destination',
   templateUrl: './first-destination.component.html',
-  styleUrls: ['./first-destination.component.css']
+  styleUrls: ['./first-destination.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
+
 export class FirstDestinationComponent {
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
@@ -33,5 +37,15 @@ export class FirstDestinationComponent {
   checkOption4() {
     this.selectedOption = this.option4;
   }
+
+  name = "Angular " + VERSION.major;
+  settings = {
+    counter: false,
+    plugins: [lgZoom]
+  };
+  onBeforeSlide = (detail: BeforeSlideDetail): void => {
+    const { index, prevIndex } = detail;
+    console.log(index, prevIndex);
+  };
 }
 

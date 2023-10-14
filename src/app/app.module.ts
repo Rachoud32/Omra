@@ -17,6 +17,7 @@ import { FlightComponent } from './flight/flight.component';
 import { FirstDestinationComponent } from './first-destination/first-destination.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { GroundServicesComponent } from './ground-services/ground-services.component';
+import { LightgalleryModule } from 'lightgallery/angular';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { GroundServicesComponent } from './ground-services/ground-services.compo
     ReactiveFormsModule,
     FontAwesomeModule,
     CarouselModule,
+    LightgalleryModule,
     BrowserAnimationsModule,
     NgxDaterangepickerMd.forRoot()
   ],
