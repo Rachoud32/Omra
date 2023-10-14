@@ -18,6 +18,8 @@ import { FirstDestinationComponent } from './first-destination/first-destination
 import { TransferComponent } from './transfer/transfer.component';
 import { GroundServicesComponent } from './ground-services/ground-services.component';
 import { LightgalleryModule } from 'lightgallery/angular';
+import { StarRatingModule } from 'angular-star-rating';
+import { SecondDestinationComponent } from './second-destination/second-destination.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     FirstDestinationComponent,
     TransferComponent,
     GroundServicesComponent,
+    SecondDestinationComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     NgbDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    StarRatingModule.forRoot(),
     FontAwesomeModule,
     CarouselModule,
     LightgalleryModule,

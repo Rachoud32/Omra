@@ -4,13 +4,12 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 
 @Component({
-  selector: 'app-first-destination',
-  templateUrl: './first-destination.component.html',
-  styleUrls: ['./first-destination.component.css'],
+  selector: 'app-second-destination',
+  templateUrl: './second-destination.component.html',
+  styleUrls: ['./second-destination.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-
-export class FirstDestinationComponent {
+export class SecondDestinationComponent {
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
@@ -19,7 +18,7 @@ export class FirstDestinationComponent {
   faTag = faTag
   faChevronLeft = faChevronLeft
   faChevronRight = faChevronRight
-  
+
   selectedRoom: string = 'roombox1';
   checkRoom(value: string) {
     this.selectedRoom = value;
@@ -35,4 +34,3 @@ export class FirstDestinationComponent {
     console.log(index, prevIndex);
   };
 }
-

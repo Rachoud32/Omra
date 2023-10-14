@@ -32,6 +32,7 @@
               "node_modules/lightgallery/css/lightgallery.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/css-star-rating/css/star-rating.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
             ],
             "scripts": [
