@@ -1,20 +1,8 @@
 <div class="row mt-5">
-  <div
-    ng-app="services-list"
-    ng-controller="myCtrl"
-    class="col-lg-9 services-list"
-  >
+  <div ng-app="services-list" ng-controller="myCtrl" class="col-lg-9 services-list">
     <label class="mb-4">
-      <input
-        type="radio"
-        name="radio"
-        value="flightbox1"
-        [value]="option1"
-        [(ngModel)]="selectedOption"
-        class="service-check-box"
-        id="flight-box-1"
-        disabled
-      />
+      <input type="radio" name="radio" value="flightbox1" [(ngModel)]="selectedFlight" class="service-check-box"
+        id="flight-box-1" disabled />
       <div class="box">
         <div class="row m-0">
           <div class="col-lg-3 service ps-0">
@@ -40,9 +28,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">Direct</span>
@@ -79,9 +65,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">Direct</span>
@@ -103,9 +87,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-lg-3 d-flex justify-content-between flex-column align-items-end"
-              >
+              <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
                     1,200<span>TND</span>
@@ -114,10 +96,7 @@
                   </div>
                 </div>
                 <div class="link float-end">
-                  <button
-                    class="color-btn service-btn-select"
-                    (click)="checkOption()"
-                  >
+                  <button class="color-btn service-btn-select" (click)="checkOption('flightbox1')">
                     Select
                   </button>
                 </div>
@@ -129,25 +108,13 @@
     </label>
 
     <label class="mb-4">
-      <input
-        type="radio"
-        name="radio"
-        value="flightbox2"
-        [value]="option2"
-        [(ngModel)]="selectedOption"
-        class="service-check-box"
-        id="flight-box-2"
-        disabled
-      />
+      <input type="radio" name="radio" value="flightbox2" [(ngModel)]="selectedFlight" class="service-check-box"
+        id="flight-box-2" disabled />
       <div class="box">
         <div class="row m-0">
           <div class="col-lg-3 service ps-0">
             <div id="service-box-pic" class="image-box">
-              <img
-                src="assets/flight/qatar-airways.svg"
-                class="d-block w-100"
-                alt=""
-              />
+              <img src="assets/flight/qatar-airways.svg" class="d-block w-100" alt="" />
             </div>
           </div>
           <div class="col-lg-9 service-details">
@@ -168,9 +135,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">1 stop</span>
@@ -207,9 +172,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">Direct</span>
@@ -231,9 +194,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-lg-3 d-flex justify-content-between flex-column align-items-end"
-              >
+              <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
                     1,200<span>TND</span>
@@ -241,10 +202,7 @@
                   </div>
                 </div>
                 <div class="link float-end">
-                  <button
-                    class="color-btn service-btn-select"
-                    (click)="checkOption2()"
-                  >
+                  <button class="color-btn service-btn-select" (click)="checkOption('flightbox2')">
                     Select
                   </button>
                 </div>
@@ -256,25 +214,13 @@
     </label>
 
     <label class="mb-4">
-      <input
-        type="radio"
-        name="radio"
-        value="flightbox3"
-        [value]="option3"
-        [(ngModel)]="selectedOption"
-        class="service-check-box"
-        id="flight-box-3"
-        disabled
-      />
+      <input type="radio" name="radio" value="flightbox3" [(ngModel)]="selectedFlight" class="service-check-box"
+        id="flight-box-3" disabled />
       <div class="box">
         <div class="row m-0">
           <div class="col-lg-3 service ps-0">
             <div id="service-box-pic" class="image-box">
-              <img
-                src="assets/flight/saudi-airlines.svg"
-                class="d-block w-100"
-                alt=""
-              />
+              <img src="assets/flight/saudi-airlines.svg" class="d-block w-100" alt="" />
             </div>
           </div>
           <div class="col-lg-9 service-details">
@@ -295,9 +241,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">2 stops</span>
@@ -334,9 +278,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">1 stop</span>
@@ -358,9 +300,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-lg-3 d-flex justify-content-between flex-column align-items-end"
-              >
+              <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
                     1,200<span>TND</span>
@@ -369,10 +309,7 @@
                   </div>
                 </div>
                 <div class="link float-end">
-                  <button
-                    class="color-btn service-btn-select"
-                    (click)="checkOption3()"
-                  >
+                  <button class="color-btn service-btn-select" (click)="checkOption('flightbox3')">
                     Select
                   </button>
                 </div>
@@ -384,16 +321,8 @@
     </label>
 
     <label class="mb-4">
-      <input
-        type="radio"
-        name="radio"
-        value="flightbox4"
-        [value]="option4"
-        [(ngModel)]="selectedOption"
-        class="service-check-box"
-        id="flight-box-4"
-        disabled
-      />
+      <input type="radio" name="radio" value="flightbox4" [(ngModel)]="selectedFlight" class="service-check-box"
+        id="flight-box-4" disabled />
       <div class="box">
         <div class="row m-0">
           <div class="col-lg-3 service ps-0">
@@ -419,9 +348,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">Direct</span>
@@ -458,9 +385,7 @@
                     </div>
                   </div>
 
-                  <div
-                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center"
-                  >
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 middle-block text-center">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
                     <span class="total-stop">Direct</span>
@@ -482,9 +407,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-lg-3 d-flex justify-content-between flex-column align-items-end"
-              >
+              <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
                     1,200<span>TND</span>
@@ -492,10 +415,7 @@
                   </div>
                 </div>
                 <div class="link float-end">
-                  <button
-                    class="color-btn service-btn-select"
-                    (click)="checkOption4()"
-                  >
+                  <button class="color-btn service-btn-select" (click)="checkOption('flightbox4')">
                     Select
                   </button>
                 </div>
@@ -506,7 +426,7 @@
       </div>
     </label>
   </div>
-    <!-- Sidebar
+  <!-- Sidebar
   ============================================= -->
   <div class="booking-sidebar sticky-sidebar-wrap col-lg-3 mb-5">
     <div class="sidebar-widgets-wrap">
@@ -520,20 +440,13 @@
             <div class="search-item">
               <div class="search-details">
                 <div class="search-details-block d-flex align-items-center">
-                  <fa-icon
-                    class="category-icon me-3"
-                    [icon]="faPlane"
-                  ></fa-icon>
+                  <fa-icon class="category-icon me-3" [icon]="faPlane"></fa-icon>
                   <div class="search-details-block-right">
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
+                    <div class="d-flex align-items-center justify-content-between">
                       <div class="search-details-label">Departure</div>
                       <div>Sfax, TN</div>
                     </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
+                    <div class="d-flex align-items-center justify-content-between">
                       <div class="search-details-label">Arrival</div>
                       <div>Jeddah, SA</div>
                     </div>
@@ -554,10 +467,7 @@
             </div>
             <div class="search-total-price">1220<span>TND</span></div>
           </div>
-          <button
-            routerLink="/result/first-destination"
-            class="tab-action-btn-next color-btn w-100"
-          >
+          <button routerLink="/result/first-destination" class="tab-action-btn-next color-btn w-100">
             Continue
           </button>
         </div>
