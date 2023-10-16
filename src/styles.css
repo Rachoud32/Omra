@@ -2075,7 +2075,7 @@ input[type=checkbox]:disabled {
 
 .search-total-price {
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--omra-base);
 }
 
@@ -2307,6 +2307,11 @@ input[type=checkbox]:disabled {
    font-size: 12px;
    line-height: 12px;
    text-transform: uppercase;
+}
+
+.hotel-box .hotel .best-rate-notice span {
+    font-size: 12px;
+    vertical-align: super;
 }
 
 .hotel-box .hotel .hotel-rating {
