@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransferComponent } from './transfer.component';
+import { TransferComponent } from './first-transfer.component';
 
 describe('TransferComponent', () => {
   let component: TransferComponent;

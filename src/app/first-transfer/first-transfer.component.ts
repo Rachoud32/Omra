@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { faPlane, faArrowRightLong, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-transfer',
-  templateUrl: './transfer.component.html',
-  styleUrls: ['./transfer.component.css']
+  selector: 'app-first-transfer',
+  templateUrl: './first-transfer.component.html',
+  styleUrls: ['./first-transfer.component.css']
 })
-export class TransferComponent implements OnInit {
+export class FirstTransferComponent implements OnInit {
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight

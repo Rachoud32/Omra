@@ -1,5 +1,14 @@
 <div class="row mt-5">
-  <div ng-app="services-list" ng-controller="myCtrl" class="col-lg-9 services-list">
+  <div class="col-lg-12 pt-3 justify-content-start">
+    <div class="heading-box">
+      <h2 class="heading-title color-2 mb-0">Select a flight</h2>
+    </div>
+    <p>You benefit from the best rate.</p>
+  </div>
+  <div ng-app="services-list" class="col-lg-9 services-list">
+    <div class="col-lg-12">
+      <app-top-filter></app-top-filter>
+    </div>
     <label class="mb-4">
       <input type="radio" name="radio" value="flightbox1" [(ngModel)]="selectedFlight" class="service-check-box"
         id="flight-box-1" disabled />
@@ -90,7 +99,7 @@
               <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
-                    1,200<span>TND</span>
+                    1,200<span>$</span>
                     <p class="mb-1 text-end">per motamar</p>
                     <p class="notice mb-1">only 2 left</p>
                   </div>
@@ -197,7 +206,7 @@
               <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
-                    1,200<span>TND</span>
+                    1,200<span>$</span>
                     <p class="mb-1 text-end">per motamar</p>
                   </div>
                 </div>
@@ -303,7 +312,7 @@
               <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
-                    1,200<span>TND</span>
+                    1,200<span>$</span>
                     <p class="mb-1 text-end">per motamar</p>
                     <p class="notice mb-1">only 1 left</p>
                   </div>
@@ -410,7 +419,7 @@
               <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end">
                 <div class="text-end mb-3">
                   <div class="service-price">
-                    1,200<span>TND</span>
+                    1,200<span>$</span>
                     <p class="mb-1 text-end">per motamar</p>
                   </div>
                 </div>
@@ -428,29 +437,108 @@
   </div>
   <!-- Sidebar
   ============================================= -->
-  <div class="booking-sidebar sticky-sidebar-wrap col-lg-3 mb-5">
-    <div class="sidebar-widgets-wrap">
+  <div class="booking-sidebar sticky-sidebar-wrap col-lg-3">
+    <div class="sidebar-widgets-wrap mb-5">
       <div class="search-sidebar-details">
         <div class="search-sidebar-header">
-          <h5 class="">4 Flight(s) Found</h5>
-          <p class="m-0">Matching Your Search</p>
+          <h5 class="title">Your Booking(s)</h5>
         </div>
         <div class="search-sidebar-content">
           <div class="search-sidebar-list">
             <div class="search-item">
               <div class="search-details">
                 <div class="search-details-block d-flex align-items-center">
-                  <fa-icon class="category-icon me-3" [icon]="faPlane"></fa-icon>
-                  <div class="search-details-block-right">
+                  <div class="search-details-block-content">
                     <div class="d-flex align-items-center justify-content-between">
-                      <div class="search-details-label">Departure</div>
-                      <div>Sfax, TN</div>
+                      <a class="search-details-label" data-bs-toggle="collapse" href="#details-flight" role="button" aria-expanded="false" aria-controls="details-flight">
+                        <i class="icon-line-plus me-1"></i>Flight
+                      </a>
+                      <div class="search-sidebar-price">125<span>$</span></div>
+                    </div>
+                    <div class="collapse details-content" id="details-flight">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Departure</div>
+                          <div>Sfax, TN</div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Arrival</div>
+                          <div>Jeddah, SA</div>
+                        </div>
+                      </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
-                      <div class="search-details-label">Arrival</div>
-                      <div>Jeddah, SA</div>
+                      <a class="search-details-label" data-bs-toggle="collapse" href="#details-destination" role="button" aria-expanded="false" aria-controls="details-destination">
+                        <i class="icon-line-plus me-1"></i>1st destination
+                      </a>
+                      <div class="search-sidebar-price">125<span>$</span></div>
                     </div>
-                    <div class="text-end">Round trip</div>
+                    <div class="collapse details-content" id="details-destination">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Hotel</div>
+                          <div>Swissotel Al Maqam Makkah</div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Room</div>
+                          <div>Two Bedroom Suite City View</div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Ground Serv.</div>
+                          <div>Visit to AL-BAQI</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a class="search-details-label" data-bs-toggle="collapse" href="#details-destination2" role="button" aria-expanded="false" aria-controls="details-destination2">
+                        <i class="icon-line-plus me-1"></i>2nd destination
+                      </a>
+                      <div class="search-sidebar-price">125<span>$</span></div>
+                    </div>
+                    <div class="collapse details-content" id="details-destination2">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Hotel</div>
+                          <div>Swissotel Al Maqam Makkah</div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Room</div>
+                          <div>Two Bedroom Suite City View</div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Ground Serv.</div>
+                          <div>Visit to AL-BAQI</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a class="search-details-label" data-bs-toggle="collapse" href="#details-transfer" role="button" aria-expanded="false" aria-controls="details-transfer">
+                        <i class="icon-line-plus me-1"></i>1st Transfer
+                      </a>
+                      <div class="search-sidebar-price">125<span>$</span></div>
+                    </div>
+                    <div class="collapse details-content" id="details-transfer">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Car</div>
+                          <div>Sedan Car - Toyota Camry</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a class="search-details-label" data-bs-toggle="collapse" href="#details-transfer2" role="button" aria-expanded="false" aria-controls="details-transfer2">
+                        <i class="icon-line-plus me-1"></i>2nd Transfer
+                      </a>
+                      <div class="search-sidebar-price">125<span>$</span></div>
+                    </div>
+                    <div class="collapse details-content" id="details-transfer2">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="search-details-label">Car</div>
+                          <div>Sedan Car - Toyota Camry</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -465,7 +553,7 @@
               Total
               <div class="price-tax">Tax included</div>
             </div>
-            <div class="search-total-price">1220<span>TND</span></div>
+            <div class="search-total-price">1220<span>$</span></div>
           </div>
           <button routerLink="/result/first-destination" class="tab-action-btn-next color-btn w-100">
             Continue
@@ -473,6 +561,7 @@
         </div>
       </div>
     </div>
+    <app-sidebar-filter></app-sidebar-filter>
   </div>
   <!-- .sidebar end -->
 </div>
