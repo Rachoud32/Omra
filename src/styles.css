@@ -2344,6 +2344,16 @@ input[type=checkbox]:disabled {
     font-size: 14px;
 }
 
+.hotel-box .carousel.carousel-fade .carousel-item {
+    display: block;
+    opacity: 0;
+    transition: opacity ease-out .7s;
+}
+
+.hotel-box .carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}
+
 .hotel-box .carousel-controls {
     position: absolute;
     top: 0;
