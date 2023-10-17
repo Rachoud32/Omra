@@ -21,7 +21,7 @@ export class SearchFormComponent implements OnInit {
     autoplaySpeed: 3000,
     dots: false,
     navSpeed: 1000,
-    navText: [ '<i class="icon-line-chevron-left"></i>', '<i class="icon-line-chevron-right"></i>'],
+    navText: ['<i class="icon-line-chevron-left"></i>', '<i class="icon-line-chevron-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -53,7 +53,7 @@ export class SearchFormComponent implements OnInit {
   searchFormCustom?: FormGroup
   searchType = 'hotel'
   numAdults = 1
-  numAdultsHotel= 1
+  numAdultsHotel = 1
   numAdultsCustom = 1
   numChildren = 0
   numChildrenHotel = 0
@@ -70,9 +70,9 @@ export class SearchFormComponent implements OnInit {
     this.searchFormHotel = new FormGroup({
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
-      passengers: new FormArray([new FormGroup({
+      passengersHotel: new FormArray([new FormGroup({
         adults: new FormControl(1),
-        children: new FormArray([]),
+        childrenHotel: new FormArray([]),
         room: new FormControl("Room 1"),
       })]),
     })
@@ -103,15 +103,17 @@ export class SearchFormComponent implements OnInit {
         destinationTwo: new FormControl('', [Validators.required]),
         nights: new FormControl(0, [Validators.required]),
       }),
-      passengerCustom: new FormArray([new FormGroup({
+      passengersCustom: new FormArray([new FormGroup({
         adults: new FormControl(1),
         childrenCustom: new FormArray([]),
         room: new FormControl("Room 1"),
       })]),
     })
+    this.searchFormCustom?.get('flightmode')?.setValue('Umrah package with flight')
   }
-  
+
   onChangeType() {
+
     console.log(this.searchType);
   }
 
@@ -151,9 +153,9 @@ export class SearchFormComponent implements OnInit {
 
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
-/***************************
-    Hotel Section
-************************** */
+  /***************************
+      Hotel Section
+  ************************** */
   get passengersHotel(): FormArray {
     return this.searchFormHotel?.get('passengersHotel') as FormArray
   }
@@ -166,7 +168,7 @@ export class SearchFormComponent implements OnInit {
     if (this.passengersHotel.length < 3) {
       this.passengersHotel.push(new FormGroup({
         adults: new FormControl(1),
-        children: new FormArray([]),
+        childrenHotel: new FormArray([]),
         room: new FormControl("Room " + (this.passengersHotel.length + 1)),
       }))
       this.numAdultsHotel += 1
@@ -176,14 +178,14 @@ export class SearchFormComponent implements OnInit {
   deletePassengerhotel() {
     if (this.passengersHotel.length > 1) {
       this.numAdultsHotel = this.numAdultsHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('adults')?.value
-      this.numChildrenHotel = this.numChildrenHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('children')?.value.length
+      this.numChildrenHotel = this.numChildrenHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('childrenHotel')?.value.length
       this.passengersHotel.removeAt(this.passengersHotel.length - 1)
     }
   }
 
   pluschildrenhotel(i: any) {
-    if (this.children(i).length < 4) {
-      this.children(i).push(new FormGroup({
+    if (this.childrenHotel(i).length < 4) {
+      this.childrenHotel(i).push(new FormGroup({
         age: new FormControl("")
       }))
       this.numChildrenHotel += 1
@@ -191,8 +193,8 @@ export class SearchFormComponent implements OnInit {
   }
 
   minuschildrenhotel(i: any) {
-    if (this.children(i).length > 0) {
-      this.children(i).removeAt(this.children(i).length - 1)
+    if (this.childrenHotel(i).length > 0) {
+      this.childrenHotel(i).removeAt(this.childrenHotel(i).length - 1)
       this.numChildrenHotel -= 1
     }
   }
@@ -215,9 +217,9 @@ export class SearchFormComponent implements OnInit {
     console.log(this.searchFormPackage?.value);
   }
 
-/***************************
-    Package Section
-************************** */
+  /***************************
+      Package Section
+  ************************** */
   get passengers(): FormArray {
     return this.searchFormPackage?.get('passengers') as FormArray
   }
@@ -279,9 +281,9 @@ export class SearchFormComponent implements OnInit {
     console.log(this.searchFormPackage?.value);
   }
 
-/***************************
-    Custom Section
-************************** */
+  /***************************
+      Custom Section
+  ************************** */
   get passengersCustom(): FormArray {
     return this.searchFormCustom?.get('passengersCustom') as FormArray
   }
@@ -291,11 +293,11 @@ export class SearchFormComponent implements OnInit {
   }
 
   get firstDestination(): FormGroup {
-    return this.passengersCustom.get('firstDestination') as FormGroup
+    return this.searchFormCustom?.get('firstDestination') as FormGroup
   }
 
   get secondDestination(): FormGroup {
-    return this.passengersCustom.get('secondDestination') as FormGroup
+    return this.searchFormCustom?.get('secondDestination') as FormGroup
   }
 
   addPassengerCustom() {
@@ -312,7 +314,7 @@ export class SearchFormComponent implements OnInit {
   deletePassengerCustom() {
     if (this.passengersCustom.length > 1) {
       this.numAdultsCustom = this.numAdultsCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('adults')?.value
-      this.numChildrenCustom = this.numChildrenCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('childrenmap')?.value.length
+      this.numChildrenCustom = this.numChildrenCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('childrenCustom')?.value.length
       this.passengersCustom.removeAt(this.passengersCustom.length - 1)
     }
   }

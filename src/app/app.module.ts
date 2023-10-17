@@ -58,7 +58,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     NgxDaterangepickerMd.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3500,
-      positionClass:'toast-top-right',
+      positionClass: 'toast-top-right',
       progressBar: true,
       preventDuplicates: true,
       enableHtml: true
