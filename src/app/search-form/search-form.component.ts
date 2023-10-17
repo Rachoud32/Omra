@@ -48,13 +48,16 @@ export class SearchFormComponent implements OnInit {
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
   toDate: NgbDate | null;
+  searchFormHotel?: FormGroup
   searchFormPackage?: FormGroup
-  searchFormMap?: FormGroup
-  omraType = 'package'
+  searchFormCustom?: FormGroup
+  searchType = 'hotel'
   numAdults = 1
-  numAdultsMap = 1
+  numAdultsHotel= 1
+  numAdultsCustom = 1
   numChildren = 0
-  numChildrenMap = 0
+  numChildrenHotel = 0
+  numChildrenCustom = 0
   dropdownOpen = false;
   todayDate: NgbDate | null;
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
@@ -64,6 +67,15 @@ export class SearchFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchFormHotel = new FormGroup({
+      fromDate: new FormControl({}),
+      toDate: new FormControl({}),
+      passengers: new FormArray([new FormGroup({
+        adults: new FormControl(1),
+        children: new FormArray([]),
+        room: new FormControl("Room 1"),
+      })]),
+    })
     this.searchFormPackage = new FormGroup({
       departureCity: new FormControl('', [Validators.required]),
       period: new FormControl('', [Validators.required]),
@@ -75,7 +87,7 @@ export class SearchFormComponent implements OnInit {
         room: new FormControl("Room 1"),
       })]),
     })
-    this.searchFormMap = new FormGroup({
+    this.searchFormCustom = new FormGroup({
       flightmode: new FormControl(''),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
@@ -91,17 +103,18 @@ export class SearchFormComponent implements OnInit {
         destinationTwo: new FormControl('', [Validators.required]),
         nights: new FormControl(0, [Validators.required]),
       }),
-      passengersmap: new FormArray([new FormGroup({
+      passengerCustom: new FormArray([new FormGroup({
         adults: new FormControl(1),
-        childrenmap: new FormArray([]),
+        childrenCustom: new FormArray([]),
         room: new FormControl("Room 1"),
       })]),
     })
   }
+  
   onChangeType() {
-    console.log(this.omraType);
-
+    console.log(this.searchType);
   }
+
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
@@ -138,13 +151,76 @@ export class SearchFormComponent implements OnInit {
 
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
-  // **************************
-  // Package Section
-  // **************************
+/***************************
+    Hotel Section
+************************** */
+  get passengersHotel(): FormArray {
+    return this.searchFormHotel?.get('passengersHotel') as FormArray
+  }
+
+  childrenHotel(i: any): FormArray {
+    return this.passengersHotel.at(i)?.get('childrenHotel') as FormArray
+  }
+
+  addPassengerhotel() {
+    if (this.passengersHotel.length < 3) {
+      this.passengersHotel.push(new FormGroup({
+        adults: new FormControl(1),
+        children: new FormArray([]),
+        room: new FormControl("Room " + (this.passengersHotel.length + 1)),
+      }))
+      this.numAdultsHotel += 1
+    }
+  }
+
+  deletePassengerhotel() {
+    if (this.passengersHotel.length > 1) {
+      this.numAdultsHotel = this.numAdultsHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('adults')?.value
+      this.numChildrenHotel = this.numChildrenHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('children')?.value.length
+      this.passengersHotel.removeAt(this.passengersHotel.length - 1)
+    }
+  }
+
+  pluschildrenhotel(i: any) {
+    if (this.children(i).length < 4) {
+      this.children(i).push(new FormGroup({
+        age: new FormControl("")
+      }))
+      this.numChildrenHotel += 1
+    }
+  }
+
+  minuschildrenhotel(i: any) {
+    if (this.children(i).length > 0) {
+      this.children(i).removeAt(this.children(i).length - 1)
+      this.numChildrenHotel -= 1
+    }
+  }
+
+  plusadultshotel(i: any) {
+    if (this.passengersHotel.at(i).get('adults')?.value < 5) {
+      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value + 1)
+      this.numAdultsHotel += 1
+    }
+  }
+
+  minusadultshotel(i: any) {
+    if (this.passengersHotel.at(i).get('adults')?.value > 1) {
+      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value - 1)
+      this.numAdultsHotel -= 1
+    }
+  }
+
+  searchHotel() {
+    console.log(this.searchFormPackage?.value);
+  }
+
+/***************************
+    Package Section
+************************** */
   get passengers(): FormArray {
     return this.searchFormPackage?.get('passengers') as FormArray
   }
-
 
   children(i: any): FormArray {
     return this.passengers.at(i)?.get('children') as FormArray
@@ -203,50 +279,55 @@ export class SearchFormComponent implements OnInit {
     console.log(this.searchFormPackage?.value);
   }
 
-  // **************************
-  // Map Section
-  // **************************
-  get passengersmap(): FormArray {
-    return this.searchFormMap?.get('passengersmap') as FormArray
+/***************************
+    Custom Section
+************************** */
+  get passengersCustom(): FormArray {
+    return this.searchFormCustom?.get('passengersCustom') as FormArray
   }
-  childrenmap(i: any): FormArray {
-    return this.passengersmap.at(i)?.get('childrenmap') as FormArray
+
+  childrenCustom(i: any): FormArray {
+    return this.passengersCustom.at(i)?.get('childrenCustom') as FormArray
   }
 
   get firstDestination(): FormGroup {
-    return this.passengersmap.get('firstDestination') as FormGroup
+    return this.passengersCustom.get('firstDestination') as FormGroup
   }
+
   get secondDestination(): FormGroup {
-    return this.passengersmap.get('secondDestination') as FormGroup
+    return this.passengersCustom.get('secondDestination') as FormGroup
   }
-  addPassengermap() {
-    if (this.passengersmap.length < 3) {
-      this.passengersmap.push(new FormGroup({
+
+  addPassengerCustom() {
+    if (this.passengersCustom.length < 3) {
+      this.passengersCustom.push(new FormGroup({
         adults: new FormControl(1),
-        childrenmap: new FormArray([]),
-        room: new FormControl("Room " + (this.passengersmap.length + 1)),
+        childrenCustom: new FormArray([]),
+        room: new FormControl("Room " + (this.passengersCustom.length + 1)),
       }))
-      this.numAdults += 1
+      this.numAdultsCustom += 1
     }
   }
-  deletePassengermap() {
-    if (this.passengersmap.length > 1) {
-      this.numAdults = this.numAdults - this.passengersmap.at(this.passengersmap.length - 1).get('adults')?.value
-      this.numChildrenMap = this.numChildrenMap - this.passengersmap.at(this.passengersmap.length - 1).get('childrenmap')?.value.length
-      this.passengersmap.removeAt(this.passengersmap.length - 1)
+
+  deletePassengerCustom() {
+    if (this.passengersCustom.length > 1) {
+      this.numAdultsCustom = this.numAdultsCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('adults')?.value
+      this.numChildrenCustom = this.numChildrenCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('childrenmap')?.value.length
+      this.passengersCustom.removeAt(this.passengersCustom.length - 1)
     }
   }
 
   plusNightsFirstDestionation() {
-    const nightsFormControl = this.searchFormMap?.get('firstDestination')?.get('nights');
+    const nightsFormControl = this.searchFormCustom?.get('firstDestination')?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;
       currentNightsValue += 1;
       nightsFormControl.setValue(currentNightsValue);
     }
   }
+
   minusNightsFirstDestionation() {
-    const nightsFormControl = this.searchFormMap?.get('firstDestination')?.get('nights');
+    const nightsFormControl = this.searchFormCustom?.get('firstDestination')?.get('nights');
     if (nightsFormControl && nightsFormControl.value > 0) {
       let currentNightsValue = nightsFormControl.value;
       currentNightsValue -= 1;
@@ -255,15 +336,16 @@ export class SearchFormComponent implements OnInit {
   }
 
   plusNightsSecondDestionation() {
-    const nightsFormControl = this.searchFormMap?.get('secondDestination')?.get('nights');
+    const nightsFormControl = this.searchFormCustom?.get('secondDestination')?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;
       currentNightsValue += 1;
       nightsFormControl.setValue(currentNightsValue);
     }
   }
+
   minusNightsSecondDestionation() {
-    const nightsFormControl = this.searchFormMap?.get('secondDestination')?.get('nights');
+    const nightsFormControl = this.searchFormCustom?.get('secondDestination')?.get('nights');
     if (nightsFormControl && nightsFormControl.value > 0) {
       let currentNightsValue = nightsFormControl.value;
       currentNightsValue -= 1;
@@ -271,35 +353,38 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  pluschildrenmap(i: any) {
-    if (this.childrenmap(i).length < 4) {
-      this.childrenmap(i).push(new FormGroup({
+  pluschildrenCustom(i: any) {
+    if (this.childrenCustom(i).length < 4) {
+      this.childrenCustom(i).push(new FormGroup({
         age: new FormControl("")
       }))
-      this.numChildrenMap += 1
+      this.numChildrenCustom += 1
     }
   }
-  minuschildrenmap(i: any) {
-    if (this.childrenmap(i).length > 0) {
-      this.childrenmap(i).removeAt(this.childrenmap(i).length - 1)
-      this.numChildrenMap -= 1
+
+  minuschildrenCustom(i: any) {
+    if (this.childrenCustom(i).length > 0) {
+      this.childrenCustom(i).removeAt(this.childrenCustom(i).length - 1)
+      this.numChildrenCustom -= 1
     }
   }
-  plusadultsmap(i: any) {
-    if (this.passengersmap.at(i).get('adults')?.value < 5) {
-      this.passengersmap.at(i).get('adults')?.setValue(this.passengersmap.at(i).get('adults')?.value + 1)
-      this.numAdultsMap += 1
+
+  plusadultsCustom(i: any) {
+    if (this.passengersCustom.at(i).get('adults')?.value < 5) {
+      this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value + 1)
+      this.numAdultsCustom += 1
     }
   }
-  minusadultsmap(i: any) {
-    if (this.passengersmap.at(i).get('adults')?.value > 1) {
-      this.passengersmap.at(i).get('adults')?.setValue(this.passengersmap.at(i).get('adults')?.value - 1)
-      this.numAdultsMap -= 1
+
+  minusadultsCustom(i: any) {
+    if (this.passengersCustom.at(i).get('adults')?.value > 1) {
+      this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value - 1)
+      this.numAdultsCustom -= 1
     }
   }
 
   searchMap() {
-    console.log(this.searchFormMap?.value);
+    console.log(this.searchFormCustom?.value);
   }
 
 }
