@@ -15,8 +15,8 @@
     --omra-light-gray-rgb: 238, 238, 238;
     --omra-white: #ffffff;
     --omra-white-rgb: 255, 255, 255;
-    --omra-black: #485b5c;
-    --omra-black-rgb: 72, 91, 92;
+    --omra-black: #212529;
+    --omra-black-rgb: 33, 37, 41;
     --omra-base: #7d6a4c;
     --omra-base-rgb: 0, 63, 123;
     --omra-second: #c9a96a;
@@ -112,6 +112,25 @@ img {
 .tjustify {
     text-align: justify;
 }
+
+input:focus { 
+    outline: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid var(--omra-light-gray);
+    -webkit-text-fill-color: var(--omra-gray);
+    -webkit-box-shadow: 0 0 0px 1000px var(--omra-white) inset;
+    transition: background-color 5000s ease-in-out 0s;
+} 
 
 .border-start,
 .border-end {
@@ -295,6 +314,18 @@ input[type=checkbox]:disabled {
     height: 750px;
 }
 
+/* .search-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    top: -10px;
+    left: 0;
+    background: var(--omra-black);
+    mix-blend-mode: multiply;
+} */
+
 .search-box {
     position: relative;
     padding: 20px 0 80px;
@@ -318,11 +349,11 @@ input[type=checkbox]:disabled {
 }
 
 .search-container {
-    box-shadow: 0 0 50px 6px rgb(0 0 0 / 7%);
+    box-shadow: 0 0 50px 6px rgb(0 0 0 / 10%);
     background:#fff;
     background-size: auto;
     background-position: 100% 100%;
-    padding: 25px 30px;
+    padding: 30px 30px 25px;
     position: relative;
 }
 
@@ -386,10 +417,12 @@ input[type=checkbox]:disabled {
 .input-group p {
     padding: 11px 20px;
     font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .input-group span {
     padding: 11px 20px;
+    letter-spacing: 1px;
 }
 
 .bi::before,
@@ -455,15 +488,23 @@ input[type=checkbox]:disabled {
     flex: 1 !important;
 }
 
-.category-item {
+.category-box [type="radio"]:checked + label:before, 
+.category-box [type="radio"]:not(:checked) + label:before,
+.category-box [type="radio"]:checked + label::after, 
+.category-box [type="radio"]:not(:checked) + label::after {
+    display: none;
+}
+
+.category-box [type="radio"]:checked + .category-item,
+.category-box [type="radio"]:not(:checked) + .category-item  {
     position: relative;
     background: var(--omra-white);
     color: var(--omra-gray);
     padding: 15px 40px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 28px;
-    letter-spacing: 0.2em;
+    letter-spacing: .1em;
     border-right: 1px solid #eee;
     text-transform: uppercase;
     justify-content: center;
@@ -473,52 +514,59 @@ input[type=checkbox]:disabled {
     transition: all .5s linear;
 }
 
-.category-item:before {
+.category-box:last-child [type="radio"]:checked + .category-item,
+.category-box:last-child [type="radio"]:not(:checked) + .category-item {
+    border-right: 0px solid #eee;
+}
+
+.category-box [type="radio"]:checked + .category-item::before,
+.category-box [type="radio"]:not(:checked) + .category-item::before {
     content: '';
     display: block;
+    position: absolute;
+    height: 4px;
+    top: 0;
     width: 0%;
-    height: 3px;
-    position: absolute;
-    top: 0;
     background: var(--omra-second);
-    transition: all .6s linear;
-    z-index: 5;
+    border: 0;
+    transition: all .5s linear;
 }
 
-.category-item::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    top: 0;
+.category-box [type="radio"]:checked + .category-item:hover,
+.category-box [type="radio"]:not(:checked) + .category-item:hover {
     background: #fff;
-    transition: all .3s linear;
-    z-index: 1;
-}
-
-.category-item i {
-    color: var(--omra-base);
-    transition: all .3s linear;
-}
-
-.category-item:hover {
     box-shadow: 0 -10px 20px -4px rgb(0 0 0 / 0%) inset;
 }
 
-.category-item:hover i,
-.category-item:hover svg {
-    color: var(--omra-second);
-    fill: var(--omra-second);
+.category-box [type="radio"]:checked + .category-item {
+    background: #fff;
+    box-shadow: 0 -10px 20px -4px rgb(0 0 0 / 0%) inset;
 }
 
-.category-item.active-category:before {
+.category-box [type="radio"]:checked + .category-item.active-category {
+    background-color: var(--omra-white);
+    color: var(--omra-base);
+    box-shadow: 0 -10px 20px -4px rgb(0 0 0 / 0%) inset;
+}
+
+.category-box [type="radio"]:checked + .category-item.active-category::before{
     width: 100%;
 }
 
+label.category-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    background: var(--omra-second);
+    border: 0;
+    transition: all .3s linear;
+}
+
 .category-item i, .category-item svg {
-    font-size: 20px;
-    width: 20px;
+    font-size: 17px;
+    width: 16px;
     margin-right: 15px;
     color: var(--omra-gray);
     fill: var(--omra-gray);
@@ -531,12 +579,6 @@ input[type=checkbox]:disabled {
 
 .category-item:hover i {
     color: var(--omra-second);
-}
-
-.active-category {
-    background-color: var(--omra-white);
-    color: var(--omra-base);
-    box-shadow: 0 -10px 20px -4px rgb(0 0 0 / 0%) inset;
 }
 
 .active-category i, .active-category svg {
@@ -581,28 +623,32 @@ input[type=checkbox]:disabled {
     color: var(--omra-white);
 }
 
-.category-active {
+/* .category-active {
     background: var(--omra-second) !important;
     border: 1px solid var(--omra-second) !important;
     color: var(--omra-white) !important;
-}
+} */
 
 .flight-mode-item label {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--omra-gray);
+    text-transform: uppercase;
 }
 
 .search-container form input[type=radio] {
     display: none;
 }
 
-
+/*-------------------------------------------------
+    Dropdown Menus
+--------------------------------------------------*/    
 .list-item {
     background: var(--omra-white);
     color: var(--omra-gray);
     transition: all .3s linear;
     padding: 0 22px;
     line-height: 47px;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.05s ease-in-out;
 }
@@ -622,9 +668,13 @@ input[type=checkbox]:disabled {
     display: none;
 }
 
-.search-container form .list-item {
+.search-container .list-item {
     font-weight: 400;
     font-size: 15px;
+}
+
+.search-container:nth-last-of-type() .list-item {
+    border-top: 1px solid blue;
 }
 
 .search-section label {
@@ -652,9 +702,13 @@ input[type=checkbox]:disabled {
     padding: 0;
 }
 
-.hotel-passengers-details label,
 .nights-nbr label {
     font-size: 15px;
+    font-weight: 400;
+}
+
+.nights-nbr label {
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -667,7 +721,9 @@ input[type=checkbox]:disabled {
 
 .custom-day {
     font-weight: 400 !important;
-    padding: 0 !important;
+    padding: 5px 0px !important;
+    min-width: 32px;
+    width: 32px;
     font-size: 14px;
     display: block;
 }
@@ -680,6 +736,17 @@ input[type=checkbox]:disabled {
 
 .custom-day.faded {
     background-color: rgb(125 106 76 / 33%) !important;
+}
+
+.custom-day.faded {
+    background-color: #ebf4f8;
+    border-color: transparent;
+    color: #000;
+    border-radius: 0;
+}
+
+.ngb-dp-navigation-select .form-select {
+    border-radius: 0 !important;
 }
 
 .ngb-dp-month-name {
@@ -708,7 +775,7 @@ input[type=checkbox]:disabled {
 
 .ngb-dp-weekday {
     color: var(--omra-base) !important;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .ngb-dp-weekday,
@@ -821,7 +888,6 @@ input[type=checkbox]:disabled {
     padding: 8px 15px;
 }
 
-
 .animate {
     animation-duration: 0.3s;
     -webkit-animation-duration: 0.3s;
@@ -870,12 +936,11 @@ input[type=checkbox]:disabled {
 
 .divider {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
     overflow: hidden;
-    margin: 0px auto 10px;
+    margin: 2px auto 15px;
     color: #E5E5E5;
     width: 100%;
     padding: 0;
@@ -930,6 +995,7 @@ input[type=checkbox]:disabled {
     padding: 11px 20px;
     font-size: 16px;
     font-weight: 400;
+    letter-spacing: 1px;
     color: #828282;
     background-color: #fff;
     background-clip: padding-box;
@@ -981,7 +1047,7 @@ input[type=checkbox]:disabled {
 /*----------------------------------------------------
     CALENDAR
 ----------------------------------------------------*/
-.second-tab .date-picker-btn {
+.search-section-tab .date-picker-btn {
     width: 100%;
     position: relative;
     z-index: 100;
@@ -992,19 +1058,19 @@ input[type=checkbox]:disabled {
     color: var(--omra-gray);
 }
 
-.second-tab .date-picker-btn:hover,
-.second-tab .date-picker-btn:active {
+.search-section-tab .date-picker-btn:hover,
+.search-section-tab .date-picker-btn:active {
     background-color: var(--omra-white) !important;
     color: var(--omra-base) !important;
     border-color: var(--omra-light-gray) !important;
 }
 
-.second-tab .date-picker-btn:hover .input-group-text,
-.second-tab .date-picker-btn:active .input-group-text {
+.search-section-tab .date-picker-btn:hover .input-group-text,
+.search-section-tab .date-picker-btn:active .input-group-text {
     border-color: var(--omra-light-gray) !important;
 }
 
-.second-tab .date-picker-btn .picker {
+.search-section-tab .date-picker-btn .picker {
     display: flex;
     justify-content: flex-start;
     align-items: center;

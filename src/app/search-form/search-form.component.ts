@@ -68,6 +68,7 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchFormHotel = new FormGroup({
+      hotelName: new FormControl('', [Validators.required]),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
       passengersHotel: new FormArray([new FormGroup({
@@ -109,7 +110,7 @@ export class SearchFormComponent implements OnInit {
         room: new FormControl("Room 1"),
       })]),
     })
-    this.searchFormCustom?.get('flightmode')?.setValue('Umrah package with flight')
+    this.searchFormCustom?.get('flightmode')?.setValue('Umrah package without flight')
   }
 
   onChangeType() {

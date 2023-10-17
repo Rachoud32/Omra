@@ -41,53 +41,85 @@
     <div class="search-category">
       <div class="row m-0 p-0">
         <div class="col-lg-2 p-0 category-box">
-          <div class="category-item d-flex">
-            <i class="icon-line-briefcase"></i>
-            <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none"
-              (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='hotel'" />
-            <label for="hotel" [class.category-active]="searchType == 'hotel'" class="sub-category">Hotel</label>
-          </div>
+          <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='hotel'" />
+          <label for="hotel" [class.active-category]="searchType == 'hotel'" class="category-item d-flex align-items-center">
+            <svg viewBox="0 0 716.67 716.67">
+              <path d="m715.78,331.61c.58-2.11.89-4.32.89-6.61,0-3.03-.54-5.94-1.53-8.62-.76-14.86-1.88-28.43-3.58-41.01-5.84-43.46-18.57-72.96-41.27-95.66-22.7-22.7-52.2-35.43-95.66-41.27-17.23-2.32-36.29-3.58-58.02-4.27-.37-52.53-3.34-83.86-26.79-107.32C462.97,0,425.8,0,358.33,0s-104.64,0-131.48,26.85c-23.46,23.45-26.42,54.79-26.79,107.32-21.73.69-40.79,1.95-58.02,4.27-43.46,5.84-72.96,18.57-95.66,41.27S10.95,231.91,5.1,275.37c-1.69,12.58-2.82,26.15-3.58,41.01-.99,2.69-1.53,5.59-1.53,8.62,0,2.29.31,4.51.89,6.61C0,358.19,0,388.79,0,425s0,66.81.89,93.39c-.58,2.11-.89,4.32-.89,6.61,0,3.03.54,5.94,1.53,8.62.76,14.86,1.88,28.43,3.58,41.01,5.84,43.46,18.57,72.96,41.27,95.66,22.7,22.7,52.2,35.43,95.66,41.27,37.97,5.11,84.81,5.11,149.63,5.11h133.33c64.83,0,111.67,0,149.63-5.11,43.46-5.84,72.96-18.57,95.66-41.27,22.7-22.7,35.43-52.2,41.27-95.66,1.69-12.58,2.82-26.15,3.58-41.01.99-2.69,1.53-5.59,1.53-8.62,0-2.29-.31-4.51-.89-6.61.89-26.58.89-57.17.89-93.39s0-66.81-.89-93.39ZM50,425c0-28.2,0-53.06.43-75h615.81c.43,21.94.43,46.8.43,75s0,53.06-.43,75H50.43c-.43-21.94-.43-46.8-.43-75ZM262.2,62.2c11.71-11.71,37.93-12.2,96.13-12.2s84.42.49,96.13,12.2c9.89,9.89,11.78,30.11,12.13,71.19-13.01-.06-26.83-.06-41.59-.06h-133.33c-14.76,0-28.58,0-41.59.06.35-41.08,2.24-61.3,12.13-71.19Zm29.46,121.13h133.33c118.65,0,178.21,0,209.94,31.73,17.76,17.76,25.58,44.25,29.02,84.94H52.71c3.44-40.69,11.26-67.17,29.02-84.94,31.73-31.73,91.29-31.73,209.94-31.73Zm133.33,483.33h-133.33c-118.65,0-178.21,0-209.94-31.73-17.76-17.76-25.58-44.25-29.02-84.93h611.25c-3.44,40.69-11.26,67.17-29.02,84.94-31.73,31.73-91.28,31.73-209.93,31.73Z" style="stroke-width:0px;"/>
+            </svg>
+            <span>Hotel</span>
+          </label>
         </div>
         <div class="col-lg-2 p-0 category-box">
-          <div class="category-item d-flex">
-            <svg viewBox="0 0 795.15 800">
-              <path
-                d="m793.86,126.78c-3.08-9.49-11.28-16.4-21.16-17.84l-89.71-13.04-40.12-81.29c-4.41-8.95-13.53-14.61-23.5-14.61s-19.09,5.66-23.5,14.61l-40.12,81.29-89.71,13.04c-9.87,1.43-18.08,8.35-21.16,17.84-3.08,9.49-.51,19.91,6.63,26.87l64.92,63.28-15.32,89.35c-1.69,9.83,2.35,19.77,10.43,25.64,8.07,5.86,18.77,6.64,27.6,2l80.24-42.19,80.24,42.19c8.83,4.64,19.53,3.87,27.6-2,8.07-5.86,12.11-15.8,10.43-25.64l-15.32-89.35,64.92-63.28c7.15-6.96,9.72-17.38,6.63-26.87Zm-118,62.23c-6.18,6.02-9,14.7-7.54,23.2l8.67,50.58-45.43-23.88c-3.82-2.01-8.01-3.01-12.2-3.01s-8.38,1-12.2,3.01l-45.43,23.88,8.67-50.58c1.46-8.5-1.36-17.18-7.54-23.2l-36.75-35.83,50.79-7.38c8.54-1.24,15.92-6.6,19.73-14.34l22.71-46.03,22.72,46.03c3.82,7.74,11.2,13.1,19.73,14.34l50.79,7.38-36.75,35.83Z"
-                style="stroke-width:0px;" />
-              <path
-                d="m779.39,467.7c-9.87-5.96-22.47-4.77-31.05,2.94-56.61,50.82-127.59,76.04-198.42,76.03-76.08,0-151.99-29.1-209.7-86.81-111.44-111.44-116.17-290.71-10.78-408.12,7.7-8.58,8.89-21.18,2.94-31.05-5.96-9.87-17.67-14.68-28.84-11.87-70.52,17.77-134.74,54.1-185.72,105.09-157.07,157.07-157.08,411.29,0,568.37,156.89,156.89,411.29,157.08,568.37,0,50.98-50.98,87.32-115.2,105.08-185.72,2.81-11.18-2-22.89-11.87-28.85Zm-130.28,177.49c-136.26,136.26-357.97,136.26-494.24,0-136.58-136.58-136.59-357.64,0-494.24,25.23-25.23,54.21-46.34,85.82-62.68-69.24,132.28-47.62,298.57,62.45,408.65,110.08,110.08,276.37,131.69,408.65,62.46-16.35,31.61-37.45,60.59-62.68,85.82Z"
-                style="stroke-width:0px;" />
+          <input type="radio" name="searchType" value="package" id="package" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='package'" />
+          <label for="package" [class.active-category]="searchType == 'package'" class="category-item d-flex">
+            <svg viewBox="0 0 802.1 802.1">
+              <path d="m763.81,358.64c-16.33-2.21-37.1,3.83-48.44,22.6-37.61,62.24-105.84,103.75-183.75,103.75-118.47,0-214.52-96.04-214.52-214.52,0-77.9,41.51-146.14,103.75-183.75,18.77-11.34,24.81-32.11,22.6-48.44-2.29-16.98-15.68-38.29-42.41-38.29C179.56,0,0,179.56,0,401.05s179.56,401.05,401.05,401.05,401.05-179.55,401.05-401.05c0-26.73-21.31-40.12-38.29-42.41Zm-362.76,387.5c-190.59,0-345.09-154.5-345.09-345.09,0-178.2,135.07-324.84,308.42-343.15-62.83,49.5-103.23,126.31-103.23,212.58,0,149.38,121.09,270.48,270.48,270.48,86.27,0,163.08-40.4,212.57-103.23-18.31,173.34-164.95,308.42-343.15,308.42Z" style="isolation:isolate; stroke-width:0px;"/>
+              <path d="m670.89,327.79c-6.83,0-12.48-1.62-15.27-2.42-9.62-2.76-20.32-7.68-35.12-14.5l-7.11-3.27c-2.29-1.05-4.79-2.2-6.47-2.9-1.68.7-4.17,1.84-6.45,2.89l-7.1,3.27c-14.83,6.82-25.52,11.75-35.14,14.51-5.62,1.61-22.71,6.5-37.86-5-14.59-11.08-15.38-28.7-15.63-34.49-.46-10.22.72-22.29,2.34-39.01l.78-8.05c.3-3.13.64-6.58.7-8.48-1.11-1.47-3.26-3.98-5.21-6.26l-5.17-6.05c-10.75-12.57-18.51-21.65-23.93-30.25-3.04-4.83-12.29-19.53-6.85-37.03,5.57-17.9,21.8-24.3,27.13-26.4,9.34-3.68,20.77-6.27,36.6-9.85l7.57-1.71c2.55-.58,5.36-1.21,7.1-1.69,1.01-1.62,2.53-4.35,3.91-6.83l3.9-6.99c8.11-14.55,13.97-25.06,20.13-33.1,3.57-4.67,14.45-18.87,33.2-18.87s29.63,14.21,33.2,18.87c6.16,8.05,12.02,18.55,20.13,33.1l3.9,6.99c1.38,2.48,2.9,5.21,3.91,6.83,1.74.48,4.54,1.11,7.09,1.69l7.57,1.71c15.83,3.58,27.26,6.17,36.6,9.85,5.33,2.1,21.57,8.5,27.13,26.4,5.44,17.49-3.81,32.19-6.85,37.02-5.41,8.6-13.17,17.67-23.91,30.23l-5.18,6.06c-1.95,2.28-4.1,4.8-5.21,6.27.06,1.9.4,5.35.7,8.47l.78,8.06c1.62,16.73,2.79,28.8,2.34,39.01-.26,5.79-1.04,23.4-15.64,34.48-7.6,5.77-15.7,7.41-22.58,7.41Zm-158.21-162.63c4.04,5.96,12.08,15.35,19.38,23.89l5.17,6.04c6.67,7.8,11.48,13.43,14.12,21.91,2.61,8.39,1.89,15.83.89,26.12l-.78,8.06c-1.05,10.88-2.21,22.79-2.25,30.28,6.61-2.4,16.47-6.94,25.5-11.09l7.09-3.27c9.38-4.32,16.13-7.42,25.13-7.42s15.75,3.11,25.09,7.41l7.12,3.28c9.03,4.15,18.89,8.7,25.5,11.1-.04-7.48-1.19-19.39-2.24-30.25l-.78-8.08c-1-10.3-1.72-17.74.9-26.13,2.63-8.47,7.44-14.1,14.1-21.89l5.18-6.05c7.31-8.54,15.34-17.94,19.38-23.9-6.57-2.23-17.94-4.8-28.28-7.14l-7.57-1.71c-9.97-2.25-17.17-3.88-24.36-9.34-7.06-5.36-10.7-11.9-15.75-20.94l-3.91-7.01c-4.94-8.85-10.32-18.52-14.38-24.63-4.05,6.11-9.44,15.78-14.38,24.63h0s-3.9,6.99-3.9,6.99c-5.05,9.05-8.69,15.59-15.75,20.95-7.2,5.46-14.4,7.09-24.37,9.35l-7.56,1.71c-10.34,2.34-21.71,4.91-28.28,7.14Zm-3.5,66.08s0,0,0,0c0,0,0,0,0,0Zm-.63-1.98s0,0,0,0c0,0,0,0,0,0Z" style="stroke-width:0px;"/>
             </svg>
-            <input type="radio" name="searchType" value="package" id="package" class="form-check-input me-2 d-none"
-              (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='package'" />
-            <label for="package" [class.category-active]="searchType == 'package'" class="sub-category">Umrah
-              package</label>
-          </div>
+            <span>Umrah package</span>
+          </label>
         </div>
         <div class="col-lg-2 p-0 category-box">
-          <div class="category-item d-flex active-category">
-            <svg viewBox="0 0 795.15 800">
-              <path
-                d="m793.86,126.78c-3.08-9.49-11.28-16.4-21.16-17.84l-89.71-13.04-40.12-81.29c-4.41-8.95-13.53-14.61-23.5-14.61s-19.09,5.66-23.5,14.61l-40.12,81.29-89.71,13.04c-9.87,1.43-18.08,8.35-21.16,17.84-3.08,9.49-.51,19.91,6.63,26.87l64.92,63.28-15.32,89.35c-1.69,9.83,2.35,19.77,10.43,25.64,8.07,5.86,18.77,6.64,27.6,2l80.24-42.19,80.24,42.19c8.83,4.64,19.53,3.87,27.6-2,8.07-5.86,12.11-15.8,10.43-25.64l-15.32-89.35,64.92-63.28c7.15-6.96,9.72-17.38,6.63-26.87Zm-118,62.23c-6.18,6.02-9,14.7-7.54,23.2l8.67,50.58-45.43-23.88c-3.82-2.01-8.01-3.01-12.2-3.01s-8.38,1-12.2,3.01l-45.43,23.88,8.67-50.58c1.46-8.5-1.36-17.18-7.54-23.2l-36.75-35.83,50.79-7.38c8.54-1.24,15.92-6.6,19.73-14.34l22.71-46.03,22.72,46.03c3.82,7.74,11.2,13.1,19.73,14.34l50.79,7.38-36.75,35.83Z"
-                style="stroke-width:0px;" />
-              <path
-                d="m779.39,467.7c-9.87-5.96-22.47-4.77-31.05,2.94-56.61,50.82-127.59,76.04-198.42,76.03-76.08,0-151.99-29.1-209.7-86.81-111.44-111.44-116.17-290.71-10.78-408.12,7.7-8.58,8.89-21.18,2.94-31.05-5.96-9.87-17.67-14.68-28.84-11.87-70.52,17.77-134.74,54.1-185.72,105.09-157.07,157.07-157.08,411.29,0,568.37,156.89,156.89,411.29,157.08,568.37,0,50.98-50.98,87.32-115.2,105.08-185.72,2.81-11.18-2-22.89-11.87-28.85Zm-130.28,177.49c-136.26,136.26-357.97,136.26-494.24,0-136.58-136.58-136.59-357.64,0-494.24,25.23-25.23,54.21-46.34,85.82-62.68-69.24,132.28-47.62,298.57,62.45,408.65,110.08,110.08,276.37,131.69,408.65,62.46-16.35,31.61-37.45,60.59-62.68,85.82Z"
-                style="stroke-width:0px;" />
+          <input type="radio" name="searchType" value="custom" id="custom" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='custom'" />
+          <label for="custom" [class.active-category]="searchType == 'custom'" class="category-item d-flex">
+            <svg viewBox="0 0 802.1 802.1">
+              <path d="m763.81,358.64c-16.33-2.21-37.1,3.83-48.44,22.6-37.61,62.24-105.84,103.75-183.75,103.75-118.47,0-214.52-96.04-214.52-214.52,0-77.9,41.51-146.14,103.75-183.75,18.77-11.34,24.81-32.11,22.6-48.44-2.29-16.98-15.68-38.29-42.41-38.29C179.56,0,0,179.56,0,401.05s179.56,401.05,401.05,401.05,401.05-179.55,401.05-401.05c0-26.73-21.31-40.12-38.29-42.41Zm-362.76,387.5c-190.59,0-345.09-154.5-345.09-345.09,0-178.2,135.07-324.84,308.42-343.15-62.83,49.5-103.23,126.31-103.23,212.58,0,149.38,121.09,270.48,270.48,270.48,86.27,0,163.08-40.4,212.57-103.23-18.31,173.34-164.95,308.42-343.15,308.42Z" style="isolation:isolate; stroke-width:0px;"/>
+              <path d="m670.89,327.79c-6.83,0-12.48-1.62-15.27-2.42-9.62-2.76-20.32-7.68-35.12-14.5l-7.11-3.27c-2.29-1.05-4.79-2.2-6.47-2.9-1.68.7-4.17,1.84-6.45,2.89l-7.1,3.27c-14.83,6.82-25.52,11.75-35.14,14.51-5.62,1.61-22.71,6.5-37.86-5-14.59-11.08-15.38-28.7-15.63-34.49-.46-10.22.72-22.29,2.34-39.01l.78-8.05c.3-3.13.64-6.58.7-8.48-1.11-1.47-3.26-3.98-5.21-6.26l-5.17-6.05c-10.75-12.57-18.51-21.65-23.93-30.25-3.04-4.83-12.29-19.53-6.85-37.03,5.57-17.9,21.8-24.3,27.13-26.4,9.34-3.68,20.77-6.27,36.6-9.85l7.57-1.71c2.55-.58,5.36-1.21,7.1-1.69,1.01-1.62,2.53-4.35,3.91-6.83l3.9-6.99c8.11-14.55,13.97-25.06,20.13-33.1,3.57-4.67,14.45-18.87,33.2-18.87s29.63,14.21,33.2,18.87c6.16,8.05,12.02,18.55,20.13,33.1l3.9,6.99c1.38,2.48,2.9,5.21,3.91,6.83,1.74.48,4.54,1.11,7.09,1.69l7.57,1.71c15.83,3.58,27.26,6.17,36.6,9.85,5.33,2.1,21.57,8.5,27.13,26.4,5.44,17.49-3.81,32.19-6.85,37.02-5.41,8.6-13.17,17.67-23.91,30.23l-5.18,6.06c-1.95,2.28-4.1,4.8-5.21,6.27.06,1.9.4,5.35.7,8.47l.78,8.06c1.62,16.73,2.79,28.8,2.34,39.01-.26,5.79-1.04,23.4-15.64,34.48-7.6,5.77-15.7,7.41-22.58,7.41Zm-158.21-162.63c4.04,5.96,12.08,15.35,19.38,23.89l5.17,6.04c6.67,7.8,11.48,13.43,14.12,21.91,2.61,8.39,1.89,15.83.89,26.12l-.78,8.06c-1.05,10.88-2.21,22.79-2.25,30.28,6.61-2.4,16.47-6.94,25.5-11.09l7.09-3.27c9.38-4.32,16.13-7.42,25.13-7.42s15.75,3.11,25.09,7.41l7.12,3.28c9.03,4.15,18.89,8.7,25.5,11.1-.04-7.48-1.19-19.39-2.24-30.25l-.78-8.08c-1-10.3-1.72-17.74.9-26.13,2.63-8.47,7.44-14.1,14.1-21.89l5.18-6.05c7.31-8.54,15.34-17.94,19.38-23.9-6.57-2.23-17.94-4.8-28.28-7.14l-7.57-1.71c-9.97-2.25-17.17-3.88-24.36-9.34-7.06-5.36-10.7-11.9-15.75-20.94l-3.91-7.01c-4.94-8.85-10.32-18.52-14.38-24.63-4.05,6.11-9.44,15.78-14.38,24.63h0s-3.9,6.99-3.9,6.99c-5.05,9.05-8.69,15.59-15.75,20.95-7.2,5.46-14.4,7.09-24.37,9.35l-7.56,1.71c-10.34,2.34-21.71,4.91-28.28,7.14Zm-3.5,66.08s0,0,0,0c0,0,0,0,0,0Zm-.63-1.98s0,0,0,0c0,0,0,0,0,0Z" style="stroke-width:0px;"/>
             </svg>
-            <input type="radio" name="searchType" value="custom" id="custom" class="form-check-input me-2 d-none"
-              (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='custom'" />
-            <label for="custom" [class.category-active]="searchType == 'custom'" class="sub-category">Umrah
-              customized</label>
-          </div>
+            <span>Umrah customized</span>
+          </label>
         </div>
       </div>
     </div>
     <div class="search-container d-flex flex-column">
       <!-- Form Hotel -->
       <form id="hotel-search-section" *ngIf="searchFormHotel && searchType == 'hotel'" [formGroup]="searchFormHotel"
-        class="first-tab z-index-3">
+        class="first-tab search-section-tab z-index-3">
         <div class="">
           <div class="row p-0">
+            <!-- Hotel -->
+            <div class="col-xl-12 mb-3">
+              <div class="dropdown w-100">
+                <button class="btn w-100" [class.selected-item]="searchFormHotel.value.hotelName" type="button"
+                 data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
+                  <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                    <div class="input-group d-flex">
+                      <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
+                      <p class="m-0" *ngIf="searchFormHotel.value.hotelName">
+                        {{ searchFormHotel.value.hotelName }}
+                      </p>
+                      <p class="m-0 text-muted" *ngIf="!searchFormHotel.value.hotelName">Hotel</p>
+                    </div>
+                    <i class="icon-line-chevron-down"></i>
+                  </div>
+                </button>
+                <div class="dropdown-menu animate slideIn">
+                  <div>
+                    <div class="select-container">
+                      <label for="Hotel1" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel1"
+                          value="Mövenpick Makkah" formControlName="hotelName" />
+                        <div class="list-item">Mövenpick Makkah</div>
+                      </label>
+                    </div>
+                    <div class="select-container">
+                      <label for="Hotel2" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel2"
+                          value="Swissotel Al Maqam Makkah" formControlName="hotelName" />
+                        <div class="list-item">Swissotel Al Maqam Makkah</div>
+                      </label>
+                    </div>
+                    <div class="select-container">
+                      <label for="Hotel3" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel3"
+                          value="Pullman ZamZam Makkah" formControlName="hotelName" />
+                        <div class="list-item">Pullman ZamZam Makkah</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Calendar -->
             <div class="col-xl-6 mb-3">
               <div class="dp-hidden position-absolute calendar">
@@ -134,45 +166,8 @@
                 </div>
               </button>
             </div>
-            <!-- Destination -->
-            <!-- <div class="col-lg-4 mb-3">
-            <div class="dropdown w-100">
-              <button [class.selected-item]="searchFormHotel.value.departureCity" class="btn btn-dark w-100"
-                type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                aria-expanded="false">
-                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                  <div class="input-group d-flex">
-                    <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0" *ngIf="searchFormHotel.value.departureCity">
-                      {{ searchFormHotel.value.departureCity }}
-                    </p>
-                    <p class="m-0 text-muted" *ngIf="!searchFormHotel.value.departureCity">
-                      Destination
-                    </p>
-                  </div>
-                  <i class="icon-line-chevron-down"></i>
-                </div>
-              </button>
-              <div class="dropdown-menu animate slideIn">
-                <div class="select-container">
-                  <label for="Tunis" class="me-3 w-100">
-                    <input type="radio" class="form-check-input me-2" name="departureCity" id="Tunis" value="Tunis"
-                      formControlName="departureCity" />
-                    <div class="list-item">Tunis</div>
-                  </label>
-                </div>
-                <div class="select-container">
-                  <label for="Djerba" class="me-3 w-100">
-                    <input type="radio" class="form-check-input me-2" name="departureCity" id="Djerba" value="Djerba"
-                      formControlName="departureCity" />
-                    <div class="list-item">Djerba</div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div> -->
             <!-- Passengers -->
-            <div class="col-lg-8 mb-3">
+            <div class="col-lg-6 mb-3">
               <div class="dropdown dropdown-guests w-100">
                 <button [class.selected-item]="
                   searchFormHotel.value.passengersHotel.length != 1 ||
@@ -372,7 +367,7 @@
       </form>
 
       <form id="package-search-section" *ngIf="searchFormPackage && searchType == 'package'"
-        [formGroup]="searchFormPackage" class="second-tab z-index-3">
+        [formGroup]="searchFormPackage" class="second-tab search-section-tab z-index-3">
         <div class="">
           <div class="row p-0">
             <!-- Destination -->
@@ -756,19 +751,19 @@
       </form>
 
       <form id="customized-search-section" *ngIf="searchFormCustom && searchType == 'custom'"
-        [formGroup]="searchFormCustom" class="third-tab z-index-3">
+        [formGroup]="searchFormCustom" class="third-tab search-section-tab z-index-3">
         <div class="row p-0">
-          <div class="col-lg-12 mb-3">
+          <div class="col-lg-12 mt-1 mb-4">
             <div class="d-flex">
               <div class="flight-mode-item d-flex me-3">
-                <input type="radio" class="flight-mode d-block form-check-input me-2" name="flightmode" id="with"
-                  value="Umrah package with flight" formControlName="flightmode" />
-                <label for="with">Umrah pack with flight</label>
-              </div>
-              <div class="flight-mode-item d-flex">
                 <input type="radio" class="flight-mode d-block form-check-input me-2" name="flightmode" id="without"
                   value="Umrah package without flight" formControlName="flightmode" />
                 <label for="without">Umrah pack without flight</label>
+              </div>
+              <div class="flight-mode-item d-flex">
+                <input type="radio" class="flight-mode d-block form-check-input me-2" name="flightmode" id="with"
+                  value="Umrah package with flight" formControlName="flightmode" />
+                <label for="with">Umrah pack with flight</label>
               </div>
             </div>
           </div>
@@ -820,7 +815,7 @@
             </button>
           </div>
           <!-- Destination 1 -->
-          <div class="col-xl-3 mb-3" formGroupName="firstDestination">
+          <div class="col-xl-6 mb-3" formGroupName="firstDestination">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -853,7 +848,7 @@
                 <hr />
                 <div
                   class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                  <label>Nights</label>
+                  <label>Number of Nights</label>
                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsFirstDestionation()">
                       -
@@ -870,7 +865,7 @@
             </div>
           </div>
           <!-- Destination 2 -->
-          <div class="col-xl-3 mb-3" formGroupName="secondDestination">
+          <div class="col-xl-6 mb-3" formGroupName="secondDestination">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -918,7 +913,7 @@
             </div>
           </div>
           <!-- Passengers -->
-          <div class="col-lg-6 mb-3">
+          <div class="col-xl-6 mb-3">
             <div class="dropdown dropdown-guests w-100">
               <button [class.selected-item]="
                   searchFormCustom.value.passengersCustom.length != 1 ||
@@ -1060,8 +1055,8 @@
               </div>
             </div>
           </div>
-          <!-- Route -->
-          <div class="col-lg-6 mb-3">
+          <!-- Road -->
+          <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -1069,7 +1064,7 @@
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-briefcase"></i></span>
                     <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Route</p>
+                    <p class="m-0 text-muted">Road</p>
                   </div>
                   <i class="icon-line-chevron-down"></i>
                 </div>
@@ -1097,7 +1092,7 @@
             </div>
           </div>
           <!-- Place of departure -->
-          <div class="col-lg-4 mb-3" *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
+          <div class="col-xl-6 mb-3" *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -1138,7 +1133,7 @@
             </div>
           </div>
           <!-- Nationality -->
-          <div class="col-lg-4 mb-3">
+          <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -1179,7 +1174,7 @@
             </div>
           </div>
           <!-- Country -->
-          <div class="col-lg-4 mb-3">
+          <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
               <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
@@ -1187,7 +1182,7 @@
                   <div class="input-group d-flex">
                     <span class="input-group-text" id="basic-addon1"><i class="icon-line-map-pin"></i></span>
                     <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Country</p>
+                    <p class="m-0 text-muted">Residence Country</p>
                   </div>
                   <div><i class="icon-line-chevron-down"></i></div>
                 </div>
