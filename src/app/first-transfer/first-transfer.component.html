@@ -6,9 +6,6 @@
     <p>You benefit from the best rate.</p>
   </div>
   <div ng-app="transfer-list" class="col-lg-9 services-list">
-    <div class="col-lg-12">
-      <app-top-filter></app-top-filter>
-    </div>
     <label class="mb-4">
       <input
         type="radio"
@@ -210,10 +207,13 @@
     </label>
 
   </div>
+
+    
         <!-- Sidebar
     ============================================= -->
     <div class="booking-sidebar sticky-sidebar-wrap col-lg-3">
-      <div class="sidebar-widgets-wrap mb-5">
+      <app-transfer-sidebar-filter></app-transfer-sidebar-filter>
+      <div class="sidebar-widgets-wrap mt-5">
         <div class="search-sidebar-details">
           <div class="search-sidebar-header">
             <h5 class="title">Your Booking(s)</h5>
@@ -339,7 +339,6 @@
           </div>
         </div>
       </div>
-      <app-sidebar-filter></app-sidebar-filter>
     </div>
     <!-- .sidebar end -->
   </div>

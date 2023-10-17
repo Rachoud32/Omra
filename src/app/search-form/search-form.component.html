@@ -221,7 +221,7 @@
                       let passenger of passengersHotel.controls;
                       let i = index
                     ">
-                      <div [formGroupName]="i" class="d-flex flex-column mb-1">
+                      <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
                         <div class="room-specifics d-flex flex-column">
                           <div class="d-flex justify-content-between">
                             <div class="room-quantity">
@@ -605,7 +605,7 @@
                         let passenger of passengers.controls;
                         let i = index
                       ">
-                      <div [formGroupName]="i" class="d-flex flex-column mb-1">
+                      <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
                         <div class="room-specifics d-flex flex-column">
                           <div class="d-flex justify-content-between">
                             <div class="room-quantity">
@@ -896,7 +896,7 @@
                 <hr />
                 <div
                   class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                  <label>Nights</label>
+                  <label>Number of Nights</label>
                   <div id="nights" class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsSecondDestionation()">
                       -
@@ -965,7 +965,7 @@
                       let passenger of passengersCustom.controls;
                       let i = index
                     ">
-                    <div [formGroupName]="i" class="d-flex flex-column mb-1">
+                    <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
                       <div class="room-specifics d-flex flex-column">
                         <div class="d-flex justify-content-between">
                           <div class="room-quantity">

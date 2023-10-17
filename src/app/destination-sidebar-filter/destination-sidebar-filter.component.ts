@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Options } from 'ngx-slider-v2';
 
 @Component({
-  selector: 'app-sidebar-filter',
-  templateUrl: './sidebar-filter.component.html',
-  styleUrls: ['./sidebar-filter.component.css']
+  selector: 'app-destination-sidebar-filter',
+  templateUrl: './destination-sidebar-filter.component.html',
+  styleUrls: ['./destination-sidebar-filter.component.css']
 })
-export class SidebarFilterComponent {
+export class DestinationSidebarFilterComponent {
   circleIcons = {
     empty: '../assets/circle-empty.svg',
     half: '../assets/circle-half.svg',

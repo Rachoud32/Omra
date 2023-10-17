@@ -23,8 +23,10 @@ import { SecondDestinationComponent } from './second-destination/second-destinat
 import { SecondTransferComponent } from './second-transfer/second-transfer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TopFilterComponent } from './top-filter/top-filter.component';
-import { SidebarFilterComponent } from './sidebar-filter/sidebar-filter.component';
 import { NgxSliderModule } from 'ngx-slider-v2';
+import { DestinationSidebarFilterComponent } from './destination-sidebar-filter/destination-sidebar-filter.component';
+import { TransferSidebarFilterComponent} from './transfer-sidebar-filter/transfer-sidebar-filter.component';
+import { FlightSidebarFilterComponent } from './flight-sidebar-filter/flight-sidebar-filter.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     SecondDestinationComponent,
     SecondTransferComponent,
     TopFilterComponent,
-    SidebarFilterComponent,
+    DestinationSidebarFilterComponent,
+    TransferSidebarFilterComponent,
+    FlightSidebarFilterComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @import 'css/responsive.css';
 @import 'node_modules/bootstrap/dist/css/bootstrap.css';
 @import 'css/font-icons.css';
@@ -63,9 +64,9 @@ body {
     font-family: var(--omra-font) !important;
     font-weight: 500 !important;
     font-size: 18px !important;
-    line-height: 1.5 !important;
+    line-height: 2 !important;
     background: #f4f5f5 !important;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 p {
@@ -90,7 +91,7 @@ a {
     text-decoration: none !important;
     color: #876F4B;
     font-weight: 400;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 a,
@@ -141,12 +142,11 @@ label {
     display: inline-block;
     font-size: 14px;
     font-weight: 400;
-    font-family: "Jost", sans-serif;
+    font-family: var(--omra-font);
     text-transform: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #828282;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
 .z-index-3 {
@@ -182,8 +182,8 @@ h6 {
     font-weight: 700 !important;
     line-height: 1.5;
     margin: 0 0 30px 0;
-    font-family: 'Jost', sans-serif;
-    letter-spacing: 0.6px;
+    font-family: var(--omra-font);
+    letter-spacing: 0.5px;
 }
 
 .logo {
@@ -275,7 +275,7 @@ input[type=checkbox] {
     transform: scale(0);
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
-    background-color: var(--omra-base);
+    background-color: var(--omra-second);
 }
   
 input[type=checkbox]:checked::before {
@@ -417,12 +417,12 @@ input[type=checkbox]:disabled {
 .input-group p {
     padding: 11px 20px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .input-group span {
     padding: 11px 20px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .bi::before,
@@ -458,7 +458,7 @@ input[type=checkbox]:disabled {
     margin: 0;
     font-weight: 400;
     color: var(--omra-base);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .color-btn {
@@ -472,7 +472,7 @@ input[type=checkbox]:disabled {
     border-radius: 0px;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #fff;
     border: 2px solid var(--omra-base);
     background: var(--omra-base);
@@ -502,9 +502,9 @@ input[type=checkbox]:disabled {
     color: var(--omra-gray);
     padding: 15px 40px;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 28px;
-    letter-spacing: .1em;
+    letter-spacing: 0.5px;
     border-right: 1px solid #eee;
     text-transform: uppercase;
     justify-content: center;
@@ -536,6 +536,11 @@ input[type=checkbox]:disabled {
 .category-box [type="radio"]:not(:checked) + .category-item:hover {
     background: #fff;
     box-shadow: 0 -10px 20px -4px rgb(0 0 0 / 0%) inset;
+}
+
+.category-box [type="radio"]:checked + .category-item:hover svg,
+.category-box [type="radio"]:not(:checked) + .category-item:hover svg {
+    fill: var(--omra-second)
 }
 
 .category-box [type="radio"]:checked + .category-item {
@@ -648,7 +653,8 @@ label.category-item::before {
     transition: all .3s linear;
     padding: 0 22px;
     line-height: 47px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #eee;
     cursor: pointer;
     transition: all 0.05s ease-in-out;
 }
@@ -657,6 +663,10 @@ label.category-item::before {
 .select-container input[type=radio]:checked+.list-item {
     background: #F9F9F9;
     color: var(--omra-second);
+}
+
+.select-container:last-child .list-item {
+    border-bottom: 0;
 }
 
 .select-container label {
@@ -690,7 +700,7 @@ label.category-item::before {
     color: var(--omra-base);
     text-transform: uppercase;
     border-radius: 0px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .hotel-specifics {
@@ -841,6 +851,11 @@ label.category-item::before {
     color: var(--omra-base)
 }
 
+.room-guest-item {
+    border-top: 1px solid #eee;
+    padding: 10px 0 0;
+}
+
 .passengers-nbr .minus,
 .passengers-nbr .plus {
     width: 30px;
@@ -855,7 +870,7 @@ label.category-item::before {
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .passengers-nbr .minus:hover,
@@ -969,7 +984,7 @@ label.category-item::before {
     font-size: 16px !important;
     font-weight: 300;
     color: var(--omra-second);
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .search-criteria-btn::after {
@@ -995,7 +1010,7 @@ label.category-item::before {
     padding: 11px 20px;
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #828282;
     background-color: #fff;
     background-clip: padding-box;
@@ -1159,7 +1174,7 @@ label.category-item::before {
     font-weight: 600;
     line-height: 52px;
     color: #ffffff;
-    font-family: 'Jost', sans-serif;
+    font-family: var(--omra-font);
     text-transform: uppercase;
 }
 
@@ -1285,7 +1300,7 @@ label.category-item::before {
     position: relative !important;
     height: 20px;
     width: 34px;
-    margin-bottom: 17px;
+    margin-bottom: 25px;
     transform: scale(1) !important;
     transition: all .1s linear;
 }
@@ -1371,7 +1386,7 @@ label.category-item::before {
     background: #eee !important;
     border: 0 !important;
     border-right: 1px solid #ddd !important;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .item-disabled .step-icon {
@@ -1380,7 +1395,7 @@ label.category-item::before {
     transform: scale(1) !important;
     opacity: .5;
     border: 0 !important;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .item-disabled:nth-last-child(1) {
@@ -1474,17 +1489,17 @@ label.category-item::before {
     width: auto;
     text-align: justify;
     border-radius: 0;
-    font-family: "Jost", sans-serif;
+    font-family: var(--omra-font);
 }
 
 #slider .slider-caption h2 {
     font-size: 60px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0;
-    font-family: 'Jost', serif;
+    font-family: var(--omra-font);
 }
 
 #slider .slider-caption p {
@@ -1514,7 +1529,7 @@ label.category-item::before {
     border-radius: 0;
     opacity: 1;
    	transform: translateY(0px);
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 #slider .owl-carousel .owl-nav .owl-next {
@@ -1581,12 +1596,12 @@ label.category-item::before {
 
 #ksar-slider .slider-caption h2 {
    	font-size: 64px;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0;
-    font-family: 'Jost', serif;
+    font-family: var(--omra-font);
 }
 
 #ksar-slider .slider-caption h3 {
@@ -1600,7 +1615,7 @@ label.category-item::before {
     width: auto;
     text-align: justify;
     border-radius: 0;
-    font-family: "Jost", sans-serif;
+    font-family: var(--omra-font);
 }
 
 #ksar-slider .slider-caption h3::before {
@@ -1676,7 +1691,7 @@ label.category-item::before {
     color: #fff;
     width: auto;
     border-radius: 0;
-    font-family: "Jost", sans-serif;
+    font-family: var(--omra-font);
 }
 
 .before-title::before {
@@ -1786,7 +1801,7 @@ label.category-item::before {
     border-radius: 0;
     border: 0;
     transform: translateY(0px);
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .services-list .service .image-box {
@@ -2027,7 +2042,7 @@ label.category-item::before {
     margin: 0;
     justify-content: space-between;
     align-content: center;
-    font-family: "Jost", sans-serif;
+    font-family: var(--omra-font);
 }
 
 /* .search-sidebar-header::before {
@@ -2243,7 +2258,7 @@ label.category-item::before {
     font-size: 20px;
     color: var(--omra-base);
     text-align: center;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .hotel-box .hotel .btn-resize:hover,
@@ -2300,7 +2315,7 @@ label.category-item::before {
 
 .hotel-box .hotel .hotel-type {
     color: #fff;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 15px;
     font-weight: 400 !important;
     text-transform: uppercase;
@@ -2331,14 +2346,14 @@ label.category-item::before {
     border: 0;
     line-height: 42px;
     background: transparent;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .hotel-box .hotel .btn-sec .rate-btn {
     background-color: var(--omra-base);
     color: #fff;
     padding: 10px 20px;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .hotel-box .hotel .available-notice {
@@ -2356,7 +2371,7 @@ label.category-item::before {
 .hotel-box .hotel .best-rate-notice {
     position: absolute;
     background: #212529;
-    padding: 10px 15px 15px;
+    padding: 10px 15px 20px;
     text-align: center;
     display: block;
     top: 20px;
@@ -2370,8 +2385,8 @@ label.category-item::before {
 
 .hotel-box .hotel .best-rate-notice p {
    color: var(--omra-white);
-   font-size: 12px;
-   line-height: 12px;
+   font-size: 11px;
+   line-height: 3px;
    text-transform: uppercase;
 }
 
@@ -2470,7 +2485,7 @@ label.category-item::before {
     border: 0;
     z-index: 50;
     opacity: 1;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .hotel-box .carousel-control-prev:hover,
@@ -2548,7 +2563,7 @@ label.category-item::before {
     margin: 0;
     font-weight: 400;
     color: var(--omra-gray);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     cursor: default !important;
 }
 
@@ -2572,7 +2587,7 @@ label.category-item::before {
     font-size: 14px;
     font-weight: 400;
     color: var(--omra-base);
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
     width: fit-content;
 }
 
@@ -2632,7 +2647,7 @@ label.category-item::before {
 
 .rooms-container .box .title {
     font-size: 15px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     line-height: 20px;
     width: fit-content;
     color: var(--omra-base);
@@ -2723,7 +2738,7 @@ label.category-item::before {
 
 .rooms-container .reservation-details, .rooms-container .tva {
     font-size: 13px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
 }
 
 .rooms-container .box .room-details {
@@ -2829,7 +2844,7 @@ label.category-item::before {
     border-radius: 0;
     border: 0;
     transform: translateY(0px);
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .ground-services-list .ground-service .image-box {
@@ -2922,7 +2937,7 @@ label.category-item::before {
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s ease-out 0s;
+    transition: all .3s linear;
 }
 
 .ground-service-quantity .quantity {
@@ -3060,6 +3075,7 @@ label.category-item::before {
     color: var(--omra-white);
     border: 0;
     padding: 0;
+    line-height: 1px;
     text-transform: capitalize;
     font-weight: 300;
 }
@@ -3136,6 +3152,13 @@ label.category-item::before {
 
 .sidebar-filters-content [type="radio"]:checked + label, .sidebar-filters-content [type="radio"]:not(:checked) + label {
     padding-left: 35px;
-    padding-top: 2px;
+    padding-top: 0;
     line-height: 20px;
+}
+
+.sidebar-filters-content [type="checkbox"]:checked + label, .sidebar-filters-content [type="checkbox"]:not(:checked) + label {
+    padding-left: 10px;
+    padding-top: 0;
+    line-height: 20px;
+    margin: 0;
 }
