@@ -7,6 +7,7 @@ import { FirstDestinationComponent } from './first-destination/first-destination
 import { SecondDestinationComponent } from './second-destination/second-destination.component';
 import { FirstTransferComponent } from './first-transfer/first-transfer.component';
 import { SecondTransferComponent } from './second-transfer/second-transfer.component';
+import { SummaryComponent } from './summary/summary.component';
 
 const routes: Routes = [
   { path: '', component: SearchFormComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'second-destination', component: SecondDestinationComponent },
       { path: 'first-transfer', component: FirstTransferComponent },
       { path: 'second-transfer', component: SecondTransferComponent },
+      { path: 'summary', component: SummaryComponent },
     ]
   }];
 

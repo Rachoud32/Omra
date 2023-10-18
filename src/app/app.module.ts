@@ -26,7 +26,8 @@ import { TopFilterComponent } from './top-filter/top-filter.component';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { DestinationSidebarFilterComponent } from './destination-sidebar-filter/destination-sidebar-filter.component';
 import { TransferSidebarFilterComponent} from './transfer-sidebar-filter/transfer-sidebar-filter.component';
-import { FlightSidebarFilterComponent } from './flight-sidebar-filter/flight-sidebar-filter.component'
+import { FlightSidebarFilterComponent } from './flight-sidebar-filter/flight-sidebar-filter.component';
+import { SummaryComponent } from './summary/summary.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FlightSidebarFilterComponent } from './flight-sidebar-filter/flight-sid
     DestinationSidebarFilterComponent,
     TransferSidebarFilterComponent,
     FlightSidebarFilterComponent,
+    SummaryComponent,
   ],
   imports: [
     CommonModule,

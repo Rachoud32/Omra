@@ -3162,3 +3162,9 @@ label.category-item::before {
     line-height: 20px;
     margin: 0;
 }
+
+.sticky {
+    position:-webkit-sticky; 
+    position: sticky;
+    top: 0;
+}
