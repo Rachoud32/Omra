@@ -1,5 +1,5 @@
 <!------------ Begin Carousel -------------->
-<owl-carousel-o [options]="customOptions" id="slider">
+<owl-carousel-o [options]="customOptions" class="slider">
   <ng-template carouselSlide class="slider-wrapper">
     <div class="slider-slide-bg"
       style="background: url('../assets/slider/1.jpg') 100% 50%; z-index: 1;background-size: cover;">
@@ -40,7 +40,7 @@
   <div class="container search-box">
     <div class="search-category">
       <div class="row m-0 p-0">
-        <div class="col-lg-2 p-0 category-box">
+        <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='hotel'" />
           <label for="hotel" [class.active-category]="searchType == 'hotel'" class="category-item d-flex align-items-center">
             <svg viewBox="0 0 716.67 716.67">
@@ -49,9 +49,9 @@
             <span>Hotel</span>
           </label>
         </div>
-        <div class="col-lg-2 p-0 category-box">
+        <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="package" id="package" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='package'" />
-          <label for="package" [class.active-category]="searchType == 'package'" class="category-item d-flex">
+          <label for="package" [class.active-category]="searchType == 'package'" class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
               <path d="m763.81,358.64c-16.33-2.21-37.1,3.83-48.44,22.6-37.61,62.24-105.84,103.75-183.75,103.75-118.47,0-214.52-96.04-214.52-214.52,0-77.9,41.51-146.14,103.75-183.75,18.77-11.34,24.81-32.11,22.6-48.44-2.29-16.98-15.68-38.29-42.41-38.29C179.56,0,0,179.56,0,401.05s179.56,401.05,401.05,401.05,401.05-179.55,401.05-401.05c0-26.73-21.31-40.12-38.29-42.41Zm-362.76,387.5c-190.59,0-345.09-154.5-345.09-345.09,0-178.2,135.07-324.84,308.42-343.15-62.83,49.5-103.23,126.31-103.23,212.58,0,149.38,121.09,270.48,270.48,270.48,86.27,0,163.08-40.4,212.57-103.23-18.31,173.34-164.95,308.42-343.15,308.42Z" style="isolation:isolate; stroke-width:0px;"/>
               <path d="m670.89,327.79c-6.83,0-12.48-1.62-15.27-2.42-9.62-2.76-20.32-7.68-35.12-14.5l-7.11-3.27c-2.29-1.05-4.79-2.2-6.47-2.9-1.68.7-4.17,1.84-6.45,2.89l-7.1,3.27c-14.83,6.82-25.52,11.75-35.14,14.51-5.62,1.61-22.71,6.5-37.86-5-14.59-11.08-15.38-28.7-15.63-34.49-.46-10.22.72-22.29,2.34-39.01l.78-8.05c.3-3.13.64-6.58.7-8.48-1.11-1.47-3.26-3.98-5.21-6.26l-5.17-6.05c-10.75-12.57-18.51-21.65-23.93-30.25-3.04-4.83-12.29-19.53-6.85-37.03,5.57-17.9,21.8-24.3,27.13-26.4,9.34-3.68,20.77-6.27,36.6-9.85l7.57-1.71c2.55-.58,5.36-1.21,7.1-1.69,1.01-1.62,2.53-4.35,3.91-6.83l3.9-6.99c8.11-14.55,13.97-25.06,20.13-33.1,3.57-4.67,14.45-18.87,33.2-18.87s29.63,14.21,33.2,18.87c6.16,8.05,12.02,18.55,20.13,33.1l3.9,6.99c1.38,2.48,2.9,5.21,3.91,6.83,1.74.48,4.54,1.11,7.09,1.69l7.57,1.71c15.83,3.58,27.26,6.17,36.6,9.85,5.33,2.1,21.57,8.5,27.13,26.4,5.44,17.49-3.81,32.19-6.85,37.02-5.41,8.6-13.17,17.67-23.91,30.23l-5.18,6.06c-1.95,2.28-4.1,4.8-5.21,6.27.06,1.9.4,5.35.7,8.47l.78,8.06c1.62,16.73,2.79,28.8,2.34,39.01-.26,5.79-1.04,23.4-15.64,34.48-7.6,5.77-15.7,7.41-22.58,7.41Zm-158.21-162.63c4.04,5.96,12.08,15.35,19.38,23.89l5.17,6.04c6.67,7.8,11.48,13.43,14.12,21.91,2.61,8.39,1.89,15.83.89,26.12l-.78,8.06c-1.05,10.88-2.21,22.79-2.25,30.28,6.61-2.4,16.47-6.94,25.5-11.09l7.09-3.27c9.38-4.32,16.13-7.42,25.13-7.42s15.75,3.11,25.09,7.41l7.12,3.28c9.03,4.15,18.89,8.7,25.5,11.1-.04-7.48-1.19-19.39-2.24-30.25l-.78-8.08c-1-10.3-1.72-17.74.9-26.13,2.63-8.47,7.44-14.1,14.1-21.89l5.18-6.05c7.31-8.54,15.34-17.94,19.38-23.9-6.57-2.23-17.94-4.8-28.28-7.14l-7.57-1.71c-9.97-2.25-17.17-3.88-24.36-9.34-7.06-5.36-10.7-11.9-15.75-20.94l-3.91-7.01c-4.94-8.85-10.32-18.52-14.38-24.63-4.05,6.11-9.44,15.78-14.38,24.63h0s-3.9,6.99-3.9,6.99c-5.05,9.05-8.69,15.59-15.75,20.95-7.2,5.46-14.4,7.09-24.37,9.35l-7.56,1.71c-10.34,2.34-21.71,4.91-28.28,7.14Zm-3.5,66.08s0,0,0,0c0,0,0,0,0,0Zm-.63-1.98s0,0,0,0c0,0,0,0,0,0Z" style="stroke-width:0px;"/>
@@ -59,9 +59,9 @@
             <span>Umrah package</span>
           </label>
         </div>
-        <div class="col-lg-2 p-0 category-box">
+        <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="custom" id="custom" class="form-check-input me-2 d-none" (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='custom'" />
-          <label for="custom" [class.active-category]="searchType == 'custom'" class="category-item d-flex">
+          <label for="custom" [class.active-category]="searchType == 'custom'" class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
               <path d="m763.81,358.64c-16.33-2.21-37.1,3.83-48.44,22.6-37.61,62.24-105.84,103.75-183.75,103.75-118.47,0-214.52-96.04-214.52-214.52,0-77.9,41.51-146.14,103.75-183.75,18.77-11.34,24.81-32.11,22.6-48.44-2.29-16.98-15.68-38.29-42.41-38.29C179.56,0,0,179.56,0,401.05s179.56,401.05,401.05,401.05,401.05-179.55,401.05-401.05c0-26.73-21.31-40.12-38.29-42.41Zm-362.76,387.5c-190.59,0-345.09-154.5-345.09-345.09,0-178.2,135.07-324.84,308.42-343.15-62.83,49.5-103.23,126.31-103.23,212.58,0,149.38,121.09,270.48,270.48,270.48,86.27,0,163.08-40.4,212.57-103.23-18.31,173.34-164.95,308.42-343.15,308.42Z" style="isolation:isolate; stroke-width:0px;"/>
               <path d="m670.89,327.79c-6.83,0-12.48-1.62-15.27-2.42-9.62-2.76-20.32-7.68-35.12-14.5l-7.11-3.27c-2.29-1.05-4.79-2.2-6.47-2.9-1.68.7-4.17,1.84-6.45,2.89l-7.1,3.27c-14.83,6.82-25.52,11.75-35.14,14.51-5.62,1.61-22.71,6.5-37.86-5-14.59-11.08-15.38-28.7-15.63-34.49-.46-10.22.72-22.29,2.34-39.01l.78-8.05c.3-3.13.64-6.58.7-8.48-1.11-1.47-3.26-3.98-5.21-6.26l-5.17-6.05c-10.75-12.57-18.51-21.65-23.93-30.25-3.04-4.83-12.29-19.53-6.85-37.03,5.57-17.9,21.8-24.3,27.13-26.4,9.34-3.68,20.77-6.27,36.6-9.85l7.57-1.71c2.55-.58,5.36-1.21,7.1-1.69,1.01-1.62,2.53-4.35,3.91-6.83l3.9-6.99c8.11-14.55,13.97-25.06,20.13-33.1,3.57-4.67,14.45-18.87,33.2-18.87s29.63,14.21,33.2,18.87c6.16,8.05,12.02,18.55,20.13,33.1l3.9,6.99c1.38,2.48,2.9,5.21,3.91,6.83,1.74.48,4.54,1.11,7.09,1.69l7.57,1.71c15.83,3.58,27.26,6.17,36.6,9.85,5.33,2.1,21.57,8.5,27.13,26.4,5.44,17.49-3.81,32.19-6.85,37.02-5.41,8.6-13.17,17.67-23.91,30.23l-5.18,6.06c-1.95,2.28-4.1,4.8-5.21,6.27.06,1.9.4,5.35.7,8.47l.78,8.06c1.62,16.73,2.79,28.8,2.34,39.01-.26,5.79-1.04,23.4-15.64,34.48-7.6,5.77-15.7,7.41-22.58,7.41Zm-158.21-162.63c4.04,5.96,12.08,15.35,19.38,23.89l5.17,6.04c6.67,7.8,11.48,13.43,14.12,21.91,2.61,8.39,1.89,15.83.89,26.12l-.78,8.06c-1.05,10.88-2.21,22.79-2.25,30.28,6.61-2.4,16.47-6.94,25.5-11.09l7.09-3.27c9.38-4.32,16.13-7.42,25.13-7.42s15.75,3.11,25.09,7.41l7.12,3.28c9.03,4.15,18.89,8.7,25.5,11.1-.04-7.48-1.19-19.39-2.24-30.25l-.78-8.08c-1-10.3-1.72-17.74.9-26.13,2.63-8.47,7.44-14.1,14.1-21.89l5.18-6.05c7.31-8.54,15.34-17.94,19.38-23.9-6.57-2.23-17.94-4.8-28.28-7.14l-7.57-1.71c-9.97-2.25-17.17-3.88-24.36-9.34-7.06-5.36-10.7-11.9-15.75-20.94l-3.91-7.01c-4.94-8.85-10.32-18.52-14.38-24.63-4.05,6.11-9.44,15.78-14.38,24.63h0s-3.9,6.99-3.9,6.99c-5.05,9.05-8.69,15.59-15.75,20.95-7.2,5.46-14.4,7.09-24.37,9.35l-7.56,1.71c-10.34,2.34-21.71,4.91-28.28,7.14Zm-3.5,66.08s0,0,0,0c0,0,0,0,0,0Zm-.63-1.98s0,0,0,0c0,0,0,0,0,0Z" style="stroke-width:0px;"/>
@@ -167,7 +167,7 @@
               </button>
             </div>
             <!-- Passengers -->
-            <div class="col-lg-6 mb-3">
+            <div class="col-xl-6 mb-3">
               <div class="dropdown dropdown-guests w-100">
                 <button [class.selected-item]="
                   searchFormHotel.value.passengersHotel.length != 1 ||
@@ -230,7 +230,7 @@
                           </div>
                           <div class="room-passengers-details">
                             <div class="row">
-                              <div class="col-lg-6">
+                              <div class="col-xl-6">
                                 <div class="room-adults d-flex justify-content-between align-items-center mb-2">
                                   <label>Adults</label>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -246,7 +246,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-lg-6">
+                              <div class="col-xl-6">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                   <label>Children</label>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -312,7 +312,7 @@
               </div>
             </div>
             <!---- More criteria ---->
-            <div class="col-lg-12">
+            <div class="col-xl-12">
               <div class="divider divider-center">
                 <a class="search-criteria-btn" data-bs-toggle="collapse" href="#search-criteria" role="button"
                   aria-expanded="false" aria-controls="search-criteria">
@@ -321,7 +321,7 @@
               </div>
               <div id="search-criteria" class="collapse">
                 <div class="row criteria-form mb-3">
-                  <div class="col-lg-4 border-end">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -332,7 +332,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-lg-4 border-end">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -343,7 +343,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -357,7 +357,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 d-flex w-100 justify-content-end">
+            <div class="col-xl-3 d-flex w-100 justify-content-end">
               <button routerLink="/result/flight" class="color-btn">
                 Search
               </button>
@@ -371,7 +371,7 @@
         <div class="">
           <div class="row p-0">
             <!-- Destination -->
-            <div class="col-lg-4 mb-3">
+            <div class="col-xl-4 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.departureCity" class="btn btn-dark w-100"
                   type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
@@ -408,7 +408,7 @@
               </div>
             </div>
             <!-- Period -->
-            <div class="col-lg-4 mb-3">
+            <div class="col-xl-4 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100" type="button"
                   data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -472,7 +472,7 @@
               </div>
             </div>
             <!-- Duration -->
-            <div class="col-lg-4 mb-3">
+            <div class="col-xl-4 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.duration" class="btn w-100" type="button"
                   data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -508,7 +508,7 @@
               </div>
             </div>
             <!-- Flight -->
-            <div class="col-lg-4 mb-3">
+            <div class="col-xl-4 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.flight" class="btn btn-dark w-100" type="button"
                   data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -551,7 +551,7 @@
               </div>
             </div>
             <!-- Passengers -->
-            <div class="col-lg-8 mb-3">
+            <div class="col-xl-8 mb-3">
               <div class="dropdown dropdown-guests w-100">
                 <button [class.selected-item]="
                     searchFormPackage.value.passengers.length != 1 ||
@@ -614,7 +614,7 @@
                           </div>
                           <div class="room-passengers-details">
                             <div class="row">
-                              <div class="col-lg-6">
+                              <div class="col-xl-6">
                                 <div class="room-adults d-flex justify-content-between align-items-center mb-2">
                                   <label>Adults</label>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -630,7 +630,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-lg-6">
+                              <div class="col-xl-6">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                   <label>Children</label>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -696,7 +696,7 @@
               </div>
             </div>
             <!---- More criteria ---->
-            <div class="col-lg-12">
+            <div class="col-xl-12">
               <div class="divider divider-center">
                 <a class="search-criteria-btn" data-bs-toggle="collapse" href="#search-criteria" role="button"
                   aria-expanded="false" aria-controls="search-criteria">
@@ -705,7 +705,7 @@
               </div>
               <div id="search-criteria" class="collapse">
                 <div class="row criteria-form mb-3">
-                  <div class="col-lg-4 border-end">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -716,7 +716,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-lg-4 border-end">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -727,7 +727,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-xl-4">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -741,7 +741,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 d-flex w-100 justify-content-end">
+            <div class="col-xl-3 d-flex w-100 justify-content-end">
               <button routerLink="/result/flight" class="color-btn">
                 Search
               </button>
@@ -753,7 +753,7 @@
       <form id="customized-search-section" *ngIf="searchFormCustom && searchType == 'custom'"
         [formGroup]="searchFormCustom" class="third-tab search-section-tab z-index-3">
         <div class="row p-0">
-          <div class="col-lg-12 mt-1 mb-4">
+          <div class="col-xl-12 mt-1 mb-4">
             <div class="d-flex">
               <div class="flight-mode-item d-flex me-3">
                 <input type="radio" class="flight-mode d-block form-check-input me-2" name="flightmode" id="without"
@@ -974,7 +974,7 @@
                         </div>
                         <div class="room-passengers-details">
                           <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                               <div class="room-adults d-flex justify-content-between align-items-center mb-2">
                                 <label>Adults</label>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -990,7 +990,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                               <div class="d-flex justify-content-between align-items-center mb-2">
                                 <label>Children</label>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
@@ -1215,7 +1215,7 @@
             </div>
           </div>
           <!---- More criteria ---->
-          <div class="col-lg-12">
+          <div class="col-xl-12">
             <div class="divider divider-center">
               <a class="search-criteria-btn" data-bs-toggle="collapse" href="#search-criteria" role="button"
                 aria-expanded="false" aria-controls="search-criteria">
@@ -1224,7 +1224,7 @@
             </div>
             <div id="search-criteria" class="collapse">
               <div class="row criteria-form mb-3">
-                <div class="col-lg-4 border-end">
+                <div class="col-xl-4 ">
                   <div class="form-group criteria-group">
                     <span class="input-group d-flex">
                       <span class="input-group-text">
@@ -1235,7 +1235,7 @@
                     </span>
                   </div>
                 </div>
-                <div class="col-lg-4 border-end">
+                <div class="col-xl-4 ">
                   <div class="form-group criteria-group">
                     <span class="input-group d-flex">
                       <span class="input-group-text">
@@ -1246,7 +1246,7 @@
                     </span>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-xl-4">
                   <div class="form-group criteria-group">
                     <span class="input-group d-flex">
                       <span class="input-group-text">
@@ -1260,7 +1260,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 d-flex w-100 justify-content-end">
+          <div class="col-xl-3 d-flex w-100 justify-content-end">
             <button routerLink="/result/flight" class="color-btn">
               Search
             </button>

@@ -1,0 +1,258 @@
+<div class="mt-5">
+    <div class="pt-3 justify-content-start">
+        <div class="heading-box">
+        <h2 class="heading-title color-2 mb-0">Payment method</h2>
+        </div>
+        <p>You benefit from the best rate.</p>
+    </div>
+
+    <div class="all-content-box payment-gateways">
+        <div class="row">
+            <div class="col-xl-6  mb-4">
+                <div class="heading-box">
+                    <h5 class="heading-title-sm color-2 mb-0">
+                        Please choose your payment method
+                    </h5>
+                    <p>You benefit from the best payment gateways.</p>
+                </div>
+                <div class="gateway-list">
+                    <div class="gateway-item d-flex">
+                        <input type="radio" name="gatewaybox" id="gatewaybox1" value="gatewaybox1" [(ngModel)]="selectedGateway" checked/>
+                        <label for="gatewaybox1" class="w-100">
+                            <div class="pay-gateway-box d-flex justify-content-between">
+                                <div class="gateway-details">
+                                    <h5>Paypal</h5>
+                                    <p class="m-0">you can use paypal.</p>
+                                </div>
+                                <div class="gateway-img">
+                                    <img class="paypal" src="assets/paypal.svg" alt=""/>
+                                </div>
+                            </div>
+                        </label>
+                    </div>    
+                    <div class="gateway-item d-flex">
+                        <input type="radio" name="gatewaybox" id="gatewaybox2" value="gatewaybox2" [(ngModel)]="selectedGateway"/>
+                        <label for="gatewaybox2" class="w-100">
+                            <div class="pay-gateway-box d-flex justify-content-between">
+                                <div class="gateway-details">
+                                    <h5>Clictopay</h5>
+                                    <p class="m-0">you can use clictopay.</p>
+                                </div>
+                                <div class="gateway-img">
+                                    <img class="clictopay" src="assets/clicktopay.svg" alt=""/>
+                                </div>
+                            </div>
+                        </label>
+                    </div>  
+                    <div class="gateway-item d-flex">
+                        <input type="radio" name="gatewaybox" id="gatewaybox3" value="gatewaybox3" [(ngModel)]="selectedGateway"/>
+                        <label for="gatewaybox3" class="w-100">
+                            <div class="pay-gateway-box d-flex justify-content-between">
+                                <div class="gateway-details">
+                                    <h5>Paytabs</h5>
+                                    <p class="m-0">you can use paytabs.</p>
+                                </div>
+                                <div class="gateway-img">
+                                    <img class="paytabs" src="assets/paytabs.svg" alt=""/>
+                                </div>
+                            </div>
+                        </label>
+                    </div>  
+                    <div class="gateway-item d-flex">
+                        <input type="radio" name="gatewaybox" id="gatewaybox4" value="gatewaybox4" [(ngModel)]="selectedGateway"/>
+                        <label for="gatewaybox4" class="w-100">
+                            <div class="pay-gateway-box d-flex justify-content-between">
+                                <div class="gateway-details">
+                                    <h5>Stripe</h5>
+                                    <p class="m-0">you can use stripe.</p>
+                                </div>
+                                <div class="gateway-img">
+                                    <img class="stripe" src="assets/stripe.svg" alt=""/>
+                                </div>
+                            </div>
+                        </label>
+                    </div>  
+                    <div class="gateway-item d-flex">
+                        <input type="radio" name="gatewaybox" id="gatewaybox5" value="gatewaybox5" [(ngModel)]="selectedGateway"/>
+                        <label for="gatewaybox5" class="w-100">
+                            <div class="pay-gateway-box d-flex justify-content-between">
+                                <div class="gateway-details">
+                                    <h5>In-person payment</h5>
+                                    <p class="m-0">Complete your transaction with the hotel in person, present at the point of reservation.</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-xl-6 checkout-details mb-4">
+                <div class="heading-box">
+                    <h5 class="heading-title-sm color-2 mb-4">
+                        Your Booking(s)
+                    </h5>
+                    <div class="checkout-booking-list">
+                        <div class="list-booked-room">
+                            <div class="booked-room mb-3">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="booked-room-content">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                                                    <div class="room-label">Room 1</div>
+                                                    <div class="room-price"><span>$</span>300</div>
+                                                </div>	
+                                                <div class="col-lg-12">
+                                                    <div class="room-type">
+                                                        <h3 class="t-ellipsis">King junior suite partial Haram view</h3>
+                                                    </div>
+                                                    <div class="room-infos">
+                                                        <div class="d-flex me-4 align-items-center">
+                                                            <i class="icon-line-clock"></i>
+                                                            <p class="mb-0 ms-2">2 night(s)</p>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="icon-line-map-pin"></i>
+                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-details-content">
+                                                        <div class="room-details">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-calendar"></i>
+                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-users"></i>
+                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="booked-room mb-3">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="booked-room-content">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                                                    <div class="room-label">Room 2</div>
+                                                    <div class="room-price"><span>$</span>300</div>
+                                                </div>	
+                                                <div class="col-lg-12">
+                                                    <div class="room-type">
+                                                        <h3 class="t-ellipsis">Two Bedroom Suite City View</h3>
+                                                    </div>
+                                                    <div class="room-infos">
+                                                        <div class="d-flex me-4 align-items-center">
+                                                            <i class="icon-line-clock"></i>
+                                                            <p class="mb-0 ms-2">2 night(s)</p>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="icon-line-map-pin"></i>
+                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-details-content">
+                                                        <div class="room-details">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-calendar"></i>
+                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-users"></i>
+                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="booked-room mb-3">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="booked-room-content">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                                                    <div class="room-label">Room 3</div>
+                                                    <div class="room-price"><span>$</span>300</div>
+                                                </div>	
+                                                <div class="col-lg-12">
+                                                    <div class="room-type">
+                                                        <h3 class="t-ellipsis">Superior double room</h3>
+                                                    </div>
+                                                    <div class="room-infos">
+                                                        <div class="d-flex me-4 align-items-center">
+                                                            <i class="icon-line-clock"></i>
+                                                            <p class="mb-0 ms-2">2 night(s)</p>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="icon-line-map-pin"></i>
+                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-details-content">
+                                                        <div class="room-details">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-calendar"></i>
+                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="icon-line-users"></i>
+                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>	
+
+                        <div class="total-price-box mb-4">
+                            <div class="row">
+                                <div class="col-12 col-lg-12">
+                                    <div class="total-price-content-box">
+                                        <div class="total-content">
+                                            <div class="total-price d-flex justify-content-between align-items-center">
+                                                <h5>Subtotal</h5>
+                                                <div class="price"><span>$</span>585</div>
+                                            </div>
+                                            <div class="total-price d-flex justify-content-between align-items-center">
+                                                <h5>Taxes</h5>
+                                                <div class="price"><span>$</span>65</div>
+                                            </div>
+                                            <hr>
+                                            <div class="total-price d-flex justify-content-between align-items-center">
+                                                <div class="total-price-content">
+                                                    <h5>Total</h5>
+                                                </div>
+                                                <div class="price"><span>$</span>650</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <button href="#" class="d-block color-btn colorinv-btn w-100 mt-2 mb-2">Cancel</button>
+                            <button href="#" class="d-block color-btn w-100 mt-2 mb-2">Pay</button>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> 
