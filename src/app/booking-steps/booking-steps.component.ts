@@ -14,7 +14,7 @@ export class BookingStepsComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (val.url == '/' || val.url == '/result/payment') {
+        if ((val.url == '/' || val.url == '/result/payment') || (val.url == '/' || val.url == '/result/motamar-informations')) {
           this.BookingSteps = false;
         } else {
           this.BookingSteps = true;

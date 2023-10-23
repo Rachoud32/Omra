@@ -9,6 +9,8 @@ import { FirstTransferComponent } from './first-transfer/first-transfer.componen
 import { SecondTransferComponent } from './second-transfer/second-transfer.component';
 import { SummaryComponent } from './summary/summary.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component'
+
 
 const routes: Routes = [
   { path: '', component: SearchFormComponent },
@@ -22,6 +24,7 @@ const routes: Routes = [
       { path: 'first-transfer', component: FirstTransferComponent },
       { path: 'second-transfer', component: SecondTransferComponent },
       { path: 'summary', component: SummaryComponent },
+      { path: 'motamar-informations', component: MotamarInfosComponent },
       { path: 'payment', component: PaymentComponent },
     ]
   }];

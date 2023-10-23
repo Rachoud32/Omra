@@ -30,7 +30,8 @@ import { FlightSidebarFilterComponent } from './flight-sidebar-filter/flight-sid
 import { SummaryComponent } from './summary/summary.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PaymentComponent } from './payment/payment.component';
-import { BookingStepsComponent } from './booking-steps/booking-steps.component'
+import { BookingStepsComponent } from './booking-steps/booking-steps.component';
+import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component'
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { BookingStepsComponent } from './booking-steps/booking-steps.component'
     SearchBarComponent,
     PaymentComponent,
     BookingStepsComponent,
+    MotamarInfosComponent,
   ],
   imports: [
     CommonModule,

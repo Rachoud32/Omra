@@ -27,6 +27,7 @@
     --omra-extra: #f4f5f5;
     --omra-extra-rgb: 244, 245, 245;
     --omra-bdr-radius: 3px;
+    --fs-10: 10px;
     --fs-11: 11px;
     --fs-12: 12px;
     --fs-13: 13px;
@@ -205,7 +206,7 @@ h6 {
     letter-spacing: 0.5px;
 }
 
-.logo {
+.umrah-logo {
     width: 370px;
     position: relative;
 }
@@ -253,25 +254,20 @@ h6 {
     top: 5px;
     left: 5px;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 [type="radio"]:not(:checked) + label:after {
     opacity: 0;
-    -webkit-transform: scale(0);
     transform: scale(0);
 }
 
 [type="radio"]:checked + label:after {
     opacity: 1;
-    -webkit-transform: scale(1);
     transform: scale(1);
 }
 
 input[type=checkbox] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background-color: var(--omra-white);
     margin: 0;
@@ -543,7 +539,6 @@ input[type=checkbox]:disabled {
 }
 
 .colorinv-btn:hover,
-.colorinv-btn:focus,
 .colorinv-btn:active {
     color: var(--omra-white);
     border: 2px solid var(--omra-base);
@@ -959,7 +954,6 @@ label.category-item::before {
     background: white;
     display: inline-block;
     padding: 1px 10px;
-    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -972,9 +966,7 @@ label.category-item::before {
 
 .animate {
     animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
     animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
 }
 
 @keyframes slideIn {
@@ -994,25 +986,7 @@ label.category-item::before {
     }
 }
 
-@-webkit-keyframes slideIn {
-    0% {
-        -webkit-transform: transform;
-        -webkit-opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        -webkit-opacity: 1;
-    }
-
-    0% {
-        -webkit-transform: translateY(1rem);
-        -webkit-opacity: 0;
-    }
-}
-
 .slideIn {
-    -webkit-animation-name: slideIn;
     animation-name: slideIn;
 }
 
@@ -1086,8 +1060,6 @@ label.category-item::before {
     background-color: var(--omra-white);
     background-clip: padding-box;
     border: 1px solid var(--omra-light-gray);
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 0;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -1181,7 +1153,7 @@ label.category-item::before {
 ----------------------------------------------------*/
 .heading-title {
     line-height: 1.25 !important;
-    font-size: 36px !important;
+    font-size: clamp(1rem, 10vw, 2.2rem) !important;
     text-transform: uppercase;
 }
 
@@ -1204,7 +1176,6 @@ label.category-item::before {
     top: 0px;
     position: relative;
     background-color: var(--omra-white);
-    -webkit-box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
     box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
     padding: 15px 20px;
 }
@@ -1248,8 +1219,7 @@ label.category-item::before {
 }
 
 .check-form .color-btn:hover,
-.check-form .color-btn:active,
-.check-form .color-btn:focus {
+.check-form .color-btn:active {
     background: var(--omra-base);
     border-color: var(--omra-base);
 }
@@ -1332,7 +1302,7 @@ label.category-item::before {
     RESERVATION STEPS BLOCK
 ----------------------------------------------------*/
 .list-steps-container {
-    padding: 40px 15px !important;
+    /* padding: 40px 15px !important; */
 }
 
 .list-steps {
@@ -1350,7 +1320,7 @@ label.category-item::before {
     border-radius: 0 !important;
     padding: 20px !important;
     pointer-events: auto !important;
-    background: #fbfbfb !important;
+    background: var(--omra-white) !important;
     color: var(--omra-base) !important;
     border: 0 !important;
     transition: all .3s linear;
@@ -1609,7 +1579,7 @@ label.category-item::before {
 }
 
 .slider .slider-caption h2 {
-    font-size: 60px;
+    font-size: clamp(1.2rem, 6vw, 4rem);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: 700;
@@ -1694,8 +1664,6 @@ label.category-item::before {
     background-color: rgba(255,255,255,0.2);
     border:  0;
     border-radius: 0%;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 
@@ -1791,12 +1759,6 @@ label.category-item::before {
 
 .page-section {
     padding: 120px 0;
-}
-
-.heading-title {
-    line-height: 1.25 !important;
-    font-size: 40px;
-    text-transform: uppercase;
 }
 
 .before-title {
@@ -2232,8 +2194,8 @@ label.category-item::before {
 }
 
 .search-sidebar-list {
-    max-height: 250px;
-    padding: 0px 20px;
+    max-height: 320px;
+    padding: 0px 15px;
     margin-right: 10px;
     margin-top: 15px;
     overflow-x: scroll;
@@ -2331,7 +2293,6 @@ label.category-item::before {
     float: left;
     width: 100%;
     margin-right: -100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: transform 0.6s ease-in-out;
 }
@@ -2473,8 +2434,7 @@ label.category-item::before {
 }
 
 .hotel-box .hotel .btn-sec .rate-btn:hover,
-.hotel-box .hotel .btn-sec .rate-btn:active,
-.hotel-box .hotel .btn-sec .rate-btn:focus {
+.hotel-box .hotel .btn-sec .rate-btn:active {
     background-color: var(--omra-black);
     color: var(--omra-white);
 }
@@ -2613,17 +2573,13 @@ label.category-item::before {
 
 .hotel-box .carousel-control-prev:hover,
 .hotel-box .carousel-control-next:hover,
-.hotel-box .carousel-control-prev:focus,
-.hotel-box .carousel-control-next:focus,
 .hotel-box .carousel-control-prev:active,
 .hotel-box .carousel-control-next:active {
     color: var(--omra-white);
     background: var(--omra-base);
 }
 
-.carousel-control-next:focus, 
 .carousel-control-next:hover, 
-.carousel-control-prev:focus, 
 .carousel-control-prev:hover {
     opacity: 1 !important;
 }
@@ -2705,7 +2661,8 @@ label.category-item::before {
     border: 2px solid var(--omra-light-gray);
 }
 
-.rooms-container .box a {
+.rooms-container .box a,
+.ground-service-details-btn {
     position: relative;
     font-size: var(--fs-14);
     font-weight: 400;
@@ -2715,8 +2672,9 @@ label.category-item::before {
 }
 
 .rooms-container .box a:hover,
-.rooms-container .box a:focus,
-.rooms-container .box a:active {
+.rooms-container .box a:active,
+.ground-service-details-btn:hover,
+.ground-service-details-btn:active {
     color: var(--omra-second);
 }    
 
@@ -2724,7 +2682,16 @@ label.category-item::before {
     line-height: 8px;
 }
 
-.room-read-more::before {
+.ground-service-details-btn {
+    line-height: 38px;
+}
+
+.ground-service-date {
+    cursor: pointer;
+}
+
+.room-read-more::before,
+.ground-service-details-btn::before {
     content: '';
     position: relative;
     display: block;
@@ -2738,7 +2705,8 @@ label.category-item::before {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.room-read-more::after {
+.room-read-more::after,
+.ground-service-details-btn::after {
     content: "\e92e";
     position: absolute;
     font-family: 'lined-icons';
@@ -2751,11 +2719,13 @@ label.category-item::before {
     transition: transform .2s ease-in-out;
 }
 
-.room-read-more[aria-expanded="false"]::after {
+.room-read-more[aria-expanded="false"]::after,
+.ground-service-details-btn[aria-expanded="false"]::after {
     transform: rotate(0deg);
 }
 
-.room-read-more[aria-expanded="true"]::after {
+.room-read-more[aria-expanded="true"]::after,
+.ground-service-details-btn[aria-expanded="true"]::after {
     transform: rotate(-180deg);
 }
 
@@ -2837,7 +2807,6 @@ label.category-item::before {
 }
 
 .room-picture-overlay:hover,
-.room-picture-overlay:focus,
 .room-picture-overlay:active {
     background-color: var(--omra-base);
 }
@@ -2985,7 +2954,7 @@ label.category-item::before {
 
 .ground-services-list .ground-service .image-box img {
     object-fit: cover;
-    height: 100%;
+    min-height: 160px;
 }
 
 .ground-service-details {
@@ -3008,6 +2977,12 @@ label.category-item::before {
     text-transform: uppercase;
 }
 
+.ground-service-details label {
+    font-size: var(--fs-14);
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
 .ground-service-details-btn {
     font-size: var(--fs-14);
 }
@@ -3021,12 +2996,11 @@ label.category-item::before {
 .ground-service-details ul li {
     color: var(--omra-gray);
     font-size: var(--fs-14);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: 300;
     line-height: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .ground-service-details a {
@@ -3034,9 +3008,12 @@ label.category-item::before {
     color: #876F4B;
 }
 
+.ground-service-details ul li .ground-service-prices-ms {
+    line-height: normal;
+}
+
 .ground-service-details ul li span {
-    font-size: var(--fs-12);
-    vertical-align: super;
+    font-size: var(--fs-10);
 }
 
 .ground-service-price {
@@ -3055,12 +3032,12 @@ label.category-item::before {
 }
 
 .ground-service-quantity .minus, .ground-service-quantity .plus {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: transparent;
     border: 1px solid var(--omra-second);
     color: var(--omra-gray);
-    line-height: 28px;
+    line-height: 16px;
     font-size: var(--fs-16);
     font-weight: 400;
     display: inline-block;
@@ -3071,17 +3048,19 @@ label.category-item::before {
 }
 
 .ground-service-quantity .quantity {
-    height: 33px;
+    height: 25px;
     margin: 0 5px;
     min-width: 50px;
     width: 50px;
     text-align: center;
+    line-height: normal;
+    font-weight: 400;
     font-size: var(--fs-14);
     border: 1px solid #dee2e6;
     background: var(--omra-white);
     display: inline-block;
     vertical-align: middle;
-    padding: 6px 10px;
+    padding: 2px 10px;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -3187,26 +3166,22 @@ label.category-item::before {
     font-size: var(--fs-14);
 }
 
-.sidebar-filters .sidebar-filters-header {
-    display: block;
-    height: 100%;
-    position: relative;
-    padding: 15px 20px;
-    background: var(--omra-second);
+.sidebar-filters hr {
+    margin: 15px 0;
 }
 
-.sidebar-filters .sidebar-filters-header h5 {
-    font-size: var(--fs-16);
-    font-weight: 400 !important;
+.sidebar-filters-content h5 {
+    font-size: var(--fs-22);
+    font-weight: 500 !important;
     text-align: left;
-    color: var(--omra-white);
+    color: var(--omra-second);
     margin: 0;
     align-content: center;
 }
 
 .sidebar-filters .color-btn {
     background: transparent;
-    color: var(--omra-white);
+    color: var(--omra-gray-rgb);
     border: 0;
     padding: 0;
     line-height: 1px;
@@ -3214,17 +3189,25 @@ label.category-item::before {
     font-weight: 300;
 }
 
+.sidebar-filters .color-btn i {
+    color: var(--omra-second);
+    font-size: 18px;
+}
+
 .sidebar-filters-content {
-    padding: 15px 20px;
+    padding: 0px 25px 0px;
+    overflow-x: scroll;
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .sidebar-filters-content .filter-label {
     font-size: var(--fs-14);
     line-height: 20px;
-    width: -moz-fit-content;
     width: fit-content;
     color: var(--omra-base);
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
@@ -3253,12 +3236,16 @@ label.category-item::before {
     top: 8px;
     left: 8px;
     border-radius: 0px;
-    background: var(--omra-white);
+    background: var(--omra-base);
     border: 0;
 }
 
 .sidebar-filters-content .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
-    background-color: var(--omra-white);
+    background-color: var(--omra-base);
+}
+
+.sidebar-filters-content .ngx-slider .ngx-slider-pointer:hover:after {
+    background-color: var(--omra-base) !important;
 }
 
 .sidebar-filters-content .ngx-slider .ngx-slider-selection {
@@ -3407,93 +3394,67 @@ label.category-item::before {
 -----------------------------------------------------------------*/
 .all-content-box {
     background: var(--omra-white);
-    padding: 40px;
+    padding: 30px;
     margin-bottom: 20px;
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 2%);
     transform: translateY(0px);
     transition: all 0.4s ease-out 0s;
 }
 
-.booked-room {
-    background: var(--omra-white);
-    position: relative;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 1%);
-    border: 1px solid var(--omra-light-gray);
-    padding: 30px 60px 30px 30px;
-    transition: all 0.4s ease-out 0s;
+.service-summary-box {
+    border: 2px solid var(--omra-light-gray);
+    padding: 30px 30px 10px 30px;
+    margin-bottom: 20px;
 }
 
-.booked-room .booked-room-content {
-    padding: 0;
+.service-summary-box .service-label {
+    display: block;
+    font-size: clamp(1rem, 6.5vw, 1.375em);
+    margin-bottom: 0px;
+    font-weight: 600 !important;
+    color: var(--omra-second);
 }
 
-.booked-room .room-label {
-    font-size: var(--fs-16);
-    color: var(--omra-white);
-    font-weight: 400;
-    background: var(--omra-base);
-    padding: 4px 15px;
+.service-summary-box p {
+    margin: 0;
+    font-size: var(--fs-14);
+}
+
+.service-summary-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.booked-room hr {
+    margin: 10px 0 20px;
 }
 
 .booked-room .hotel-label {
-    font-size: var(--fs-16);
-    color: var(--omra-second);
+    font-size: clamp(1.125rem, 3.5vw ,1.25rem);
+    color: var(--omra-base);
     font-weight: 400;
     display: inline-block;
-    background: transparent;
     border: 0;
-    padding: 4px 15px;
+    padding: 0;
+    line-height: normal;
 }
 
-.booked-room .room-label::before {
-    content: '';
-    display: inline-block;
-    background-color: var(--omra-white);
-    height: 4px;
-    width: 4px;
-    vertical-align: middle;
-    margin-top: -3px;
-    margin-right: 10px;
-    position: relative;
-    bottom: 0px;
-    transition: all .3s linear;
-}
-
-.booked-room .room-label::before {
-    background-color: var(--omra-second);
-}
-
-.booked-room .room-price {
-    font-size: var(--fs-22);
-    font-weight: 500;
-    color: var(--omra-base);
-    position: relative;
-    margin-bottom: 5px;
-    width: fit-content;
-}
-
-.booked-room .room-price span {
-    font-size: 12px;
-    vertical-align: top;
-    line-height: 26px;
-}
-
-.booked-room h3 {
+.service-summary-box h5 {
     color: var(--omra-base);
     font-size: 18px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-weight: 400 !important;
 }
 
 .booked-room .room-infos {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 .booked-room .room-infos i {
@@ -3501,6 +3462,115 @@ label.category-item::before {
     color: var(--omra-second);
 }
 
+.booked-room .ground-service-detail-box .ground-service-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: normal;
+}
+
+.booked-room .ground-service-detail-box .ground-service-name {
+    font-size: var(--fs-14);
+    font-weight: 400!important;
+    color: var(--omra-second);
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.booked-room .ground-service-detail-box ul li {
+    color: var(--omra-gray);
+    font-size: var(--fs-14);
+    margin-bottom: 2px;
+    font-weight: 300;
+    line-height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booked-room .ground-service-detail-box .ground-service-detail .price {
+    color: var(--omra-base);
+    font-weight: 400;
+}
+
+.booked-room .ground-service-detail-box .ground-service-detail .price span {
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.booked-room .price-sm span {
+    font-size: 8px;
+    vertical-align: top;
+    line-height: 12px;
+}
+
+.service-summary-box .room-price {
+    font-size: clamp(1.5rem, 6.5vw ,1.875rem);
+    font-weight: 500;
+    color: var(--omra-base);
+    position: relative;
+    margin-bottom: 0px;
+    line-height: normal;
+}
+
+.service-summary-box .room-price span {
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 36px;
+}
+
+.service-summary-box .color-btn {
+    width: 50%;
+    padding: 5px 10px;
+    line-height: 28px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+.checkout-booking-list .booked-room h3 {
+    color: var(--omra-base);
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 400!important;
+}
+
+.checkout-booking-list .booked-room h5, .total-price-content-box h5 {
+    margin-bottom: 0;
+    color: var(--omra-base);
+    display: block;
+    font-size: var(--fs-18);
+    font-weight: 400!important;
+    border-radius: 0;
+}
+
+.total-price-content-box h5 {
+    color: var(--omra-gray)!important;
+}
+
+.checkout-booking-list .booked-room {
+    background: var(--omra-white);
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px 3px #00000003;
+    border: 1px solid var(--omra-light-gray);
+    padding: 30px 60px 30px 30px;
+    transition: all .4s ease-out 0s;
+}
+
+.checkout-booking-list .list-booked-room .booked-room {
+    padding: 15px 25px;
+}
+
+.checkout-booking-list .booked-room .room-details-content {
+    padding: 0;
+}
+
+/* 
 .booked-room h5, .total-price-content-box h5 {
     margin-bottom: 0px;
     color: var(--omra-base);
@@ -3681,7 +3751,7 @@ label.category-item::before {
 
 .booking-form-terms p {
     font-size: var(--fs-14);
-}
+} */
 
 /* ----------------------------------------------------------------
 	Payment
@@ -3802,7 +3872,6 @@ label.category-item::before {
     position: relative;
     padding: 0px 0px 0px;
     margin-bottom: 0px;
-    width: -moz-fit-content;
     width: fit-content;
     float: right;
 }
@@ -3844,6 +3913,35 @@ label.category-item::before {
     font-size: var(--fs-12);
     vertical-align: top;
     line-height: 26px;
+}
+
+
+
+.filter-list-btn {
+    position: fixed;
+    z-index: 10;
+    bottom: 1%;
+    left: 1%;
+}
+
+.filter-list-btn .color-btn {
+    padding: 8px 10px;
+    width: 60px;
+    height: 60px;
+    line-height: normal;
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.filter-list-btn .color-btn:hover,
+.filter-list-btn .color-btn:active {
+    background: var(--omra-base);
+    border-color: var(--omra-base);
+}
+
+.filter-list-btn svg {
+    width: 25px;
+    fill: var(--omra-white)
 }
 
 
