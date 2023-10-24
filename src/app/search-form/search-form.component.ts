@@ -114,7 +114,6 @@ export class SearchFormComponent implements OnInit {
   }
 
   onChangeType() {
-
     console.log(this.searchType);
   }
 

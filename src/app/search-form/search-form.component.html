@@ -209,7 +209,7 @@
                   <div formArrayName="passengersHotel">
                     <div class="d-flex flex-column">
                       <div class="d-flex justify-content-between mb-3">
-                        <label>Room</label>
+                        <div class="passengers-label">Room</div>
                         <div class="d-flex object-quantity passengers-nbr align-items-center">
                           <div class="minus" (click)="deletePassengerhotel()">-</div>
                           <div class="quantity">{{ passengersHotel.length }}</div>
@@ -232,7 +232,7 @@
                             <div class="row">
                               <div class="col-xl-6">
                                 <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                  <label>Adults</label>
+                                  <div class="passengers-label">Adults</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minusadultshotel(i)">
                                       -
@@ -248,7 +248,7 @@
                               </div>
                               <div class="col-xl-6">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <label>Children</label>
+                                  <div class="passengers-label">Children</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minuschildrenhotel(i)">
                                       -
@@ -371,7 +371,7 @@
         <div class="">
           <div class="row p-0">
             <!-- Destination -->
-            <div class="col-xl-4 mb-3">
+            <div class="col-xl-6 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.departureCity" class="btn btn-dark w-100"
                   type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
@@ -408,7 +408,7 @@
               </div>
             </div>
             <!-- Period -->
-            <div class="col-xl-4 mb-3">
+            <div class="col-xl-6 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100" type="button"
                   data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -472,7 +472,7 @@
               </div>
             </div>
             <!-- Duration -->
-            <div class="col-xl-4 mb-3">
+            <div class="col-xl-6 mb-3">
               <div class="dropdown w-100">
                 <button [class.selected-item]="searchFormPackage.value.duration" class="btn w-100" type="button"
                   data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -507,51 +507,8 @@
                 </div>
               </div>
             </div>
-            <!-- Flight -->
-            <div class="col-xl-4 mb-3">
-              <div class="dropdown w-100">
-                <button [class.selected-item]="searchFormPackage.value.flight" class="btn btn-dark w-100" type="button"
-                  data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
-                  <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                    <div class="input-group d-flex">
-                      <span class="input-group-text"><i class="icon-line2-plane"></i></span>
-                      <p class="m-0" *ngIf="searchFormPackage.value.flight">
-                        {{ searchFormPackage.value.flight }}
-                      </p>
-                      <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.flight">
-                        Flight
-                      </p>
-                    </div>
-                    <i class="icon-line-chevron-down"></i>
-                  </div>
-                </button>
-                <div class="dropdown-menu animate slideIn">
-                  <div class="select-container">
-                    <label for="Nouvelair" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="flight" id="Nouvelair" value="Nouvelair"
-                        formControlName="flight" />
-                      <div class="list-item">Nouvelair</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Tunisair" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="flight" id="Tunisair" value="Tunisair"
-                        formControlName="flight" />
-                      <div class="list-item">Tunisair</div>
-                    </label>
-                  </div>
-                  <div class="select-container">
-                    <label for="Syphax" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="flight" id="Syphax" value="Syphax"
-                        formControlName="flight" />
-                      <div class="list-item">Syphax Airlines</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Passengers -->
-            <div class="col-xl-8 mb-3">
+            <div class="col-xl-6 mb-3">
               <div class="dropdown dropdown-guests w-100">
                 <button [class.selected-item]="
                     searchFormPackage.value.passengers.length != 1 ||
@@ -593,7 +550,7 @@
                   <div formArrayName="passengers">
                     <div class="d-flex flex-column">
                       <div class="d-flex justify-content-between mb-3">
-                        <label>Room</label>
+                        <div class="passengers-label">Room</div>
                         <div class="d-flex object-quantity passengers-nbr align-items-center">
                           <div class="minus" (click)="deletePassenger()">-</div>
                           <div class="quantity">{{ passengers.length }}</div>
@@ -616,7 +573,7 @@
                             <div class="row">
                               <div class="col-xl-6">
                                 <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                  <label>Adults</label>
+                                  <div class="passengers-label">Adults</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minusadults(i)">
                                       -
@@ -632,7 +589,7 @@
                               </div>
                               <div class="col-xl-6">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <label>Children</label>
+                                  <div class="passengers-label">Children</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minuschildren(i)">
                                       -
@@ -848,7 +805,7 @@
                 <hr />
                 <div
                   class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                  <label>Number of Nights</label>
+                  <div class="nights-label">Number of Nights</div>
                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsFirstDestionation()">
                       -
@@ -896,7 +853,7 @@
                 <hr />
                 <div
                   class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                  <label>Number of Nights</label>
+                  <div class="nights-label">Number of Nights</div>
                   <div id="nights" class="d-flex object-quantity passengers-nbr align-items-center">
                     <div class="minus" (click)="minusNightsSecondDestionation()">
                       -
@@ -951,7 +908,7 @@
                 <div formArrayName="passengersCustom">
                   <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                      <label>Room</label>
+                      <div class="passengers-label">Room</div>
                       <div class="d-flex object-quantity passengers-nbr align-items-center">
                         <div class="minus" (click)="deletePassengerCustom()">
                           -
@@ -976,7 +933,7 @@
                           <div class="row">
                             <div class="col-xl-6">
                               <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                <label>Adults</label>
+                                <div class="passengers-label">Adults</div>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minusadultsCustom(i)">
                                     -
@@ -992,7 +949,7 @@
                             </div>
                             <div class="col-xl-6">
                               <div class="d-flex justify-content-between align-items-center mb-2">
-                                <label>Children</label>
+                                <div class="passengers-label">Children</div>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minuschildrenCustom(i)">
                                     -
