@@ -421,6 +421,10 @@ input[type=checkbox]:disabled {
     transition: all .3s linear;
 }
 
+.search-section .dropdown .btn.destination-btn {
+    padding-right: 0px !important;
+}
+
 .input-group {
     position: relative;
     display: -ms-flexbox;
@@ -432,8 +436,21 @@ input[type=checkbox]:disabled {
     width: 100%;
 }
 
+.input-group-custom {
+    padding: 8px 12px !important;
+    text-align: center;
+    border: 0;
+    border-right: 1px solid var(--omra-light-gray);
+    border-radius: 0 !important;
+    background: var(--omra-white) !important;
+    border-color: var(--omra-light-gray);
+    color: var(--omra-second) !important;
+    font-size: var(--fs-18) !important;
+    transition: all .3s linear;
+}
+
 .input-group .input-group-text {
-    padding: 8px 16px !important;
+    padding: 8px 12px !important;
     text-align: center;
     border: 0;
     border-right: 1px solid var(--omra-light-gray);
@@ -454,9 +471,9 @@ input[type=checkbox]:disabled {
 }
 
 .input-group p {
-    padding: 11px 20px;
+    padding: 10px 15px;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
 }
 
 .top-filter-section .input-group p {
@@ -468,9 +485,9 @@ input[type=checkbox]:disabled {
     transition: all .3s linear;
 }
 
-.input-group span {
-    padding: 11px 20px;
-    letter-spacing: 0.5px;
+.input-group span, .input-group .destination-input-content {
+    padding: 10px 15px;
+    letter-spacing: 0;
 }
 
 .bi::before,
@@ -480,8 +497,9 @@ input[type=checkbox]:disabled {
 }
 
 .search-section .dropdown .btn i,
-.picker i {
+.picker i, .input-group-custom i {
     color: var(--omra-second);
+    font-size: var(--fs-14);
     transition: all .3s linear;
 }
 
@@ -746,6 +764,11 @@ label.category-item::before {
     font-size: var(--fs-15);
 }
 
+.sub-select .list-item {
+    padding-left: 35px;
+    font-weight: 300;
+}
+
 .search-container:nth-last-of-type() .list-item {
     border-top: 1px solid blue;
 }
@@ -787,7 +810,7 @@ label.category-item::before {
 
 .calendar .dropdown-menu.show {
     width: auto !important;
-    margin-top: 27px !important;
+    margin-top: 15px !important;
     margin-bottom: 8px !important;
     padding: 20px;
 }
@@ -843,7 +866,7 @@ label.category-item::before {
     width: 32px !important;
     height: 32px !important;
     text-align: center;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
 }
 
 .ngb-dp-weekday {
@@ -872,9 +895,17 @@ label.category-item::before {
     color: var(--omra-gray);
     padding: 0;
     border: 1px solid var(--omra-light-gray);
-    box-shadow: 0px 10px 50px 0px rgb(0 0 0 / 8%);
+    box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 3%);
     padding: 0;
     transition: all .3s linear;
+}
+
+.destination-label {
+    padding: 5px 22px;
+    border-bottom: 1px solid var(--omra-light-gray);
+    color: var(--omra-base);
+    font-size: var(--fs-14);
+    font-weight: 400;
 }
 
 .dropdown-guests .dropdown-menu.show {
@@ -897,6 +928,10 @@ label.category-item::before {
     margin-top: 8px !important;
 }
 
+.child-age .dropdown-menu.show {
+    padding: 0 !important;
+}
+
 .child-age .select-container label {
     padding: 10px 13px;
 }
@@ -914,9 +949,16 @@ label.category-item::before {
     color: var(--omra-base)
 }
 
-.passengers-label, .nights-label {
-    font-size: 14px;
+.passengers-label {
+    font-size: var(--fs-14);
     font-weight: 400;
+    line-height: normal;
+}
+
+.nights-label {
+    font-size: var(--fs-12);
+    font-weight: 400;
+    line-height: normal;
 }
 
 .room-guest-item {
@@ -926,12 +968,12 @@ label.category-item::before {
 
 .passengers-nbr .minus,
 .passengers-nbr .plus {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: transparent;
     border: 1px solid var(--omra-second);
     color: var(--omra-gray);
-    line-height: 28px;
+    line-height: 16px;
     font-size: var(--fs-16);
     font-weight: 400;
     display: inline-block;
@@ -949,7 +991,8 @@ label.category-item::before {
 }
 
 .passengers-nbr .quantity {
-    height: 33px;
+    height: 26px;
+    line-height: normal;
     margin: 0 5px;
     min-width: 50px;
     width: 50px;
@@ -958,7 +1001,8 @@ label.category-item::before {
     border: 1px solid #dee2e6;
     background: white;
     display: inline-block;
-    padding: 1px 10px;
+    padding: 2px 10px;
+    -webkit-user-select: none;
     user-select: none;
 }
 

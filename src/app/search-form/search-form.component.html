@@ -39,7 +39,7 @@
 <section class="search-section bg-pattern-2">
   <div class="container search-box">
     <div class="search-category">
-      <div class="row m-0 p-0">
+      <div class="category-list row m-0 p-0">
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none"
             (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='hotel'" />
@@ -106,30 +106,65 @@
                       </p>
                       <p class="m-0 text-muted" *ngIf="!searchFormHotel.value.hotelName">Hotel</p>
                     </div>
-                    <i class="icon-line-chevron-down"></i>
+                    <i class="icon-end icon-line-chevron-down"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu animate slideIn">
                   <div>
                     <div class="select-container">
+                      <label for="allhotels" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="allhotels"
+                          value="All Hotels" formControlName="hotelName" />
+                        <div class="list-item">All Hotels</div>
+                      </label>
+                    </div>
+                    <div class="select-container">
+                      <label for="makkah99" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="makkah99"
+                          value="Makkah hotels" formControlName="hotelName" />
+                        <div class="list-item">Makkah Hotels</div>
+                      </label>
+                    </div>
+                    <div class="select-container sub-select">
                       <label for="Hotel1" class="me-3 w-100">
                         <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel1"
                           value="Mövenpick Makkah" formControlName="hotelName" />
                         <div class="list-item">Mövenpick Makkah</div>
                       </label>
                     </div>
-                    <div class="select-container">
+                    <div class="select-container sub-select">
                       <label for="Hotel2" class="me-3 w-100">
                         <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel2"
                           value="Swissotel Al Maqam Makkah" formControlName="hotelName" />
                         <div class="list-item">Swissotel Al Maqam Makkah</div>
                       </label>
                     </div>
-                    <div class="select-container">
+                    <div class="select-container sub-select">
                       <label for="Hotel3" class="me-3 w-100">
                         <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel3"
                           value="Pullman ZamZam Makkah" formControlName="hotelName" />
                         <div class="list-item">Pullman ZamZam Makkah</div>
+                      </label>
+                    </div>
+                    <div class="select-container">
+                      <label for="madinah99" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="madinah99"
+                          value="Madinah hotels" formControlName="hotelName" />
+                        <div class="list-item">Madinah Hotels</div>
+                      </label>
+                    </div>
+                    <div class="select-container sub-select">
+                      <label for="Hotel4" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel4"
+                          value="Pullman ZamZam Madinah" formControlName="hotelName" />
+                        <div class="list-item">Pullman ZamZam Madinah</div>
+                      </label>
+                    </div>
+                    <div class="select-container sub-select">
+                      <label for="Hotel5" class="me-3 w-100">
+                        <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel5"
+                          value="Anwar Al Madinah Movenpick" formControlName="hotelName" />
+                        <div class="list-item">Anwar Al Madinah Movenpick</div>
                       </label>
                     </div>
                   </div>
@@ -218,7 +253,7 @@
                         }}
                       </p>
                     </div>
-                    <i class="icon-line-plus"></i>
+                    <i class="icon-end icon-line-plus"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
@@ -245,10 +280,10 @@
                             </div>
                           </div>
                           <div class="room-passengers-details">
-                            <div class="row">
-                              <div class="col-xl-6">
-                                <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                  <div class="passengers-label">Adults</div>
+                            <div class="passengers-nbr-block d-flex gap-2">
+                              <div class="d-flex w-100">
+                                <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                  <div class="passengers-label me-1">Adults</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minusadultshotel(i)">
                                       -
@@ -262,9 +297,10 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-xl-6">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <div class="passengers-label">Children</div>
+                            
+                              <div class="d-flex w-100">
+                                <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                  <div class="passengers-label me-1">Children</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minuschildrenhotel(i)">
                                       -
@@ -402,7 +438,7 @@
                         Destination
                       </p>
                     </div>
-                    <i class="icon-line-chevron-down"></i>
+                    <i class="icon-end icon-line-chevron-down"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu animate slideIn">
@@ -438,7 +474,7 @@
                         Period
                       </p>
                     </div>
-                    <i class="icon-line-chevron-down"></i>
+                    <i class="icon-end icon-line-chevron-down"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu animate slideIn">
@@ -502,7 +538,7 @@
                         Duration
                       </p>
                     </div>
-                    <i class="icon-line-chevron-down"></i>
+                    <i class="icon-end icon-line-chevron-down"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu animate slideIn">
@@ -559,7 +595,7 @@
                         }}
                       </p>
                     </div>
-                    <i class="icon-line-plus"></i>
+                    <i class="icon-end icon-line-plus"></i>
                   </div>
                 </button>
                 <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
@@ -586,10 +622,10 @@
                             </div>
                           </div>
                           <div class="room-passengers-details">
-                            <div class="row">
-                              <div class="col-xl-6">
-                                <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                  <div class="passengers-label">Adults</div>
+                            <div class="passengers-nbr-block d-flex gap-2">
+                              <div class="d-flex w-100">
+                                <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
+                                  <div class="passengers-label me-1">Adults</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minusadults(i)">
                                       -
@@ -603,9 +639,9 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-xl-6">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <div class="passengers-label">Children</div>
+                              <div class="d-flex w-100">
+                                <div class="d-flex justify-content-between align-items-center w-100 mb-2">
+                                  <div class="passengers-label me-1">Children</div>
                                   <div class="d-flex object-quantity passengers-nbr align-items-center">
                                     <div class="minus" (click)="minuschildren(i)">
                                       -
@@ -758,12 +794,14 @@
               </div>
             </div>
             <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()" type="button">
+              <span class="input-group-custom"><i class="icon-line-calendar"></i></span>
               <div class="picker" [class.text-muted]="
                   formatter.format(fromDate) === formatter.format(todayDate) &&
                   formatter.format(toDate) === formatter.format(todayDate)
                 ">
+                
                 <div class="input-group">
-                  <span class="input-group-text"><i class="icon-line-calendar"></i></span>
+                  
                   <span class="m-0">{{
                     formatter.format(fromDate) == formatter.format(todayDate)
                     ? "Arrival Date"
@@ -771,12 +809,12 @@
                     }}</span>
                 </div>
               </div>
+              <span class="input-group-custom border-start"><i class="icon-line-calendar"></i></span>
               <div class="picker" [class.text-muted]="
                   formatter.format(toDate) == formatter.format(todayDate) ||
                   !formatter.format(toDate)
                 ">
                 <div class="input-group">
-                  <span class="input-group-text input-middle"><i class="icon-line-calendar"></i></span>
                   <span class="m-0">{{
                     formatter.format(toDate) == formatter.format(todayDate) ||
                     !formatter.format(toDate)
@@ -787,112 +825,119 @@
               </div>
             </button>
           </div>
-          <!-- Destination 1 -->
+          <!-- Destinations -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
-                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                  <div class="input-group d-flex">
-                    <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">1st destination <span>{{
-                        searchFormCustom.get("firstDestination.nights")?.value }}</span></p>
+              <button class="btn btn-dark w-100 destination-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
+                <div class="destination-btn-content d-flex align-items-center justify-content-between">
+                  <div class=""> 
+                    <span class="input-group-custom"><i class="icon-line-map-pin"></i></span>
                   </div>
-                  <i class="icon-line-chevron-down"></i>
-                </div>
-                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                  <div class="input-group d-flex">
-                    <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">2nd destination <span>{{
-                        searchFormCustom.get("secondDestination.nights")?.value }}</span>
-                    </p>
-                  </div>
-                  <i class="icon-line-chevron-down"></i>
-                </div>
-              </button>
-              <div class="dropdown-menu animate slideIn row">
-                <div formGroupName="firstDestination">
-                  <div>
-                    <div class="select-container">
-                      <label for="Mekkah" class="me-3 w-100">
-                        <input type="radio" class="form-check-input me-2" name="destinationOne" id="Mekkah"
-                          value="Mekkah" formControlName="destinationOne" />
-                        <div class="list-item">Mekkah</div>
-                      </label>
-                    </div>
-                    <div class="select-container">
-                      <label for="Medina" class="me-3 w-100">
-                        <input type="radio" class="form-check-input me-2" name="destinationOne" id="Medina"
-                          value="Medina" formControlName="destinationOne" />
-                        <div class="list-item">Medina</div>
-                      </label>
+                  <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div class="input-group d-flex">
+                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted" *ngIf="!searchFormCustom.value.firstDestination.destinationOne">1st destination</div>
+                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1" *ngIf="searchFormCustom.value.firstDestination">
+                        {{ searchFormCustom.value.firstDestination.destinationOne }}
+                        <div class="d-flex align-items-center ms-auto">
+                          <span class="p-0 me-1">{{ searchFormCustom.get("firstDestination.nights")?.value }}</span>
+                          <i class="icon-line-moon"></i>
+                        </div>
+                      </div>  
                     </div>
                   </div>
-                  <hr />
-                  <div
-                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                    <div class="nights-label">Number of Nights</div>
-                    <div class="d-flex object-quantity passengers-nbr align-items-center">
-                      <div class="minus" (click)="minusNightsFirstDestionation()">
-                        -
-                      </div>
-                      <div class="quantity">
-                        {{ searchFormCustom.get("firstDestination.nights")?.value }}
-                      </div>
-                      <div class="plus" (click)="plusNightsFirstDestionation()">
-                        +
+                  <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div class="input-group d-flex">
+                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted" *ngIf="!searchFormCustom.value.secondDestination.destinationTwo">2nd destination</div>
+                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1" *ngIf="searchFormCustom.value.secondDestination">
+                        {{ searchFormCustom.value.secondDestination.destinationTwo }} 
+                        <div class="d-flex align-items-center ms-auto">
+                          <span class="p-0 me-1">{{ searchFormCustom.get("secondDestination.nights")?.value }}</span>
+                          <i class="icon-line-moon"></i>
+                        </div>  
                       </div>
                     </div>
                   </div>
                 </div>
-                <div formGroupName="secondDestination">
-                  <div>
-                    <div class="select-container">
-                      <label for="Makkah2" class="me-3 w-100">
-                        <input type="radio" class="form-check-input me-2" name="destinationTwo" id="Makkah2"
-                          value="Makkah" formControlName="destinationTwo" />
-                        <div class="list-item">Makkah</div>
-                      </label>
-                    </div>
-                    <div class="select-container">
-                      <label for="Medinah2" class="me-3 w-100">
-                        <input type="radio" class="form-check-input me-2" name="destinationTwo" id="Medinah2"
-                          value="Medinah" formControlName="destinationTwo" />
-                        <div class="list-item">Medinah</div>
-                      </label>
-                    </div>
-                  </div>
-                  <hr />
-                  <div
-                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-3 pb-1 pe-4 ps-4 mb-3">
-                    <div class="nights-label">Number of Nights</div>
-                    <div id="nights" class="d-flex object-quantity passengers-nbr align-items-center">
-                      <div class="minus" (click)="minusNightsSecondDestionation()">
-                        -
-                      </div>
-                      <div class="quantity">
-                        {{ searchFormCustom.get("secondDestination.nights")?.value }}
-                      </div>
-                      <div class="plus" (click)="plusNightsSecondDestionation()">
-                        +
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Destination 2 -->
-          <div class="col-xl-6 mb-3">
-            <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
-
               </button>
               <div class="dropdown-menu animate slideIn">
+                <div class="d-flex justify-content-between destination-dropdown">
+                  <div class="d-flex flex-column flex-grow-1 border-end">
+                    <div class="destination-label">1st destination</div>
+                    <div formGroupName="firstDestination">
+                      <div>
+                        <div class="select-container">
+                          <label for="Makkah" class="me-3 w-100">
+                            <input type="radio" class="form-check-input me-2" name="destinationOne" id="Makkah"
+                              value="Makkah" formControlName="destinationOne" />
+                            <div class="list-item">Makkah</div>
+                          </label>
+                        </div>
+                        <div class="select-container">
+                          <label for="Medina" class="me-3 w-100">
+                            <input type="radio" class="form-check-input me-2" name="destinationOne" id="Medina"
+                              value="Medina" formControlName="destinationOne" />
+                            <div class="list-item">Medina</div>
+                          </label>
+                        </div>
+                      </div>
+                      <hr />
+                      <div
+                        class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
+                        <div class="nights-label">Number of Nights</div>
+                        <div class="d-flex object-quantity passengers-nbr align-items-center">
+                          <div class="minus" (click)="minusNightsFirstDestionation()">
+                            -
+                          </div>
+                          <div class="quantity">
+                            {{ searchFormCustom.get("firstDestination.nights")?.value }}
+                          </div>
+                          <div class="plus" (click)="plusNightsFirstDestionation()">
+                            +
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="d-flex flex-grow-1 flex-column">
+                    <div class="destination-label">2nd destination</div>
+                    <div formGroupName="secondDestination">
+                      <div>
+                        
+                        <div class="select-container">
+                          <label for="Makkah2" class="me-3 w-100">
+                            <input type="radio" class="form-check-input me-2" name="destinationTwo" id="Makkah2"
+                              value="Makkah" formControlName="destinationTwo" />
+                            <div class="list-item">Makkah</div>
+                          </label>
+                        </div>
+                        <div class="select-container">
+                          <label for="Medinah2" class="me-3 w-100">
+                            <input type="radio" class="form-check-input me-2" name="destinationTwo" id="Medinah2"
+                              value="Medinah" formControlName="destinationTwo" />
+                            <div class="list-item">Medinah</div>
+                          </label>
+                        </div>
+                      </div>
+                      <hr />
+                      <div
+                        class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
+                        <div class="nights-label">Number of Nights</div>
+                        <div id="nights" class="d-flex object-quantity passengers-nbr align-items-center">
+                          <div class="minus" (click)="minusNightsSecondDestionation()">
+                            -
+                          </div>
+                          <div class="quantity">
+                            {{ searchFormCustom.get("secondDestination.nights")?.value }}
+                          </div>
+                          <div class="plus" (click)="plusNightsSecondDestionation()">
+                            +
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
               </div>
             </div>
           </div>
@@ -928,7 +973,7 @@
                       }}
                     </p>
                   </div>
-                  <i class="icon-line-plus"></i>
+                  <i class="icon-end icon-line-plus"></i>
                 </div>
               </button>
               <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
@@ -957,10 +1002,10 @@
                           </div>
                         </div>
                         <div class="room-passengers-details">
-                          <div class="row">
-                            <div class="col-xl-6">
-                              <div class="room-adults d-flex justify-content-between align-items-center mb-2">
-                                <div class="passengers-label">Adults</div>
+                          <div class="passengers-nbr-block d-flex gap-2">
+                            <div class="d-flex w-100">
+                              <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
+                                <div class="passengers-label me-1">Adults</div>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minusadultsCustom(i)">
                                     -
@@ -973,10 +1018,10 @@
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-xl-6">
-                              <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div class="passengers-label">Children</div>
+                            </div>  
+                            <div class="d-flex w-100">
+                              <div class="d-flex justify-content-between align-items-center w-100 mb-2">
+                                <div class="passengers-label me-1">Children</div>
                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                   <div class="minus" (click)="minuschildrenCustom(i)">
                                     -
@@ -993,6 +1038,7 @@
                               </div>
                             </div>
                           </div>
+                         
                           <div class="row">
                             <div class="child-age col-6 mb-2" formArrayName="childrenCustom" *ngFor="
                                 let child of childrenCustom(i).controls;
@@ -1042,15 +1088,15 @@
           <!-- Road -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.path" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-briefcase"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Road</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.path">{{ searchFormCustom.value.path }}</p>
+                    <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.path">Road</p>
                   </div>
-                  <i class="icon-line-chevron-down"></i>
+                  <i class="icon-end icon-line-chevron-down"></i>
                 </div>
               </button>
               <div class="dropdown-menu animate slideIn">
@@ -1078,35 +1124,35 @@
           <!-- Place of departure -->
           <div class="col-xl-6 mb-3" *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.departureCountry" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Place of departure</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.departureCountry">{{ searchFormCustom.value.departureCountry }}</p>
+                    <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.departureCountry">Place of departure</p>
                   </div>
-                  <i class="icon-line-chevron-down"></i>
+                  <i class="icon-end icon-line-chevron-down"></i>
                 </div>
               </button>
               <div class="dropdown-menu animate slideIn">
                 <div>
                   <div class="select-container">
-                    <label for="Tunisia" class="me-3 w-100">
+                    <label for="Tunisia3" class="me-3 w-100">
                       <input type="radio" class="form-check-input me-2" name="departureCountry" id="Tunisia3"
                         value="Tunisia" formControlName="departureCountry" />
                       <div class="list-item">Tunisia</div>
                     </label>
                   </div>
                   <div class="select-container">
-                    <label for="Algeria" class="me-3 w-100">
+                    <label for="Algeria3" class="me-3 w-100">
                       <input type="radio" class="form-check-input me-2" name="departureCountry" id="Algeria3"
                         value="Algeria" formControlName="departureCountry" />
                       <div class="list-item">Algeria</div>
                     </label>
                   </div>
                   <div class="select-container">
-                    <label for="Morocco" class="me-3 w-100">
+                    <label for="Morocco3" class="me-3 w-100">
                       <input type="radio" class="form-check-input me-2" name="departureCountry" id="Morocco3"
                         value="Morocco" formControlName="departureCountry" />
                       <div class="list-item">Morocco</div>
@@ -1119,37 +1165,37 @@
           <!-- Nationality -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.Nationality" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Nationality</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.Nationality"> {{ searchFormCustom.value.Nationality }}</p>
+                    <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.Nationality">Nationality</p>
                   </div>
-                  <i class="icon-line-chevron-down"></i>
+                  <i class="icon-end icon-line-chevron-down"></i>
                 </div>
               </button>
               <div class="dropdown-menu animate slideIn">
                 <div>
                   <div class="select-container">
-                    <label for="Tunisia" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="nationality" id="Tunisia2" value="Tunisia"
-                        formControlName="nationality" />
+                    <label for="Tunisia2" class="me-3 w-100">
+                      <input type="radio" class="form-check-input me-2" name="Nationality" id="Tunisia2" value="Tunisia"
+                        formControlName="Nationality" />
                       <div class="list-item">Tunisia</div>
                     </label>
                   </div>
                   <div class="select-container">
-                    <label for="Algeria" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="nationality" id="Algeria2" value="Algeria"
-                        formControlName="nationality" />
+                    <label for="Algeria2" class="me-3 w-100">
+                      <input type="radio" class="form-check-input me-2" name="Nationality" id="Algeria2" value="Algeria"
+                        formControlName="Nationality" />
                       <div class="list-item">Algeria</div>
                     </label>
                   </div>
                   <div class="select-container">
-                    <label for="Morocco" class="me-3 w-100">
-                      <input type="radio" class="form-check-input me-2" name="nationality" id="Morocco2" value="Morocco"
-                        formControlName="nationality" />
+                    <label for="Morocco2" class="me-3 w-100">
+                      <input type="radio" class="form-check-input me-2" name="Nationality" id="Morocco2" value="Morocco"
+                        formControlName="Nationality" />
                       <div class="list-item">Morocco</div>
                     </label>
                   </div>
@@ -1160,15 +1206,15 @@
           <!-- Country -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.residenceCountry" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                 data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text" id="basic-addon1"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0 d-none"></p>
-                    <p class="m-0 text-muted">Residence Country</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.residenceCountry">{{ searchFormCustom.value.residenceCountry }}</p>
+                    <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.residenceCountry">Residence Country</p>
                   </div>
-                  <div><i class="icon-line-chevron-down"></i></div>
+                  <i class="icon-end icon-line-chevron-down"></i>
                 </div>
               </button>
               <div class="dropdown-menu animate slideIn">

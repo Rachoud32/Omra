@@ -29,7 +29,12 @@
 }
 
 @media (max-width: 1399px) {	
-
+    .passengers-nbr-block {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: start;
+        flex-wrap: wrap !important;
+    }
 }
 
 @media (max-width: 1199.98px) {	
@@ -53,6 +58,14 @@
 }
 
 @media (max-width: 991.98px) {	
+
+    .destination-dropdown {
+        flex-direction: column;
+    }
+
+    .destination-dropdown div:first-child .border-end {
+        border: 0;
+    }
 
     .ground-services-list .ground-service {
         padding: 10px;
@@ -278,6 +291,7 @@
 }
 
 @media (max-width: 767.98px) {
+
     .hotel-features-content-limit {
         padding: 0px;
         max-height: none;
@@ -312,6 +326,77 @@
 
 
 @media (max-width: 575.98px) {
+    .category-list {
+        flex-direction: column;
+    }
+
+    .category-item {
+        border-top: 1px solid #eee;
+    }
+
+    .category-box:first-child .category-item {
+        border-top: 0;
+    }
+
+    .criteria-form input::placeholder {
+        font-size: var(--fs-14);
+    }
+
+    p {
+        font-size: var(--fs-14);
+    }
+
+    .input-group span, .input-group .destination-input-content {
+        font-size: var(--fs-14);
+    }
+
+    .list-item {
+        font-size: var(--fs-14) !important;
+    }
+
+    .search-container .divider {
+        margin: 5px auto 12px;
+    }
+
+    .color-btn {
+        padding: 0px 30px;
+        width: 100%;
+    }
+
+    .icon-end {
+        display: none;
+    }
+
+    .date-picker-btn {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .picker {
+        width: 100% !important;
+    }
+
+    .picker:last-child {
+        border-top: 1px solid #eee;
+        width: 100% !important;
+    }
+
+    .destination-btn-content {
+        flex-direction: column;
+    }
+
+    .input-group .destination-input-content {
+        flex-direction: row;
+    }
+
+    .input-group-custom {
+        display: none;
+    }
+
+    .calendar .dropdown-menu.show {
+        margin-top: 19px !important;
+    }
+
     .color-btn.edit-btn {
         margin-right: 10px;
         margin-bottom: 0 !important;
@@ -341,10 +426,6 @@
 
     .service-summary-actions {
         flex-direction: row !important;
-    }
-
-    .picker:last-child .input-group {
-        justify-content: flex-end;
     }
 
     .picker .input-group p {

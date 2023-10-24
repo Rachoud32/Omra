@@ -94,7 +94,7 @@ export class SearchFormComponent implements OnInit {
       toDate: new FormControl({}),
       residenceCountry: new FormControl('', [Validators.required]),
       departureCountry: new FormControl('', [Validators.required]),
-      nationality: new FormControl('', [Validators.required]),
+      Nationality: new FormControl('', [Validators.required]),
       path: new FormControl('', [Validators.required]),
       firstDestination: new FormGroup({
         destinationOne: new FormControl('', [Validators.required]),
