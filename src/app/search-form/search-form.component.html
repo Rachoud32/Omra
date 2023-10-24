@@ -297,7 +297,7 @@
                                   </div>
                                 </div>
                               </div>
-                            
+
                               <div class="d-flex w-100">
                                 <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
                                   <div class="passengers-label me-1">Children</div>
@@ -799,9 +799,9 @@
                   formatter.format(fromDate) === formatter.format(todayDate) &&
                   formatter.format(toDate) === formatter.format(todayDate)
                 ">
-                
+
                 <div class="input-group">
-                  
+
                   <span class="m-0">{{
                     formatter.format(fromDate) == formatter.format(todayDate)
                     ? "Arrival Date"
@@ -828,32 +828,45 @@
           <!-- Destinations -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100 destination-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
+              <button class="btn btn-dark w-100 destination-btn" type="button" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                 <div class="destination-btn-content d-flex align-items-center justify-content-between">
-                  <div class=""> 
+                  <div class="">
                     <span class="input-group-custom"><i class="icon-line-map-pin"></i></span>
                   </div>
                   <div class="d-flex justify-content-between w-100 align-items-center">
                     <div class="input-group d-flex">
-                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted" *ngIf="!searchFormCustom.value.firstDestination.destinationOne">1st destination</div>
-                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1" *ngIf="searchFormCustom.value.firstDestination">
+                      <div
+                        class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
+                        *ngIf="!searchFormCustom.value.firstDestination.destinationOne">1st destination</div>
+                      <div
+                        class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
+                        *ngIf="searchFormCustom.value.firstDestination">
                         {{ searchFormCustom.value.firstDestination.destinationOne }}
                         <div class="d-flex align-items-center ms-auto">
-                          <span class="p-0 me-1">{{ searchFormCustom.get("firstDestination.nights")?.value }}</span>
+                          <span class="p-0 me-1"
+                            [class.text-muted]="searchFormCustom.get('firstDestination.nights')?.value ===0">{{
+                            searchFormCustom.get("firstDestination.nights")?.value }}</span>
                           <i class="icon-line-moon"></i>
                         </div>
-                      </div>  
+                      </div>
                     </div>
                   </div>
                   <div class="d-flex justify-content-between w-100 align-items-center">
                     <div class="input-group d-flex">
-                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted" *ngIf="!searchFormCustom.value.secondDestination.destinationTwo">2nd destination</div>
-                      <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1" *ngIf="searchFormCustom.value.secondDestination">
-                        {{ searchFormCustom.value.secondDestination.destinationTwo }} 
+                      <div
+                        class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
+                        *ngIf="!searchFormCustom.value.secondDestination.destinationTwo">2nd destination</div>
+                      <div
+                        class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
+                        *ngIf="searchFormCustom.value.secondDestination">
+                        {{ searchFormCustom.value.secondDestination.destinationTwo }}
                         <div class="d-flex align-items-center ms-auto">
-                          <span class="p-0 me-1">{{ searchFormCustom.get("secondDestination.nights")?.value }}</span>
+                          <span class="p-0 me-1"
+                            [class.text-muted]="searchFormCustom.get('secondDestination.nights')?.value === 0 ">{{
+                            searchFormCustom.get("secondDestination.nights")?.value }}</span>
                           <i class="icon-line-moon"></i>
-                        </div>  
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -903,7 +916,7 @@
                     <div class="destination-label">2nd destination</div>
                     <div formGroupName="secondDestination">
                       <div>
-                        
+
                         <div class="select-container">
                           <label for="Makkah2" class="me-3 w-100">
                             <input type="radio" class="form-check-input me-2" name="destinationTwo" id="Makkah2"
@@ -937,7 +950,7 @@
                       </div>
                     </div>
                   </div>
-                </div>  
+                </div>
               </div>
             </div>
           </div>
@@ -1018,7 +1031,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </div>  
+                            </div>
                             <div class="d-flex w-100">
                               <div class="d-flex justify-content-between align-items-center w-100 mb-2">
                                 <div class="passengers-label me-1">Children</div>
@@ -1038,7 +1051,7 @@
                               </div>
                             </div>
                           </div>
-                         
+
                           <div class="row">
                             <div class="child-age col-6 mb-2" formArrayName="childrenCustom" *ngFor="
                                 let child of childrenCustom(i).controls;
@@ -1088,8 +1101,8 @@
           <!-- Road -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.path" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
+              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.path"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-briefcase"></i></span>
@@ -1124,12 +1137,14 @@
           <!-- Place of departure -->
           <div class="col-xl-6 mb-3" *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.departureCountry" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
+              <button class="btn btn-dark w-100" type="button"
+                [class.selected-item]="searchFormCustom.value.departureCountry" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0" *ngIf="searchFormCustom.value.departureCountry">{{ searchFormCustom.value.departureCountry }}</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.departureCountry">{{
+                      searchFormCustom.value.departureCountry }}</p>
                     <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.departureCountry">Place of departure</p>
                   </div>
                   <i class="icon-end icon-line-chevron-down"></i>
@@ -1165,12 +1180,14 @@
           <!-- Nationality -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.Nationality" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
+              <button class="btn btn-dark w-100" type="button"
+                [class.selected-item]="searchFormCustom.value.Nationality" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0" *ngIf="searchFormCustom.value.Nationality"> {{ searchFormCustom.value.Nationality }}</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.Nationality"> {{ searchFormCustom.value.Nationality }}
+                    </p>
                     <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.Nationality">Nationality</p>
                   </div>
                   <i class="icon-end icon-line-chevron-down"></i>
@@ -1206,12 +1223,14 @@
           <!-- Country -->
           <div class="col-xl-6 mb-3">
             <div class="dropdown w-100">
-              <button class="btn btn-dark w-100" type="button" [class.selected-item]="searchFormCustom.value.residenceCountry" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                data-bs-display="static" aria-expanded="false">
+              <button class="btn btn-dark w-100" type="button"
+                [class.selected-item]="searchFormCustom.value.residenceCountry" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                   <div class="input-group d-flex">
                     <span class="input-group-text" id="basic-addon1"><i class="icon-line-map-pin"></i></span>
-                    <p class="m-0" *ngIf="searchFormCustom.value.residenceCountry">{{ searchFormCustom.value.residenceCountry }}</p>
+                    <p class="m-0" *ngIf="searchFormCustom.value.residenceCountry">{{
+                      searchFormCustom.value.residenceCountry }}</p>
                     <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.residenceCountry">Residence Country</p>
                   </div>
                   <i class="icon-end icon-line-chevron-down"></i>
