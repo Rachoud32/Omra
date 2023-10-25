@@ -46,7 +46,7 @@ export class SecondDestinationComponent {
     if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
       this.roomSelectionStep = "step2"
     } else if (this.selectedRoom != ''){
-      this.router.navigate(['/result/second-transfer']);
+      this.router.navigate(['/result/first-transfer']);
     } else {
       this.toastr.info("Please select a room before proceeding.")
     }

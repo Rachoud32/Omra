@@ -1,54 +1,57 @@
 <div class="sidebar-filters offcanvas offcanvas-start" tabindex="-1" id="destinationfilter" aria-labelledby="destinationfilter">
     <div class="sidebar-filters-content">
-        <div class="d-flex justify-content-between align-items-center">
-            <h5 class="m-0">Filters</h5>
-            <div class="d-flex">
-                <button class="color-btn me-4"><i class="icon-line-refresh-cw"></i></button>
-                <button type="button" class="color-btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon-line-cross"></i></button>
-            </div>
-        </div>  
-        <hr>
-        <div class="filter-label">Price Range</div>
-        <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
-        <hr>
-        <div class="filter-label mt-2">Star Rating</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="5stars" name="rate" value="5stars" checked><label class="me-2" for="5stars">5 stars</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="4stars" name="rate" value="4stars"><label class="me-2" for="4stars">4 stars</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="3stars" name="rate" value="3stars"><label class="me-2" for="3stars">3 stars</label></div></li>
-        </ul>
-        <hr>
-        <div class="filter-label mt-2">Type of pension</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="halfboard60" name="pension" value="halfboard" checked><label class="me-2" for="halfboard">Half board</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="fullboard60" name="pension" value="fullboard"><label class="me-2" for="fullboard60">Full board</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="allinclusive60" name="pension" value="allinclusive60"><label class="me-2" for="allinclusive60">All inclusive</label></div></li>
-        </ul>
-        <hr>
-        <div class="filter-label mt-2">Popular themes</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="themehotel" value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="themehotel" value="topseller"><label class="me-2" for="topseller">Top seller</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="themehotel" value="promo"><label class="me-2" for="promo">Promo</label></div></li>
-        </ul>
-        <hr>
-        <div class="filter-label mt-2">Themes</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudgetmode" name="themes" value="smallbudgetmode" checked><label class="me-2" for="smallbudgetmode">Family</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="businessmode" name="themes" value="businessmode"><label class="me-2" for="businessmode">Business</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxurymode" name="themes" value="luxurymode"><label class="me-2" for="luxurymode">Luxury</label></div></li>
-        </ul>
-        <hr>
-        <div class="filter-label mt-2">Reservation policy</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="cancellation" name="reservation" value="cancellation"><label class="me-2" for="cancellation">Free cancellation</label></div></li>
-        </ul>
-        <hr>
-        <div class="filter-label mt-2">View</div>
-        <ul class="mb-2">
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="garden" name="view" value="garden" checked><label class="me-2" for="garden">Garden</label></div></li>
-            <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="haram" name="view" value="haram"><label class="me-2" for="haram">Haram</label></div></li>
-        </ul>
+        <div class="offcanvas-header">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <h5 class="m-0">Filters</h5>
+                <div class="d-flex">
+                    <button class="color-btn me-4"><i class="icon-line-refresh-cw"></i></button>
+                    <button type="button" class="color-btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon-line-cross"></i></button>
+                </div>
+            </div>  
+        </div>
+        <div class="offcanvas-body">
+            <div class="filter-label">Price Range</div>
+            <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+            <hr>
+            <div class="filter-label mt-2">Star Rating</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="5stars" name="rate" value="5stars" checked><label class="me-2" for="5stars">5 stars</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="4stars" name="rate" value="4stars"><label class="me-2" for="4stars">4 stars</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="3stars" name="rate" value="3stars"><label class="me-2" for="3stars">3 stars</label></div></li>
+            </ul>
+            <hr>
+            <div class="filter-label mt-2">Type of pension</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="halfboard60" name="pension" value="halfboard" checked><label class="me-2" for="halfboard">Half board</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="fullboard60" name="pension" value="fullboard"><label class="me-2" for="fullboard60">Full board</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="allinclusive60" name="pension" value="allinclusive60"><label class="me-2" for="allinclusive60">All inclusive</label></div></li>
+            </ul>
+            <hr>
+            <div class="filter-label mt-2">Popular themes</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="themehotel" value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="themehotel" value="topseller"><label class="me-2" for="topseller">Top seller</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="themehotel" value="promo"><label class="me-2" for="promo">Promo</label></div></li>
+            </ul>
+            <hr>
+            <div class="filter-label mt-2">Themes</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudgetmode" name="themes" value="smallbudgetmode" checked><label class="me-2" for="smallbudgetmode">Family</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="businessmode" name="themes" value="businessmode"><label class="me-2" for="businessmode">Business</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxurymode" name="themes" value="luxurymode"><label class="me-2" for="luxurymode">Luxury</label></div></li>
+            </ul>
+            <hr>
+            <div class="filter-label mt-2">Reservation policy</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="cancellation" name="reservation" value="cancellation"><label class="me-2" for="cancellation">Free cancellation</label></div></li>
+            </ul>
+            <hr>
+            <div class="filter-label mt-2">View</div>
+            <ul class="mb-2">
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="garden" name="view" value="garden" checked><label class="me-2" for="garden">Garden</label></div></li>
+                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="haram" name="view" value="haram"><label class="me-2" for="haram">Haram</label></div></li>
+            </ul>
+        </div>
     </div>
     
   </div>

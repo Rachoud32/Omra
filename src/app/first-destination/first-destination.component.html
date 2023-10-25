@@ -58,21 +58,31 @@
                 <div class="price"><span>$</span>250</div>
                 <p class="m-0">Best rate</p>
               </div>
-              <div class="available-notice">
-                <div class="d-flex align-items-center">
-                  <i class="icon-line-bell me-2"></i>
-                  <p>4 rooms availables</p>
+              <div class="notices">
+                <div class="hotel-type">
+                  <p>Luxury Hotel</p>
+                </div>
+                <div class="available-notice">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-line-bell me-2"></i>
+                    <p>4 rooms availables</p>
+                  </div>
                 </div>
               </div>
+              
               <div class="hotel-rating">
-                <ngx-stars
-                  [readonly]="true"
-                  [size]="1"
-                  [maxStars]="5"
-                  [initialStars]="4.5"
-                  [customStarIcons]="circleIcons"
-                  [color]="'#c9a96a'"
-                ></ngx-stars>
+                <div class="d-flex align-items-center">
+                  <div class="hotel-rate me-2">4.3</div>
+                  <div>
+                    <ngx-stars
+                      [readonly]="true"
+                      [size]="1"
+                      [maxStars]="5"
+                      [initialStars]="4.3"
+                      [color]="'#c9a96a'"
+                    ></ngx-stars>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -101,7 +111,7 @@
               <div class="col-lg-7 z-index-3">
                 <div class="hotel-content-bottom">
                   <div class="title-sec me-4">
-                    <h2 class="d-flex align-items-center hotel-type">
+                    <h2 class="d-flex align-items-center hotel-name text-truncate">
                       Movenpick Makkah Hajar Tower
                     </h2>
                   </div>
@@ -1219,21 +1229,31 @@
                 <div class="price"><span>$</span>250</div>
                 <p class="m-0">Best rate</p>
               </div>
-              <div class="available-notice">
-                <div class="d-flex align-items-center">
-                  <i class="icon-line-bell me-2"></i>
-                  <p>2 rooms availables</p>
+              <div class="notices">
+                <div class="hotel-type">
+                  <p>Business Hotel</p>
+                </div>
+                <div class="available-notice">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-line-bell me-2"></i>
+                    <p>2 rooms availables</p>
+                  </div>
                 </div>
               </div>
+              
               <div class="hotel-rating">
-                <ngx-stars
-                  [readonly]="true"
-                  [size]="1"
-                  [maxStars]="5"
-                  [initialStars]="4.5"
-                  [customStarIcons]="circleIcons"
-                  [color]="'#c9a96a'"
-                ></ngx-stars>
+                <div class="d-flex align-items-center">
+                  <div class="hotel-rate me-2">4.5</div>
+                  <div>
+                    <ngx-stars
+                      [readonly]="true"
+                      [size]="1"
+                      [maxStars]="5"
+                      [initialStars]="4.5"
+                      [color]="'#c9a96a'"
+                    ></ngx-stars>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1262,7 +1282,7 @@
               <div class="col-lg-7 z-index-3">
                 <div class="hotel-content-bottom">
                   <div class="title-sec me-4">
-                    <h2 class="d-flex align-items-center hotel-type">
+                    <h2 class="d-flex align-items-center hotel-name text-truncate">
                       Swissotel Al Maqam Makkah
                     </h2>
                   </div>
@@ -1619,314 +1639,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="room-box accordion-item">
-                    <div
-                      class="room-item"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#room-accordion"
-                    >
-                      <div class="rooms-container">
-                        <label>
-                          <input
-                            type="radio"
-                            name="radio"
-                            id="roombox7"
-                            value="roombox7"
-                            [(ngModel)]="selectedRoom"
-                            disabled
-                          />
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <div class="room-picture">
-                                  <img src="assets/package/7.jpg" alt="" />
-                                </div>
-                                <lightgallery
-                                  [settings]="settings"
-                                  [onBeforeSlide]="onBeforeSlide"
-                                >
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/7.jpg"
-                                  >
-                                    <div class="room-picture-overlay">
-                                      <div class="room-picture-icon">
-                                        <i class="icon-line-camera"></i>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/8.jpg"
-                                  >
-                                  </a>
-                                </lightgallery>
-                              </div>
-
-                              <div class="col-lg-7">
-                                <div class="room-details-content d-flex">
-                                  <div class="row">
-                                    <div class="col-lg-12">
-                                      <div class="title">
-                                        King junior suite partial Haram view
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="">
-                                        <div class="room-options mb-2">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 3
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="pension-label">
-                                        Types of pension
-                                      </div>
-                                      <ul class="mb-2 pension-list">
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="bedbreakfast7"
-                                              name="pensiontype7"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="bedbreakfast7"
-                                              >Bed and breakfast</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="halfpension7"
-                                              name="pensiontype7"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="halfpension7"
-                                              >Half pension</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="fullboard7"
-                                              name="pensiontype7"
-                                              class="me-2"
-                                            />
-                                            <label class="me-4" for="fullboard7"
-                                              >Full board</label
-                                            >
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="col-lg-12 mb-2">
-                                      <a
-                                        class="room-read-more accordion-btn d-block"
-                                        data-bs-toggle="collapse"
-                                        href="#"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="#"
-                                        >More details</a
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-2">
-                                <div class="price-content">
-                                  <div class="price d-flex">
-                                    <div class="text-end"><span>$</span>250</div>
-                                    <div class="tva mb-3">TVA included</div>
-                                  </div>
-                                  <div class="link">
-                                    <button
-                                      class="color-btn"
-                                      (click)="checkRoom('roombox7')"
-                                    >
-                                      Select
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="room-box accordion-item">
-                    <div
-                      class="room-item"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#room-accordion"
-                    >
-                      <div class="rooms-container">
-                        <label>
-                          <input
-                            type="radio"
-                            name="radio"
-                            id="roombox8"
-                            value="roombox8"
-                            [(ngModel)]="selectedRoom"
-                            disabled
-                          />
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <div class="room-picture">
-                                  <img src="assets/package/9.jpg" alt="" />
-                                </div>
-                                <lightgallery
-                                  [settings]="settings"
-                                  [onBeforeSlide]="onBeforeSlide"
-                                >
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/9.jpg"
-                                  >
-                                    <div class="room-picture-overlay">
-                                      <div class="room-picture-icon">
-                                        <i class="icon-line-camera"></i>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </lightgallery>
-                              </div>
-
-                              <div class="col-lg-7">
-                                <div class="room-details-content d-flex">
-                                  <div class="row">
-                                    <div class="col-lg-12">
-                                      <div class="title">
-                                        KING ONE BEDROOM SUITE PARTIAL KAABA
-                                        VIEW
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="">
-                                        <div class="room-options mb-2">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 4
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="pension-label">
-                                        Types of pension
-                                      </div>
-                                      <ul class="mb-2 pension-list">
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="bedbreakfast8"
-                                              name="pensiontype8"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="bedbreakfast8"
-                                              >Bed and breakfast</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="halfpension8"
-                                              name="pensiontype8"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="halfpension8"
-                                              >Half pension</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="fullboard8"
-                                              name="pensiontype8"
-                                              class="me-2"
-                                            />
-                                            <label class="me-4" for="fullboard8"
-                                              >Full board</label
-                                            >
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="col-lg-12 mb-2">
-                                      <a
-                                        class="room-read-more accordion-btn d-block"
-                                        data-bs-toggle="collapse"
-                                        href="#"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="#"
-                                        >More details</a
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-2">
-                                <div class="price-content">
-                                  <div class="price d-flex">
-                                    <div class="text-end"><span>$</span>250</div>
-                                    <div class="tva mb-3">TVA included</div>
-                                  </div>
-                                  <div class="link">
-                                    <button
-                                      class="color-btn"
-                                      (click)="checkRoom('roombox8')"
-                                    >
-                                      Select
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1977,21 +1689,31 @@
                 <div class="price"><span>$</span>250</div>
                 <p class="m-0">Best rate</p>
               </div>
-              <div class="available-notice">
-                <div class="d-flex align-items-center">
-                  <i class="icon-line-bell me-2"></i>
-                  <p>1 room available</p>
+              <div class="notices">
+                <div class="hotel-type">
+                  <p>Resort Hotel</p>
+                </div>
+                <div class="available-notice">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-line-bell me-2"></i>
+                    <p>1 room available</p>
+                  </div>
                 </div>
               </div>
+              
               <div class="hotel-rating">
-                <ngx-stars
-                  [readonly]="true"
-                  [size]="1"
-                  [maxStars]="5"
-                  [initialStars]="4"
-                  [customStarIcons]="circleIcons"
-                  [color]="'#c9a96a'"
-                ></ngx-stars>
+                <div class="d-flex align-items-center">
+                  <div class="hotel-rate me-2">4</div>
+                  <div>
+                    <ngx-stars
+                      [readonly]="true"
+                      [size]="1"
+                      [maxStars]="5"
+                      [initialStars]="4"
+                      [color]="'#c9a96a'"
+                    ></ngx-stars>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2020,7 +1742,7 @@
               <div class="col-lg-7 z-index-3">
                 <div class="hotel-content-bottom">
                   <div class="title-sec me-4">
-                    <h2 class="d-flex align-items-center hotel-type">
+                    <h2 class="d-flex align-items-center hotel-name text-truncate">
                       Pullman ZamZam Makkah
                     </h2>
                   </div>
@@ -2222,476 +1944,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="room-box accordion-item">
-                    <div
-                      class="room-item"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#room-accordion"
-                    >
-                      <div class="rooms-container">
-                        <label>
-                          <input
-                            type="radio"
-                            name="radio"
-                            id="roombox10"
-                            value="roombox10"
-                            [(ngModel)]="selectedRoom"
-                            disabled
-                          />
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <div class="room-picture">
-                                  <img src="assets/package/3.jpg" alt="" />
-                                </div>
-                                <lightgallery
-                                  [settings]="settings"
-                                  [onBeforeSlide]="onBeforeSlide"
-                                >
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/3.jpg"
-                                  >
-                                    <div class="room-picture-overlay">
-                                      <div class="room-picture-icon">
-                                        <i class="icon-line-camera"></i>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/4.jpg"
-                                  >
-                                  </a>
-                                </lightgallery>
-                              </div>
-
-                              <div class="col-lg-7">
-                                <div class="room-details-content d-flex">
-                                  <div class="row">
-                                    <div class="col-lg-12">
-                                      <div class="title">
-                                        Superior double room
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="">
-                                        <div class="room-options mb-2">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 2
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="pension-label">
-                                        Types of pension
-                                      </div>
-                                      <ul class="mb-2 pension-list">
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="bedbreakfast10"
-                                              name="pensiontype10"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="bedbreakfast10"
-                                              >Bed and breakfast</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="halfpension10"
-                                              name="pensiontype10"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="halfpension10"
-                                              >Half pension</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="fullboard10"
-                                              name="pensiontype10"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="fullboard10"
-                                              >Full board</label
-                                            >
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="col-lg-12 mb-2">
-                                      <a
-                                        class="room-read-more accordion-btn d-block"
-                                        data-bs-toggle="collapse"
-                                        href="#"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="#"
-                                        >More details</a
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-2">
-                                <div class="price-content">
-                                  <div class="price d-flex">
-                                    <div class="text-end"><span>$</span>250</div>
-                                    <div class="tva mb-3">TVA included</div>
-                                  </div>
-                                  <div class="link">
-                                    <button
-                                      class="color-btn"
-                                      (click)="checkRoom('roombox10')"
-                                    >
-                                      Select
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="room-box accordion-item">
-                    <div
-                      class="room-item"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#room-accordion"
-                    >
-                      <div class="rooms-container">
-                        <label>
-                          <input
-                            type="radio"
-                            name="radio"
-                            id="roombox11"
-                            value="roombox11"
-                            [(ngModel)]="selectedRoom"
-                            disabled
-                          />
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <div class="room-picture">
-                                  <img src="assets/package/7.jpg" alt="" />
-                                </div>
-                                <lightgallery
-                                  [settings]="settings"
-                                  [onBeforeSlide]="onBeforeSlide"
-                                >
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/7.jpg"
-                                  >
-                                    <div class="room-picture-overlay">
-                                      <div class="room-picture-icon">
-                                        <i class="icon-line-camera"></i>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/8.jpg"
-                                  >
-                                  </a>
-                                </lightgallery>
-                              </div>
-
-                              <div class="col-lg-7">
-                                <div class="room-details-content d-flex">
-                                  <div class="row">
-                                    <div class="col-lg-12">
-                                      <div class="title">
-                                        King junior suite partial Haram view
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="">
-                                        <div class="room-options mb-2">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 3
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="pension-label">
-                                        Types of pension
-                                      </div>
-                                      <ul class="mb-2 pension-list">
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="bedbreakfast11"
-                                              name="pensiontype11"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="bedbreakfast11"
-                                              >Bed and breakfast</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="halfpension11"
-                                              name="pensiontype11"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="halfpension11"
-                                              >Half pension</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="fullboard11"
-                                              name="pensiontype11"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="fullboard11"
-                                              >Full board</label
-                                            >
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="col-lg-12 mb-2">
-                                      <a
-                                        class="room-read-more accordion-btn d-block"
-                                        data-bs-toggle="collapse"
-                                        href="#"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="#"
-                                        >More details</a
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-2">
-                                <div class="price-content">
-                                  <div class="price d-flex">
-                                    <div class="text-end"><span>$</span>250</div>
-                                    <div class="tva mb-3">TVA included</div>
-                                  </div>
-                                  <div class="link">
-                                    <button
-                                      class="color-btn"
-                                      (click)="checkRoom('roombox11')"
-                                    >
-                                      Select
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="room-box accordion-item">
-                    <div
-                      class="room-item"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#room-accordion"
-                    >
-                      <div class="rooms-container">
-                        <label>
-                          <input
-                            type="radio"
-                            name="radio"
-                            id="roombox12"
-                            value="roombox12"
-                            [(ngModel)]="selectedRoom"
-                            disabled
-                          />
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <div class="room-picture">
-                                  <img src="assets/package/9.jpg" alt="" />
-                                </div>
-                                <lightgallery
-                                  [settings]="settings"
-                                  [onBeforeSlide]="onBeforeSlide"
-                                >
-                                  <a
-                                    class="gallery-item"
-                                    data-src="assets/package/9.jpg"
-                                  >
-                                    <div class="room-picture-overlay">
-                                      <div class="room-picture-icon">
-                                        <i class="icon-line-camera"></i>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </lightgallery>
-                              </div>
-
-                              <div class="col-lg-7">
-                                <div class="room-details-content d-flex">
-                                  <div class="row">
-                                    <div class="col-lg-12">
-                                      <div class="title">
-                                        KING ONE BEDROOM SUITE PARTIAL KAABA
-                                        VIEW
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="">
-                                        <div class="room-options mb-2">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 4
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                      <div class="pension-label">
-                                        Types of pension
-                                      </div>
-                                      <ul class="mb-2 pension-list">
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="bedbreakfast12"
-                                              name="pensiontype12"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="bedbreakfast12"
-                                              >Bed and breakfast</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="halfpension12"
-                                              name="pensiontype12"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="halfpension12"
-                                              >Half pension</label
-                                            >
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div>
-                                            <input
-                                              type="radio"
-                                              id="fullboard12"
-                                              name="pensiontype12"
-                                              class="me-2"
-                                            />
-                                            <label
-                                              class="me-4"
-                                              for="fullboard12"
-                                              >Full board</label
-                                            >
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div class="col-lg-12 mb-2">
-                                      <a
-                                        class="room-read-more accordion-btn d-block"
-                                        data-bs-toggle="collapse"
-                                        href="#"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="#"
-                                        >More details</a
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-2">
-                                <div class="price-content">
-                                  <div class="price d-flex">
-                                    <div class="text-end"><span>$</span>250</div>
-                                    <div class="tva mb-3">TVA included</div>
-                                  </div>
-                                  <div class="link">
-                                    <button
-                                      class="color-btn"
-                                      (click)="checkRoom('roombox12')"
-                                    >
-                                      Select
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -2763,7 +2015,7 @@
                             </div>
                           </label>  
                           <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
-                            <div class="d-flex align-items-center mb-1 ms-auto">
+                            <div class="d-flex align-items-center ms-auto">
                               <div><span>$</span>10 / adult</div>
                               <div class="ms-2">
                                 <div class="minus">-</div>
@@ -2773,6 +2025,7 @@
                             </div>
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date2" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -2798,6 +2051,7 @@
                             </div>  
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date3" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -2917,6 +2171,7 @@
                             </div>  
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date5" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -2942,6 +2197,7 @@
                             </div>  
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date6" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -3010,124 +2266,122 @@
               <div class="col-lg-9">
                 <div class="ground-service-details">
                   <div class="row">
-                    <div class="ground-service-details">
-                      <div class="row">
-                        <div class="col-lg-9">
-                          <h3>The Mosque of the Two Qiblahs</h3>
-                          <a
-                            class="ground-service-details-btn"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#ground-service-details2"
-                            aria-expanded="false"
-                            aria-controls="ground-service-details2"
-                            >More details</a
-                          >
-                          <div id="ground-service-details2" class="mt-2 collapse">
-                            <div class="row">
-                              <div class="col-lg-12">
-                                <p class="mb-2">
-                                  Suspendisse potenti. Etiam accumsan dui velit, sit
-                                  amet porta odio ultricies at In et velit porta,
-                                  pulvinar nisl et, congue sem.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                          <p class="ground-service-text mb-2">
-                            Please choose which days to have the ground-service
-                          </p>
-                          <ul class="mb-2">
-                            <li>
-                              <label for="ground-service-date7" class="ground-service-date d-flex justify-content-between align-items-start">
-                                <div>
-                                  <input type="checkbox" id="ground-service-date7" /> 08/15/2022 - 08/16/2022
-                                </div>
-                              </label>  
-                              <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
-                                <div class="d-flex align-items-center mb-1 ms-auto">
-                                  <div><span>$</span>10 / adult</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">1</div>
-                                    <div class="plus">+</div>
-                                  </div>
-                                </div>
-                                <div class="d-flex align-items-center ms-auto">
-                                  <div><span>$</span>5 / child</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">0</div>
-                                    <div class="plus">+</div>
-                                  </div>  
-                                </div>  
-                              </div>
-                            </li>
-                            <li>
-                              <label for="ground-service-date8" class="ground-service-date d-flex justify-content-between align-items-start">
-                                <div>
-                                  <input type="checkbox" id="ground-service-date8" /> 08/15/2022 - 08/16/2022
-                                </div>
-                              </label>  
-                              <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
-                                <div class="d-flex align-items-center mb-1 ms-auto">
-                                  <div><span>$</span>10 / adult</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">1</div>
-                                    <div class="plus">+</div>
-                                  </div>
-                                </div>
-                                <div class="d-flex align-items-center ms-auto">
-                                  <div><span>$</span>5 / child</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">0</div>
-                                    <div class="plus">+</div>
-                                  </div>  
-                                </div>  
-                              </div>
-                            </li>
-                            <li>
-                              <label for="ground-service-date9" class="ground-service-date d-flex justify-content-between align-items-start">
-                                <div>
-                                  <input type="checkbox" id="ground-service-date9" /> 08/15/2022 - 08/16/2022
-                                </div>
-                              </label>  
-                              <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
-                                <div class="d-flex align-items-center mb-1 ms-auto">
-                                  <div><span>$</span>10 / adult</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">1</div>
-                                    <div class="plus">+</div>
-                                  </div>
-                                </div>
-                                <div class="d-flex align-items-center ms-auto">
-                                  <div><span>$</span>5 / child</div>
-                                  <div class="ms-2">
-                                    <div class="minus">-</div>
-                                    <div class="quantity">0</div>
-                                    <div class="plus">+</div>
-                                  </div>  
-                                </div>  
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-3">
-                          <div class="text-end mb-3">
-                            <div class="ground-service-price">
-                              <span>$</span>80
-                              <p class="mb-1 text-end">per room | stay</p>
-                            </div>
-                          </div>
-                          <div class="link float-end">
-                            <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox2()">
-                              Select
-                            </button>
+                    <div class="col-lg-9">
+                      <h3>The Mosque of the Two Qiblahs</h3>
+                      <a
+                        class="ground-service-details-btn"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ground-service-details2"
+                        aria-expanded="false"
+                        aria-controls="ground-service-details2"
+                        >More details</a
+                      >
+                      <div id="ground-service-details2" class="mt-2 collapse">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="mb-2">
+                              Suspendisse potenti. Etiam accumsan dui velit, sit
+                              amet porta odio ultricies at In et velit porta,
+                              pulvinar nisl et, congue sem.
+                            </p>
                           </div>
                         </div>
+                      </div>
+                      <hr />
+                      <p class="ground-service-text mb-2">
+                        Please choose which days to have the ground-service
+                      </p>
+                      <ul class="mb-2">
+                        <li>
+                          <label for="ground-service-date7" class="ground-service-date d-flex justify-content-between align-items-start">
+                            <div>
+                              <input type="checkbox" id="ground-service-date7" /> 08/15/2022 - 08/16/2022
+                            </div>
+                          </label>  
+                          <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                            <div class="d-flex align-items-center mb-1 ms-auto">
+                              <div><span>$</span>10 / adult</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">1</div>
+                                <div class="plus">+</div>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                              <div><span>$</span>5 / child</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">0</div>
+                                <div class="plus">+</div>
+                              </div>  
+                            </div>  
+                          </div>
+                        </li>
+                        <hr>
+                        <li>
+                          <label for="ground-service-date8" class="ground-service-date d-flex justify-content-between align-items-start">
+                            <div>
+                              <input type="checkbox" id="ground-service-date8" /> 08/15/2022 - 08/16/2022
+                            </div>
+                          </label>  
+                          <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                            <div class="d-flex align-items-center mb-1 ms-auto">
+                              <div><span>$</span>10 / adult</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">1</div>
+                                <div class="plus">+</div>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                              <div><span>$</span>5 / child</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">0</div>
+                                <div class="plus">+</div>
+                              </div>  
+                            </div>  
+                          </div>
+                        </li>
+                        <hr>
+                        <li>
+                          <label for="ground-service-date9" class="ground-service-date d-flex justify-content-between align-items-start">
+                            <div>
+                              <input type="checkbox" id="ground-service-date9" /> 08/15/2022 - 08/16/2022
+                            </div>
+                          </label>  
+                          <div class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                            <div class="d-flex align-items-center mb-1 ms-auto">
+                              <div><span>$</span>10 / adult</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">1</div>
+                                <div class="plus">+</div>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                              <div><span>$</span>5 / child</div>
+                              <div class="ms-2">
+                                <div class="minus">-</div>
+                                <div class="quantity">0</div>
+                                <div class="plus">+</div>
+                              </div>  
+                            </div>  
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="text-end mb-3">
+                        <div class="ground-service-price">
+                          <span>$</span>80
+                          <p class="mb-1 text-end">per room | stay</p>
+                        </div>
+                      </div>
+                      <div class="link float-end">
+                        <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox2()">
+                          Select
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -3209,6 +2463,7 @@
                             </div>  
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date11" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -3234,6 +2489,7 @@
                             </div>  
                           </div>
                         </li>
+                        <hr>
                         <li>
                           <label for="ground-service-date12" class="ground-service-date d-flex justify-content-between align-items-start">
                             <div>
@@ -3286,206 +2542,10 @@
   <!-- Sidebar
   ============================================= -->
   <div class="col-lg-3 mb-5">
-    <app-destination-sidebar-filter></app-destination-sidebar-filter>
-    <div class="sidebar-widgets-wrap">
-      <div class="search-sidebar-details mb-5">
-        <div class="search-sidebar-header">
-          <h5 class="title">Your Booking(s)</h5>
-        </div>
-        <div class="search-sidebar-content">
-          <div class="search-sidebar-list">
-            <div class="search-item">
-              <div class="search-details">
-                <div class="search-details-block d-flex align-items-center">
-                  <div class="search-details-block-content">
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-flight"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-flight"
-                      >
-                        <i class="icon-line-plus me-1"></i>Flight
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div class="collapse details-content" id="details-flight">
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Departure</div>
-                          <div>Sfax, TN</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Arrival</div>
-                          <div>Jeddah, SA</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-destination"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-destination"
-                      >
-                        <i class="icon-line-plus me-1"></i>1st destination
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-destination"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Hotel</div>
-                          <div>Swissotel Al Maqam Makkah</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Room</div>
-                          <div>Two Bedroom Suite City View</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Ground Serv.</div>
-                          <div>Visit to AL-BAQI</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-destination2"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-destination2"
-                      >
-                        <i class="icon-line-plus me-1"></i>2nd destination
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-destination2"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Hotel</div>
-                          <div>Swissotel Al Maqam Makkah</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Room</div>
-                          <div>Two Bedroom Suite City View</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Ground Serv.</div>
-                          <div>Visit to AL-BAQI</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-transfer"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-transfer"
-                      >
-                        <i class="icon-line-plus me-1"></i>1st Transfer
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div class="collapse details-content" id="details-transfer">
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Car</div>
-                          <div>Sedan Car - Toyota Camry</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-transfer2"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-transfer2"
-                      >
-                        <i class="icon-line-plus me-1"></i>2nd Transfer
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-transfer2"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Car</div>
-                          <div>Sedan Car - Toyota Camry</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div class="search-sidebar-footer">
-          <div class="search-items-price j-block d-flex">
-            <div class="search-total-label">
-              Total
-              <div class="price-tax">Tax included</div>
-            </div>
-            <div class="search-total-price"><span>$</span>1220</div>
-          </div>
-          <button (click)="goToGroundServices()" class="tab-action-btn-next color-btn w-100">
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <app-bookings-sidebar></app-bookings-sidebar>
+  </div>  
   <!-- .sidebar end -->
+  <app-destination-sidebar-filter></app-destination-sidebar-filter>
 </div>
 
 <!-- Modal -->
@@ -3505,7 +2565,7 @@
           </h4>
           <div class="modal-address d-flex">
             <i class="icon-line-map-pin me-2"></i>
-            <div class="hotel-name">
+            <div class="hotel-address">
               Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi
               Arabia
             </div>

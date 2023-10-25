@@ -31,7 +31,8 @@ import { SummaryComponent } from './summary/summary.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { BookingStepsComponent } from './booking-steps/booking-steps.component';
-import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component'
+import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component';
+import { BookingsSidebarComponent } from './bookings-sidebar/bookings-sidebar.component'
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component'
     PaymentComponent,
     BookingStepsComponent,
     MotamarInfosComponent,
+    BookingsSidebarComponent,
   ],
   imports: [
     CommonModule,

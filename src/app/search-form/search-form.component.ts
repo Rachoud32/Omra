@@ -113,10 +113,6 @@ export class SearchFormComponent implements OnInit {
     this.searchFormCustom?.get('flightmode')?.setValue('Umrah package without flight')
   }
 
-  onChangeType() {
-    console.log(this.searchType);
-  }
-
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
@@ -149,7 +145,6 @@ export class SearchFormComponent implements OnInit {
 
   validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
     const parsed = this.formatter.parse(input);
-    console.log({ parsed });
 
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
@@ -213,10 +208,6 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  searchHotel() {
-    console.log(this.searchFormPackage?.value);
-  }
-
   /***************************
       Package Section
   ************************** */
@@ -275,10 +266,6 @@ export class SearchFormComponent implements OnInit {
       this.passengers.at(i).get('adults')?.setValue(this.passengers.at(i).get('adults')?.value - 1)
       this.numAdults -= 1
     }
-  }
-
-  searchPackage() {
-    console.log(this.searchFormPackage?.value);
   }
 
   /***************************
@@ -383,10 +370,6 @@ export class SearchFormComponent implements OnInit {
       this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value - 1)
       this.numAdultsCustom -= 1
     }
-  }
-
-  searchMap() {
-    console.log(this.searchFormCustom?.value);
   }
 
 }

@@ -36,12 +36,6 @@ export class FirstDestinationComponent {
     plugins: [lgZoom]
   };
 
-  circleIcons = {
-    empty: '../assets/circle-empty.svg',
-    half: '../assets/circle-half.svg',
-    full: '../assets/circle-full.svg',
-  };
-
   goToGroundServices() {
     if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
       this.roomSelectionStep = "step2"

@@ -42,7 +42,7 @@
       <div class="category-list row m-0 p-0">
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none"
-            (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='hotel'" />
+           [(ngModel)]="searchType" checked="searchType=='hotel'" />
           <label for="hotel" [class.active-category]="searchType == 'hotel'"
             class="category-item d-flex align-items-center">
             <svg viewBox="0 0 716.67 716.67">
@@ -55,7 +55,7 @@
         </div>
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="package" id="package" class="form-check-input me-2 d-none"
-            (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='package'" />
+           [(ngModel)]="searchType" checked="searchType=='package'" />
           <label for="package" [class.active-category]="searchType == 'package'"
             class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
@@ -71,7 +71,7 @@
         </div>
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="custom" id="custom" class="form-check-input me-2 d-none"
-            (change)="onChangeType()" [(ngModel)]="searchType" checked="searchType=='custom'" />
+           [(ngModel)]="searchType" checked="searchType=='custom'" />
           <label for="custom" [class.active-category]="searchType == 'custom'"
             class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
@@ -101,7 +101,7 @@
                   <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                     <div class="input-group d-flex">
                       <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                      <p class="m-0" *ngIf="searchFormHotel.value.hotelName">
+                      <p class="m-0" *ngIf="searchFormHotel.value.hotelName" contentEditable="true">
                         {{ searchFormHotel.value.hotelName }}
                       </p>
                       <p class="m-0 text-muted" *ngIf="!searchFormHotel.value.hotelName">Hotel</p>
@@ -373,7 +373,7 @@
               </div>
               <div id="search-criteria" class="collapse">
                 <div class="row criteria-form mb-3">
-                  <div class="col-xl-4">
+                  <div class="col-xl-6">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -384,7 +384,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-xl-4">
+                  <div class="col-xl-6">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -392,17 +392,6 @@
                         </span>
                         <input type="text" name="search-form-promotional-code" id="search-form-promotional-code"
                           class="form-control border-form-control text-start" value="" placeholder="Promotional code">
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-xl-4">
-                    <div class="form-group criteria-group">
-                      <span class="input-group d-flex">
-                        <span class="input-group-text">
-                          <img src="assets/discount.svg">
-                        </span>
-                        <input type="text" name="search-form-company-code" id="search-form-company-code"
-                          class="form-control border-form-control text-start" value="" placeholder="Company code">
                       </span>
                     </div>
                   </div>
@@ -435,7 +424,7 @@
                         {{ searchFormPackage.value.departureCity }}
                       </p>
                       <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.departureCity">
-                        Destination
+                        Departure city
                       </p>
                     </div>
                     <i class="icon-end icon-line-chevron-down"></i>
@@ -714,7 +703,7 @@
               </div>
               <div id="search-criteria" class="collapse">
                 <div class="row criteria-form mb-3">
-                  <div class="col-xl-4">
+                  <div class="col-xl-6">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -725,7 +714,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-xl-4">
+                  <div class="col-xl-6">
                     <div class="form-group criteria-group">
                       <span class="input-group d-flex">
                         <span class="input-group-text">
@@ -733,17 +722,6 @@
                         </span>
                         <input type="text" name="search-form-promotional-code" id="search-form-promotional-code"
                           class="form-control border-form-control text-start" value="" placeholder="Promotional code">
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-xl-4">
-                    <div class="form-group criteria-group">
-                      <span class="input-group d-flex">
-                        <span class="input-group-text">
-                          <img src="assets/discount.svg">
-                        </span>
-                        <input type="text" name="search-form-company-code" id="search-form-company-code"
-                          class="form-control border-form-control text-start" value="" placeholder="Company code">
                       </span>
                     </div>
                   </div>
@@ -1273,7 +1251,7 @@
             </div>
             <div id="search-criteria" class="collapse">
               <div class="row criteria-form mb-3">
-                <div class="col-xl-4 ">
+                <div class="col-xl-6">
                   <div class="form-group criteria-group">
                     <span class="input-group d-flex">
                       <span class="input-group-text">
@@ -1284,7 +1262,7 @@
                     </span>
                   </div>
                 </div>
-                <div class="col-xl-4 ">
+                <div class="col-xl-6">
                   <div class="form-group criteria-group">
                     <span class="input-group d-flex">
                       <span class="input-group-text">
@@ -1292,17 +1270,6 @@
                       </span>
                       <input type="text" name="search-form-promotional-code" id="search-form-promotional-code"
                         class="form-control border-form-control text-start" value="" placeholder="Promotional code">
-                    </span>
-                  </div>
-                </div>
-                <div class="col-xl-4">
-                  <div class="form-group criteria-group">
-                    <span class="input-group d-flex">
-                      <span class="input-group-text">
-                        <img src="assets/discount.svg">
-                      </span>
-                      <input type="text" name="search-form-company-code" id="search-form-company-code"
-                        class="form-control border-form-control text-start" value="" placeholder="Company code">
                     </span>
                   </div>
                 </div>
