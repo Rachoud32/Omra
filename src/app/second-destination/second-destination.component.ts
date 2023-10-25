@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 
 export class SecondDestinationComponent {
-  constructor(private toastr: ToastrService, private router: Router) {};
+  constructor(private toastr: ToastrService, private router: Router) { };
 
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
@@ -42,10 +42,10 @@ export class SecondDestinationComponent {
     full: '../assets/circle-full.svg',
   };
 
-  goToGroundServices() {
+  goToGroundServices = () => {
     if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
       this.roomSelectionStep = "step2"
-    } else if (this.selectedRoom != ''){
+    } else if (this.selectedRoom != '') {
       this.router.navigate(['/result/first-transfer']);
     } else {
       this.toastr.info("Please select a room before proceeding.")

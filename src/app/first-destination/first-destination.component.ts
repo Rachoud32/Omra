@@ -13,8 +13,6 @@ import { Router } from '@angular/router';
 })
 
 export class FirstDestinationComponent {
-  constructor(private toastr: ToastrService, private router: Router) {};
-
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
@@ -35,11 +33,13 @@ export class FirstDestinationComponent {
     counter: false,
     plugins: [lgZoom]
   };
+  constructor(private toastr: ToastrService, private router: Router) { };
 
-  goToGroundServices() {
+
+  goToGroundServices = () => {
     if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
       this.roomSelectionStep = "step2"
-    } else if (this.selectedRoom != ''){
+    } else if (this.selectedRoom != '') {
       this.router.navigate(['/result/first-transfer']);
     } else {
       this.toastr.info("Please select a room before proceeding.")
