@@ -8,11 +8,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./bookings-sidebar.component.css']
 })
 export class BookingsSidebarComponent {
-  @Input() eventGoToGroundServices!: Function;
+  @Input() eventgoToNextStep!: Function;
 
-  goToGroundServices() {
-    if (this.eventGoToGroundServices) {
-      this.eventGoToGroundServices();
+  goToNextStep() {
+    if (this.eventgoToNextStep) {
+      this.eventgoToNextStep();
     }
   }
 }

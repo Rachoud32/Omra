@@ -1338,7 +1338,7 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox()">
+                        <button class="color-btn ground-service-btn-select">
                           Select
                         </button>
                       </div>
@@ -1484,7 +1484,7 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox1()">
+                        <button class="color-btn ground-service-btn-select">
                           Select
                         </button>
                       </div>
@@ -1630,7 +1630,7 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox2()">
+                        <button class="color-btn ground-service-btn-select">
                           Select
                         </button>
                       </div>
@@ -1776,7 +1776,7 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select" (click)="toggleCheckbox3()">
+                        <button class="color-btn ground-service-btn-select">
                           Select
                         </button>
                       </div>
@@ -1790,209 +1790,13 @@
       </div>
     </div>
   </div>
-  <!-- Sidebar
+<!-- Sidebar
   ============================================= -->
   <div class="col-lg-3 mb-5">
-    <app-destination-sidebar-filter></app-destination-sidebar-filter>
-    <div class="sidebar-widgets-wrap">
-      <div class="search-sidebar-details mb-5">
-        <div class="search-sidebar-header">
-          <h5 class="title">Your Booking(s)</h5>
-        </div>
-        <div class="search-sidebar-content">
-          <div class="search-sidebar-list">
-            <div class="search-item">
-              <div class="search-details">
-                <div class="search-details-block d-flex align-items-center">
-                  <div class="search-details-block-content">
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-flight"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-flight"
-                      >
-                        <i class="icon-line-plus me-1"></i>Flight
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div class="collapse details-content" id="details-flight">
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Departure</div>
-                          <div>Sfax, TN</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Arrival</div>
-                          <div>Jeddah, SA</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-destination"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-destination"
-                      >
-                        <i class="icon-line-plus me-1"></i>1st destination
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-destination"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Hotel</div>
-                          <div>Swissotel Al Maqam Makkah</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Room</div>
-                          <div>Two Bedroom Suite City View</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Ground Serv.</div>
-                          <div>Visit to AL-BAQI</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-destination2"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-destination2"
-                      >
-                        <i class="icon-line-plus me-1"></i>2nd destination
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-destination2"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Hotel</div>
-                          <div>Swissotel Al Maqam Makkah</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Room</div>
-                          <div>Two Bedroom Suite City View</div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Ground Serv.</div>
-                          <div>Visit to AL-BAQI</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-transfer"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-transfer"
-                      >
-                        <i class="icon-line-plus me-1"></i>1st Transfer
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div class="collapse details-content" id="details-transfer">
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Car</div>
-                          <div>Sedan Car - Toyota Camry</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <a
-                        class="search-details-label"
-                        data-bs-toggle="collapse"
-                        href="#details-transfer2"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="details-transfer2"
-                      >
-                        <i class="icon-line-plus me-1"></i>2nd Transfer
-                      </a>
-                      <div class="search-sidebar-price"><span>$</span>125</div>
-                    </div>
-                    <div
-                      class="collapse details-content"
-                      id="details-transfer2"
-                    >
-                      <div class="card card-body">
-                        <div
-                          class="d-flex align-items-center justify-content-between"
-                        >
-                          <div class="search-details-label">Car</div>
-                          <div>Sedan Car - Toyota Camry</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div class="search-sidebar-footer">
-          <div class="search-items-price j-block d-flex">
-            <div class="search-total-label">
-              Total
-              <div class="price-tax">Tax included</div>
-            </div>
-            <div class="search-total-price"><span>$</span>1220</div>
-          </div>
-          <button (click)="goToGroundServices()" class="tab-action-btn-next color-btn w-100">
-            Continue
-          </button>
-        </div>
-      </div>
-    </div>
+    <app-bookings-sidebar [eventgoToNextStep]="goToNextStep"></app-bookings-sidebar>
   </div>
   <!-- .sidebar end -->
+  <app-destination-sidebar-filter></app-destination-sidebar-filter>
 </div>
 
 <!-- Modal -->

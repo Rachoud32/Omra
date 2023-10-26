@@ -33,37 +33,19 @@ export class FirstDestinationComponent {
     counter: false,
     plugins: [lgZoom]
   };
+
   constructor(private toastr: ToastrService, private router: Router) { };
 
-
-  goToGroundServices = () => {
-    if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
-      this.roomSelectionStep = "step2"
-    } else if (this.selectedRoom != '') {
-      this.router.navigate(['/result/first-transfer']);
+  goToNextStep = () => {
+    if (this.selectedRoom != '') {
+      this.router.navigate(['/result/second-destination']);
     } else {
-      this.toastr.info("Please select a room before proceeding.")
+      this.toastr.info("Please select a room for your 1st destination before proceeding.")
     }
   }
 
   checkRoom(value: string) {
     this.selectedRoom = value;
-  }
-
-  toggleCheckbox() {
-    this.isChecked = !this.isChecked;
-  }
-
-  toggleCheckbox1() {
-    this.isChecked1 = !this.isChecked1;
-  }
-
-  toggleCheckbox2() {
-    this.isChecked2 = !this.isChecked2;
-  }
-
-  toggleCheckbox3() {
-    this.isChecked3 = !this.isChecked3;
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {

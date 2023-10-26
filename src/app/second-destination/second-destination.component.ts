@@ -36,40 +36,16 @@ export class SecondDestinationComponent {
     plugins: [lgZoom]
   };
 
-  circleIcons = {
-    empty: '../assets/circle-empty.svg',
-    half: '../assets/circle-half.svg',
-    full: '../assets/circle-full.svg',
-  };
-
-  goToGroundServices = () => {
-    if (this.selectedRoom != '' && this.roomSelectionStep === "step1") {
-      this.roomSelectionStep = "step2"
-    } else if (this.selectedRoom != '') {
+  goToNextStep = () => {
+    if (this.selectedRoom != '') {
       this.router.navigate(['/result/first-transfer']);
     } else {
-      this.toastr.info("Please select a room before proceeding.")
+      this.toastr.info("Please select a room for your 2nd destination before proceeding.")
     }
   }
 
   checkRoom(value: string) {
     this.selectedRoom = value;
-  }
-
-  toggleCheckbox() {
-    this.isChecked = !this.isChecked;
-  }
-
-  toggleCheckbox1() {
-    this.isChecked1 = !this.isChecked1;
-  }
-
-  toggleCheckbox2() {
-    this.isChecked2 = !this.isChecked2;
-  }
-
-  toggleCheckbox3() {
-    this.isChecked3 = !this.isChecked3;
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {

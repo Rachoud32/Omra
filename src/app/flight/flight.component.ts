@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faPlane, faArrowRightLong, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-flight',
@@ -7,17 +9,33 @@ import { faPlane, faArrowRightLong, faCaretRight } from '@fortawesome/free-solid
   styleUrls: ['./flight.component.css']
 })
 export class FlightComponent implements OnInit {
+
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
 
-  selectedFlight: string = 'flightbox1';
+  selectedFlight: string = '';
+  
   checkOption(value: string) {
     this.selectedFlight = value;
   }
 
   ngOnInit(): void {
 
+  }
+
+  constructor(private toastr: ToastrService, private router: Router) { };
+
+  goToNextStep = () => {
+    if (this.selectedFlight != '') {
+      this.router.navigate(['/result/first-destination']);
+    } else {
+      this.toastr.info("Please select a flight before proceeding.")
+    }
+  }
+
+  checkFlight(value: string) {
+    this.selectedFlight = value;
   }
 }
 

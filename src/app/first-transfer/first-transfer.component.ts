@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faPlane, faArrowRightLong, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-first-transfer',
@@ -11,16 +13,23 @@ export class FirstTransferComponent implements OnInit {
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
 
-  selectedTransfer: string = 'transfer1';
-  transfer1 = 'transfer1';
-  transfer2 = 'transfer2';
-  checkOption() {
-    this.selectedTransfer = this.transfer1;
-  }
-  checkOption2() {
-    this.selectedTransfer = this.transfer2;
-  }
+  selectedTransfer: string = '';
+
   ngOnInit(): void {
    
+  }
+
+  constructor(private toastr: ToastrService, private router: Router) { };
+
+  goToNextStep = () => {
+    if (this.selectedTransfer != '') {
+      this.router.navigate(['/result/first-destination']);
+    } else {
+      this.toastr.info("Please select a flight before proceeding.")
+    }
+  }
+
+  checkTransfer(value: string) {
+    this.selectedTransfer = value;
   }
 }
