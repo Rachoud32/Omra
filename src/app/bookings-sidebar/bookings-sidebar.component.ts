@@ -1,6 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bookings-sidebar',

@@ -42,7 +42,7 @@
       <div class="category-list row m-0 p-0">
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="hotel" id="hotel" class="form-check-input me-2 d-none"
-           [(ngModel)]="searchType" checked="searchType=='hotel'" />
+            [(ngModel)]="searchType" checked="searchType=='hotel'" />
           <label for="hotel" [class.active-category]="searchType == 'hotel'"
             class="category-item d-flex align-items-center">
             <svg viewBox="0 0 716.67 716.67">
@@ -55,7 +55,7 @@
         </div>
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="package" id="package" class="form-check-input me-2 d-none"
-           [(ngModel)]="searchType" checked="searchType=='package'" />
+            [(ngModel)]="searchType" checked="searchType=='package'" />
           <label for="package" [class.active-category]="searchType == 'package'"
             class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
@@ -71,7 +71,7 @@
         </div>
         <div class="col-xl-2 p-0 category-box">
           <input type="radio" name="searchType" value="custom" id="custom" class="form-check-input me-2 d-none"
-           [(ngModel)]="searchType" checked="searchType=='custom'" />
+            [(ngModel)]="searchType" checked="searchType=='custom'" />
           <label for="custom" [class.active-category]="searchType == 'custom'"
             class="category-item d-flex align-items-center d-flex">
             <svg viewBox="0 0 802.1 802.1">
@@ -399,7 +399,7 @@
               </div>
             </div>
             <div class="col-xl-3 d-flex w-100 justify-content-end">
-              <button routerLink="/result/flight" class="color-btn">
+              <button routerLink="/result/flight" (click)="search()" class="color-btn">
                 Search
               </button>
             </div>
@@ -729,7 +729,7 @@
               </div>
             </div>
             <div class="col-xl-3 d-flex w-100 justify-content-end">
-              <button routerLink="/result/flight" class="color-btn">
+              <button routerLink="/result/flight" (click)="search()" class="color-btn">
                 Search
               </button>
             </div>
@@ -1277,7 +1277,7 @@
             </div>
           </div>
           <div class="col-xl-3 d-flex w-100 justify-content-end">
-            <button routerLink="/result/flight" class="color-btn">
+            <button routerLink="/result/flight" (click)="search()" class="color-btn">
               Search
             </button>
           </div>

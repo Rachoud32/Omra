@@ -25,27 +25,44 @@ export class SecondDestinationComponent {
   faChevronRight = faChevronRight
   roomSelectionStep = "step1"
   selectedRoom: string = ''
-  isChecked: boolean = false;
-  isChecked1: boolean = false;
-  isChecked2: boolean = false;
-  isChecked3: boolean = false;
+  selectedGroundServices: string[] = []
 
   name = "Angular " + VERSION.major;
   settings = {
     counter: false,
     plugins: [lgZoom]
   };
-
   goToNextStep = () => {
-    if (this.selectedRoom != '') {
-      this.router.navigate(['/result/first-transfer']);
+    if (this.selectedRoom != '' && this.roomSelectionStep == "step1") {
+      this.roomSelectionStep = "step2"
+    } else if (this.roomSelectionStep == "step2") {
+      const data = {
+        flight: true,
+        firstDestination: true,
+        secondDestination: true,
+        transfer: true,
+        summary: false,
+      }
+      localStorage.setItem('steps', JSON.stringify(data))
+      window.location.href = '/result/first-transfer';
     } else {
       this.toastr.info("Please select a room for your 2nd destination before proceeding.")
     }
   }
-
   checkRoom(value: string) {
     this.selectedRoom = value;
+  }
+
+  checkGroundService(value: string) {
+    if (!this.selectedGroundServices.includes(value)) {
+      this.selectedGroundServices.push(value);
+    }
+    else {
+      const index = this.selectedGroundServices.indexOf(value)
+      this.selectedGroundServices.splice(index, 1);
+    }
+    console.log(this.selectedGroundServices);
+
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {

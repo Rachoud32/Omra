@@ -372,4 +372,16 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
+
+  search() {
+    const data = {
+      flight: true,
+      firstDestination: false,
+      secondDestination: false,
+      transfer: false,
+      summary: false,
+    }
+    localStorage.setItem('steps', JSON.stringify(data))
+  }
+
 }

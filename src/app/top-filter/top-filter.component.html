@@ -1,4 +1,4 @@
-<div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3" >
+<div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
   <div class="side-filter-tags d-flex align-items-center gap-2">
     <div class="filter-tag d-flex align-items-center">
       <p>5 stars</p>
@@ -28,9 +28,13 @@
 
   <div class="sorting-content d-flex align-items-center">
     <div class="d-flex">
-      <a class="me-2"><i class="icon-line-arrow-down"></i></a>
+      <a class="me-2" (click)="sortOrder('increment')" *ngIf="order==='increment'"><i
+          class="icon-line-arrow-down"></i></a>
+      <a class="me-2" (click)="sortOrder('decrement')" *ngIf="order==='decrement'"><i
+          class="icon-line-arrow-up"></i></a>
       <div class="dropdown">
-        <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
+        <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+          data-bs-display="static" aria-expanded="false">
           <div class="d-flex justify-content-between w-100 align-items-center">
             <div class="sort-label me-2">Sort by</div>
             <div class="input-group d-flex align-items-center">
@@ -42,25 +46,14 @@
         <div class="dropdown-menu animate slideIn">
           <div class="select-container">
             <label for="hotelrating" class="me-3 w-100">
-              <input
-                type="radio"
-                class="form-check-input me-2"
-                name="hotelrating"
-                id="hotelrating"
-                value="hotelrating"
-              />
+              <input type="radio" class="form-check-input me-2" name="hotelrating" id="hotelrating"
+                value="hotelrating" />
               <div class="list-item">Rating</div>
             </label>
           </div>
           <div class="select-container">
             <label for="hotelname" class="me-3 w-100">
-              <input
-                type="radio"
-                class="form-check-input me-2"
-                name="hotelname"
-                id="hotelname"
-                value="hotelname"
-              />
+              <input type="radio" class="form-check-input me-2" name="hotelname" id="hotelname" value="hotelname" />
               <div class="list-item">Name</div>
             </label>
           </div>

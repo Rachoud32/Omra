@@ -15,7 +15,7 @@ export class FlightComponent implements OnInit {
   faCaretRight = faCaretRight
 
   selectedFlight: string = '';
-  
+
   checkOption(value: string) {
     this.selectedFlight = value;
   }
@@ -28,7 +28,16 @@ export class FlightComponent implements OnInit {
 
   goToNextStep = () => {
     if (this.selectedFlight != '') {
-      this.router.navigate(['/result/first-destination']);
+      // this.router.navigate(['/result/first-destination']);
+      const data = {
+        flight: true,
+        firstDestination: true,
+        secondDestination: false,
+        transfer: false,
+        summary: false,
+      }
+      localStorage.setItem('steps', JSON.stringify(data))
+      window.location.href = '/result/first-destination'
     } else {
       this.toastr.info("Please select a flight before proceeding.")
     }

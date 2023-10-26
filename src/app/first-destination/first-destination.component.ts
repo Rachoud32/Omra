@@ -1,4 +1,4 @@
-import { Component, VERSION, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, VERSION, ViewEncapsulation } from '@angular/core';
 import { faPlane, faArrowRightLong, faCaretRight, faMagnifyingGlass, faInfoCircle, faTag, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 
-export class FirstDestinationComponent {
+export class FirstDestinationComponent implements OnInit {
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
@@ -23,11 +23,8 @@ export class FirstDestinationComponent {
   faChevronRight = faChevronRight
   roomSelectionStep = "step1"
   selectedRoom: string = ''
-  isChecked: boolean = false;
-  isChecked1: boolean = false;
-  isChecked2: boolean = false;
-  isChecked3: boolean = false;
-
+  selectedGroundServices: string[] = []
+  localStorageSteps: any
   name = "Angular " + VERSION.major;
   settings = {
     counter: false,
@@ -35,10 +32,22 @@ export class FirstDestinationComponent {
   };
 
   constructor(private toastr: ToastrService, private router: Router) { };
-
+  ngOnInit(): void {
+    this.localStorageSteps = JSON.parse(localStorage.getItem('steps') || '')
+  }
   goToNextStep = () => {
-    if (this.selectedRoom != '') {
-      this.router.navigate(['/result/second-destination']);
+    if (this.selectedRoom != '' && this.roomSelectionStep == "step1") {
+      this.roomSelectionStep = "step2"
+    } else if (this.roomSelectionStep == "step2") {
+      const data = {
+        flight: true,
+        firstDestination: true,
+        secondDestination: true,
+        transfer: false,
+        summary: false,
+      }
+      localStorage.setItem('steps', JSON.stringify(data))
+      window.location.href = '/result/second-destination';
     } else {
       this.toastr.info("Please select a room for your 1st destination before proceeding.")
     }
@@ -46,6 +55,17 @@ export class FirstDestinationComponent {
 
   checkRoom(value: string) {
     this.selectedRoom = value;
+  }
+  checkGroundService(value: string) {
+    if (!this.selectedGroundServices.includes(value)) {
+      this.selectedGroundServices.push(value);
+    }
+    else {
+      const index = this.selectedGroundServices.indexOf(value)
+      this.selectedGroundServices.splice(index, 1);
+    }
+    console.log(this.selectedGroundServices);
+
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {

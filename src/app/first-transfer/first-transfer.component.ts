@@ -16,16 +16,24 @@ export class FirstTransferComponent implements OnInit {
   selectedTransfer: string = '';
 
   ngOnInit(): void {
-   
+
   }
 
   constructor(private toastr: ToastrService, private router: Router) { };
 
   goToNextStep = () => {
     if (this.selectedTransfer != '') {
-      this.router.navigate(['/result/first-destination']);
+      const data = {
+        flight: true,
+        firstDestination: true,
+        secondDestination: true,
+        transfer: true,
+        summary: true,
+      }
+      localStorage.setItem('steps', JSON.stringify(data))
+      window.location.href = '/result/summary';
     } else {
-      this.toastr.info("Please select a flight before proceeding.")
+      this.toastr.info("Please select a vehicle before proceeding.")
     }
   }
 

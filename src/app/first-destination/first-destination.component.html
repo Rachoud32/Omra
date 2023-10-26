@@ -1418,10 +1418,10 @@
   <div *ngIf="roomSelectionStep == 'step2'" class="col-lg-9 ground-services-list">
     <div class="">
       <div class="postcontent">
-        <div class="ground-services-list">
-          <input type="checkbox" name="checkbox" id="ground-service-checkbox1" class="ground-service-check-box"
-            value="groundservicebox1" [(ngModel)]="isChecked" />
-          <div class="box mb-4">
+        <div class="ground-services-list" id="ground-services-list">
+          <input type="checkbox" name="groundServiceBox1" id="groundServiceBox1" class="ground-service-check-box"
+            value="groundServiceBox1" />
+          <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox1')">
             <div class="row m-0">
               <div class="col-lg-3 ground-service">
                 <div class="image-box">
@@ -1537,8 +1537,9 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select">
-                          Select
+                        <button (click)="checkGroundService('groundServiceBox1')"
+                          class="color-btn ground-service-btn-select">
+                          {{selectedGroundServices.includes('groundServiceBox1') ? 'x Remove' : 'Select'}}
                         </button>
                       </div>
                     </div>
@@ -1548,9 +1549,9 @@
             </div>
           </div>
 
-          <input type="checkbox" name="checkbox" id="ground-service-checkbox2" class="ground-service-check-box"
-            value="groundservicebox2" [(ngModel)]="isChecked1" />
-          <div class="box mb-4">
+          <input type="checkbox" name="groundServiceBox2" id="groundServiceBox2" class="ground-service-check-box"
+            value="groundServiceBox2" />
+          <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox2')">
             <div class="row m-0">
               <div class="col-lg-3 ground-service">
                 <div class="image-box">
@@ -1674,8 +1675,10 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select">
-                          Select
+                        <button (click)="checkGroundService('groundServiceBox2')"
+                          class="color-btn ground-service-btn-select">
+                          {{selectedGroundServices.includes('groundServiceBox2') ? 'x Remove' : 'Select'}}
+
                         </button>
                       </div>
                     </div>
@@ -1685,9 +1688,9 @@
             </div>
           </div>
 
-          <input type="checkbox" name="checkbox" id="ground-service-checkbox3" class="ground-service-check-box"
-            value="groundservicebox3" [(ngModel)]="isChecked2" />
-          <div id="last-ground-service-box" class="box mb-4">
+          <input type="checkbox" name="groundServiceBox3" id="groundServiceBox3" class="ground-service-check-box"
+            value="groundServiceBox3" />
+          <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox3')">
             <div class="row m-0">
               <div class="col-lg-3 ground-service">
                 <div class="image-box">
@@ -1811,8 +1814,10 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select">
-                          Select
+                        <button (click)="checkGroundService('groundServiceBox3')"
+                          class="color-btn ground-service-btn-select">
+                          {{selectedGroundServices.includes('groundServiceBox3') ? 'x Remove' : 'Select'}}
+
                         </button>
                       </div>
                     </div>
@@ -1822,9 +1827,9 @@
             </div>
           </div>
 
-          <input type="checkbox" name="checkbox" id="ground-service-box4" class="ground-service-check-box"
-            value="groundservicebox4" [(ngModel)]="isChecked3" />
-          <div id="last-ground-service-box" class="box mb-4">
+          <input type="checkbox" name="groundServiceBox4" id="groundServiceBox4" class="ground-service-check-box"
+            value="groundServiceBox4" />
+          <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox4')">
             <div class="row m-0">
               <div class="col-lg-3 ground-service">
                 <div class="image-box">
@@ -1948,8 +1953,10 @@
                         </div>
                       </div>
                       <div class="link float-end">
-                        <button class="color-btn ground-service-btn-select">
-                          Select
+                        <button (click)="checkGroundService('groundServiceBox4')"
+                          class="color-btn ground-service-btn-select">
+                          {{selectedGroundServices.includes('groundServiceBox4') ? 'x Remove' : 'Select'}}
+
                         </button>
                       </div>
                     </div>
