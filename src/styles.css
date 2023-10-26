@@ -1253,6 +1253,7 @@ label.category-item::before {
 
 .search-results p {
     font-size: var(--fs-15);
+    line-height: normal;
 }
 
 .check-form .search-bar-icon {
@@ -1394,6 +1395,7 @@ label.category-item::before {
     background: var(--omra-white) !important;
     color: var(--omra-base) !important;
     border: 0 !important;
+    border-right: 1px solid #eee !important;
     transition: all .3s linear;
 }
 
@@ -1428,12 +1430,12 @@ label.category-item::before {
     width: 100%;
 }
 
-.list-steps .list-group-item {
-    border-right: 1px solid var(--omra-light-gray) !important;
+.list-steps-container .list-steps .list-group-item {
+    border-right: 1px solid var(--omra-light-gray);
 }
 
-.list-group-item-action .active a,
-.list-group-item-action a {
+.list-group-item .active a,
+.list-group-item a {
     background-color: #876F4B !important;
     color: var(--omra-white) !important;
 }
@@ -1463,7 +1465,7 @@ label.category-item::before {
 }
 
 .list-group-item .custom-step-icon svg {
-    fill: var(--omra-base) !important;
+    fill: var(--omra-base);
     stroke-width: 0px;
 }
 
@@ -1485,12 +1487,11 @@ label.category-item::before {
     color: var(--omra-white) !important;
 }
 
-.list-group-item-action:hover,
-.list-group-item-action:focus,
+.list-group-item:hover,
+.list-group-item:focus,
 .list-group-item.active {
     background: var(--omra-second) !important;
     border-color: #b59860 !important;
-    border-right: 1px solid #b59860 !important;
 }
 
 .list-group-item-action:hover span,
@@ -1538,17 +1539,22 @@ label.category-item::before {
     font-size: var(--fs-18) !important;
 } */
 
+.list-steps .list-group-item.item-disabled, .list-steps .list-group-item:disabled {
+    border-color: var(--omra-gray);
+}
+
 .item-disabled {
     pointer-events: none !important;
     background: var(--omra-light-gray) !important;
     border: 0 !important;
-    border-right: 1px solid #ddd !important;
+    border-color:#ddd !important;
     transition: all .3s linear;
 }
 
-.item-disabled .step-icon {
+.item-disabled .step-icon, .item-disabled svg {
     pointer-events: none !important;
     color: var(--omra-gray) !important;
+    fill: var(--omra-gray) !important;
     transform: scale(1) !important;
     opacity: .5;
     border: 0 !important;
@@ -2255,9 +2261,22 @@ label.category-item::before {
     text-align: center;
 }
 
+.search-sidebar-header .color-btn {
+    padding: 0px;
+    font-size: var(--fs-18);
+    color: var(--omra-white);
+    background-color: transparent;
+    border: 0;
+    line-height: normal;
+}
+
+.search-sidebar-header .color-btn:hover, .search-sidebar-header .color-btn:active {
+    color: var(--omra-black);
+}
+
 .search-sidebar-details .search-details {
-    font-size: var(--fs-13);
-    font-weight: 300;
+    font-size: var(--fs-14);
+    font-weight: 400;
     padding: 0;
     color: var(--omra-gray);
 }
@@ -2273,24 +2292,26 @@ label.category-item::before {
 .search-sidebar-details .search-details .search-details-label {
     color: var(--omra-base);
     font-weight: 400;
+    font-size: var(--fs-16);
 }
 
-.search-details i,
-.search-details svg {
+.search-details-label .booking-icon {
     color: var(--omra-second);
-    font-size: var(--fs-11);
+    margin-right: 5px;
+    font-size: var(--fs-13);
 }
 
 .search-sidebar-list {
-    max-height: 320px;
+    max-height: 500px;
+    min-height: 150px;
     padding: 0px 15px;
     margin-right: 10px;
     margin-top: 15px;
     overflow-x: scroll;
 }
 
-.details-content .card.card-body {
-    padding: 5px 0px 10px 15px;
+.search-sidebar-list .details-content .card.card-body {
+    padding: 8px 0px 0px;
     border: 0;
 }
 
@@ -2316,7 +2337,7 @@ label.category-item::before {
     vertical-align: super;
 }
 
-.search-sidebar-details .search-details .details-content .search-details-label {
+.search-sidebar-details .search-details .details-content .search-details-sub-label {
     color: var(--omra-second);
 }
 
@@ -2387,7 +2408,7 @@ label.category-item::before {
 
 .carousel-inner:before {
     content: "";
-    background: linear-gradient(340deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.02) 30%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 25%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dab171", endColorstr="#dab171", GradientType=1);
     width: 100%;
     height: 100%;
@@ -2514,6 +2535,10 @@ label.category-item::before {
     transition: all .3s linear;
 }
 
+.hotel-box .hotel .btn-sec .read-btn:hover {
+    color: var(--omra-black);
+}
+
 .hotel-box .hotel .btn-sec .rate-btn {
     background-color: var(--omra-base);
     color: var(--omra-white);
@@ -2567,6 +2592,11 @@ label.category-item::before {
     color: var(--omra-base);
     font-size: var(--fs-15);
     font-weight: 400;
+}
+
+.hotel-box .hotel .hotel-type i {
+    color: var(--omra-second);
+    font-size: var(--fs-15);
 }
 
 .hotel-box .hotel .hotel-rate {
@@ -3321,6 +3351,7 @@ label.category-item::before {
 .side-filter-tags .filter-tag {
     font-weight: 300;
     background: #ebebeb;
+    white-space: nowrap;
 }
 
 .side-filter-tags .filter-tag p {
@@ -3340,19 +3371,10 @@ label.category-item::before {
     transition: all .3s linear;
 }
 
-.side-filter-tags .filter-tag button:hover {
-    background: var(--omra-gray);
-
-}
-
 .side-filter-tags .filter-tag i {
     color: var(--omra-gray);
     font-size: var(--fs-12);
     transition: all .3s linear;
-}
-
-.side-filter-tags .filter-tag button:hover i {
-    color: var(--omra-white);
 }
 
 .sorting-content .list-item {

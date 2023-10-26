@@ -38,7 +38,8 @@
                 <p class="m-0">Best rate</p>
               </div>
               <div class="notices">
-                <div class="hotel-type">
+                <div class="hotel-type d-flex align-items-center">
+                  <i class="icon-line-ribbon me-2"></i>
                   <p>Business Hotel</p>
                 </div>
                 <div class="available-notice">
@@ -49,8 +50,13 @@
                 </div>
               </div>
               <div class="hotel-rating">
-                <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]="4.5"
-                  [color]="'#c9a96a'"></ngx-stars>
+                <div class="d-flex align-items-center">
+                  <div class="hotel-rate me-2">4.5</div>
+                  <div>
+                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]="4.5"
+                      [color]="'#c9a96a'"></ngx-stars>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

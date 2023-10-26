@@ -58,6 +58,27 @@
 }
 
 @media (max-width: 991.98px) {	
+    .check-form .justify-content-end,
+    .check-form .col-xl-4 div {
+        justify-content: center;
+    }
+    
+    .check-form .search-results-list {
+        flex-direction: column;
+    }
+    
+    .check-form .search-results-list .me-4 {
+        margin-right: 0 !important;
+    }
+    
+    .check-form .color-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .check-form .color-btn.ms-4 {
+        margin-left: 0 !important;
+    }
 
     .destination-dropdown {
         flex-direction: column;
