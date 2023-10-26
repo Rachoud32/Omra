@@ -1,5 +1,4 @@
 :root {
-    --omra-font: 'Jost', sans-serif;
     --omra-gray: #828282;
     --omra-gray-rgb: 130, 130, 130;
     --omra-light-gray: #eeeeee;
@@ -8,10 +7,10 @@
     --omra-white-rgb: 255, 255, 255;
     --omra-black: #212529;
     --omra-black-rgb: 33, 37, 41;
-    --omra-base: #7d6a4c;
-    --omra-base-rgb: 0, 63, 123;
-    --omra-second: #c9a96a;
-    --omra-second-rgb: 201, 169, 106;
+    --omra-base: #16152e;
+    --omra-base-rgb: 22, 21, 46;
+    --omra-second: #d4a969;
+    --omra-second-rgb: 212, 169, 105;
     --omra-third: #562403;
     --omra-third-rgb: 86, 36, 8;
     --omra-extra: #f4f5f5;
