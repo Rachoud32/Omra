@@ -15,10 +15,7 @@ export class FlightComponent implements OnInit {
   faCaretRight = faCaretRight
 
   selectedFlight: string = '';
-
-  checkOption(value: string) {
-    this.selectedFlight = value;
-  }
+  selectedFlightBack: string = '';
 
   ngOnInit(): void {
 
@@ -45,6 +42,10 @@ export class FlightComponent implements OnInit {
 
   checkFlight(value: string) {
     this.selectedFlight = value;
+  }
+
+  checkFlightBack(value: string) {
+    this.selectedFlightBack = value;
   }
 }
 

@@ -3,6 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgSelectConfig } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-search-form',
@@ -60,15 +61,25 @@ export class SearchFormComponent implements OnInit {
   numChildrenCustom = 0
   dropdownOpen = false;
   todayDate: NgbDate | null;
-  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
+
+  hotels = [
+      { name: 'All Hotels' },
+      { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
+      { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
+      { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
+      { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah'},
+  ];
+
+  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getToday();
     this.todayDate = calendar.getToday();
+    this.config.notFoundText = 'Hotel not found';
   }
 
   ngOnInit(): void {
     this.searchFormHotel = new FormGroup({
-      hotelName: new FormControl('', [Validators.required]),
+      hotelName: new FormControl(null, [Validators.required]),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
       passengersHotel: new FormArray([new FormGroup({

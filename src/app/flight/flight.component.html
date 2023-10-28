@@ -6,23 +6,33 @@
     <p>You benefit from the best rate.</p>
   </div>
   <div ng-app="services-list" class="col-lg-9 services-list">
-    <label class="mb-4">
-      <input type="radio" name="radio" value="flightbox1" [(ngModel)]="selectedFlight" class="service-check-box"
+
+    <label for="flight-box-1" class="mb-4">
+      <input type="radio" name="flight" value="flightbox1" [(ngModel)]="selectedFlight" class="service-check-box"
         id="flight-box-1" disabled />
       <div class="box">
         <div class="row m-0">
-          <div class="col-lg-3 service ps-0">
+          <div class="col-lg-2 service ps-0">
             <div id="service-box-pic" class="image-box">
               <img src="assets/flight/tunisair.svg" class="d-block w-100" alt="" />
             </div>
           </div>
-          <div class="col-lg-9 service-details">
+          <div class="col-lg-10 service-details">
             <div class="row">
               <div class="col-lg-9">
-                <div class="flight-label d-flex align-items-center">
-                  <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                  Departing flight
+                <div class="flight-label d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center">
+                      <i class="icon-line-chevron-right"></i>
+                      <div class="flight-direction">Departure flight</div>
+                    </div>
+                    <div class="flight-class">Economic</div>
+                  </div>
+                  <div class="service-price">
+                    <span>$</span>1,200<span class="price-text"> / motamar</span>
+                  </div>  
                 </div>
+                <hr>
                 <div class="details-row">
                   <div class="details-block">
                     <div class="time-block">
@@ -33,7 +43,6 @@
                       <span class="date">08 oct. 2023</span>
                     </div>
                   </div>
-
                   <div class="middle-block text-center w-100">
                     <span class="flight-duration">02:75</span>
                     <div class="flight-line-icon"></div>
@@ -42,7 +51,6 @@
                       <span>BJ-764</span>
                     </div>
                   </div>
-
                   <div class="details-block text-end">
                     <div class="time-block">
                       <span class="time">17:55</span>
@@ -50,61 +58,56 @@
                     <span class="port">Jeddah (JED)</span>
                     <div class="date-block">
                       <span class="date">01 nov. 2023</span>
-                      <sup></sup>
-                      <sup class="date-change"></sup>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="flight-label d-flex align-items-center">
-                  <fa-icon class="result-icon" [icon]="faCaretRight"></fa-icon>
-                  Returning flight
-                </div>
-                <div class="details-row">
-                  <div class="details-block">
-                    <div class="time-block">
-                      <span class="time">14:10</span>
-                    </div>
-                    <span class="port">Jeddah (JED)</span>
-                    <div class="date-block">
-                      <span class="date">01 nov. 2023</span>
-                    </div>
-                  </div>
-
-                  <div class="middle-block text-center w-100">
-                    <span class="flight-duration">02:75</span>
-                    <div class="flight-line-icon"></div>
-                    <span class="total-stop">Direct</span>
-                    <div class="flight-no">
-                      <span>BJ-764</span>
-                    </div>
-                  </div>
-
-                  <div class="details-block text-end">
-                    <div class="time-block">
-                      <span class="time">17:55</span>
-                    </div>
-                    <span class="port">Sfax (SFA)</span>
-                    <div class="date-block">
-                      <span class="date">15 nov. 2023</span>
                       <sup></sup>
                       <sup class="date-change"></sup>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 d-flex justify-content-between flex-column align-items-end pt-4">
-                <div class="text-end mb-3">
-                  <div class="service-price">
-                    <span>$</span>1,200
-                    <p class="mb-1 text-end">per motamar</p>
-                    <p class="notice mb-1">only 2 left</p>
+              <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails" aria-expanded="false" aria-controls="flightdetails">
+                  Details 
+                </button>
+                <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlight('flightbox1')" data-bs-toggle="collapse" data-bs-target="#flightsback" aria-expanded="false" aria-controls="flightsback">
+                  Select
+                </button>
+              </div>
+              <div class="col-xl-12">
+                <div class="service-details-collapse collapse mt-3" id="flightdetails" [ngbCollapse]="selectedFlight === 'flightbox1'">
+                  <div class="card card-body">
+                    <div class="d-flex gap-3">
+                      <div class="flight-details-label">Class</div>
+                      <div class="">Economic</div>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <div class="d-flex align-items-center">
+                        <i class=""></i>
+                        <div class="">Mercredi 01 novembre 2023</div>
+                      </div>
+                      <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                    </div>  
+                    <div class="">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Departure</div> 
+                        <div>15:10</div>
+                        <div class="country-abr">TUN</div> 
+                        <div>Tunis Carthage - Terminal M</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Arrival</div> 
+                        <div>15:10</div>
+                        <div class="country-abr">TUN</div> 
+                        <div>Tunis Carthage - Terminal M</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Duration</div> 
+                        <div>15:10</div>
+                      </div>
+                      <div class="">
+                        Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="link float-end">
-                  <button class="color-btn service-btn-select" (click)="checkFlight('flightbox1')">
-                    Select
-                  </button>
                 </div>
               </div>
             </div>
@@ -113,7 +116,564 @@
       </div>
     </label>
 
-    <label class="mb-4">
+    <div id="flightsback" class="collapse">
+      <div class="subservice-list-title mb-2">Choose the return flight</div>
+      <label for="flight-back-1" class="subservice-item mb-2">
+        <input type="radio" name="flightback2" value="flightback2" [(ngModel)]="selectedFlightBack" class="service-check-box"
+          id="flight-back-2" disabled />
+        <div class="box">
+          <div class="row m-0">
+            <div class="col-lg-2 service ps-0">
+              <div id="service-box-pic" class="image-box">
+                <img src="assets/flight/tunisair.svg" class="d-block w-100" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-10 service-details">
+              <div class="row">
+                <div class="col-lg-9">
+                  <div class="flight-label d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Return flight</div>
+                      </div>
+                      <div class="flight-class">Economic</div>
+                    </div>
+                    <div class="service-price">
+                      <span>$</span>1,200<span class="price-text"> / motamar</span>
+                    </div>  
+                  </div>
+                  <hr>
+                  <div class="details-row">
+                    <div class="details-block">
+                      <div class="time-block">
+                        <span class="time">14:10</span>
+                      </div>
+                      <span class="port">Sfax (SFA)</span>
+                      <div class="date-block">
+                        <span class="date">08 oct. 2023</span>
+                      </div>
+                    </div>
+                    <div class="middle-block text-center w-100">
+                      <span class="flight-duration">02:75</span>
+                      <div class="flight-line-icon"></div>
+                      <span class="total-stop">Direct</span>
+                      <div class="flight-no">
+                        <span>BJ-764</span>
+                      </div>
+                    </div>
+                    <div class="details-block text-end">
+                      <div class="time-block">
+                        <span class="time">17:55</span>
+                      </div>
+                      <span class="port">Jeddah (JED)</span>
+                      <div class="date-block">
+                        <span class="date">01 nov. 2023</span>
+                        <sup></sup>
+                        <sup class="date-change"></sup>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                  <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails2" aria-expanded="false" aria-controls="flightdetails2">
+                    Details 
+                  </button>
+                  <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlightBack('flightback2')">
+                    Select
+                  </button>
+                </div>
+
+                <div class="col-xl-12">
+                  <div class="service-details-collapse collapse mt-3" id="flightdetails2">
+                    <div class="card card-body">
+                      <div class="d-flex gap-3">
+                        <div class="flight-details-label">Class</div>
+                        <div class="">Economic</div>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <div class="d-flex align-items-center">
+                          <i class=""></i>
+                          <div class="">Mercredi 01 novembre 2023</div>
+                        </div>
+                        <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                      </div>  
+                      <div class="">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Departure</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Arrival</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Duration</div> 
+                          <div>15:10</div>
+                        </div>
+                        <div class="">
+                          Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+      </label>
+      <label for="flight-back-3" class="subservice-item mb-2">
+        <input type="radio" name="flightback3" value="flightback3" [(ngModel)]="selectedFlightBack" class="service-check-box"
+          id="flight-back-3" disabled />
+        <div class="box">
+          <div class="row m-0">
+            <div class="col-lg-2 service ps-0">
+              <div id="service-box-pic" class="image-box">
+                <img src="assets/flight/qatar-airways.svg" class="d-block w-100" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-10 service-details">
+              <div class="row">
+                <div class="col-lg-9">
+                  <div class="flight-label d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Return flight</div>
+                      </div>
+                      <div class="flight-class">Economic</div>
+                    </div>
+                    <div class="service-price">
+                      <span>$</span>1,200<span class="price-text"> / motamar</span>
+                    </div>  
+                  </div>
+                  <hr>
+                  <div class="details-row">
+                    <div class="details-block">
+                      <div class="time-block">
+                        <span class="time">14:10</span>
+                      </div>
+                      <span class="port">Sfax (SFA)</span>
+                      <div class="date-block">
+                        <span class="date">08 oct. 2023</span>
+                      </div>
+                    </div>
+                    <div class="middle-block text-center w-100">
+                      <span class="flight-duration">02:75</span>
+                      <div class="flight-line-icon"></div>
+                      <span class="total-stop">Direct</span>
+                      <div class="flight-no">
+                        <span>BJ-764</span>
+                      </div>
+                    </div>
+                    <div class="details-block text-end">
+                      <div class="time-block">
+                        <span class="time">17:55</span>
+                      </div>
+                      <span class="port">Jeddah (JED)</span>
+                      <div class="date-block">
+                        <span class="date">01 nov. 2023</span>
+                        <sup></sup>
+                        <sup class="date-change"></sup>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                  <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails3" aria-expanded="false" aria-controls="flightdetails3">
+                    Details 
+                  </button>
+                  <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlightBack('flightback3')">
+                    Select
+                  </button>
+                </div>
+
+                <div class="col-xl-12">
+                  <div class="service-details-collapse collapse mt-3" id="flightdetails3">
+                    <div class="card card-body">
+                      <div class="d-flex gap-3">
+                        <div class="flight-details-label">Class</div>
+                        <div class="">Economic</div>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <div class="d-flex align-items-center">
+                          <i class=""></i>
+                          <div class="">Mercredi 01 novembre 2023</div>
+                        </div>
+                        <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                      </div>  
+                      <div class="">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Departure</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Arrival</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Duration</div> 
+                          <div>15:10</div>
+                        </div>
+                        <div class="">
+                          Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+      </label>
+      <label for="flight-back-4" class="subservice-item mb-2">
+        <input type="radio" name="flightback4" value="flightback4" [(ngModel)]="selectedFlightBack" class="service-check-box"
+          id="flight-back-4" disabled />
+        <div class="box">
+          <div class="row m-0">
+            <div class="col-lg-2 service ps-0">
+              <div id="service-box-pic" class="image-box">
+                <img src="assets/flight/saudi-airlines.svg" class="d-block w-100" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-10 service-details">
+              <div class="row">
+                <div class="col-lg-9">
+                  <div class="flight-label d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Return flight</div>
+                      </div>
+                      <div class="flight-class">Economic</div>
+                    </div>
+                    <div class="service-price">
+                      <span>$</span>1,200<span class="price-text"> / motamar</span>
+                    </div>  
+                  </div>
+                  <hr>
+                  <div class="details-row">
+                    <div class="details-block">
+                      <div class="time-block">
+                        <span class="time">14:10</span>
+                      </div>
+                      <span class="port">Sfax (SFA)</span>
+                      <div class="date-block">
+                        <span class="date">08 oct. 2023</span>
+                      </div>
+                    </div>
+                    <div class="middle-block text-center w-100">
+                      <span class="flight-duration">02:75</span>
+                      <div class="flight-line-icon"></div>
+                      <span class="total-stop">Direct</span>
+                      <div class="flight-no">
+                        <span>BJ-764</span>
+                      </div>
+                    </div>
+                    <div class="details-block text-end">
+                      <div class="time-block">
+                        <span class="time">17:55</span>
+                      </div>
+                      <span class="port">Jeddah (JED)</span>
+                      <div class="date-block">
+                        <span class="date">01 nov. 2023</span>
+                        <sup></sup>
+                        <sup class="date-change"></sup>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                  <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails4" aria-expanded="false" aria-controls="flightdetails4">
+                    Details 
+                  </button>
+                  <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlightBack('flightback4')">
+                    Select
+                  </button>
+                </div>
+
+                <div class="col-xl-12">
+                  <div class="service-details-collapse collapse mt-3" id="flightdetails4">
+                    <div class="card card-body">
+                      <div class="d-flex gap-3">
+                        <div class="flight-details-label">Class</div>
+                        <div class="">Economic</div>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <div class="d-flex align-items-center">
+                          <i class=""></i>
+                          <div class="">Mercredi 01 novembre 2023</div>
+                        </div>
+                        <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                      </div>  
+                      <div class="">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Departure</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Arrival</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Duration</div> 
+                          <div>15:10</div>
+                        </div>
+                        <div class="">
+                          Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+      </label>
+      <label for="flight-back-5" class="subservice-item mb-2">
+        <input type="radio" name="flightback5" value="flightback5" [(ngModel)]="selectedFlightBack" class="service-check-box"
+          id="flight-back-5" disabled />
+        <div class="box">
+          <div class="row m-0">
+            <div class="col-lg-2 service ps-0">
+              <div id="service-box-pic" class="image-box">
+                <img src="assets/flight/air-france.svg" class="d-block w-100" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-10 service-details">
+              <div class="row">
+                <div class="col-lg-9">
+                  <div class="flight-label d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Return flight</div>
+                      </div>
+                      <div class="flight-class">Economic</div>
+                    </div>
+                    <div class="service-price">
+                      <span>$</span>1,200<span class="price-text"> / motamar</span>
+                    </div>  
+                  </div>
+                  <hr>
+                  <div class="details-row">
+                    <div class="details-block">
+                      <div class="time-block">
+                        <span class="time">14:10</span>
+                      </div>
+                      <span class="port">Sfax (SFA)</span>
+                      <div class="date-block">
+                        <span class="date">08 oct. 2023</span>
+                      </div>
+                    </div>
+                    <div class="middle-block text-center w-100">
+                      <span class="flight-duration">02:75</span>
+                      <div class="flight-line-icon"></div>
+                      <span class="total-stop">Direct</span>
+                      <div class="flight-no">
+                        <span>BJ-764</span>
+                      </div>
+                    </div>
+                    <div class="details-block text-end">
+                      <div class="time-block">
+                        <span class="time">17:55</span>
+                      </div>
+                      <span class="port">Jeddah (JED)</span>
+                      <div class="date-block">
+                        <span class="date">01 nov. 2023</span>
+                        <sup></sup>
+                        <sup class="date-change"></sup>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                  <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails5" aria-expanded="false" aria-controls="flightdetails5">
+                    Details 
+                  </button>
+                  <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlightBack('flightback5')">
+                    Select
+                  </button>
+                </div>
+
+                <div class="col-xl-12">
+                  <div class="service-details-collapse collapse mt-3" id="flightdetails5">
+                    <div class="card card-body">
+                      <div class="d-flex gap-3">
+                        <div class="flight-details-label">Class</div>
+                        <div class="">Economic</div>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <div class="d-flex align-items-center">
+                          <i class=""></i>
+                          <div class="">Mercredi 01 novembre 2023</div>
+                        </div>
+                        <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                      </div>  
+                      <div class="">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Departure</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Arrival</div> 
+                          <div>15:10</div>
+                          <div class="country-abr">TUN</div> 
+                          <div>Tunis Carthage - Terminal M</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="flight-details-label">Duration</div> 
+                          <div>15:10</div>
+                        </div>
+                        <div class="">
+                          Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+      </label>
+    </div>
+
+    <label for="flight-box-2" class="mb-4">
+      <input type="radio" name="flight6" value="flightbox6" [(ngModel)]="selectedFlight" class="service-check-box"
+        id="flight-box-2" disabled />
+      <div class="box">
+        <div class="row m-0">
+          <div class="col-lg-2 service ps-0">
+            <div id="service-box-pic" class="image-box">
+              <img src="assets/flight/qatar-airways.svg" class="d-block w-100" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-10 service-details">
+            <div class="row">
+              <div class="col-lg-9">
+                <div class="flight-label d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center">
+                      <i class="icon-line-chevron-right"></i>
+                      <div class="flight-direction">Departure flight</div>
+                    </div>
+                    <div class="flight-class">Economic</div>
+                  </div>
+                  <div class="service-price">
+                    <span>$</span>1,200<span class="price-text"> / motamar</span>
+                  </div>  
+                </div>
+                <hr>
+                <div class="details-row">
+                  <div class="details-block">
+                    <div class="time-block">
+                      <span class="time">14:10</span>
+                    </div>
+                    <span class="port">Sfax (SFA)</span>
+                    <div class="date-block">
+                      <span class="date">08 oct. 2023</span>
+                    </div>
+                  </div>
+                  <div class="middle-block text-center w-100">
+                    <span class="flight-duration">02:75</span>
+                    <div class="flight-line-icon"></div>
+                    <span class="total-stop">Direct</span>
+                    <div class="flight-no">
+                      <span>BJ-764</span>
+                    </div>
+                  </div>
+                  <div class="details-block text-end">
+                    <div class="time-block">
+                      <span class="time">17:55</span>
+                    </div>
+                    <span class="port">Jeddah (JED)</span>
+                    <div class="date-block">
+                      <span class="date">01 nov. 2023</span>
+                      <sup></sup>
+                      <sup class="date-change"></sup>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button" data-bs-toggle="collapse" data-bs-target="#flightdetails6" aria-expanded="false" aria-controls="flightdetail6s">
+                  Details 
+                </button>
+                <button class="color-btn service-btn-select" data-title="Select flight" type="button" (click)="checkFlight('flightbox6')">
+                  Select
+                </button>
+              </div>
+              <div class="col-xl-12">
+                <div class="service-details-collapse collapse mt-3" id="flightdetails6" [ngbCollapse]="selectedFlight === 'flightbox6'">
+                  <div class="card card-body">
+                    <div class="d-flex gap-3">
+                      <div class="flight-details-label">Class</div>
+                      <div class="">Economic</div>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <div class="d-flex align-items-center">
+                        <i class=""></i>
+                        <div class="">Mercredi 01 novembre 2023</div>
+                      </div>
+                      <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                    </div>  
+                    <div class="">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Departure</div> 
+                        <div>15:10</div>
+                        <div class="country-abr">TUN</div> 
+                        <div>Tunis Carthage - Terminal M</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Arrival</div> 
+                        <div>15:10</div>
+                        <div class="country-abr">TUN</div> 
+                        <div>Tunis Carthage - Terminal M</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="flight-details-label">Duration</div> 
+                        <div>15:10</div>
+                      </div>
+                      <div class="">
+                        Checked baggage for your outward journey: 1 piece of checked baggage (per ad.)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+
+    <!-- <label class="mb-4">
       <input type="radio" name="radio" value="flightbox2" [(ngModel)]="selectedFlight" class="service-check-box"
         id="flight-box-2" disabled />
       <div class="box">
@@ -643,7 +1203,7 @@
           </div>
         </div>
       </div>
-    </label>
+    </label> -->
   </div>
   <!-- Sidebar
   ============================================= -->
@@ -655,7 +1215,7 @@
 
 </div>
 <div class="filter-list-btn">
-  <button class="color-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#flightfilter" aria-controls="flightfilter">
+  <button class="color-btn" data-title="Filter Results" type="button" data-bs-toggle="offcanvas" data-bs-target="#flightfilter" aria-controls="flightfilter">
     <svg viewBox="0 0 608 592.12">
       <path d="m253.44,78.88C246.29,34.23,207.51,0,160.88,0s-85.42,34.23-92.57,78.88H18.75c-10.36,0-18.75,8.39-18.75,18.75h0c0,10.36,8.39,18.75,18.75,18.75h51.14c10.15,40.8,47.09,71.12,90.98,71.12s80.83-30.33,90.98-71.12h337.39c10.36,0,18.75-8.39,18.75-18.75h0c0-10.36-8.39-18.75-18.75-18.75H253.44Zm-92.57,71.12c-31.02,0-56.25-25.23-56.25-56.25s25.23-56.25,56.25-56.25,56.25,25.23,56.25,56.25-25.23,56.25-56.25,56.25Z" style="stroke-width:0px;"/>
       <path d="m462.62,204.25c-45.27,0-83.15,32.26-91.87,75H18.75c-10.36,0-18.75,8.39-18.75,18.75h0c0,10.36,8.39,18.75,18.75,18.75h352.01c8.71,42.74,46.59,75,91.87,75s83.15-32.26,91.87-75h34.76c10.36,0,18.75-8.39,18.75-18.75h0c0-10.36-8.39-18.75-18.75-18.75h-34.76c-8.71-42.74-46.59-75-91.87-75Zm0,150c-31.02,0-56.25-25.23-56.25-56.25s25.23-56.25,56.25-56.25,56.25,25.23,56.25,56.25-25.23,56.25-56.25,56.25Z" style="stroke-width:0px;"/>

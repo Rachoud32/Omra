@@ -33,6 +33,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { BookingStepsComponent } from './booking-steps/booking-steps.component';
 import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component';
 import { BookingsSidebarComponent } from './bookings-sidebar/bookings-sidebar.component'
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,10 @@ import { BookingsSidebarComponent } from './bookings-sidebar/bookings-sidebar.co
     FontAwesomeModule,
     CarouselModule,
     LightgalleryModule,
+    NgSelectModule,
     BrowserAnimationsModule,
+    NgOptionHighlightModule,
+    NgbModule,
     NgxDaterangepickerMd.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3500,
