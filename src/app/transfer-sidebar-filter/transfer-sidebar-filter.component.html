@@ -1,4 +1,5 @@
-<div class="sidebar-filters offcanvas offcanvas-start" tabindex="-1" id="transferfilter" aria-labelledby="transferfilter">
+<div class="sidebar-filters offcanvas offcanvas-start" tabindex="-1" id="transferfilter"
+    aria-labelledby="transferfilter">
     <div class="sidebar-filters-content">
         <div class="offcanvas-header">
             <div class="d-flex justify-content-between align-items-center w-100">
@@ -6,64 +7,140 @@
                 <div class="d-flex">
                     <button class="color-btn apply-btn me-4">Apply</button>
                     <button class="color-btn me-4"><i class="icon-line-refresh-cw"></i></button>
-                    <button type="button" class="color-btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon-line-cross"></i></button>
+                    <button type="button" class="color-btn" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                            class="icon-line-cross"></i></button>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="offcanvas-body">
             <div class="filter-label">Price Range</div>
             <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
             <hr>
             <div class="filter-label mt-2">Type of vehicle</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="economy" name="vehicletype" value="economy" checked><label class="me-2" for="economy">Economy</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="confort" name="vehicletype" value="confort"><label class="me-2" for="confort">Confort</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="business" name="vehicletype" value="business"><label class="me-2" for="business">Business</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="vip" name="vehicletype" value="vip"><label class="me-2" for="vip">Vip</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="suv" name="vehicletype" value="suv"><label class="me-2" for="suv">SUV</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="van" name="vehicletype" value="van"><label class="me-2" for="van">Van</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="minibus" name="vehicletype" value="minibus"><label class="me-2" for="minibus">Mini bus</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="bus" name="vehicletype" value="bus"><label class="me-2" for="bus">Bus</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="train" name="vehicletype" value="train"><label class="me-2" for="train">Train</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="economy" name="vehicletype"
+                            value="economy" checked><label class="me-2" for="economy">Economy</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="confort" name="vehicletype"
+                            value="confort"><label class="me-2" for="confort">Confort</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="business" name="vehicletype"
+                            value="business"><label class="me-2" for="business">Business</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="vip" name="vehicletype"
+                            value="vip"><label class="me-2" for="vip">Vip</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="suv" name="vehicletype"
+                            value="suv"><label class="me-2" for="suv">SUV</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="van" name="vehicletype"
+                            value="van"><label class="me-2" for="van">Van</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="minibus" name="vehicletype"
+                            value="minibus"><label class="me-2" for="minibus">Mini bus</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="bus" name="vehicletype"
+                            value="bus"><label class="me-2" for="bus">Bus</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="train" name="vehicletype"
+                            value="train"><label class="me-2" for="train">Train</label></div>
+                </li>
             </ul>
             <hr>
             <div class="filter-label mt-2">Popular themes</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme" value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme" value="topseller"><label class="me-2" for="topseller">Top seller</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme" value="promo"><label class="me-2" for="promo">Promo</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme" value="luxury"><label class="me-2" for="luxury">Luxury</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme"
+                            value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme"
+                            value="topseller"><label class="me-2" for="topseller">Top seller</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme"
+                            value="promo"><label class="me-2" for="promo">Promo</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme"
+                            value="luxury"><label class="me-2" for="luxury">Luxury</label></div>
+                </li>
             </ul>
             <hr>
             <div class="filter-label mt-2">Car specifications</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner" name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air conditioner</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner"
+                            name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air
+                            conditioner</label></div>
+                </li>
             </ul>
             <div class="filter-label mt-2">Popular themes</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme" value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme" value="topseller"><label class="me-2" for="topseller">Top seller</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme" value="promo"><label class="me-2" for="promo">Promo</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme" value="luxury"><label class="me-2" for="luxury">Luxury</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme"
+                            value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme"
+                            value="topseller"><label class="me-2" for="topseller">Top seller</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme"
+                            value="promo"><label class="me-2" for="promo">Promo</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme"
+                            value="luxury"><label class="me-2" for="luxury">Luxury</label></div>
+                </li>
             </ul>
             <hr>
             <div class="filter-label mt-2">Car specifications</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner" name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air conditioner</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner"
+                            name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air
+                            conditioner</label></div>
+                </li>
             </ul>
             <div class="filter-label mt-2">Popular themes</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme" value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme" value="topseller"><label class="me-2" for="topseller">Top seller</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme" value="promo"><label class="me-2" for="promo">Promo</label></div></li>
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme" value="luxury"><label class="me-2" for="luxury">Luxury</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="smallbudget" name="theme"
+                            value="smallbudget" checked><label class="me-2" for="smallbudget">Small budget</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="topseller" name="theme"
+                            value="topseller"><label class="me-2" for="topseller">Top seller</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="promo" name="theme"
+                            value="promo"><label class="me-2" for="promo">Promo</label></div>
+                </li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="luxury" name="theme"
+                            value="luxury"><label class="me-2" for="luxury">Luxury</label></div>
+                </li>
             </ul>
             <hr>
             <div class="filter-label mt-2">Car specifications</div>
             <ul class="mb-2">
-                <li><div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner" name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air conditioner</label></div></li>
+                <li>
+                    <div class="d-flex align-items-center mb-2"><input type="checkbox" id="airconditioner"
+                            name="carspecs" value="airconditioner" checked><label class="me-2" for="airconditioner">Air
+                            conditioner</label></div>
+                </li>
             </ul>
-        </div>    
+        </div>
     </div>
-    
-  </div>
+
+</div>

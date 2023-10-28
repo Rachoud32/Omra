@@ -13,16 +13,17 @@ export class FlightComponent implements OnInit {
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
-
+  selectedDetailDeparture: string = ''
+  selectedDetailReturn: string = ''
   selectedFlight: string = '';
   selectedFlightBack: string = '';
+
+  constructor(private toastr: ToastrService, private router: Router) { };
+
 
   ngOnInit(): void {
 
   }
-
-  constructor(private toastr: ToastrService, private router: Router) { };
-
   goToNextStep = () => {
     if (this.selectedFlight != '') {
       // this.router.navigate(['/result/first-destination']);
@@ -46,6 +47,12 @@ export class FlightComponent implements OnInit {
 
   checkFlightBack(value: string) {
     this.selectedFlightBack = value;
+  }
+  collapsedDetailDeparture(value: string) {
+    this.selectedDetailDeparture = value
+  }
+  collapsedDetailReturn(value: string) {
+    this.selectedDetailReturn = value
   }
 }
 
