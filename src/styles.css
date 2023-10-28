@@ -2223,6 +2223,10 @@ label.category-item::before {
     font-weight: 400;
 }
 
+.sub-service-list {
+    padding: 0 10px;
+}
+
 .subservice-list-title {
     background: var(--omra-base);
     padding: 3px 20px;
@@ -2232,8 +2236,25 @@ label.category-item::before {
 }
 
 .subservice-item:last-child {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 0 !important;
 }
+
+.sub-service-list {
+    margin-top: -25px;
+}
+
+.services-list .more-btn {
+    background: var(--omra-base);
+    color: var(--omra-white);
+    margin-bottom: 1.5rem !important;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: var(--fs-14);
+    font-weight: 400;
+    padding: 4px 15px;
+}
+
 
 /*************** End New Service Box **********************/
 
