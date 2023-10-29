@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class FlightComponent implements OnInit {
 
+  collapsed = true;
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight
@@ -20,13 +21,11 @@ export class FlightComponent implements OnInit {
 
   constructor(private toastr: ToastrService, private router: Router) { };
 
-
   ngOnInit(): void {
 
   }
   goToNextStep = () => {
     if (this.selectedFlight != '') {
-      // this.router.navigate(['/result/first-destination']);
       const data = {
         flight: true,
         firstDestination: true,

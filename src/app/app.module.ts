@@ -35,6 +35,7 @@ import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component';
 import { BookingsSidebarComponent } from './bookings-sidebar/bookings-sidebar.component'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
+import { FlightTopFilterComponent } from './flight-top-filter/flight-top-filter.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
     BookingStepsComponent,
     MotamarInfosComponent,
     BookingsSidebarComponent,
+    FlightTopFilterComponent,
   ],
   imports: [
     CommonModule,

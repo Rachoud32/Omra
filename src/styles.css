@@ -84,6 +84,7 @@ body {
     font-size: var(--fs-18) !important;
     line-height: 2 !important;
     background: var(--omra-extra) !important;
+    font-variant-ligatures: none;
 }
 
 p {
@@ -1514,7 +1515,7 @@ label.category-item::before {
 
 .page-title::before {
     content: '';
-    background: linear-gradient(40deg, rgba(86, 36, 3, 0.3) 20%, rgba(86, 36, 3, 0.02) 60%);
+    background: linear-gradient(40deg, rgba(207, 207, 207, 0.3) 20%, rgba(207, 207, 207, 0.02) 60%);
     mix-blend-mode: darken;
     width: 100%;
     height: 100%;
@@ -2091,6 +2092,7 @@ label.category-item::before {
     display: block;
     width: 100%;
     cursor: unset;
+    border-radius: 0 !important;
 }
 
 .services-list .service-check-box {
@@ -2102,39 +2104,13 @@ label.category-item::before {
     border: 2px solid var(--omra-light-gray);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
     transition: all .3s ease;
-}
+} 
 
 .service-details {
     display: block;
     position: relative;
     height: 100%;
 }
-
-/* .service-details:before {
-    content: '';
-    display: block;
-    position: absolute;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,30%) 100%);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-} */
-
-/* .service-details::after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: url(assets/islamic-pattern.png) repeat;
-    background-size: auto;
-    opacity: 0.1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-} */
 
 .services-list input[type=checkbox]:checked+.box {
     background-color: var(--omra-white);
@@ -2198,6 +2174,10 @@ label.category-item::before {
 
 /*************** New Service Box **********************/
 
+.flight-item label {
+    margin-bottom: 0;
+}
+
 .service-details .row {
     position: relative;
     z-index: 10;
@@ -2214,8 +2194,9 @@ label.category-item::before {
 
 .service-details-collapse .card .flight-details-label {
     color: var(--omra-base);
-    font-weight: 500;
-    width: 85px;
+    font-weight: 400;
+    width: 160px;
+    line-height: normal;
 }
 
 .service-details-collapse .card .country-abr {
@@ -2239,22 +2220,52 @@ label.category-item::before {
     margin-bottom: 0 !important;
 }
 
-.sub-service-list {
-    margin-top: -25px;
-}
-
 .services-list .more-btn {
     background: var(--omra-base);
+    border-color: var(--omra-base);
     color: var(--omra-white);
     margin-bottom: 1.5rem !important;
     width: 50%;
     text-align: center;
     margin: 0 auto;
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
     font-weight: 400;
     padding: 4px 15px;
+    margin: 0 auto;
+    display: block;
+    transition: all .3s linear;
 }
 
+.services-list .more-btn:hover {
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.clear-area {
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+@media (prefers-reduced-motion: no-preference), (update: slow) {
+    .collapse {
+        transition-property: height, visibility !important;
+        transition-duration: .9s !important;
+        transition-timing-function: ease !important;
+    }
+
+    .collapsing {
+        transition-property: height, visibility !important;
+        transition-duration: .9s !important;
+        transition-timing-function: ease !important;
+    }
+}
+
+.accordion-item {
+    color: var(--omra-gray);
+    background-color: transparent !important;
+    border: transparent !important;
+} 
 
 /*************** End New Service Box **********************/
 
@@ -2415,7 +2426,7 @@ label.category-item::before {
     transform: none !important;
 }
 
-/* .details-row .middle-block .flight-line-icon::before {
+.details-row .middle-block .flight-line-icon::before {
     content: "";
     width: 18px;
     height: 18px;
@@ -2443,7 +2454,7 @@ label.category-item::before {
     position: absolute;
     right: -30px;
     top: -10px;
-} */
+}
 
 .details-row .middle-block .transfer-line-icon::before {
     content: "";
@@ -3451,7 +3462,7 @@ label.category-item::before {
 
 .ground-service-details a {
     text-decoration: none !important;
-    color: #876F4B;
+    color: var(--omra-second);
 }
 
 .ground-service-details ul li .ground-service-prices-ms {
@@ -3640,9 +3651,9 @@ label.category-item::before {
 }
 
 .side-filter-tags .filter-tag button {
-    background: #ebebeb;
+    background: var(--omra-extra);
     border: 0;
-    padding: 1px 8px;
+    padding: 0px 6px;
     line-height: normal;
     transition: all .3s linear;
 }
@@ -3668,6 +3679,97 @@ label.category-item::before {
 
 .sorting-content a {
     color: var(--omra-second);
+}
+
+/* ----------------------------------------------------------------
+	Flight Top Filter
+-----------------------------------------------------------------*/
+.flight-top-filter input,
+.flight-top-filter [type="radio"]:checked+label:before,
+.flight-top-filter [type="radio"]:not(:checked)+label:before,
+.flight-top-filter [type="radio"]:checked+label:after, 
+.flight-top-filter [type="radio"]:not(:checked)+label:after {
+    display: none;
+}
+
+
+.flight-top-filter [type="radio"]:checked+label, 
+.flight-top-filter [type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 0px;
+    cursor: pointer;
+    line-height: normal;
+    display: inline-block;
+    color: var(--omra-gray);
+}
+
+.flight-top-filter label {
+    margin-bottom: 0;
+}
+
+.flight-top-filter [type="radio"]+label .service-filter-card {
+    border-radius: 0;
+    position: relative;
+    padding: 20px 25px;;
+    pointer-events: auto;
+    background: var(--omra-white);
+    color: var(--omra-base);
+    border: 0;
+    transition: all .3s linear;
+}
+
+.flight-top-filter [type="radio"]:checked+label .service-filter-card {
+    background: var(--omra-extra);
+}
+
+.service-filter-card:before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--omra-base);
+    transition: all .5s linear;
+    z-index: 5;
+}
+
+.service-filter-card:hover::before, 
+.service-filter-card:active::before, 
+.service-filter-card:focus::before, 
+.service-filter-card.active::before {
+    width: 100%;
+}
+
+.flight-top-filter [type="radio"]:checked+label .service-filter-card.active::before {
+    width: 100%;
+}
+
+.flight-top-filter .service-filter-card h5 {
+    margin-bottom: 0;
+    font-weight: 500 !important;
+    color: var(--omra-base);
+}
+
+.flight-top-filter .service-filter-card p {
+    margin-bottom: 0;
+    font-size: var(--fs-13);
+}
+
+.flight-top-filter .filter-type-icon {
+
+}
+
+.flight-top-filter .filter-type-icon svg {
+    width: 25px;
+    fill: var(--omra-base);
+    transition: all .3s linear;
+}
+
+.flight-top-filter [type="radio"]:checked+label .filter-type-icon svg,
+.service-filter-card:hover .filter-type-icon svg {
+    fill: var(--omra-second)
 }
 
 /* ----------------------------------------------------------------
