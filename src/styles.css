@@ -2426,7 +2426,7 @@ label.category-item::before {
     transform: none !important;
 }
 
-.details-row .middle-block .flight-line-icon::before {
+/* .details-row .middle-block .flight-line-icon::before {
     content: "";
     width: 18px;
     height: 18px;
@@ -2454,7 +2454,7 @@ label.category-item::before {
     position: absolute;
     right: -30px;
     top: -10px;
-}
+} */
 
 .details-row .middle-block .transfer-line-icon::before {
     content: "";
