@@ -2537,36 +2537,6 @@ label.disabled .service-class-card {
     transform: none !important;
 }
 
-.details-row .middle-block .flight-line-icon::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background: url(assets/plane-icon.svg) no-repeat center center;
-    background-size: contain;
-    display: inline-block;
-}
-
-.details-row .middle-block .flight-line-icon:before {
-position: absolute;
-    left: -35px;
-    top: 10px;
-}
-
-.details-row .middle-block .flight-line-icon::after {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background: url(assets/plane-icon.svg) no-repeat center center;
-    background-size: contain;
-    display: inline-block;
-}
-
-.details-row .middle-block .flight-line-icon:after {
-    position: absolute;
-    right: -30px;
-    top: -10px;
-}
-
 .details-row .middle-block .transfer-line-icon::before {
     content: "";
     width: 24px;
