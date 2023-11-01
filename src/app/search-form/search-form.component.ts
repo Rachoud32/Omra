@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { faHotel, faPlane, faKaaba, faSuitcase, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgSelectConfig } from '@ng-select/ng-select';
 
@@ -40,11 +39,6 @@ export class SearchFormComponent implements OnInit {
     nav: true
   }
 
-  faHotel = faHotel
-  faPlane = faPlane
-  faKaaba = faKaaba
-  faSuitcase = faSuitcase
-  faCamera = faCamera
   ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
@@ -382,7 +376,6 @@ export class SearchFormComponent implements OnInit {
       this.numAdultsCustom -= 1
     }
   }
-
 
   search() {
     const data = {

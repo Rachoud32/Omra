@@ -1,0 +1,80 @@
+<div class="row top-filter-section transfer-top-filter mb-3">
+    <h6>Choose the way of traveling</h6>
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <input type="radio" id="transfer-direction1" value="arrival" name="transfer-direction">
+        <label for="transfer-direction1" class="transfer-direction-item">
+            <p class="m-0">One-way trip</p>
+        </label>
+  
+        <input type="radio" id="transfer-direction2" value="departure" name="transfer-direction">
+        <label for="transfer-direction2" class="transfer-direction-item">
+            <p class="m-0">Travel back</p>
+        </label>
+
+        <input type="radio" id="transfer-direction3" value="arrival | Departure" name="transfer-direction">
+        <label for="transfer-direction3" class="transfer-direction-item">
+            <p class="m-0">Two way travel</p>
+        </label>
+    </div> 
+
+    <h6>Choose the trajectory</h6>
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <button
+            type="button"
+            class="color-btn d-flex align-items-center gap-2"
+            placement="bottom-left"
+            [ngbPopover]="road1"
+            popoverTitle="Road"
+            popoverClass="custom-popover"
+            data-bs-html="true"
+            >
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="icon-line-map-pin"></i>
+                    <span>Aeroport to Hotel</span>
+                </div>
+                <i class="icon-line-chevron-down"></i>
+            </div>
+        </button>
+        <ng-template #road1>
+        <div>
+            <ul>
+            <li class="filter-list-item">Aeroport to Hotel</li>
+            <li class="filter-list-item">Hotel to Hotel</li>
+            <li class="filter-list-item">Hotel to Aeroport</li>
+            </ul>
+        </div>
+        </ng-template>
+
+        <button
+            type="button"
+            class="color-btn d-flex align-items-center gap-2"
+            placement="bottom-left"
+            [ngbPopover]="road2"
+            popoverTitle="Road"
+            popoverClass="custom-popover"
+            data-bs-html="true"
+            >
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="icon-line-map-pin"></i>
+                    <span>Select Road</span>
+                </div>
+                <i class="icon-line-chevron-down"></i>
+            </div>  
+        </button>
+        <ng-template #road2>
+        <div>
+            <ul>
+            <li class="filter-list-item">Aeroport to Hotel</li>
+            <li class="filter-list-item">Hotel to Hotel</li>
+            <li class="filter-list-item">Hotel to Aeroport</li>
+            </ul>
+        </div>
+        </ng-template>
+
+        <button class="color-btn add-btn">
+            <i class="icon-line-plus"></i>
+        </button>
+    </div>
+</div>

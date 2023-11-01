@@ -16,9 +16,9 @@
     --omra-light-gray-rgb: 238, 238, 238;
     --omra-white: #ffffff;
     --omra-white-rgb: 255, 255, 255;
-    --omra-third: #050033;
+    --omra-third: #3d4892;
     --omra-third-rgb: 5, 0, 51;
-    --omra-base: #3d4892;
+    --omra-base: #050033;
     --omra-base-rgb: 61, 72, 148;
     --omra-second: #068484;
     --omra-second-rgb: 6, 132, 133;
@@ -105,10 +105,14 @@ ol {
 }
 
 .color-2 {
-    color: var(--omra-second) !important;
+    color: var(--omra-third) !important;
 }
 
 .color-3 {
+    color: var(--omra-second) !important;
+}
+
+.color-4 {
     color: var(--omra-gray) !important;
 }
 
@@ -134,6 +138,16 @@ a:visited {
 
 img {
     width: 100%;
+}
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+svg, path {
+    shape-rendering: geometricPrecision;
 }
 
 .page-section {
@@ -257,7 +271,6 @@ h6 {
 
 [data-title] {
     position: relative;
-    
 }
 /* ----------------------------------------------------------------
 	Radio and Checkbox
@@ -266,6 +279,7 @@ h6 {
 [type="radio"]:not(:checked) {
     position: absolute;
     left: -9999px;
+    display: none;
 }
 
 [type="radio"]:checked+label,
@@ -486,6 +500,11 @@ input[type=checkbox]:disabled {
     padding-right: 80px;
 }
 
+.ng-select .ng-arrow-wrapper {
+    width: 25px;
+    padding-right: 20px !important;
+}
+
 .ng-select .ng-arrow-wrapper .ng-arrow {
     border-color: var(--omra-second) transparent transparent !important ;
 }
@@ -562,12 +581,9 @@ input[type=checkbox]:disabled {
     top: 0;
     left: 0;
     font-size: var(--fs-14);
+    color: var(--omra-second);
     transform-origin: center;
     transition: transform .2s ease-in-out;
-}
-
-.ng-select.custom.ng-select-opened>.ng-select-container .ng-arrow:before {
-    transform: rotate(-180deg);
 }
 
 .ng-select.custom .ng-clear-wrapper:hover .ng-clear,
@@ -1648,7 +1664,7 @@ label.category-item::before {
     display: block !important;
     position: relative !important;
     font-size: var(--fs-20) !important;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: var(--omra-base) !important;
     transform: scale(1) !important;
     transition: all .1s linear;
@@ -1657,9 +1673,10 @@ label.category-item::before {
 .list-group-item .custom-step-icon {
     display: block !important;
     position: relative !important;
-    height: 20px;
-    width: 34px;
-    margin-bottom: 25px;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 10px !important;
+    margin: 0 auto;
     transform: scale(1) !important;
     transition: all .1s linear;
 }
@@ -1667,6 +1684,7 @@ label.category-item::before {
 .list-group-item .custom-step-icon svg {
     fill: var(--omra-base);
     stroke-width: 0px;
+    width: 30px;
 }
 
 .list-group-item span {
@@ -1706,7 +1724,7 @@ label.category-item::before {
 .list-group-item-action:hover .custom-step-icon,
 .list-group-item-action:focus .custom-step-icon,
 .list-group-item-active .custom-step-icon {
-    transform: scale(1.2) !important;
+    transform: scale(1.15) !important;
 }
 
 .list-group-item .caret-icon {
@@ -1727,8 +1745,8 @@ label.category-item::before {
 .list-group-item:active .caret-icon {
     opacity: 1;
     transform: translate(0px, 50%);
+    transform: scale(1.15) !important;
 }
-
 
 /* .input-group .input-group-text {
     padding: 10px 20px !important;
@@ -2118,14 +2136,21 @@ label.category-item::before {
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
+.services-list input[type=radio]+.box:hover {
+    border: 2px solid var(--omra-second);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
+}
+
+
 .services-list input[type=radio]:checked+.box {
     background-color: var(--omra-white);
-    border: 2px solid var(--omra-base);
+    border: 2px solid var(--omra-second);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
 .services-list .box .color-btn {
-    font-size: var(--fs-12);
+    font-size: var(--fs-11);
+    font-weight: 500;
     line-height: 30px;
     padding: 0px 10px;
     width: 80px;
@@ -2134,11 +2159,12 @@ label.category-item::before {
 .services-list .box .color-btn.service-btn-details {
     background-color: var(--omra-second);
     border-color: var(--omra-second);
+    color: var(--omra-white);
 }
 
 .services-list .box .color-btn.service-btn-details:hover {
-    background-color: var(--omra-base);
-    border-color: var(--omra-base);
+    background-color: var(--omra-second);
+    color: var(--omra-white);
 }
 
 .services-list .service {
@@ -2171,11 +2197,14 @@ label.category-item::before {
 .services-list .service .image-box .service-car {
     padding: 0px !important;
 }
-
 /*************** New Service Box **********************/
 
 .flight-item label {
     margin-bottom: 0;
+}
+
+.flight-item .box .service-details .details-row .transfer-line-icon {
+    width: 29px;
 }
 
 .service-details .row {
@@ -2199,9 +2228,30 @@ label.category-item::before {
     line-height: normal;
 }
 
+.service-details-collapse ul li p {
+    line-height: normal !important;
+}
+
+.service-details-collapse .card i {
+    color: var(--omra-second) !important;
+}
+
 .service-details-collapse .card .country-abr {
     color: var(--omra-second);
     font-weight: 400;
+}
+
+.service-details-collapse .card .flight-stops-details {
+    border-top: 1px dashed var(--omra-gray);
+    border-bottom: 1px dashed var(--omra-gray);
+    padding: 4px 20px;
+    text-align: center;
+    color: var(--omra-gray);
+    margin: 10px 0px;
+}
+
+.service-details-collapse li {
+    list-style: none;
 }
 
 .sub-service-list {
@@ -2214,10 +2264,6 @@ label.category-item::before {
     font-size: 16px;
     font-weight: 400;
     color: var(--omra-white);
-}
-
-.subservice-item:last-child {
-    margin-bottom: 0 !important;
 }
 
 .services-list .more-btn {
@@ -2239,6 +2285,49 @@ label.category-item::before {
 .services-list .more-btn:hover {
     background: var(--omra-second);
     border-color: var(--omra-second);
+}
+
+.service-class-content [type="radio"]:checked+label:before, .service-class-content [type="radio"]:not(:checked)+label:before,
+.service-class-content [type="radio"]:checked+label:after, .service-class-content [type="radio"]:not(:checked)+label:after {
+    display: none;
+}
+
+.service-class-content [type="radio"]:not(:checked)+label, .service-class-content [type="radio"]:checked+label  {
+    position: relative;
+    padding: 10px 20px !important;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: var(--omra-gray);
+    border: 1px solid var(--omra-light-gray);
+    background: var(--omra-white);
+    font-size: var(--fs-14);
+    margin-bottom: 0;
+    transition: all .3s linear;
+}
+
+.service-class-content [type="radio"]:not(:checked)+label.disabled {
+    color: var(--omra-gray);
+    pointer-events: none !important;
+    background: var(--omra-light-gray) !important;
+    border-color: var(--omra-light-gray) !important;
+}
+
+label.disabled .service-class-card {
+    opacity: .5;
+}
+
+.service-class-content [type="radio"]:not(:checked)+label:hover,
+.service-class-content [type="radio"]:checked+label:hover,
+.service-class-content [type="radio"]:checked+label {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    border-color: var(--omra-extra);
+}
+
+.service-class-content [type="radio"]:not(:checked)+label:last-child,
+.service-class-content [type="radio"]:checked+label:last-child {
+    border-left: 0;
 }
 
 .clear-area {
@@ -2274,12 +2363,33 @@ label.category-item::before {
     line-height: normal;
 }
 
+.service-details .nbr-items {
+    background: var(--omra-white);
+    border: 1px solid var(--omra-light-gray);
+    padding: 5px 10px;
+}
+
+.service-details .nbr-items:last-child {
+    border-left: 0;
+}
+
+.service-details .nbr-items p {
+    color: var(--omra-gray);
+    padding-top: 1px;
+}
+
+.service-details .nbr-items i {
+    color: var(--omra-base);
+    font-size: var(--fs-14);
+}
+
 .service-details h3 {
     margin-bottom: 15px;
     font-size: var(--fs-18);
     font-weight: 500 !important;
     color: var(--omra-base);
     text-transform: uppercase;
+    line-height: normal;
 }
 
 .service-details h3 fa-icon {
@@ -2288,7 +2398,7 @@ label.category-item::before {
 }
 
 .service-details p {
-    line-height: 2.2 !important;
+    line-height: normal !important;
     font-weight: 400;
     font-size: var(--fs-14);
     color: var(--omra-gray);
@@ -2315,7 +2425,7 @@ label.category-item::before {
 .service-details .details-block .time-block .time {
     color: var(--omra-second);
     font-size: var(--fs-18);
-    font-weight: 400;
+    font-weight: 500;
     margin: 5px 0;
     display: block;
 }
@@ -2347,21 +2457,21 @@ label.category-item::before {
     float: right;
 }
 
-.flight-label .flight-direction {
+.flight-label .flight-direction, .service-details .vehicle-direction {
     font-size: var(--fs-14);
     color: var(--omra-base);
 }
 
 .flight-label .flight-class {
     background: var(--omra-extra);
-    border: 1px solid var(--omra-second);
+    border: 0;
     color: var(--omra-second);
-    padding: 3px 10px;
+    padding: 4px 10px;
 }
 
 .details-row .details-block .port {
-    color: var(--omra-gray);
-    font-size: var(--fs-14);
+    color: var(--omra-base);
+    font-size: var(--fs-13);
     font-weight: 400;
     text-transform: capitalize;
     order: 2;
@@ -2374,12 +2484,13 @@ label.category-item::before {
 .details-row .details-block .date-block .date {
     color: var(--omra-gray);
     font-size: var(--fs-13);
-    font-weight: 300;
+    font-weight: 400;
     white-space: nowrap;
 }
 
 .flight-label i,
-.transfer-label i {
+.transfer-label i,
+.service-details .vehicle-direction i {
     margin-right: 5px;
     font-size: var(--fs-16);
     color: var(--omra-base);
@@ -2418,34 +2529,34 @@ label.category-item::before {
 
 .details-row .middle-block .flight-line-icon,
 .details-row .middle-block .transfer-line-icon {
-    width: calc(100% - 90px);
-    border: 1px dashed var(--omra-light-gray);
-    margin: 4px auto;
+    width: 35px;
+    margin: 10px auto;
     position: relative;
-    border-radius: 0.5px !important;
+    fill: var(--omra-base);
+    border-radius: 0 !important;
     transform: none !important;
 }
 
-/* .details-row .middle-block .flight-line-icon::before {
+.details-row .middle-block .flight-line-icon::before {
     content: "";
     width: 18px;
     height: 18px;
-    background: url(assets/airplane.svg) no-repeat center center;
+    background: url(assets/plane-icon.svg) no-repeat center center;
     background-size: contain;
     display: inline-block;
 }
 
 .details-row .middle-block .flight-line-icon:before {
-    position: absolute;
-    left: -30px;
-    top: -10px;
+position: absolute;
+    left: -35px;
+    top: 10px;
 }
 
 .details-row .middle-block .flight-line-icon::after {
     content: "";
     width: 18px;
     height: 18px;
-    background: url(assets/airplane.svg) no-repeat center center;
+    background: url(assets/plane-icon.svg) no-repeat center center;
     background-size: contain;
     display: inline-block;
 }
@@ -2454,36 +2565,54 @@ label.category-item::before {
     position: absolute;
     right: -30px;
     top: -10px;
-} */
+}
 
 .details-row .middle-block .transfer-line-icon::before {
     content: "";
-    width: 18px;
-    height: 18px;
-    background: url(assets/car.svg) no-repeat center center;
+    width: 24px;
+    height: 2px;
+    border-bottom: 1px dashed var(--omra-gray);
     background-size: contain;
     display: inline-block;
 }
 
 .details-row .middle-block .transfer-line-icon:before {
     position: absolute;
-    left: -30px;
-    top: -10px;
+    left: -35px;
+    top: 10px;
 }
 
 .details-row .middle-block .transfer-line-icon::after {
     content: "";
-    width: 18px;
-    height: 18px;
-    background: url(assets/car.svg) no-repeat center center;
+    width: 24px;
+    height: 2px;
+    border-bottom: 1px dashed var(--omra-gray);
     background-size: contain;
     display: inline-block;
 }
 
 .details-row .middle-block .transfer-line-icon:after {
     position: absolute;
-    right: -30px;
-    top: -10px;
+    right: -35px;
+    top: 10px;
+}
+
+.service-details .vehicle-type {
+    background: var(--omra-extra);
+    border: 0;
+    color: var(--omra-second);
+    padding: 4px 10px;
+    font-size: var(--fs-12);
+    line-height: normal !important;
+    margin-bottom: 0;
+}
+
+.transfer-duration {
+    font-size: var(--fs-13);
+}
+
+.transfer-duration i {
+    color: var(--omra-second);
 }
 
 /* ----------------------------------------------------------------
@@ -2594,9 +2723,9 @@ label.category-item::before {
     font-size: var(--fs-14);
 }
 
-.search-details-label .booking-icon {
+
+.search-sidebar-details .search-details .search-details-label i {
     color: var(--omra-second);
-    margin-right: 5px;
     font-size: var(--fs-13);
 }
 
@@ -2611,6 +2740,7 @@ label.category-item::before {
 
 .search-sidebar-list .details-content .card.card-body {
     padding: 8px 0px 0px;
+    font-size: var(--fs-13);
     border: 0;
 }
 
@@ -2632,8 +2762,7 @@ label.category-item::before {
 }
 
 .search-sidebar-price span {
-    font-size: 9px;
-    
+    font-size: 9px;  
 }
 
 .search-sidebar-details .search-details .details-content .search-details-sub-label {
@@ -2642,13 +2771,12 @@ label.category-item::before {
 
 .search-total-price {
     font-size: var(--fs-22);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--omra-base);
 }
 
 .search-total-price span {
     font-size: var(--fs-12);
-    
 }
 
 .search-sidebar-content hr {
@@ -2820,7 +2948,7 @@ label.category-item::before {
 }
 
 .hotel-box .hotel .btn-sec .read-btn:hover {
-    color: var(--omra-black);
+    color: var(--omra-extra);
 }
 
 .hotel-box .hotel .btn-sec .rate-btn {
@@ -2832,7 +2960,7 @@ label.category-item::before {
 
 .hotel-box .hotel .btn-sec .rate-btn:hover,
 .hotel-box .hotel .btn-sec .rate-btn:active {
-    background-color: var(--omra-black);
+    background-color: var(--omra-second);
     color: var(--omra-white);
 }
 
@@ -2849,10 +2977,10 @@ label.category-item::before {
 
 .hotel-box .hotel .available-notice {
     position: relative;
-    background: var(--omra-black);
+    background: var(--omra-base);
     padding: 7px 15px;
     color: var(--omra-white);
-    border-right: 5px solid var(--omra-second);
+    border-right: 5px solid var(--omra-white);
     z-index: 4;
 }
 
@@ -2876,8 +3004,13 @@ label.category-item::before {
     font-weight: 400;
 }
 
-.hotel-box .hotel .hotel-type i, .hotel-box .hotel .available-notice i {
+.hotel-box .hotel .hotel-type i {
     color: var(--omra-second);
+    font-size: var(--fs-14);
+}
+
+.hotel-box .hotel .available-notice i {
+    color: var(--omra-white);
     font-size: var(--fs-14);
 }
 
@@ -2889,7 +3022,7 @@ label.category-item::before {
 
 .hotel-box .hotel .best-rate-notice {
     position: absolute;
-    background: var(--omra-black);
+    background: var(--omra-second);
     padding: 10px 15px 20px;
     text-align: center;
     display: block;
@@ -2898,7 +3031,7 @@ label.category-item::before {
     font-size: var(--fs-22);
     font-weight: 600;
     color: var(--omra-white);
-    border-bottom: 5px solid var(--omra-second);
+    border-bottom: 5px solid var(--omra-white);
     z-index: 4;
 }
 
@@ -3155,9 +3288,6 @@ label.category-item::before {
     flex-shrink: 0;
     margin: 0px 5px;
     font-size: var(--fs-15);
-    background-repeat: no-repeat;
-    background-size: 10px;
-    transform-origin: center;
     transition: transform .2s ease-in-out;
 }
 
@@ -3618,17 +3748,71 @@ label.category-item::before {
 
 .top-filter-section .color-btn {
     font-size: var(--fs-16);
+    background: var(--omra-white);
+    border: 1px solid var(--omra-light-gray); 
     line-height: normal;
-    color: var(--omra-second);
-    padding: 0;
-    border: 0;
+    color: var(--omra-gray);
+    font-size: var(--fs-12);
+    text-transform: capitalize;
+    padding: 12px 25px;
     outline: 0;
-    background: transparent;
+    transition: all .3s linear;
+} 
+
+.transfer-top-filter.top-filter-section .color-btn {
+    padding: 15px;
+    width: 25%;
+    white-space: normal;
+    text-align: left;
 }
 
-.sort-label {
+.transfer-top-filter.top-filter-section .color-btn.add-btn {
+    width: unset;
+    height: 100%;
+    padding-top: 14px;
+    padding-bottom: 12px;
+}
+
+.top-filter-section h6 {
+    font-weight: 500 !important;
+    color: var(--omra-second);
+}
+
+.transfer-top-filter [type="radio"]:checked+label:after,
+.transfer-top-filter [type="radio"]:not(:checked)+label:after {
+    background: var(--omra-base);
+}
+
+.top-filter-section .color-btn:hover,
+.top-filter-section .color-btn.active {
+    color: var(--omra-base);
+    transform: translatey(-3%);
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.top-filter-section .color-btn i {
+    font-size: var(--fs-16);
+    margin-bottom: 10px;
+}
+
+.transfer-top-filter.top-filter-section .color-btn i {
+    margin-bottom: 0px;
+}
+
+.top-filter-section .color-btn:hover i,
+.top-filter-section .color-btn.active i {
+    color: var(--omra-second);
+}
+
+.sort-label, .filter-label {
     font-size: var(--fs-14);
+    font-weight: 500;
+    color: var(--omra-gray);
     white-space: nowrap;
+}
+
+.filter-content i {
+    color: var(--omra-second);
 }
 
 .side-filter-tags {
@@ -3678,6 +3862,60 @@ label.category-item::before {
 }
 
 .sorting-content a {
+    color: var(--omra-second);
+}
+
+.top-filter-section .custom-popover {
+    --bs-popover-max-width: 300px;
+    --bs-popover-header-bg: var(--omra-base);
+    --bs-popover-header-color: var(--omra-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+    border-radius: 0 !important;
+    background: var(--omra-white);
+    color: var(--omra-gray);
+    padding: 0;
+    border: 1px solid var(--omra-light-gray);
+    box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 3%);
+    padding: 0;
+}
+
+.top-filter-section .custom-popover .popover-arrow {
+    display: none !important;
+}
+
+.top-filter-section .bs-popover-bottom>.popover-arrow {
+    left: -30px !important;
+}
+
+.top-filter-section .popover-header {
+    display: none;
+}
+
+.top-filter-section .popover-body {
+    padding: 0;
+}
+
+.top-filter-section .popover-body ul {
+    margin-bottom: 0;
+}
+
+.top-filter-section .filter-list-item {
+    background: var(--omra-white);
+    color: var(--omra-gray);
+    transition: all .3s linear;
+    padding: 12px 22px;
+    line-height: normal;
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--omra-light-gray);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: var(--fs-13);
+    transition: all 0.05s ease-in-out;
+}
+
+.top-filter-section .filter-list-item:hover {
+    background: #f9f9f9;
     color: var(--omra-second);
 }
 
@@ -3757,10 +3995,6 @@ label.category-item::before {
     font-size: var(--fs-13);
 }
 
-.flight-top-filter .filter-type-icon {
-
-}
-
 .flight-top-filter .filter-type-icon svg {
     width: 25px;
     fill: var(--omra-base);
@@ -3771,6 +4005,133 @@ label.category-item::before {
 .service-filter-card:hover .filter-type-icon svg {
     fill: var(--omra-second)
 }
+
+/* ----------------------------------------------------------------
+	Transfer Duration Top Filter
+-----------------------------------------------------------------*/
+.top-filter-section [type="radio"]:checked+label:before,
+.top-filter-section [type="radio"]:not(:checked)+label:before {
+    left: 20px;
+    top: 18px;
+}
+
+.top-filter-section [type="radio"]:checked+label:after,
+.top-filter-section [type="radio"]:not(:checked)+label:after {
+    top: 23px;
+    left: 25px;
+}
+
+.top-filter-section .transfer-direction-item {
+    position: relative;
+    padding: 18px 20px !important;
+    width: 100%;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: var(--omra-gray);
+    border: 1px solid var(--omra-light-gray);
+    background: var(--omra-white);
+    font-size: var(--fs-14);
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0);
+    transform: translatey(0%);
+    transition: all .3s linear;
+}
+
+.top-filter-section [type="radio"]:checked+label {
+    transform: translatey(-5%);
+    background: var(--omra-base);
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.top-filter-section [type="radio"]:checked+label p {
+    color: var(--omra-white);
+}
+
+.top-filter-section .transfer-direction-item label {
+    padding-left: 30px;
+    margin-bottom: 0px;
+}
+
+.top-filter-section .transfer-direction-item p {
+    padding-left: 30px;
+}
+
+/* ----------------------------------------------------------------
+	Transfer Duration Top Filter
+-----------------------------------------------------------------*/
+.transfer-duration-filter [type="radio"]+label .transfer-duration-card {
+    border-radius: 0;
+    position: relative;
+    padding: 15px 10px;
+    pointer-events: auto;
+    background: var(--omra-white);
+    color: var(--omra-base);
+    border: 0;
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0);
+    transform: translatey(0%);
+    transition: all .3s linear;
+}
+
+.transfer-duration-filter [type="radio"]+label:hover .transfer-duration-card {
+    background: var(--omra-extra);
+}
+
+.transfer-duration-filter [type="radio"]:checked+label .transfer-duration-card {
+    transform: translatey(-5%);
+    background: var(--omra-base);
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-duration-filter .transfer-duration-item {
+    width: 6%;
+    user-select: none;
+}
+
+.transfer-duration-card p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--omra-gray);
+    margin-bottom: 0;
+    transition: all .3s linear;
+}
+
+.transfer-duration-filter [type="radio"]:checked+label .transfer-duration-card p {
+    color: var(--omra-white);
+}
+
+.transfer-duration-filter [type="radio"]:not(:checked)+label:hover .transfer-duration-card p {
+    color: var(--omra-second);
+}
+
+.transfer-duration-card span {
+    font-size: 12px;
+}
+
+.transfer-duration-filter [type="radio"]:checked+label, 
+.transfer-duration-filter [type="radio"]:not(:checked)+label {
+    padding-left: 0;
+}
+
+.transfer-duration-filter [type="radio"]:checked+label:before, 
+.transfer-duration-filter [type="radio"]:not(:checked)+label:before,
+.transfer-duration-filter [type="radio"]:checked+label::after, 
+.transfer-duration-filter [type="radio"]:not(:checked)+label::after {
+    display: none;
+}
+
+.transfer-duration-filter .add-btn {
+    font-size: var(--fs-12);
+    max-width: 20%;
+    width: 20%;
+    padding: 15px 25px;
+}
+
+.transfer-duration-filter .add-btn i {
+    margin-bottom: 0;
+    font-size: var(--fs-14);
+}
+
 
 /* ----------------------------------------------------------------
 	Sidebar Filter
@@ -4040,7 +4401,7 @@ label.category-item::before {
 
 .service-summary-box {
     border: 2px solid var(--omra-light-gray);
-    padding: 30px 30px 10px 30px;
+    padding: 20px 30px 10px 30px;
     margin-bottom: 20px;
 }
 
@@ -4050,6 +4411,13 @@ label.category-item::before {
     margin-bottom: 0px;
     font-weight: 600 !important;
     color: var(--omra-second);
+}
+
+.service-summary-box .service-class {
+    background: var(--omra-extra);
+    border: 0;
+    color: var(--omra-second);
+    padding: 4px 10px;
 }
 
 .service-summary-box p {
@@ -4072,7 +4440,6 @@ label.category-item::before {
     font-size: clamp(1.125rem, 3.5vw, 1.25rem);
     color: var(--omra-base);
     font-weight: 400;
-    display: inline-block;
     border: 0;
     padding: 0;
     line-height: normal;
@@ -4137,9 +4504,7 @@ label.category-item::before {
 }
 
 .booked-room .price-sm span {
-    font-size: 8px;
-    vertical-align: top;
-    line-height: 12px;
+    font-size: var(--fs-10);
 }
 
 .service-summary-box .room-price {
@@ -4152,9 +4517,8 @@ label.category-item::before {
 }
 
 .service-summary-box .room-price span {
-    font-size: var(--fs-12);
-    vertical-align: top;
-    line-height: 36px;
+    font-size: var(--fs-16);
+    line-height: normal;
 }
 
 .service-summary-box .color-btn {
@@ -4163,9 +4527,6 @@ label.category-item::before {
     line-height: 28px;
     font-size: var(--fs-13);
 }
-
-
-
 
 
 

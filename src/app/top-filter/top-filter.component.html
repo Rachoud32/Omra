@@ -1,29 +1,120 @@
 <div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
   <div class="side-filter-tags d-flex align-items-center gap-2">
-    <div class="filter-tag d-flex align-items-center">
-      <p>5 stars</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
-    <div class="filter-tag d-flex align-items-center">
-      <p>Half board</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
-    <div class="filter-tag d-flex align-items-center">
-      <p>Small budget</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
-    <div class="filter-tag d-flex align-items-center">
-      <p>Family</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
-    <div class="filter-tag d-flex align-items-center">
-      <p>Free cancellation</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
-    <div class="filter-tag d-flex align-items-center">
-      <p>Haram</p>
-      <button><i class="icon-line-cross"></i></button>
-    </div>
+    <!-- <div class="filter-content d-flex align-items-center gap-2">
+      <i class="icon-line-filter"></i>
+      <div class="filter-label me-2">Filter by</div>
+    </div> -->
+    <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="stopovers"
+      popoverTitle="Stopovers"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-map-pin"></i>
+      <span>Stopovers</span>
+    </button>
+    <ng-template #stopovers>
+      <div>
+        <ul>
+          <li class="filter-list-item">Direct flight</li>
+          <li class="filter-list-item">1 stop</li>
+          <li class="filter-list-item">2 stops</li>
+        </ul>
+      </div>
+    </ng-template>
+
+    <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="airline"
+      popoverTitle="Stopovers"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-map-pin"></i>
+      <span>Airline Co.</span>
+    </button>
+    <ng-template #airline>
+      <div>
+        <ul>
+          <li class="filter-list-item">Tunisair</li>
+          <li class="filter-list-item">Nouvelair</li>
+          <li class="filter-list-item">Qatar Airways</li>
+          <li class="filter-list-item">Air France</li>
+        </ul>
+      </div>
+    </ng-template>
+
+    <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="class"
+      popoverTitle="Stopovers"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-map-pin"></i>
+      <span>Class</span>
+    </button>
+    <ng-template #class>
+      <div>
+        <ul>
+          <li class="filter-list-item">Economic</li>
+          <li class="filter-list-item">Business</li>
+          <li class="filter-list-item">First</li>
+        </ul>
+      </div>
+    </ng-template>
+
+    <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="departure"
+      popoverTitle="Stopovers"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-map-pin"></i>
+      <span>Departure Time</span>
+    </button>
+    <ng-template #departure>
+      <div>
+        <ul>
+          <li class="filter-list-item">00:00 - 04:59</li>
+          <li class="filter-list-item">05:00 - 11:59</li>
+          <li class="filter-list-item">17:00 - 23:59</li>
+        </ul>
+      </div>
+    </ng-template>
+
+    <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="arrival"
+      popoverTitle="Stopovers"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-map-pin"></i>
+      <span>Arrival Time</span>
+    </button>
+    <ng-template #arrival>
+      <div>
+        <ul>
+          <li class="filter-list-item">05:00 - 11:59</li>
+          <li class="filter-list-item">12:00 - 16:59</li>
+          <li class="filter-list-item">17:00 - 23:59</li>
+        </ul>
+      </div>
+    </ng-template>
+    
   </div>
 
   <div class="sorting-content d-flex align-items-center">

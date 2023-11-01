@@ -1,0 +1,165 @@
+<div class="transfer-duration-filter top-filter-section mb-2">
+    <h6>Choose the vehicle rental period</h6>
+    <div class="d-flex align-items-center justify-content-between flex-wrap">
+        <div class="d-flex align-items-center flex-wrap flex-grow-1 gap-2">
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration1" value="1h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration1" (click)="checkFilter('transfer-duration1')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '1h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>1<span> H</span></p>
+                            <!-- <div><span>$</span>99</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration2" value="2h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration2" (click)="checkFilter('transfer-duration2')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '2h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>2<span> H</span></p>
+                            <!-- <div><span>$</span>150</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration3" value="3h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration3" (click)="checkFilter('transfer-duration3')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '3h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>3<span> H</span></p>
+                            <!-- <div><span>$</span>240</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration4" value="4h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration4" (click)="checkFilter('transfer-duration4')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '4h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>4<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration5" value="5h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration5" (click)="checkFilter('transfer-duration5')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '5h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>5<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration6" value="6h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration6" (click)="checkFilter('transfer-duration6')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '6h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>6<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration7" value="7h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration7" (click)="checkFilter('transfer-duration7')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '7h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>7<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration8" value="8h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration8" (click)="checkFilter('transfer-duration8')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '8h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>8<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration9" value="9h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration9" (click)="checkFilter('transfer-duration9')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '9h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>9<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration10" value="10h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration10" (click)="checkFilter('transfer-duration10')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '10h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>10<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration11" value="11h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration11" (click)="checkFilter('transfer-duration11')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '11h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>11<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="transfer-duration-item">
+                <input type="radio" id="transfer-duration12" value="12h" name="transfer-duration" class="d-none" [(ngModel)]="selectedDuration">
+                <label for="transfer-duration12" (click)="checkFilter('transfer-duration12')" class="w-100 mb-2">
+                    <div class="transfer-duration-card" [class.active]="selectedDuration === '12h' && true">
+                        <div class="d-flex flex-column align-items-center">
+                            <p>12<span> H</span></p>
+                            <!-- <div><span>$</span>320</div> -->
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <button
+            type="button"
+            class="color-btn add-btn d-flex align-items-center mb-2 gap-2"
+            placement="bottom-left"
+            [ngbPopover]="transfertime"
+            popoverTitle="Transfer time"
+            popoverClass="custom-popover"
+            data-bs-html="true"
+            >
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="icon-line-clock"></i>
+                    <span>Add More time</span>
+                </div>
+                <i class="icon-line-chevron-down"></i>
+            </div>  
+        </button>
+        <ng-template #transfertime>
+        <div>
+            <ul>
+            <li class="filter-list-item">24 H</li>
+            <li class="filter-list-item">48 H</li>
+            <li class="filter-list-item">72 H</li>
+            </ul>
+        </div>
+        </ng-template>
+    </div>
+</div>
