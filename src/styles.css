@@ -85,6 +85,7 @@ body {
     line-height: 2 !important;
     background: var(--omra-extra) !important;
     font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -2262,7 +2263,8 @@ label.category-item::before {
 .subservice-list-title {
     padding: 10px 20px 0px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    text-transform: uppercase;
     text-align: center;
     color: var(--omra-base);
 }
@@ -2724,7 +2726,7 @@ label.disabled .service-class-card {
 }
 
 .search-sidebar-list .booked-service-label {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: var(--fs-13);
     font-weight: 400;
 }
@@ -2736,6 +2738,7 @@ label.disabled .service-class-card {
 
 .search-sidebar-list .booked-service-details i {
     color: var(--omra-second);
+    font-size: var(--fs-15);
 }
 
 .search-sidebar-list .booked-service-price {
@@ -2756,7 +2759,6 @@ label.disabled .service-class-card {
 .search-sidebar-list .details-content .booked-service-details.vehicle-details svg {
     width: 24px;
     height: 24px;
-    fill: var(--omra-second);
 }
 
 .search-sidebar-list .details-content .booked-service-details.vehicle-details .vehicle-type {
@@ -2977,8 +2979,8 @@ label.disabled .service-class-card {
 
 .hotel-box .hotel .btn-sec .rate-btn:hover,
 .hotel-box .hotel .btn-sec .rate-btn:active {
-    background-color: var(--omra-second);
-    color: var(--omra-white);
+    background-color: var(--omra-white);
+    color: var(--omra-base);
 }
 
 .hotel-box .hotel .notices {
@@ -3039,7 +3041,7 @@ label.disabled .service-class-card {
 
 .hotel-box .hotel .best-rate-notice {
     position: absolute;
-    background: var(--omra-second);
+    background: var(--omra-base);
     padding: 10px 15px 20px;
     text-align: center;
     display: block;
@@ -3048,7 +3050,7 @@ label.disabled .service-class-card {
     font-size: var(--fs-22);
     font-weight: 600;
     color: var(--omra-white);
-    border-bottom: 5px solid var(--omra-white);
+    border-bottom: 5px solid var(--omra-second);
     z-index: 4;
 }
 
@@ -3186,7 +3188,7 @@ label.disabled .service-class-card {
     margin-right: 0px;
     padding: 0px 8px 0 0px;
     height: auto;
-    max-height: 600px;
+    max-height: 580px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -3201,6 +3203,19 @@ label.disabled .service-class-card {
     border: 0;
     color: var(--omra-gray);
     font-weight: 300;
+}
+
+.rooms-container input[type=radio]:not(:checked)+.box {
+    background-color: var(--omra-white);
+    border: 2px solid var(--omra-light-gray);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 0%);
+    transition: all .3s linear;
+}
+
+.rooms-container input[type=radio]:not(:checked)+.box:hover {
+    background-color: var(--omra-white);
+    border: 2px solid var(--omra-second);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 2%);
 }
 
 .rooms-container input[type=radio]:checked+.box {
@@ -3346,14 +3361,13 @@ label.disabled .service-class-card {
 
 .rooms-container .box .price-content .price {
     font-size: var(--fs-22);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--omra-base);
     flex-direction: column;
 }
 
 .rooms-container .box .price-content .price span {
     font-size: var(--fs-12);
-    
 }
 
 .rooms-container .box .price-content .link .color-btn,
@@ -3428,6 +3442,8 @@ label.disabled .service-class-card {
 .rooms-container .tva {
     font-size: var(--fs-13);
     letter-spacing: 0.5px;
+    font-weight: 300;
+    color: var(--omra-gray)
 }
 
 .rooms-container .box .room-details {
@@ -3525,7 +3541,8 @@ label.disabled .service-class-card {
     transition: all .3s ease;
 }
 
-.ground-services-list .box.active {
+.ground-services-list .box.active,
+.ground-services-list .box:hover {
     background-color: var(--omra-white);
     border: 2px solid var(--omra-second);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
