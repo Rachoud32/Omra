@@ -2255,15 +2255,16 @@ label.category-item::before {
 }
 
 .sub-service-list {
-    padding: 0 10px;
+    padding: 0px 10px 5px 10px;
+    background: var(--omra-extra);
 }
 
 .subservice-list-title {
-    background: var(--omra-base);
-    padding: 3px 20px;
+    padding: 10px 20px 0px;
     font-size: 16px;
-    font-weight: 400;
-    color: var(--omra-white);
+    font-weight: 500;
+    text-align: center;
+    color: var(--omra-base);
 }
 
 .services-list .more-btn {
@@ -2700,7 +2701,7 @@ label.disabled .service-class-card {
 }
 
 .search-sidebar-list {
-    max-height: 500px;
+    max-height: 400px;
     min-height: 150px;
     padding: 0px 15px;
     margin-right: 10px;
@@ -2720,6 +2721,52 @@ label.disabled .service-class-card {
 
 .search-destination-details .search-sidebar-footer {
     padding: 0px 20px 15px;
+}
+
+.search-sidebar-list .booked-service-label {
+    text-transform: uppercase;
+    font-size: var(--fs-13);
+    font-weight: 400;
+}
+
+.search-sidebar-list .details-content .booking-arrow i {
+    font-size: var(--fs-16);
+    color: var(--omra-gray);
+}
+
+.search-sidebar-list .booked-service-details i {
+    color: var(--omra-second);
+}
+
+.search-sidebar-list .booked-service-price {
+    color: var(--omra-second);
+    font-size: var(--fs-14);
+}
+
+.search-sidebar-list .booked-service-price span {
+    font-size: var(--fs-10);
+}
+
+.search-sidebar-list .details-content .booked-service-details svg {
+    width: 15px;
+    height: 15px;
+    fill: var(--omra-second);
+}
+
+.search-sidebar-list .details-content .booked-service-details.vehicle-details svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--omra-second);
+}
+
+.search-sidebar-list .details-content .booked-service-details.vehicle-details .vehicle-type {
+    background: var(--omra-extra);
+    border: 0;
+    color: var(--omra-second);
+    padding: 4px 10px;
+    font-size: var(--fs-12);
+    line-height: normal !important;
+    margin-bottom: 0;
 }
 
 .search-items-price {
