@@ -234,10 +234,6 @@ export class FlightComponent implements OnInit {
   checkFlightBack(value: any) {
     this.selectedFlightBack = value;
     this.showDetailsReturn = this.showDetailsDeparture.flightReturns[value]
-    console.log('====================================');
-    console.log(this.showDetailsDeparture);
-    console.log(this.showDetailsReturn);
-    console.log('====================================');
   }
   collapsedDetailDeparture(value: any) {
     this.selectedDetailDeparture = value
