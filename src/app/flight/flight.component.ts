@@ -8,8 +8,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./flight.component.css']
 })
 export class FlightComponent implements OnInit {
+
+
   dataFlight: any[] = [
     {
+      _id: 1,
       flightImage: "assets/flight/tunisair.svg",
       class: "Economic",
       price: "1200",
@@ -112,6 +115,7 @@ export class FlightComponent implements OnInit {
       ]
     },
     {
+      _id: 2,
       flightImage: "assets/flight/qatar-airways.svg",
       class: "Business",
       price: "1500",
@@ -137,6 +141,7 @@ export class FlightComponent implements OnInit {
       }
     },
     {
+      _id: 3,
       flightImage: "assets/flight/saudi-airlines.svg",
       class: "First",
       price: "1000",
@@ -162,6 +167,7 @@ export class FlightComponent implements OnInit {
       }
     },
     {
+      _id: 4,
       flightImage: "assets/flight/air-france.svg",
       class: "Economic",
       price: "1200",
@@ -192,7 +198,8 @@ export class FlightComponent implements OnInit {
   selectedDetailReturn: string = ''
   selectedFlight: string = '';
   selectedFlightBack: string = '';
-
+  showDetailsDeparture: any
+  showDetailsReturn: any
   constructor(private toastr: ToastrService, private router: Router) { };
 
   ngOnInit(): void {
@@ -213,18 +220,31 @@ export class FlightComponent implements OnInit {
       this.toastr.info("Please select a flight before proceeding.")
     }
   }
+  clearData() {
+    this.showDetailsDeparture = null
+    this.showDetailsReturn = null
+    this.selectedFlight = '';
+    this.selectedFlightBack = '';
+  }
 
-  checkFlight(value: string) {
+  checkFlight(value: any) {
     this.selectedFlight = value;
+    this.showDetailsDeparture = this.dataFlight.find((flight: any) => flight._id === this.selectedFlight)
   }
-  checkFlightBack(value: string) {
+  checkFlightBack(value: any) {
     this.selectedFlightBack = value;
+    this.showDetailsReturn = this.showDetailsDeparture.flightReturns[value]
+    console.log('====================================');
+    console.log(this.showDetailsDeparture);
+    console.log(this.showDetailsReturn);
+    console.log('====================================');
   }
-  collapsedDetailDeparture(value: string) {
+  collapsedDetailDeparture(value: any) {
     this.selectedDetailDeparture = value
   }
-  collapsedDetailReturn(value: string) {
+  collapsedDetailReturn(value: any) {
     this.selectedDetailReturn = value
   }
+
 }
 

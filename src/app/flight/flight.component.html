@@ -9,15 +9,351 @@
   <div ng-app="services-list" class="col-lg-9 services-list accordion" id="accordionFlightDetails">
     <app-top-filter></app-top-filter>
     <app-flight-top-filter></app-flight-top-filter>
-    <div class="flight-item" *ngFor="let flight of dataFlight;let i=index">
-      <label [attr.for]="'flight-box-'+i" class="">
-        <input type="radio" [attr.name]="'flightbox'+i" [value]="'flightbox'+i" [(ngModel)]="selectedFlight"
-          class="service-check-box" [id]="'flight-box-'+i" disabled />
+    <div *ngIf="!showDetailsReturn">
+      <div class="flight-item" *ngFor="let flight of dataFlight;let i=index">
+        <label [attr.for]="'flight-box-'+i" class="">
+          <input type="radio" [attr.name]="flight._id" [value]="flight._id" [(ngModel)]="selectedFlight"
+            class="service-check-box" [id]="'flight-box-'+i" disabled />
+          <div class="box">
+            <div class="row m-0">
+              <div class="col-lg-2 service ps-0">
+                <div [id]="'service-box-pic'+i" class="image-box">
+                  <img src="{{flight.flightImage}}" class="d-block w-100" alt="" />
+                </div>
+              </div>
+              <div class="col-lg-10 service-details">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <div class="flight-label d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-line-chevron-right"></i>
+                          <div class="flight-direction">Departure flight</div>
+                        </div>
+                        <div class="flight-class">{{flight.class}}</div>
+                      </div>
+                      <div class="service-price">
+                        <span>$</span>{{flight.price}}<span class="price-text"> / motamar</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="details-row">
+                      <div class="details-block">
+                        <div class="time-block">
+                          <span class="time">{{flight.timeOfDeparture}}</span>
+                        </div>
+                        <span class="port">{{flight.departure}}</span>
+                        <div class="date-block">
+                          <span class="date">{{flight.dateOfDeparture}}</span>
+                        </div>
+                      </div>
+                      <div class="middle-block text-center w-100">
+                        <span class="flight-duration">{{flight.duration}}</span>
+                        <div class="transfer-line-icon">
+                          <svg viewBox="0 0 820.04 695.09">
+                            <path
+                              d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
+                              style="stroke-width:0px;" />
+                          </svg>
+                        </div>
+                        <span class="total-stop">{{flight.stops}}</span>
+                        <div class="flight-no">
+                          <span>{{flight.flightNumber}}</span>
+                        </div>
+                      </div>
+                      <div class="details-block text-end">
+                        <div class="time-block">
+                          <span class="time">{{flight.timeOfArrival}}</span>
+                        </div>
+                        <span class="port">{{flight.destination}}</span>
+                        <div class="date-block">
+                          <span class="date">{{flight.dateOfArrival}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
+                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details"
+                      type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flightdetails'+i"
+                      (click)="collapsedDetailDeparture('detailDeparture'+i)" aria-expanded="false"
+                      [attr.aria-controls]="'flightdetails'+i">
+                      Details
+                    </button>
+                    <button class="color-btn service-btn-select collapsed" data-title="Select flight" type="button"
+                      (click)="checkFlight(flight._id)" data-bs-toggle="collapse"
+                      [attr.data-bs-target]="'#return-flights-list'+i" aria-expanded="false"
+                      [attr.aria-controls]="'return-flights-list'+i">
+                      Select
+                    </button>
+                  </div>
+                  <div class="col-xl-12 accordion-item">
+                    <div class="accordion-collapse collapse"
+                      [class.show]="selectedDetailDeparture ==='detailDeparture'+i" [attr.id]="'flightdetails'+i"
+                      [attr.aria-labelledby]="'flightdetails'+i" data-bs-parent="#accordionFlightDetails">
+                      <div class="service-details-collapse mt-3">
+                        <div class="card card-body">
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-star me-2"></i>
+                                <div>Class</div>
+                              </div>
+                            </div>
+                            <div class="">Economic</div>
+                          </div>
+                          <div class="gap-2">
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-calendar me-2"></i>
+                                  <div>Date</div>
+                                </div>
+                              </div>
+                              <div class=""> 01 November 2023</div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-calendar me-2"></i>
+                                  <div>Flight Number</div>
+                                </div>
+                              </div>
+                              <div class="">TU0606</div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Departure</div>
+                                </div>
+                              </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
+                            </div>
+                            <div class="flight-stops-details">
+                              2 stops through France and Egypt
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Arrival</div>
+                                </div>
+                              </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Duration</div>
+                                </div>
+                              </div>
+                              <div>15:10</div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-briefcase me-2"></i>
+                                  <div>Baggage</div>
+                                </div>
+                              </div>
+                              <div>1 piece of checked baggage (per ad.)</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
+
+        <div [attr.id]="'return-flights-list'+i" class="collapse">
+          <div id="flights-back" class="sub-service-list accordion">
+            <div class="subservice-list-title mb-2">Choose the return flight</div>
+            <div *ngFor="let returnFlight of dataFlight[i].flightReturns;let j = index">
+              <label [attr.for]="j" class="subservice-item mb-2">
+                <input type="radio" [attr.name]="j" [value]="j" [(ngModel)]="selectedFlightBack"
+                  class="service-check-box" [attr.id]="j" disabled />
+                <div class="box">
+                  <div class="row m-0">
+                    <div class="col-lg-2 service ps-0">
+                      <div id="service-box-pic" class="image-box">
+                        <img src="{{returnFlight.flightImage}}" class="d-block w-100" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-lg-10 service-details">
+                      <div class="row">
+                        <div class="col-lg-9">
+                          <div class="flight-label d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                              <div class="d-flex align-items-center">
+                                <i class="icon-line-chevron-right"></i>
+                                <div class="flight-direction">Return flight</div>
+                              </div>
+                              <div class="flight-class">{{returnFlight.class}}</div>
+                            </div>
+                            <div class="service-price">
+                              <span>$</span>{{returnFlight.price}}<span class="price-text"> / motamar</span>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="details-row">
+                            <div class="details-block">
+                              <div class="time-block">
+                                <span class="time">{{returnFlight.timeOfDeparture}}</span>
+                              </div>
+                              <span class="port">{{returnFlight.departure}}</span>
+                              <div class="date-block">
+                                <span class="date">{{returnFlight.dateOfDeparture}}</span>
+                              </div>
+                            </div>
+                            <div class="middle-block text-center w-100">
+                              <span class="flight-duration">{{returnFlight.duration}}</span>
+                              <div class="flight-line-icon"></div>
+                              <span class="total-stop">{{returnFlight.stops}}</span>
+                              <div class="flight-no">
+                                <span>{{returnFlight.flightNumber}}</span>
+                              </div>
+                            </div>
+                            <div class="details-block text-end">
+                              <div class="time-block">
+                                <span class="time">{{returnFlight.timeOfArrival}}</span>
+                              </div>
+                              <span class="port">{{returnFlight.destination}}</span>
+                              <div class="date-block">
+                                <span class="date">{{returnFlight.dateOfArrival}}</span>
+                                <sup></sup>
+                                <sup class="date-change"></sup>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                          <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button"
+                            (click)="collapsedDetailReturn('detailReturn'+j)" data-bs-toggle="collapse"
+                            [attr.data-bs-target]="'#flightbackdetails'+j" aria-expanded="false"
+                            [attr.aria-controls]="'flightbackdetails'+j">
+                            Details
+                          </button>
+                          <button class="color-btn service-btn-select" data-title="Select flight" type="button"
+                            (click)="checkFlightBack(j)">
+                            Select
+                          </button>
+                        </div>
+
+                        <div class="col-xl-12 accordion-item">
+                          <div class="accordion-collapse collapse" [attr.aria-labelledby]="'flightbackdetails'+j"
+                            [attr.data-bs-parent]="'#flights-back'+j"
+                            [class.show]="selectedDetailReturn ==='detailReturn'+j" [attr.id]="'flightbackdetails'+j">
+                            <div class="service-details-collapse mt-3">
+                              <div class="card card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                  <div class="flight-details-label">
+                                    <div class="d-flex align-items-center">
+                                      <i class="color-2 icon-line-star me-2"></i>
+                                      <div>Class</div>
+                                    </div>
+                                  </div>
+                                  <div class="">{{returnFlight.class}}</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                  <div class="d-flex align-items-start gap-3">
+                                    <div class="flight-details-label">
+                                      <div class="d-flex align-items-center">
+                                        <i class="color-2 icon-line-calendar me-2"></i>
+                                        <div>Date</div>
+                                      </div>
+                                    </div>
+                                    <div class=""> 01 November 2023</div>
+                                  </div>
+                                  <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                                </div>
+                                <div class="">
+                                  <div class="d-flex align-items-start gap-3">
+                                    <div class="flight-details-label">
+                                      <div class="d-flex align-items-center">
+                                        <i class="color-2 icon-line-clock me-2"></i>
+                                        <div>Departure</div>
+                                      </div>
+                                    </div>
+                                    <div>15:10</div>
+                                    <div class="country-abr">TUN</div>
+                                    <div>Tunis Carthage - Terminal M</div>
+                                  </div>
+                                  <div class="d-flex align-items-start gap-3">
+                                    <div class="flight-details-label">
+                                      <div class="d-flex align-items-center">
+                                        <i class="color-2 icon-line-clock me-2"></i>
+                                        <div>Arrival</div>
+                                      </div>
+                                    </div>
+                                    <div>15:10</div>
+                                    <div class="country-abr">TUN</div>
+                                    <div>Tunis Carthage - Terminal M</div>
+                                  </div>
+                                  <div class="d-flex align-items-start gap-3">
+                                    <div class="flight-details-label">
+                                      <div class="d-flex align-items-center">
+                                        <i class="color-2 icon-line-clock me-2"></i>
+                                        <div>Duration</div>
+                                      </div>
+                                    </div>
+                                    <div>15:10</div>
+                                  </div>
+                                  <div class="d-flex align-items-start gap-3">
+                                    <div class="flight-details-label">
+                                      <div class="d-flex align-items-center">
+                                        <i class="color-2 icon-line-briefcase me-2"></i>
+                                        <div>Baggage</div>
+                                      </div>
+                                    </div>
+                                    <div>1 piece of checked baggage (per ad.)</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <!-- <div class="w-100">
+              <button class="color-btn more-btn">Load More</button>
+            </div> -->
+          </div>
+        </div>
+        <div class="clear-area"></div>
+      </div>
+    </div>
+    <div *ngIf="showDetailsReturn">
+
+      <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
+        <button (click)="clearData()" class="color-btn service-btn-details collapsed mb-2" data-title="Flight details"
+          type="button">
+          Return
+        </button>
+
+      </div>
+
+      <label for="" class="">
         <div class="box">
           <div class="row m-0">
             <div class="col-lg-2 service ps-0">
-              <div [id]="'service-box-pic'+i" class="image-box">
-                <img src="{{flight.flightImage}}" class="d-block w-100" alt="" />
+              <div id="service-box-pic" class="image-box">
+                <img src="{{showDetailsDeparture.flightImage}}" class="d-block w-100" alt="" />
               </div>
             </div>
             <div class="col-lg-10 service-details">
@@ -29,63 +365,58 @@
                         <i class="icon-line-chevron-right"></i>
                         <div class="flight-direction">Departure flight</div>
                       </div>
-                      <div class="flight-class">{{flight.class}}</div>
+                      <div class="flight-class">{{showDetailsDeparture.class}}</div>
                     </div>
                     <div class="service-price">
-                      <span>$</span>{{flight.price}}<span class="price-text"> / motamar</span>
+                      <span>$</span>{{showDetailsDeparture.price}}<span class="price-text"> / motamar</span>
                     </div>
                   </div>
                   <hr>
                   <div class="details-row">
                     <div class="details-block">
                       <div class="time-block">
-                        <span class="time">{{flight.timeOfDeparture}}</span>
+                        <span class="time">{{showDetailsDeparture.timeOfDeparture}}</span>
                       </div>
-                      <span class="port">{{flight.departure}}</span>
+                      <span class="port">{{showDetailsDeparture.departure}}</span>
                       <div class="date-block">
-                        <span class="date">{{flight.dateOfDeparture}}</span>
+                        <span class="date">{{showDetailsDeparture.dateOfDeparture}}</span>
                       </div>
                     </div>
                     <div class="middle-block text-center w-100">
-                      <span class="flight-duration">{{flight.duration}}</span>
+                      <span class="flight-duration">{{showDetailsDeparture.duration}}</span>
                       <div class="transfer-line-icon">
                         <svg viewBox="0 0 820.04 695.09">
-                          <path d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z" style="stroke-width:0px;"/>
+                          <path
+                            d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
+                            style="stroke-width:0px;" />
                         </svg>
                       </div>
-                      <span class="total-stop">{{flight.stops}}</span>
+                      <span class="total-stop">{{showDetailsDeparture.stops}}</span>
                       <div class="flight-no">
-                        <span>{{flight.flightNumber}}</span>
+                        <span>{{showDetailsDeparture.flightNumber}}</span>
                       </div>
                     </div>
                     <div class="details-block text-end">
                       <div class="time-block">
-                        <span class="time">{{flight.timeOfArrival}}</span>
+                        <span class="time">{{showDetailsDeparture.timeOfArrival}}</span>
                       </div>
-                      <span class="port">{{flight.destination}}</span>
+                      <span class="port">{{showDetailsDeparture.destination}}</span>
                       <div class="date-block">
-                        <span class="date">{{flight.dateOfArrival}}</span>
+                        <span class="date">{{showDetailsDeparture.dateOfArrival}}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
                   <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
-                    data-bs-toggle="collapse" [attr.data-bs-target]="'#flightdetails'+i"
-                    (click)="collapsedDetailDeparture('detailDeparture'+i)" aria-expanded="false"
-                    [attr.aria-controls]="'flightdetails'+i">
+                    data-bs-toggle="collapse" data-bs-target="#detail-departure" aria-expanded="false"
+                    aria-controls="detail-departure">
                     Details
                   </button>
-                  <button class="color-btn service-btn-select collapsed" data-title="Select flight" type="button"
-                    (click)="checkFlight('flightbox'+i)" data-bs-toggle="collapse"
-                    [attr.data-bs-target]="'#return-flights-list'+i" aria-expanded="false"
-                    [attr.aria-controls]="'return-flights-list'+i">
-                    Select
-                  </button>
+
                 </div>
                 <div class="col-xl-12 accordion-item">
-                  <div class="accordion-collapse collapse" [class.show]="selectedDetailDeparture ==='detailDeparture'+i"
-                    [attr.id]="'flightdetails'+i" [attr.aria-labelledby]="'flightdetails'+i"
+                  <div class="accordion-collapse collapse" id="detail-departure" aria-labelledby="detail-departure"
                     data-bs-parent="#accordionFlightDetails">
                     <div class="service-details-collapse mt-3">
                       <div class="card card-body">
@@ -129,7 +460,7 @@
                             <div>Tunis Carthage - Terminal M</div>
                           </div>
                           <div class="flight-stops-details">
-                            2 stops through France and Egypt 
+                            2 stops through France and Egypt
                           </div>
                           <div class="d-flex align-items-start gap-3">
                             <div class="flight-details-label">
@@ -170,169 +501,159 @@
           </div>
         </div>
       </label>
-
-      <div [attr.id]="'return-flights-list'+i" class="collapse">
-        <div id="flights-back" class="sub-service-list accordion">
-          <div class="subservice-list-title mb-2">Choose the return flight</div>
-          <div *ngFor="let returnFlight of dataFlight[i].flightReturns;let j = index">
-            <label [attr.for]="'flightback'+j" class="subservice-item mb-2">
-              <input type="radio" [attr.name]="'flightback'+j" [value]="'flightback'+j" [(ngModel)]="selectedFlightBack"
-                class="service-check-box" [attr.id]="'flightback'+j" disabled />
-              <div class="box">
-                <div class="row m-0">
-                  <div class="col-lg-2 service ps-0">
-                    <div id="service-box-pic" class="image-box">
-                      <img src="{{returnFlight.flightImage}}" class="d-block w-100" alt="" />
+      <label for="" class="">
+        <div class="box">
+          <div class="row m-0">
+            <div class="col-lg-2 service ps-0">
+              <div id="service-box-pic" class="image-box">
+                <img src="{{showDetailsReturn.flightImage}}" class="d-block w-100" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-10 service-details">
+              <div class="row">
+                <div class="col-lg-10">
+                  <div class="flight-label d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Departure flight</div>
+                      </div>
+                      <div class="flight-class">{{showDetailsReturn.class}}</div>
+                    </div>
+                    <div class="service-price">
+                      <span>$</span>{{showDetailsReturn.price}}<span class="price-text"> / motamar</span>
                     </div>
                   </div>
-                  <div class="col-lg-10 service-details">
-                    <div class="row">
-                      <div class="col-lg-9">
-                        <div class="flight-label d-flex align-items-center justify-content-between">
-                          <div class="d-flex align-items-center gap-3">
+                  <hr>
+                  <div class="details-row">
+                    <div class="details-block">
+                      <div class="time-block">
+                        <span class="time">{{showDetailsReturn.timeOfDeparture}}</span>
+                      </div>
+                      <span class="port">{{showDetailsReturn.departure}}</span>
+                      <div class="date-block">
+                        <span class="date">{{showDetailsReturn.dateOfDeparture}}</span>
+                      </div>
+                    </div>
+                    <div class="middle-block text-center w-100">
+                      <span class="flight-duration">{{showDetailsReturn.duration}}</span>
+                      <div class="transfer-line-icon">
+                        <svg viewBox="0 0 820.04 695.09">
+                          <path
+                            d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
+                            style="stroke-width:0px;" />
+                        </svg>
+                      </div>
+                      <span class="total-stop">{{showDetailsReturn.stops}}</span>
+                      <div class="flight-no">
+                        <span>{{showDetailsReturn.flightNumber}}</span>
+                      </div>
+                    </div>
+                    <div class="details-block text-end">
+                      <div class="time-block">
+                        <span class="time">{{showDetailsReturn.timeOfArrival}}</span>
+                      </div>
+                      <span class="port">{{showDetailsReturn.destination}}</span>
+                      <div class="date-block">
+                        <span class="date">{{showDetailsReturn.dateOfArrival}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
+                  <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#detail-return" aria-expanded="false"
+                    aria-controls="detail-return">
+                    Details
+                  </button>
+
+                </div>
+                <div class="col-xl-12 accordion-item">
+                  <div class="accordion-collapse collapse" id="detail-return" aria-labelledby="detail-return"
+                    data-bs-parent="#accordionFlightDetails">
+                    <div class="service-details-collapse mt-3">
+                      <div class="card card-body">
+                        <div class="d-flex align-items-start gap-3">
+                          <div class="flight-details-label">
                             <div class="d-flex align-items-center">
-                              <i class="icon-line-chevron-right"></i>
-                              <div class="flight-direction">Return flight</div>
+                              <i class="color-2 icon-line-star me-2"></i>
+                              <div>Class</div>
                             </div>
-                            <div class="flight-class">{{returnFlight.class}}</div>
                           </div>
-                          <div class="service-price">
-                            <span>$</span>{{returnFlight.price}}<span class="price-text"> / motamar</span>
-                          </div>
+                          <div class="">Economic</div>
                         </div>
-                        <hr>
-                        <div class="details-row">
-                          <div class="details-block">
-                            <div class="time-block">
-                              <span class="time">{{returnFlight.timeOfDeparture}}</span>
-                            </div>
-                            <span class="port">{{returnFlight.departure}}</span>
-                            <div class="date-block">
-                              <span class="date">{{returnFlight.dateOfDeparture}}</span>
-                            </div>
-                          </div>
-                          <div class="middle-block text-center w-100">
-                            <span class="flight-duration">{{returnFlight.duration}}</span>
-                            <div class="flight-line-icon"></div>
-                            <span class="total-stop">{{returnFlight.stops}}</span>
-                            <div class="flight-no">
-                              <span>{{returnFlight.flightNumber}}</span>
-                            </div>
-                          </div>
-                          <div class="details-block text-end">
-                            <div class="time-block">
-                              <span class="time">{{returnFlight.timeOfArrival}}</span>
-                            </div>
-                            <span class="port">{{returnFlight.destination}}</span>
-                            <div class="date-block">
-                              <span class="date">{{returnFlight.dateOfArrival}}</span>
-                              <sup></sup>
-                              <sup class="date-change"></sup>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
-                        <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button"
-                          (click)="collapsedDetailReturn('detailReturn'+j)" data-bs-toggle="collapse"
-                          [attr.data-bs-target]="'#flightbackdetails'+j" aria-expanded="false"
-                          [attr.aria-controls]="'flightbackdetails'+j">
-                          Details
-                        </button>
-                        <button class="color-btn service-btn-select" data-title="Select flight" type="button"
-                          (click)="checkFlightBack('flightback'+j)">
-                          Select
-                        </button>
-                      </div>
-
-                      <div class="col-xl-12 accordion-item">
-                        <div class="accordion-collapse collapse" [attr.aria-labelledby]="'flightbackdetails'+j"
-                          [attr.data-bs-parent]="'#flights-back'+j"
-                          [class.show]="selectedDetailReturn ==='detailReturn'+j" [attr.id]="'flightbackdetails'+j">
-                          <div class="service-details-collapse mt-3">
-                            <div class="card card-body">
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="flight-details-label">
-                                  <div class="d-flex align-items-center">
-                                    <i class="color-2 icon-line-star me-2"></i>
-                                    <div>Class</div>
-                                  </div>
-                                </div>
-                                <div class="">{{returnFlight.class}}</div>
-                              </div>
-                              <div class="d-flex gap-2">
-                                <div class="d-flex align-items-start gap-3">
-                                  <div class="flight-details-label">
-                                    <div class="d-flex align-items-center">
-                                      <i class="color-2 icon-line-calendar me-2"></i>
-                                      <div>Date</div>
-                                    </div>
-                                  </div>
-                                  <div class=""> 01 November 2023</div>
-                                </div>
-                                <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
-                              </div>
-                              <div class="">
-                                <div class="d-flex align-items-start gap-3">
-                                  <div class="flight-details-label">
-                                    <div class="d-flex align-items-center">
-                                      <i class="color-2 icon-line-clock me-2"></i>
-                                      <div>Departure</div>
-                                    </div>
-                                  </div>
-                                  <div>15:10</div>
-                                  <div class="country-abr">TUN</div>
-                                  <div>Tunis Carthage - Terminal M</div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                  <div class="flight-details-label">
-                                    <div class="d-flex align-items-center">
-                                      <i class="color-2 icon-line-clock me-2"></i>
-                                      <div>Arrival</div>
-                                    </div>
-                                  </div>
-                                  <div>15:10</div>
-                                  <div class="country-abr">TUN</div>
-                                  <div>Tunis Carthage - Terminal M</div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                  <div class="flight-details-label">
-                                    <div class="d-flex align-items-center">
-                                      <i class="color-2 icon-line-clock me-2"></i>
-                                      <div>Duration</div>
-                                    </div>
-                                  </div>
-                                  <div>15:10</div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                  <div class="flight-details-label">
-                                    <div class="d-flex align-items-center">
-                                      <i class="color-2 icon-line-briefcase me-2"></i>
-                                      <div>Baggage</div>
-                                    </div>
-                                  </div>
-                                  <div>1 piece of checked baggage (per ad.)</div>
-                                </div>
+                        <div class="gap-2">
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-calendar me-2"></i>
+                                <div>Date</div>
                               </div>
                             </div>
+                            <div class=""> 01 November 2023</div>
+                          </div>
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-calendar me-2"></i>
+                                <div>Flight Number</div>
+                              </div>
+                            </div>
+                            <div class="">TU0606</div>
+                          </div>
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-clock me-2"></i>
+                                <div>Departure</div>
+                              </div>
+                            </div>
+                            <div>15:10</div>
+                            <div class="country-abr">TUN</div>
+                            <div>Tunis Carthage - Terminal M</div>
+                          </div>
+                          <div class="flight-stops-details">
+                            2 stops through France and Egypt
+                          </div>
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-clock me-2"></i>
+                                <div>Arrival</div>
+                              </div>
+                            </div>
+                            <div>15:10</div>
+                            <div class="country-abr">TUN</div>
+                            <div>Tunis Carthage - Terminal M</div>
+                          </div>
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-clock me-2"></i>
+                                <div>Duration</div>
+                              </div>
+                            </div>
+                            <div>15:10</div>
+                          </div>
+                          <div class="d-flex align-items-start gap-3">
+                            <div class="flight-details-label">
+                              <div class="d-flex align-items-center">
+                                <i class="color-2 icon-line-briefcase me-2"></i>
+                                <div>Baggage</div>
+                              </div>
+                            </div>
+                            <div>1 piece of checked baggage (per ad.)</div>
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
               </div>
-            </label>
+            </div>
           </div>
-
-          <!-- <div class="w-100">
-            <button class="color-btn more-btn">Load More</button>
-          </div> -->
         </div>
-      </div>
-      <div class="clear-area"></div>
+      </label>
     </div>
 
   </div>
@@ -346,8 +667,8 @@
 
 </div>
 <div class="filter-list-btn">
-  <button class="color-btn d-flex align-items-center gap-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#flightfilter"
-    aria-controls="flightfilter">
+  <button class="color-btn d-flex align-items-center gap-3" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#flightfilter" aria-controls="flightfilter">
     <svg viewBox="0 0 608 592.12">
       <path
         d="m253.44,78.88C246.29,34.23,207.51,0,160.88,0s-85.42,34.23-92.57,78.88H18.75c-10.36,0-18.75,8.39-18.75,18.75h0c0,10.36,8.39,18.75,18.75,18.75h51.14c10.15,40.8,47.09,71.12,90.98,71.12s80.83-30.33,90.98-71.12h337.39c10.36,0,18.75-8.39,18.75-18.75h0c0-10.36-8.39-18.75-18.75-18.75H253.44Zm-92.57,71.12c-31.02,0-56.25-25.23-56.25-56.25s25.23-56.25,56.25-56.25,56.25,25.23,56.25,56.25-25.23,56.25-56.25,56.25Z"
