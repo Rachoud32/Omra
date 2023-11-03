@@ -24,7 +24,7 @@ export class FlightComponent implements OnInit {
       dateOfDeparture: "01 nov. 2023",
       dateOfArrival: "01 nov. 2023",
       stops: "Direct",
-      flightNumber: "TUN123",
+      flightNumber: "TU0606",
       details: {
         class: "First",
         baggage: "1 piece of checked baggage (per ad.)",
@@ -34,7 +34,7 @@ export class FlightComponent implements OnInit {
         departure: "Sfax (SFA)",
         destination: "Jeddah (JED)",
         dateOfDeparture: "01 nov. 2023",
-        flightNumber: "TUN123",
+        flightNumber: "TU0606",
       },
       flightReturns: [
         {
@@ -49,7 +49,7 @@ export class FlightComponent implements OnInit {
           dateOfDeparture: "01 nov. 2023",
           dateOfArrival: "01 nov. 2023",
           stops: "Direct",
-          flightNumber: "TUN123",
+          flightNumber: "TU0606",
           details: {
             class: "First",
             baggage: "1 piece of checked baggage (per ad.)",
@@ -59,7 +59,7 @@ export class FlightComponent implements OnInit {
             departure: "Sfax (SFA)",
             destination: "Jeddah (JED)",
             dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUN123",
+            flightNumber: "TU0606",
           }
         },
         {
@@ -74,7 +74,7 @@ export class FlightComponent implements OnInit {
           dateOfDeparture: "01 nov. 2023",
           dateOfArrival: "01 nov. 2023",
           stops: "Direct",
-          flightNumber: "TUN123",
+          flightNumber: "TU0606",
           details: {
             class: "First",
             baggage: "1 piece of checked baggage (per ad.)",
@@ -84,7 +84,7 @@ export class FlightComponent implements OnInit {
             departure: "Sfax (SFA)",
             destination: "Jeddah (JED)",
             dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUN123",
+            flightNumber: "TU0606",
           }
         },
         {
@@ -99,7 +99,7 @@ export class FlightComponent implements OnInit {
           dateOfDeparture: "01 nov. 2023",
           dateOfArrival: "01 nov. 2023",
           stops: "Direct",
-          flightNumber: "TUN123",
+          flightNumber: "TU0606",
           details: {
             class: "First",
             baggage: "1 piece of checked baggage (per ad.)",
@@ -109,7 +109,7 @@ export class FlightComponent implements OnInit {
             departure: "Sfax (SFA)",
             destination: "Jeddah (JED)",
             dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUN123",
+            flightNumber: "TU0606",
           }
         },
       ]
@@ -127,7 +127,7 @@ export class FlightComponent implements OnInit {
       dateOfDeparture: "01 nov. 2023",
       dateOfArrival: "01 nov. 2023",
       stops: "Direct",
-      flightNumber: "TUN123",
+      flightNumber: "TU0606",
       details: {
         class: "First",
         baggage: "1 piece of checked baggage (per ad.)",
@@ -137,7 +137,7 @@ export class FlightComponent implements OnInit {
         departure: "Sfax (SFA)",
         destination: "Jeddah (JED)",
         dateOfDeparture: "01 nov. 2023",
-        flightNumber: "TUN123",
+        flightNumber: "TU0606",
       }
     },
     {
@@ -153,7 +153,7 @@ export class FlightComponent implements OnInit {
       dateOfDeparture: "01 nov. 2023",
       dateOfArrival: "01 nov. 2023",
       stops: "1 stop",
-      flightNumber: "TUN123",
+      flightNumber: "TU0606",
       details: {
         class: "First",
         baggage: "1 piece of checked baggage (per ad.)",
@@ -163,7 +163,7 @@ export class FlightComponent implements OnInit {
         departure: "Sfax (SFA)",
         destination: "Jeddah (JED)",
         dateOfDeparture: "01 nov. 2023",
-        flightNumber: "TUN123",
+        flightNumber: "TU0606",
       }
     },
     {
@@ -179,7 +179,7 @@ export class FlightComponent implements OnInit {
       dateOfDeparture: "01 nov. 2023",
       dateOfArrival: "01 nov. 2023",
       stops: "2 stops",
-      flightNumber: "TUN123",
+      flightNumber: "TU0606",
       details: {
         class: "First",
         baggage: "1 piece of checked baggage (per ad.)",
@@ -189,7 +189,7 @@ export class FlightComponent implements OnInit {
         departure: "Sfax (SFA)",
         destination: "Jeddah (JED)",
         dateOfDeparture: "01 nov. 2023",
-        flightNumber: "TUN123",
+        flightNumber: "TU0606",
       }
     },
   ]

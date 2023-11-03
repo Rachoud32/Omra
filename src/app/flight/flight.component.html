@@ -48,12 +48,13 @@
                         </div>
                       </div>
                       <div class="middle-block text-center w-100">
-                        <span class="flight-duration">{{flight.duration}}</span>
-                        <div class="transfer-line-icon">
-                          <svg viewBox="0 0 820.04 695.09">
-                            <path
-                              d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
-                              style="stroke-width:0px;" />
+                        <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                          <i class="icon-line-clock"></i>
+                          <span>{{flight.duration}}</span>
+                        </div>
+                        <div class="flight-line-icon">
+                          <svg viewBox="0 0 768.47 586.3">
+                            <path d="m760.14,342.8l-54.54-74.07c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-63.18-132.28C427.23,23.42,390.09,0,349.93,0h-105.38l42.34,191.94h-90.93c-11.43-22.59-28.34-41.84-49.46-56.19-24.97-16.96-54.12-25.93-84.3-25.93H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h218.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.71-44.44ZM294.33,40h55.6c24.84,0,47.81,14.48,58.52,36.9l54.95,115.04h-135.54l-33.52-151.94Zm113.1,468.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm320.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.52-25.92-20.74-44.35-48.6-53.3-80.56l-28.46-105.7h9.99c45.4,0,85.54,27.28,102.26,69.49l5,12.64h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.07c.28.38.94,1.27.22,2.68Z" style="stroke-width:0px;"/>
                           </svg>
                         </div>
                         <span class="total-stop">{{flight.stops}}</span>
@@ -114,7 +115,7 @@
                             <div class="d-flex align-items-start gap-3">
                               <div class="flight-details-label">
                                 <div class="d-flex align-items-center">
-                                  <i class="color-2 icon-line-calendar me-2"></i>
+                                  <i class="color-2 icon-line-send me-2"></i>
                                   <div>Flight Number</div>
                                 </div>
                               </div>
@@ -216,7 +217,11 @@
                             </div>
                             <div class="middle-block text-center w-100">
                               <span class="flight-duration">{{returnFlight.duration}}</span>
-                              <div class="flight-line-icon"></div>
+                              <div class="transfer-line-icon">
+                                <svg viewBox="0 0 768.47 586.3">
+                                  <path d="m760.14,342.8l-54.54-74.07c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-63.18-132.28C427.23,23.42,390.09,0,349.93,0h-105.38l42.34,191.94h-90.93c-11.43-22.59-28.34-41.84-49.46-56.19-24.97-16.96-54.12-25.93-84.3-25.93H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h218.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.71-44.44ZM294.33,40h55.6c24.84,0,47.81,14.48,58.52,36.9l54.95,115.04h-135.54l-33.52-151.94Zm113.1,468.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm320.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.52-25.92-20.74-44.35-48.6-53.3-80.56l-28.46-105.7h9.99c45.4,0,85.54,27.28,102.26,69.49l5,12.64h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.07c.28.38.94,1.27.22,2.68Z" style="stroke-width:0px;"/>
+                                </svg>
+                              </div>
                               <span class="total-stop">{{returnFlight.stops}}</span>
                               <div class="flight-no">
                                 <span>{{returnFlight.flightNumber}}</span>
@@ -340,156 +345,179 @@
     </div>
     <div *ngIf="showDetailsReturn">
 
-      <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-        <button (click)="clearData()" class="color-btn service-btn-details collapsed mb-2" data-title="Flight details"
-          type="button">
-          Return
+      <div class="d-flex">
+        <button (click)="clearData()" class="color-btn back-btn d-flex align-items-center gap-2 mb-2" data-title="Return to flights list" type="button">
+          <i class="icon-line-chevron-left"></i>Return to flights list
         </button>
-
       </div>
-
-      <label for="" class="">
-        <div class="box">
-          <div class="row m-0">
-            <div class="col-lg-2 service ps-0">
-              <div id="service-box-pic" class="image-box">
-                <img src="{{showDetailsDeparture.flightImage}}" class="d-block w-100" alt="" />
-              </div>
+      <div class="check-form summary-search d-flex align-items-center justify-content-between">
+        <div class="summary-search-label">Your Search</div>
+        <div class="summary-search-results d-flex align-items-center gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="icon-line-calendar"></i>
+            <div class="d-flex align-items-center gap-2">
+              <div>Mon, 16 Aug.</div> 
+              <i class="icon-line-arrow-right"></i> 
+              <div>Wed, 18 Aug.</div> 
             </div>
-            <div class="col-lg-10 service-details">
-              <div class="row">
-                <div class="col-lg-10">
-                  <div class="flight-label d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="d-flex align-items-center">
-                        <i class="icon-line-chevron-right"></i>
-                        <div class="flight-direction">Departure flight</div>
-                      </div>
-                      <div class="flight-class">{{showDetailsDeparture.class}}</div>
-                    </div>
-                    <div class="service-price">
-                      <span>$</span>{{showDetailsDeparture.price}}<span class="price-text"> / motamar</span>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="details-row">
-                    <div class="details-block">
-                      <div class="time-block">
-                        <span class="time">{{showDetailsDeparture.timeOfDeparture}}</span>
-                      </div>
-                      <span class="port">{{showDetailsDeparture.departure}}</span>
-                      <div class="date-block">
-                        <span class="date">{{showDetailsDeparture.dateOfDeparture}}</span>
-                      </div>
-                    </div>
-                    <div class="middle-block text-center w-100">
-                      <span class="flight-duration">{{showDetailsDeparture.duration}}</span>
-                      <div class="transfer-line-icon">
-                        <svg viewBox="0 0 820.04 695.09">
-                          <path
-                            d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
-                            style="stroke-width:0px;" />
-                        </svg>
-                      </div>
-                      <span class="total-stop">{{showDetailsDeparture.stops}}</span>
-                      <div class="flight-no">
-                        <span>{{showDetailsDeparture.flightNumber}}</span>
-                      </div>
-                    </div>
-                    <div class="details-block text-end">
-                      <div class="time-block">
-                        <span class="time">{{showDetailsDeparture.timeOfArrival}}</span>
-                      </div>
-                      <span class="port">{{showDetailsDeparture.destination}}</span>
-                      <div class="date-block">
-                        <span class="date">{{showDetailsDeparture.dateOfArrival}}</span>
-                      </div>
-                    </div>
-                  </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="icon-line-map-pin"></i>
+            <div class="d-flex align-items-center gap-2">
+              <div>Sfax (SFA)</div> 
+              <i class="icon-line-arrow-right"></i> 
+              <div>Jeddah (JDE)</div> 
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="icon-line-users"></i>
+            <p class="m-0">4</p>
+          </div>  
+        </div>
+      </div>
+      <div class="summary-items content-box">
+        <div class="summary-title">Summary of your flight</div>
+        <label for="" class="">
+          <div class="box">
+            <div class="row m-0">
+              <div class="col-lg-2 service ps-0">
+                <div id="service-box-pic" class="image-box">
+                  <img src="{{showDetailsDeparture.flightImage}}" class="d-block w-100" alt="" />
                 </div>
-                <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-                  <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#detail-departure" aria-expanded="false"
-                    aria-controls="detail-departure">
-                    Details
-                  </button>
-
-                </div>
-                <div class="col-xl-12 accordion-item">
-                  <div class="accordion-collapse collapse" id="detail-departure" aria-labelledby="detail-departure"
-                    data-bs-parent="#accordionFlightDetails">
-                    <div class="service-details-collapse mt-3">
-                      <div class="card card-body">
-                        <div class="d-flex align-items-start gap-3">
-                          <div class="flight-details-label">
-                            <div class="d-flex align-items-center">
-                              <i class="color-2 icon-line-star me-2"></i>
-                              <div>Class</div>
-                            </div>
-                          </div>
-                          <div class="">Economic</div>
+              </div>
+              <div class="col-lg-10 service-details">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <div class="flight-label d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-line-chevron-right"></i>
+                          <div class="flight-direction">Departure flight</div>
                         </div>
-                        <div class="gap-2">
+                        <div class="flight-class">{{showDetailsDeparture.class}}</div>
+                      </div>
+                      <div class="service-price">
+                        <span>$</span>{{showDetailsDeparture.price}}<span class="price-text"> / motamar</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="details-row">
+                      <div class="details-block">
+                        <div class="time-block">
+                          <span class="time">{{showDetailsDeparture.timeOfDeparture}}</span>
+                        </div>
+                        <span class="port">{{showDetailsDeparture.departure}}</span>
+                        <div class="date-block">
+                          <span class="date">{{showDetailsDeparture.dateOfDeparture}}</span>
+                        </div>
+                      </div>
+                      <div class="middle-block text-center w-100">
+                        <span class="flight-duration">{{showDetailsDeparture.duration}}</span>
+                        <div class="transfer-line-icon">
+                          <svg viewBox="0 0 768.47 586.3">
+                            <path d="m760.14,342.8l-54.54-74.07c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-63.18-132.28C427.23,23.42,390.09,0,349.93,0h-105.38l42.34,191.94h-90.93c-11.43-22.59-28.34-41.84-49.46-56.19-24.97-16.96-54.12-25.93-84.3-25.93H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h218.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.71-44.44ZM294.33,40h55.6c24.84,0,47.81,14.48,58.52,36.9l54.95,115.04h-135.54l-33.52-151.94Zm113.1,468.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm320.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.52-25.92-20.74-44.35-48.6-53.3-80.56l-28.46-105.7h9.99c45.4,0,85.54,27.28,102.26,69.49l5,12.64h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.07c.28.38.94,1.27.22,2.68Z" style="stroke-width:0px;"/>
+                          </svg>
+                        </div>
+                        <span class="total-stop">{{showDetailsDeparture.stops}}</span>
+                        <div class="flight-no">
+                          <span>{{showDetailsDeparture.flightNumber}}</span>
+                        </div>
+                      </div>
+                      <div class="details-block text-end">
+                        <div class="time-block">
+                          <span class="time">{{showDetailsDeparture.timeOfArrival}}</span>
+                        </div>
+                        <span class="port">{{showDetailsDeparture.destination}}</span>
+                        <div class="date-block">
+                          <span class="date">{{showDetailsDeparture.dateOfArrival}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
+                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#detail-departure" aria-expanded="false"
+                      aria-controls="detail-departure">
+                      Details
+                    </button>
+
+                  </div>
+                  <div class="col-xl-12 accordion-item">
+                    <div class="accordion-collapse collapse" id="detail-departure" aria-labelledby="detail-departure"
+                      data-bs-parent="#accordionFlightDetails">
+                      <div class="service-details-collapse mt-3">
+                        <div class="card card-body">
                           <div class="d-flex align-items-start gap-3">
                             <div class="flight-details-label">
                               <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-calendar me-2"></i>
-                                <div>Date</div>
+                                <i class="color-2 icon-line-star me-2"></i>
+                                <div>Class</div>
                               </div>
                             </div>
-                            <div class=""> 01 November 2023</div>
+                            <div class="">Economic</div>
                           </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-calendar me-2"></i>
-                                <div>Flight Number</div>
+                          <div class="gap-2">
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-calendar me-2"></i>
+                                  <div>Date</div>
+                                </div>
                               </div>
+                              <div class=""> 01 November 2023</div>
                             </div>
-                            <div class="">TU0606</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Departure</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-send me-2"></i>
+                                  <div>Flight Number</div>
+                                </div>
                               </div>
+                              <div class="">TU0606</div>
                             </div>
-                            <div>15:10</div>
-                            <div class="country-abr">TUN</div>
-                            <div>Tunis Carthage - Terminal M</div>
-                          </div>
-                          <div class="flight-stops-details">
-                            2 stops through France and Egypt
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Arrival</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Departure</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
                             </div>
-                            <div>15:10</div>
-                            <div class="country-abr">TUN</div>
-                            <div>Tunis Carthage - Terminal M</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Duration</div>
+                            <div class="flight-stops-details">
+                              2 stops through France and Egypt
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Arrival</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
                             </div>
-                            <div>15:10</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-briefcase me-2"></i>
-                                <div>Baggage</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Duration</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
                             </div>
-                            <div>1 piece of checked baggage (per ad.)</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-briefcase me-2"></i>
+                                  <div>Baggage</div>
+                                </div>
+                              </div>
+                              <div>1 piece of checked baggage (per ad.)</div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -499,150 +527,148 @@
               </div>
             </div>
           </div>
-        </div>
-      </label>
-      <label for="" class="">
-        <div class="box">
-          <div class="row m-0">
-            <div class="col-lg-2 service ps-0">
-              <div id="service-box-pic" class="image-box">
-                <img src="{{showDetailsReturn.flightImage}}" class="d-block w-100" alt="" />
+        </label>
+        <label for="" class="">
+          <div class="box">
+            <div class="row m-0">
+              <div class="col-lg-2 service ps-0">
+                <div id="service-box-pic" class="image-box">
+                  <img src="{{showDetailsReturn.flightImage}}" class="d-block w-100" alt="" />
+                </div>
               </div>
-            </div>
-            <div class="col-lg-10 service-details">
-              <div class="row">
-                <div class="col-lg-10">
-                  <div class="flight-label d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="d-flex align-items-center">
-                        <i class="icon-line-chevron-right"></i>
-                        <div class="flight-direction">Departure flight</div>
-                      </div>
-                      <div class="flight-class">{{showDetailsReturn.class}}</div>
-                    </div>
-                    <div class="service-price">
-                      <span>$</span>{{showDetailsReturn.price}}<span class="price-text"> / motamar</span>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="details-row">
-                    <div class="details-block">
-                      <div class="time-block">
-                        <span class="time">{{showDetailsReturn.timeOfDeparture}}</span>
-                      </div>
-                      <span class="port">{{showDetailsReturn.departure}}</span>
-                      <div class="date-block">
-                        <span class="date">{{showDetailsReturn.dateOfDeparture}}</span>
-                      </div>
-                    </div>
-                    <div class="middle-block text-center w-100">
-                      <span class="flight-duration">{{showDetailsReturn.duration}}</span>
-                      <div class="transfer-line-icon">
-                        <svg viewBox="0 0 820.04 695.09">
-                          <path
-                            d="m811.72,389.07l-54.54-74.06c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-85.28-178.55C456.7,23.42,419.57,0,379.4,0h-103.59l34.44,238.22h-62.05l-32.52-82.12H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h77.87l-34.44,238.21h103.59c40.17,0,77.3-23.42,94.61-59.66l85.28-178.55h218.15c16.15,0,30.7-8.95,37.99-23.36s5.86-31.44-3.71-44.44ZM322.01,40h57.39c24.84,0,47.81,14.48,58.52,36.9l77.04,161.31h-164.29l-28.66-198.22Zm115.91,578.19c-10.71,22.42-33.68,36.9-58.52,36.9h-57.39l28.66-198.21h164.29l-77.04,161.31Zm341.81-202.72c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.53-25.92-20.74-44.35-48.6-53.3-80.57l-28.46-105.7h136.31l32.52,82.12h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.06c.28.38.94,1.27.22,2.68Z"
-                            style="stroke-width:0px;" />
-                        </svg>
-                      </div>
-                      <span class="total-stop">{{showDetailsReturn.stops}}</span>
-                      <div class="flight-no">
-                        <span>{{showDetailsReturn.flightNumber}}</span>
-                      </div>
-                    </div>
-                    <div class="details-block text-end">
-                      <div class="time-block">
-                        <span class="time">{{showDetailsReturn.timeOfArrival}}</span>
-                      </div>
-                      <span class="port">{{showDetailsReturn.destination}}</span>
-                      <div class="date-block">
-                        <span class="date">{{showDetailsReturn.dateOfArrival}}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-                  <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#detail-return" aria-expanded="false"
-                    aria-controls="detail-return">
-                    Details
-                  </button>
-
-                </div>
-                <div class="col-xl-12 accordion-item">
-                  <div class="accordion-collapse collapse" id="detail-return" aria-labelledby="detail-return"
-                    data-bs-parent="#accordionFlightDetails">
-                    <div class="service-details-collapse mt-3">
-                      <div class="card card-body">
-                        <div class="d-flex align-items-start gap-3">
-                          <div class="flight-details-label">
-                            <div class="d-flex align-items-center">
-                              <i class="color-2 icon-line-star me-2"></i>
-                              <div>Class</div>
-                            </div>
-                          </div>
-                          <div class="">Economic</div>
+              <div class="col-lg-10 service-details">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <div class="flight-label d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-line-chevron-right"></i>
+                          <div class="flight-direction">Departure flight</div>
                         </div>
-                        <div class="gap-2">
+                        <div class="flight-class">{{showDetailsReturn.class}}</div>
+                      </div>
+                      <div class="service-price">
+                        <span>$</span>{{showDetailsReturn.price}}<span class="price-text"> / motamar</span>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="details-row">
+                      <div class="details-block">
+                        <div class="time-block">
+                          <span class="time">{{showDetailsReturn.timeOfDeparture}}</span>
+                        </div>
+                        <span class="port">{{showDetailsReturn.departure}}</span>
+                        <div class="date-block">
+                          <span class="date">{{showDetailsReturn.dateOfDeparture}}</span>
+                        </div>
+                      </div>
+                      <div class="middle-block text-center w-100">
+                        <span class="flight-duration">{{showDetailsReturn.duration}}</span>
+                        <div class="transfer-line-icon">
+                          <svg viewBox="0 0 768.47 586.3">
+                            <path d="m760.14,342.8l-54.54-74.07c-35.41-48.08-92.19-76.79-151.91-76.79h-45.98l-63.18-132.28C427.23,23.42,390.09,0,349.93,0h-105.38l42.34,191.94h-90.93c-11.43-22.59-28.34-41.84-49.46-56.19-24.97-16.96-54.12-25.93-84.3-25.93H0l42.06,156.19.05.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h218.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.71-44.44ZM294.33,40h55.6c24.84,0,47.81,14.48,58.52,36.9l54.95,115.04h-135.54l-33.52-151.94Zm113.1,468.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm320.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H232.38c-35.64,0-70.59-12.26-98.42-34.52-25.92-20.74-44.35-48.6-53.3-80.56l-28.46-105.7h9.99c45.4,0,85.54,27.28,102.26,69.49l5,12.64h384.25c47.05,0,91.8,22.62,119.69,60.51l54.54,74.07c.28.38.94,1.27.22,2.68Z" style="stroke-width:0px;"/>
+                          </svg>
+                        </div>
+                        <span class="total-stop">{{showDetailsReturn.stops}}</span>
+                        <div class="flight-no">
+                          <span>{{showDetailsReturn.flightNumber}}</span>
+                        </div>
+                      </div>
+                      <div class="details-block text-end">
+                        <div class="time-block">
+                          <span class="time">{{showDetailsReturn.timeOfArrival}}</span>
+                        </div>
+                        <span class="port">{{showDetailsReturn.destination}}</span>
+                        <div class="date-block">
+                          <span class="date">{{showDetailsReturn.dateOfArrival}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
+                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#detail-return" aria-expanded="false"
+                      aria-controls="detail-return">
+                      Details
+                    </button>
+
+                  </div>
+                  <div class="col-xl-12 accordion-item">
+                    <div class="accordion-collapse collapse" id="detail-return" aria-labelledby="detail-return"
+                      data-bs-parent="#accordionFlightDetails">
+                      <div class="service-details-collapse mt-3">
+                        <div class="card card-body">
                           <div class="d-flex align-items-start gap-3">
                             <div class="flight-details-label">
                               <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-calendar me-2"></i>
-                                <div>Date</div>
+                                <i class="color-2 icon-line-star me-2"></i>
+                                <div>Class</div>
                               </div>
                             </div>
-                            <div class=""> 01 November 2023</div>
+                            <div class="">Economic</div>
                           </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-calendar me-2"></i>
-                                <div>Flight Number</div>
+                          <div class="gap-2">
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-calendar me-2"></i>
+                                  <div>Date</div>
+                                </div>
                               </div>
+                              <div class=""> 01 November 2023</div>
                             </div>
-                            <div class="">TU0606</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Departure</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-send me-2"></i>
+                                  <div>Flight Number</div>
+                                </div>
                               </div>
+                              <div class="">TU0606</div>
                             </div>
-                            <div>15:10</div>
-                            <div class="country-abr">TUN</div>
-                            <div>Tunis Carthage - Terminal M</div>
-                          </div>
-                          <div class="flight-stops-details">
-                            2 stops through France and Egypt
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Arrival</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Departure</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
                             </div>
-                            <div>15:10</div>
-                            <div class="country-abr">TUN</div>
-                            <div>Tunis Carthage - Terminal M</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-clock me-2"></i>
-                                <div>Duration</div>
+                            <div class="flight-stops-details">
+                              2 stops through France and Egypt
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Arrival</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
+                              <div class="country-abr">TUN</div>
+                              <div>Tunis Carthage - Terminal M</div>
                             </div>
-                            <div>15:10</div>
-                          </div>
-                          <div class="d-flex align-items-start gap-3">
-                            <div class="flight-details-label">
-                              <div class="d-flex align-items-center">
-                                <i class="color-2 icon-line-briefcase me-2"></i>
-                                <div>Baggage</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-clock me-2"></i>
+                                  <div>Duration</div>
+                                </div>
                               </div>
+                              <div>15:10</div>
                             </div>
-                            <div>1 piece of checked baggage (per ad.)</div>
+                            <div class="d-flex align-items-start gap-3">
+                              <div class="flight-details-label">
+                                <div class="d-flex align-items-center">
+                                  <i class="color-2 icon-line-briefcase me-2"></i>
+                                  <div>Baggage</div>
+                                </div>
+                              </div>
+                              <div>1 piece of checked baggage (per ad.)</div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -652,8 +678,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </label>
+        </label>
+      </div>
     </div>
 
   </div>

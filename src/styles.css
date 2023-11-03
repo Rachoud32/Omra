@@ -2366,6 +2366,54 @@ label.disabled .service-class-card {
     border: transparent !important;
 } 
 
+.back-btn {
+    background: transparent;
+    color: var(--omra-base);
+    border: 0;
+    padding: 0;
+}
+
+.back-btn:hover {
+    background: transparent;
+    color: var(--omra-second);
+}
+
+.summary-title {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--omra-base);
+    background-color: var(--omra-extra);
+    padding-bottom: 5px;
+}
+
+.summary-search-label {
+    padding: 10px 20px;
+    color: var(--omra-base);
+    border-right: 1px solid var(--omra-light-gray);
+    font-weight: 400;
+}
+
+.summary-search-results {
+    padding: 8px 20px;
+}
+
+.summary-search {
+    font-size: var(--fs-14);
+    font-weight: 300;
+    color: var(--omra-gray);
+    padding: 0;
+}
+
+.summary-search i {
+    color: var(--omra-second);
+}
+
+.summary-items {
+    background: var(--omra-extra);
+    padding: 20px;
+}
+
 /*************** End New Service Box **********************/
 
 .service-details {
@@ -2507,10 +2555,9 @@ label.disabled .service-class-card {
 }
 
 .details-row .middle-block .flight-duration {
-    font-size: var(--fs-14);
-    display: inline-block;
+    font-size: var(--fs-13);
     font-weight: 400;
-    color: #696e71;
+    color: var(--omra-gray);
 }
 
 .details-row .middle-block .total-stop {
@@ -2532,14 +2579,15 @@ label.disabled .service-class-card {
 
 .details-row .middle-block .flight-no span {
     color: #696e71;
-    font-size: var(--fs-12);
-    font-weight: 300;
+    font-size: var(--fs-11);
+    font-weight: 400;
     display: block;
+    letter-spacing: 1px;
 }
 
 .details-row .middle-block .flight-line-icon,
 .details-row .middle-block .transfer-line-icon {
-    width: 35px;
+    width: 25px;
     margin: 10px auto;
     position: relative;
     fill: var(--omra-base);
@@ -2547,7 +2595,12 @@ label.disabled .service-class-card {
     transform: none !important;
 }
 
-.details-row .middle-block .transfer-line-icon::before {
+.details-row .middle-block .transfer-line-icon {
+    width: 28px;
+}
+
+.details-row .middle-block .transfer-line-icon::before,
+.details-row .middle-block .flight-line-icon::before {
     content: "";
     width: 24px;
     height: 2px;
@@ -2556,13 +2609,15 @@ label.disabled .service-class-card {
     display: inline-block;
 }
 
-.details-row .middle-block .transfer-line-icon:before {
+.details-row .middle-block .transfer-line-icon:before,
+.details-row .middle-block .flight-line-icon::before {
     position: absolute;
     left: -35px;
     top: 10px;
 }
 
-.details-row .middle-block .transfer-line-icon::after {
+.details-row .middle-block .transfer-line-icon::after,
+.details-row .middle-block .flight-line-icon::after {
     content: "";
     width: 24px;
     height: 2px;
@@ -2571,7 +2626,8 @@ label.disabled .service-class-card {
     display: inline-block;
 }
 
-.details-row .middle-block .transfer-line-icon:after {
+.details-row .middle-block .transfer-line-icon:after,
+.details-row .middle-block .flight-line-icon::after {
     position: absolute;
     right: -35px;
     top: 10px;
@@ -4030,11 +4086,12 @@ label.disabled .service-class-card {
     margin-bottom: 0;
     font-weight: 500 !important;
     color: var(--omra-base);
+    font-size: var(--fs-16);
 }
 
 .flight-top-filter .service-filter-card p {
     margin-bottom: 0;
-    font-size: var(--fs-13);
+    font-size: var(--fs-12);
 }
 
 .flight-top-filter .filter-type-icon svg {
@@ -4584,12 +4641,43 @@ label.disabled .service-class-card {
 
 .service-summary-box .color-btn {
     width: 50%;
-    padding: 5px 10px;
+    padding: 2px 10px;
     line-height: 28px;
     font-size: var(--fs-13);
 }
 
+.service-summary-box .color-btn.cancel-btn {
+    background: var(--omra-gray);
+    border-color: var(--omra-gray);
+}
 
+.service-summary-box .color-btn.cancel-btn:hover {
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.booked-room .service-detail-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: normal;
+}
+
+.booked-room .service-detail-box li {
+    color: var(--omra-gray);
+    font-size: var(--fs-14);
+    margin-bottom: 2px;
+    font-weight: 300;
+    line-height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booked-room .service-detail-box i {
+    font-size: var(--fs-14);
+    color: var(--omra-second);
+}
 
 .checkout-booking-list .booked-room h3 {
     color: var(--omra-base);
