@@ -3416,6 +3416,16 @@ label.disabled .service-class-card {
     margin-bottom: 5px;
 }
 
+.rooms-container .box .room-policy {
+    background: var(--omra-extra);
+    border: 0;
+    color: var(--omra-second);
+    font-size: var(--fs-12);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
 .rooms-container .box .price-content {
     font-weight: 400;
     color: var(--omra-gray);
@@ -3504,10 +3514,10 @@ label.disabled .service-class-card {
 
 .rooms-container .reservation-details,
 .rooms-container .tva {
-    font-size: var(--fs-13);
+    font-size: var(--fs-11);
     letter-spacing: 0.5px;
-    font-weight: 300;
-    color: var(--omra-gray)
+    font-weight: 400;
+    color: var(--omra-gray);
 }
 
 .rooms-container .box .room-details {
@@ -3868,6 +3878,10 @@ label.disabled .service-class-card {
     width: unset;
     padding-top: 14px;
     padding-bottom: 14px;
+}
+
+.transfer-top-filter .color-btn {
+    font-size: var(--fs-14);
 }
 
 .top-filter-section h6 {

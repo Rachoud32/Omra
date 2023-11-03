@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,10 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent {
+export class SearchBarComponent implements OnInit{
 
   SearchBar: boolean = true;
+  category: string = '';
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
@@ -20,5 +21,18 @@ export class SearchBarComponent {
         }
       }
     });
+  }
+
+  ngOnInit(): void {
+    const path = window.location.href.split('/').pop();
+    if ( path === 'flight') {
+      this.category = 'flight(s)'
+    } 
+    if ( path === 'first-destination' || path === 'second-destination' ) {
+      this.category = 'room(s)'
+    } 
+    if ( path === 'first-transfer') {
+      this.category = 'vehicle(s)'
+    } 
   }
 }
