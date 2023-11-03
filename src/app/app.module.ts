@@ -38,6 +38,8 @@ import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 import { FlightTopFilterComponent } from './flight-top-filter/flight-top-filter.component';
 import { TransferTopFilterComponent } from './transfer-top-filter/transfer-top-filter.component';
 import { TransferPeriodTopFilterComponent } from './transfer-period-top-filter/transfer-period-top-filter.component';
+import { TransferFirstFilterComponent } from './transfer-first-filter/transfer-first-filter.component';
+import { DestinationTopFilterComponent } from './destination-top-filter/destination-top-filter.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { TransferPeriodTopFilterComponent } from './transfer-period-top-filter/t
     FlightTopFilterComponent,
     TransferTopFilterComponent,
     TransferPeriodTopFilterComponent,
+    TransferFirstFilterComponent,
+    DestinationTopFilterComponent,
   ],
   imports: [
     CommonModule,

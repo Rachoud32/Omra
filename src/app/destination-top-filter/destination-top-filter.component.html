@@ -1,0 +1,170 @@
+<div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
+    <div class="side-filter-tags d-flex align-items-center gap-2">
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="rating"
+        popoverTitle="Star Rating"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-star"></i>
+        <span>Star Rating</span>
+      </button>
+      <ng-template #rating>
+        <div>
+          <ul>
+            <li class="filter-list-item">5 stars</li>
+            <li class="filter-list-item">4 stars</li>
+            <li class="filter-list-item">3 stars</li>
+          </ul>
+        </div>
+      </ng-template>
+  
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="pensiontype"
+        popoverTitle="Pension Type"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-bell"></i>
+        <span>Pension</span>
+      </button>
+      <ng-template #pensiontype>
+        <div>
+          <ul>
+            <li class="filter-list-item">Half board</li>
+            <li class="filter-list-item">Full board</li>
+            <li class="filter-list-item">All inclusive</li>
+          </ul>
+        </div>
+      </ng-template>
+  
+    <!-- <button
+      type="button"
+      class="color-btn d-flex flex-column align-items-center"
+      placement="bottom-left"
+      [ngbPopover]="theme"
+      popoverTitle="Popular themes"
+      popoverClass="custom-popover"
+      data-bs-html="true"
+    >
+      <i class="icon-line-paper"></i>
+      <span>Popular themes</span>
+    </button>
+    <ng-template #theme>
+      <div>
+        <ul>
+          <li class="filter-list-item">Small budget</li>
+          <li class="filter-list-item">Top seller</li>
+          <li class="filter-list-item">Promo</li>
+        </ul>
+      </div>
+    </ng-template> -->
+
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="theme"
+        popoverTitle="Popular themes"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-paper"></i>
+        <span>Themes</span>
+      </button>
+      <ng-template #theme>
+        <div>
+          <ul>
+            <li class="filter-list-item">Family</li>
+            <li class="filter-list-item">Business</li>
+            <li class="filter-list-item">Luxury</li>
+          </ul>
+        </div>
+      </ng-template>
+
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="policy"
+        popoverTitle="Policies"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-paper"></i>
+        <span>Policies</span>
+      </button>
+      <ng-template #policy>
+        <div>
+          <ul>
+            <li class="filter-list-item">Free cancellation</li>
+            <li class="filter-list-item">cancellation with fees</li>
+            <li class="filter-list-item">No cancellation</li>
+          </ul>
+        </div>
+      </ng-template>
+
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="view"
+        popoverTitle="View"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-eye"></i>
+        <span>View</span>
+      </button>
+      <ng-template #view>
+        <div>
+          <ul>
+            <li class="filter-list-item">Garden</li>
+            <li class="filter-list-item">Haram</li>
+            <li class="filter-list-item">Street</li>
+          </ul>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="sorting-content d-flex align-items-center">
+      <div class="d-flex">
+        <a class="me-2" (click)="sortOrder('increment')" *ngIf="order==='increment'"><i
+            class="icon-line-arrow-down"></i></a>
+        <a class="me-2" (click)="sortOrder('decrement')" *ngIf="order==='decrement'"><i
+            class="icon-line-arrow-up"></i></a>
+        <div class="dropdown">
+          <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+            data-bs-display="static" aria-expanded="false">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+              <div class="sort-label me-2">Sort by</div>
+              <div class="input-group d-flex align-items-center">
+                <p class="m-0 text-muted pe-2">Price</p>
+              </div>
+              <i class="icon-line-chevron-down"></i>
+            </div>
+          </button>
+          <div class="dropdown-menu animate slideIn">
+            <div class="select-container">
+                <label for="vehiclename" class="me-3 w-100">
+                  <input type="radio" class="form-check-input me-2" name="vehiclename" id="vehiclename" value="vehiclename" />
+                  <div class="list-item">Name</div>
+                </label>
+              </div>
+            <div class="select-container">
+              <label for="vehicleprice" class="me-3 w-100">
+                <input type="radio" class="form-check-input me-2" name="vehicleprice" id="vehicleprice" value="vehicleprice" />
+                <div class="list-item">Price</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

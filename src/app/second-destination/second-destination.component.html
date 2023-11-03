@@ -1,13 +1,14 @@
 <div class="row mt-5">
   <div class="col-lg-12 pt-3 justify-content-start">
     <div class="heading-box">
-      <h2 class="heading-title color-1 mb-0">Select a room in Madinah</h2>
+      <h2 class="heading-title color-1 mb-0" *ngIf="roomSelectionStep == 'step1'">Select a room in Madinah</h2>
+      <h2 class="heading-title color-1 mb-0" *ngIf="roomSelectionStep == 'step2'">Select a ground service</h2>
     </div>
     <p>You benefit from the best rate.</p>
   </div>
   <div *ngIf="roomSelectionStep == 'step1'" class="col-lg-9 packages-list">
     <div class="col-lg-12">
-      <app-top-filter></app-top-filter>
+      <app-destination-top-filter></app-destination-top-filter>
     </div>
     <div class="hotel-box inner-box mb-5">
       <div class="col-lg-12 hotel accordion-item">

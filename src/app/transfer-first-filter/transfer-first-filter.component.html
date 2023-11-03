@@ -1,0 +1,117 @@
+<div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
+    <div class="side-filter-tags d-flex align-items-center gap-2">
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="vehtype"
+        popoverTitle="Vehicle Type"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-star"></i>
+        <span>type</span>
+      </button>
+      <ng-template #vehtype>
+        <div>
+          <ul>
+            <li class="filter-list-item">Economy</li>
+            <li class="filter-list-item">Confort</li>
+            <li class="filter-list-item">Business</li>
+            <li class="filter-list-item">Vip</li>
+            <li class="filter-list-item">SUV</li>
+            <li class="filter-list-item">Van</li>
+            <li class="filter-list-item">Mini bus</li>
+            <li class="filter-list-item">Bus</li>
+            <li class="filter-list-item">Train</li>
+          </ul>
+        </div>
+      </ng-template>
+  
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="theme"
+        popoverTitle="Popular Theme"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-bell"></i>
+        <span>Popular Theme</span>
+      </button>
+      <ng-template #theme>
+        <div>
+          <ul>
+            <li class="filter-list-item">Small Budget</li>
+            <li class="filter-list-item">Top seller</li>
+            <li class="filter-list-item">Promo</li>
+            <li class="filter-list-item">Luxury</li>
+          </ul>
+        </div>
+      </ng-template>
+  
+      <button
+        type="button"
+        class="color-btn d-flex flex-column align-items-center"
+        placement="bottom-left"
+        [ngbPopover]="vehspecs"
+        popoverTitle="Vehicle Specifications"
+        popoverClass="custom-popover"
+        data-bs-html="true"
+      >
+        <i class="icon-line-paper"></i>
+        <span>Vehicle Specifications</span>
+      </button>
+      <ng-template #vehspecs>
+        <div>
+          <ul>
+            <li class="filter-list-item">Air conditioner</li>
+            <li class="filter-list-item">Wifi</li>
+            <li class="filter-list-item">English Speaking Driver</li>
+          </ul>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="sorting-content d-flex align-items-center">
+      <div class="d-flex">
+        <a class="me-2" (click)="sortOrder('increment')" *ngIf="order==='increment'"><i
+            class="icon-line-arrow-down"></i></a>
+        <a class="me-2" (click)="sortOrder('decrement')" *ngIf="order==='decrement'"><i
+            class="icon-line-arrow-up"></i></a>
+        <div class="dropdown">
+          <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+            data-bs-display="static" aria-expanded="false">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+              <div class="sort-label me-2">Sort by</div>
+              <div class="input-group d-flex align-items-center">
+                <p class="m-0 text-muted pe-2">Price</p>
+              </div>
+              <i class="icon-line-chevron-down"></i>
+            </div>
+          </button>
+          <div class="dropdown-menu animate slideIn">
+            <div class="select-container">
+                <label for="vehiclename" class="me-3 w-100">
+                  <input type="radio" class="form-check-input me-2" name="vehiclename" id="vehiclename" value="vehiclename" />
+                  <div class="list-item">Name</div>
+                </label>
+              </div>
+            <div class="select-container">
+              <label for="vehicleprice" class="me-3 w-100">
+                <input type="radio" class="form-check-input me-2" name="vehicleprice" id="vehicleprice" value="vehicleprice" />
+                <div class="list-item">Price</div>
+              </label>
+            </div>
+            <div class="select-container">
+                <label for="vehicleclass" class="me-3 w-100">
+                  <input type="radio" class="form-check-input me-2" name="vehicleclass" id="vehicleclass" value="vehicleclass" />
+                  <div class="list-item">Class</div>
+                </label>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
