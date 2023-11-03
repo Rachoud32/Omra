@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { NavigationEnd, Router, ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent implements OnInit{
-
+export class SearchBarComponent {
   SearchBar: boolean = true;
   category: string = '';
-
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -19,20 +17,17 @@ export class SearchBarComponent implements OnInit{
         } else {
           this.SearchBar = true;
         }
+        if (val.url === "/result/flight") {
+          this.category = 'flight(s)'
+        }
+        if (val.url === '/result/first-destination' || val.url === '/result/second-destination') {
+          this.category = 'room(s)'
+        }
+        if (val.url === "/result/first-transfer") {
+          this.category = 'vehicle(s)'
+        }
       }
     });
   }
 
-  ngOnInit(): void {
-    const path = window.location.href.split('/').pop();
-    if ( path === 'flight') {
-      this.category = 'flight(s)'
-    } 
-    if ( path === 'first-destination' || path === 'second-destination' ) {
-      this.category = 'room(s)'
-    } 
-    if ( path === 'first-transfer') {
-      this.category = 'vehicle(s)'
-    } 
-  }
 }
