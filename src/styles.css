@@ -1476,13 +1476,21 @@ label.category-item::before {
 .check-form .search-bar-icon {
     display: block !important;
     position: relative !important;
-    width: 16px;
-    height: 40px;
+    width: fit-content;
+    line-height: normal;
+    fill: var(--omra-second);
 }
 
-.check-form .search-bar-icon svg {
-    width: 100%;
-    fill: var(--omra-second);
+.check-form .search-bar-icon .flights-icon {
+    width: 25px;
+}
+
+.check-form .search-bar-icon .rooms-icon {
+    width: 18px;
+}
+
+.check-form .search-bar-icon .vehicles-icon {
+    width: 25px;
 }
 
 .check-form.search-results i {
