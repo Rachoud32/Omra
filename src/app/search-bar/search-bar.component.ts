@@ -11,7 +11,7 @@ export class SearchBarComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if ((val.url == '/' || val.url == '/result/payment') || (val.url == '/' || val.url == '/result/motamar-informations')) {
+        if ((val.url == '/' || val.url == '/result/payment') || (val.url == '/' || val.url == '/result/motamar-informations') || (val.url == '/' || val.url == '/result/summary')) {
           this.SearchBar = false;
         } else {
           this.SearchBar = true;
