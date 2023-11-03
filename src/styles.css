@@ -2813,6 +2813,10 @@ label.disabled .service-class-card {
     font-size: var(--fs-15);
 }
 
+.search-sidebar-list .booked-service-details hr {
+    margin: 8px 0px;
+}
+
 .search-sidebar-list .booked-service-price {
     color: var(--omra-second);
     font-size: var(--fs-14);
