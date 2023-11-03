@@ -1,3 +1,33 @@
+:root {
+    --omra-gray: #828282;
+    --omra-gray-rgb: 130, 130, 130;
+    --omra-light-gray: #eeeeee;
+    --omra-light-gray-rgb: 238, 238, 238;
+    --omra-white: #ffffff;
+    --omra-white-rgb: 255, 255, 255;
+    --omra-third: #3d4892;
+    --omra-third-rgb: 5, 0, 51;
+    --omra-base: #050033;
+    --omra-base-rgb: 61, 72, 148;
+    --omra-second: #068484;
+    --omra-second-rgb: 6, 132, 133;
+    --omra-black: #1e1852;
+    --omra-black-rgb: 30, 24, 82;
+    --omra-extra: #e1f0f0;
+    --omra-extra-rgb: 225, 240, 240;
+    --omra-bdr-radius: 3px;
+    --fs-10: 10px;
+    --fs-11: 11px;
+    --fs-12: 12px;
+    --fs-13: 13px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-20: 20px;
+    --fs-22: 22px;
+}
+
 @media (max-width: 1399px) {	
     .passengers-nbr-block {
         flex-direction: column;
@@ -22,7 +52,7 @@
     }
 
     .ground-service-details ul li {
-        flex-direction: column !important;
+        flex-direction: column;
     }
 
 }
@@ -72,7 +102,7 @@
     }
 
     .room-infos:first-child {
-        flex-direction: column !important;
+        flex-direction: column;
     }
 
     .details-row {
@@ -94,7 +124,7 @@
     }
 
     .list-group-horizontal {
-        flex-direction: column !important;
+        flex-direction: column;
     }
 
     .services-list .service {
@@ -125,7 +155,7 @@
     .hotel-box .hotel .hotel-content .hotel-details-btn {
         background-color: var(--omra-base);
         color: var(--omra-white);
-        border-right: 1px solid #c9a96a;
+        border-right: 1px solid var(--omra-black);
     }
 
     .hotel-box .hotel .hotel-content .hotel-details-btn:hover {
@@ -171,8 +201,22 @@
     }
 
     .rooms-container .room-details-content .room-options .room-option {
-        line-height: 16px;
+        line-height: 5px;
     }
+
+    .rooms-container .box .room-policy {
+        margin-bottom: 25px !important;
+    }
+
+    .pension-list [type="radio"]:checked+label, .pension-list [type="radio"]:not(:checked)+label {
+        margin-bottom: 0px !important;
+    }
+
+    .transfer-top-filter.top-filter-section .color-btn {
+        width: 100%;
+    }
+
+    .transfer-top-filter.top-filter-section
 
     .room-details-content .room-options {
         display: flex !important;
@@ -317,8 +361,146 @@
 
 
 @media (max-width: 575.98px) {
+    app-booking-steps {
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 9999 !important;
+        width: 100%;
+    }
+
     .category-list {
+        flex-direction: row !important;
+    }
+
+    .list-steps-container {
+        padding: 0 !important;
+    }
+
+    .list-group-item .list-item-label, .list-group-item .caret-icon {
+        display: none !important;
+    }
+
+    .top-filter-section, .flight-label, .travel-method, .travel-path {
+        flex-direction: column !important;
+    }
+
+    .list-steps .list-group-item {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .list-group-item .custom-step-icon, .list-group-item .step-icon {
+        margin-bottom: 0 !important;
+    }
+
+    .filter-list-btn {
+        display: none !important;
+    }
+
+    .custom-popover {
+        --bs-popover-max-width: 300px !important;
+    }
+
+    .popover {
+        width: 100% !important;   
+    }
+
+    .hotel-box .hotel .hotel-rating {
+        bottom: 60px !important;
+    }
+
+    .check-form {
+        padding: 15px 20px !important;
+    }
+    
+    .check-form .d-flex.align-items-center.gap-2 {
+        flex-direction: column !important;
+        margin-bottom: 5px;
+    }
+
+    .flight-label.d-flex.align-items-center.justify-content-between {
+        align-items: flex-start !important;
+    }
+
+    .col-lg-2.d-flex.justify-content-end.flex-column.align-items-end {
+        flex-direction: row !important;
+    }
+
+    .services-list .box .color-btn.service-btn-details {
+        margin-bottom: 0px !important;
+    }
+
+    .services-list .box .color-btn {
+        width: 50% !important;
+        padding: 8px 10px !important;
+    }
+    
+    .service-details-collapse .card .flight-details-label {
+        width: 100%;
+    }
+    
+    .d-flex.justify-content-end.align-items-center.search-results-list, .search-results p {
+        font-size: var(--fs-14);
+    }
+
+    .d-flex.align-items-start.gap-3 {
+        line-height: normal !important;
+        flex-direction: column !important;
+        gap: 0.2rem !important;
+        justify-content: space-between !important;
+        margin-bottom: 5px;
+    }
+
+    .col-lg-3.d-flex.justify-content-end.flex-column.align-items-end {
+        flex-direction: row !important;
+    }
+
+    .service-details-collapse .card {
+        padding: 15px !important;
+    }
+
+    .travel-method.d-flex.align-items-center.gap-2 {
+        flex-direction: column !important;
+    }
+
+    .top-filter-section .transfer-direction-item,
+    .transfer-top-filter.top-filter-section .color-btn {
+        margin-bottom: 0px !important;
+    }
+
+    .transfer-top-filter.top-filter-section .color-btn {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .transfer-duration-filter .d-flex.align-items-center.flex-wrap.flex-grow-1.gap-2 {
+        width: 100%;
+    }
+
+    .transfer-duration-filter .transfer-duration-item {
+        width: 23%;
+    }
+
+    .transfer-duration-filter .add-btn {
+        width: 100%;
+    }
+
+    .accordion-item ul {
+        line-height: 22px;
+    }
+
+    .service-details .d-flex.align-items-center.gap-3 {
         flex-direction: column;
+        gap: 0.2rem !important;
+        align-items: flex-start !important;
+    }
+
+    .service-details h3 {
+        font-size: var(--fs-14);
+    }
+
+    .summary-items {
+        margin-bottom: 50px !important;
     }
 
     .category-item {
@@ -389,12 +571,26 @@
     }
 
     .color-btn.edit-btn {
-        margin-right: 10px;
+        margin-right: 0px;
+        line-height: 42px;
         margin-bottom: 0 !important;
     }
 
     .color-btn.cancel-btn {
-        margin-left: 10px;
+        margin-left: 0px;
+        line-height: 42px;
+    }
+
+    .service-summary-box .service-class {
+        font-size: var(--fs-12);
+    }
+
+    .logo-container, .transfer-picture {
+        display: none;
+    }
+
+    .hotel-label {
+        margin-top: 5px;
     }
 
     .umrah-logo {

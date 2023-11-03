@@ -74,13 +74,13 @@
                     </div>
                   </div>
                   <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details"
+                    <button class="color-btn service-btn-details collapsed mb-2"
                       type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flightdetails'+i"
                       (click)="collapsedDetailDeparture('detailDeparture'+i)" aria-expanded="false"
                       [attr.aria-controls]="'flightdetails'+i">
                       Details
                     </button>
-                    <button class="color-btn service-btn-select collapsed" data-title="Select flight" type="button"
+                    <button class="color-btn service-btn-select collapsed" type="button"
                       (click)="checkFlight(flight._id)" data-bs-toggle="collapse"
                       [attr.data-bs-target]="'#return-flights-list'+i" aria-expanded="false"
                       [attr.aria-controls]="'return-flights-list'+i">
@@ -245,13 +245,13 @@
                         </div>
 
                         <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
-                          <button class="color-btn service-btn-details mb-2" data-title="Flight details" type="button"
+                          <button class="color-btn service-btn-details mb-2" type="button"
                             (click)="collapsedDetailReturn('detailReturn'+j)" data-bs-toggle="collapse"
                             [attr.data-bs-target]="'#flightbackdetails'+j" aria-expanded="false"
                             [attr.aria-controls]="'flightbackdetails'+j">
                             Details
                           </button>
-                          <button class="color-btn service-btn-select" data-title="Select flight" type="button"
+                          <button class="color-btn service-btn-select" type="button"
                             (click)="checkFlightBack(j)">
                             Select
                           </button>
@@ -282,7 +282,15 @@
                                     </div>
                                     <div class=""> 01 November 2023</div>
                                   </div>
-                                  <div class="">Tunisair - TU0606 - Airbus A320-200 Ceo</div>
+                                </div>
+                                <div class="d-flex align-items-start gap-3">
+                                  <div class="flight-details-label">
+                                    <div class="d-flex align-items-center">
+                                      <i class="color-2 icon-line-send me-2"></i>
+                                      <div>Flight Number</div>
+                                    </div>
+                                  </div>
+                                  <div class="">TU0606</div>
                                 </div>
                                 <div class="">
                                   <div class="d-flex align-items-start gap-3">
@@ -349,7 +357,7 @@
     <div *ngIf="showDetailsReturn">
 
       <div class="d-flex">
-        <button (click)="clearData()" class="color-btn back-btn d-flex align-items-center gap-2 mb-2" data-title="Return to flights list" type="button">
+        <button (click)="clearData()" class="color-btn back-btn d-flex align-items-center gap-2 mb-2" type="button">
           <i class="icon-line-chevron-left"></i>Return to flights list
         </button>
       </div>
@@ -441,7 +449,7 @@
                     </div>
                   </div>
                   <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
+                    <button class="color-btn service-btn-details collapsed mb-2" type="button"
                       data-bs-toggle="collapse" data-bs-target="#detail-departure" aria-expanded="false"
                       aria-controls="detail-departure">
                       Details
@@ -595,7 +603,7 @@
                     </div>
                   </div>
                   <div class="col-lg-2 d-flex justify-content-end flex-column align-items-end">
-                    <button class="color-btn service-btn-details collapsed mb-2" data-title="Flight details" type="button"
+                    <button class="color-btn service-btn-details collapsed mb-2" type="button"
                       data-bs-toggle="collapse" data-bs-target="#detail-return" aria-expanded="false"
                       aria-controls="detail-return">
                       Details
