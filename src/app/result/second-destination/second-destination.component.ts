@@ -15,6 +15,36 @@ import { Router } from '@angular/router';
 export class SecondDestinationComponent {
   constructor(private toastr: ToastrService, private router: Router) { };
 
+  dataHotel: any[] = [
+    {
+      _id: 1,
+      hotelImage: "assets/flight/tunisair.svg",
+      hotelName: "Shahd Al Madinah",
+      hotelType: "Economic",
+      bestRate: "1200",
+      timeOfDeparture: "14:10",
+      timeOfArrival: "17:10",
+      duration: "02:00",
+      departure: "Sfax (SFA)",
+      destination: "Jeddah (JED)",
+      dateOfDeparture: "01 nov. 2023",
+      dateOfArrival: "01 nov. 2023",
+      stops: "Direct",
+      flightNumber: "TU0606",
+      details: {
+        class: "First",
+        baggage: "1 piece of checked baggage (per ad.)",
+        timeOfDeparture: "14:10",
+        timeOfArrival: "17:10",
+        duration: "02:00",
+        departure: "Sfax (SFA)",
+        destination: "Jeddah (JED)",
+        dateOfDeparture: "01 nov. 2023",
+        flightNumber: "TU0606",
+      },
+    }
+  ]
+  
   faPlane = faPlane
   faArrowRightLong = faArrowRightLong
   faCaretRight = faCaretRight

@@ -246,6 +246,10 @@ h6 {
     border-radius: 0 !important;
 }
 
+#content {
+    padding: 0 0 120px 0;
+}
+
 /* ----------------------------------------------------------------
 	Tooltips
 -----------------------------------------------------------------*/
@@ -1489,7 +1493,7 @@ label.category-item::before {
 }
 
 .check-form .search-bar-icon .rooms-icon {
-    width: 18px;
+    width: 16px;
 }
 
 .check-form .search-bar-icon .vehicles-icon {
@@ -2077,7 +2081,6 @@ label.category-item::before {
 .content-wrap {
     position: relative;
     padding: 80px 0;
-    overflow: hidden;
 }
 
 .page-section {
@@ -2217,6 +2220,10 @@ label.category-item::before {
 
 .flight-item label {
     margin-bottom: 0;
+}
+
+.flight-item:last-child .clear-area {
+    padding: 0;
 }
 
 .flight-item .box .service-details .details-row .transfer-line-icon {
@@ -2533,6 +2540,10 @@ label.disabled .service-class-card {
     float: right;
 }
 
+.vehicle-box:last-child .vehicle-box-item {
+    margin-bottom: 0 !important;
+}
+
 .flight-label .flight-direction,
 .service-details .vehicle-direction {
     font-size: var(--fs-14);
@@ -2675,6 +2686,11 @@ label.disabled .service-class-card {
 /* ----------------------------------------------------------------
 	Sidebar (List of items + Total Price)
 -----------------------------------------------------------------*/
+app-bookings-sidebar {
+    position: sticky;
+    top: 0;
+}
+
 .search-sidebar-details {
     position: relative;
     background-color: var(--omra-white);
@@ -2920,6 +2936,10 @@ label.disabled .service-class-card {
 /* ----------------------------------------------------------------
 	Hotel list + Rooms
 -----------------------------------------------------------------*/
+.hotel-box:last-child {
+    margin-bottom: 0 !important;
+}
+
 .hotel-box .hotel .image-box {
     position: relative;
     display: block;
@@ -4544,6 +4564,10 @@ label.disabled .service-class-card {
     transition: all 0.4s ease-out 0s;
 }
 
+.service-summary-box:last-child {
+    margin-bottom: 0 !important;
+}
+
 .service-summary-box {
     border: 2px solid var(--omra-light-gray);
     padding: 20px 30px 10px 30px;
@@ -5114,11 +5138,10 @@ label.disabled .service-class-card {
 	Sidebar Filter
 -----------------------------------------------------------------*/
 .filter-list-btn {
-    position: fixed;
+    position: sticky;
     z-index: 10;
-    transform: rotate(90deg);
-    bottom: 18%;
-    left: -45px;
+    bottom: 0;
+    margin-top: 15px;
 }
 
 .filter-list-btn .color-btn {
@@ -5139,13 +5162,114 @@ label.disabled .service-class-card {
     fill: var(--omra-white)
 }
 
+/* ----------------------------------------------------------------
+	Footer
+-----------------------------------------------------------------*/
 
+.footer {
+    background: var(--omra-base);
+    position: relative;
+}
 
+.footer .block-mentions {
+    color: #435d6e;
+    text-align: center;
+    border-top: 1px solid #435d6e;
+    padding: 20px;
+    font-size: 1em;
+}
 
+.line:before, .line:after {
+    content: "";
+    display: table;
+}
 
+.line:after {
+    clear: both;
+}
 
+.footer .block-mentions-wrapper {
+    margin: 0 auto;
+}
 
+.footer .copyright {
+    float: left;
+    margin-bottom: 0;
+    color: var(--omra-white);
+}
 
+.footer .inner {
+    text-align: left;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 60px 0 50px !important;
+    display: flex;
+}
+
+.footer .logo {
+    width: 18.5%;
+    vertical-align: top;
+    margin: 0 4% 0 0;
+    display: inline-block;
+}
+
+.footer .logo svg {
+    height: 152px;  
+    fill: var(--omra-second);
+}
+
+.footer .inner a {
+    color: var(--omra-white) !important;
+    transition: color .3s ease-in-out;
+}
+
+.footer .logo {
+    width: 18.5%;
+    vertical-align: top;
+    margin: 0 5% 0 0;
+    display: inline-block;
+}
+
+.footer .list-nav li {
+    font-size: 1em;
+    line-height: 2.2em;
+}
+
+.footer .list-nav {
+    vertical-align: middle;
+    width: 44.5%;
+    column-count: 2;
+    column-gap: 10px;
+    margin: 10px 0 0;
+    display: inline-block;
+}
+
+.social-network__icons {
+    justify-content: center;
+    display: flex;
+}
+
+.social-network__icons__list__btn>svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+    transition: fill .3s ease-in-out;
+}
+
+.footer button {
+    width: auto;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+/* ----------------------------------------------------------------
+	Loader
+-----------------------------------------------------------------*/
 .ngx-foreground-spinner {
     display: none;
 }

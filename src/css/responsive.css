@@ -368,6 +368,10 @@
         width: 100%;
     }
 
+    .search-sidebar-details .search-sidebar-header .color-btn {
+        width: fit-content !important;
+    }
+
     .category-list {
         flex-direction: row !important;
     }
@@ -413,9 +417,8 @@
         padding: 15px 20px !important;
     }
     
-    .check-form .d-flex.align-items-center.gap-2 {
-        flex-direction: column !important;
-        margin-bottom: 5px;
+    .check-form .search-bar-icon .rooms-icon {
+        width: 12px !important;
     }
 
     .flight-label.d-flex.align-items-center.justify-content-between {

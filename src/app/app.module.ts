@@ -9,6 +9,7 @@ import { ResultModule } from './result/result.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
+import { FooterComponent } from './footer/footer.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "black",
@@ -30,6 +31,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   declarations: [
     AppComponent,
     PreviewComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

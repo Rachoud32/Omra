@@ -10,8 +10,8 @@
   <app-transfer-period-top-filter></app-transfer-period-top-filter>
   <div ng-app="transfer-list" class="col-xl-9 services-list accordion" id="Vehicles-details">
     <app-transfer-first-filter></app-transfer-first-filter>
-    <div class="" *ngFor="let vehicle of dataVehicle;let i=index">
-      <label class="accordion mb-4" [attr.for]="'vehicle-box'+i">
+    <div class="vehicle-box" *ngFor="let vehicle of dataVehicle;let i=index">
+      <label class="vehicle-box-item accordion mb-4" [attr.for]="'vehicle-box'+i">
         <input type="radio" [attr.name]="'vehiclebox'+i" [value]="'vehiclebox'+i" [(ngModel)]="selectedTransfer" class="service-check-box"
           disabled [id]="'vehicle-box'+i" />
         <div class="box">
@@ -236,7 +236,7 @@
   </div>
   <!-- Sidebar
   ============================================= -->
-  <div class="col-xl-3 mb-5">
+  <div class="col-xl-3">
     <app-bookings-sidebar [eventgoToNextStep]="goToNextStep"></app-bookings-sidebar>
   </div>
   <!-- .sidebar end -->
