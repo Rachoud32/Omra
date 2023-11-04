@@ -147,7 +147,8 @@ img {
     text-overflow: ellipsis;
 }
 
-svg, path {
+svg,
+path {
     shape-rendering: geometricPrecision;
 }
 
@@ -273,6 +274,7 @@ h6 {
 [data-title] {
     position: relative;
 }
+
 /* ----------------------------------------------------------------
 	Radio and Checkbox
 -----------------------------------------------------------------*/
@@ -459,7 +461,8 @@ input[type=checkbox]:disabled {
     height: unset !important;
 }
 
-.ng-select.ng-select-single .ng-select-container .ng-value-container, .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+.ng-select.ng-select-single .ng-select-container .ng-value-container,
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -467,7 +470,7 @@ input[type=checkbox]:disabled {
     font-weight: 400;
 }
 
-.ng-select .ng-select-container .ng-value-container .ng-input>input  {
+.ng-select .ng-select-container .ng-value-container .ng-input>input {
     padding-left: 36px !important;
 }
 
@@ -507,7 +510,7 @@ input[type=checkbox]:disabled {
 }
 
 .ng-select .ng-arrow-wrapper .ng-arrow {
-    border-color: var(--omra-second) transparent transparent !important ;
+    border-color: var(--omra-second) transparent transparent !important;
 }
 
 .ng-select.ng-select-opened>.ng-select-container .ng-arrow {
@@ -529,7 +532,7 @@ input[type=checkbox]:disabled {
 }
 
 .ng-select.custom b {
-    font-weight: 400 ;
+    font-weight: 400;
     font-size: var(--fs-16);
 }
 
@@ -539,7 +542,7 @@ input[type=checkbox]:disabled {
     font-size: var(--fs-16);
 }
 
-.ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked{
+.ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
     color: var(--omra-second);
     background-color: #f9f9f9;
 }
@@ -550,7 +553,7 @@ input[type=checkbox]:disabled {
     text-decoration: none;
 }
 
-.ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, 
+.ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
 .ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
     color: var(--omra-second);
     background-color: #f9f9f9;
@@ -589,12 +592,12 @@ input[type=checkbox]:disabled {
 
 .ng-select.custom .ng-clear-wrapper:hover .ng-clear,
 .ng-select.custom .ng-clear-wrapper:focus .ng-clear {
-    color:var(--omra-second);
+    color: var(--omra-second);
 }
 
-.ng-select.custom.ng-select-focused:not(.ng-select-opened)>.ng-select-container{ 
-    border-color:var(--omra-light-gray);
-    box-shadow:none
+.ng-select.custom.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color: var(--omra-light-gray);
+    box-shadow: none
 }
 
 /********************************************/
@@ -1767,7 +1770,8 @@ label.category-item::before {
     font-size: var(--fs-18) !important;
 } */
 
-.list-steps .list-group-item.item-disabled, .list-steps .list-group-item:disabled {
+.list-steps .list-group-item.item-disabled,
+.list-steps .list-group-item:disabled {
     border-color: var(--omra-gray);
 }
 
@@ -1775,11 +1779,12 @@ label.category-item::before {
     pointer-events: none !important;
     background: var(--omra-light-gray) !important;
     border: 0 !important;
-    border-color:#ddd !important;
+    border-color: #ddd !important;
     transition: all .3s linear;
 }
 
-.item-disabled .step-icon, .item-disabled svg {
+.item-disabled .step-icon,
+.item-disabled svg {
     pointer-events: none !important;
     color: var(--omra-gray) !important;
     fill: var(--omra-gray) !important;
@@ -2132,7 +2137,7 @@ label.category-item::before {
     border: 2px solid var(--omra-light-gray);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
     transition: all .3s ease;
-} 
+}
 
 .service-details {
     display: block;
@@ -2207,6 +2212,7 @@ label.category-item::before {
 .services-list .service .image-box .service-car {
     padding: 0px !important;
 }
+
 /*************** New Service Box **********************/
 
 .flight-item label {
@@ -2240,7 +2246,7 @@ label.category-item::before {
 }
 
 .service-details-collapse ul li {
-   font-weight: 400;
+    font-weight: 400;
 }
 
 .service-details-collapse .card i {
@@ -2305,12 +2311,15 @@ label.category-item::before {
     border-color: var(--omra-second);
 }
 
-.service-class-content [type="radio"]:checked+label:before, .service-class-content [type="radio"]:not(:checked)+label:before,
-.service-class-content [type="radio"]:checked+label:after, .service-class-content [type="radio"]:not(:checked)+label:after {
+.service-class-content [type="radio"]:checked+label:before,
+.service-class-content [type="radio"]:not(:checked)+label:before,
+.service-class-content [type="radio"]:checked+label:after,
+.service-class-content [type="radio"]:not(:checked)+label:after {
     display: none;
 }
 
-.service-class-content [type="radio"]:not(:checked)+label, .service-class-content [type="radio"]:checked+label  {
+.service-class-content [type="radio"]:not(:checked)+label,
+.service-class-content [type="radio"]:checked+label {
     position: relative;
     padding: 10px 20px !important;
     cursor: pointer;
@@ -2354,7 +2363,8 @@ label.disabled .service-class-card {
     padding: 10px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference), (update: slow) {
+@media (prefers-reduced-motion: no-preference),
+(update: slow) {
     .collapse {
         transition-property: height, visibility !important;
         transition-duration: .9s !important;
@@ -2372,7 +2382,7 @@ label.disabled .service-class-card {
     color: var(--omra-gray);
     background-color: transparent !important;
     border: transparent !important;
-} 
+}
 
 .back-btn {
     background: transparent;
@@ -2523,7 +2533,8 @@ label.disabled .service-class-card {
     float: right;
 }
 
-.flight-label .flight-direction, .service-details .vehicle-direction {
+.flight-label .flight-direction,
+.service-details .vehicle-direction {
     font-size: var(--fs-14);
     color: var(--omra-base);
 }
@@ -2651,11 +2662,13 @@ label.disabled .service-class-card {
     margin-bottom: 0;
 }
 
-.transfer-duration, .flight-duration {
+.transfer-duration,
+.flight-duration {
     font-size: var(--fs-12);
 }
 
-.transfer-duration i, .flight-duration i {
+.transfer-duration i,
+.flight-duration i {
     color: var(--omra-second);
 }
 
@@ -2742,7 +2755,8 @@ label.disabled .service-class-card {
     line-height: normal;
 }
 
-.search-sidebar-header .color-btn:hover, .search-sidebar-header .color-btn:active {
+.search-sidebar-header .color-btn:hover,
+.search-sidebar-header .color-btn:active {
     color: var(--omra-black);
 }
 
@@ -2857,7 +2871,7 @@ label.disabled .service-class-card {
 }
 
 .search-sidebar-price span {
-    font-size: 9px;  
+    font-size: 9px;
 }
 
 .search-sidebar-details .search-details .details-content .search-details-sub-label {
@@ -3139,7 +3153,7 @@ label.disabled .service-class-card {
 
 .hotel-box .hotel .best-rate-notice span {
     font-size: var(--fs-12);
-    
+
 }
 
 .hotel-box .hotel .hotel-rating {
@@ -3756,7 +3770,7 @@ label.disabled .service-class-card {
 }
 
 .ground-service-quantity .minus:hover,
-.ground-service-quantity .plus:hover { 
+.ground-service-quantity .plus:hover {
     background-color: var(--omra-second);
     color: var(--omra-white);
 }
@@ -3869,7 +3883,7 @@ label.disabled .service-class-card {
 .top-filter-section .color-btn {
     font-size: var(--fs-16);
     background: var(--omra-white);
-    border: 1px solid var(--omra-light-gray); 
+    border: 1px solid var(--omra-light-gray);
     line-height: normal;
     color: var(--omra-gray);
     font-size: var(--fs-12);
@@ -3877,7 +3891,7 @@ label.disabled .service-class-card {
     padding: 12px 25px;
     outline: 0;
     transition: all .3s linear;
-} 
+}
 
 .transfer-top-filter.top-filter-section .color-btn {
     padding: 15px;
@@ -3927,7 +3941,8 @@ label.disabled .service-class-card {
     color: var(--omra-second);
 }
 
-.sort-label, .filter-label {
+.sort-label,
+.filter-label {
     font-size: var(--fs-14);
     font-weight: 500;
     color: var(--omra-gray);
@@ -4048,13 +4063,13 @@ label.disabled .service-class-card {
 .flight-top-filter input,
 .flight-top-filter [type="radio"]:checked+label:before,
 .flight-top-filter [type="radio"]:not(:checked)+label:before,
-.flight-top-filter [type="radio"]:checked+label:after, 
+.flight-top-filter [type="radio"]:checked+label:after,
 .flight-top-filter [type="radio"]:not(:checked)+label:after {
     display: none;
 }
 
 
-.flight-top-filter [type="radio"]:checked+label, 
+.flight-top-filter [type="radio"]:checked+label,
 .flight-top-filter [type="radio"]:not(:checked)+label {
     position: relative;
     padding-left: 0px;
@@ -4071,7 +4086,8 @@ label.disabled .service-class-card {
 .flight-top-filter [type="radio"]+label .service-filter-card {
     border-radius: 0;
     position: relative;
-    padding: 20px 25px;;
+    padding: 20px 25px;
+    ;
     pointer-events: auto;
     background: var(--omra-white);
     color: var(--omra-base);
@@ -4096,9 +4112,9 @@ label.disabled .service-class-card {
     z-index: 5;
 }
 
-.service-filter-card:hover::before, 
-.service-filter-card:active::before, 
-.service-filter-card:focus::before, 
+.service-filter-card:hover::before,
+.service-filter-card:active::before,
+.service-filter-card:focus::before,
 .service-filter-card.active::before {
     width: 100%;
 }
@@ -4237,14 +4253,14 @@ label.disabled .service-class-card {
     font-size: 12px;
 }
 
-.transfer-duration-filter [type="radio"]:checked+label, 
+.transfer-duration-filter [type="radio"]:checked+label,
 .transfer-duration-filter [type="radio"]:not(:checked)+label {
     padding-left: 0;
 }
 
-.transfer-duration-filter [type="radio"]:checked+label:before, 
+.transfer-duration-filter [type="radio"]:checked+label:before,
 .transfer-duration-filter [type="radio"]:not(:checked)+label:before,
-.transfer-duration-filter [type="radio"]:checked+label::after, 
+.transfer-duration-filter [type="radio"]:checked+label::after,
 .transfer-duration-filter [type="radio"]:not(:checked)+label::after {
     display: none;
 }
@@ -5121,4 +5137,15 @@ label.disabled .service-class-card {
 .filter-list-btn svg {
     width: 20px;
     fill: var(--omra-white)
+}
+
+
+
+
+
+
+
+
+.ngx-foreground-spinner {
+    display: none;
 }

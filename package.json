@@ -36,6 +36,7 @@
     "ngx-slider-v2": "^16.0.2",
     "ngx-stars": "^1.6.5",
     "ngx-toastr": "^17.0.2",
+    "ngx-ui-loader": "^13.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

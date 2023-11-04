@@ -3,15 +3,12 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgSelectConfig } from '@ng-select/ng-select';
-
 @Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-
-export class SearchFormComponent implements OnInit {
-
+export class SearchComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -57,11 +54,11 @@ export class SearchFormComponent implements OnInit {
   todayDate: NgbDate | null;
 
   hotels = [
-      { name: 'All Hotels' },
-      { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
-      { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
-      { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
-      { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah'},
+    { name: 'All Hotels' },
+    { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
+    { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
+    { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
+    { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
   ];
 
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig) {
