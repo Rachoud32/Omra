@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { PreviewComponent } from './preview/preview.component';
 import { SearchModule } from './search/search.module';
 import { ResultModule } from './result/result.module';
 import { RouterModule } from '@angular/router';
@@ -30,7 +29,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    PreviewComponent,
     FooterComponent,
   ],
   imports: [

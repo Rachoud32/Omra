@@ -5212,7 +5212,8 @@ app-bookings-mob .search-sidebar-list {
     font-size: 1em;
 }
 
-.line:before, .line:after {
+.line:before,
+.line:after {
     content: "";
     display: table;
 }
@@ -5244,7 +5245,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .footer .logo svg {
-    height: 125px;  
+    height: 125px;
     fill: var(--omra-second);
 }
 

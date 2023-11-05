@@ -7,11 +7,41 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./transfer-top-filter.component.css']
 })
 export class TransferTopFilterComponent {
-  // filterForm?: FormGroup;
+  firstRoad = ''
+  secondRoad = ''
+  thirdRoad = ''
+  showSecondRoad: boolean = false
+  showThirdRoad: boolean = false
+  constructor() { }
 
-  // ngOnInit(): void {
-  //   this.filterForm = new FormGroup({
-  //     road: new FormControl('', [Validators.required]),
-  //   });
-  // }
+
+  checkRoadOne(value: any) {
+    console.log(value);
+    this.firstRoad = value;
+  }
+  checkRoadTwo(value: any) {
+    console.log(value);
+    this.secondRoad = value;
+  }
+  checkRoadThree(value: any) {
+    console.log(value);
+    this.thirdRoad = value;
+  }
+
+  addSecondRoad() {
+    this.showSecondRoad = true
+    this.showThirdRoad = false
+  }
+  addThirdRoad() {
+    this.showThirdRoad = true
+  }
+  removeSecondRoad() {
+    this.showSecondRoad = false
+    this.secondRoad = ''
+  }
+  removeThirdRoad() {
+    this.showThirdRoad = false
+    this.thirdRoad = ''
+  }
+
 }

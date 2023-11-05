@@ -1,61 +1,127 @@
 <div class="row top-filter-section transfer-top-filter mb-3">
     <h6>Choose the trajectory</h6>
     <div class="travel-path d-flex align-items-center gap-2 mb-3">
-        <button
-            type="button"
-            class="color-btn d-flex align-items-center gap-2 mb-2"
-            placement="bottom-left"
-            [ngbPopover]="road1"
-            popoverTitle="Road"
-            popoverClass="custom-popover"
-            data-bs-html="true"
-            >
+        <button type="button" class="color-btn d-flex align-items-center gap-2 mb-2" placement="bottom-left"
+            [ngbPopover]="roadInput1" popoverTitle="Road" popoverClass="custom-popover" data-bs-html="true">
             <div class="d-flex w-100 align-items-center justify-content-between">
                 <div class="d-flex align-items-center gap-2">
                     <i class="icon-line-map-pin"></i>
-                    <span>Aeroport to Hotel</span>
+                    <span>{{firstRoad.length===0 ? 'Aeroport to Hotel': firstRoad}}</span>
+
                 </div>
                 <i class="icon-line-chevron-down"></i>
             </div>
         </button>
-        <ng-template #road1>
-        <div>
-            <ul>
-            <li class="filter-list-item">Aeroport to Hotel</li>
-            <li class="filter-list-item">Hotel to Hotel</li>
-            <li class="filter-list-item">Hotel to Aeroport</li>
-            </ul>
-        </div>
+        <ng-template #roadInput1>
+            <div>
+                <ul>
+                    <li class="filter-list-item">
+                        <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
+                            id="road1" [checked]="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                        <label for="road1" (click)="checkRoadOne('Jeddah Airport to Swissôtel Al Maqam Makkah')">
+                            Jeddah Airport to Swissôtel Al Maqam Makkah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
+                            id="road2" [checked]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                        <label for="road2"
+                            (click)="checkRoadOne('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
+                            Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
+                            id="road3" [checked]="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                        <label for="road3" (click)="checkRoadOne('Sofitel Shahd Al Madinah to Madinah Airport')">Sofitel
+                            Shahd Al Madinah to Madinah Airport</label>
+                    </li>
+                </ul>
+            </div>
         </ng-template>
 
-        <button
-            type="button"
-            class="color-btn d-flex align-items-center gap-2 mb-2"
-            placement="bottom-left"
-            [ngbPopover]="road2"
-            popoverTitle="Road"
-            popoverClass="custom-popover"
-            data-bs-html="true"
-            >
+        <button *ngIf="showSecondRoad" type="button" class="color-btn d-flex align-items-center gap-2 mb-2"
+            placement="bottom-left" [ngbPopover]="roadInput2" popoverTitle="Road" popoverClass="custom-popover"
+            data-bs-html="true">
             <div class="d-flex w-100 align-items-center justify-content-between">
                 <div class="d-flex align-items-center gap-2">
                     <i class="icon-line-map-pin"></i>
-                    <span>Select Road</span>
+                    <span>{{secondRoad.length===0 ? 'Select Road': secondRoad}}</span>
                 </div>
                 <i class="icon-line-chevron-down"></i>
-            </div>  
+                <span *ngIf="!showThirdRoad" (click)="removeSecondRoad()">x</span>
+            </div>
         </button>
-        <ng-template #road2>
-        <div>
-            <ul>
-            <li class="filter-list-item">Aeroport to Hotel</li>
-            <li class="filter-list-item">Hotel to Hotel</li>
-            <li class="filter-list-item">Hotel to Aeroport</li>
-            </ul>
-        </div>
+        <ng-template #roadInput2>
+            <div>
+                <ul>
+                    <li class="filter-list-item">
+                        <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
+                            id="roadtwo1" [checked]="secondRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                        <label for="road1" (click)="checkRoadTwo('Jeddah Airport to Swissôtel Al Maqam Makkah')">
+                            Jeddah Airport to Swissôtel Al Maqam Makkah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
+                            id="roadtwo2"
+                            [checked]="secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                        <label for="road2"
+                            (click)="checkRoadTwo('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
+                            Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
+                            id="roadtwo3" [checked]="secondRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                        <label for="road3" (click)="checkRoadTwo('Sofitel Shahd Al Madinah to Madinah Airport')">
+                            Sofitel Shahd Al Madinah to Madinah Airport</label>
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+        <button *ngIf="showThirdRoad" type="button" class="color-btn d-flex align-items-center gap-2 mb-2"
+            placement="bottom-left" [ngbPopover]="roadInput3" popoverTitle="Road" popoverClass="custom-popover"
+            data-bs-html="true">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="icon-line-map-pin"></i>
+                    <span>{{thirdRoad.length===0 ? 'Select Road': thirdRoad}}</span>
+
+                </div>
+                <i class="icon-line-chevron-down"></i>
+                <span (click)="removeThirdRoad()">x</span>
+            </div>
+        </button>
+        <ng-template #roadInput3>
+            <div>
+                <ul>
+                    <li class="filter-list-item">
+                        <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
+                            id="roadthree1" [checked]="thirdRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                        <label for="road1" (click)="checkRoadThree('Jeddah Airport to Swissôtel Al Maqam Makkah')">
+                            Jeddah Airport to Swissôtel Al Maqam Makkah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
+                            id="roadthree2"
+                            [checked]="thirdRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                        <label for="road2"
+                            (click)="checkRoadThree('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
+                            Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
+                    </li>
+                    <li class="filter-list-item">
+                        <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
+                            id="roadthree3" [checked]="thirdRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                        <label for="road3" (click)="checkRoadThree('Sofitel Shahd Al Madinah to Madinah Airport')">
+                            Sofitel Shahd Al Madinah to Madinah Airport</label>
+                    </li>
+                </ul>
+            </div>
         </ng-template>
 
-        <button class="color-btn add-btn mb-2">
+        <button class="color-btn add-btn mb-2" (click)="addSecondRoad()"
+            *ngIf="!showSecondRoad && !showThirdRoad && firstRoad!=''">
+            <i class="icon-line-plus"></i>
+        </button>
+        <button class="color-btn add-btn mb-2" (click)="addThirdRoad()"
+            *ngIf="showSecondRoad && !showThirdRoad && secondRoad!=''">
             <i class="icon-line-plus"></i>
         </button>
     </div>
@@ -66,7 +132,7 @@
         <label for="transfer-direction1" class="transfer-direction-item">
             <p class="m-0">One-way trip</p>
         </label>
-  
+
         <input type="radio" id="transfer-direction2" value="departure" name="transfer-direction">
         <label for="transfer-direction2" class="transfer-direction-item">
             <p class="m-0">Travel back</p>
@@ -76,5 +142,5 @@
         <label for="transfer-direction3" class="transfer-direction-item">
             <p class="m-0">Two way travel</p>
         </label>
-    </div> 
+    </div>
 </div>
