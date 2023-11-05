@@ -39,6 +39,11 @@
 
 @media (max-width: 1199.98px) {	
 
+    .service-summary-box .color-btn {
+        width: 70%;
+        padding: 7px 10px;
+    }
+
     .booked-room .border-start {
         border: 0 !important;
     }
@@ -58,6 +63,19 @@
 }
 
 @media (max-width: 991.98px) {	
+    .service-summary-box .color-btn {
+        width: 100%;
+        padding: 7px 10px;
+    }
+
+    .top-filter-section {
+        flex-wrap: wrap;
+    }
+
+    .side-filter-tags {
+        flex-wrap: nowrap;
+    }
+
     .check-form .justify-content-end,
     .check-form .col-xl-4 div {
         justify-content: center;
@@ -94,11 +112,6 @@
 
     .booked-room {
         padding: 0px 0px 10px 0;
-    }
-
-    .service-summary-box .color-btn {
-        width: 100%;
-        padding: 0px 10px;
     }
 
     .room-infos:first-child {
@@ -326,6 +339,19 @@
 }
 
 @media (max-width: 767.98px) {
+    .bookings-summary-section .all-content-box {
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .bookings-summary-section .all-content-box .service-summary-box {
+        border-color: var(--omra-white);
+    }
+
+    .footer .logo {
+        text-align: center;
+    }
 
     .hotel-features-content-limit {
         padding: 0px;
@@ -361,10 +387,14 @@
 
 
 @media (max-width: 575.98px) {
+    .side-filter-tags {
+        flex-wrap: wrap;
+    }
+
     app-booking-steps {
-        position: fixed !important;
+        position: sticky !important;
         top: 0 !important;
-        z-index: 9999 !important;
+        z-index: 997 !important;
         width: 100%;
     }
 
