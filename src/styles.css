@@ -2702,6 +2702,7 @@ app-bookings-mob {
     left: 0;
     width: 100%;
     z-index: 999;
+    display: none;
 }
 
 app-bookings-mob .search-sidebar-list {
