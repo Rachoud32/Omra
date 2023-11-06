@@ -20,11 +20,16 @@ export class TransferTopFilterComponent {
   }
   checkRoadTwo(value: any) {
     console.log(value);
-    this.secondRoad = value;
+    if (value != this.firstRoad) {
+      this.secondRoad = value;
+    }
   }
   checkRoadThree(value: any) {
     console.log(value);
-    this.thirdRoad = value;
+    if (value != this.firstRoad && value != this.secondRoad) {
+      this.thirdRoad = value;
+    }
+
   }
 
   addSecondRoad() {

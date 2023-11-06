@@ -47,7 +47,8 @@
                 </div>
                 <div class="d-flex align-items-center">
                     <i class="icon-line-chevron-down"></i>
-                    <span class="remove-btn" *ngIf="!showThirdRoad" (click)="removeSecondRoad()"><i class="icon-line-cross"></i></span>
+                    <span class="remove-btn" *ngIf="!showThirdRoad" (click)="removeSecondRoad()"><i
+                            class="icon-line-cross"></i></span>
                 </div>
             </div>
         </button>
@@ -57,7 +58,7 @@
                     <li class="filter-list-item">
                         <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
                             id="roadtwo1" [checked]="secondRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'"
-                            disabled="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                            [disabled]="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
                         <label for="road1" (click)="checkRoadTwo('Jeddah Airport to Swissôtel Al Maqam Makkah')">
                             Jeddah Airport to Swissôtel Al Maqam Makkah</label>
                     </li>
@@ -65,7 +66,7 @@
                         <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
                             id="roadtwo2"
                             [checked]="secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
-                            disabled="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                            [disabled]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
                         <label for="road2"
                             (click)="checkRoadTwo('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
                             Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
@@ -73,7 +74,7 @@
                     <li class="filter-list-item">
                         <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
                             id="roadtwo3" [checked]="secondRoad=='Sofitel Shahd Al Madinah to Madinah Airport'"
-                            disabled="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                            [disabled]="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
                         <label for="road3" (click)="checkRoadTwo('Sofitel Shahd Al Madinah to Madinah Airport')">
                             Sofitel Shahd Al Madinah to Madinah Airport</label>
                     </li>
@@ -99,21 +100,24 @@
                 <ul>
                     <li class="filter-list-item">
                         <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
-                            id="roadthree1" [checked]="thirdRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                            id="roadthree1" [checked]="thirdRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'"
+                            [disabled]="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah' || secondRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
                         <label for="road1" (click)="checkRoadThree('Jeddah Airport to Swissôtel Al Maqam Makkah')">
                             Jeddah Airport to Swissôtel Al Maqam Makkah</label>
                     </li>
                     <li class="filter-list-item">
                         <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
                             id="roadthree2"
-                            [checked]="thirdRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                            [checked]="thirdRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
+                            [disabled]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah' || secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
                         <label for="road2"
                             (click)="checkRoadThree('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
                             Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
                     </li>
                     <li class="filter-list-item">
                         <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
-                            id="roadthree3" [checked]="thirdRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                            id="roadthree3" [checked]="thirdRoad=='Sofitel Shahd Al Madinah to Madinah Airport'"
+                            [disabled]="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport' || secondRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
                         <label for="road3" (click)="checkRoadThree('Sofitel Shahd Al Madinah to Madinah Airport')">
                             Sofitel Shahd Al Madinah to Madinah Airport</label>
                     </li>
