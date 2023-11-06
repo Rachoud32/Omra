@@ -14,7 +14,6 @@ export class TransferTopFilterComponent {
   showThirdRoad: boolean = false
   constructor() { }
 
-
   checkRoadOne(value: any) {
     console.log(value);
     this.firstRoad = value;

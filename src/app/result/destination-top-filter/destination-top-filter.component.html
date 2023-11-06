@@ -1,7 +1,7 @@
 <div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
   <div class="side-filter-tags d-flex align-items-center gap-2">
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="rating" popoverTitle="Star Rating" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="rating" popoverTitle="Star Rating" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="starRatings.length>0">
       <i class="icon-line-star"></i>
       <span>Star Rating</span>
     </button>
@@ -19,7 +19,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="pensiontype" popoverTitle="Pension Type" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="pensiontype" popoverTitle="Pension Type" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="pensions.length>0">
       <i class="icon-line-bell"></i>
       <span>Pension</span>
     </button>
@@ -38,7 +38,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="theme" popoverTitle="Popular themes" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="theme" popoverTitle="Popular themes" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="themes.length>0">
       <i class="icon-line-paper"></i>
       <span>Themes</span>
     </button>
@@ -56,7 +56,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="policy" popoverTitle="Policies" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="policy" popoverTitle="Policies" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="policies.length>0">
       <i class="icon-line-paper"></i>
       <span>Policies</span>
     </button>
@@ -80,7 +80,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="view" popoverTitle="View" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="view" popoverTitle="View" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="views.length>0">
       <i class="icon-line-eye"></i>
       <span>View</span>
     </button>

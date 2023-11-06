@@ -5,7 +5,7 @@
       <div class="filter-label me-2">Filter by</div>
     </div> -->
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="stopovers" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="stopovers" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="stops.length>0">
       <i class="icon-line-alert-octagon"></i>
       <span>Stopovers</span>
     </button>
@@ -24,7 +24,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="airline" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="airline" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="airlines.length>0">
       <i class="icon-line-send"></i>
       <span>Airline Co.</span>
     </button>
@@ -46,7 +46,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="class" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="class" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="classes.length>0">
       <i class="icon-line-star"></i>
       <span>Class</span>
     </button>
@@ -64,10 +64,9 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="departure" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="departure" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="departureTimes.length>0">
       <i class="icon-line-clock"></i>
-      <span [class.active-filter]="departureTimes.length>0">Departure Time</span>
-      <!-- class active-filter change coloer background -->
+      <span>Departure Time</span>
     </button>
     <ng-template #departure>
       <div>
@@ -86,7 +85,7 @@
     </ng-template>
 
     <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="arrival" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true">
+      [ngbPopover]="arrival" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="arrivalTimes.length>0">
       <i class="icon-line-clock"></i>
       <span>Arrival Time</span>
     </button>

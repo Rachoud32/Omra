@@ -3940,9 +3940,14 @@ app-bookings-mob .search-sidebar-list {
 
 .transfer-top-filter.top-filter-section .color-btn {
     padding: 15px;
-    width: 25%;
+    width: 33.3333333333%;
     white-space: normal;
     text-align: left;
+    font-size: var(--fs-13);
+}
+
+.transfer-top-filter.top-filter-section .road-btn i {
+    padding: 5px ;
 }
 
 .transfer-top-filter.top-filter-section .color-btn.add-btn {
@@ -3960,16 +3965,48 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-second);
 }
 
+.transfer-top-filter [type="radio"]:disabled + label {
+    color: var(--omra-gray);
+    background: var(--omra-light-gray);
+    user-select: none;
+}
+
 .transfer-top-filter [type="radio"]:checked+label:after,
 .transfer-top-filter [type="radio"]:not(:checked)+label:after {
     background: var(--omra-base);
 }
 
+.top-filter-section.transfer-top-filter .custom-popover {
+    --bs-popover-max-width: 400px;
+}
+
 .top-filter-section .color-btn:hover,
 .top-filter-section .color-btn.active {
     color: var(--omra-base);
-    transform: translatey(-3%);
     box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.top-filter-section .color-btn .btn-text {
+    font-size: var(--fs-12);
+    transition: all .3s linear;
+}
+
+.top-filter-section .color-btn:hover .btn-text {
+    color: var(--omra-base);
+    transform: none;
+    box-shadow: none;  
+}
+
+.active-filter {
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.active-filter span, .active-road span {
+    color: var(--omra-base);
+}
+
+.active-filter i, .active-road i {
+    color: var(--omra-second);
 }
 
 .top-filter-section .color-btn i {
@@ -3984,6 +4021,16 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section .color-btn:hover i,
 .top-filter-section .color-btn.active i {
     color: var(--omra-second);
+}
+
+.top-filter-section .color-btn:hover .remove-btn i {
+    color: var(--omra-gray);
+    transition: all .3s linear;
+}
+
+.top-filter-section .color-btn:hover .remove-btn i,
+.top-filter-section .color-btn.active .remove-btn i {
+    color: var(--omra-base);  
 }
 
 .sort-label,
@@ -4083,11 +4130,24 @@ app-bookings-mob .search-sidebar-list {
     margin-bottom: 0;
 }
 
+.top-filter-section .popover-body input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    padding: 4px 0;
+}
+
+.top-filter-section .popover-body input[type=checkbox]::before {
+    width: 8px;
+    height: 8px;
+}
+
 .top-filter-section .filter-list-item {
     background: var(--omra-white);
     color: var(--omra-gray);
+    display: flex;
+    align-items: center;
+    padding: 10px;
     transition: all .3s linear;
-    padding: 12px 22px;
     line-height: normal;
     text-transform: capitalize;
     border-bottom: 1px solid var(--omra-light-gray);
@@ -4097,9 +4157,47 @@ app-bookings-mob .search-sidebar-list {
     transition: all 0.05s ease-in-out;
 }
 
+.top-filter-section .filter-list-item label {
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
 .top-filter-section .filter-list-item:hover {
     background: #f9f9f9;
     color: var(--omra-second);
+}
+
+.top-filter-section .travel-path [type="radio"]:not(:checked)+label,
+.top-filter-section .travel-path [type="radio"]:checked+label {
+    padding: 10px 15px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.top-filter-section .travel-path .filter-list-item {
+    padding: 0;
+}
+
+.top-filter-section .travel-path [type="radio"]:not(:checked)+label:hover,
+.top-filter-section .travel-path [type="radio"]:checked+label:hover {
+    background: #f9f9f9;
+    color: var(--omra-second);
+}
+
+.top-filter-section .travel-path [type="radio"]:checked+label {
+    transform: none;
+    background: var(--omra-base);
+    color: var(--omra-light-gray);
+    box-shadow: none;
+}
+
+.top-filter-section .travel-path .color-btn:hover {
+    transform: none;
+}
+
+.top-filter-section .filter-list-item label:before, 
+.top-filter-section .filter-list-item label:after {
+    display: none;
 }
 
 /* ----------------------------------------------------------------
@@ -4226,6 +4324,7 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section [type="radio"]:checked+label {
     transform: translatey(-5%);
     background: var(--omra-base);
+    border-color: var(--omra-base);
     box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
 }
 
@@ -4240,7 +4339,7 @@ app-bookings-mob .search-sidebar-list {
 
 .top-filter-section .transfer-direction-item p {
     padding-left: 30px;
-    font-size: var(--fs-14);
+    font-size: var(--fs-12);
     line-height: normal;
     font-weight: 400;
 }
