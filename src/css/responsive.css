@@ -39,6 +39,32 @@
 
 @media (max-width: 1199.98px) {	
 
+    app-bookings-sidebar {
+        display: none;
+    }
+
+    app-bookings-mob {
+        display: block;
+    }
+
+    app-bookings-mob .search-items-price {
+        padding: 10px 20px;
+    }
+
+    app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn {
+        font-size: 14px;
+        padding: 10px 10px;
+        background: var(--omra-second);
+    }
+
+    app-bookings-mob  .search-sidebar-details .search-sidebar-header {
+        background: var(--omra-base);
+    }
+
+    app-bookings-mob  .search-sidebar-details .search-sidebar-header a {
+        color: var(--omra-white);
+    }
+
     .service-summary-box .color-btn {
         width: 70%;
         padding: 7px 10px;

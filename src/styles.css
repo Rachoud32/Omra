@@ -1454,18 +1454,21 @@ label.category-item::before {
     line-height: 1.25 !important;
     font-size: clamp(1rem, 7vw, 2.2rem) !important;
     text-transform: uppercase;
+    color: var(--omra-base);
 }
 
 .heading-title-lg {
     line-height: 1.25 !important;
     font-size: 32px;
     text-transform: uppercase;
+    color: var(--omra-base);
 }
 
 .heading-title-md {
     line-height: 1.25 !important;
     font-size: var(--fs-22);
     font-weight: 500 !important;
+    color: var(--omra-base);
 }
 
 /*----------------------------------------------------
@@ -2159,10 +2162,8 @@ label.category-item::before {
 }
 
 .services-list input[type=radio]+.box:hover {
-    border: 2px solid var(--omra-second);
-    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
+    user-select: none;
 }
-
 
 .services-list input[type=radio]:checked+.box {
     background-color: var(--omra-white);
@@ -2711,7 +2712,7 @@ app-bookings-mob .search-sidebar-list {
     padding: 20px 15px;
     margin-right: 10px;
     margin-top: 0;
-    overflow-y: hidden;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -3344,13 +3345,12 @@ app-bookings-mob .search-sidebar-list {
     background-color: var(--omra-white);
     border: 2px solid var(--omra-light-gray);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 0%);
+    user-select: none;
     transition: all .3s linear;
 }
 
 .rooms-container input[type=radio]:not(:checked)+.box:hover {
-    background-color: var(--omra-white);
-    border: 2px solid var(--omra-second);
-    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 2%);
+    user-select: none;
 }
 
 .rooms-container input[type=radio]:checked+.box {
@@ -3965,10 +3965,18 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-second);
 }
 
-.transfer-top-filter [type="radio"]:disabled + label {
-    color: var(--omra-gray);
-    background: var(--omra-light-gray);
-    user-select: none;
+.side-filter-tags svg {
+    padding: 5px 0px 8px 0;
+    width: 26px;
+    fill: var(--omra-gray);
+}
+
+.transfer-top-filter .travel-path [type="radio"]:disabled + label,
+.transfer-top-filter .travel-path [type="radio"]:disabled + label:hover {
+    color: var(--omra-gray) !important;
+    background: var(--omra-light-gray) !important;
+    pointer-events: none;
+    cursor: text;
 }
 
 .transfer-top-filter [type="radio"]:checked+label:after,
@@ -4005,7 +4013,7 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-base);
 }
 
-.active-filter i, .active-road i {
+.active-filter i, .active-road i, .active-filter svg {
     color: var(--omra-second);
 }
 
@@ -4019,8 +4027,13 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .top-filter-section .color-btn:hover i,
-.top-filter-section .color-btn.active i {
+.top-filter-section .color-btn.active i,
+.top-filter-section .color-btn.active svg {
     color: var(--omra-second);
+}
+
+.top-filter-section .color-btn:hover svg {
+    fill: var(--omra-second);
 }
 
 .top-filter-section .color-btn:hover .remove-btn i {
@@ -4102,6 +4115,7 @@ app-bookings-mob .search-sidebar-list {
     --bs-popover-body-padding-x: 1rem;
     --bs-popover-body-padding-y: .5rem;
     border-radius: 0 !important;
+    border: 0;
     background: var(--omra-white);
     color: var(--omra-gray);
     padding: 0;
@@ -5354,7 +5368,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .footer .list-nav li {
-    font-size: 1em;
+    font-size: var(--fs-16);
     line-height: 2.2em;
 }
 
