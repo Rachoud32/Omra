@@ -47,14 +47,12 @@
 
 ::-moz-selection {
     background: #19174c;
-    /* Firefox */
     color: var(--omra-white);
     text-shadow: none;
 }
 
 ::-webkit-selection {
     background: #19174c;
-    /* Safari */
     color: var(--omra-white);
     text-shadow: none;
 }
@@ -427,7 +425,8 @@ input[type=checkbox]:disabled {
 }
 
 .color-btn.validate-btn {
-    padding: 0px 30px;
+    padding: 15px 30px;
+    line-height: normal;
     font-size: var(--fs-13);
 }
 
@@ -772,7 +771,7 @@ input[type=checkbox]:disabled {
     vertical-align: middle;
     padding: 5px 48px;
     font-size: var(--fs-14);
-    line-height: 38px;
+    line-height: normal;
     border-radius: 0px;
     cursor: pointer;
     text-transform: uppercase;
@@ -2131,7 +2130,7 @@ label.category-item::before {
 .services-list label {
     display: block;
     width: 100%;
-    cursor: unset;
+    cursor: default;
     border-radius: 0 !important;
 }
 
@@ -2158,9 +2157,9 @@ label.category-item::before {
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
-.services-list input[type=radio]+.box:hover {
+/* .services-list input[type=radio]+.box:hover {
     user-select: none;
-}
+} */
 
 .services-list input[type=radio]:checked+.box {
     background-color: var(--omra-white);
@@ -2171,8 +2170,8 @@ label.category-item::before {
 .services-list .box .color-btn {
     font-size: var(--fs-11);
     font-weight: 400;
-    line-height: 30px;
-    padding: 0px 10px;
+    line-height: normal;
+    padding: 8px 10px;
     width: 80px;
 }
 
@@ -2953,7 +2952,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .search-sidebar-footer .color-btn {
-    padding: 10px 30px;
+    padding: 20px 30px;
 }
 
 /* ----------------------------------------------------------------
@@ -3515,9 +3514,9 @@ app-bookings-mob .search-sidebar-list {
 
 .rooms-container .box .price-content .link .color-btn,
 .extra-details .link .color-btn {
-    padding: 0px 18px;
+    padding: 10px 18px;
     font-size: var(--fs-11);
-    line-height: 35px;
+    line-height: normal;
     border-radius: 0px;
     cursor: pointer;
     color: var(--omra-white);
@@ -3837,9 +3836,9 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .ground-service-details .link .color-btn {
-    padding: 0px 18px;
+    padding: 10px 18px;
     font-size: var(--fs-11);
-    line-height: 35px;
+    line-height: normal;
     border-radius: 0px;
     cursor: pointer;
     color: var(--omra-white);
@@ -4739,7 +4738,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .service-summary-box .flight-airline {
-    width: 35px;
+    width: 28px;
     height: 35px;
     position: relative;
 }
@@ -4846,9 +4845,8 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .service-summary-box .color-btn {
-    width: 50%;
-    padding: 2px 10px;
-    line-height: 28px;
+    width: 60%;
+    padding: 10px 10px;
     font-size: var(--fs-13);
     background-color: var(--omra-second);
     border-color: var(--omra-second);
@@ -5283,7 +5281,7 @@ app-bookings-mob .search-sidebar-list {
 -----------------------------------------------------------------*/
 .filter-list-btn {
     position: fixed;
-    z-index: 10;
+    z-index: 0;
     bottom: 20%;
     left: -45px;
     transform: rotate(90deg);

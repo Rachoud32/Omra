@@ -132,34 +132,31 @@
                                     </ng-template>
                                 </div>
                             </div>
-                            <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()"
+
+                            <button class="btn btn-primary d-flex align-items-center date-picker-btn" (click)="datepicker.toggle()"
                                 type="button">
-                                <div class="picker" [class.text-muted]="
-                    formatter.format(fromDate) === formatter.format(todayDate) &&
-                    formatter.format(toDate) === formatter.format(todayDate)
-                  ">
+                                <div class="picker flex-grow-1" [class.text-muted]="
+                                    formatter.format(fromDate) === formatter.format(todayDate) &&
+                                    formatter.format(toDate) === formatter.format(todayDate) && 
+                                    formatter.format(toDate) == formatter.format(todayDate) ||
+                                    !formatter.format(toDate)
+                                ">
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="icon-line-calendar"></i></span>
-                                        <span class="m-0">{{
+                                        <span class="m-0 pe-1">{{
                                             formatter.format(fromDate) == formatter.format(todayDate)
                                             ? "Arrival Date"
                                             : formatter.format(fromDate)
-                                            }}</span>
-                                    </div>
-                                </div>
-                                <div class="picker" [class.text-muted]="
-                    formatter.format(toDate) == formatter.format(todayDate) ||
-                    !formatter.format(toDate)
-                  ">
-                                    <div class="input-group">
-                                        <span class="input-group-text input-middle"><i
-                                                class="icon-line-calendar"></i></span>
-                                        <span class="m-0">{{
+                                            }}
+                                        </span>
+                                        <span class="pe-0 ps-0">-</span>
+                                        <span class="m-0 ps-1"> {{
                                             formatter.format(toDate) == formatter.format(todayDate) ||
                                             !formatter.format(toDate)
                                             ? "Departure Date"
                                             : formatter.format(toDate)
-                                            }}</span>
+                                            }}
+                                        </span>    
                                     </div>
                                 </div>
                             </button>
@@ -399,17 +396,24 @@
                                 </button>
                                 <div class="dropdown-menu animate slideIn">
                                     <div class="select-container">
-                                        <label for="Tunis" class="me-3 w-100">
+                                        <label for="Belgium4" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="departureCity"
-                                                id="Tunis" value="Tunis" formControlName="departureCity" />
-                                            <div class="list-item">Tunis</div>
+                                                id="Belgium4" value="Belgium" formControlName="departureCity" />
+                                            <div class="list-item">Belgium</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Djerba" class="me-3 w-100">
+                                        <label for="France4" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="departureCity"
-                                                id="Djerba" value="Djerba" formControlName="departureCity" />
-                                            <div class="list-item">Djerba</div>
+                                                id="France4" value="France" formControlName="departureCity" />
+                                            <div class="list-item">France</div>
+                                        </label>
+                                    </div>
+                                    <div class="select-container">
+                                        <label for="UK4" class="me-3 w-100">
+                                            <input type="radio" class="form-check-input me-2" name="departureCity"
+                                                id="UK4" value="UK" formControlName="departureCity" />
+                                            <div class="list-item">UK</div>
                                         </label>
                                     </div>
                                 </div>
@@ -765,35 +769,30 @@
                                 </ng-template>
                             </div>
                         </div>
-                        <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()"
-                            type="button">
-                            <span class="input-group-custom"><i class="icon-line-calendar"></i></span>
-                            <div class="picker" [class.text-muted]="
-                    formatter.format(fromDate) === formatter.format(todayDate) &&
-                    formatter.format(toDate) === formatter.format(todayDate)
-                  ">
-
+                        
+                        <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()" type="button">
+                            <div class="picker flex-grow-1" [class.text-muted]="
+                                    formatter.format(fromDate) === formatter.format(todayDate) &&
+                                    formatter.format(toDate) === formatter.format(todayDate) && 
+                                    formatter.format(toDate) == formatter.format(todayDate) ||
+                                    !formatter.format(toDate)
+                                ">
                                 <div class="input-group">
-
-                                    <span class="m-0">{{
+                                    <span class="input-group-text"><i class="icon-line-calendar"></i></span>
+                                    <span class="m-0 pe-1">{{
                                         formatter.format(fromDate) == formatter.format(todayDate)
                                         ? "Arrival Date"
                                         : formatter.format(fromDate)
-                                        }}</span>
-                                </div>
-                            </div>
-                            <span class="input-group-custom border-start"><i class="icon-line-calendar"></i></span>
-                            <div class="picker" [class.text-muted]="
-                    formatter.format(toDate) == formatter.format(todayDate) ||
-                    !formatter.format(toDate)
-                  ">
-                                <div class="input-group">
-                                    <span class="m-0">{{
+                                        }}
+                                    </span>
+                                    <span class="pe-0 ps-0">-</span>
+                                    <span class="m-0 ps-1">{{
                                         formatter.format(toDate) == formatter.format(todayDate) ||
                                         !formatter.format(toDate)
                                         ? "Departure Date"
                                         : formatter.format(toDate)
-                                        }}</span>
+                                        }}
+                                    </span>
                                 </div>
                             </div>
                         </button>
@@ -844,89 +843,92 @@
                                     </div>
                                 </div>
                             </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div class="d-flex justify-content-between destination-dropdown">
-                                    <div class="d-flex flex-column flex-grow-1 border-end">
-                                        <div class="destination-label">1st destination</div>
-                                        <div formGroupName="firstDestination">
-                                            <div>
-                                                <div class="select-container">
-                                                    <label for="Makkah" class="me-3 w-100">
-                                                        <input type="radio" class="form-check-input me-2"
-                                                            name="destinationOne" id="Makkah" value="Makkah"
-                                                            formControlName="destinationOne" />
-                                                        <div class="list-item">Makkah</div>
-                                                    </label>
+                            <div class="dropdown-menu animate slideIn" #dropdownMenuFour>
+                                <div class="d-flex flex-column justify-content-between destination-dropdown">
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="dest-box dest-1 d-flex flex-column flex-grow-1 border-end">
+                                            <div class="destination-label">1st destination</div>
+                                            <div class="border-bottom" formGroupName="firstDestination">
+                                                <div>
+                                                    <div class="select-container">
+                                                        <label for="Makkah" class="me-3 w-100">
+                                                            <input type="radio" class="form-check-input me-2"
+                                                                name="destinationOne" id="Makkah" value="Makkah"
+                                                                formControlName="destinationOne" />
+                                                            <div class="list-item">Makkah</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="select-container">
+                                                        <label for="Medina" class="me-3 w-100">
+                                                            <input type="radio" class="form-check-input me-2"
+                                                                name="destinationOne" id="Medina" value="Medina"
+                                                                formControlName="destinationOne" />
+                                                            <div class="list-item">Medina</div>
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                                <div class="select-container">
-                                                    <label for="Medina" class="me-3 w-100">
-                                                        <input type="radio" class="form-check-input me-2"
-                                                            name="destinationOne" id="Medina" value="Medina"
-                                                            formControlName="destinationOne" />
-                                                        <div class="list-item">Medina</div>
-                                                    </label>
+                                                <hr />
+                                                <div
+                                                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
+                                                    <div class="nights-label">Number of Nights</div>
+                                                    <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                                        <div class="minus" (click)="minusNightsFirstDestionation()">
+                                                            -
+                                                        </div>
+                                                        <div class="quantity">
+                                                            {{ searchFormCustom.get("firstDestination.nights")?.value }}
+                                                        </div>
+                                                        <div class="plus" (click)="plusNightsFirstDestionation()">
+                                                            +
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <hr />
-                                            <div
-                                                class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
-                                                <div class="nights-label">Number of Nights</div>
-                                                <div class="d-flex object-quantity passengers-nbr align-items-center">
-                                                    <div class="minus" (click)="minusNightsFirstDestionation()">
-                                                        -
+                                        </div>
+
+                                        <div class="dest-box dest-2 d-flex flex-grow-1 flex-column">
+                                            <div class="destination-label">2nd destination</div>
+                                            <div class="border-bottom" formGroupName="secondDestination">
+                                                <div>
+
+                                                    <div class="select-container">
+                                                        <label for="Makkah2" class="me-3 w-100">
+                                                            <input type="radio" class="form-check-input me-2"
+                                                                name="destinationTwo" id="Makkah2" value="Makkah"
+                                                                formControlName="destinationTwo" />
+                                                            <div class="list-item">Makkah</div>
+                                                        </label>
                                                     </div>
-                                                    <div class="quantity">
-                                                        {{ searchFormCustom.get("firstDestination.nights")?.value }}
+                                                    <div class="select-container">
+                                                        <label for="Medinah2" class="me-3 w-100">
+                                                            <input type="radio" class="form-check-input me-2"
+                                                                name="destinationTwo" id="Medinah2" value="Medinah"
+                                                                formControlName="destinationTwo" />
+                                                            <div class="list-item">Medinah</div>
+                                                        </label>
                                                     </div>
-                                                    <div class="plus" (click)="plusNightsFirstDestionation()">
-                                                        +
+                                                </div>
+                                                <hr />
+                                                <div
+                                                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
+                                                    <div class="nights-label">Number of Nights</div>
+                                                    <div id="nights"
+                                                        class="d-flex object-quantity passengers-nbr align-items-center">
+                                                        <div class="minus" (click)="minusNightsSecondDestionation()">
+                                                            -
+                                                        </div>
+                                                        <div class="quantity">
+                                                            {{ searchFormCustom.get("secondDestination.nights")?.value }}
+                                                        </div>
+                                                        <div class="plus" (click)="plusNightsSecondDestionation()">
+                                                            +
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="d-flex flex-grow-1 flex-column">
-                                        <div class="destination-label">2nd destination</div>
-                                        <div formGroupName="secondDestination">
-                                            <div>
-
-                                                <div class="select-container">
-                                                    <label for="Makkah2" class="me-3 w-100">
-                                                        <input type="radio" class="form-check-input me-2"
-                                                            name="destinationTwo" id="Makkah2" value="Makkah"
-                                                            formControlName="destinationTwo" />
-                                                        <div class="list-item">Makkah</div>
-                                                    </label>
-                                                </div>
-                                                <div class="select-container">
-                                                    <label for="Medinah2" class="me-3 w-100">
-                                                        <input type="radio" class="form-check-input me-2"
-                                                            name="destinationTwo" id="Medinah2" value="Medinah"
-                                                            formControlName="destinationTwo" />
-                                                        <div class="list-item">Medinah</div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div
-                                                class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
-                                                <div class="nights-label">Number of Nights</div>
-                                                <div id="nights"
-                                                    class="d-flex object-quantity passengers-nbr align-items-center">
-                                                    <div class="minus" (click)="minusNightsSecondDestionation()">
-                                                        -
-                                                    </div>
-                                                    <div class="quantity">
-                                                        {{ searchFormCustom.get("secondDestination.nights")?.value }}
-                                                    </div>
-                                                    <div class="plus" (click)="plusNightsSecondDestionation()">
-                                                        +
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <button class="color-btn validate-btn dropdown-btn m-3" (click)="toggleDropdown('4')">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -1083,8 +1085,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="color-btn validate-btn mt-3"
-                                    (click)="toggleDropdown('3')">Confirm</button>
+                                <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('3')">Confirm</button>
                             </div>
                         </div>
                     </div>
@@ -1150,24 +1151,24 @@
                             <div class="dropdown-menu animate slideIn">
                                 <div>
                                     <div class="select-container">
-                                        <label for="Tunisia3" class="me-3 w-100">
+                                        <label for="Belgium3" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="Tunisia3" value="Tunisia" formControlName="departureCountry" />
-                                            <div class="list-item">Tunisia</div>
+                                                id="Belgium3" value="Belgium" formControlName="departureCountry" />
+                                            <div class="list-item">Belgium</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Algeria3" class="me-3 w-100">
+                                        <label for="France3" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="Algeria3" value="Algeria" formControlName="departureCountry" />
-                                            <div class="list-item">Algeria</div>
+                                                id="France3" value="France" formControlName="departureCountry" />
+                                            <div class="list-item">France</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Morocco3" class="me-3 w-100">
+                                        <label for="UK3" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="Morocco3" value="Morocco" formControlName="departureCountry" />
-                                            <div class="list-item">Morocco</div>
+                                                id="UK3" value="UK" formControlName="departureCountry" />
+                                            <div class="list-item">UK</div>
                                         </label>
                                     </div>
                                 </div>
@@ -1195,24 +1196,24 @@
                             <div class="dropdown-menu animate slideIn">
                                 <div>
                                     <div class="select-container">
-                                        <label for="Tunisia2" class="me-3 w-100">
+                                        <label for="Belgium2" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="Tunisia2" value="Tunisia" formControlName="Nationality" />
-                                            <div class="list-item">Tunisia</div>
+                                                id="Belgium2" value="Belgium" formControlName="Nationality" />
+                                            <div class="list-item">Belgium</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Algeria2" class="me-3 w-100">
+                                        <label for="France2" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="Algeria2" value="Algeria" formControlName="Nationality" />
-                                            <div class="list-item">Algeria</div>
+                                                id="France2" value="France" formControlName="Nationality" />
+                                            <div class="list-item">France</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Morocco2" class="me-3 w-100">
+                                        <label for="UK2" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="Morocco2" value="Morocco" formControlName="Nationality" />
-                                            <div class="list-item">Morocco</div>
+                                                id="UK2" value="UK" formControlName="Nationality" />
+                                            <div class="list-item">UK</div>
                                         </label>
                                     </div>
                                 </div>
@@ -1241,24 +1242,24 @@
                             <div class="dropdown-menu animate slideIn">
                                 <div>
                                     <div class="select-container">
-                                        <label for="Tunisia" class="me-3 w-100">
+                                        <label for="Belgium" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="Tunisia" value="Tunisia" formControlName="residenceCountry" />
-                                            <div class="list-item">Tunisia</div>
+                                                id="Belgium" value="Belgium" formControlName="residenceCountry" />
+                                            <div class="list-item">Belgium</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Algeria" class="me-3 w-100">
+                                        <label for="France" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="Algeria" value="Algeria" formControlName="residenceCountry" />
-                                            <div class="list-item">Algeria</div>
+                                                id="France" value="France" formControlName="residenceCountry" />
+                                            <div class="list-item">France</div>
                                         </label>
                                     </div>
                                     <div class="select-container">
-                                        <label for="Morocco" class="me-3 w-100">
+                                        <label for="UK" class="me-3 w-100">
                                             <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="Morocco" value="Morocco" formControlName="residenceCountry" />
-                                            <div class="list-item">Morocco</div>
+                                                id="UK" value="UK" formControlName="residenceCountry" />
+                                            <div class="list-item">UK</div>
                                         </label>
                                     </div>
                                 </div>

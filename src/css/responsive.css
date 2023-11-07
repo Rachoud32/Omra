@@ -403,6 +403,10 @@
 
 @media (max-width: 767.98px) {
     
+    .dest-1.border-end {
+        border-right: 0 !important;
+    }
+    
     .top-filter-section .side-filter-tags {
         display: none !important;
     }
@@ -464,9 +468,9 @@
     }
 
     .slider .slider-caption {
-        padding-top: 220px;
+        padding-top: 185px;
         padding-left: 30px;
-        max-width: 300px;
+        max-width: 270px;
     }
 
     .slider .slider-caption h3 {
@@ -738,13 +742,12 @@
         width: 100%;
     }
 
-    .icon-end {
-        display: none;
+    .dropdown-btn {
+        width: fit-content;
     }
 
-    .date-picker-btn {
-        flex-wrap: wrap;
-        flex-direction: column;
+    .icon-end {
+        display: none;
     }
 
     .picker {
@@ -752,8 +755,11 @@
     }
 
     .picker:last-child {
-        border-top: 1px solid #eee;
         width: 100% !important;
+    }
+
+    .input-group-custom {
+        display: none !important;
     }
 
     .destination-btn-content {
@@ -762,10 +768,6 @@
 
     .input-group .destination-input-content {
         flex-direction: row;
-    }
-
-    .input-group-custom {
-        display: none;
     }
 
     .calendar .dropdown-menu.show {
@@ -823,10 +825,6 @@
 
     .picker .input-group span {
         padding: 12px 10px;
-    }
-
-    .picker .input-group-text {
-        display: none;
     }
 
     .input-group p {

@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   @ViewChild('dropdownMenuOne') dropdownMenuOne?: ElementRef;
   @ViewChild('dropdownMenuTwo') dropdownMenuTwo?: ElementRef;
   @ViewChild('dropdownMenuThree') dropdownMenuThree?: ElementRef;
+  @ViewChild('dropdownMenuFour') dropdownMenuFour?: ElementRef;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -409,8 +410,10 @@ export class SearchComponent implements OnInit {
       const dropdownMenuElement3 = this.dropdownMenuThree?.nativeElement;
       dropdownMenuElement3.classList.remove('show')
     }
-
-
+    if (index == '4') {
+      const dropdownMenuElement4 = this.dropdownMenuFour?.nativeElement;
+      dropdownMenuElement4.classList.remove('show')
+    }
 
   }
 
