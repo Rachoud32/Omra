@@ -8,6 +8,8 @@ import { NavigationEnd, Router } from '@angular/router';
 export class SearchBarComponent {
   SearchBar: boolean = true;
   category: string = '';
+  dataBsTargetValue = ''
+  ariaControls = ''
   constructor(private router: Router) {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -17,42 +19,22 @@ export class SearchBarComponent {
           this.SearchBar = true;
         }
         if (val.url === "/result/flight") {
+          this.dataBsTargetValue = '#flightfilter';
+          this.ariaControls = 'flightfilter';
           this.category = 'flight(s)'
         }
         if (val.url === '/result/first-destination' || val.url === '/result/second-destination') {
+          this.dataBsTargetValue = '#destinationfilter';
+          this.ariaControls = 'destinationfilter';
           this.category = 'room(s)'
         }
         if (val.url === "/result/first-transfer") {
+          this.dataBsTargetValue = '#transferfilter';
+          this.ariaControls = 'transferfilter';
           this.category = 'vehicle(s)'
         }
-        this.updateDataBsTarget(val.url);
       }
     });
-    
-  }
 
-  updateDataBsTarget(url: string): void {
-    // Determine the value for data-bs-target based on the route
-    let dataBsTargetValue = '';
-    let ariaControls = '';
-  
-    if (url === '/result/flight') {
-      dataBsTargetValue = '#flightfilter';
-      ariaControls = 'flightfilter';
-    } else if (url === '/result/first-destination' || url === '/result/second-destination') {
-      dataBsTargetValue = '#destinationfilter';
-      ariaControls = 'destinationfilter';
-    } else if (url === '/result/first-transfer') {
-      dataBsTargetValue = '#transferfilter';
-      ariaControls = 'transferfilter';
-    } 
-  
-    // Update the value in the DOM
-    const element = document.getElementById('filter-btn'); // Replace with your element's ID or query selector
-    if (element) {
-      element.setAttribute('data-bs-target', dataBsTargetValue);
-      element.setAttribute('aria-controls', ariaControls);
-    }
   }
-
 }
