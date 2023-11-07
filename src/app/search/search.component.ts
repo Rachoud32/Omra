@@ -12,11 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 export class SearchComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplayTimeout: 6000,
+    autoplaySpeed: 2000,
     dots: false,
     navSpeed: 1000,
     navText: ['<i class="icon-line-chevron-left"></i>', '<i class="icon-line-chevron-right"></i>'],

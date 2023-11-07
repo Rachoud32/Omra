@@ -431,6 +431,27 @@
 
 
 @media (max-width: 575.98px) {
+    .owl-nav {
+        display: none;
+    }
+
+    .slider .slider-caption {
+        padding-top: 220px;
+        padding-left: 30px;
+        max-width: 300px;
+    }
+
+    .slider .slider-caption h3 {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .slider .slider-caption h3::before {
+        height: 3px;
+        width: 10px;
+        margin-right: 8px;
+    }
+
     app-search-bar {
         position: sticky;
         left: 0;
