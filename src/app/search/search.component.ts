@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -10,6 +10,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  @ViewChild('dropdownMenuOne') dropdownMenuOne?: ElementRef;
+  @ViewChild('dropdownMenuTwo') dropdownMenuTwo?: ElementRef;
+  @ViewChild('dropdownMenuThree') dropdownMenuThree?: ElementRef;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -390,6 +393,25 @@ export class SearchComponent implements OnInit {
       this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value - 1)
       this.numAdultsCustom -= 1
     }
+  }
+
+
+  toggleDropdown(index: string) {
+    if (index == '1') {
+      const dropdownMenuElement1 = this.dropdownMenuOne?.nativeElement;
+      dropdownMenuElement1.classList.remove('show')
+    }
+    if (index == '2') {
+      const dropdownMenuElement2 = this.dropdownMenuTwo?.nativeElement;
+      dropdownMenuElement2.classList.remove('show')
+    }
+    if (index == '3') {
+      const dropdownMenuElement3 = this.dropdownMenuThree?.nativeElement;
+      dropdownMenuElement3.classList.remove('show')
+    }
+
+
+
   }
 
   search() {

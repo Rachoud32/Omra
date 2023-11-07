@@ -126,7 +126,8 @@
                                     </ng-template>
                                     <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
                                         <div class="datepicker-footer">
-                                            <button class="color-btn validate-btn" (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                                            <button class="color-btn validate-btn"
+                                                (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
                                         </div>
                                     </ng-template>
                                 </div>
@@ -165,7 +166,7 @@
                         </div>
                         <!-- Passengers -->
                         <div class="col-xl-6 mb-3">
-                            <div class="dropdown dropdown-guests w-100">
+                            <div class="dropdown dropdown-guests w-100" #dropdownElement>
                                 <button [class.selected-item]="
                     searchFormHotel.value.passengersHotel.length != 1 ||
                     numAdultsHotel != 1 ||
@@ -202,7 +203,7 @@
                                         <i class="icon-end icon-line-plus"></i>
                                     </div>
                                 </button>
-                                <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
+                                <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuOne>
                                     <div formArrayName="passengersHotel">
                                         <div class="d-flex flex-column">
                                             <div class="d-flex justify-content-between mb-3">
@@ -320,7 +321,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn mt-3">Confirm</button>
+                                    <button class="color-btn validate-btn mt-3"
+                                        (click)="toggleDropdown('1')">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -554,7 +556,7 @@
                                         <i class="icon-end icon-line-plus"></i>
                                     </div>
                                 </button>
-                                <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
+                                <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuTwo>
                                     <div formArrayName="passengers">
                                         <div class="d-flex flex-column">
                                             <div class="d-flex justify-content-between mb-3">
@@ -668,7 +670,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn mt-3">Confirm</button>
+                                    <button class="color-btn validate-btn mt-3"
+                                        (click)="toggleDropdown('2')">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -743,22 +746,23 @@
                         <div class="dp-hidden position-absolute calendar">
                             <div class="">
                                 <input name="datepicker" class="calendar-input" ngbDatepicker
-                                        #datepicker="ngbDatepicker" [autoClose]="'outside'"
-                                        (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
-                                        style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                        tabindex="-1" [footerTemplate]="footerTemplate1" #d="ngbDatepicker" />
-                                    <ng-template #t1 let-date let-focused="focused">
-                                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
-                                            [class.faded]="isHovered(date) || isInside(date)"
-                                            (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
-                                            {{ date.day }}
-                                        </span>
-                                    </ng-template>
-                                    <ng-template #footerTemplate1 let-date="date" let-datepicker="datepicker">
-                                        <div class="datepicker-footer">
-                                            <button class="color-btn validate-btn" (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
-                                        </div>
-                                    </ng-template>
+                                    #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                                    (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
+                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
+                                    tabindex="-1" [footerTemplate]="footerTemplate1" #d="ngbDatepicker" />
+                                <ng-template #t1 let-date let-focused="focused">
+                                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                        [class.faded]="isHovered(date) || isInside(date)"
+                                        (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+                                        {{ date.day }}
+                                    </span>
+                                </ng-template>
+                                <ng-template #footerTemplate1 let-date="date" let-datepicker="datepicker">
+                                    <div class="datepicker-footer">
+                                        <button class="color-btn validate-btn"
+                                            (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                                    </div>
+                                </ng-template>
                             </div>
                         </div>
                         <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()"
@@ -962,7 +966,7 @@
                                     <i class="icon-end icon-line-plus"></i>
                                 </div>
                             </button>
-                            <div class="dropdown-menu drop-menu-sm-margin animate slideIn">
+                            <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuThree>
                                 <div formArrayName="passengersCustom">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1079,7 +1083,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="color-btn validate-btn mt-3">Confirm</button>
+                                <button class="color-btn validate-btn mt-3"
+                                    (click)="toggleDropdown('3')">Confirm</button>
                             </div>
                         </div>
                     </div>
