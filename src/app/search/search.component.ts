@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgSelectConfig } from '@ng-select/ng-select';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -43,6 +44,7 @@ export class SearchComponent implements OnInit {
   searchFormHotel?: FormGroup
   searchFormPackage?: FormGroup
   searchFormCustom?: FormGroup
+  selectedDate: any
   searchType = 'hotel'
   numAdults = 1
   numAdultsHotel = 1
@@ -61,7 +63,7 @@ export class SearchComponent implements OnInit {
     { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
   ];
 
-  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig) {
+  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService,) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getToday();
     this.todayDate = calendar.getToday();
@@ -115,6 +117,7 @@ export class SearchComponent implements OnInit {
     this.searchFormCustom?.get('flightmode')?.setValue('Umrah package without flight')
   }
 
+
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
@@ -149,6 +152,20 @@ export class SearchComponent implements OnInit {
     const parsed = this.formatter.parse(input);
 
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
+  }
+
+  checkDates() {
+    if (this.fromDate == null || this.toDate == null) {
+      this.toastr.info("Please select both arrival and departure date.")
+
+      return false
+    } else {
+      return true
+    }
+  }
+  applyDate(date: NgbDateStruct): void {
+    this.selectedDate = date;
+
   }
   /***************************
       Hotel Section

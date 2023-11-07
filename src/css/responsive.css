@@ -48,21 +48,32 @@
     }
 
     app-bookings-mob .search-items-price {
-        padding: 10px 20px;
+        padding: 6px 20px;
+    }
+
+    app-bookings-mob .search-sidebar-details .search-total-label, app-bookings-mob .search-total-price {
+        font-size: 18px;
+        line-height: normal;
     }
 
     app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn {
-        font-size: 14px;
-        padding: 10px 10px;
+        font-size: 12px;
+        padding: 10px 13px;
         background: var(--omra-second);
     }
 
-    app-bookings-mob  .search-sidebar-details .search-sidebar-header {
+    app-bookings-mob .search-sidebar-details .search-sidebar-header {
         background: var(--omra-base);
+        border-top: 1px solid var(--omra-light-gray);
+        padding: 8px 20px;
     }
 
-    app-bookings-mob  .search-sidebar-details .search-sidebar-header a {
+    app-bookings-mob .search-sidebar-details .search-sidebar-header a {
         color: var(--omra-white);
+    }
+
+    app-bookings-mob .search-sidebar-content {
+        padding: 20px 0;
     }
 
     .service-summary-box .color-btn {
@@ -117,7 +128,7 @@
     
     .check-form .color-btn {
         margin-top: 10px;
-        width: 100%;
+        width: 40px;
     }
     
     .check-form .color-btn.ms-4 {
@@ -349,13 +360,15 @@
         background: #7d6a4c;
     }
 
-    .room-box .room .btn-sec .read-btn:hover {
-        background-color: #562403;
-        color: #fff;
-    }
+    @media (hover: hover) {
+        .room-box .room .btn-sec .read-btn:hover {
+            background-color: #562403;
+            color: #fff;
+        }
 
-    .room-box .room .btn-sec .read-btn:hover i {
-        color: #fff;
+        .room-box .room .btn-sec .read-btn:hover i {
+            color: #fff;
+        }
     }
 
     .package-box-content {
@@ -365,6 +378,11 @@
 }
 
 @media (max-width: 767.98px) {
+    
+    .top-filter-section .side-filter-tags {
+        display: none !important;
+    }
+
     .bookings-summary-section .all-content-box {
         background: transparent;
         padding: 0;
@@ -413,6 +431,81 @@
 
 
 @media (max-width: 575.98px) {
+    app-search-bar {
+        position: sticky;
+        left: 0;
+        top: 22px;
+        z-index: 98;
+    }
+
+    .filter-btn-mob {
+        display: block;
+    }
+
+    .check-form .search-form-edit {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0em !important;
+        flex: 1;
+        font-size: var(--fs-13);
+    }
+
+    .check-form .search-result-counter {
+        display: none;
+    }
+
+    .check-form .color-btn {
+        margin: auto 0;
+        width: 40px;
+    }
+
+    .check-form .search-results-list {
+        flex-direction: row !important;
+        align-items: center !important;
+        flex-wrap: wrap;
+    }
+
+    .carousel-inner:before {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0) 35%);
+    }
+
+    .check-form.summary-search {
+        display: none !important;
+    }
+
+    .summary-search .summary-search-results {
+        align-items: flex-start !important;
+        gap: 1px !important;
+        padding: 5px 0px;
+    }
+
+    .summary-search-label {
+        border-right: 0;
+        padding: 0px;
+    }
+
+    .hotel-box .hotel .notices {
+        left: 0px;
+        bottom: 10px;
+    }
+
+    .hotel-box .hotel .hotel-type,
+    .hotel-box .hotel .available-notice {
+        padding: 10px 15px;
+    }
+
+    .hotel-box .hotel .available-notice {
+        border-right: 0;
+    }
+
+    .hotel-box .hotel .hotel-name {
+        max-width: 270px;
+    }
+
+    .hotel-box .hotel .hotel-content .hotel-content-bottom {
+        padding: 20px;
+    }
+
     .side-filter-tags {
         flex-wrap: wrap;
     }
@@ -447,6 +540,7 @@
     .list-steps .list-group-item {
         align-items: center !important;
         justify-content: center !important;
+        padding: 15px 20px !important;
     }
 
     .list-group-item .custom-step-icon, .list-group-item .step-icon {
@@ -458,7 +552,7 @@
     }
 
     .custom-popover {
-        --bs-popover-max-width: 300px !important;
+        --bs-popover-max-width: fit-content !important;
     }
 
     .popover {
@@ -466,11 +560,11 @@
     }
 
     .hotel-box .hotel .hotel-rating {
-        bottom: 60px !important;
+        bottom: 65px !important;
     }
 
     .check-form {
-        padding: 15px 20px !important;
+        padding: 10px 15px !important;
     }
     
     .check-form .search-bar-icon .rooms-icon {

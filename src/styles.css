@@ -423,20 +423,13 @@ input[type=checkbox]:disabled {
 ----------------------------------------------------*/
 .search-section {
     position: relative;
-    height: 750px;
+    padding: 0 0 200px;
 }
 
-/* .search-section::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 180px;
-    top: -10px;
-    left: 0;
-    background: var(--omra-black);
-    mix-blend-mode: multiply;
-} */
+.color-btn.validate-btn {
+    padding: 0px 30px;
+    font-size: var(--fs-13);
+}
 
 .ng-select.custom .ng-select-container {
     width: 100%;
@@ -1485,6 +1478,10 @@ label.category-item::before {
 .search-results p {
     font-size: var(--fs-15);
     line-height: normal;
+}
+
+.filter-btn-mob {
+    display: none;
 }
 
 .check-form .search-bar-icon {
@@ -3083,7 +3080,7 @@ app-bookings-mob .search-sidebar-list {
 
 .hotel-box .hotel .hotel-name {
     color: var(--omra-white);
-    font-size: var(--fs-18);
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
     font-weight: 500 !important;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -3126,6 +3123,7 @@ app-bookings-mob .search-sidebar-list {
     display: flex;
     left: 30px;
     bottom: 20px;
+    line-height: normal;
     width: fit-content;
     z-index: 4;
 }
@@ -5284,10 +5282,11 @@ app-bookings-mob .search-sidebar-list {
 	Sidebar Filter
 -----------------------------------------------------------------*/
 .filter-list-btn {
-    position: sticky;
+    position: fixed;
     z-index: 10;
-    bottom: 0;
-    margin-top: 15px;
+    bottom: 20%;
+    left: -45px;
+    transform: rotate(90deg);
 }
 
 .filter-list-btn .color-btn {

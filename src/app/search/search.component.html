@@ -107,97 +107,27 @@
                                     <b [ngOptionHighlight]="search">{{item.name}}</b>
                                 </ng-template>
                             </ng-select>
-                            <!-- <div class="dropdown w-100">
-                  <button class="btn w-100" [class.selected-item]="searchFormHotel.value.hotelName" type="button"
-                    data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
-                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                      <div class="input-group d-flex">
-                        <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                        <p class="m-0" *ngIf="searchFormHotel.value.hotelName" contentEditable="true">
-                          {{ searchFormHotel.value.hotelName }}
-                        </p>
-                        <p class="m-0 text-muted" *ngIf="!searchFormHotel.value.hotelName">Hotel</p>
-                      </div>
-                      <i class="icon-end icon-line-chevron-down"></i>
-                    </div>
-                  </button>
-                  <div class="dropdown-menu animate slideIn">
-                    <div>
-                      <div class="select-container">
-                        <label for="allhotels" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="allhotels"
-                            value="All Hotels" formControlName="hotelName" />
-                          <div class="list-item">All Hotels</div>
-                        </label>
-                      </div>
-                      <div class="select-container">
-                        <label for="makkah99" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="makkah99"
-                            value="Makkah hotels" formControlName="hotelName" />
-                          <div class="list-item">Makkah Hotels</div>
-                        </label>
-                      </div>
-                      <div class="select-container sub-select">
-                        <label for="Hotel1" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel1"
-                            value="Mövenpick Makkah" formControlName="hotelName" />
-                          <div class="list-item">Mövenpick Makkah</div>
-                        </label>
-                      </div>
-                      <div class="select-container sub-select">
-                        <label for="Hotel2" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel2"
-                            value="Swissotel Al Maqam Makkah" formControlName="hotelName" />
-                          <div class="list-item">Swissotel Al Maqam Makkah</div>
-                        </label>
-                      </div>
-                      <div class="select-container sub-select">
-                        <label for="Hotel3" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel3"
-                            value="Pullman ZamZam Makkah" formControlName="hotelName" />
-                          <div class="list-item">Pullman ZamZam Makkah</div>
-                        </label>
-                      </div>
-                      <div class="select-container">
-                        <label for="madinah99" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="madinah99"
-                            value="Madinah hotels" formControlName="hotelName" />
-                          <div class="list-item">Madinah Hotels</div>
-                        </label>
-                      </div>
-                      <div class="select-container sub-select">
-                        <label for="Hotel4" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel4"
-                            value="Pullman ZamZam Madinah" formControlName="hotelName" />
-                          <div class="list-item">Pullman ZamZam Madinah</div>
-                        </label>
-                      </div>
-                      <div class="select-container sub-select">
-                        <label for="Hotel5" class="me-3 w-100">
-                          <input type="radio" class="form-check-input me-2" name="hotelName" id="Hotel5"
-                            value="Anwar Al Madinah Movenpick" formControlName="hotelName" />
-                          <div class="list-item">Anwar Al Madinah Movenpick</div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
                         </div>
                         <!-- Calendar -->
                         <div class="col-xl-6 mb-3">
                             <div class="dp-hidden position-absolute calendar">
-                                <div class="">
+                                <div>
                                     <input name="datepicker" class="calendar-input" ngbDatepicker
                                         #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                         (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
                                         style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                        tabindex="-1" />
+                                        tabindex="-1" [footerTemplate]="footerTemplate" #d="ngbDatepicker" />
                                     <ng-template #t let-date let-focused="focused">
                                         <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
                                             [class.faded]="isHovered(date) || isInside(date)"
                                             (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
                                             {{ date.day }}
                                         </span>
+                                    </ng-template>
+                                    <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
+                                        <div class="datepicker-footer">
+                                            <button class="color-btn validate-btn" (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                                        </div>
                                     </ng-template>
                                 </div>
                             </div>
@@ -390,6 +320,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <button class="color-btn validate-btn w-100 mt-3">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -811,17 +742,22 @@
                         <div class="dp-hidden position-absolute calendar">
                             <div class="">
                                 <input name="datepicker" class="calendar-input" ngbDatepicker
-                                    #datepicker="ngbDatepicker" [autoClose]="'outside'"
-                                    (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
-                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                    tabindex="-1" />
-                                <ng-template #t let-date let-focused="focused">
-                                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
-                                        [class.faded]="isHovered(date) || isInside(date)"
-                                        (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
-                                        {{ date.day }}
-                                    </span>
-                                </ng-template>
+                                        #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                                        (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
+                                        style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
+                                        tabindex="-1" [footerTemplate]="footerTemplate1" #d="ngbDatepicker" />
+                                    <ng-template #t1 let-date let-focused="focused">
+                                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                            [class.faded]="isHovered(date) || isInside(date)"
+                                            (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+                                            {{ date.day }}
+                                        </span>
+                                    </ng-template>
+                                    <ng-template #footerTemplate1 let-date="date" let-datepicker="datepicker">
+                                        <div class="datepicker-footer">
+                                            <button class="color-btn validate-btn" (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                                        </div>
+                                    </ng-template>
                             </div>
                         </div>
                         <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()"

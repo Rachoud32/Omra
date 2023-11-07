@@ -2,7 +2,7 @@
   <div class="col-xl-12 pt-5">
     <form id="search-form" class="check-form search-results">
       <div class="row align-items-center">
-        <div class="col-xl-4">
+        <div class="col-xl-4 search-result-counter">
           <div class="d-flex align-items-center gap-2">
             <div class="search-bar-icon">
               <div *ngIf="category==='room(s)'">
@@ -32,9 +32,14 @@
         </div>
         <div class="col-xl-8">
           <div class="d-flex justify-content-end align-items-center search-results-list">
-            <div class="me-4"><i class="icon-line-calendar"></i>Mon, 16 Aug to Wed, 18 Aug</div>
-            <div><i class="icon-line-users"></i>1 Room | 4 guests</div>
-            <button class="color-btn ms-4"><i class="icon-line-search m-0"></i></button>
+            <div class="search-form-edit d-flex align-items-center gap-2">
+              <div class="me-4"><i class="icon-line-calendar"></i>Mon, 16 Aug to Wed, 18 Aug</div>
+              <div><i class="icon-line-users"></i>1 Room | 4 guests</div>
+            </div>
+            <div class="search-form-btns d-flex align-items-center gap-2">
+              <button class="color-btn filter-btn-mob ms-4" data-bs-toggle="offcanvas" data-bs-target="#flightfilter" aria-controls="flightfilter"><i class="icon-line-filter m-0"></i></button>
+              <button class="color-btn ms-4"><i class="icon-line-search m-0"></i></button>
+            </div>  
           </div>
         </div>
       </div>
