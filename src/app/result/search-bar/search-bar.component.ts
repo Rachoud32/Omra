@@ -25,8 +25,34 @@ export class SearchBarComponent {
         if (val.url === "/result/first-transfer") {
           this.category = 'vehicle(s)'
         }
+        this.updateDataBsTarget(val.url);
       }
     });
+    
+  }
+
+  updateDataBsTarget(url: string): void {
+    // Determine the value for data-bs-target based on the route
+    let dataBsTargetValue = '';
+    let ariaControls = '';
+  
+    if (url === '/result/flight') {
+      dataBsTargetValue = '#flightfilter';
+      ariaControls = 'flightfilter';
+    } else if (url === '/result/first-destination' || url === '/result/second-destination') {
+      dataBsTargetValue = '#destinationfilter';
+      ariaControls = 'destinationfilter';
+    } else if (url === '/result/first-transfer') {
+      dataBsTargetValue = '#transferfilter';
+      ariaControls = 'transferfilter';
+    } 
+  
+    // Update the value in the DOM
+    const element = document.getElementById('filter-btn'); // Replace with your element's ID or query selector
+    if (element) {
+      element.setAttribute('data-bs-target', dataBsTargetValue);
+      element.setAttribute('aria-controls', ariaControls);
+    }
   }
 
 }
