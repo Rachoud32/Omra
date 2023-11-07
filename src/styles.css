@@ -5292,8 +5292,8 @@ app-bookings-mob .search-sidebar-list {
 .filter-list-btn .color-btn {
     padding: 10px 20px;
     line-height: normal;
-    background: var(--omra-base);
-    border-color: var(--omra-base);
+    background: var(--omra-second);
+    border-color: var(--omra-second);
 }
 
 .filter-list-btn .color-btn:hover,
