@@ -166,25 +166,6 @@ body .text-muted {
     color: #bababa !important;
 }
 
-input:focus {
-    outline: none !important;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    border: 1px solid var(--omra-light-gray);
-    -webkit-text-fill-color: var(--omra-gray);
-    -webkit-box-shadow: 0 0 0px 1000px var(--omra-white) inset;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
 .border-start,
 .border-end {
     border-color: #dee2e6 !important;
@@ -212,9 +193,42 @@ input::placeholder {
 
 input:focus,
 select:focus {
-    border-color: var(--omra-white);
+    border-color: var(--omra-light-gray);
     outline: 0;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 5px 15px;
+    font-size: var(--fs-16) !important;
+    font-weight: 400;
+    color: var(--omra-gray);
+    background-color: var(--omra-white);
+    border: 1px solid var(--omra-light-gray);
+    appearance: none;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid var(--omra-light-gray);
+    -webkit-text-fill-color: var(--omra-gray);
+    -webkit-box-shadow: 0 0 0px 1000px var(--omra-white) inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 button:focus {
@@ -447,6 +461,7 @@ input[type=checkbox]:disabled {
 
 .ng-select.custom .ng-select-container .ng-value-container .ng-input>input {
     color: var(--omra-gray);
+    cursor: auto;
 }
 
 .ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items {
@@ -2690,7 +2705,7 @@ label.disabled .service-class-card {
 app-bookings-sidebar {
     position: sticky;
     top: 0;
-    z-index: 998;
+    z-index: 500;
 }
 
 app-bookings-mob {
@@ -2698,7 +2713,7 @@ app-bookings-mob {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 900;
     display: none;
 }
 
@@ -2784,17 +2799,21 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .search-sidebar-header .color-btn {
-    padding: 0px;
+    padding: 10px;
     font-size: var(--fs-18);
-    color: var(--omra-white);
-    background-color: transparent;
+    color: var(--omra-second);
+    background-color: var(--omra-white);
     border: 0;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-sidebar-header .color-btn:hover,
 .search-sidebar-header .color-btn:active {
-    color: var(--omra-black);
+    color: var(--omra-white);
+    background-color: var(--omra-base);
 }
 
 .search-sidebar-details .search-details {
@@ -2900,7 +2919,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .search-items-price {
-    padding: 10px 20px 25px 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .search-sidebar-price {
@@ -3130,7 +3149,7 @@ app-bookings-mob .search-sidebar-list {
 .hotel-box .hotel .available-notice {
     position: relative;
     background: var(--omra-base);
-    padding: 7px 15px;
+    padding: 12px 15px;
     color: var(--omra-white);
     border-right: 5px solid var(--omra-white);
     z-index: 4;
@@ -3145,7 +3164,7 @@ app-bookings-mob .search-sidebar-list {
 .hotel-box .hotel .hotel-type {
     position: relative;
     background: #f8f8f8;
-    padding: 7px 15px;
+    padding: 10px 15px;
     z-index: 4;
 }
 
@@ -4585,6 +4604,81 @@ app-bookings-mob .search-sidebar-list {
 /* ----------------------------------------------------------------
 	Hotel Details Modal
 -----------------------------------------------------------------*/
+.share-modal.modal .modal-content {
+    padding: 0px 0px;
+    border-radius: 0;
+}
+
+.share-modal .modal-header {
+    border-radius: 0;
+    padding: 20px 20px 15px;
+}
+
+.share-modal.modal .modal-content .modal-title {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: var(--omra-base);
+    font-weight: 600 !important;
+    font-size: var(--fs-18) !important;
+    letter-spacing: 0.6px;
+}
+
+.share-modal .modal-body {
+    padding: 15px 20px !important;
+}
+
+.share-modal .input-share {
+    display: inline-block;
+    width: 55%;
+}
+
+.share-modal h6 {
+    font-weight: 400 !important;
+    font-size: var(--fs-15);
+    color: var(--omra-base);
+}
+
+.share-modal .input-share {
+    font-size: 14px !important;
+}
+
+.share-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.share-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--omra-second);
+    color: var(--omra-second);
+    align-items: center;
+    transition: all .3s linear;
+}
+
+.share-icons a:hover {
+
+    background: var(--omra-second);
+    border: 1px solid var(--omra-second);
+    color: var(--omra-white);
+}
+
+.share-modal .modal-body .color-btn {
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.share-modal .modal-body .color-btn:hover {
+    background: var(--omra-base);
+    border-color: var(--omra-base);
+}
+
 .modal-dialog::-webkit-scrollbar {
     width: 2px;
 }
@@ -4621,9 +4715,9 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .modal .color-btn {
-    padding: 4px 20px;
+    padding: 12px 20px;
     font-size: var(--fs-12);
-    line-height: 40px;
+    line-height: normal;
     text-transform: uppercase;
 }
 

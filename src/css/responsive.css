@@ -84,8 +84,13 @@
 
     app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn {
         font-size: 12px;
+        height: 38px;
+        display: flex;
         padding: 10px 13px;
         background: var(--omra-second);
+        color: var(--omra-white);
+        align-items: center;
+        justify-content: center;
     }
 
     app-bookings-mob .search-sidebar-details .search-sidebar-header {
@@ -459,6 +464,15 @@
 
 
 @media (max-width: 575.98px) {
+    .share-modal .input-share {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .share-modal h6 {
+        margin-bottom: 10px !important;
+    }
+
     .search-section-title.page-title {
         background-position: 42% 0%;
     }
@@ -638,7 +652,7 @@
 
     .services-list .box .color-btn {
         width: 50% !important;
-        padding: 8px 10px !important;
+        padding: 12px 10px !important;
     }
     
     .service-details-collapse .card .flight-details-label {
