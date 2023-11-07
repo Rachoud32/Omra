@@ -41,7 +41,7 @@
     .service-summary-box .color-btn:hover,
     app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn:hover,
     .check-form .color-btn:hover,
-    .color-btn.filter-btn-mob:hover, {
+    .color-btn.filter-btn-mob:hover {
         background-color: var(--omra-second);
         border-color: var(--omra-second);
         color: var(--omra-white);
@@ -455,6 +455,10 @@
 
 
 @media (max-width: 575.98px) {
+    .search-section-title.page-title {
+        background-position: 42% 0%;
+    }
+
     .owl-nav {
         display: none;
     }
