@@ -2305,12 +2305,13 @@ label.category-item::before {
 }
 
 .subservice-list-title {
-    padding: 10px 20px 0px;
+    padding: 10px 20px 10px;
     font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
-    color: var(--omra-base);
+    color: var(--omra-white);
+    background: var(--omra-second);
 }
 
 .services-list .more-btn {
@@ -2799,11 +2800,11 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .search-sidebar-header .color-btn {
-    padding: 10px;
+    padding: 5px;
     font-size: var(--fs-18);
-    color: var(--omra-second);
-    background-color: var(--omra-white);
-    border: 0;
+    color: var(--omra-white);
+    background: transparent;
+    border: 1px solid var(--omra-white);
     line-height: normal;
     display: flex;
     align-items: center;
@@ -2812,8 +2813,8 @@ app-bookings-mob .search-sidebar-list {
 
 .search-sidebar-header .color-btn:hover,
 .search-sidebar-header .color-btn:active {
-    color: var(--omra-white);
-    background-color: var(--omra-base);
+    color: var(--omra-second);
+    background-color: var(--omra-white);
 }
 
 .search-sidebar-details .search-details {
@@ -4241,7 +4242,6 @@ app-bookings-mob .search-sidebar-list {
     display: none;
 }
 
-
 .flight-top-filter [type="radio"]:checked+label,
 .flight-top-filter [type="radio"]:not(:checked)+label {
     position: relative;
@@ -4278,7 +4278,7 @@ app-bookings-mob .search-sidebar-list {
     width: 0%;
     height: 3px;
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     background: var(--omra-base);
     transition: all .5s linear;
@@ -4306,6 +4306,7 @@ app-bookings-mob .search-sidebar-list {
 .flight-top-filter .service-filter-card p {
     margin-bottom: 0;
     font-size: var(--fs-12);
+    padding-right: 20px;
 }
 
 .flight-top-filter .filter-type-icon svg {
@@ -4612,13 +4613,14 @@ app-bookings-mob .search-sidebar-list {
 .share-modal .modal-header {
     border-radius: 0;
     padding: 20px 20px 15px;
+    border-color: var(--omra-light-gray);
 }
 
 .share-modal.modal .modal-content .modal-title {
     margin-bottom: 0;
     text-transform: uppercase;
     color: var(--omra-base);
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     font-size: var(--fs-18) !important;
     letter-spacing: 0.6px;
 }
@@ -4638,6 +4640,15 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-base);
 }
 
+.share-modal p {
+    font-size: var(--fs-14);
+    font-weight: 400;
+    line-height: normal !important;
+    padding: 10px 10px;
+    color: var(--omra-base);
+    border-bottom: 1px solid var(--omra-second);
+}
+
 .share-modal .input-share {
     font-size: 14px !important;
 }
@@ -4650,9 +4661,10 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .share-icons a {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
+    font-size: 22px;
     text-align: center;
     justify-content: center;
     background: transparent;
@@ -4663,7 +4675,6 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .share-icons a:hover {
-
     background: var(--omra-second);
     border: 1px solid var(--omra-second);
     color: var(--omra-white);
@@ -4677,6 +4688,16 @@ app-bookings-mob .search-sidebar-list {
 .share-modal .modal-body .color-btn:hover {
     background: var(--omra-base);
     border-color: var(--omra-base);
+}
+
+.share-modal .modal-body a svg {
+    width: 20px;
+    fill: var(--omra-second);
+    transition: all .3s linear;
+}
+
+.share-modal .modal-body a:hover svg {
+    fill: var(--omra-white);
 }
 
 .modal-dialog::-webkit-scrollbar {

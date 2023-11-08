@@ -2,6 +2,7 @@
     <div class="col-xl-4">
         <input type="radio" id="service-filter1" value="recommended" name="service-filter" class="d-none" [(ngModel)]="selectedFilter">
         <label for="service-filter1" (click)="checkFilter('service-filter1')" class="mb-2">
+            <div class="service-checkbox"></div>
             <div class="service-filter-card" [class.active]="selectedFilter === 'recommended' && true">
                 <div class="d-flex align-items-center">
                     <div class="filter-type-icon me-3">

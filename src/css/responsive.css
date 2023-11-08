@@ -89,6 +89,7 @@
         padding: 10px 13px;
         background: var(--omra-second);
         color: var(--omra-white);
+        border: 0;
         align-items: center;
         justify-content: center;
     }
@@ -589,7 +590,7 @@
     }
 
     .category-list {
-        flex-direction: row !important;
+        flex-direction: column !important;
     }
 
     .list-steps-container {
