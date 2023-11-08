@@ -4640,13 +4640,21 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-base);
 }
 
-.share-modal p {
+.share-modal .condition-block {
     font-size: var(--fs-14);
     font-weight: 400;
     line-height: normal !important;
-    padding: 10px 10px;
+    padding: 10px 0px;
     color: var(--omra-base);
-    border-bottom: 1px solid var(--omra-second);
+    border-bottom: 1px solid var(--omra-light-gray);
+}
+
+.share-modal .condition-block svg {
+    width: 60px;
+    height: 50px;
+    fill: var(--omra-base);
+    border: 1px solid var(--omra-base);
+    padding: 10px;
 }
 
 .share-modal .input-share {
