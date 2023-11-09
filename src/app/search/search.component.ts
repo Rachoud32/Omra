@@ -434,7 +434,14 @@ export class SearchComponent implements OnInit {
       transfer: false,
       summary: false,
     }
+    // const formGroupData = {
+    //   searchFormHotel: this.searchFormHotel?.value,
+    //   searchFormPackage: this.searchFormPackage?.value,
+    //   searchFormCustom: this.searchFormCustom?.value
+    // }
     localStorage.setItem('steps', JSON.stringify(data))
+    // localStorage.setItem('formGroupData', JSON.stringify(formGroupData))
+
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
 import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectConfig } from '@ng-select/ng-select';
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  @ViewChild('dropdownMenuOne') dropdownMenuOne?: ElementRef;
   SearchBar: boolean = true;
   category: string = '';
   dataBsTargetValue = ''
@@ -22,6 +24,28 @@ export class SearchBarComponent implements OnInit {
 
   formattedFromDate: string = ''
   formattedToDate: string = ''
+
+
+  ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  searchFormHotel!: FormGroup
+  selectedDate: any
+  searchType = 'hotel'
+  numAdults = 1
+  numAdultsHotel = 1
+  numAdultsCustom = 1
+  numChildren = 0
+  numChildrenHotel = 0
+  numChildrenCustom = 0
+  dropdownOpen = false;
+  hotels = [
+    { name: 'All Hotels' },
+    { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
+    { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
+    { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
+    { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
+  ];
+
+
   constructor(private router: Router, private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService) {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -50,6 +74,17 @@ export class SearchBarComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.searchFormHotel = new FormGroup({
+      hotelName: new FormControl(null, [Validators.required]),
+      fromDate: new FormControl({}),
+      toDate: new FormControl({}),
+      passengersHotel: new FormArray([new FormGroup({
+        adults: new FormControl(1),
+        childrenHotel: new FormArray([]),
+        room: new FormControl("Room 1"),
+      })]),
+    })
+
     const dates = JSON.parse(localStorage.getItem('dates') || '')
     this.fromDate = dates.fromDate;
     this.toDate = dates.toDate;
@@ -107,6 +142,81 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
+  get passengersHotel(): FormArray {
+    return this.searchFormHotel?.get('passengersHotel') as FormArray
+  }
 
+  childrenHotel(i: any): FormArray {
+    return this.passengersHotel.at(i)?.get('childrenHotel') as FormArray
+  }
+
+  addPassengerhotel() {
+    if (this.passengersHotel.length < 3) {
+      this.passengersHotel.push(new FormGroup({
+        adults: new FormControl(1),
+        childrenHotel: new FormArray([]),
+        room: new FormControl("Room " + (this.passengersHotel.length + 1)),
+      }))
+      this.numAdultsHotel += 1
+    }
+  }
+
+  deletePassengerhotel() {
+    if (this.passengersHotel.length > 1) {
+      this.numAdultsHotel = this.numAdultsHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('adults')?.value
+      this.numChildrenHotel = this.numChildrenHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('childrenHotel')?.value.length
+      this.passengersHotel.removeAt(this.passengersHotel.length - 1)
+    }
+  }
+
+  pluschildrenhotel(i: any) {
+    if (this.childrenHotel(i).length < 4) {
+      this.childrenHotel(i).push(new FormGroup({
+        age: new FormControl("")
+      }))
+      this.numChildrenHotel += 1
+    }
+  }
+
+  minuschildrenhotel(i: any) {
+    if (this.childrenHotel(i).length > 0) {
+      this.childrenHotel(i).removeAt(this.childrenHotel(i).length - 1)
+      this.numChildrenHotel -= 1
+    }
+  }
+
+  plusadultshotel(i: any) {
+    if (this.passengersHotel.at(i).get('adults')?.value < 5) {
+      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value + 1)
+      this.numAdultsHotel += 1
+    }
+  }
+
+  minusadultshotel(i: any) {
+    if (this.passengersHotel.at(i).get('adults')?.value > 1) {
+      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value - 1)
+      this.numAdultsHotel -= 1
+    }
+  }
+
+  toggleDropdown(index: string) {
+    if (index == '1') {
+      const dropdownMenuElement1 = this.dropdownMenuOne?.nativeElement;
+      dropdownMenuElement1.classList.remove('show')
+    }
+    // if (index == '2') {
+    //   const dropdownMenuElement2 = this.dropdownMenuTwo?.nativeElement;
+    //   dropdownMenuElement2.classList.remove('show')
+    // }
+    // if (index == '3') {
+    //   const dropdownMenuElement3 = this.dropdownMenuThree?.nativeElement;
+    //   dropdownMenuElement3.classList.remove('show')
+    // }
+    // if (index == '4') {
+    //   const dropdownMenuElement4 = this.dropdownMenuFour?.nativeElement;
+    //   dropdownMenuElement4.classList.remove('show')
+    // }
+
+  }
 
 }
