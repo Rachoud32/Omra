@@ -25,7 +25,6 @@ export class SearchBarComponent implements OnInit {
   formattedFromDate: string = ''
   formattedToDate: string = ''
 
-
   ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   searchFormHotel!: FormGroup
   selectedDate: any
@@ -85,11 +84,11 @@ export class SearchBarComponent implements OnInit {
       })]),
     })
 
-    const dates = JSON.parse(localStorage.getItem('dates') || '')
-    this.fromDate = dates.fromDate;
-    this.toDate = dates.toDate;
-    this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
-    this.formattedToDate = this.formatter.format(this.toDate).substring(5)
+    // const dates = JSON.parse(localStorage.getItem('dates') || '')
+    // this.fromDate = dates.fromDate;
+    // this.toDate = dates.toDate;
+    // this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
+    // this.formattedToDate = this.formatter.format(this.toDate).substring(5)
   }
 
   onDateSelection(date: NgbDate) {

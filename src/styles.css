@@ -1529,7 +1529,7 @@ label.category-item::before {
     color: var(--omra-gray);
 }
 
-.check-form .color-btn {
+.check-form .color-btn.search-btn {
     font-size: var(--fs-18);
     padding: 0;
     line-height: 36px;
@@ -4294,6 +4294,10 @@ app-bookings-mob .search-sidebar-list {
 
 .flight-top-filter [type="radio"]:checked+label .service-filter-card.active::before {
     width: 100%;
+}
+
+.flight-top-filter .service-filter-card  {
+    font-size: var(--fs-18);
 }
 
 .flight-top-filter .service-filter-card h5 {
