@@ -44,8 +44,8 @@ export class SearchComponent implements OnInit {
 
   ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   hoveredDate: NgbDate | null = null;
-  fromDate: NgbDate | null;
-  toDate: NgbDate | null;
+  fromDate!: NgbDate | null;
+  toDate!: NgbDate | null;
   searchFormHotel?: FormGroup
   searchFormPackage?: FormGroup
   searchFormCustom?: FormGroup
@@ -58,8 +58,8 @@ export class SearchComponent implements OnInit {
   numChildrenHotel = 0
   numChildrenCustom = 0
   dropdownOpen = false;
-  todayDate: NgbDate | null;
-
+  todayDate!: NgbDate;
+  today: any
   hotels = [
     { name: 'All Hotels' },
     { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
@@ -69,9 +69,10 @@ export class SearchComponent implements OnInit {
   ];
 
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService,) {
-    this.fromDate = calendar.getToday();
-    this.toDate = calendar.getToday();
-    this.todayDate = calendar.getToday();
+    // this.fromDate = calendar.getToday();
+    // this.toDate = calendar.getToday();
+    // this.todayDate = calendar.getToday();
+    this.today = calendar.getToday()
     this.config.notFoundText = 'Hotel not found';
   }
 
@@ -162,15 +163,23 @@ export class SearchComponent implements OnInit {
   checkDates() {
     if (this.fromDate == null || this.toDate == null) {
       this.toastr.info("Please select both arrival and departure date.")
-
       return false
     } else {
+      let data = {
+        fromDate: this.fromDate,
+        toDate: this.toDate,
+      }
+      localStorage.setItem('dates', JSON.stringify(data))
       return true
     }
   }
   applyDate(date: NgbDateStruct): void {
-    this.selectedDate = date;
-
+    this.selectedDate = date
+    let data = {
+      fromDate: this.fromDate,
+      toDate: this.toDate,
+    }
+    localStorage.setItem('dates', JSON.stringify(data))
   }
   /***************************
       Hotel Section

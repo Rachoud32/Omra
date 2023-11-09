@@ -116,7 +116,8 @@
                                         #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                         (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
                                         style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                        tabindex="-1" [footerTemplate]="footerTemplate" #d="ngbDatepicker" />
+                                        [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate"
+                                        #d="ngbDatepicker" />
                                     <ng-template #t let-date let-focused="focused">
                                         <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
                                             [class.faded]="isHovered(date) || isInside(date)"
@@ -127,14 +128,14 @@
                                     <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
                                         <div class="datepicker-footer">
                                             <button class="color-btn validate-btn"
-                                                (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                                                (click)="checkDates() && d.close()">Confirm</button>
                                         </div>
                                     </ng-template>
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary d-flex align-items-center date-picker-btn" (click)="datepicker.toggle()"
-                                type="button">
+                            <button class="btn btn-primary d-flex align-items-center date-picker-btn"
+                                (click)="datepicker.toggle()" type="button">
                                 <div class="picker flex-grow-1" [class.text-muted]="
                                     formatter.format(fromDate) === formatter.format(todayDate) &&
                                     formatter.format(toDate) === formatter.format(todayDate) && 
@@ -156,7 +157,7 @@
                                             ? "Departure Date"
                                             : formatter.format(toDate)
                                             }}
-                                        </span>    
+                                        </span>
                                     </div>
                                 </div>
                             </button>
@@ -769,8 +770,9 @@
                                 </ng-template>
                             </div>
                         </div>
-                        
-                        <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()" type="button">
+
+                        <button class="btn btn-primary d-flex date-picker-btn" (click)="datepicker.toggle()"
+                            type="button">
                             <div class="picker flex-grow-1" [class.text-muted]="
                                     formatter.format(fromDate) === formatter.format(todayDate) &&
                                     formatter.format(toDate) === formatter.format(todayDate) && 
@@ -871,7 +873,8 @@
                                                 <div
                                                     class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
                                                     <div class="nights-label">Number of Nights</div>
-                                                    <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                                    <div
+                                                        class="d-flex object-quantity passengers-nbr align-items-center">
                                                         <div class="minus" (click)="minusNightsFirstDestionation()">
                                                             -
                                                         </div>
@@ -918,7 +921,8 @@
                                                             -
                                                         </div>
                                                         <div class="quantity">
-                                                            {{ searchFormCustom.get("secondDestination.nights")?.value }}
+                                                            {{ searchFormCustom.get("secondDestination.nights")?.value
+                                                            }}
                                                         </div>
                                                         <div class="plus" (click)="plusNightsSecondDestionation()">
                                                             +
@@ -928,7 +932,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn dropdown-btn m-3" (click)="toggleDropdown('4')">Confirm</button>
+                                    <button class="color-btn validate-btn dropdown-btn m-3"
+                                        (click)="toggleDropdown('4')">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -1085,7 +1090,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('3')">Confirm</button>
+                                <button class="color-btn validate-btn mt-3"
+                                    (click)="toggleDropdown('3')">Confirm</button>
                             </div>
                         </div>
                     </div>

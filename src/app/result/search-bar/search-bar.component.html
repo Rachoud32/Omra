@@ -50,6 +50,53 @@
           <div class="d-flex justify-content-end align-items-center search-results-list">
             <div class="search-form-edit d-flex align-items-center gap-2">
               <div class="me-4"><i class="icon-line-calendar"></i>16-08 | 18-08</div>
+              <div class="dp-hidden position-absolute calendar">
+                <div>
+                  <input name="datepicker" class="calendar-input" ngbDatepicker #datepicker="ngbDatepicker"
+                    [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!" [minDate]="today"
+                    tabindex="-1" [footerTemplate]="footerTemplate" #d="ngbDatepicker" />
+                  <ng-template #t let-date let-focused="focused">
+                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                      [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                      (mouseleave)="hoveredDate = null">
+                      {{ date.day }}
+                    </span>
+                  </ng-template>
+                  <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
+                    <div class="datepicker-footer">
+                      <button class="color-btn validate-btn" (click)="checkDates() && d.close()">Confirm</button>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+              <button class="btn btn-primary d-flex align-items-center date-picker-btn" (click)="datepicker.toggle()"
+                type="button">
+                <div class="picker flex-grow-1" [class.text-muted]="
+                                    formatter.format(fromDate) === formatter.format(todayDate) &&
+                                    formatter.format(toDate) === formatter.format(todayDate) && 
+                                    formatter.format(toDate) == formatter.format(todayDate) ||
+                                    !formatter.format(toDate)
+                                ">
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="icon-line-calendar"></i></span>
+                    <span class="m-0 pe-1">{{
+                      formatter.format(fromDate) == formatter.format(todayDate)
+                      ? ""
+                      : formattedFromDate
+                      }}
+                    </span>
+                    <span class="pe-0 ps-0"><i class="icon-line-arrow-right"></i></span>
+                    <span class="m-0 ps-1"> {{
+                      formatter.format(toDate) == formatter.format(todayDate) ||
+                      !formatter.format(toDate)
+                      ? ""
+                      : formattedToDate
+                      }}
+                    </span>
+                  </div>
+                </div>
+              </button>
               <div><i class="icon-line-users"></i>1 Room | 4 guests</div>
             </div>
             <div class="search-form-btns d-flex align-items-center gap-2">
