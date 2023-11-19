@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
     nav: true
   }
 
-  ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  ageNumbers: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   hoveredDate: NgbDate | null = null;
   fromDate!: NgbDate | null;
   toDate!: NgbDate | null;

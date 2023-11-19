@@ -116,8 +116,8 @@
                                         #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                         (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
                                         style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                        [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate"
-                                        #d="ngbDatepicker" />
+                                        [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate" [placement]="'bottom-start'"
+                                        [positionTarget]="buttoncalendar1" #d="ngbDatepicker" />
                                     <ng-template #t let-date let-focused="focused">
                                         <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
                                             [class.faded]="isHovered(date) || isInside(date)"
@@ -126,7 +126,7 @@
                                         </span>
                                     </ng-template>
                                     <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
-                                        <div class="datepicker-footer">
+                                        <div class="datepicker-footer d-flex justify-content-end">
                                             <button class="color-btn validate-btn"
                                                 (click)="checkDates() && d.close()">Confirm</button>
                                         </div>
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary d-flex align-items-center date-picker-btn"
+                            <button #buttoncalendar1 class="btn btn-primary d-flex align-items-center date-picker-btn"
                                 (click)="datepicker.toggle()" type="button">
                                 <div class="picker flex-grow-1" [class.text-muted]="
                                     formatter.format(fromDate) === formatter.format(todayDate) &&
@@ -150,7 +150,7 @@
                                             : formatter.format(fromDate)
                                             }}
                                         </span>
-                                        <span class="pe-0 ps-0">-</span>
+                                        <span class="pe-1 ps-1"><i class="icon-line-arrow-right"></i></span>
                                         <span class="m-0 ps-1"> {{
                                             formatter.format(toDate) == formatter.format(todayDate) ||
                                             !formatter.format(toDate)
@@ -287,8 +287,7 @@
                                                                                 <p class="m-0">
                                                                                     {{
                                                                                     childHotel.get("age")?.value === ""
-                                                                                    ? "Less
-                                                                                    than one year"
+                                                                                    ? "1"
                                                                                     : childHotel.get("age")?.value
                                                                                     }}
                                                                                 </p>
@@ -319,8 +318,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn mt-3"
-                                        (click)="toggleDropdown('1')">Confirm</button>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -643,8 +643,7 @@
                                                                                 <p class="m-0">
                                                                                     {{
                                                                                     child.get("age")?.value === ""
-                                                                                    ? "Less
-                                                                                    than one year"
+                                                                                    ? "1"
                                                                                     : child.get("age")?.value
                                                                                     }}
                                                                                 </p>
@@ -675,8 +674,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn mt-3"
-                                        (click)="toggleDropdown('2')">Confirm</button>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('2')">Confirm</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -753,7 +753,7 @@
                                 <input name="datepicker" class="calendar-input" ngbDatepicker
                                     #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                     (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
-                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
+                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!" [minDate]="today"
                                     tabindex="-1" [footerTemplate]="footerTemplate1" #d="ngbDatepicker" />
                                 <ng-template #t1 let-date let-focused="focused">
                                     <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
@@ -763,7 +763,7 @@
                                     </span>
                                 </ng-template>
                                 <ng-template #footerTemplate1 let-date="date" let-datepicker="datepicker">
-                                    <div class="datepicker-footer">
+                                    <div class="datepicker-footer d-flex justify-content-end">
                                         <button class="color-btn validate-btn"
                                             (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
                                     </div>
@@ -787,7 +787,7 @@
                                         : formatter.format(fromDate)
                                         }}
                                     </span>
-                                    <span class="pe-0 ps-0">-</span>
+                                    <span class="pe-1 ps-1"><i class="icon-line-arrow-right"></i></span>
                                     <span class="m-0 ps-1">{{
                                         formatter.format(toDate) == formatter.format(todayDate) ||
                                         !formatter.format(toDate)
@@ -932,8 +932,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="color-btn validate-btn dropdown-btn m-3"
-                                        (click)="toggleDropdown('4')">Confirm</button>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="color-btn validate-btn dropdown-btn m-3" (click)="toggleDropdown('4')">Confirm</button>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
@@ -1058,8 +1059,7 @@
                                                                             <p class="m-0">
                                                                                 {{
                                                                                 child.get("age")?.value === ""
-                                                                                ? "Less
-                                                                                than one year"
+                                                                                ? "1"
                                                                                 : child.get("age")?.value
                                                                                 }}
                                                                             </p>
@@ -1090,8 +1090,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="color-btn validate-btn mt-3"
-                                    (click)="toggleDropdown('3')">Confirm</button>
+                                <div class="d-flex justify-content-end">
+                                    <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('3')">Confirm</button>
+                                </div>    
                             </div>
                         </div>
                     </div>

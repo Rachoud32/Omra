@@ -132,6 +132,15 @@
 }
 
 @media (max-width: 991.98px) {	
+
+    .travel-path {
+        flex-direction: column;
+    }
+    
+    .transfer-top-filter.top-filter-section .road-filter-item {
+        width: 100%;
+    }
+
     .service-summary-box .color-btn {
         width: 100%;
         padding: 7px 10px;
@@ -141,7 +150,7 @@
         flex-wrap: wrap;
     }
 
-    .side-filter-tags {
+    .top-filter-sector {
         flex-wrap: nowrap;
     }
 
@@ -158,13 +167,22 @@
         margin-right: 0 !important;
     }
     
-    .check-form .color-btn {
-        margin-top: 10px;
-        width: 40px;
+    .search-result-counter {
+        margin-bottom: 10px;
     }
-    
-    .check-form .color-btn.ms-4 {
-        margin-left: 0 !important;
+
+    .search-result-edit .search-results-list {
+        gap: 5px !important;
+        align-items: start !important;
+        justify-content: start !important;
+    }
+
+    .search-result-edit .search-results-list .date-picker-btn, .search-result-edit .search-results-list .dropdown-guests {
+        margin-bottom: 5px;
+    }
+
+    .search-form-btns {
+        width: 100%;
     }
 
     .destination-dropdown {
@@ -173,6 +191,10 @@
 
     .destination-dropdown div:first-child .border-end {
         border: 0;
+    }
+
+    .search-form-edit .calendar {
+        left: 20px;
     }
 
     .ground-services-list .ground-service {
@@ -211,7 +233,7 @@
 
     .services-list .service {
         padding: 0 100px !important;
-        min-height: 372px;
+        min-height: 285px;
     }
 
     .services-list .service-details {
@@ -413,7 +435,7 @@
         border-right: 0 !important;
     }
     
-    .top-filter-section .side-filter-tags {
+    .top-filter-section .top-filter-sector {
         display: none !important;
     }
 
@@ -465,6 +487,24 @@
 
 
 @media (max-width: 575.98px) {
+    .calendar .dropdown-menu.show {
+        padding: 7px 10px;
+    }
+
+    .custom-day {
+        padding: 0px 0px !important;
+        font-size: var(--fs-13);
+    }
+
+    .select-age p {
+        font-size: var(--fs-12);
+    }
+    
+    .search-form-edit .calendar {
+        top: 8px;
+        left: 15px;
+    }
+
     .share-modal .input-share {
         width: 100%;
         margin-bottom: 10px;
@@ -507,7 +547,14 @@
     }
 
     .filter-btn-mob {
-        display: block;
+        font-size: var(--fs-18);
+        padding: 0 !important;
+        display: flex;
+        width: 43px !important;
+        height: 43px !important;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
 
     .check-form .search-form-edit {
@@ -522,15 +569,28 @@
         display: none;
     }
 
-    .check-form .color-btn {
-        margin: auto 0;
-        width: 40px;
-    }
-
     .check-form .search-results-list {
         flex-direction: row !important;
-        align-items: center !important;
-        flex-wrap: wrap;
+        align-items: end !important;
+        flex-wrap: nowrap;
+    }
+
+    .check-form .search-form-btns {
+        justify-content: end !important;
+        align-items: end !important;
+    }
+
+    .search-bar .input-group span, .input-group .destination-input-content, .search-results p {
+        padding: 7px;
+        font-size: var(--fs-14);
+    }
+
+    .search-bar .input-group .input-group-text {
+        padding: 0px 10px !important;
+    }
+
+    .search-result-edit .search-results-list .dropdown-guests {
+        margin-bottom: 0px;
     }
 
     .carousel-inner:before {
@@ -574,7 +634,7 @@
         padding: 20px;
     }
 
-    .side-filter-tags {
+    .top-filter-sector {
         flex-wrap: wrap;
     }
 
@@ -658,10 +718,6 @@
     
     .service-details-collapse .card .flight-details-label {
         width: 100%;
-    }
-    
-    .d-flex.justify-content-end.align-items-center.search-results-list, .search-results p {
-        font-size: var(--fs-14);
     }
 
     .d-flex.align-items-start.gap-3 {
@@ -838,10 +894,6 @@
         font-size: 13px;
     }
 
-    .picker .input-group span {
-        padding: 12px 10px;
-    }
-
     .input-group p {
         letter-spacing: 0;
     }
@@ -892,7 +944,7 @@
 
     .services-list .service {
         padding: 0 40px !important;
-        min-height: 262px;
+        min-height: 200px;
     }
 
     .hotel-features-content-limit {

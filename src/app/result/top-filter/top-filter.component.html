@@ -1,110 +1,92 @@
 <div class="top-filter-section d-flex align-items-center justify-content-between gap-3 pb-3">
-  <div class="side-filter-tags d-flex align-items-center gap-2">
-    <!-- <div class="filter-content d-flex align-items-center gap-2">
-      <i class="icon-line-filter"></i>
-      <div class="filter-label me-2">Filter by</div>
-    </div> -->
-    <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="stopovers" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="stops.length>0">
-      <i class="icon-line-alert-octagon"></i>
-      <span>Stopovers</span>
-    </button>
-    <ng-template #stopovers>
-      <div>
-        <ul>
-          <li class="filter-list-item" (click)="checkStopovers('Direct flight')"><input type="checkbox" name="stopover"
-              value='Direct flight' [checked]="stops.includes('Direct flight')"> <label for="">Direct flight</label>
-          </li>
-          <li class="filter-list-item" (click)="checkStopovers('1 stop')"><input type="checkbox" name="stopover"
-              value='1 stop' [checked]="stops.includes('1 stop')"> <label for="">1 stop</label></li>
-          <li class="filter-list-item" (click)="checkStopovers('2 stops')"><input type="checkbox" name="stopover"
-              value='2 stops' [checked]="stops.includes('2 stops')"> <label for="">2 stops</label></li>
-        </ul>
-      </div>
-    </ng-template>
+  <div class="top-filter-sector d-flex align-items-center gap-2">
+    <div class="filter-dropdown-item dropdown">
+      <button type="button" class="color-btn w-100 d-flex flex-column align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" [class.active-filter]="stops.length>0">
+        <i class="icon-line-alert-octagon"></i>
+        <span>Stopovers</span>
+      </button>
+      <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
+        <li class="filter-list-item" (click)="checkStopovers('Direct flight')"><input type="checkbox" name="stopover"
+            value='Direct flight' [checked]="stops.includes('Direct flight')"> <label for="">Direct flight</label>
+        </li>
+        <li class="filter-list-item" (click)="checkStopovers('1 stop')"><input type="checkbox" name="stopover"
+            value='1 stop' [checked]="stops.includes('1 stop')"> <label for="">1 stop</label></li>
+        <li class="filter-list-item" (click)="checkStopovers('2 stops')"><input type="checkbox" name="stopover"
+            value='2 stops' [checked]="stops.includes('2 stops')"> <label for="">2 stops</label></li>
+      </ul>
+    </div>
 
-    <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="airline" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="airlines.length>0">
-      <i class="icon-line-send"></i>
-      <span>Airline Co.</span>
-    </button>
-    <ng-template #airline>
-      <div>
-        <ul>
-          <li class="filter-list-item" (click)="checkAirlines('Turkish Airlines')"><input type="checkbox" name="classe"
-              value='Turkish Airlines' [checked]="airlines.includes('Turkish Airlines')"> <label for="">Turkish Airlines</label></li>
-          <li class="filter-list-item" (click)="checkAirlines('Nouvelair')"><input type="checkbox" name="classe"
-              value='EconoNouvelairmic' [checked]="airlines.includes('Nouvelair')"> <label for="">Nouvelair</label></li>
-          <li class="filter-list-item" (click)="checkAirlines('Qatar Airways')"><input type="checkbox" name="classe"
-              value='Qatar Airways' [checked]="airlines.includes('Qatar Airways')"> <label for="">Qatar Airways</label>
-          </li>
-          <li class="filter-list-item" (click)="checkAirlines('Air France')"><input type="checkbox" name="classe"
-              value='Air France' [checked]="airlines.includes('Air France')"> <label for="">Air France</label>
-          </li>
-        </ul>
-      </div>
-    </ng-template>
+    <div class="filter-dropdown-item dropdown">
+      <button type="button" class="color-btn w-100 d-flex flex-column align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" [class.active-filter]="airlines.length>0">
+        <i class="icon-line-send"></i>
+        <span>Airline Co.</span>
+      </button>
+      <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
+        <li class="filter-list-item" (click)="checkAirlines('Turkish Airlines')"><input type="checkbox" name="classe"
+            value='Turkish Airlines' [checked]="airlines.includes('Turkish Airlines')"> <label for="">Turkish Airlines</label></li>
+        <li class="filter-list-item" (click)="checkAirlines('Nouvelair')"><input type="checkbox" name="classe"
+            value='EconoNouvelairmic' [checked]="airlines.includes('Nouvelair')"> <label for="">Nouvelair</label></li>
+        <li class="filter-list-item" (click)="checkAirlines('Qatar Airways')"><input type="checkbox" name="classe"
+            value='Qatar Airways' [checked]="airlines.includes('Qatar Airways')"> <label for="">Qatar Airways</label>
+        </li>
+        <li class="filter-list-item" (click)="checkAirlines('Air France')"><input type="checkbox" name="classe"
+            value='Air France' [checked]="airlines.includes('Air France')"> <label for="">Air France</label>
+        </li>
+      </ul>
+    </div>
 
-    <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="class" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="classes.length>0">
-      <i class="icon-line-star"></i>
-      <span>Class</span>
-    </button>
-    <ng-template #class>
-      <div>
-        <ul>
-          <li class="filter-list-item" (click)="checkClasses('Economic')"><input type="checkbox" name="classe"
-              value='Economic' [checked]="classes.includes('Economic')"> <label for="">Economic</label></li>
-          <li class="filter-list-item" (click)="checkClasses('Business')"><input type="checkbox" name="classe"
-              value='Business' [checked]="classes.includes('Business')"> <label for="">Business</label></li>
-          <li class="filter-list-item" (click)="checkClasses('First')"><input type="checkbox" name="classe"
-              value='First' [checked]="classes.includes('First')"> <label for="">First</label></li>
-        </ul>
-      </div>
-    </ng-template>
+    <div class="filter-dropdown-item dropdown">
+      <button type="button" class="color-btn w-100 d-flex flex-column align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" [class.active-filter]="classes.length>0">
+        <i class="icon-line-star"></i>
+        <span>Class</span>
+      </button>
+      <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
+        <li class="filter-list-item" (click)="checkClasses('Economic')"><input type="checkbox" name="classe"
+            value='Economic' [checked]="classes.includes('Economic')"> <label for="">Economic</label></li>
+        <li class="filter-list-item" (click)="checkClasses('Business')"><input type="checkbox" name="classe"
+            value='Business' [checked]="classes.includes('Business')"> <label for="">Business</label></li>
+        <li class="filter-list-item" (click)="checkClasses('First')"><input type="checkbox" name="classe"
+            value='First' [checked]="classes.includes('First')"> <label for="">First</label></li>
+      </ul>
+    </div>
 
-    <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="departure" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="departureTimes.length>0">
-      <i class="icon-line-clock"></i>
-      <span>Departure Time</span>
-    </button>
-    <ng-template #departure>
-      <div>
-        <ul>
-          <li class="filter-list-item" (click)="checkDepartureTimes('00:00 - 04:59')"> <input type="checkbox"
-              name="departureTime" value='00:00 - 04:59' [checked]="departureTimes.includes('00:00 - 04:59')"> <label
-              for="">00:00 - 04:59</label></li>
-          <li class="filter-list-item" (click)="checkDepartureTimes('05:00 - 11:59')"> <input type="checkbox"
-              name="departureTime" value='05:00 - 11:59' [checked]="departureTimes.includes('05:00 - 11:59')"> <label
-              for="">05:00 - 11:59</label></li>
-          <li class="filter-list-item" (click)="checkDepartureTimes('17:00 - 23:59')"> <input type="checkbox"
-              name="departureTime" value='17:00 - 23:59' [checked]="departureTimes.includes('17:00 - 23:59')"> <label
-              for="">17:00 - 23:59</label></li>
-        </ul>
-      </div>
-    </ng-template>
+    <div class="filter-dropdown-item dropdown">
+      <button type="button" class="color-btn w-100 d-flex flex-column align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"
+        [class.active-filter]="departureTimes.length>0">
+        <i class="icon-line-clock"></i>
+        <span>Departure Time</span>
+      </button>
+      <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
+        <li class="filter-list-item" (click)="checkDepartureTimes('00:00 - 04:59')"> <input type="checkbox"
+            name="departureTime" value='00:00 - 04:59' [checked]="departureTimes.includes('00:00 - 04:59')"> <label
+            for="">00:00 - 04:59</label></li>
+        <li class="filter-list-item" (click)="checkDepartureTimes('05:00 - 11:59')"> <input type="checkbox"
+            name="departureTime" value='05:00 - 11:59' [checked]="departureTimes.includes('05:00 - 11:59')"> <label
+            for="">05:00 - 11:59</label></li>
+        <li class="filter-list-item" (click)="checkDepartureTimes('17:00 - 23:59')"> <input type="checkbox"
+            name="departureTime" value='17:00 - 23:59' [checked]="departureTimes.includes('17:00 - 23:59')"> <label
+            for="">17:00 - 23:59</label></li>
+      </ul>
+    </div>
 
-    <button type="button" class="color-btn d-flex flex-column align-items-center" placement="bottom-left"
-      [ngbPopover]="arrival" popoverTitle="Stopovers" popoverClass="custom-popover" data-bs-html="true" [class.active-filter]="arrivalTimes.length>0">
-      <i class="icon-line-clock"></i>
-      <span>Arrival Time</span>
-    </button>
-    <ng-template #arrival>
-      <div>
-        <ul>
-          <li class="filter-list-item" (click)="checkArrivalTimes('00:00 - 04:59')"><input type="checkbox"
-              name="arrivalTime" value='00:00 - 04:59' [checked]="arrivalTimes.includes('00:00 - 04:59')"> <label
-              for="">00:00 - 04:59</label></li>
-          <li class="filter-list-item" (click)="checkArrivalTimes('05:00 - 11:59')"> <input type="checkbox"
-              name="arrivalTime" value='05:00 - 11:59' [checked]="arrivalTimes.includes('05:00 - 11:59')"> <label
-              for="">05:00 - 11:59</label></li>
-          <li class="filter-list-item" (click)="checkArrivalTimes('17:00 - 23:59')"><input type="checkbox"
-              name="arrivalTime" value='17:00 - 23:59' [checked]="arrivalTimes.includes('17:00 - 23:59')"> <label
-              for="">17:00 - 23:59</label></li>
-        </ul>
-      </div>
-    </ng-template>
-
+    <div class="filter-dropdown-item dropdown">
+      <button type="button" class="color-btn w-100 d-flex flex-column align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"
+        [class.active-filter]="arrivalTimes.length>0">
+        <i class="icon-line-clock"></i>
+        <span>Arrival Time</span>
+      </button>
+      <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
+        <li class="filter-list-item" (click)="checkArrivalTimes('00:00 - 04:59')"><input type="checkbox"
+            name="arrivalTime" value='00:00 - 04:59' [checked]="arrivalTimes.includes('00:00 - 04:59')"> <label
+            for="">00:00 - 04:59</label></li>
+        <li class="filter-list-item" (click)="checkArrivalTimes('05:00 - 11:59')"> <input type="checkbox"
+            name="arrivalTime" value='05:00 - 11:59' [checked]="arrivalTimes.includes('05:00 - 11:59')"> <label
+            for="">05:00 - 11:59</label></li>
+        <li class="filter-list-item" (click)="checkArrivalTimes('17:00 - 23:59')"><input type="checkbox"
+            name="arrivalTime" value='17:00 - 23:59' [checked]="arrivalTimes.includes('17:00 - 23:59')"> <label
+            for="">17:00 - 23:59</label></li>
+      </ul>
+    </div>
   </div>
 
   <div class="sorting-content d-flex align-items-center">

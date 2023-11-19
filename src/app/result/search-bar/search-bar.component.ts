@@ -25,7 +25,7 @@ export class SearchBarComponent implements OnInit {
   formattedFromDate: string = ''
   formattedToDate: string = ''
 
-  ageNumbers: any[] = ['Less than one year', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  ageNumbers: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   searchFormHotel!: FormGroup
   selectedDate: any
   searchType = 'hotel'
@@ -63,14 +63,14 @@ export class SearchBarComponent implements OnInit {
           this.ariaControls = 'destinationfilter';
           this.category = 'room(s)'
         }
-        if (val.url === "/result/first-transfer") {
+        if (val.url === "/result/transfer") {
           this.dataBsTargetValue = '#transferfilter';
           this.ariaControls = 'transferfilter';
           this.category = 'vehicle(s)'
         }
       }
     });
-
+    this.today = calendar.getToday()
   }
   ngOnInit(): void {
     this.searchFormHotel = new FormGroup({
@@ -84,21 +84,31 @@ export class SearchBarComponent implements OnInit {
       })]),
     })
 
-    // const dates = JSON.parse(localStorage.getItem('dates') || '')
-    // this.fromDate = dates.fromDate;
-    // this.toDate = dates.toDate;
-    // this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
-    // this.formattedToDate = this.formatter.format(this.toDate).substring(5)
+    const dates = JSON.parse(localStorage.getItem('dates') || '{}')
+    this.fromDate = dates.fromDate;
+    this.toDate = dates.toDate;
+    this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
+    this.formattedToDate = this.formatter.format(this.toDate).substring(5)
   }
 
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
+      this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
     } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
       this.toDate = date;
+      this.formattedToDate = this.formatter.format(this.toDate).substring(5)
     } else {
       this.toDate = null;
       this.fromDate = date;
+      this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
+    }
+    if (this.fromDate && this.toDate) {
+      let data = {
+        fromDate: this.fromDate,
+        toDate: this.toDate,
+      }
+      localStorage.setItem('dates', JSON.stringify(data))
     }
   }
 
@@ -132,11 +142,6 @@ export class SearchBarComponent implements OnInit {
       this.toastr.info("Please select both arrival and departure date.")
       return false
     } else {
-      let data = {
-        fromDate: this.fromDate,
-        toDate: this.toDate,
-      }
-      localStorage.setItem('dates', JSON.stringify(data))
       return true
     }
   }
@@ -203,19 +208,6 @@ export class SearchBarComponent implements OnInit {
       const dropdownMenuElement1 = this.dropdownMenuOne?.nativeElement;
       dropdownMenuElement1.classList.remove('show')
     }
-    // if (index == '2') {
-    //   const dropdownMenuElement2 = this.dropdownMenuTwo?.nativeElement;
-    //   dropdownMenuElement2.classList.remove('show')
-    // }
-    // if (index == '3') {
-    //   const dropdownMenuElement3 = this.dropdownMenuThree?.nativeElement;
-    //   dropdownMenuElement3.classList.remove('show')
-    // }
-    // if (index == '4') {
-    //   const dropdownMenuElement4 = this.dropdownMenuFour?.nativeElement;
-    //   dropdownMenuElement4.classList.remove('show')
-    // }
-
   }
 
 }

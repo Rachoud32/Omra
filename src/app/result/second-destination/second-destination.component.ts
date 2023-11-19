@@ -74,7 +74,7 @@ export class SecondDestinationComponent {
         summary: false,
       }
       localStorage.setItem('steps', JSON.stringify(data))
-      window.location.href = '/result/first-transfer';
+      window.location.href = '/result/transfer';
     } else {
       this.toastr.info("Please select a room for your 2nd destination before proceeding.")
     }

@@ -4,7 +4,7 @@ import { ResultComponent } from './result.component';
 import { FlightComponent } from './flight/flight.component';
 import { FirstDestinationComponent } from './first-destination/first-destination.component';
 import { SecondDestinationComponent } from './second-destination/second-destination.component';
-import { FirstTransferComponent } from './first-transfer/first-transfer.component';
+import { TransferComponent } from './transfer/transfer.component';
 import { SummaryComponent } from './summary/summary.component';
 import { MotamarInfosComponent } from './motamar-infos/motamar-infos.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'flight', component: FlightComponent },
       { path: 'first-destination', component: FirstDestinationComponent },
       { path: 'second-destination', component: SecondDestinationComponent },
-      { path: 'first-transfer', component: FirstTransferComponent },
+      { path: 'transfer', component: TransferComponent },
       { path: 'summary', component: SummaryComponent },
       { path: 'motamar-informations', component: MotamarInfosComponent },
       { path: 'payment', component: PaymentComponent },

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,12 +14,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
-import { AppRoutingModule } from '../app-routing.module';
 import { ResultRoutingModule } from './result-routing.module';
 import { ResultComponent } from './result.component';
 import { FlightComponent } from '../result/flight/flight.component';
 import { FirstDestinationComponent } from '../result/first-destination/first-destination.component';
-import { FirstTransferComponent } from '../result/first-transfer/first-transfer.component';
 import { GroundServicesComponent } from '../result/ground-services/ground-services.component';
 import { SecondDestinationComponent } from '../result/second-destination/second-destination.component';
 import { TopFilterComponent } from '../result/top-filter/top-filter.component';
@@ -38,13 +36,13 @@ import { TransferPeriodTopFilterComponent } from '../result/transfer-period-top-
 import { TransferFirstFilterComponent } from '../result/transfer-first-filter/transfer-first-filter.component';
 import { DestinationTopFilterComponent } from '../result/destination-top-filter/destination-top-filter.component';
 import { BookingsMobComponent } from '../result/bookings-mob/bookings-mob.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
     ResultComponent,
     FlightComponent,
     FirstDestinationComponent,
-    FirstTransferComponent,
     GroundServicesComponent,
     SecondDestinationComponent,
     TopFilterComponent,
@@ -63,6 +61,7 @@ import { BookingsMobComponent } from '../result/bookings-mob/bookings-mob.compon
     TransferFirstFilterComponent,
     DestinationTopFilterComponent,
     BookingsMobComponent,
+    TransferComponent,
   ],
   imports: [
     CommonModule,

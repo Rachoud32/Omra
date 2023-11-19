@@ -1,8 +1,8 @@
 <div class="row" *ngIf="SearchBar" id="searchbar" #searchbar>
   <div class="col-xl-12 pt-5">
-    <form id="search-form" class="check-form search-results">
+    <form id="search-form" class="check-form search-bar search-results">
       <div class="row align-items-center">
-        <div class="col-xl-5 col-lg-5 search-result-counter">
+        <div class="col-xl-5 search-result-counter">
           <div class="d-flex align-items-center gap-2">
             <div class="search-bar-icon">
               <div *ngIf="category==='room(s)'">
@@ -46,12 +46,11 @@
             <p class="mb-0">3 <span>{{category}}</span> Found according to your search.</p>
           </div>
         </div>
-        <div class="col-xl-7 col-lg-7">
-          <div class="d-flex justify-content-end align-items-center search-results-list">
-            <div class="search-form-edit d-flex align-items-center gap-2">
-              <div class="me-4"><i class="icon-line-calendar"></i>16-08 | 18-08</div>
-              <div><i class="icon-line-users"></i>1 Room | 4 guests</div>
-              <!-- <div class="dp-hidden position-absolute calendar">
+        
+        <div class="col-xl-7 search-result-edit">
+          <div class="d-flex justify-content-end align-items-center search-results-list gap-3">
+            <div class="search-form-edit d-flex align-items-center justify-content-end gap-3">
+              <div class="dp-hidden position-absolute calendar">
                 <div>
                   <input name="datepicker" class="calendar-input" ngbDatepicker #datepicker="ngbDatepicker"
                     [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
@@ -65,7 +64,7 @@
                     </span>
                   </ng-template>
                   <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
-                    <div class="datepicker-footer">
+                    <div class="datepicker-footer d-flex justify-content-end">
                       <button class="color-btn validate-btn" (click)="checkDates() && d.close()">Confirm</button>
                     </div>
                   </ng-template>
@@ -80,40 +79,34 @@
                                     !formatter.format(toDate)
                                 ">
                   <div class="input-group">
-                    <span class="input-group-text"><i class="icon-line-calendar"></i></span>
+                    <span class="input-group-text"><i class="icon-line-calendar "></i></span>
                     <span class="m-0 pe-1">{{
                       formatter.format(fromDate) == formatter.format(todayDate)
-                      ? ""
+                      ? "From"
                       : formattedFromDate
                       }}
                     </span>
-                    <span class="pe-0 ps-0"><i class="icon-line-arrow-right"></i></span>
+                    <span class="pe-1 ps-1"><i class="icon-line-arrow-right"></i></span>
                     <span class="m-0 ps-1"> {{
                       formatter.format(toDate) == formatter.format(todayDate) ||
                       !formatter.format(toDate)
-                      ? ""
+                      ? "to"
                       : formattedToDate
                       }}
                     </span>
                   </div>
                 </div>
               </button>
+
               <div [formGroup]="searchFormHotel">
-                <div class="dropdown dropdown-guests w-100" #dropdownElement>
-                  <button [class.selected-item]="
-      searchFormHotel.value.passengersHotel.length != 1 ||
-      numAdultsHotel != 1 ||
-      numChildrenHotel != 0
-    " class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                    aria-expanded="false">
-                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                      <div class="input-group d-flex">
+                <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
+                  <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
+                  aria-expanded="false"[class.selected-item]="searchFormHotel.value.passengersHotel.length != 1 || numAdultsHotel != 1 || numChildrenHotel != 0" >
+                    <div class="d-flex align-items-center">
+                      <div class="input-group d-flex flex-nowrap align-items-center">
                         <span class="input-group-text"><i class="icon-line-users"></i></span>
-                        <p class="m-0" [class.text-muted]="
-            searchFormHotel.value.passengersHotel.length === 1 &&
-            numAdultsHotel === 1 &&
-            numChildrenHotel === 0
-          " *ngIf="searchFormHotel.value.passengersHotel.length">
+                        <p class="m-0" [class.text-muted]="searchFormHotel.value.passengersHotel.length === 1 && numAdultsHotel === 1 && numChildrenHotel === 0" 
+                          *ngIf="searchFormHotel.value.passengersHotel.length">
                           {{
                           searchFormHotel.value.passengersHotel.length
                           }}&nbsp;Room{{
@@ -125,15 +118,12 @@
                           numAdultsHotel > 1 ? "s" : ""
                           }}
                           &nbsp;{{
-                          numChildrenHotel !== 0
+                          (numChildrenHotel == 0 || numChildrenHotel == 1)
                           ? numChildrenHotel +
-                          "&nbsp;Child" +
-                          (numChildrenHotel > 1 ? "ren" : "")
-                          : ""
+                          "&nbsp;Child" : numChildrenHotel +"&nbsp;Children"
                           }}
                         </p>
                       </div>
-                      <i class="icon-end icon-line-plus"></i>
                     </div>
                   </button>
                   <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuOne>
@@ -149,9 +139,9 @@
                         </div>
                       </div>
                       <div *ngFor="
-          let passenger of passengersHotel.controls;
-          let i = index
-        ">
+                        let passenger of passengersHotel.controls;
+                        let i = index
+                      ">
                         <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
                           <div class="room-specifics d-flex flex-column">
                             <div class="d-flex justify-content-between">
@@ -212,8 +202,7 @@
                                           <p class="m-0">
                                             {{
                                             childHotel.get("age")?.value === ""
-                                            ? "Less
-                                            than one year"
+                                            ? "1"
                                             : childHotel.get("age")?.value
                                             }}
                                           </p>
@@ -243,14 +232,14 @@
                     <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
                   </div>
                 </div>
-              </div> -->
+              </div>
             </div>
             
-            <div class="search-form-btns d-flex align-items-center gap-2">
-              <button id="filter-btn" class="color-btn filter-btn-mob ms-4" data-bs-toggle="offcanvas"
+            <div class="search-form-btns d-flex align-items-center gap-2 justify-content-start">
+              <button id="filter-btn" class="color-btn filter-btn-mob" data-bs-toggle="offcanvas"
                 [attr.data-bs-target]="dataBsTargetValue" [attr.aria-controls]="ariaControls"><i
                   class="icon-line-filter m-0"></i></button>
-              <button class="color-btn search-btn ms-4"><i class="icon-line-search m-0"></i></button>
+              <button class="color-btn search-btn"><i class="icon-line-search m-0"></i></button>
             </div>
 
           </div>
