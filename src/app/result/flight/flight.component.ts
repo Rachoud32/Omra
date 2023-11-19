@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FlightComponent implements OnInit {
   loading = false
 
+  skeletons: any[] = [1,2,3]
   dataFlight: any[] = []
   returnFlights: any[] = []
   collapsed = true;
@@ -208,7 +209,7 @@ export class FlightComponent implements OnInit {
         },
       ]
       this.loading = false
-    }, 5000)
+    }, 40000000)
   }
 
   goToNextStep = () => {

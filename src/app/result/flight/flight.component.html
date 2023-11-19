@@ -19,16 +19,45 @@
               style="stroke-width:0px;" />
           </svg>
           <h6>{{returnFlights.length===0 ? 'Choose the depature flight':'Choose the return
-            flight or ' }}
-            <button *ngIf="returnFlights.length> 0" (click)="clearData()">Return</button>
+            flight' }}
+            
           </h6>
         </div>
-        <p>Tickets prices are subject to frequent change</p>
+        <p>{{loading ? 'Searching for flights...':'Tickets prices are subject to frequent change'}}</p>
       </div>
+      
       <app-flight-top-filter></app-flight-top-filter>
       <!-- Loading -->
       <div *ngIf="loading">
-        <h1>Loading</h1>
+        <label *ngFor="let skeleton of skeletons" class="mb-0">
+          <input type="radio" name="" value="" class="service-check-box" id="" disabled/>
+          <div class="box">
+            <div class="row m-0">
+              <div class="col-lg-2 service ps-0">
+                <div class="image-box">
+                  <div class="skeleton-loader progress skeleton-service-img"></div>
+                </div>
+              </div>
+              <div class="col-lg-10 skeleton-service-details">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <div class="flight-label d-flex align-items-center justify-content-between gap-5 mb-4">
+                        <div class="skeleton-service-title skeleton-loader progress"></div>
+                        <div class="skeleton-service-price skeleton-loader progress"></div>
+                    </div>
+                    <div class="skeleton-service-details skeleton-loader progress"></div>
+                  </div>  
+                  <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
+                    <div class="skeleton-services-details-btn skeleton-loader progress"></div>
+                    <div class="skeleton-services-select-btn skeleton-loader progress"></div>
+                  </div> 
+                </div>
+              </div>    
+            </div>
+          </div>
+          <div class="clear-area"></div> 
+        </label> 
+        
       </div>
       <!-- End loading -->
       <div *ngIf="returnFlights.length===0 && !loading">
@@ -97,7 +126,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-2 d-flex justify-content-between flex-column align-items-end">
+                    <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                       <button class="color-btn service-btn-details collapsed mb-2" type="button"
                         data-bs-toggle="collapse" [attr.data-bs-target]="'#flightdetails'+i"
                         (click)="collapsedDetailDeparture('detailDeparture'+i)" aria-expanded="false"
@@ -268,12 +297,12 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-3 d-flex justify-content-end flex-column align-items-end">
+                    <div class="col-lg-3 service-action-btns d-flex justify-content-between flex-column align-items-end">
                       <button class="color-btn service-btn-details mb-2" type="button"
                         (click)="collapsedDetailReturn('detailReturn'+j)" data-bs-toggle="collapse"
                         [attr.data-bs-target]="'#flightbackdetails'+j" aria-expanded="false"
                         [attr.aria-controls]="'flightbackdetails'+j">
-                        Details
+                        <i class="icon-line-info"></i>
                       </button>
                       <button class="color-btn service-btn-select" type="button" (click)="checkFlightBack(j)">
                         Select
@@ -466,12 +495,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-2 d-flex justify-content-between flex-column align-items-end">
+                  <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                     <button class="color-btn service-btn-details collapsed mb-2" type="button" data-bs-toggle="collapse"
                       data-bs-target="#detail-departure" aria-expanded="false" aria-controls="detail-departure">
                       <i class="icon-line-info"></i>
                     </button>
-
                   </div>
                   <div class="col-xl-12 accordion-item">
                     <div class="accordion-collapse collapse" id="detail-departure" aria-labelledby="detail-departure"
@@ -621,12 +649,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-2 d-flex justify-content-between flex-column align-items-end">
+                  <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                     <button class="color-btn service-btn-details collapsed mb-2" type="button" data-bs-toggle="collapse"
                       data-bs-target="#detail-return" aria-expanded="false" aria-controls="detail-return">
                       <i class="icon-line-info"></i>
                     </button>
-
                   </div>
                   <div class="col-xl-12 accordion-item">
                     <div class="accordion-collapse collapse" id="detail-return" aria-labelledby="detail-return"

@@ -2245,6 +2245,10 @@ label.category-item::before {
     transition: all .3s ease;
 }
 
+.service-action-btns {
+
+}
+
 .service-details {
     display: block;
     position: relative;
@@ -5742,4 +5746,75 @@ app-bookings-mob .search-sidebar-list {
 -----------------------------------------------------------------*/
 .ngx-foreground-spinner {
     display: none;
+}
+
+/* ----------------------------------------------------------------
+	Skeleton Loader
+-----------------------------------------------------------------*/
+.skeleton-loader {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    background: rgb(239,241,246) no-repeat;
+    border-radius: 0 !important;
+    width: 100%;
+    will-change: transform;
+    user-select: none;
+    cursor: wait;
+}    
+
+.skeleton-loader.progress:before {
+    background-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));
+}
+
+.skeleton-loader.progress:before, .skeleton-loader.progress-dark:before {
+    animation: progress 1.5s ease-in-out infinite;
+    background-size: 200px 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    content: "";
+}
+
+@keyframes progress {
+    0% {
+        transform: translate3d(-200px,0,0);
+    }
+    100% {
+        transform: translate3d(calc(200px + 100vw),0,0);
+    }
+}
+
+.skeleton-service-img {
+    width: 100%;
+    height: 160px !important;
+}
+
+.skeleton-service-title {
+    width: 50%;
+    height: 24px !important;
+}
+
+.skeleton-service-price {
+    width: 10%;
+    height: 24px !important;
+}
+
+.skeleton-service-details {
+    padding: 15px;
+    width: 100%;
+    height: 80px !important;
+}
+
+.skeleton-services-details-btn {
+    width: 35px;
+    height: 35px !important;
+}
+
+.skeleton-services-select-btn {
+    width: 80px;
+    height: 35px !important;
 }
