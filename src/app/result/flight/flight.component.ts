@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-flight',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FlightComponent implements OnInit {
   loading = false
 
-  skeletons: any[] = [1,2,3]
+  skeletons: any[] = [1, 2, 3]
   dataFlight: any[] = []
   returnFlights: any[] = []
   collapsed = true;
@@ -20,10 +21,17 @@ export class FlightComponent implements OnInit {
   selectedFlightBack: string = '';
   showDetailsDeparture: any
   showDetailsReturn: any
+  counterValue = 0;
+  targetValue = 100;
+  durationInSeconds = 4;
+
+
+
   constructor(private toastr: ToastrService, private router: Router) { };
 
   ngOnInit(): void {
     this.loading = true
+    this.startCounter(this.durationInSeconds)
     setTimeout(() => {
       this.dataFlight = [
         {
@@ -209,9 +217,19 @@ export class FlightComponent implements OnInit {
         },
       ]
       this.loading = false
-    }, 40000000)
+    }, this.durationInSeconds * 1000)
   }
+  startCounter(value: any) {
+    const interval$ = interval((value * 1000) / this.targetValue);
+    interval$
+      .pipe(
+        take(this.targetValue + 1) // +1 to include the target value
+      )
+      .subscribe(() => {
+        this.counterValue++;
+      });
 
+  }
   goToNextStep = () => {
     if (this.selectedFlight != '') {
       if (this.showDetailsReturn) {

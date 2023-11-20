@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDatepickerModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
@@ -89,6 +89,7 @@ import { TransferComponent } from './transfer/transfer.component';
       preventDuplicates: true,
       enableHtml: true
     }),
+    NgbProgressbarModule
   ],
   providers: [],
   bootstrap: [ResultComponent],
