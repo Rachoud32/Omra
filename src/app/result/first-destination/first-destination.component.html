@@ -2137,11 +2137,20 @@
               <div class="col-xl-9">
                 <div class="ground-service-details">
                   <div class="row">
-                    <div class="col-xl-9 mb-2">
-                      <h3>Al-Baqi</h3>
-                      <a class="ground-service-details-btn" data-bs-toggle="collapse"
-                        data-bs-target="#ground-service-details" aria-expanded="false"
-                        aria-controls="ground-service-details">More details</a>
+                    <div class="col-xl-10 mb-2">
+                      <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                          <h3>Al-Baqi</h3>
+                          <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                            data-bs-target="#ground-service-details" aria-expanded="false"
+                            aria-controls="ground-service-details">More details</a>
+                        </div>
+                        <div class="text-end mb-3">
+                          <div class="ground-service-price">
+                            <span>$</span>80
+                          </div>
+                        </div>
+                      </div>  
                       <div id="ground-service-details" class="collapse">
                         <div class="row">
                           <div class="col-lg-12">
@@ -2235,18 +2244,14 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xl-3">
-                      <div class="text-end mb-3">
-                        <div class="ground-service-price">
-                          <span>$</span>80
-                          <p class="mb-1 text-end">per room | stay</p>
+                    <div class="col-xl-2">
+                      <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                        <div class="link float-end">
+                          <button (click)="checkGroundService('groundServiceBox1')"
+                            class="color-btn ground-service-btn-select">
+                            {{selectedGroundServices.includes('groundServiceBox1') ? 'Remove' : 'Add'}}
+                          </button>
                         </div>
-                      </div>
-                      <div class="link float-end">
-                        <button (click)="checkGroundService('groundServiceBox1')"
-                          class="color-btn ground-service-btn-select">
-                          {{selectedGroundServices.includes('groundServiceBox1') ? 'Remove' : 'Add'}}
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -2267,11 +2272,20 @@
               <div class="col-xl-9">
                 <div class="ground-service-details">
                   <div class="row">
-                    <div class="col-xl-9 mb-2">
-                      <h3>Mount Uhud</h3>
-                      <a class="ground-service-details-btn" data-bs-toggle="collapse"
-                        data-bs-target="#ground-service-details1" aria-expanded="false"
-                        aria-controls="ground-service-details1">More details</a>
+                    <div class="col-xl-10 mb-2">
+                      <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                          <h3>Mount Uhud</h3>
+                          <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                            data-bs-target="#ground-service-details1" aria-expanded="false"
+                            aria-controls="ground-service-details1">More details</a>
+                        </div>
+                        <div class="text-end mb-3">
+                          <div class="ground-service-price">
+                            <span>$</span>80
+                          </div>
+                        </div>
+                      </div>  
                       <div id="ground-service-details1" class="collapse">
                         <div class="row">
                           <div class="col-lg-12">
@@ -2373,19 +2387,14 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xl-3">
-                      <div class="text-end mb-3">
-                        <div class="ground-service-price">
-                          <span>$</span>80
-                          <p class="mb-1 text-end">per room | stay</p>
+                    <div class="col-xl-2">
+                      <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                        <div class="link float-end">
+                          <button (click)="checkGroundService('groundServiceBox2')"
+                            class="color-btn ground-service-btn-select">
+                            {{selectedGroundServices.includes('groundServiceBox2') ? 'Remove' : 'Add'}}
+                          </button>
                         </div>
-                      </div>
-                      <div class="link float-end">
-                        <button (click)="checkGroundService('groundServiceBox2')"
-                          class="color-btn ground-service-btn-select">
-                          {{selectedGroundServices.includes('groundServiceBox2') ? 'Remove' : 'Add'}}
-
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -2406,11 +2415,20 @@
               <div class="col-xl-9">
                 <div class="ground-service-details">
                   <div class="row">
-                    <div class="col-xl-9 mb-2">
-                      <h3>The Mosque of the Two Qiblahs</h3>
-                      <a class="ground-service-details-btn" data-bs-toggle="collapse"
-                        data-bs-target="#ground-service-details2" aria-expanded="false"
-                        aria-controls="ground-service-details2">More details</a>
+                    <div class="col-xl-10 mb-2">
+                      <div class="d-flex align-items-start justify-content-between">
+                        <div>
+                          <h3>The Mosque of the Two Qiblahs</h3>
+                          <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                            data-bs-target="#ground-service-details2" aria-expanded="false"
+                            aria-controls="ground-service-details2">More details</a>
+                        </div>  
+                        <div class="text-end mb-3">
+                          <div class="ground-service-price">
+                            <span>$</span>80
+                          </div>
+                        </div>  
+                      </div>
                       <div id="ground-service-details2" class="collapse">
                         <div class="row">
                           <div class="col-lg-12">
@@ -2512,19 +2530,14 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xl-3">
-                      <div class="text-end mb-3">
-                        <div class="ground-service-price">
-                          <span>$</span>80
-                          <p class="mb-1 text-end">per room | stay</p>
+                    <div class="col-xl-2">
+                      <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                        <div class="link float-end">
+                          <button (click)="checkGroundService('groundServiceBox3')"
+                            class="color-btn ground-service-btn-select">
+                            {{selectedGroundServices.includes('groundServiceBox3') ? 'Remove' : 'Add'}}
+                          </button>
                         </div>
-                      </div>
-                      <div class="link float-end">
-                        <button (click)="checkGroundService('groundServiceBox3')"
-                          class="color-btn ground-service-btn-select">
-                          {{selectedGroundServices.includes('groundServiceBox3') ? 'Remove' : 'Add'}}
-
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -2545,7 +2558,7 @@
               <div class="col-xl-9">
                 <div class="ground-service-details">
                   <div class="row">
-                    <div class="col-xl-9 mb-2">
+                    <div class="col-xl-10 mb-2">
                       <div class="d-flex align-items-start justify-content-between">
                         <div>
                           <h3>Quba Mosque</h3>
@@ -2556,7 +2569,6 @@
                         <div class="text-end">
                           <div class="ground-service-price">
                             <span>$</span>80
-                            <p class="text-end">per room | stay</p>
                           </div>
                         </div>  
                       </div>
@@ -2662,8 +2674,8 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xl-3">
-                      <div class="d-flex align-items-end h-100 flex-column justify-content-between">
+                    <div class="col-xl-2">
+                      <div class="d-flex align-items-end h-100 flex-column justify-content-end">
                         <div class="link float-end">
                           <button (click)="checkGroundService('groundServiceBox4')"
                             class="color-btn ground-service-btn-select">
