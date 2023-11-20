@@ -219,7 +219,7 @@
     }
 
     .room-picture-overlay {
-        padding: 15px 30px;
+        padding: 10px 15px;
     }
 
     .room-picture-icon {
@@ -254,12 +254,13 @@
 
     .hotel-box .hotel .hotel-content .read-btn {
         width: 100%;
+        font-size: var(--fs-14);
     }
 
     .hotel-box .hotel .hotel-content .hotel-details-btn {
         background-color: var(--omra-base);
         color: var(--omra-white);
-        border-right: 1px solid var(--omra-black);
+        border-right: 1px solid var(--omra-white);
     }
 
     .hotel-box .hotel .hotel-content .hotel-details-btn:hover {
@@ -280,7 +281,7 @@
     }
 
     .rooms-container .box .title {
-        margin-bottom: 15px;
+        margin-bottom: 0;
         font-size: 16px;
     }
 
@@ -288,11 +289,21 @@
         height: 280px;
     }
 
+    .rooms-container .box .price {
+        display: none !important;
+    }
+
     .rooms-container .box .price-content {
+        padding: 0px 15px 15px 0px;
+    }
+
+    .rooms-container .box .price-content .price.price-mob {
         display: flex !important;
-        justify-content: space-between;
-        padding: 0px 15px 15px 15px;
-        align-items: flex-end;
+        padding: 0px;
+    }
+
+    .rooms-container .box .room-details-content .price-content {
+        padding: 0;
     }
     
     .rooms-container .box .price-content .link .color-btn {
@@ -304,12 +315,20 @@
         margin-bottom: 0 !important;
     }
 
+    .rooms-container .room-details-content .room-options {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
     .rooms-container .room-details-content .room-options .room-option {
-        line-height: 5px;
+        line-height: normal;
+        display: flex;
+        gap: 0px;
     }
 
     .rooms-container .box .room-policy {
-        margin-bottom: 25px !important;
+        margin-bottom: 10px !important;
     }
 
     .pension-list [type="radio"]:checked+label, .pension-list [type="radio"]:not(:checked)+label {
@@ -335,7 +354,7 @@
     }
 
     .room-details-content .pension-list li {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     
     .rooms-container .box .price-content .price {
@@ -361,7 +380,6 @@
 
     .color-btn {
         padding: 0px 30px;
-        line-height: 50px;
         font-size: 14px;
     }
 
@@ -430,6 +448,9 @@
 }
 
 @media (max-width: 767.98px) {
+    .flight-direction-list-title p {
+        padding: 0;
+    }
     
     .dest-1.border-end {
         border-right: 0 !important;
@@ -487,6 +508,22 @@
 
 
 @media (max-width: 575.98px) {
+
+    .rooms-container .box .price-content {
+        padding: 0;
+    }
+
+    .rooms-container .room-details-content .room-options {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px !important;
+    }
+
+    .service-details .service-action-btns {
+        flex-direction: row !important;
+        gap: 10px;
+    }
+
     .calendar .dropdown-menu.show {
         padding: 7px 10px;
     }
@@ -709,6 +746,8 @@
 
     .services-list .box .color-btn.service-btn-details {
         margin-bottom: 0px !important;
+        padding: 10px !important;
+        height: unset;
     }
 
     .services-list .box .color-btn {
@@ -717,15 +756,25 @@
     }
     
     .service-details-collapse .card .flight-details-label {
-        width: 100%;
+        width: unset;
     }
 
-    .d-flex.align-items-start.gap-3 {
+    .service-details-collapse .card .flight-details-text {
+        flex-grow: 1;
+        justify-content: end;
+    }
+
+    .serv-details {
         line-height: normal !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
         gap: 0.2rem !important;
         justify-content: space-between !important;
         margin-bottom: 5px;
+    }
+
+    .flight-details-text {
+        text-align: right;
     }
 
     .col-lg-3.d-flex.justify-content-end.flex-column.align-items-end {
@@ -766,10 +815,14 @@
         line-height: 22px;
     }
 
-    .service-details .d-flex.align-items-center.gap-3 {
+    .service-details div.d-flex.align-items-center.gap-3 {
         flex-direction: column;
-        gap: 0.2rem !important;
+        gap: 8px !important;
         align-items: flex-start !important;
+    }
+
+    .flight-label .flight-class {
+        margin-bottom: 8px;
     }
 
     .service-details h3 {
@@ -910,7 +963,16 @@
     }
 
     .room-details-content .room-options .room-option {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+    .rooms-container .reservation-details, .rooms-container .tva {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .rooms-container .box .price-content .price {
+        font-size: 28px;
     }
 
     .hotel-box .carousel-controls {
@@ -943,8 +1005,12 @@
     }
 
     .services-list .service {
-        padding: 0 40px !important;
+        padding: 0 !important;
         min-height: 200px;
+    }
+
+    .services-list .service .image-box {
+        padding: 40px 60px;
     }
 
     .hotel-features-content-limit {

@@ -25,8 +25,6 @@ export class FlightComponent implements OnInit {
   targetValue = 100;
   durationInSeconds = 4;
 
-
-
   constructor(private toastr: ToastrService, private router: Router) { };
 
   ngOnInit(): void {
@@ -218,6 +216,7 @@ export class FlightComponent implements OnInit {
       ]
       this.loading = false
     }, this.durationInSeconds * 1000)
+    this.counterValue = 0
   }
   startCounter(value: any) {
     const interval$ = interval((value * 1000) / this.targetValue);
@@ -261,12 +260,14 @@ export class FlightComponent implements OnInit {
   checkFlight(value: any) {
     this.loading = true
     this.selectedFlight = value;
+    this.startCounter(this.durationInSeconds / 2)
     setTimeout(() => {
       const flightFound = this.dataFlight.find((flight: any) => flight._id === this.selectedFlight)
       this.showDetailsDeparture = flightFound
       this.returnFlights = flightFound.flightReturns
       this.loading = false
-    }, 2000)
+    }, (this.durationInSeconds / 2) * 1000 )
+    this.counterValue = 0
   }
   checkFlightBack(value: any) {
     this.selectedFlightBack = value;
