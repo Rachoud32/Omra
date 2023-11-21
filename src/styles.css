@@ -2382,7 +2382,7 @@ label.category-item::before {
 }
 
 .service-details-collapse ul li {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .service-details-collapse .card i {
@@ -2406,7 +2406,7 @@ label.category-item::before {
     padding: 4px 20px;
     text-align: center;
     color: var(--omra-gray);
-    margin: 10px 0px;
+    margin: 0 0 10px;
 }
 
 .service-details-collapse li {
@@ -2669,9 +2669,10 @@ label.disabled .service-class-card {
 
 .service-details p {
     line-height: normal !important;
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--fs-14);
     color: var(--omra-gray);
+    white-space: nowrap;
 }
 
 .service-details-btn {
@@ -2713,8 +2714,16 @@ label.disabled .service-class-card {
 .service-price .price-text {
     font-weight: 300;
     color: var(--omra-gray);
-    font-size: 13px;
+    font-size: var(--fs-12);
 }
+
+.card .serv-details:nth-child(4) {
+    margin-bottom: 10px !important;
+} 
+
+.card .serv-details:last-child {
+    margin-bottom: 0 !important;
+} 
 
 .service-price .notice {
     color: var(--omra-white);
@@ -2735,6 +2744,7 @@ label.disabled .service-class-card {
 .service-details .vehicle-direction {
     font-size: var(--fs-14);
     color: var(--omra-base);
+    font-weight: 400;
 }
 
 .flight-label .flight-class {
@@ -2857,6 +2867,7 @@ label.disabled .service-class-card {
     border: 0;
     color: var(--omra-second);
     padding: 4px 10px;
+    font-weight: 400;
     font-size: var(--fs-12);
     line-height: normal !important;
     margin-bottom: 0;
@@ -2880,6 +2891,11 @@ label.disabled .service-class-card {
 .transfer-duration i,
 .flight-duration i {
     color: var(--omra-second);
+}
+
+.sub-serv-label {
+    font-weight: 400;
+    line-height: normal;
 }
 
 /* ----------------------------------------------------------------
@@ -4273,11 +4289,11 @@ app-bookings-mob .search-sidebar-list {
     --bs-popover-max-width: 400px;
 }
 
-.top-filter-section .color-btn:hover,
+/* .top-filter-section .color-btn:hover,
 .top-filter-section .color-btn.active {
     color: var(--omra-base);
     box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .top-filter-section .color-btn .btn-text {
     font-size: var(--fs-12);
@@ -5575,13 +5591,6 @@ app-bookings-mob .search-sidebar-list {
 .footer .inner {
     text-align: left;
     padding: 80px 0 60px !important;
-}
-
-.footer .logo {
-    display: block;
-    margin: 0 auto !important;
-    position: relative;
-    text-align: left;
 }
 
 .footer .logo svg {

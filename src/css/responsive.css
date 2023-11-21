@@ -30,13 +30,13 @@
 
 @media (hover: none) {
 
-    .color-btn:hover, 
+    /* .color-btn:hover, 
     .hotel-box .hotel .btn-sec .rate-btn:hover,
     .hotel-box .hotel .hotel-details-btn:hover {
         background: var(--omra-base);
         border-color: var(--omra-base);
         color: var(--omra-white);
-    }
+    } */
 
     .service-summary-box .color-btn:hover,
     app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn:hover,
@@ -445,9 +445,19 @@
         padding: 30px 50px;
     }
 
+    .list-nav-content {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 767.98px) {
+    .flight-direction-list-title {
+        padding: 15px 20px;
+    }
+
     .flight-direction-list-title p {
         padding: 0;
     }
@@ -508,6 +518,16 @@
 
 
 @media (max-width: 575.98px) {
+
+    .veh-option {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    .child-seat {
+        text-align: right;
+        font-size: var(--fs-13);
+    }
 
     .rooms-container .box .price-content {
         padding: 0;
@@ -748,20 +768,27 @@
         margin-bottom: 0px !important;
         padding: 10px !important;
         height: unset;
+        width: 50px !important;
     }
 
     .services-list .box .color-btn {
-        width: 50% !important;
+        width: 30% !important;
         padding: 12px 10px !important;
     }
     
-    .service-details-collapse .card .flight-details-label {
-        width: unset;
+    .service-details-collapse .card .flight-details-label,
+    .service-details-collapse .card .transfer-details-label {
+        width: fit-content;
     }
 
     .service-details-collapse .card .flight-details-text {
+        font-size: 13px;
         flex-grow: 1;
         justify-content: end;
+    }
+
+    .service-details-collapse .card .flight-stops-details, .service-details-collapse .card .transfer-stops-details {
+        font-size: var(--fs-13);
     }
 
     .serv-details {
@@ -826,7 +853,42 @@
     }
 
     .service-details h3 {
-        font-size: var(--fs-14);
+        font-size: var(--fs-18);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        white-space-collapse: collapse;
+        text-wrap: nowrap;
+        max-width: 170px;
+    }
+
+    .service-details .service-title-content {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: start !important;
+    }
+
+    .service-details .service-price {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: end !important;
+    }
+
+    .service-details .ser-label {
+        align-items: start !important;
+    }
+
+    .service-details-collapse .card .flight-details-label, .service-details-collapse .card .transfer-details-label {
+        font-size: var(--fs-13);
+    }
+
+    .service-details p {
+        font-size: var(--fs-13);
+    }
+
+    .service-details .nbr-items {
+        border: 0;
+        padding: 0 0 0 10px;
     }
 
     .summary-items {
@@ -1011,6 +1073,10 @@
 
     .services-list .service .image-box {
         padding: 40px 60px;
+    }
+
+    .transfer-list .service .image-box {
+        padding: 20px 40px;
     }
 
     .hotel-features-content-limit {

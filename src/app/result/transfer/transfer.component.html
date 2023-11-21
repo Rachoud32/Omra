@@ -9,7 +9,7 @@
     <app-transfer-top-filter></app-transfer-top-filter>
     <!-- <app-transfer-period-top-filter></app-transfer-period-top-filter> -->
     <app-transfer-first-filter></app-transfer-first-filter>
-    <div ng-app="transfer-list" class="col-xl-9 services-list accordion" id="Vehicles-details">
+    <div ng-app="transfer-list" class="col-xl-9 services-list transfer-list accordion">
       
       <div class="vehicle-box" *ngFor="let vehicle of dataVehicle;let i=index">
         <label class="vehicle-box-item accordion mb-4" [attr.for]="'vehicle-box'+i">
@@ -26,7 +26,7 @@
                 <div class="row">
                   <div class="col-xl-10">
                     <div class="d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center gap-2">
+                      <div class="service-title-content d-flex align-items-center gap-2">
                         <h3 class="m-0">{{vehicle.model}}</h3>
                         <div class="d-flex align-items-center gap-1">
                             <p class="vehicle-category">{{vehicle.category}}</p>
@@ -35,7 +35,9 @@
                       </div>
                       <div class="service-price d-flex align-items-center gap-2">
                         <p class="vehicle-type">{{vehicle.type}}</p>
-                        <span>$</span>{{vehicle.price}}<span class="price-text"> / hour</span>
+                        <div class="d-flex align-items-center">
+                          <span>$</span>{{vehicle.price}}<span class="price-text ms-1"> /hour</span>
+                        </div>
                       </div>
                     </div>
                     <hr>
@@ -73,7 +75,7 @@
                         </div>
                       </div>
   
-                      <div class="col-xl-4 col-xl-4 col-md-4 col-sm-4 col-12 middle-block text-center">
+                      <div class="col-xl-4 col-xl-4 col-md-4 col-sm-4 middle-block text-center">
                         <div class="transfer-duration d-flex align-items-center justify-content-center gap-2">
                           <i class="icon-line-clock"></i>
                           <span>{{vehicle.duration}}</span>
@@ -123,7 +125,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-2 d-flex justify-content-between flex-column align-items-end">
+                  <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                     <button class="color-btn service-btn-details collapsed mb-2" type="button" data-bs-toggle="collapse" 
                     (click)="collapsedDetailTransfer('detailTransfer'+i)"
                     [attr.data-bs-target]="'#vehicledetails'+i" aria-expanded="true" [attr.aria-controls]="'vehicledetails'+i">
@@ -139,9 +141,9 @@
                       <div class="service-details-collapse mt-3">
                         <div class="card card-body">
                           
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-3 mb-2">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center">
+                              <div class="ser-label d-flex align-items-center">
                                 <i class="color-2 icon-line-star me-2"></i>
                                 <div>Vehicle model</div>
                               </div>
@@ -149,9 +151,9 @@
                             <p class="mb-0">{{vehicle.details.model}}</p>
                           </div>
   
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-3 mb-2">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center">
+                              <div class="ser-label d-flex align-items-center">
                                 <i class="color-2 icon-line-star me-2"></i>
                                 <div>Vehicle type</div>
                               </div>
@@ -159,9 +161,9 @@
                             <p class="mb-0">{{vehicle.details.type}}</p>
                           </div>
   
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-3 mb-2">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center">
+                              <div class="ser-label d-flex align-items-center">
                                 <i class="color-2 icon-line-users me-2"></i>
                                 <div>Number of places</div>
                               </div>
@@ -169,9 +171,9 @@
                             <p class="mb-0">{{vehicle.details.nbrpassengers}}</p>
                           </div>
   
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-3 mb-2">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center">
+                              <div class="ser-label d-flex align-items-center">
                                 <i class="color-2 icon-line-clock me-2"></i>
                                 <div>Travel duration</div>
                               </div>
@@ -183,28 +185,28 @@
                             {{vehicle.stops}} stops through {{vehicle.details.stops.firststop}} and {{vehicle.details.stops.secondstop}}
                           </div>
   
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-3 mb-2">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center">
+                              <div class="ser-label d-flex align-items-center">
                                 <i class="color-2 icon-line-paper me-2"></i>
                                 <div>Vehicle Options</div>
                               </div>
                             </div>
                             <ul class="mb-0">
                               <li>
-                                <div class="d-flex align-items-center gap-2">
+                                <div class="veh-option d-flex align-items-center gap-2">
                                   <i class="icon-line-wifi"></i>
                                   <p class="m-0">Wifi</p>
                                 </div>
                               </li>
                               <li>
-                                <div class="d-flex align-items-center gap-2">
+                                <div class="veh-option d-flex align-items-center gap-2">
                                   <i class="icon-line-wind"></i>
                                   <p class="m-0">Air-conditioned</p>
                                 </div>
                               </li>
                               <li>
-                                <div class="d-flex align-items-center gap-2">
+                                <div class="veh-option d-flex align-items-center gap-1">
                                   <i class="icon-line-head"></i>
                                   <p class="m-0">English speaking driver</p>
                                 </div>
@@ -212,9 +214,9 @@
                             </ul>
                           </div>
   
-                          <div class="d-flex align-items-start gap-3 mb-2">
+                          <div class="serv-details d-flex align-items-start gap-1">
                             <div class="transfer-details-label">
-                              <div class="d-flex align-items-center gap-2">
+                              <div class="ser-label d-flex align-items-center gap-2">
                                 <svg viewBox="0 0 591.21 657.02">
                                   <path d="m572.53,417.56c-8.87-8.65-19.87-14.32-31.78-16.52l16.56-180.42c2.59-25.49-11.07-50.24-34.03-61.64-.05-.02-.1-.05-.15-.07l-34.42-16.84-23.76-95.05C458.06,19.1,432.27-.61,403.59.01h-216.96c-28.72-.61-54.47,19.09-61.36,47.01-.01.05-.02.1-.04.16l-22.88,95.06-34.41,17.08c-22.94,11.39-36.6,36.11-34.03,61.58l16.56,180.19c-15.69,2.93-29.42,11.61-38.78,24.6-9.62,13.35-13.49,29.63-10.91,45.88l15.64,105.46c.03.17.05.35.08.52,3.75,22.42,15.42,42.79,32.87,57.36,17.38,14.52,39.41,22.34,62.05,22.11h366.38c.35,0,.7,0,1.05,0,22.27,0,43.88-7.83,61-22.12,17.45-14.57,29.12-34.94,32.87-57.36l17.67-105.67s.02-.09.02-.14c.57-3.53.84-7.13.79-10.69-.21-16.52-6.84-31.96-18.67-43.49ZM93.28,210.38l46.33-23c7.56-3.75,13.06-10.66,15.04-18.86l25.97-107.86c.55-2.18,2.58-3.71,4.83-3.65.28,0,.55.01.83.01h217.67c.28,0,.55,0,.83-.01,2.25-.08,4.29,1.48,4.85,3.76l27,108c2.04,8.16,7.57,14.99,15.12,18.69l46.19,22.6c1.8.89,2.87,2.83,2.66,4.83-.01.12-.02.24-.04.37l-16.96,184.77h-27.79c-.15,0-.3,0-.45,0-.43,0-.85.01-1.27.02-.25,0-.5,0-.75.01-.57.02-1.14.05-1.71.08-.15,0-.3.01-.45.02-.65.04-1.3.1-1.95.16-.07,0-.13.01-.2.02-.71.07-1.42.16-2.12.25,0,0-.01,0-.02,0-5.7.77-11.2,2.32-16.35,4.57-.02,0-.03.01-.05.02-.59.26-1.18.53-1.76.81-.06.03-.11.05-.17.08-.54.26-1.06.52-1.59.8-.1.05-.2.1-.31.15-.48.25-.95.51-1.43.78-.14.08-.29.16-.43.24-.42.24-.84.49-1.26.74-.19.11-.38.22-.57.33-.37.22-.72.46-1.09.69-.23.15-.47.29-.7.45-.31.2-.61.42-.91.63-.28.19-.56.38-.83.57-.25.18-.49.36-.74.55-.32.24-.64.47-.96.71-.19.15-.37.3-.56.45-.37.29-.74.58-1.1.87-.13.11-.26.22-.39.33-.41.35-.82.69-1.23,1.05-.08.07-.16.15-.24.22-.45.4-.89.8-1.33,1.21-.03.03-.06.06-.09.09-5.08,4.83-9.38,10.58-12.67,17.11-.03.05-.05.11-.08.16-9.95,20.05-30.02,32.5-52.42,32.5h-98.11c-.7,0-1.4-.01-2.09-.04-20.14-.7-38.19-11.5-48.33-28.79-.7-1.19-1.36-2.42-1.98-3.67-.03-.05-.05-.1-.08-.16-7.46-14.81-20.16-25.63-35.24-30.73-6.31-2.14-13.04-3.28-19.97-3.28-.15,0-.3,0-.45,0h-33.8l-16.95-184.44c-.01-.12-.02-.24-.04-.36-.21-2,.86-3.94,2.66-4.83Zm440.87,252.18l-17.65,105.59c-3.1,18.55-18.88,31.87-37.62,31.87-.18,0-.36,0-.54,0-.13,0-.26,0-.39,0H111.28c-.13,0-.26,0-.39,0-.18,0-.36,0-.54,0-18.67,0-34.4-13.22-37.59-31.65l-15.62-105.37c-.02-.13-.04-.26-.06-.38-.26-1.63.32-2.86.85-3.6.53-.74,1.51-1.68,3.14-1.94.28-.04.56-.07.83-.06.12,0,.25,0,.38,0h79.33c.07,0,.14,0,.2,0,1.6.03,3.07.76,3.97,2.04.03.05.06.1.09.14.09.14.19.29.27.44.11.22.23.43.33.64.5.98,1,1.96,1.52,2.92.12.22.25.43.37.65.53.96,1.06,1.91,1.61,2.85.15.26.32.52.48.78.53.89,1.06,1.77,1.61,2.64.16.25.32.49.48.73.56.87,1.13,1.75,1.72,2.61.17.25.36.5.54.75.59.84,1.17,1.68,1.78,2.5.19.26.39.51.58.77.61.81,1.21,1.61,1.84,2.4.28.36.58.7.86,1.05.55.68,1.1,1.36,1.67,2.03.3.36.62.7.93,1.05.57.65,1.13,1.3,1.71,1.94.31.34.64.68.96,1.02.59.63,1.17,1.27,1.78,1.89.34.35.69.68,1.04,1.03.6.6,1.19,1.2,1.8,1.78.33.32.68.62,1.02.94.64.59,1.27,1.19,1.92,1.77.22.2.45.38.67.58.78.68,1.56,1.37,2.36,2.03.04.04.09.07.14.11,4.06,3.36,8.36,6.46,12.88,9.26,13.72,8.5,28.98,13.99,44.82,16.21,5.28.74,10.62,1.11,16,1.11h98.15c5.38,0,10.73-.37,16.01-1.11,15.85-2.22,31.11-7.71,44.83-16.21,5.49-3.4,10.65-7.25,15.45-11.47,2.19-1.93,4.32-3.93,6.36-6.02,5.33-5.46,10.11-11.46,14.27-17.88,2.36-3.65,4.54-7.43,6.49-11.35.31-.6.73-1.11,1.22-1.52,0,0,.01-.01.02-.02.14-.11.29-.22.44-.31.03-.02.06-.04.09-.06.13-.08.27-.15.41-.21.06-.03.11-.06.17-.09.09-.04.19-.07.29-.1.11-.04.22-.09.33-.12.02,0,.04,0,.07-.01.4-.11.82-.17,1.26-.17.08,0,.16,0,.24,0h73.33c.12,0,.25,0,.37,0,1.64-.04,2.78.73,3.44,1.37.65.64,1.44,1.74,1.46,3.41,0,.25-.01.51-.05.77Z" style="stroke-width:0px;"/>
                                 </svg>
@@ -222,9 +224,9 @@
                               </div>
                             </div>
                             <ul class="mb-0">
-                              <li>Infant carrier : Up to 10 kg, 6 months</li>
-                              <li>Convertible seat : 9–25 kg, 0–7 years</li>
-                              <li>Booster seat : 22–36 kg, 6–12 years</li>
+                              <li class="child-seat mb-1"><div class="sub-serv-label d-block">Infant carrier</div>Up to 10 kg, 6 months</li>
+                              <li class="child-seat mb-1"><div class="sub-serv-label d-block">Convertible seat</div>9 – 25 kg, 0 – 7 years</li>
+                              <li class="child-seat mb-1"><div class="sub-serv-label d-block">Booster seat</div>22 – 36 kg, 6 – 12 years</li>
                             </ul>
                           </div>
                         </div>    

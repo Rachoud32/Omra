@@ -22,4 +22,6 @@ export class BookingsMobComponent {
       window.scrollTo(0, 500);
     }
   }
+
+  
 }
