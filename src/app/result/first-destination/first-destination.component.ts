@@ -1,10 +1,9 @@
 import { Component, OnInit, VERSION, ViewEncapsulation } from '@angular/core';
-import { faPlane, faArrowRightLong, faCaretRight, faMagnifyingGlass, faInfoCircle, faTag, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
+import PhotoSwipeLightbox from 'photoswipe';
 
 @Component({
   selector: 'app-first-destination',
@@ -14,14 +13,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 
 export class FirstDestinationComponent implements OnInit {
-  faPlane = faPlane
-  faArrowRightLong = faArrowRightLong
-  faCaretRight = faCaretRight
-  faMagnifyingGlass = faMagnifyingGlass
-  faInfoCircle = faInfoCircle
-  faTag = faTag
-  faChevronLeft = faChevronLeft
-  faChevronRight = faChevronRight
   roomSelectionStep = "step1"
   selectedRoom: string = ''
   selectedGroundServices: string[] = []
@@ -34,7 +25,7 @@ export class FirstDestinationComponent implements OnInit {
 
   dataHotels: any[] = []
 
-  constructor(private sanitizer: DomSanitizer, private toastr: ToastrService, private router: Router) { };
+  constructor(private toastr: ToastrService, private router: Router) { };
   ngOnInit(): void {
     this.localStorageSteps = JSON.parse(localStorage.getItem('steps') || '')
 
@@ -59,7 +50,7 @@ export class FirstDestinationComponent implements OnInit {
           Grand Mosque, Hajar Tower combines 
           traditions with modern comforts. 
           `,
-          googleMaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.466793531677!2d39.82116847609991!3d21.4200692468781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7bd004af9%3A0xf468545cd6c9c58a!2sHotel%20M%C3%B6venpick%20Makkah!5e0!3m2!1sfr!2stn!4v1697677564418!5m2!1sfr!2stn",
+          googleMaps: "",
           advantages: [
             {
               title: 'Good breakfast',
@@ -189,7 +180,7 @@ export class FirstDestinationComponent implements OnInit {
           Grand Mosque, Hajar Tower combines 
           traditions with modern comforts. 
           `,
-          googleMaps: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.466793531677!2d39.82116847609991!3d21.4200692468781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7bd004af9%3A0xf468545cd6c9c58a!2sHotel%20M%C3%B6venpick%20Makkah!5e0!3m2!1sfr!2stn!4v1697677564418!5m2!1sfr!2stn',
+          googleMaps: '',
           advantages: ['Good breakfast',
             'Cable Tv',
             'Phone',
@@ -251,11 +242,14 @@ export class FirstDestinationComponent implements OnInit {
         ]
       }
     ]
+  }
 
-  }
-  sanitizeUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
+  lightbox = new PhotoSwipeLightbox({
+    gallery: '#my-gallery',
+    children: 'a',
+    // pswpModule: () => import('photoswipe/dist/photoswipe.esm.js'),
+  });
+
   goToNextStep = () => {
     if (this.selectedRoom != '' && this.roomSelectionStep == "step1") {
       this.roomSelectionStep = "step2"
@@ -275,9 +269,9 @@ export class FirstDestinationComponent implements OnInit {
   }
 
   checkRoom(value: string) {
-    console.log(value);
     this.selectedRoom = value;
   }
+
   checkGroundService(value: string) {
     if (!this.selectedGroundServices.includes(value)) {
       this.selectedGroundServices.push(value);
@@ -286,7 +280,6 @@ export class FirstDestinationComponent implements OnInit {
       const index = this.selectedGroundServices.indexOf(value)
       this.selectedGroundServices.splice(index, 1);
     }
-
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
