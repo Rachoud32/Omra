@@ -12,7 +12,7 @@
   <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list">
     <div class="hotel-box inner-box mb-5" *ngFor="let hotel of dataHotels;let i = index">
       <div class="col-lg-12 hotel accordion-item">
-        <div id="carouselhotel" class="image-box carousel slide carousel-fade" data-bs-ride="carousel"
+        <div [attr.id]="'carouselhotel'+i" class="image-box carousel slide carousel-fade" data-bs-ride="carousel"
           data-lightbox="gallery">
           <div class="carousel-inner">
             <div *ngFor="let image of dataHotels[i].images" class="carousel-item active" data-bs-interval="4000">
@@ -47,11 +47,11 @@
             </div>
           </div>
           <div class="carousel-controls">
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselhotel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
               <i class="icon-line-chevron-left"></i>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselhotel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
               <i class="icon-line-chevron-right"></i>
               <span class="visually-hidden">Next</span>
             </button>
