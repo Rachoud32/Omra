@@ -1610,7 +1610,8 @@ label.category-item::before {
     margin-right: 0 !important;
 }
 
-.search-bar .input-group span, .input-group .destination-input-content {
+.search-bar .input-group span,
+.input-group .destination-input-content {
     font-size: var(--fs-15);
 }
 
@@ -1623,7 +1624,7 @@ label.category-item::before {
     width: fit-content;
 }
 
-.search-bar .date-picker-btn:hover, 
+.search-bar .date-picker-btn:hover,
 .search-bar .date-picker-btn:active {
     border-color: var(--omra-light-gray) !important;
     background-color: var(--omra-white) !important;
@@ -2253,9 +2254,7 @@ label.category-item::before {
     transition: all .3s ease;
 }
 
-.service-action-btns {
-
-}
+.service-action-btns {}
 
 .service-details {
     display: block;
@@ -2447,7 +2446,7 @@ label.category-item::before {
 
 .change-flight-btn {
     background: var(--omra-white);
-    border-color: var(--omra-white) ;
+    border-color: var(--omra-white);
     color: var(--omra-base);
     padding: 10px 15px !important;
     font-size: var(--fs-12) !important;
@@ -2719,11 +2718,11 @@ label.disabled .service-class-card {
 
 .card .serv-details:nth-child(4) {
     margin-bottom: 10px !important;
-} 
+}
 
 .card .serv-details:last-child {
     margin-bottom: 0 !important;
-} 
+}
 
 .service-price .notice {
     color: var(--omra-white);
@@ -2879,7 +2878,7 @@ label.disabled .service-class-card {
 }
 
 .service-details .vehicle-class {
-    background-color: rgba(5,0,51,0.15);
+    background-color: rgba(5, 0, 51, 0.15);
     color: var(--omra-base);
 }
 
@@ -3176,6 +3175,7 @@ app-bookings-mob .search-sidebar-list {
 /* ----------------------------------------------------------------
 	Hotel list + Rooms
 -----------------------------------------------------------------*/
+
 .hotel-box:last-child {
     margin-bottom: 0 !important;
 }
@@ -4230,7 +4230,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .transfer-top-filter.top-filter-section .road-btn i {
-    padding: 5px ;
+    padding: 5px;
 }
 
 .transfer-top-filter.top-filter-section .color-btn.add-btn {
@@ -4272,8 +4272,8 @@ app-bookings-mob .search-sidebar-list {
     fill: var(--omra-gray);
 }
 
-.transfer-top-filter .travel-path [type="radio"]:disabled + label,
-.transfer-top-filter .travel-path [type="radio"]:disabled + label:hover {
+.transfer-top-filter .travel-path [type="radio"]:disabled+label,
+.transfer-top-filter .travel-path [type="radio"]:disabled+label:hover {
     color: var(--omra-gray) !important;
     background: var(--omra-light-gray) !important;
     pointer-events: none;
@@ -4303,7 +4303,7 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section .color-btn:hover .btn-text {
     color: var(--omra-base);
     transform: none;
-    box-shadow: none;  
+    box-shadow: none;
 }
 
 .active-filter {
@@ -4311,7 +4311,8 @@ app-bookings-mob .search-sidebar-list {
     box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
 }
 
-.active-filter span, .active-road span {
+.active-filter span,
+.active-road span {
     color: var(--omra-base);
     text-overflow: ellipsis;
     overflow: hidden;
@@ -4319,7 +4320,9 @@ app-bookings-mob .search-sidebar-list {
     white-space: nowrap;
 }
 
-.active-filter i, .active-road i, .active-filter svg {
+.active-filter i,
+.active-road i,
+.active-filter svg {
     color: var(--omra-second);
     fill: var(--omra-second);
 }
@@ -4350,7 +4353,7 @@ app-bookings-mob .search-sidebar-list {
 
 .top-filter-section .color-btn:hover .remove-btn i,
 .top-filter-section .color-btn.active .remove-btn i {
-    color: var(--omra-base);  
+    color: var(--omra-base);
 }
 
 .sort-label,
@@ -4521,7 +4524,7 @@ app-bookings-mob .search-sidebar-list {
     transform: none;
 }
 
-.top-filter-section .filter-list-item label:before, 
+.top-filter-section .filter-list-item label:before,
 .top-filter-section .filter-list-item label:after {
     display: none;
 }
@@ -4592,7 +4595,7 @@ app-bookings-mob .search-sidebar-list {
     width: 100%;
 }
 
-.flight-top-filter .service-filter-card  {
+.flight-top-filter .service-filter-card {
     font-size: var(--fs-18);
 }
 
@@ -5649,16 +5652,16 @@ app-bookings-mob .search-sidebar-list {
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-    background: rgb(239,241,246) no-repeat;
+    background: rgb(239, 241, 246) no-repeat;
     border-radius: 0 !important;
     width: 100%;
     will-change: transform;
     user-select: none;
     cursor: wait;
-}    
+}
 
 .skeleton-loader.skeletonprogress:before {
-    background-image: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0));
 }
 
 .skeleton-loader.skeletonprogress:before {
@@ -5675,10 +5678,11 @@ app-bookings-mob .search-sidebar-list {
 
 @keyframes skeletonprogress {
     0% {
-        transform: translate3d(-200px,0,0);
+        transform: translate3d(-200px, 0, 0);
     }
+
     100% {
-        transform: translate3d(calc(200px + 100vw),0,0);
+        transform: translate3d(calc(200px + 100vw), 0, 0);
     }
 }
 
@@ -5716,7 +5720,8 @@ app-bookings-mob .search-sidebar-list {
 /* ----------------------------------------------------------------
 	Progress Bar
 -----------------------------------------------------------------*/
-.progress, .progress-stacked {
+.progress,
+.progress-stacked {
     --bs-progress-border-radius: 0 !important;
     --bs-progress-height: 4px !important;
     --bs-progress-bg: transparent !important;

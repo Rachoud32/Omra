@@ -7,25 +7,16 @@
     <p>You benefit from the best rate.</p>
   </div>
   <div class="col-lg-12">
-    <app-destination-top-filter></app-destination-top-filter>
+    <app-top-filter></app-top-filter>
   </div>
   <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list">
-    <div class="hotel-box inner-box mb-5">
+    <div class="hotel-box inner-box mb-5" *ngFor="let hotel of dataHotels;let i = index">
       <div class="col-lg-12 hotel accordion-item">
         <div id="carouselhotel" class="image-box carousel slide carousel-fade" data-bs-ride="carousel"
           data-lightbox="gallery">
           <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000">
-              <img src="assets/package/hotel-2/1.jpg" class="image-box d-block w-100" alt="" />
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="assets/package/hotel-2/2.jpg" class="image-box d-block w-100" alt="" />
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="assets/package/hotel-2/3.jpg" class="image-box d-block w-100" alt="" />
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="assets/package/hotel-2/4.jpg" class="image-box d-block w-100" alt="" />
+            <div *ngFor="let image of dataHotels[i].images" class="carousel-item active" data-bs-interval="4000">
+              <img src={{image}} class="image-box d-block w-100" alt="" />
             </div>
             <div class="hotel-content-top">
               <div class="best-rate-notice">
@@ -35,21 +26,21 @@
               <div class="notices">
                 <div class="hotel-type d-flex align-items-center">
                   <i class="icon-line-ribbon me-2"></i>
-                  <p>Luxury Hotel</p>
+                  <p>{{hotel.type}}</p>
                 </div>
                 <div class="available-notice">
                   <div class="d-flex align-items-center">
                     <i class="icon-line-bell me-2"></i>
-                    <p>6 rooms availables</p>
+                    <p>{{hotel.rooms.length}} rooms availables</p>
                   </div>
                 </div>
               </div>
 
               <div class="hotel-rating">
                 <div class="d-flex align-items-center">
-                  <div class="hotel-rate me-2">4.4</div>
+                  <div class="hotel-rate me-2">{{hotel.rating}}</div>
                   <div>
-                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]="4.4"
+                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='hotel.rating'
                       [color]="'#f4c253'"></ngx-stars>
                   </div>
                 </div>
@@ -72,7 +63,7 @@
                 <div class="hotel-content-bottom">
                   <div class="title-sec me-4">
                     <h2 class="hotel-name text-truncate">
-                      Swissôtel Al Maqam Makkah
+                      {{hotel.hotelName}}
                     </h2>
                   </div>
                 </div>
@@ -80,11 +71,11 @@
               <div class="col-lg-5 z-index-3">
                 <div class="btn-sec d-flex justify-content-end">
                   <a class="read-btn hotel-details-btn d-flex align-items-center justify-content-center" role="button"
-                    data-bs-toggle="modal" data-bs-target="#room-details-modal"><i class="icon-line-info me-2"></i>
+                    data-bs-toggle="modal" data-bs-target="#hotel-details"><i class="icon-line-info me-2"></i>
                     Hotel details</a>
                   <a class="read-btn rate-btn d-flex align-items-center justify-content-center" href="#hotel-details"
-                    role="button" data-bs-toggle="collapse" data-bs-target="#hotel-details" aria-expanded="true"
-                    aria-controls="hotel-details">
+                    role="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#rooms-list'+i" aria-expanded="true"
+                    aria-controls="rooms-list">
                     <i class="icon-line-tag me-2"></i> Rooms and prices
                   </a>
                 </div>
@@ -92,276 +83,57 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="hotel-details"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingOne" data-bs-parent="#rooms-accordion4">
-        <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
-          <div class="content-box clearfix">
-            <div class="hotel-features-content-box">
-              <div class="hotel-features-content-limit">
-                <div class="row">
-                  <div id="room-accordion4" class="col-lg-12 postcontent accordion">
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox1">
-                            <input type="radio" name="radio" id="roombox1" value="roombox1" [(ngModel)]="selectedRoom"
-                            disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-1.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Two Bedroom Suite City View
-                                          </div>
-                                          <div class="room-policy">
-                                            $25 Cancellation
-                                          </div>
-                                        </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>320</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="room-options mb-3">
-                                          <div class="room-option">
-                                            <i class="icon-wifi-full"></i>
-                                            Free WiFi
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-coffee"></i>
-                                            Free breakfast
-                                          </div>
-                                          <div class="room-option">
-                                            <i class="icon-line-users"></i>
-                                            Sleeps 5
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
-                                        </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="halfpension">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="fullboard">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details">More details</a>
-                                      </div>
+        <div [attr.id]="'rooms-list'+i" class="accordion-collapse collapse">
+          <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
+            <div class="content-box clearfix">
+              <div class="hotel-features-content-box">
+                <div class="hotel-features-content-limit">
+                  <div class="row">
+                    <div class="col-lg-12 postcontent">
+                      <div class="room-box" *ngFor="let room of dataHotels[i].rooms;let j=index">
+                        <div class="room-item">
+                          <div class="rooms-container">
+                            <label [attr.for]="'roombox-'+room._id">
+                              <input type="radio" name="radio" [attr.id]="'roombox-'+room._id"
+                                [value]="'roombox-'+room._id" [(ngModel)]="selectedRoom" disabled />
+                              <div class="box" [class.active]="selectedRoom===room._id">
+                                <div class="row">
+                                  <div class="col-lg-3">
+                                    <div class="room-picture">
+                                      <img src={{room.images[0]}} [attr.alt]="'Room-'+room.title" />
                                     </div>
+                                    <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+                                      <a *ngFor="let image of room.images" class="gallery-item" [attr.data-src]="image">
+                                        <div class="room-picture-overlay" *ngIf="image">
+                                          <div class="room-picture-icon">
+                                            <i class="icon-line-camera"></i>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </lightgallery>
                                   </div>
-                                </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>320</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox1')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
 
-                              <div id="room-more-details" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
+                                  <div class="col-lg-7">
+                                    <div class="room-details-content d-flex">
+                                      <div class="row">
+                                        <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
+                                          <div class="d-flex align-items-start flex-column gap-1">
+                                            <div class="title">
+                                              {{room.title}}
                                             </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
+                                            <div class="room-policy">
+                                              {{room.policy}}
                                             </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
                                           </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox201">
-                            <input type="radio" name="radio" id="roombox201" value="roombox201" [(ngModel)]="selectedRoom"
-                              disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-1.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Two Bedroom Suite City View
-                                          </div>
-                                          <div class="room-policy">
-                                            Free Cancellation
+                                          <div class="price-content">
+                                            <div class="price price-mob d-flex">
+                                              <div class="text-end"><span>$</span>{{room.price}}</div>
+                                              <div class="tva mb-3">{{room.tva ? 'TVA included': ''}}</div>
+                                            </div>
                                           </div>
                                         </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>310</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="">
+                                        <div class="col-lg-6">
                                           <div class="room-options mb-3">
                                             <div class="room-option">
                                               <i class="icon-wifi-full"></i>
@@ -373,1020 +145,221 @@
                                             </div>
                                             <div class="room-option">
                                               <i class="icon-line-users"></i>
-                                              Sleeps 5
+                                              Sleeps {{room.sleeps}}
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
+                                        <div class="col-lg-6">
+                                          <div class="pension-label">
+                                            Types of pension
+                                          </div>
+                                          <ul class="mb-2 pension-list">
+                                            <li>
+                                              <div>
+                                                <input type="radio" [attr.id]="'bedbreakfast'+room._id"
+                                                  name="pensiontype" class="me-2" />
+                                                <label class="me-4" [attr.for]="'bedbreakfast'+room._id">Bed and
+                                                  breakfast</label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div>
+                                                <input type="radio" [attr.id]="'halfpension'+room._id"
+                                                  name="pensiontype" class="me-2" />
+                                                <label class="me-4" [attr.for]="'halfpension'+room._id">Half
+                                                  pension</label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div>
+                                                <input type="radio" [attr.id]="'fullboard'+room._id" name="pensiontype"
+                                                  class="me-2" />
+                                                <label class="me-4" [attr.for]="'fullboard'+room._id">Full board</label>
+                                              </div>
+                                            </li>
+                                          </ul>
                                         </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="halfpension">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="fullboard">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
+                                        <div class="col-lg-12 mb-2">
+                                          <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
+                                            href="#room-more-details" role="button" aria-expanded="false"
+                                            aria-controls="room-more-details">More details</a>
+                                        </div>
                                       </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details201" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details">More details</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-2">
+                                    <div class="price-content">
+                                      <div class="price d-flex">
+                                        <div class="text-end"><span>$</span>{{room.price}}</div>
+                                        <div class="tva mb-3">{{room.tva ? 'TVA included': ''}}</div>
+                                      </div>
+                                      <div class="link">
+                                        <button class="color-btn" (click)="checkRoom('roombox-'+room._id)">
+                                          Select
+                                        </button>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>310</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox201')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
 
-                              <div id="room-more-details201" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
+                                <div id="room-more-details" class="collapse" aria-labelledby="headingOne"
+                                  data-bs-parent="#room-accordion">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                                    <div class="room-details">
+                                      <h5 class="room-amenities">Room amenities</h5>
+                                      <div class="row">
+                                        <div class="col-lg-3">
+                                          <div class="d-flex align-items-center mb-2">
+                                            <div class="room-amenitie-icon me-2">
+                                              <img src="assets/amenitie-icon-1.svg" />
                                             </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
+                                            <div class="room-amenitie-type">
+                                              Bathroom
                                             </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
                                           </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
+                                          <ul>
+                                            <li>
+                                              <div class="amenitie-item">Bathtub</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Free toiletries</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Hair dryer</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Private bathroom</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Shampoo</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Soap</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Toilet paper</div>
+                                            </li>
+                                          </ul>
                                         </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
+                                        <div class="col-lg-3">
+                                          <div class="d-flex align-items-center mb-2">
+                                            <div class="room-amenitie-icon me-2">
+                                              <img src="assets/amenitie-icon-2.svg" />
+                                            </div>
+                                            <div class="room-amenitie-type">Bedroom</div>
+                                          </div>
+                                          <ul>
+                                            <li>
+                                              <div class="amenitie-item">Bed sheets</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Climate-controlled air conditioning</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Climate-controlled heating</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Cribs (infant beds) not available</div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                          <div class="d-flex align-items-center mb-2">
+                                            <div class="room-amenitie-icon me-2">
+                                              <img src="assets/amenitie-icon-3.svg" />
+                                            </div>
+                                            <div class="room-amenitie-type">Entertainment</div>
+                                          </div>
+                                          <ul>
+                                            <li>
+                                              <div class="amenitie-item">32-inch LED TV
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="amenitie-item">Satellite channels
+                                              </div>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                          <div class="d-flex align-items-center mb-2">
+                                            <div class="room-amenitie-icon me-2">
+                                              <img src="assets/amenitie-icon-4.svg" />
+                                            </div>
+                                            <div class="room-amenitie-type">Food and drink</div>
+                                          </div>
+                                          <ul>
+                                            <li>
+                                              <div class="amenitie-item">Free bottled water</div>
+                                            </li>
+                                          </ul>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </label>
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
-
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox200">
-                            <input type="radio" name="radio" id="roombox200" value="roombox200" [(ngModel)]="selectedRoom"
-                            disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-1.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Two Bedroom Suite City View
-                                          </div>
-                                          <div class="room-policy">
-                                            No Cancellation
-                                          </div>
-                                        </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>315</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="">
-                                          <div class="room-options mb-3">
-                                            <div class="room-option">
-                                              <i class="icon-wifi-full"></i>
-                                              Free WiFi
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-coffee"></i>
-                                              Free breakfast
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-users"></i>
-                                              Sleeps 5
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
-                                        </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="halfpension">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard" name="pensiontype" class="me-2" />
-                                              <label class="me-4" for="fullboard">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details200" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details">More details</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>315</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox200')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div id="room-more-details200" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="hotel-details" tabindex="-1" aria-labelledby="hotel-details" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <h4 class="modal-title" id="myModalLabel">
+                    {{hotel.details.title}}
+                  </h4>
+                  <div class="modal-address d-flex">
+                    <i class="icon-line-map-pin me-2"></i>
+                    <div class="hotel-address">
+                      {{hotel.details.location}}
                     </div>
-
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox202">
-                            <input type="radio" name="radio" id="roombox202" value="roombox202" [(ngModel)]="selectedRoom"
-                            disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-2.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/4.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Superior double room
-                                          </div>
-                                          <div class="room-policy">
-                                            Free Cancellation
-                                          </div>
-                                        </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>290</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="">
-                                          <div class="room-options mb-3">
-                                            <div class="room-option">
-                                              <i class="icon-wifi-full"></i>
-                                              Free WiFi
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-coffee"></i>
-                                              Free breakfast
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-users"></i>
-                                              Sleeps 2
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
-                                        </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast2">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="halfpension2">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="fullboard2">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details-202" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details-2">More details</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>290</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox202')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div id="room-more-details-202" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row mb-4">
+                  <div class="col-xl-7 mb-3">
+                    <div class="hotel-description pe-3">
+                      <p class="mb-3">
+                        {{hotel.details.description}}
+                      </p>
                     </div>
-
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox203">
-                            <input type="radio" name="radio" id="roombox203" value="roombox203" [(ngModel)]="selectedRoom"
-                            disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-2.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/4.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Superior double room
-                                          </div>
-                                          <div class="room-policy">
-                                            25% Cancellation
-                                          </div>
-                                        </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>295</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="">
-                                          <div class="room-options mb-3">
-                                            <div class="room-option">
-                                              <i class="icon-wifi-full"></i>
-                                              Free WiFi
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-coffee"></i>
-                                              Free breakfast
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-users"></i>
-                                              Sleeps 2
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
-                                        </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast2">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="halfpension2">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="fullboard2">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details-203" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details-2">More details</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>295</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox203')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div id="room-more-details-203" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
+                  </div>
+                  <div class="col-lg-5 mb-3">
+                    <div class="hotel-map w-100 h-100">
+                      <iframe class="w-100 h-100" [src]="sanitizeUrl(hotel.details.googleMaps)" style="border: 0"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                  </div>
+                  <hr class="mt-3 mb-2">
+                  <div class="col-xl-12">
+                    <div class="hotel-features">
+                      <div class="hotel-features-list">
+                        <div class="row p-0">
 
-                    <div class="room-box accordion-item">
-                      <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                        <div class="rooms-container">
-                          <label for="roombox204">
-                            <input type="radio" name="radio" id="roombox204" value="roombox204" [(ngModel)]="selectedRoom"
-                            disabled />
-                            <div class="box">
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <div class="room-picture">
-                                    <img src="assets/package/hotel-2/room-2.jpg" alt="" />
-                                  </div>
-                                  <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                                    <a class="gallery-item" data-src="assets/package/hotel-2/room-1.jpg">
-                                      <div class="room-picture-overlay">
-                                        <div class="room-picture-icon">
-                                          <i class="icon-line-camera"></i>
-                                        </div>
-                                      </div>
-                                    </a>
-                                    <a class="gallery-item" data-src="assets/package/4.jpg">
-                                    </a>
-                                  </lightgallery>
-                                </div>
-
-                                <div class="col-lg-7">
-                                  <div class="room-details-content d-flex">
-                                    <div class="row">
-                                      <div class="col-lg-12 d-flex align-items-start justify-content-between gap-3">
-                                        <div class="d-flex align-items-start flex-column gap-1">
-                                          <div class="title">
-                                            Superior double room
-                                          </div>
-                                          <div class="room-policy">
-                                            No Cancellation
-                                          </div>
-                                        </div>
-                                        <div class="price-content">
-                                          <div class="price price-mob d-flex">
-                                            <div class="text-end"><span>$</span>289</div>
-                                            <div class="tva mb-3">TVA included</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="">
-                                          <div class="room-options mb-3">
-                                            <div class="room-option">
-                                              <i class="icon-wifi-full"></i>
-                                              Free WiFi
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-coffee"></i>
-                                              Free breakfast
-                                            </div>
-                                            <div class="room-option">
-                                              <i class="icon-line-users"></i>
-                                              Sleeps 2
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6">
-                                        <div class="pension-label">
-                                          Types of pension
-                                        </div>
-                                        <ul class="mb-2 pension-list">
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="bedbreakfast2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="bedbreakfast2">Bed and breakfast</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="halfpension2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="halfpension2">Half pension</label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div>
-                                              <input type="radio" id="fullboard2" name="pensiontype2" class="me-2" />
-                                              <label class="me-4" for="fullboard2">Full board</label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-12 mb-2">
-                                        <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                          href="#room-more-details-204" role="button" aria-expanded="false"
-                                          aria-controls="room-more-details-2">More details</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-2">
-                                  <div class="price-content">
-                                    <div class="price d-flex">
-                                      <div class="text-end"><span>$</span>289</div>
-                                      <div class="tva mb-3">TVA included</div>
-                                    </div>
-                                    <div class="link">
-                                      <button class="color-btn" (click)="checkRoom('roombox204')">
-                                        Select
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div id="room-more-details-204" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
-                                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                                  <div class="room-details">
-                                    <h5 class="room-amenities">Room amenities</h5>
-                                    <div class="row">
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-1.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">
-                                            Bathroom
-                                          </div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bathtub</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">free toiletries</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Hair dryer</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Private bathroom</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Shampoo</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Soap</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Toilet paper</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-2.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Bedroom</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Bed sheets</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled air conditioning</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Climate-controlled heating</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Cribs (infant beds) not available</div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Rollaway/ground-service beds (surcharge)</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-3.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Entertainment</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">32-inch LED TV
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="amenitie-item">Satellite channels
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="col-lg-3">
-                                        <div class="d-flex align-items-center mb-2">
-                                          <div class="room-amenitie-icon me-2">
-                                            <img src="assets/amenitie-icon-4.svg" />
-                                          </div>
-                                          <div class="room-amenitie-type">Food and drink</div>
-                                        </div>
-                                        <ul>
-                                          <li>
-                                            <div class="amenitie-item">Free bottled water</div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                          <div class="col-xl-3" *ngFor="let advantage of dataHotels[i].details.advantages">
+                            <div class="hotel-amenities d-flex align-items-center">
+                              <i [class]="'icon-line-'+advantage.icon"></i>
+                              <p>{{advantage.title}}</p>
                             </div>
-                          </label>
+                          </div>
+
+
                         </div>
                       </div>
                     </div>
@@ -1397,9 +370,11 @@
           </div>
         </div>
       </div>
+
+
     </div>
 
-    <div class="hotel-box inner-box mb-5">
+    <!-- <div class="hotel-box inner-box mb-5">
       <div class="col-lg-12 hotel accordion-item">
         <div id="carouselhotel3" class="image-box carousel slide carousel-fade" data-bs-ride="carousel"
           data-lightbox="gallery">
@@ -1483,9 +458,8 @@
         </div>
       </div>
 
-      <div id="hotel-details-3"
-        class="accordion-collapse collapse"
-        aria-labelledby="headingOne" data-bs-parent="#rooms-accordion3">
+      <div id="hotel-details-3" class="accordion-collapse collapse" aria-labelledby="headingOne"
+        data-bs-parent="#rooms-accordion3">
         <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
           <div class="content-box clearfix">
             <div class="hotel-features-content-box">
@@ -1497,8 +471,8 @@
                       <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
                         <div class="rooms-container">
                           <label for="roombox401">
-                            <input type="radio" name="radio" id="roombox401" value="roombox401" [(ngModel)]="selectedRoom"
-                            disabled />
+                            <input type="radio" name="radio" id="roombox401" value="roombox401"
+                              [(ngModel)]="selectedRoom" disabled />
                             <div class="box">
                               <div class="row">
                                 <div class="col-lg-3">
@@ -1595,7 +569,8 @@
                                 </div>
                               </div>
 
-                              <div id="room-more-details401" class="col-lg-12 col-md-12 col-sm-12 content-column collapse"
+                              <div id="room-more-details401"
+                                class="col-lg-12 col-md-12 col-sm-12 content-column collapse"
                                 aria-labelledby="headingOne" data-bs-parent="#room-accordion">
                                 <div class="room-details">
                                   <h5 class="room-amenities">Room amenities</h5>
@@ -1702,8 +677,8 @@
                       <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
                         <div class="rooms-container">
                           <label for="roombox402">
-                            <input type="radio" name="radio" id="roombox402" value="roombox402" [(ngModel)]="selectedRoom"
-                            disabled />
+                            <input type="radio" name="radio" id="roombox402" value="roombox402"
+                              [(ngModel)]="selectedRoom" disabled />
                             <div class="box">
                               <div class="row">
                                 <div class="col-lg-3">
@@ -1800,7 +775,8 @@
                                 </div>
                               </div>
 
-                              <div id="room-more-details402" class="col-lg-12 col-md-12 col-sm-12 content-column collapse"
+                              <div id="room-more-details402"
+                                class="col-lg-12 col-md-12 col-sm-12 content-column collapse"
                                 aria-labelledby="headingOne" data-bs-parent="#room-accordion">
                                 <div class="room-details">
                                   <h5 class="room-amenities">Room amenities</h5>
@@ -1907,8 +883,8 @@
                       <div class="room-item" aria-labelledby="headingOne" data-bs-parent="#room-accordion">
                         <div class="rooms-container">
                           <label for="roombox403">
-                            <input type="radio" name="radio" id="roombox403" value="roombox403" [(ngModel)]="selectedRoom"
-                            disabled />
+                            <input type="radio" name="radio" id="roombox403" value="roombox403"
+                              [(ngModel)]="selectedRoom" disabled />
                             <div class="box">
                               <div class="row">
                                 <div class="col-lg-3">
@@ -2005,8 +981,8 @@
                                 </div>
                               </div>
 
-                              <div id="room-more-details403" class="collapse"
-                                aria-labelledby="headingOne" data-bs-parent="#room-accordion">
+                              <div id="room-more-details403" class="collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#room-accordion">
                                 <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                                   <div class="room-details">
                                     <h5 class="room-amenities">Room amenities</h5>
@@ -2110,7 +1086,7 @@
                       </div>
                     </div>
 
-                    
+
                   </div>
                 </div>
               </div>
@@ -2118,7 +1094,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div *ngIf="roomSelectionStep == 'step2'" class="col-xl-9 ground-services-list">
@@ -2150,7 +1126,7 @@
                             <span>$</span>80
                           </div>
                         </div>
-                      </div>  
+                      </div>
                       <div id="ground-service-details" class="collapse">
                         <div class="row">
                           <div class="col-lg-12">
@@ -2285,7 +1261,7 @@
                             <span>$</span>80
                           </div>
                         </div>
-                      </div>  
+                      </div>
                       <div id="ground-service-details1" class="collapse">
                         <div class="row">
                           <div class="col-lg-12">
@@ -2422,12 +1398,12 @@
                           <a class="ground-service-details-btn" data-bs-toggle="collapse"
                             data-bs-target="#ground-service-details2" aria-expanded="false"
                             aria-controls="ground-service-details2">More details</a>
-                        </div>  
+                        </div>
                         <div class="text-end mb-3">
                           <div class="ground-service-price">
                             <span>$</span>80
                           </div>
-                        </div>  
+                        </div>
                       </div>
                       <div id="ground-service-details2" class="collapse">
                         <div class="row">
@@ -2565,12 +1541,12 @@
                           <a class="ground-service-details-btn" data-bs-toggle="collapse"
                             data-bs-target="#ground-service-details3" aria-expanded="false"
                             aria-controls="ground-service-details3">More details</a>
-                        </div>  
+                        </div>
                         <div class="text-end">
                           <div class="ground-service-price">
                             <span>$</span>80
                           </div>
-                        </div>  
+                        </div>
                       </div>
                       <div id="ground-service-details3" class="collapse">
                         <div class="row">
@@ -2583,7 +1559,7 @@
                           </div>
                         </div>
                       </div>
-                      
+
                       <hr />
                       <p class="ground-service-text mb-2">
                         Please choose which days to have the ground-service
@@ -2699,129 +1675,16 @@
     <app-bookings-sidebar [eventgoToNextStep]="goToNextStep"></app-bookings-sidebar>
   </div>
   <div class="col-xl-3">
-    <app-bookings-mob  [eventgoToNextStep]="goToNextStep"></app-bookings-mob>
+    <app-bookings-mob [eventgoToNextStep]="goToNextStep"></app-bookings-mob>
   </div>
   <!-- .sidebar end -->
   <app-destination-sidebar-filter></app-destination-sidebar-filter>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="room-details-modal" tabindex="-1" aria-labelledby="room details" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div>
-          <h4 class="modal-title" id="myModalLabel">
-            MOVENPICK MAKKAH HAJAR TOWER
-          </h4>
-          <div class="modal-address d-flex">
-            <i class="icon-line-map-pin me-2"></i>
-            <div class="hotel-address">
-              Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi
-              Arabia
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row mb-4">
-          <div class="col-xl-7 mb-3">
-            <div class="hotel-description pe-3">
-              <p class="mb-3">
-                Located in one of the tallest buildings in the world and
-                overlooking the holy Grand Mosque, Hajar Tower combines
-                traditions with modern comforts. It features in-house shops and
-                fine dining options.<br> <br>
-                Offering free WiFi, rooms at Mövenpick
-                Hotel & Residence Hajar Tower Makkah are decorated with
-                contemporary wooden furnishings, most facing the Masjid al-Haram
-                and the sacred K'aba. All rooms are equipped with a flat-screen
-                satellite TV, tea/coffee making facilities and a minibar.
-                <br> <br>
-                Guests can enjoy gourmet Saudi specialities at the Al Naim restaurant
-                and an array of international classics at the Al Firdaous buffet bistros.
-                Al Diwan Tea Lounge serves Arabic coffee and selected tea blends.
-                <br> <br>
-                Facing King Abdul Aziz Gate, Mövenpick Hajar Tower Makkah Hotel is
-                situated in the centre of Makkah, adjacent to shopping malls and
-                entertainment complexes. Wi-Fi is free in all public areas.
-                <br> <br>
-                The Hotel is can help to issue your UMRA permit during your stay, Permits
-                will only be issued to people whose status is shown Immune on Tawkalana,
-                the Immune status is showed for three categories: 1. Immune, 2. Immune by
-                recovery, 3. Immune by first dose. UMRA permit should be issued 24hours
-                before your schedule time for performing UMRA.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5 mb-3">
-            <div class="hotel-map w-100 h-100">
-              <iframe class="w-100 h-100"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.466793531677!2d39.82116847609991!3d21.4200692468781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7bd004af9%3A0xf468545cd6c9c58a!2sHotel%20M%C3%B6venpick%20Makkah!5e0!3m2!1sfr!2stn!4v1697677564418!5m2!1sfr!2stn"
-                style="border: 0" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-          <hr class="mt-3 mb-2">
-          <div class="col-xl-12">
-            <div class="hotel-features">
-              <div class="hotel-features-list">
-                <div class="row p-0">
 
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="icon-line-wifi"></i>
-                      <p>Good breakfast</p>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="icon-line-tv"></i>
-                      <p>Cable Tv</p>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="bi bi-telephone"></i>
-                      <p>Phone</p>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="icon-line-wind"></i>
-                      <p>Air conditioner</p>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="bi bi-lock"></i>
-                      <p>Locker</p>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3">
-                    <div class="hotel-amenities d-flex align-items-center">
-                      <i class="icon-shower"></i>
-                      <p>Shower</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="filter-list-btn">
-  <button class="color-btn d-flex align-items-center gap-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#destinationfilter"
-    aria-controls="destinationfilter">
+  <button class="color-btn d-flex align-items-center gap-3" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#destinationfilter" aria-controls="destinationfilter">
     <svg viewBox="0 0 608 592.12">
       <path
         d="m253.44,78.88C246.29,34.23,207.51,0,160.88,0s-85.42,34.23-92.57,78.88H18.75c-10.36,0-18.75,8.39-18.75,18.75h0c0,10.36,8.39,18.75,18.75,18.75h51.14c10.15,40.8,47.09,71.12,90.98,71.12s80.83-30.33,90.98-71.12h337.39c10.36,0,18.75-8.39,18.75-18.75h0c0-10.36-8.39-18.75-18.75-18.75H253.44Zm-92.57,71.12c-31.02,0-56.25-25.23-56.25-56.25s25.23-56.25,56.25-56.25,56.25,25.23,56.25,56.25-25.23,56.25-56.25,56.25Z"
