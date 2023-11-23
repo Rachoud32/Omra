@@ -46,11 +46,13 @@
             </div>
           </div>
           <div class="carousel-controls">
-            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
+              data-bs-slide="prev">
               <i class="icon-line-chevron-left"></i>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
+              data-bs-slide="next">
               <i class="icon-line-chevron-right"></i>
               <span class="visually-hidden">Next</span>
             </button>
@@ -71,9 +73,10 @@
                   <a class="read-btn hotel-details-btn d-flex align-items-center justify-content-center" role="button"
                     data-bs-toggle="modal" data-bs-target="#hotel-details"><i class="icon-line-info me-2"></i>
                     Hotel details</a>
-                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center collapsed" href="#hotel-details"
-                    role="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#rooms-list'+i" aria-expanded="true"
-                    aria-controls="rooms-list">
+                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center collapsed"
+                    [attr.href]="'#rooms-list'+i" role="button" data-bs-toggle="collapse"
+                    (click)="collapsedRoomsList('rooms-list'+i)" [attr.data-bs-target]="'#rooms-list'+i"
+                    aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">
                     <i class="icon-line-tag me-2"></i> Rooms and prices
                   </a>
                 </div>
@@ -82,7 +85,8 @@
           </div>
         </div>
 
-        <div [attr.id]="'rooms-list'+i" class="accordion-collapse collapse">
+        <div [attr.id]="'rooms-list'+i" class="accordion-collapse collapse"
+          [class.show]="selectedRoomsList==='rooms-list'+i">
           <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
             <div class="content-box clearfix">
               <div class="hotel-features-content-box">
@@ -179,7 +183,8 @@
                                         <div class="col-lg-12 mb-2">
                                           <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
                                             [attr.href]="'#room-more-details'+j" role="button" aria-expanded="false"
-                                            aria-controls="room-more-details">More details</a>
+                                            (click)="collapsedRoomAmenities('room-more-details'+j)"
+                                            [attr.aria-controls]="'#room-more-details'+j">More details</a>
                                         </div>
                                       </div>
                                     </div>
@@ -199,7 +204,8 @@
                                   </div>
                                 </div>
                                 <div [attr.id]="'room-more-details'+j" class="collapse" aria-labelledby="headingOne"
-                                  data-bs-parent="#room-accordion">
+                                  data-bs-parent="#room-accordion"
+                                  [class.show]="selectedRoomAmenities ==='room-more-details'+j">
                                   <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                                     <div class="room-details">
                                       <h5 class="room-amenities">Room amenities</h5>
@@ -338,8 +344,10 @@
                   </div>
                   <div class="col-lg-5 mb-3">
                     <div class="hotel-map w-100 h-100">
-                      <iframe class="w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.466793531677!2d39.82116847609991!3d21.4200692468781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7bd004af9%3A0xf468545cd6c9c58a!2sHotel%20M%C3%B6venpick%20Makkah!5e0!3m2!1sfr!2stn!4v1697677564418!5m2!1sfr!2stn" style="border: 0"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      <iframe class="w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.466793531677!2d39.82116847609991!3d21.4200692468781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7bd004af9%3A0xf468545cd6c9c58a!2sHotel%20M%C3%B6venpick%20Makkah!5e0!3m2!1sfr!2stn!4v1697677564418!5m2!1sfr!2stn"
+                        style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                   </div>
                   <hr class="mt-3 mb-2">
