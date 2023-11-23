@@ -92,7 +92,7 @@
               <div class="hotel-features-content-box">
                 <div class="hotel-features-content-limit">
                   <div class="row">
-                    <div class="col-lg-12 room-accordion postcontent">
+                    <div class="col-lg-12 room-accordion postcontent" id="rooms-list-container">
                       <div class="room-box" *ngFor="let room of dataHotels[i].rooms;let j=index">
                         <div class="room-item">
                           <div class="rooms-container">
@@ -204,7 +204,7 @@
                                   </div>
                                 </div>
                                 <div [attr.id]="'room-more-details'+j" class="collapse" aria-labelledby="headingOne"
-                                  data-bs-parent="#room-accordion"
+                                  data-bs-parent="#rooms-list-container"
                                   [class.show]="selectedRoomAmenities ==='room-more-details'+j">
                                   <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                                     <div class="room-details">
