@@ -12,8 +12,7 @@
   <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list">
     <div class="hotel-box inner-box mb-5" *ngFor="let hotel of dataHotels;let i = index">
       <div class="col-lg-12 hotel accordion-item">
-        <div [attr.id]="'carouselhotel'+i" class="image-box carousel slide carousel-fade" data-bs-ride="carousel"
-          data-lightbox="gallery">
+        <div [attr.id]="'carouselhotel'+i" class="image-box carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div *ngFor="let image of dataHotels[i].images" class="carousel-item active" data-bs-interval="4000">
               <img src={{image}} class="image-box d-block w-100" alt="" />
@@ -72,7 +71,7 @@
                   <a class="read-btn hotel-details-btn d-flex align-items-center justify-content-center" role="button"
                     data-bs-toggle="modal" data-bs-target="#hotel-details"><i class="icon-line-info me-2"></i>
                     Hotel details</a>
-                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center" href="#hotel-details"
+                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center" href="#rooms-list"
                     role="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#rooms-list'+i" aria-expanded="true"
                     aria-controls="rooms-list">
                     <i class="icon-line-tag me-2"></i> Rooms and prices

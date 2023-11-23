@@ -15,6 +15,7 @@ export class FirstDestinationComponent implements OnInit {
   roomSelectionStep = "step1"
   selectedRoom: string = ''
   selectedGroundServices: string[] = []
+  selectedRoomAmenities: string = ''
   localStorageSteps: any
   name = "Angular " + VERSION.major;
   settings = {
@@ -279,5 +280,9 @@ export class FirstDestinationComponent implements OnInit {
     const { index, prevIndex } = detail;
     console.log(index, prevIndex);
   };
+
+  collapsedRoomAmenities(value: any) {
+    this.selectedRoomAmenities = value
+  }
 }
 
