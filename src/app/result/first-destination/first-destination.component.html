@@ -99,7 +99,7 @@
                               <div class="box" [class.active]="selectedRoom===room._id">
                                 <div class="row">
                                   <div class="col-lg-3">
-                                    <div class="room-picture pswp-gallery">
+                                    <div class="room-picture">
                                       <img src={{room.images[0]}} [attr.alt]="'Room-'+room.title" />
                                     </div>
                                     <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
@@ -111,7 +111,6 @@
                                         </div>
                                       </a>
                                     </lightgallery>
-                                    
                                   </div>
                                   <div class="col-lg-7">
                                     <div class="room-details-content d-flex">
