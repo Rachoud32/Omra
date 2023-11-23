@@ -99,19 +99,10 @@
                               <div class="box" [class.active]="selectedRoom===room._id">
                                 <div class="row">
                                   <div class="col-lg-3">
-                                    <div class="room-picture pswp-gallery" id="my-gallery">
+                                    <div class="room-picture pswp-gallery">
                                       <img src={{room.images[0]}} [attr.alt]="'Room-'+room.title" />
-                                      <a *ngFor="let image of room.images" class="gallery-item" [attr.data-src]="image"
-                                        href={{room.images[0]}}
-                                        target="_blank"
-                                      >
-                                        <img
-                                          src={{room.images[0]}}
-                                          alt=""
-                                        />
-                                      </a>
                                     </div>
-                                    <!-- <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+                                    <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
                                       <a *ngFor="let image of room.images" class="gallery-item" [attr.data-src]="image">
                                         <div class="room-picture-overlay" *ngIf="image">
                                           <div class="room-picture-icon">
@@ -119,7 +110,7 @@
                                           </div>
                                         </div>
                                       </a>
-                                    </lightgallery> -->
+                                    </lightgallery>
                                     
                                   </div>
                                   <div class="col-lg-7">

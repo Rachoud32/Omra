@@ -3,7 +3,6 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import PhotoSwipeLightbox from 'photoswipe';
 
 @Component({
   selector: 'app-second-destination',
@@ -248,12 +247,6 @@ export class SecondDestinationComponent implements OnInit {
       }
     ]
   }
-
-  lightbox = new PhotoSwipeLightbox({
-    gallery: '#my-gallery',
-    children: 'a',
-    // pswpModule: () => import('photoswipe/dist/photoswipe.esm.js'),
-  });
 
   goToNextStep = () => {
     if (this.selectedRoom != '' && this.roomSelectionStep == "step1") {
