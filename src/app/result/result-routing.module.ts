@@ -11,7 +11,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
-    path: 'result', component: ResultComponent,
+    path: 'umrah-custom/result', component: ResultComponent,
     children: [
       { path: 'flight', component: FlightComponent },
       { path: 'first-destination', component: FirstDestinationComponent },

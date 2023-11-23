@@ -4,6 +4,7 @@ import { NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct } from '@ng
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -50,7 +51,7 @@ export class SearchComponent implements OnInit {
   searchFormPackage?: FormGroup
   searchFormCustom?: FormGroup
   selectedDate: any
-  searchType = 'hotel'
+  searchType = 'package'
   numAdults = 1
   numAdultsHotel = 1
   numAdultsCustom = 1
@@ -68,7 +69,11 @@ export class SearchComponent implements OnInit {
     { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
   ];
 
-  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService,) {
+  constructor(private calendar: NgbCalendar,
+    public formatter: NgbDateParserFormatter,
+    private config: NgSelectConfig,
+    private toastr: ToastrService,
+    private router: Router) {
     // this.fromDate = calendar.getToday();
     // this.toDate = calendar.getToday();
     // this.todayDate = calendar.getToday();
@@ -427,6 +432,15 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
+    if (this.searchType === 'hotel') {
+      // to be integrated
+    }
+    if (this.searchType === 'package') {
+      this.router.navigateByUrl('/umrah-package/result')
+    }
+    if (this.searchType === 'custom') {
+      this.router.navigateByUrl('/umrah-custom/result/flight')
+    }
     const data = {
       flight: true,
       firstDestination: false,

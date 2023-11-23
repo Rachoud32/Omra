@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
 import { FooterComponent } from './footer/footer.component';
+import { UmrahPackageModule } from './umrah-package/umrah-package.module';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "black",
@@ -37,6 +38,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     BrowserModule,
     SearchModule,
     ResultModule,
+    UmrahPackageModule,
     RouterModule,
     AppRoutingModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),

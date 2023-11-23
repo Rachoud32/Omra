@@ -11,7 +11,9 @@ const routes: Routes = [
   },
   { path: '', component: AppComponent },
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
-  { path: 'result', loadChildren: () => import('./result/result.module').then(m => m.ResultModule) }];
+  { path: 'umrah-custom/result', loadChildren: () => import('./result/result.module').then(m => m.ResultModule) },
+  { path: 'umrah-package/result', loadChildren: () => import('./umrah-package/umrah-package.module').then(m => m.UmrahPackageModule) },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

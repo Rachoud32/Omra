@@ -116,8 +116,9 @@
                                         #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                         (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
                                         style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
-                                        [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate" [placement]="'bottom-start'"
-                                        [positionTarget]="buttoncalendar1" #d="ngbDatepicker" />
+                                        [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate"
+                                        [placement]="'bottom-start'" [positionTarget]="buttoncalendar1"
+                                        #d="ngbDatepicker" />
                                     <ng-template #t let-date let-focused="focused">
                                         <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
                                             [class.faded]="isHovered(date) || isInside(date)"
@@ -319,7 +320,8 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
+                                        <button class="color-btn validate-btn mt-3"
+                                            (click)="toggleDropdown('1')">Confirm</button>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +366,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 d-flex w-100 justify-content-end">
-                            <button routerLink="/result/flight" (click)="search()" class="color-btn">
+                            <button (click)="search()" class="color-btn">
                                 Search
                             </button>
                         </div>
@@ -675,7 +677,8 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('2')">Confirm</button>
+                                        <button class="color-btn validate-btn mt-3"
+                                            (click)="toggleDropdown('2')">Confirm</button>
                                     </div>
                                 </div>
                             </div>
@@ -720,7 +723,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 d-flex w-100 justify-content-end">
-                            <button routerLink="/result/flight" (click)="search()" class="color-btn">
+                            <button (click)="search()" class="color-btn">
                                 Search
                             </button>
                         </div>
@@ -753,8 +756,9 @@
                                 <input name="datepicker" class="calendar-input" ngbDatepicker
                                     #datepicker="ngbDatepicker" [autoClose]="'outside'"
                                     (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
-                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!" [minDate]="today"
-                                    tabindex="-1" [footerTemplate]="footerTemplate1" #d="ngbDatepicker" />
+                                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
+                                    [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate1"
+                                    #d="ngbDatepicker" />
                                 <ng-template #t1 let-date let-focused="focused">
                                     <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
                                         [class.faded]="isHovered(date) || isInside(date)"
@@ -933,8 +937,9 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button class="color-btn validate-btn dropdown-btn m-3" (click)="toggleDropdown('4')">Confirm</button>
-                                    </div>    
+                                        <button class="color-btn validate-btn dropdown-btn m-3"
+                                            (click)="toggleDropdown('4')">Confirm</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1091,8 +1096,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('3')">Confirm</button>
-                                </div>    
+                                    <button class="color-btn validate-btn mt-3"
+                                        (click)="toggleDropdown('3')">Confirm</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1313,7 +1319,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 d-flex w-100 justify-content-end">
-                        <button routerLink="/result/flight" (click)="search()" class="color-btn">
+                        <button (click)="search()" class="color-btn">
                             Search
                         </button>
                     </div>
