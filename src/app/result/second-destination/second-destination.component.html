@@ -9,7 +9,7 @@
   <div class="col-lg-12">
     <app-top-filter></app-top-filter>
   </div>
-  <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list">
+  <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list" id="accordionSecondDestRoomsList">
     <div class="hotel-box inner-box mb-5" *ngFor="let hotel of dataHotels;let i = index">
       <div class="col-lg-12 hotel accordion-item">
         <div [attr.id]="'carouselhotel'+i" class="image-box carousel slide carousel-fade" data-bs-ride="carousel">
@@ -86,7 +86,7 @@
         </div>
 
         <div [attr.id]="'rooms-list'+i" class="accordion-collapse collapse"
-          [class.show]="selectedRoomsList==='rooms-list'+i">
+          [class.show]="selectedRoomsList==='rooms-list'+i" data-bs-parent="#accordionSecondDestRoomsList">
           <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
             <div class="content-box clearfix">
               <div class="hotel-features-content-box">
@@ -182,9 +182,10 @@
                                         </div>
                                         <div class="col-lg-12 mb-2">
                                           <a class="room-read-more accordion-btn d-block" data-bs-toggle="collapse"
-                                            [attr.href]="'#room-more-details'+j" role="button" aria-expanded="false"
-                                            (click)="collapsedRoomAmenities('room-more-details'+j)"
-                                            [attr.aria-controls]="'#room-more-details'+j">More details</a>
+                                            [attr.href]="'#hotel'+i+'room-more-details'+j" role="button"
+                                            aria-expanded="false"
+                                            (click)="collapsedRoomAmenities('hotel'+i+'room-more-details'+j)"
+                                            [attr.aria-controls]="'#hotel'+i+'room-more-details'+j">More details</a>
                                         </div>
                                       </div>
                                     </div>
@@ -203,9 +204,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div [attr.id]="'room-more-details'+j" class="collapse" aria-labelledby="headingOne"
-                                  data-bs-parent="#rooms-list-container"
-                                  [class.show]="selectedRoomAmenities ==='room-more-details'+j">
+                                <div [attr.id]="'hotel'+i+'room-more-details'+j" class="collapse"
+                                  aria-labelledby="headingOne" data-bs-parent="#rooms-list-container"
+                                  [class.show]="selectedRoomAmenities ===('hotel'+i+'room-more-details'+j)">
                                   <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                                     <div class="room-details">
                                       <h5 class="room-amenities">Room amenities</h5>

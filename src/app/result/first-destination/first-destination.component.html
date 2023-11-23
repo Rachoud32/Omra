@@ -9,7 +9,7 @@
   <div class="col-lg-12">
     <app-top-filter></app-top-filter>
   </div>
-  <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list">
+  <div *ngIf="roomSelectionStep == 'step1'" class="col-xl-9 packages-list" id="accordionFirstDestRoomsList">
     <div class="hotel-box inner-box mb-5" *ngFor="let hotel of dataHotels;let i = index">
       <div class="col-lg-12 hotel accordion-item">
         <div [attr.id]="'carouselhotel'+i" class="image-box carousel slide carousel-fade" data-bs-ride="carousel">
@@ -86,7 +86,7 @@
         </div>
 
         <div [attr.id]="'rooms-list'+i" class="accordion-collapse collapse"
-          [class.show]="selectedRoomsList==='rooms-list'+i">
+          [class.show]="selectedRoomsList==='rooms-list'+i" data-bs-parent="#accordionFirstDestRoomsList">
           <div class="col-lg-12 col-md-12 col-sm-12 content-column hotel-details">
             <div class="content-box clearfix">
               <div class="hotel-features-content-box">

@@ -11,8 +11,7 @@
     <app-transfer-top-filter></app-transfer-top-filter>
     <app-top-filter></app-top-filter>
   </div>
-  <div ng-app="transfer-list" class="col-xl-9 services-list transfer-list accordion">
-
+  <div ng-app="transfer-list" class="col-xl-9 services-list transfer-list accordion" id="accordionTransferDetails">
     <div class="vehicle-box" *ngFor="let vehicle of dataVehicle;let i=index">
       <label class="vehicle-box-item accordion mb-4" [attr.for]="'vehicle-box'+i">
         <input type="radio" [attr.name]="'vehiclebox'+i" [value]="'vehiclebox'+i" [(ngModel)]="selectedTransfer"
@@ -158,7 +157,7 @@
                 <div class="col-xl-12 accordion-item">
                   <div [attr.id]="'vehicledetails'+i" class="accordion-collapse collapse"
                     [class.show]="selectedDetailTransfer ==='detailTransfer'+i"
-                    [attr.aria-labelledby]="'vehicledetails'+i" data-bs-parent="#Vehicles-details">
+                    [attr.aria-labelledby]="'vehicledetails'+i" data-bs-parent="#accordionTransferDetails">
                     <div class="service-details-collapse mt-3">
                       <div class="card card-body">
 
