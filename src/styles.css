@@ -2288,12 +2288,12 @@ label.category-item::before {
 
 .services-list .box .color-btn.service-btn-details {
     font-size: var(--fs-18);
-    width: 35px;
+    width: fit-content;
     height: 35px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--omra-light-gray);
+    justify-content: flex-end;
+    background-color: transparent;
     border-color: transparent;
     color: var(--omra-white);
     padding: 0;
@@ -2304,12 +2304,8 @@ label.category-item::before {
     transition: all .3s linear;
 }
 
-.services-list .box .color-btn.service-btn-details:hover {
-    background-color: var(--omra-second);
-}
-
 .services-list .box .color-btn.service-btn-details:hover i {
-    color: var(--omra-white);
+    color: var(--omra-second);
 }
 
 .services-list .service {
@@ -4156,8 +4152,8 @@ app-bookings-mob .search-sidebar-list {
 	Top Filter
 -----------------------------------------------------------------*/
 .top-filter-section {
-    background: var(--omra-white);
-    padding: 20px 15px;
+    background: transparent;
+    padding: 20px 0px;
     margin-bottom: 15px;
 }
 
@@ -5286,9 +5282,9 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .service-summary-box .color-btn {
-    width: 60%;
+    width: 35%;
     padding: 10px 10px;
-    font-size: var(--fs-13);
+    font-size: var(--fs-18);
     background-color: var(--omra-second);
     border-color: var(--omra-second);
 }

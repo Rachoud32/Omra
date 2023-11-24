@@ -270,8 +270,14 @@ export class FlightComponent implements OnInit {
     this.counterValue = 0
   }
   checkFlightBack(value: any) {
+    this.loading = true
     this.selectedFlightBack = value;
     this.showDetailsReturn = this.showDetailsDeparture.flightReturns[value]
+    this.startCounter(this.durationInSeconds / 2)
+    setTimeout(() => {
+      this.loading = false
+    }, (this.durationInSeconds / 2) * 1000 )
+    this.counterValue = 0
   }
   collapsedDetailDeparture(value: any) {
     this.selectedDetailDeparture = value
