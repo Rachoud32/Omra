@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class SummaryComponent {
   goToNextStep = () => {
-      window.location.href = '/result/motamar-informations'
+      window.location.href = 'umrah-custom/result/motamar-informations'
   }
 }

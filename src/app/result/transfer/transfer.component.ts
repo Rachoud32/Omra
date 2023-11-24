@@ -214,7 +214,7 @@ export class TransferComponent implements OnInit {
         summary: true,
       };
       localStorage.setItem('steps', JSON.stringify(data));
-      window.location.href = '/result/summary';
+      window.location.href = 'umrah-custom/result/summary';
     } else {
       this.toastr.info('Please select a vehicle before proceeding.');
     }

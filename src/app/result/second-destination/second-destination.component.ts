@@ -262,7 +262,7 @@ export class SecondDestinationComponent implements OnInit {
         summary: false,
       }
       localStorage.setItem('steps', JSON.stringify(data))
-      window.location.href = '/result/transfer';
+      window.location.href = 'umrah-custom/result/transfer';
     } else {
       this.toastr.info("Please select a room for your 2nd destination before proceeding.")
     }

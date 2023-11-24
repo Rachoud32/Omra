@@ -48,22 +48,22 @@ export class SearchBarComponent implements OnInit {
   constructor(private router: Router, private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService) {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if ((val.url == '/' || val.url == '/result/payment') || (val.url == '/' || val.url == '/result/motamar-informations') || (val.url == '/' || val.url == '/result/summary')) {
+        if ((val.url == '/' || val.url == '/umrah-custom/result/payment') || (val.url == '/' || val.url == '/umrah-custom/result/motamar-informations') || (val.url == '/' || val.url == '/umrah-custom/result/summary')) {
           this.SearchBar = false;
         } else {
           this.SearchBar = true;
         }
-        if (val.url === "/result/flight") {
+        if (val.url === "/umrah-custom/result/flight") {
           this.dataBsTargetValue = '#flightfilter';
           this.ariaControls = 'flightfilter';
           this.category = 'flight(s)'
         }
-        if (val.url === '/result/first-destination' || val.url === '/result/second-destination') {
+        if (val.url === '/umrah-custom/result/first-destination' || val.url === '/result/second-destination') {
           this.dataBsTargetValue = '#destinationfilter';
           this.ariaControls = 'destinationfilter';
           this.category = 'room(s)'
         }
-        if (val.url === "/result/transfer") {
+        if (val.url === "/umrah-custom/result/transfer") {
           this.dataBsTargetValue = '#transferfilter';
           this.ariaControls = 'transferfilter';
           this.category = 'vehicle(s)'

@@ -18,13 +18,14 @@ export class BookingStepsComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if ((val.url == '/' || val.url == '/result/payment') || (val.url == '/' || val.url == '/result/motamar-informations')) {
+        if ((val.url == '/' || val.url == '/umrah-custom/result/payment') || (val.url == '/' || val.url == '/umrah-custom/result/motamar-informations')) {
           this.BookingSteps = false;
         } else {
           this.BookingSteps = true;
         }
       }
     });
+
     window.addEventListener('storage', (event: StorageEvent) => {
       if (event.key === 'steps') {
         this.localStorageSubject.next(event.newValue);
@@ -33,8 +34,6 @@ export class BookingStepsComponent implements OnInit, OnDestroy {
 
     });
   }
-
-
 
   ngOnInit(): void {
     this.updateLinkValue(); // Initialize the linkValue property

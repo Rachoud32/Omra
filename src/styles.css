@@ -4104,6 +4104,16 @@ app-bookings-mob .search-sidebar-list {
 }
 
 /* ----------------------------------------------------------------
+	Packages list
+-----------------------------------------------------------------*/
+.packages-list .package-item .box {
+    background-color: var(--omra-white);
+    border: 2px solid var(--omra-light-gray);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
+    transition: all .3s ease;
+}
+
+/* ----------------------------------------------------------------
 	Toaster
 -----------------------------------------------------------------*/
 .toast-container {

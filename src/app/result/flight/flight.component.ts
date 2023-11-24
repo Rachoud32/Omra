@@ -240,7 +240,7 @@ export class FlightComponent implements OnInit {
           summary: false,
         }
         localStorage.setItem('steps', JSON.stringify(data))
-        window.location.href = '/result/first-destination'
+        window.location.href = 'umrah-custom/result/first-destination'
       }
       else {
         this.toastr.info("Please select a return flight before proceeding.")
