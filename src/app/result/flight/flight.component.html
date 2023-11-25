@@ -227,7 +227,7 @@
         </div>
       </div>
 
-      <div *ngIf="returnFlights.length>0">
+      <div *ngIf="selectedFlightBack.length == 0 && returnFlights.length>0">
         <div *ngFor="let returnFlight of returnFlights;let j = index">
           <label [attr.for]="j" class="subservice-item mb-2">
             <input type="radio" [attr.name]="j" [value]="j" [(ngModel)]="selectedFlightBack" class="service-check-box"
@@ -404,7 +404,7 @@
       </div>
     </div>
 
-    <div *ngIf="showDetailsReturn">
+    <div *ngIf="showDetailsReturn && !loading">
       <div class="flight-direction-list-title d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
         <div class="d-flex align-items-center gap-2">
           <i class="icon-line-chevron-right"></i>
