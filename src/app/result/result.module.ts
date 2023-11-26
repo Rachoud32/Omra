@@ -35,6 +35,7 @@ import { TransferTopFilterComponent } from '../result/transfer-top-filter/transf
 import { TransferPeriodTopFilterComponent } from '../result/transfer-period-top-filter/transfer-period-top-filter.component';
 import { BookingsMobComponent } from '../result/bookings-mob/bookings-mob.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { TransferComponent } from './transfer/transfer.component';
     TransferPeriodTopFilterComponent,
     BookingsMobComponent,
     TransferComponent,
+    BookingSummaryComponent,
   ],
   imports: [
     CommonModule,

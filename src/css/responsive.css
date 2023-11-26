@@ -64,6 +64,9 @@
 }
 
 @media (max-width: 1199.98px) {	
+    .user-infos-card {
+        padding-right: 15px !important;
+    }
 
     app-bookings-sidebar {
         display: none;
@@ -108,15 +111,6 @@
         padding: 20px 0;
     }
 
-    .service-summary-box .color-btn {
-        width: 70%;
-        padding: 7px 10px;
-    }
-
-    .booked-room .border-start {
-        border: 0 !important;
-    }
-
     .ground-service-date {
         flex: 1;
     }
@@ -132,6 +126,7 @@
 }
 
 @media (max-width: 991.98px) {	
+
 
     .travel-path {
         flex-direction: column;
@@ -199,10 +194,6 @@
 
     .ground-services-list .ground-service {
         padding: 10px;
-    }
-
-    .booked-room {
-        padding: 0px 0px 10px 0;
     }
 
     .room-infos:first-child {
@@ -361,7 +352,7 @@
         font-size: 24px;
     }
 
-    .checkout-booking-list .list-booked-room {
+    .checkout-booking-list .list-booked-service {
         padding: 0px;
         max-height: none;
     }
@@ -454,6 +445,10 @@
 }
 
 @media (max-width: 767.98px) {
+    .booked-service .border-start {
+        border: 0 !important;
+    }
+
     .flight-direction-list-title {
         padding: 15px 20px;
     }
@@ -506,19 +501,22 @@
         flex-direction: column;
     }
 
-    .booked-room .room-label {
+    .booked-service .room-label {
         text-align: center;
         line-height: normal;
     }
 
-    .booked-room .room-label:before {
+    .booked-service .room-label:before {
         display: none;
     }
 }
 
 
 @media (max-width: 575.98px) {
-
+    .summary-icon {
+        display: none;
+    }
+    
     .veh-option {
         justify-content: flex-end;
         flex-direction: row;
@@ -962,13 +960,11 @@
 
     .color-btn.edit-btn {
         margin-right: 0px;
-        line-height: 42px;
         margin-bottom: 0 !important;
     }
 
     .color-btn.cancel-btn {
         margin-left: 0px;
-        line-height: 42px;
     }
 
     .service-summary-box .service-class {

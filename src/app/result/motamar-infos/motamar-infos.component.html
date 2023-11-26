@@ -6,379 +6,468 @@
         <p>You benefit from the best rate.</p>
     </div>
 
-    <div class="all-content-box payment-gateways">
+    <div class="all-content-box user-infos">
         <div class="row">
-            <div class="col-xl-7 mb-4">
+            <div class="col-xl-8 user-infos-card mb-4">
                 <div class="heading-box">
-                    <h5 class="heading-title-sm color-2 mb-0">
+                    <h5 class="heading-title-sm color mb-0 fw-semibold">
                         Occupancy informations
                     </h5>
                     <p>You benefit from the best payment gateways.</p>
                 </div>
-                <div class="row occupancy-content">
-                    <div class="col-xl-2">
-                    <div class="form-group">
-                        <label>Title</label>
-                        <div class="title-select">
-                        <div class="col-xl-12 mb-3">
-                            <div class="dropdown w-100">
-                            <button
-                                class="btn w-100"
-                                type="button"
-                                data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside"
-                                data-bs-display="static"
-                                aria-expanded="false"
-                            >
-                                <div
-                                class="d-flex me-4 justify-content-between w-100 align-items-center"
-                                >
-                                <div class="input-group">
-                                    <p class="m-0 text-muted">Gender</p>
-                                </div>
-                                <i class="icon-line-chevron-down"></i>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div>
-                                <div class="select-container">
-                                    <label for="mr" class="me-3 w-100">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input me-2"
-                                        name="gender"
-                                        id="mr"
-                                        value="mr"
-                                    />
-                                    <div class="list-item">Mr.</div>
-                                    </label>
-                                </div>
-                                <div class="select-container">
-                                    <label for="ms" class="me-3 w-100">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input me-2"
-                                        name="gender"
-                                        id="ms"
-                                        value="ms"
-                                    />
-                                    <div class="list-item">Ms.</div>
-                                    </label>
-                                </div>
+                <div class="occupancy-card">
+                    <h6 class="guest-creds-title">Guest N°1</h6>
+                    <div class="row occupancy-content row-gap-2 mb-2">
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <div class="title-select">
+                                    <div class="dropdown w-100">
+                                        <button
+                                            class="btn w-100"
+                                            type="button"
+                                            data-bs-toggle="dropdown"
+                                            data-bs-auto-close="outside"
+                                            data-bs-display="static"
+                                            aria-expanded="false">
+                                            <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                            <div class="input-group">
+                                                <p class="m-0 text-muted">Gender</p>
+                                            </div>
+                                            <i class="icon-line-chevron-down"></i>
+                                            </div>
+                                        </button>
+                                        <div class="dropdown-menu animate slideIn">
+                                            <div>
+                                                <div class="select-container">
+                                                    <label for="mr" class="me-3 w-100">
+                                                    <input
+                                                        type="radio"
+                                                        class="form-check-input me-2"
+                                                        name="gender"
+                                                        id="mr"
+                                                        value="mr"
+                                                    />
+                                                    <div class="list-item">Mr.</div>
+                                                    </label>
+                                                </div>
+                                                <div class="select-container">
+                                                    <label for="ms" class="me-3 w-100">
+                                                    <input
+                                                        type="radio"
+                                                        class="form-check-input me-2"
+                                                        name="gender"
+                                                        id="ms"
+                                                        value="ms"
+                                                    />
+                                                    <div class="list-item">Ms.</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-name">First Name</label>
+                                <input
+                                type="text"
+                                name="motamar-name"
+                                id="motamar-name"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="First Name"
+                                />
                             </div>
                         </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-lastname">Last Name</label>
+                                <input
+                                type="text"
+                                name="motamar-lastname"
+                                id="motamar-lastname"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Last Name"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-guest">Guest type</label>
+                                <input
+                                type="text"
+                                name="motamar-guest"
+                                id="motamar-guest"
+                                class="form-control border-form-control required"
+                                value="Adult"
+                                placeholder=""
+                                disabled
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-nationality">Nationality</label>
+                                <input
+                                type="text"
+                                name="motamar-nationality"
+                                id="motamar-nationality"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Nationality"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-datebirth">Date of birth</label>
+                                <input
+                                type="text"
+                                name="motamar-datebirth"
+                                id="motamar-datebirth"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of birth"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-placebirth">Place of birth</label>
+                                <input type="text" 
+                                name="motamar-placebirth" 
+                                id="motamar-placebirth" 
+                                class="form-control border-form-control required" 
+                                value="" 
+                                placeholder="Place of birth"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-socialstate">Social state</label>
+                                <input
+                                type="text"
+                                name="motamar-socialstate"
+                                id="motamar-socialstate"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Social state"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-job">Job</label>
+                                <input
+                                type="text"
+                                name="motamar-job"
+                                id="motamar-job"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Job"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-phone">Phone</label>
+                                <input
+                                type="text"
+                                name="motamar-phone"
+                                id="motamar-phone"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Phone"
+                                />
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div class="col-xl-4">
-                    <div class="form-group">
-                        <label for="motamar-name">FirstName</label>
-                        <input
-                        type="text"
-                        name="motamar-name"
-                        id="motamar-name"
-                        class="form-control border-form-control required"
-                        value=""
-                        placeholder="Enter Your First Name"
-                        />
-                    </div>
-                    </div>
-                    <div class="col-xl-4">
-                    <div class="form-group">
-                        <label for="motamar-lastname">LastName</label>
-                        <input
-                        type="text"
-                        name="motamar-lastname"
-                        id="motamar-lastname"
-                        class="form-control border-form-control required"
-                        value=""
-                        placeholder="Enter Your Last Name"
-                        />
-                    </div>
-                    </div>
-                    <div class="col-xl-2">
-                    <div class="form-group">
-                        <label for="motamar-guest">Guest type</label>
-                        <input
-                        type="text"
-                        name="motamar-guest"
-                        id="motamar-guest"
-                        class="form-control border-form-control required"
-                        value="Adult"
-                        placeholder=""
-                        disabled
-                        />
-                    </div>
+                    <div class="row occupancy-content row-gap-2">
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-passport">Passport Number</label>
+                                <input
+                                type="text"
+                                name="motamar-passport"
+                                id="motamar-passport"
+                                class="form-control border-form-control required" value="" placeholder="Passport Number"/>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-dateissue">Date of issue</label>
+                                <input
+                                type="text"
+                                name="motamar-dateissue"
+                                id="motamar-dateissue"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of issue"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-dateexpiry">Date of expiry</label>
+                                <input
+                                type="text"
+                                name="motamar-dateexpiry"
+                                id="motamar-dateexpiry"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of expiry"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-placeissue">Place of issue</label>
+                                <input
+                                type="text"
+                                name="motamar-placeissue"
+                                id="motamar-placeissue"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Place of issue"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row occupancy-content">
-                    <div class="col-xl-2">
-                    <div class="form-group">
-                        <label>Title</label>
-                        <div class="title-select">
-                        <div class="col-xl-12 mb-3">
-                            <div class="dropdown w-100">
-                            <button
-                                class="btn w-100"
-                                type="button"
-                                data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside"
-                                data-bs-display="static"
-                                aria-expanded="false"
-                            >
-                                <div
-                                class="d-flex me-4 justify-content-between w-100 align-items-center"
-                                >
-                                <div class="input-group">
-                                    <p class="m-0 text-muted">Gender</p>
-                                </div>
-                                <i class="icon-line-chevron-down"></i>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div>
-                                <div class="select-container">
-                                    <label for="mr" class="me-3 w-100">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input me-2"
-                                        name="gender"
-                                        id="mr"
-                                        value="mr"
-                                    />
-                                    <div class="list-item">Mr.</div>
-                                    </label>
-                                </div>
-                                <div class="select-container">
-                                    <label for="ms" class="me-3 w-100">
-                                    <input
-                                        type="radio"
-                                        class="form-check-input me-2"
-                                        name="gender"
-                                        id="ms"
-                                        value="ms"
-                                    />
-                                    <div class="list-item">Ms.</div>
-                                    </label>
-                                </div>
+                <hr>
+                <div class="occupancy-card">
+                    <h6 class="guest-creds-title">Guest N°2</h6>
+                    <div class="row occupancy-content row-gap-2 mb-2">
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <div class="title-select">
+                                    <div class="dropdown w-100">
+                                        <button
+                                            class="btn w-100"
+                                            type="button"
+                                            data-bs-toggle="dropdown"
+                                            data-bs-auto-close="outside"
+                                            data-bs-display="static"
+                                            aria-expanded="false">
+                                            <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                            <div class="input-group">
+                                                <p class="m-0 text-muted">Gender</p>
+                                            </div>
+                                            <i class="icon-line-chevron-down"></i>
+                                            </div>
+                                        </button>
+                                        <div class="dropdown-menu animate slideIn">
+                                            <div>
+                                                <div class="select-container">
+                                                    <label for="mr" class="me-3 w-100">
+                                                    <input
+                                                        type="radio"
+                                                        class="form-check-input me-2"
+                                                        name="gender"
+                                                        id="mr"
+                                                        value="mr"
+                                                    />
+                                                    <div class="list-item">Mr.</div>
+                                                    </label>
+                                                </div>
+                                                <div class="select-container">
+                                                    <label for="ms" class="me-3 w-100">
+                                                    <input
+                                                        type="radio"
+                                                        class="form-check-input me-2"
+                                                        name="gender"
+                                                        id="ms"
+                                                        value="ms"
+                                                    />
+                                                    <div class="list-item">Ms.</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-name">First Name</label>
+                                <input
+                                type="text"
+                                name="motamar-name"
+                                id="motamar-name"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="First Name"
+                                />
                             </div>
                         </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-lastname">Last Name</label>
+                                <input
+                                type="text"
+                                name="motamar-lastname"
+                                id="motamar-lastname"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Last Name"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-guest">Guest type</label>
+                                <input
+                                type="text"
+                                name="motamar-guest"
+                                id="motamar-guest"
+                                class="form-control border-form-control required"
+                                value="Adult"
+                                placeholder=""
+                                disabled
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-nationality">Nationality</label>
+                                <input
+                                type="text"
+                                name="motamar-nationality"
+                                id="motamar-nationality"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Nationality"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-datebirth">Date of birth</label>
+                                <input
+                                type="text"
+                                name="motamar-datebirth"
+                                id="motamar-datebirth"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of birth"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-placebirth">Place of birth</label>
+                                <input type="text" 
+                                name="motamar-placebirth" 
+                                id="motamar-placebirth" 
+                                class="form-control border-form-control required" 
+                                value="" 
+                                placeholder="Place of birth"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-socialstate">Social state</label>
+                                <input
+                                type="text"
+                                name="motamar-socialstate"
+                                id="motamar-socialstate"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Social state"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-job">Job</label>
+                                <input
+                                type="text"
+                                name="motamar-job"
+                                id="motamar-job"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Job"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-phone">Phone</label>
+                                <input
+                                type="text"
+                                name="motamar-phone"
+                                id="motamar-phone"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Phone"
+                                />
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div class="col-xl-4">
-                    <div class="form-group">
-                        <label for="motamar-name2">First Name</label>
-                        <input
-                        type="text"
-                        name="motamar-name"
-                        id="motamar-name2"
-                        class="form-control border-form-control required"
-                        value=""
-                        placeholder="Enter Your First Name"
-                        />
-                    </div>
-                    </div>
-                    <div class="col-xl-4">
-                    <div class="form-group">
-                        <label for="motamar-lastname2">Last Name</label>
-                        <input
-                        type="text"
-                        name="motamar-lastname"
-                        id="motamar-lastname2"
-                        class="form-control border-form-control required"
-                        value=""
-                        placeholder="Enter Your Last Name"
-                        />
-                    </div>
-                    </div>
-                    <div class="col-xl-2">
-                    <div class="form-group">
-                        <label for="motamar-guest2">Guest Type</label>
-                        <input
-                        type="text"
-                        name="motamar-guest"
-                        id="motamar-guest2"
-                        class="form-control border-form-control required"
-                        value="Adult"
-                        placeholder=""
-                        disabled
-                        />
-                    </div>
+                    <div class="row occupancy-content row-gap-2">
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-passport">Passport Number</label>
+                                <input
+                                type="text"
+                                name="motamar-passport"
+                                id="motamar-passport"
+                                class="form-control border-form-control required" value="" placeholder="Passport Number"/>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-dateissue">Date of issue</label>
+                                <input
+                                type="text"
+                                name="motamar-dateissue"
+                                id="motamar-dateissue"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of issue"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-dateexpiry">Date of expiry</label>
+                                <input
+                                type="text"
+                                name="motamar-dateexpiry"
+                                id="motamar-dateexpiry"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Date of expiry"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="form-group">
+                                <label for="motamar-placeissue">Place of issue</label>
+                                <input
+                                type="text"
+                                name="motamar-placeissue"
+                                id="motamar-placeissue"
+                                class="form-control border-form-control required"
+                                value=""
+                                placeholder="Place of issue"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-5 checkout-details mb-4">
-                <div class="heading-box">
-                    <h5 class="heading-title-sm color-2 mb-4">
-                        Your Booking(s)
-                    </h5>
-                    <div class="checkout-booking-list">
-                        <div class="list-booked-room">
-                            <div class="booked-room mb-3">
-                                <div class="row">
-                                    <div class="col-12 col-lg-12">
-                                        <div class="booked-room-content">
-                                            <div class="row">
-                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                                                    <div class="room-label">Room 1</div>
-                                                    <div class="room-price"><span>$</span>300</div>
-                                                </div>	
-                                                <div class="col-lg-12">
-                                                    <div class="room-type">
-                                                        <h3 class="t-ellipsis">King junior suite partial Haram view</h3>
-                                                    </div>
-                                                    <div class="room-infos">
-                                                        <div class="d-flex me-4 align-items-center">
-                                                            <i class="icon-line-clock"></i>
-                                                            <p class="mb-0 ms-2">2 night(s)</p>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <i class="icon-line-map-pin"></i>
-                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room-details-content">
-                                                        <div class="room-details">
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-calendar"></i>
-                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-users"></i>
-                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
-                                                            </div>    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="booked-room mb-3">
-                                <div class="row">
-                                    <div class="col-12 col-lg-12">
-                                        <div class="booked-room-content">
-                                            <div class="row">
-                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                                                    <div class="room-label">Room 2</div>
-                                                    <div class="room-price"><span>$</span>300</div>
-                                                </div>	
-                                                <div class="col-lg-12">
-                                                    <div class="room-type">
-                                                        <h3 class="t-ellipsis">Two Bedroom Suite City View</h3>
-                                                    </div>
-                                                    <div class="room-infos">
-                                                        <div class="d-flex me-4 align-items-center">
-                                                            <i class="icon-line-clock"></i>
-                                                            <p class="mb-0 ms-2">2 night(s)</p>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <i class="icon-line-map-pin"></i>
-                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room-details-content">
-                                                        <div class="room-details">
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-calendar"></i>
-                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-users"></i>
-                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
-                                                            </div>    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="booked-room mb-3">
-                                <div class="row">
-                                    <div class="col-12 col-lg-12">
-                                        <div class="booked-room-content">
-                                            <div class="row">
-                                                <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                                                    <div class="room-label">Room 3</div>
-                                                    <div class="room-price"><span>$</span>300</div>
-                                                </div>	
-                                                <div class="col-lg-12">
-                                                    <div class="room-type">
-                                                        <h3 class="t-ellipsis">Superior double room</h3>
-                                                    </div>
-                                                    <div class="room-infos">
-                                                        <div class="d-flex me-4 align-items-center">
-                                                            <i class="icon-line-clock"></i>
-                                                            <p class="mb-0 ms-2">2 night(s)</p>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <i class="icon-line-map-pin"></i>
-                                                            <p class="mb-0 ms-2">Movenpick Makkah Hajar Tower</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room-details-content">
-                                                        <div class="room-details">
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-calendar"></i>
-                                                                <p class="mb-0 ms-2">08/15/2023 - 08/17/2023</p>
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="icon-line-users"></i>
-                                                                <p class="mb-0 ms-2">2 Adult(s), 0 child(s)</p>
-                                                            </div>    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>	
-
-                        <div class="total-price-box mb-4">
-                            <div class="row">
-                                <div class="col-12 col-lg-12">
-                                    <div class="total-price-content-box">
-                                        <div class="total-content">
-                                            <div class="total-price d-flex justify-content-between align-items-center">
-                                                <h5>Subtotal</h5>
-                                                <div class="price"><span>$</span>585</div>
-                                            </div>
-                                            <div class="total-price d-flex justify-content-between align-items-center">
-                                                <h5>Taxes</h5>
-                                                <div class="price"><span>$</span>65</div>
-                                            </div>
-                                            <hr>
-                                            <div class="total-price d-flex justify-content-between align-items-center">
-                                                <div class="total-price-content">
-                                                    <h5>Total</h5>
-                                                </div>
-                                                <div class="price"><span>$</span>650</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-3">
-                            <button class="d-block color-btn colorinv-btn w-100 mt-2 mb-2">Cancel</button>
-                            <button routerLink="/umrah-custom/result/payment" class="d-block color-btn w-100 mt-2 mb-2">Pay</button>
-                        </div>
-                    </div>	
-                </div>
+            <div class="col-xl-4 bookings-summary-list mb-4">
+                <app-booking-summary></app-booking-summary>
             </div>
         </div>
     </div>

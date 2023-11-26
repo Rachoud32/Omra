@@ -15,7 +15,7 @@
           <i class="icon-line-chevron-right"></i>
           <h6>{{returnFlights.length===0 ? 'Choose the depature flight':'Choose the return flight' }}</h6>
         </div>
-        <p>{{loading ? 'Searching for flights...':'Tickets prices are subject to frequent change'}}</p>
+        <p>{{(loading && returnFlights.length == 0) ? 'Searching for flights...' : (loading && selectedFlightBack.length != 0) ? 'Generating Summary' : 'Tickets prices are subject to frequent change'}}</p>
         <button class="color-btn change-flight-btn" *ngIf="returnFlights.length != 0" (click)="clearData()">Change
           Flight</button>
       </div>
@@ -419,31 +419,7 @@
           <i class="icon-line-chevron-left"></i>Return to flights list
         </button>
       </div> -->
-      <div class="check-form summary-search d-flex align-items-center justify-content-between">
-        <div class="summary-search-label">Your Search</div>
-        <div class="summary-search-results d-flex align-items-center gap-3">
-          <div class="d-flex align-items-center gap-2">
-            <i class="icon-line-calendar"></i>
-            <div class="d-flex align-items-center gap-2">
-              <div>Mon, 16 Aug.</div>
-              <i class="icon-line-arrow-right"></i>
-              <div>Wed, 18 Aug.</div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center gap-2">
-            <i class="icon-line-map-pin"></i>
-            <div class="d-flex align-items-center gap-2">
-              <div>Istanbul (IST)</div>
-              <i class="icon-line-arrow-right"></i>
-              <div>Jeddah (JDE)</div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center gap-2">
-            <i class="icon-line-users"></i>
-            <p class="m-0">4</p>
-          </div>
-        </div>
-      </div>
+      
       <div class="summary-items content-box">
         <div class="summary-title">Summary of your flight</div>
         <label for="" class="">

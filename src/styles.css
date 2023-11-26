@@ -1713,10 +1713,6 @@ label.category-item::before {
 /*----------------------------------------------------
     RESERVATION STEPS BLOCK
 ----------------------------------------------------*/
-.list-steps-container {
-    /* padding: 40px 15px !important; */
-}
-
 .list-steps {
     border-radius: 0px !important;
 }
@@ -1725,7 +1721,6 @@ label.category-item::before {
     margin-bottom: 5px;
     color: var(--omra-base) !important;
     font-size: var(--fs-13);
-    text-transform: uppercase;
 }
 
 .list-group-item {
@@ -2301,6 +2296,7 @@ label.category-item::before {
 
 .services-list .box .color-btn.service-btn-details i {
     color: var(--omra-gray);
+    font-size: var(--fs-20);
     transition: all .3s linear;
 }
 
@@ -2576,11 +2572,10 @@ label.disabled .service-class-card {
 }
 
 .summary-title {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     text-transform: uppercase;
     color: var(--omra-base);
-    background-color: var(--omra-extra);
     padding-bottom: 5px;
 }
 
@@ -2607,8 +2602,8 @@ label.disabled .service-class-card {
 }
 
 .summary-items {
-    background: var(--omra-extra);
-    padding: 20px;
+    background: transparent;
+    padding: 0px;
 }
 
 /*************** End New Service Box **********************/
@@ -3672,18 +3667,7 @@ app-bookings-mob .search-sidebar-list {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.room-read-more::after {
-    content: "\e92e";
-    position: absolute;
-    font-family: 'lined-icons';
-    flex-shrink: 0;
-    top: 0;
-    line-height: normal;
-    margin: 0px 5px;
-    font-size: var(--fs-15);
-    transition: transform .2s ease-in-out;
-}
-
+.room-read-more::after, 
 .ground-service-details-btn::after {
     content: "\e92e";
     position: absolute;
@@ -3691,7 +3675,7 @@ app-bookings-mob .search-sidebar-list {
     flex-shrink: 0;
     top: 0;
     line-height: normal;
-    margin: 0px 5px;
+    margin: 2px 5px;
     font-size: var(--fs-15);
     transition: transform .2s ease-in-out;
 }
@@ -5149,17 +5133,19 @@ app-bookings-mob .search-sidebar-list {
 
 .service-summary-box .service-label {
     display: block;
-    font-size: clamp(1rem, 2.5vw, 1.375em);
+    font-size: clamp(1.1rem, 2.5vw, 1.375em);
     margin-bottom: 0px;
-    font-weight: 600 !important;
-    color: var(--omra-second);
+    font-weight: 500 !important;
+    color: var(--omra-base);
 }
 
 .service-summary-box .service-class {
     background: var(--omra-extra);
     border: 0;
     color: var(--omra-second);
-    padding: 4px 10px;
+    padding: 0px 10px;
+    font-size: var(--fs-12);
+    width: fit-content;
 }
 
 .service-summary-box p {
@@ -5192,13 +5178,13 @@ app-bookings-mob .search-sidebar-list {
     width: 150px;
 }
 
-.booked-room hr {
+.booked-service hr {
     margin: 10px 0 20px;
 }
 
-.booked-room .hotel-label {
-    font-size: clamp(1rem, 3.5vw, 1.25rem);
-    color: var(--omra-base);
+.booked-service .service-sub-label {
+    font-size: clamp(1rem, 3.5vw, 1.15rem);
+    color: var(--omra-second);
     font-weight: 400;
     border: 0;
     padding: 0;
@@ -5207,12 +5193,12 @@ app-bookings-mob .search-sidebar-list {
 
 .service-summary-box h5 {
     color: var(--omra-base);
-    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    font-size: clamp(1rem, 3.5vw, 1rem);
     margin-bottom: 5px;
     font-weight: 400 !important;
 }
 
-.booked-room .room-infos {
+.booked-service .room-infos {
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -5221,27 +5207,45 @@ app-bookings-mob .search-sidebar-list {
     margin-bottom: 5px;
 }
 
-.booked-room .room-infos i {
+.booked-service .room-infos i {
     font-size: var(--fs-14);
     color: var(--omra-second);
 }
 
-.booked-room .ground-service-detail-box .ground-service-detail {
+.booked-service .summary-icon {
+    width: 55px;
+    height: 55px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--omra-extra);
+}
+
+.booked-service .summary-icon svg {
+    width: 30px;
+    fill: var(--omra-second);
+}
+
+.booked-service .summary-icon .hotel-icon {
+    width: 22px;
+}
+
+.booked-service .ground-service-detail-box .ground-service-detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: normal;
 }
 
-.booked-room .ground-service-detail-box .ground-service-name {
+.booked-service .ground-service-detail-box .ground-service-name {
     font-size: var(--fs-14);
     font-weight: 400 !important;
     color: var(--omra-second);
     margin-bottom: 0;
-    text-transform: uppercase;
 }
 
-.booked-room .ground-service-detail-box ul li {
+.booked-service .ground-service-detail-box ul li {
     color: var(--omra-gray);
     font-size: var(--fs-14);
     margin-bottom: 2px;
@@ -5252,23 +5256,23 @@ app-bookings-mob .search-sidebar-list {
     align-items: center;
 }
 
-.booked-room .ground-service-detail-box .ground-service-detail .price {
+.booked-service .ground-service-detail-box .ground-service-detail .price {
     color: var(--omra-base);
     font-weight: 400;
 }
 
-.booked-room .ground-service-detail-box .ground-service-detail .price span {
+.booked-service .ground-service-detail-box .ground-service-detail .price span {
     font-size: var(--fs-12);
     vertical-align: top;
     line-height: 26px;
 }
 
-.booked-room .price-sm span {
+.booked-service .price-sm span {
     font-size: var(--fs-10);
 }
 
-.service-summary-box .room-price {
-    font-size: clamp(1.5rem, 6.5vw, 1.875rem);
+.service-summary-box .service-summary-price {
+    font-size: clamp(1rem, 6.5vw, 1.6rem);
     font-weight: 500;
     color: var(--omra-base);
     position: relative;
@@ -5276,14 +5280,14 @@ app-bookings-mob .search-sidebar-list {
     line-height: normal;
 }
 
-.service-summary-box .room-price span {
+.service-summary-box .service-summary-price span {
     font-size: var(--fs-16);
     line-height: normal;
 }
 
 .service-summary-box .color-btn {
-    width: 35%;
-    padding: 10px 10px;
+    width: 28%;
+    padding: 10px;
     font-size: var(--fs-18);
     background-color: var(--omra-second);
     border-color: var(--omra-second);
@@ -5304,14 +5308,14 @@ app-bookings-mob .search-sidebar-list {
     border-color: var(--omra-second);
 }
 
-.booked-room .service-detail-box {
+.booked-service .service-detail-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: normal;
 }
 
-.booked-room .service-detail-box li {
+.booked-service .service-detail-box li {
     color: var(--omra-gray);
     font-size: var(--fs-14);
     margin-bottom: 2px;
@@ -5322,19 +5326,19 @@ app-bookings-mob .search-sidebar-list {
     align-items: center;
 }
 
-.booked-room .service-detail-box i {
+.booked-service .service-detail-box i {
     font-size: var(--fs-14);
     color: var(--omra-second);
 }
 
-.checkout-booking-list .booked-room h3 {
+.checkout-booking-list .booked-service h3 {
     color: var(--omra-base);
     font-size: var(--fs-18);
     margin-bottom: 0;
     font-weight: 400 !important;
 }
 
-.checkout-booking-list .booked-room h5,
+.checkout-booking-list .booked-service h5,
 .total-price-content-box h5 {
     margin-bottom: 0;
     color: var(--omra-base);
@@ -5345,10 +5349,10 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .total-price-content-box h5 {
-    color: var(--omra-gray) !important;
+    color: var(--omra-gray);
 }
 
-.checkout-booking-list .booked-room {
+.checkout-booking-list .booked-service {
     background: var(--omra-white);
     position: relative;
     margin-bottom: 30px;
@@ -5358,21 +5362,172 @@ app-bookings-mob .search-sidebar-list {
     transition: all .4s ease-out 0s;
 }
 
-.checkout-booking-list .list-booked-room .booked-room {
+.checkout-booking-list .list-booked-service .booked-service {
     padding: 15px 25px;
 }
 
-.checkout-booking-list .booked-room .room-details-content {
+.checkout-booking-list .booked-service .room-details-content {
     padding: 0;
 }
 
+/* ----------------------------------------------------------------
+	Motamar infos
+-----------------------------------------------------------------*/
+.user-infos hr {
+    margin: 1.5rem 0;
+}
+
+.user-infos-card {
+    padding-right: 30px !important;
+}
+
+.user-infos .occupancy-content .form-group .dropdown .btn .text-muted {
+    color: #bababa !important;
+    font-size: var(--fs-14);
+    font-weight: 400;
+    transition: all .3s linear;
+}
+
+.user-infos .occupancy-content .form-group .dropdown .btn:hover .text-muted,
+.user-infos .occupancy-content .form-group .dropdown .btn:active .text-muted {
+    color: #bababa !important;
+}
+
+.user-infos .occupancy-content .form-group .dropdown .btn {
+    background: var(--omra-white);
+    color: var(--omra-gray);
+    border: 1px solid var(--omra-light-gray);
+    padding-right: 15px !important;
+    padding: 0;
+    border-radius: 0;
+    transition: all .3s linear;
+}
+
+.user-infos .occupancy-content .form-group .dropdown .btn.destination-btn {
+    padding-right: 0px !important;
+}
+
+.user-infos .occupancy-content .form-group {
+    line-height: normal;
+}
+
+.user-infos .occupancy-content .form-group label {
+    margin-bottom: 8px;
+}
+
+.user-infos .occupancy-content .form-group .form-control {
+    padding: 10px;
+}    
+
+.user-infos .occupancy-content .form-group .select-container label {
+    margin-bottom: 0;
+}
+
+.user-infos .guest-creds-title {
+    font-weight: 500 !important;
+    color: var(--omra-second);
+    background: var(--omra-extra);
+    padding: 10px 15px;
+}
+
+.bookings-summary-list .service-summary-box {
+    padding: 20px 30px 10px 30px;
+}
+
+.bookings-summary-list .booked-service {
+    background: var(--omra-white);
+    margin-bottom: 0px;
+    box-shadow: none;
+    border: 0;
+    padding: 0px;
+}
+
+.bookings-summary-list .service-summary-box .service-class {
+    background: transparent;
+    border: 0;
+    color: var(--omra-base);
+    font-weight: 400;
+    padding: 0px;
+    line-height: normal;
+    font-size: var(--fs-12);
+    width: fit-content;
+}
+
+.bookings-summary-list .checkout-booking-list p {
+    font-size: var(--fs-13);
+}
+
+.bookings-summary-list .booked-service-accordion {
+    padding: 15px;
+    border-bottom: 1px solid var(--omra-light-gray);
+}
+
+.bookings-summary-list .booked-service-content {
+    padding: 15px 20px;
+}
+
+.bookings-summary-list .service-summary-box {
+    padding: 0px;
+}
+
+.bookings-summary-list .booked-service .room-infos {
+    margin-bottom: 0;
+}
+
+.bookings-summary-list .booked-service hr {
+    margin: 10px 0;
+}
+
+.bookings-summary-list .booked-service .more-service-details {
+    margin: auto 0;
+}
+
+.bookings-summary-list .booked-service[aria-expanded="false"] .more-service-details {
+    transform: rotate(0deg);
+}
+ 
+.bookings-summary-list .booked-service[aria-expanded="true"] .more-service-details {
+    transform: rotate(-180deg);
+}
+
+.bookings-summary-list .booked-service h5 {
+    font-size: var(--fs-14);
+}
+
+.bookings-summary-list .booked-service .service-sub-label {
+    font-size: var(--fs-14);
+}
+
+.bookings-summary-list .service-summary-box .service-summary-price {
+    font-size: var(--fs-16);
+}
+
+.bookings-summary-list .service-summary-box .service-summary-price span {
+    font-size: var(--fs-12);
+}
+
+.bookings-summary-list .service-summary-box .service-class {
+    font-size: var(--fs-12);
+}
+
+.bookings-summary-list .booked-service .ground-service-detail-box ul li {
+    line-height: 20px;
+    margin-bottom: 0;
+}
+
+.bookings-summary-list .booked-service .ground-service-detail-box .ground-service-detail {
+    margin-bottom: 0;
+}
+
+.bookings-summary-list .color-btn {
+    padding: 15px 25px;
+}
 
 /* ----------------------------------------------------------------
 	Payment
 -----------------------------------------------------------------*/
 .payment-gateways .heading-title-sm {
     font-size: var(--fs-22);
-    font-weight: 400 !important;
 }
 
 .gateway-list label {
@@ -5446,63 +5601,23 @@ app-bookings-mob .search-sidebar-list {
     left: 13px;
 }
 
-.checkout-details {
-    padding-left: 40px !important;
-}
-
-.checkout-booking-list .list-booked-room {
-    margin: 0 0 30px 0px;
-    padding: 0px 10px 0 0px;
-    height: auto;
-    max-height: 370px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.checkout-booking-list .list-booked-room .booked-room {
-    padding: 15px 25px;
-}
-
-.checkout-booking-list .list-booked-room .booked-room:last-child {
-    margin-bottom: 0 !important;
-}
-
-.checkout-booking-list .list-booked-room .booked-room .room-label {
-    font-size: var(--fs-16);
-    background: transparent;
-    padding: 0;
-    margin-bottom: 0px;
-    color: var(--omra-second);
-}
-
-.checkout-booking-list .booked-room .room-details i {
-    font-size: var(--fs-14);
-    color: var(--omra-second);
-}
-
-.checkout-booking-list .booked-room .room-price {
-    font-size: var(--fs-20);
-    font-weight: 500;
-    color: var(--omra-base);
-    background: transparent;
-    position: relative;
-    padding: 0px 0px 0px;
-    margin-bottom: 0px;
-    width: fit-content;
-    float: right;
-}
-
-.checkout-booking-list p {
-    font-size: var(--fs-14);
-}
-
 .checkout-booking-list .room-details {
     line-height: 24px;
 }
 
 .total-price-box {
-    background: #f8f9fa;
-    padding: 20px 30px;
+    border: 2px solid var(--omra-light-gray);
+}
+
+.total-price-box hr {
+    margin: 0;
+    border-width: 2px;
+}
+
+.total-price-content-box .subtotal-price,
+.total-price-content-box .taxes-price,
+.total-price-content-box .total-price {
+    padding: 10px 20px;
 }
 
 .total-price-content-box .demands-content {
@@ -5525,10 +5640,8 @@ app-bookings-mob .search-sidebar-list {
     color: var(--omra-base);
 }
 
-.total-price-content-box .total-content .total-price .price span {
+.total-price-content-box .total-content .price span {
     font-size: var(--fs-12);
-    vertical-align: top;
-    line-height: 26px;
 }
 
 /* ----------------------------------------------------------------
