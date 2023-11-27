@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,47 +6,43 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './transfer-top-filter.component.html',
   styleUrls: ['./transfer-top-filter.component.css']
 })
-export class TransferTopFilterComponent {
-  firstRoad = ''
-  secondRoad = ''
-  thirdRoad = ''
-  listTabs: any[] = [1, 2]
+export class TransferTopFilterComponent implements OnInit {
+  @Output() sendDataToParent: EventEmitter<any> = new EventEmitter();
+
+
+  listTabs: any[] = []
+  filteredTabs: any[] = []
   showSecondRoad: boolean = false
   showThirdRoad: boolean = false
   constructor() { }
+  ngOnInit(): void {
+    const flightDepartureData = JSON.parse(localStorage.getItem('flightDepartureData') || '')
+    const flightReturnData = JSON.parse(localStorage.getItem('flightReturnData') || '')
+    const hotelFirstDestination = JSON.parse(localStorage.getItem('hotelFirstDestination') || '')
+    const hotelSecondDestination = JSON.parse(localStorage.getItem('hotelSecondDestination') || '')
 
-  checkRoadOne(value: any) {
+    this.listTabs.push(
+      { departure: flightDepartureData.airport, destination: hotelFirstDestination.hotelName },
+      { departure: hotelFirstDestination.hotelName, destination: hotelSecondDestination.hotelName },
+      { departure: hotelSecondDestination.hotelName, destination: flightReturnData.airport },
+    )
+  }
+  addTab(value: any) {
     console.log(value);
-    this.firstRoad = value;
+    const tab = this.listTabs.find((tab: any) => tab === value)
+    const tabIndex = this.listTabs.indexOf(tab)
+    this.listTabs.splice(tabIndex, 1)
+    this.filteredTabs.push(tab)
   }
-  checkRoadTwo(value: any) {
-    console.log(value);
-    if (value != this.firstRoad) {
-      this.secondRoad = value;
-    }
-  }
-  checkRoadThree(value: any) {
-    console.log(value);
-    if (value != this.firstRoad && value != this.secondRoad) {
-      this.thirdRoad = value;
-    }
-
+  removeTab(value: any) {
+    const tabIndex = this.filteredTabs.indexOf(value)
+    this.listTabs.push(value)
+    this.filteredTabs.splice(tabIndex, 1)
   }
 
-  addSecondRoad() {
-    this.showSecondRoad = true
-    this.showThirdRoad = false
-  }
-  addThirdRoad() {
-    this.showThirdRoad = true
-  }
-  removeSecondRoad() {
-    this.showSecondRoad = false
-    this.secondRoad = ''
-  }
-  removeThirdRoad() {
-    this.showThirdRoad = false
-    this.thirdRoad = ''
-  }
+  tabFilter(selectedFilter: any) {
+    console.log(selectedFilter);
 
+    this.sendDataToParent.emit(selectedFilter);
+  }
 }

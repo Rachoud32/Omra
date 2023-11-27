@@ -9,8 +9,8 @@ import { TransferService } from 'src/app/services/transfer.service';
   styleUrls: ['./transfer.component.css'],
 })
 export class TransferComponent implements OnInit {
-
   dataVehicle: any[] = []
+  filteredDataVehicle: any[] = []
   collapsed = true;
   selectedTransfer: string = '';
   selectedDetailTransfer: string = '';
@@ -19,6 +19,7 @@ export class TransferComponent implements OnInit {
   constructor(private toastr: ToastrService, private router: Router, private transferService: TransferService) { }
   ngOnInit(): void {
     this.dataVehicle = this.transferService.vehiclesData()
+    this.filteredDataVehicle = this.dataVehicle
   }
 
   goToNextStep = () => {
@@ -42,5 +43,9 @@ export class TransferComponent implements OnInit {
   }
   collapsedDetailTransfer(value: string) {
     this.selectedDetailTransfer = value;
+  }
+
+  filterFN(value: any) {
+    this.filteredDataVehicle = this.dataVehicle.filter((data: any) => data.departure === value.departure && data.destination === value.destination)
   }
 }

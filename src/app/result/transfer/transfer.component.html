@@ -8,11 +8,11 @@
 
   <!-- <app-transfer-period-top-filter></app-transfer-period-top-filter> -->
   <div class="col-lg-12">
-    <app-transfer-top-filter></app-transfer-top-filter>
+    <app-transfer-top-filter (sendDataToParent)="filterFN($event)"></app-transfer-top-filter>
     <app-top-filter></app-top-filter>
   </div>
   <div ng-app="transfer-list" class="col-xl-9 services-list transfer-list accordion" id="accordionTransferDetails">
-    <div class="vehicle-box" *ngFor="let vehicle of dataVehicle;let i=index">
+    <div class="vehicle-box" *ngFor="let vehicle of filteredDataVehicle;let i=index">
       <label class="vehicle-box-item accordion mb-4" [attr.for]="'vehicle-box'+i">
         <input type="radio" [attr.name]="'vehiclebox'+i" [value]="'vehiclebox'+i" [(ngModel)]="selectedTransfer"
           class="service-check-box" disabled [id]="'vehicle-box'+i" />
