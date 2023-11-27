@@ -1,9 +1,11 @@
 <div class="top-filter-section transfer-top-filter mb-3">
     <h6>Choose the trajectory</h6>
-    <div class="travel-path d-flex align-items-center gap-2 mb-3">
+    <div class="travel-path d-flex align-items-center gap-2 mb-3" *ngIf="listTabs.length<3">
+
 
         <div class="filter-dropdown-item road-filter-item dropdown">
-            <button type="button" class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            <button type="button" class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2"
+                data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                 <div class="d-flex w-100 align-items-center justify-content-between">
                     <div class="btn-text d-flex align-items-center pe-4 gap-2" [class.active-road]="firstRoad.length>0">
                         <i class="icon-line-map-pin"></i>
@@ -12,33 +14,36 @@
                     <i class="icon-line-chevron-down"></i>
                 </div>
             </button>
+
             <ul class="dropdown-menu drop-menu-sm-margin animate slideIn w-100">
                 <li class="filter-list-item">
-                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
-                        id="road1" [checked]="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
+                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad" id="road1"
+                        [checked]="firstRoad=='Jeddah Airport to Swissôtel Al Maqam Makkah'">
                     <label for="road1" (click)="checkRoadOne('Jeddah Airport to Swissôtel Al Maqam Makkah')">
                         Jeddah Airport <span class="color-3">to</span> Swissôtel Al Maqam Makkah</label>
                 </li>
                 <li class="filter-list-item">
-                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
-                        id="road2" [checked]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
-                    <label for="road2"
-                        (click)="checkRoadOne('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
+                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad" id="road2"
+                        [checked]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
+                    <label for="road2" (click)="checkRoadOne('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
                         Swissôtel Al Maqam Makkah <span class="color-3">to</span> Sofitel Shahd Al Madinah</label>
                 </li>
                 <li class="filter-list-item">
-                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad"
-                        id="road3" [checked]="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
+                    <input type="radio" name="firstRoad" class="form-check-input me-2" [value]="firstRoad" id="road3"
+                        [checked]="firstRoad=='Sofitel Shahd Al Madinah to Madinah Airport'">
                     <label for="road3" (click)="checkRoadOne('Sofitel Shahd Al Madinah to Madinah Airport')">Sofitel
                         Shahd Al Madinah <span class="color-3">to</span> Madinah Airport</label>
                 </li>
             </ul>
         </div>
 
-        <div class="filter-dropdown-item road-filter-item dropdown">
-            <button *ngIf="showSecondRoad" type="button" class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+        <!-- <div class="filter-dropdown-item road-filter-item dropdown">
+            <button *ngIf="showSecondRoad" type="button"
+            class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2" data-bs-toggle="dropdown"
+                data-bs-auto-close="true" aria-expanded="false">
                 <div class="d-flex w-100 align-items-center justify-content-between">
-                    <div class="btn-text d-flex align-items-center pe-4 gap-2" [class.active-road]="secondRoad.length>0">
+                    <div class="btn-text d-flex align-items-center pe-4 gap-2"
+                        [class.active-road]="secondRoad.length>0">
                         <i class="icon-line-map-pin"></i>
                         <span>{{secondRoad.length===0 ? 'Select a road': secondRoad}}</span>
                     </div>
@@ -60,11 +65,9 @@
                 </li>
                 <li class="filter-list-item">
                     <input type="radio" name="secondRoad" class="form-check-input me-2" [value]="secondRoad"
-                        id="roadtwo2"
-                        [checked]="secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
+                        id="roadtwo2" [checked]="secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
                         [disabled]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
-                    <label for="road2"
-                        (click)="checkRoadTwo('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
+                    <label for="road2" (click)="checkRoadTwo('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
                         Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah</label>
                 </li>
                 <li class="filter-list-item">
@@ -78,7 +81,9 @@
         </div>
 
         <div class="filter-dropdown-item road-filter-item dropdown">
-            <button *ngIf="showThirdRoad" type="button" class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            <button *ngIf="showThirdRoad" type="button"
+                class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2" data-bs-toggle="dropdown"
+                data-bs-auto-close="true" aria-expanded="false">
                 <div class="d-flex w-100 align-items-center justify-content-between">
                     <div class="btn-text d-flex align-items-center pe-4 gap-2" [class.active-road]="thirdRoad.length>0">
                         <i class="icon-line-map-pin"></i>
@@ -102,8 +107,7 @@
                 </li>
                 <li class="filter-list-item">
                     <input type="radio" name="thirdRoad" class="form-check-input me-2" [value]="thirdRoad"
-                        id="roadthree2"
-                        [checked]="thirdRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
+                        id="roadthree2" [checked]="thirdRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'"
                         [disabled]="firstRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah' || secondRoad=='Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah'">
                     <label for="road2"
                         (click)="checkRoadThree('Swissôtel Al Maqam Makkah to Sofitel Shahd Al Madinah')">
@@ -126,7 +130,12 @@
         <button class="color-btn add-btn mb-2" (click)="addThirdRoad()"
             *ngIf="showSecondRoad && !showThirdRoad && secondRoad!=''">
             <i class="icon-line-plus"></i>
-        </button>
+        </button> -->
+    </div>
+    <div class="d-flex align-items-center flex-row gap-2">
+        <div *ngFor="let tab of listTabs" class="transfer-direction-item">
+            <p class="m-0">One-way trip <span>x</span></p>
+        </div>
     </div>
 
     <h6>Choose the way of traveling</h6>

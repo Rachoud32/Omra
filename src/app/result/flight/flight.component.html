@@ -15,7 +15,8 @@
           <i class="icon-line-chevron-right"></i>
           <h6>{{returnFlights.length===0 ? 'Choose the depature flight':'Choose the return flight' }}</h6>
         </div>
-        <p>{{(loading && returnFlights.length == 0) ? 'Searching for flights...' : (loading && selectedFlightBack.length != 0) ? 'Generating Summary' : 'Tickets prices are subject to frequent change'}}</p>
+        <p>{{(loading && returnFlights.length == 0) ? 'Searching for flights...' : (loading && selectedFlightBack.length
+          != 0) ? 'Generating Summary' : 'Tickets prices are subject to frequent change'}}</p>
         <button class="color-btn change-flight-btn" *ngIf="returnFlights.length != 0" (click)="clearData()">Change
           Flight</button>
       </div>
@@ -304,7 +305,8 @@
                         [attr.aria-controls]="'flightbackdetails'+j">
                         <i class="icon-line-info"></i>
                       </button>
-                      <button class="color-btn service-btn-select" type="button" (click)="checkFlightBack(j)">
+                      <button class="color-btn service-btn-select" type="button"
+                        (click)="checkFlightBack(returnFlight._id)">
                         Select
                       </button>
                     </div>
@@ -419,7 +421,7 @@
           <i class="icon-line-chevron-left"></i>Return to flights list
         </button>
       </div> -->
-      
+
       <div class="summary-items content-box">
         <div class="summary-title">Summary of your flight</div>
         <label for="" class="">

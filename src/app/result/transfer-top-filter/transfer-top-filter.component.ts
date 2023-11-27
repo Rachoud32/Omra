@@ -10,6 +10,7 @@ export class TransferTopFilterComponent {
   firstRoad = ''
   secondRoad = ''
   thirdRoad = ''
+  listTabs: any[] = [1, 2]
   showSecondRoad: boolean = false
   showThirdRoad: boolean = false
   constructor() { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
   selector: 'app-flight',
@@ -24,196 +25,16 @@ export class FlightComponent implements OnInit {
   counterValue = 0;
   targetValue = 100;
   durationInSeconds = 4;
+  flightDepartureData: any
+  flightReturnData: any
 
-  constructor(private toastr: ToastrService, private router: Router) { };
+  constructor(private toastr: ToastrService, private router: Router, private flightService: FlightService) { };
 
   ngOnInit(): void {
     this.loading = true
     this.startCounter(this.durationInSeconds)
     setTimeout(() => {
-      this.dataFlight = [
-        {
-          _id: 1,
-          flightImage: "assets/flight/turkish-airlines.svg",
-          class: "Economic",
-          price: "1200",
-          timeOfDeparture: "14:10",
-          timeOfArrival: "17:10",
-          duration: "02:00",
-          departure: "Istanbul (IST)",
-          destination: "Jeddah (JED)",
-          dateOfDeparture: "01 nov. 2023",
-          dateOfArrival: "01 nov. 2023",
-          stops: "Direct",
-          flightNumber: "TUR0606",
-          details: {
-            class: "First",
-            baggage: "1 piece of checked baggage (per ad.)",
-            timeOfDeparture: "14:10",
-            timeOfArrival: "17:10",
-            duration: "02:00",
-            departure: "Istanbul (IST)",
-            destination: "Jeddah (JED)",
-            dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUR0606",
-          },
-          flightReturns: [
-            {
-              flightImage: "assets/flight/turkish-airlines.svg",
-              class: "Economic",
-              price: "1200",
-              timeOfDeparture: "14:10",
-              timeOfArrival: "17:10",
-              duration: "02:00",
-              departure: "Istanbul (IST)",
-              destination: "Jeddah (JED)",
-              dateOfDeparture: "01 nov. 2023",
-              dateOfArrival: "01 nov. 2023",
-              stops: "Direct",
-              flightNumber: "TUR0606",
-              details: {
-                class: "First",
-                baggage: "1 piece of checked baggage (per ad.)",
-                timeOfDeparture: "14:10",
-                timeOfArrival: "17:10",
-                duration: "02:00",
-                departure: "Istanbul (IST)",
-                destination: "Jeddah (JED)",
-                dateOfDeparture: "01 nov. 2023",
-                flightNumber: "TUR0606",
-              }
-            },
-            {
-              flightImage: "assets/flight/qatar-airways.svg",
-              class: "Business",
-              price: "1200",
-              timeOfDeparture: "14:10",
-              timeOfArrival: "17:10",
-              duration: "02:00",
-              departure: "Istanbul (IST)",
-              destination: "Jeddah (JED)",
-              dateOfDeparture: "01 nov. 2023",
-              dateOfArrival: "01 nov. 2023",
-              stops: "Direct",
-              flightNumber: "TUR0606",
-              details: {
-                class: "First",
-                baggage: "1 piece of checked baggage (per ad.)",
-                timeOfDeparture: "14:10",
-                timeOfArrival: "17:10",
-                duration: "02:00",
-                departure: "Istanbul (IST)",
-                destination: "Jeddah (JED)",
-                dateOfDeparture: "01 nov. 2023",
-                flightNumber: "TUR0606",
-              }
-            },
-            {
-              flightImage: "assets/flight/saudi-airlines.svg",
-              class: "First",
-              price: "1200",
-              timeOfDeparture: "14:10",
-              timeOfArrival: "17:10",
-              duration: "02:00",
-              departure: "Istanbul (IST)",
-              destination: "Jeddah (JED)",
-              dateOfDeparture: "01 nov. 2023",
-              dateOfArrival: "01 nov. 2023",
-              stops: "Direct",
-              flightNumber: "TUR0606",
-              details: {
-                class: "First",
-                baggage: "1 piece of checked baggage (per ad.)",
-                timeOfDeparture: "14:10",
-                timeOfArrival: "17:10",
-                duration: "02:00",
-                departure: "Istanbul (IST)",
-                destination: "Jeddah (JED)",
-                dateOfDeparture: "01 nov. 2023",
-                flightNumber: "TUR0606",
-              }
-            },
-          ]
-        },
-        {
-          _id: 2,
-          flightImage: "assets/flight/qatar-airways.svg",
-          class: "Business",
-          price: "1500",
-          timeOfDeparture: "14:10",
-          timeOfArrival: "17:10",
-          duration: "02:00",
-          departure: "Istanbul (IST)",
-          destination: "Jeddah (JED)",
-          dateOfDeparture: "01 nov. 2023",
-          dateOfArrival: "01 nov. 2023",
-          stops: "Direct",
-          flightNumber: "TUR0606",
-          details: {
-            class: "First",
-            baggage: "1 piece of checked baggage (per ad.)",
-            timeOfDeparture: "14:10",
-            timeOfArrival: "17:10",
-            duration: "02:00",
-            departure: "Istanbul (IST)",
-            destination: "Jeddah (JED)",
-            dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUR0606",
-          }
-        },
-        {
-          _id: 3,
-          flightImage: "assets/flight/saudi-airlines.svg",
-          class: "First",
-          price: "1000",
-          timeOfDeparture: "14:10",
-          timeOfArrival: "17:10",
-          duration: "02:00",
-          departure: "Istanbul (IST)",
-          destination: "Jeddah (JED)",
-          dateOfDeparture: "01 nov. 2023",
-          dateOfArrival: "01 nov. 2023",
-          stops: "1 stop",
-          flightNumber: "TUR0606",
-          details: {
-            class: "First",
-            baggage: "1 piece of checked baggage (per ad.)",
-            timeOfDeparture: "14:10",
-            timeOfArrival: "17:10",
-            duration: "02:00",
-            departure: "Istanbul (IST)",
-            destination: "Jeddah (JED)",
-            dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUR0606",
-          }
-        },
-        {
-          _id: 4,
-          flightImage: "assets/flight/air-france.svg",
-          class: "Economic",
-          price: "1200",
-          timeOfDeparture: "14:10",
-          timeOfArrival: "17:10",
-          duration: "02:00",
-          departure: "Istanbul (IST)",
-          destination: "Jeddah (JED)",
-          dateOfDeparture: "01 nov. 2023",
-          dateOfArrival: "01 nov. 2023",
-          stops: "2 stops",
-          flightNumber: "TUR0606",
-          details: {
-            class: "First",
-            baggage: "1 piece of checked baggage (per ad.)",
-            timeOfDeparture: "14:10",
-            timeOfArrival: "17:10",
-            duration: "02:00",
-            departure: "Istanbul (IST)",
-            destination: "Jeddah (JED)",
-            dateOfDeparture: "01 nov. 2023",
-            flightNumber: "TUR0606",
-          }
-        },
-      ]
+      this.dataFlight = this.flightService.flightData()
       this.loading = false
     }, this.durationInSeconds * 1000)
     this.counterValue = 0
@@ -261,23 +82,26 @@ export class FlightComponent implements OnInit {
     this.loading = true
     this.selectedFlight = value;
     this.startCounter(this.durationInSeconds / 2)
+    this.flightDepartureData = this.dataFlight.find((flight: any) => flight._id === this.selectedFlight)
     setTimeout(() => {
-      const flightFound = this.dataFlight.find((flight: any) => flight._id === this.selectedFlight)
-      this.showDetailsDeparture = flightFound
-      this.returnFlights = flightFound.flightReturns
+      this.showDetailsDeparture = this.flightDepartureData
+      this.returnFlights = this.flightDepartureData.flightReturns
       this.loading = false
     }, (this.durationInSeconds / 2) * 1000)
     this.counterValue = 0
+    localStorage.setItem('flightDepartureData', JSON.stringify(this.flightDepartureData))
   }
   checkFlightBack(value: any) {
     this.loading = true
     this.selectedFlightBack = value;
     this.startCounter(this.durationInSeconds / 2)
+    this.flightReturnData = this.flightDepartureData.flightReturns.find((data: any) => data._id === value)
     setTimeout(() => {
       this.showDetailsReturn = this.showDetailsDeparture.flightReturns[value]
       this.loading = false
     }, (this.durationInSeconds / 2) * 1000)
     this.counterValue = 0
+    localStorage.setItem('flightReturnData', JSON.stringify(this.flightReturnData))
   }
   collapsedDetailDeparture(value: any) {
     this.selectedDetailDeparture = value
