@@ -836,6 +836,7 @@ input[type=checkbox]:disabled {
     font-size: var(--fs-14);
     height: 100%;
     line-height: 20px;
+    border-top: 0;
     border-right: 1px solid var(--omra-light-gray);
     text-transform: uppercase;
     justify-content: center;

@@ -556,6 +556,16 @@
 
 
 @media (max-width: 575.98px) {
+    .category-item i, .category-item svg {
+        display: none;
+    }
+
+    .category-box [type="radio"]:checked+.category-item, .category-box [type="radio"]:not(:checked)+.category-item {
+        padding: 15px 15px;
+        text-align: center;
+        font-size: var(--fs-13);
+    }
+
     .summary-icon {
         display: none;
     }
@@ -747,9 +757,9 @@
         width: fit-content !important;
     }
 
-    .category-list {
+    /* .category-list {
         flex-direction: column !important;
-    }
+    } */
 
     .list-steps-container {
         padding: 0 !important;
