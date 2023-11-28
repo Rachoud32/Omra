@@ -4733,12 +4733,14 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .service-notice .service-notice-icon i {
-    font-size: 50px;
+    font-size: 44px;
     color: var(--omra-gray);
+    opacity: .7;
 }
 
 .service-notice .service-notice-text {
-    font-size: var(--fs-22);
+    font-size: var(--fs-18);
+    text-align: center;
     font-weight: 300 !important;
     color: var(--omra-gray);
 }
