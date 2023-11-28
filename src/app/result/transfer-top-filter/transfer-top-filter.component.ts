@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class TransferTopFilterComponent implements OnInit {
   @Output() sendDataToParent: EventEmitter<any> = new EventEmitter();
-
+  @Output() resetFilter: EventEmitter<any> = new EventEmitter();
 
   listTabs: any[] = []
   filteredTabs: any[] = []
@@ -29,7 +29,10 @@ export class TransferTopFilterComponent implements OnInit {
     )
   }
   addTab(value: any) {
-    console.log(value);
+    if (this.filteredTabs.length == 0) {
+      this.selectedTab = value
+      this.tabFilter(value)
+    }
     const tab = this.listTabs.find((tab: any) => tab === value)
     const tabIndex = this.listTabs.indexOf(tab)
     this.listTabs.splice(tabIndex, 1)
@@ -39,6 +42,9 @@ export class TransferTopFilterComponent implements OnInit {
     const tabIndex = this.filteredTabs.indexOf(value)
     this.listTabs.push(value)
     this.filteredTabs.splice(tabIndex, 1)
+    if (this.filteredTabs.length == 0) {
+      this.resetFilter.emit(false)
+    }
   }
 
   tabFilter(selectedFilter: any) {

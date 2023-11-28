@@ -11,7 +11,7 @@ export class BookingsSidebarComponent {
   goToNextStep() {
     if (this.eventgoToNextStep) {
       this.eventgoToNextStep();
-      window.scrollTo(0, 500);
+      window.scrollTo(0, 420);
     }
   }
 }

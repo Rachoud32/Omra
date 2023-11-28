@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./bookings-mob.component.css']
 })
 export class BookingsMobComponent {
-  constructor(private scroller: ViewportScroller, private router: Router) {}
+  constructor(private scroller: ViewportScroller, private router: Router) { }
 
   goUp() {
     this.scroller.scrollToAnchor("searchbar");
@@ -19,9 +19,9 @@ export class BookingsMobComponent {
   goToNextStep() {
     if (this.eventgoToNextStep) {
       this.eventgoToNextStep();
-      window.scrollTo(0, 500);
+      window.scrollTo(0, 420);
     }
   }
 
-  
+
 }
