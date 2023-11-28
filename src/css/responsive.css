@@ -235,6 +235,10 @@
         padding: 10px;
     }
 
+    .bookings-summary-card .room-infos:first-child {
+        flex-direction: row;
+    }
+
     .room-infos:first-child {
         flex-direction: column;
     }
