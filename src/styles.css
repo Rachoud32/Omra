@@ -2750,10 +2750,12 @@ label.disabled .service-class-card {
     font-weight: 400;
     text-transform: capitalize;
     order: 2;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: -webkit-box;
+    white-space: wrap;
     overflow: hidden;
-    max-width: 310px;
+    max-width: 70%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .details-row .details-block .date-block {

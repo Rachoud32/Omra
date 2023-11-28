@@ -556,10 +556,6 @@
 
 
 @media (max-width: 575.98px) {
-    .details-row .details-block .port {
-        max-width: 120px;
-    }
-
     .summary-icon {
         display: none;
     }
