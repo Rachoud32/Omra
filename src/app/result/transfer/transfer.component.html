@@ -269,8 +269,9 @@
         </div>
       </label>
     </div>
-    <div *ngIf="filteredDataVehicle.length==0 && !loading">
-      <h1>Select a road first</h1>
+    <div *ngIf="filteredDataVehicle.length==0 && !loading" class="service-notice">
+      <div class="service-notice-icon mb-2"><i class="icon-line-alert-circle"></i></div>
+      <p class="service-notice-text">Please make sure to select a track</p>
     </div>
     <div *ngIf="loading">
       <label *ngFor="let skeleton of skeletons" class="mb-0">

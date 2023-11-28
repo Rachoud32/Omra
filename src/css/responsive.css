@@ -64,6 +64,14 @@
 }
 
 @media (max-width: 1199.98px) {	
+    .road-tabs {
+        flex-direction: column;
+    }
+
+    .top-filter-section .trajectory-item {
+        width: 100%;
+    }
+
     .user-infos-card {
         padding-right: 15px !important;
     }
@@ -127,6 +135,37 @@
 
 @media (max-width: 991.98px) {	
 
+    .services-list .service.skeleton-service {
+        padding: 0 !important;
+        min-height: 230px;
+    }
+
+    .skeleton-box .skeleton-service-img {
+        height: 220px !important;
+    }
+
+    .skeleton-box .skeleton-service-details {
+        height: unset !important;
+    }
+
+    .skeleton-service-details .service-action-btns,
+    .skeleton-box .skeleton-services-details-btn,
+    .skeleton-box .skeleton-services-select-btn {
+        display: none !important;
+    }
+
+    .skeleton-box .skeleton-service .image-box {
+        padding: 0 !important;
+    }
+
+    .skeleton-box .skeleton-service-price {
+        width: 100% !important;
+        height: 50px !important;
+    }
+
+    .skeleton-box  .skeleton-service-details {
+        width: 100% !important;
+    }
 
     .travel-path {
         flex-direction: column;
@@ -764,9 +803,9 @@
 
     .services-list .box .color-btn.service-btn-details {
         margin-bottom: 0px !important;
-        padding: 10px !important;
+        padding: 10px 0 !important;
         height: unset;
-        width: 50px !important;
+        width: fit-content !important;
     }
 
     .services-list .box .color-btn {

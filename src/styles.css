@@ -4193,8 +4193,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .transfer-top-filter.top-filter-section .color-btn {
-    padding: 15px;
-    width: 33.3333333333%;
+    padding: 20px 15px;
     white-space: wrap;
     text-align: left;
     font-size: var(--fs-13);
@@ -4460,6 +4459,11 @@ app-bookings-mob .search-sidebar-list {
     width: 100%;
 }
 
+.top-filter-section .roads-list .filter-list-item label {
+    padding: 20px;
+    font-size: var(--fs-13);
+}
+
 .top-filter-section .filter-list-item:hover {
     background: #f9f9f9;
     color: var(--omra-second);
@@ -4617,7 +4621,6 @@ app-bookings-mob .search-sidebar-list {
     cursor: pointer;
     width: 33.3333333333%;
     line-height: 20px;
-    display: inline-block;
     color: var(--omra-gray);
     border: 1px solid var(--omra-light-gray);
     background: var(--omra-white);
@@ -4636,8 +4639,6 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .top-filter-section .trajectory-item p {
-    max-width: 310px;
-    min-width: 310px;
     font-size: var(--fs-14);
     font-weight: 400;
     transition: all .3s linear;
@@ -4645,6 +4646,10 @@ app-bookings-mob .search-sidebar-list {
 
 .top-filter-section .trajectory-item.activetab p {
     color: var(--omra-base);
+}
+
+.top-filter-section .trajectory-remove-content {
+    padding-right: 10px;
 }
 
 .top-filter-section .remove-road-btn {
@@ -4664,10 +4669,15 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section .trajectory-item .road-number {
     width: 30px;
     height: 30px;
+    font-weight: 300;
     display: flex;
     border: 1px solid var(--omra-light-gray);
     align-items: center;
     justify-content: center;
+}
+
+.top-filter-section .trajectory-item.activetab .road-number {
+    color: var(--omra-base);
 }
 
 .top-filter-section .transfer-direction-item {
@@ -4707,6 +4717,30 @@ app-bookings-mob .search-sidebar-list {
     padding-left: 30px;
     font-size: var(--fs-14);
     font-weight: 400;
+}
+
+.service-notice {
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--omra-white);
+}
+
+.service-notice .service-notice-icon {
+    line-height: normal;
+}
+
+.service-notice .service-notice-icon i {
+    font-size: 50px;
+    color: var(--omra-gray);
+}
+
+.service-notice .service-notice-text {
+    font-size: var(--fs-22);
+    font-weight: 300 !important;
+    color: var(--omra-gray);
 }
 
 /* ----------------------------------------------------------------
@@ -5889,6 +5923,10 @@ app-bookings-mob .search-sidebar-list {
 .skeleton-services-select-btn {
     width: 80px;
     height: 35px !important;
+}
+
+.skeleton-box .box.skeleton-box {
+    height: 100%;
 }
 
 /* ----------------------------------------------------------------
