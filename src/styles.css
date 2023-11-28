@@ -2750,6 +2750,10 @@ label.disabled .service-class-card {
     font-weight: 400;
     text-transform: capitalize;
     order: 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 310px;
 }
 
 .details-row .details-block .date-block {
