@@ -4204,25 +4204,6 @@ app-bookings-mob .search-sidebar-list {
     font-size: var(--fs-14);
 }
 
-.transfer-top-filter.top-filter-section .remove-road-btn {
-    position: absolute;
-    right: -8px;
-    top: 1px;
-    height: calc(100% - 10px);
-    background: var(--omra-second);
-    color: var(--omra-white);
-    display: flex;
-    align-items: center;
-    font-size: var(--fs-15);
-    margin-bottom: 20px;
-    padding: 0px 2px;
-    cursor: pointer;
-}
-
-.transfer-top-filter.top-filter-section .road-btn i {
-    padding: 5px;
-}
-
 .transfer-top-filter.top-filter-section .color-btn.add-btn {
     width: unset;
     padding-top: 14px;
@@ -4252,6 +4233,7 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .top-filter-section h6 {
+    text-transform: uppercase;
     font-weight: 500 !important;
     color: var(--omra-second);
 }
@@ -4475,6 +4457,7 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section .filter-list-item label {
     cursor: pointer;
     margin-bottom: 0;
+    width: 100%;
 }
 
 .top-filter-section .filter-list-item:hover {
@@ -4626,6 +4609,53 @@ app-bookings-mob .search-sidebar-list {
 .top-filter-section [type="radio"]:not(:checked)+label:after {
     top: 23px;
     left: 25px;
+}
+
+.top-filter-section .trajectory-item {
+    position: relative;
+    padding: 18px 20px !important;
+    cursor: pointer;
+    width: 33.3333333333%;
+    line-height: 20px;
+    display: inline-block;
+    color: var(--omra-gray);
+    border: 1px solid var(--omra-light-gray);
+    background: var(--omra-white);
+    font-size: var(--fs-16);
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0);
+    transform: translatey(0%);
+    transition: all .3s linear;
+}
+
+.top-filter-section .trajectory-item.activetab {
+    background: var(--omra-white);
+    border-color: var(--omra-base);
+    transform: translatey(-3%);
+    box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+.top-filter-section .trajectory-item p {
+    max-width: 310px;
+    min-width: 310px;
+    font-size: var(--fs-14);
+    font-weight: 400;
+    transition: all .3s linear;
+}
+
+.top-filter-section .trajectory-item.activetab p {
+    color: var(--omra-base);
+}
+
+.top-filter-section .remove-road-btn {
+    background: var(--omra-second);
+    color: #fff;
+    padding: 3px 5px;
+    transition: all .3s linear;
+}
+
+.top-filter-section .remove-road-btn:hover {
+    background: var(--omra-base);
 }
 
 .top-filter-section .transfer-direction-item {
@@ -5459,7 +5489,20 @@ app-bookings-mob .search-sidebar-list {
 
 .bookings-summary-list .booked-service-accordion {
     padding: 15px;
+    margin-bottom: -1px;
     border-bottom: 1px solid var(--omra-light-gray);
+}
+
+.bookings-summary-list  .booked-service-accordion[aria-expanded="false"].booked-service-accordion {
+    margin-bottom: -1px;
+}
+
+.bookings-summary-list  .booked-service-accordion[aria-expanded="true"].booked-service-accordion {
+    margin-bottom: 0px;
+}
+
+.bookings-summary-list .booked-service-content {
+    padding: 15px;
 }
 
 .bookings-summary-list .booked-service-content {

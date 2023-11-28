@@ -31,7 +31,7 @@ export class FirstDestinationComponent implements OnInit {
   constructor(private toastr: ToastrService, private router: Router, private hotelService: HotelService) { };
   ngOnInit(): void {
     this.localStorageSteps = JSON.parse(localStorage.getItem('steps') || '')
-    this.dataHotels = this.hotelService.hotelData()
+    this.dataHotels = this.hotelService.dataFirstDestination()
   }
 
   goToNextStep = () => {

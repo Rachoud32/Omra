@@ -14,6 +14,7 @@ export class TransferTopFilterComponent implements OnInit {
   filteredTabs: any[] = []
   showSecondRoad: boolean = false
   showThirdRoad: boolean = false
+  selectedTab: any
   constructor() { }
   ngOnInit(): void {
     const flightDepartureData = JSON.parse(localStorage.getItem('flightDepartureData') || '')
@@ -42,7 +43,7 @@ export class TransferTopFilterComponent implements OnInit {
 
   tabFilter(selectedFilter: any) {
     console.log(selectedFilter);
-
+    this.selectedTab = selectedFilter
     this.sendDataToParent.emit(selectedFilter);
   }
 }
