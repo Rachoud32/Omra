@@ -4613,7 +4613,7 @@ app-bookings-mob .search-sidebar-list {
 
 .top-filter-section .trajectory-item {
     position: relative;
-    padding: 18px 20px !important;
+    padding: 0 !important;
     cursor: pointer;
     width: 33.3333333333%;
     line-height: 20px;
@@ -4648,14 +4648,26 @@ app-bookings-mob .search-sidebar-list {
 }
 
 .top-filter-section .remove-road-btn {
-    background: var(--omra-second);
-    color: #fff;
+    background: transparent;
+    color: var(--omra-gray);
     padding: 3px 5px;
+    border: 1px solid var(--omra-light-gray);
     transition: all .3s linear;
 }
 
 .top-filter-section .remove-road-btn:hover {
-    background: var(--omra-base);
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+    color: var(--omra-white);
+}
+
+.top-filter-section .trajectory-item .road-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    border: 1px solid var(--omra-light-gray);
+    align-items: center;
+    justify-content: center;
 }
 
 .top-filter-section .transfer-direction-item {
