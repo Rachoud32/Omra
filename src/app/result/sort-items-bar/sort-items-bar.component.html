@@ -1,5 +1,5 @@
 <div class="row flight-top-filter mt-3 mb-2">
-    <div class="col-xl-4">
+    <div class="col-xl-4 col-lg-4 col-md-12">
         <input type="radio" id="service-filter1" value="recommended" name="service-filter" class="d-none" [(ngModel)]="selectedFilter">
         <label for="service-filter1" (click)="checkFilter('service-filter1')" class="mb-2">
             <div class="service-checkbox"></div>
@@ -22,7 +22,7 @@
             </div>
         </label>
     </div>
-    <div class="col-xl-4">
+    <div class="col-xl-4 col-lg-4 col-md-12">
         <input type="radio" id="service-filter2" value="cheapest" name="service-filter" class="d-none" [(ngModel)]="selectedFilter">
         <label for="service-filter2" class="mb-2">
             <div class="service-filter-card" [class.active]="selectedFilter === 'cheapest' && true">
@@ -44,7 +44,7 @@
             </div>
         </label>
     </div>
-    <div class="col-xl-4">
+    <div class="col-xl-4 col-lg-4 col-md-12">
         <input type="radio" id="service-filter3" value="shortest" name="service-filter" class="d-none" [(ngModel)]="selectedFilter">
         <label for="service-filter3" class="mb-2">
             <div class="service-filter-card" [class.active]="selectedFilter === 'shortest' && true">

@@ -2754,8 +2754,8 @@ label.disabled .service-class-card {
     display: -webkit-box;
     white-space: wrap;
     overflow: hidden;
-    max-width: 70%;
-    -webkit-line-clamp: 3;
+    max-width: 40%;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
@@ -2909,18 +2909,28 @@ app-bookings-mob {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 900;
+    z-index: 998;
     display: none;
 }
 
 app-bookings-mob .search-sidebar-list {
-    max-height: 450px;
+    max-height: 370px;
     min-height: 150px;
     padding: 0px 15px;
     margin-right: 10px;
     margin-top: 0;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+app-bookings-mob .search-sidebar-header a[aria-expanded="false"] .more-booking-details {
+    transform: rotate(0deg);
+    transition: all .05s linear;
+}
+ 
+app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-details {
+    transform: rotate(-180deg);
+    transition: all .05s linear;
 }
 
 .search-sidebar-details {
@@ -4724,6 +4734,12 @@ app-bookings-mob .search-sidebar-list {
     padding-left: 30px;
     font-size: var(--fs-14);
     font-weight: 400;
+    display: -webkit-box;
+    white-space: wrap;
+    overflow: hidden;
+    max-width: 70%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .service-notice {
@@ -5905,7 +5921,7 @@ app-bookings-mob .search-sidebar-list {
 
 .skeleton-service-img {
     width: 100%;
-    height: 160px !important;
+    height: 100% !important;
 }
 
 .skeleton-service-title {
@@ -5921,17 +5937,25 @@ app-bookings-mob .search-sidebar-list {
 .skeleton-service-details {
     padding: 15px;
     width: 100%;
+}
+
+.skeleton-serv-details {
+    padding: 15px;
+    width: 100%;
     height: 80px !important;
+    margin-bottom: 0;
 }
 
 .skeleton-services-details-btn {
     width: 35px;
     height: 35px !important;
+    margin-bottom: 0;
 }
 
 .skeleton-services-select-btn {
     width: 80px;
     height: 35px !important;
+    margin-bottom: 0;
 }
 
 .skeleton-box .box.skeleton-box {

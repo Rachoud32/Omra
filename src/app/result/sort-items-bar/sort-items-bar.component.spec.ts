@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlightTopFilterComponent } from './flight-top-filter.component';
+import { FlightTopFilterComponent } from './sort-items-bar.component';
 
 describe('FlightTopFilterComponent', () => {
   let component: FlightTopFilterComponent;

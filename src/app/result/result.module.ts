@@ -30,7 +30,7 @@ import { PaymentComponent } from '../result/payment/payment.component';
 import { BookingStepsComponent } from '../result/booking-steps/booking-steps.component';
 import { MotamarInfosComponent } from '../result/motamar-infos/motamar-infos.component';
 import { BookingsSidebarComponent } from '../result/bookings-sidebar/bookings-sidebar.component';
-import { FlightTopFilterComponent } from '../result/flight-top-filter/flight-top-filter.component';
+import { SortItemsBar } from '../result/sort-items-bar/sort-items-bar.component';
 import { TransferTopFilterComponent } from '../result/transfer-top-filter/transfer-top-filter.component';
 import { TransferPeriodTopFilterComponent } from '../result/transfer-period-top-filter/transfer-period-top-filter.component';
 import { BookingsMobComponent } from '../result/bookings-mob/bookings-mob.component';
@@ -54,7 +54,7 @@ import { BookingSummaryComponent } from './booking-summary/booking-summary.compo
     BookingStepsComponent,
     MotamarInfosComponent,
     BookingsSidebarComponent,
-    FlightTopFilterComponent,
+    SortItemsBar,
     TransferTopFilterComponent,
     TransferPeriodTopFilterComponent,
     BookingsMobComponent,

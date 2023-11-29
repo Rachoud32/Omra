@@ -19,14 +19,14 @@
           class="service-check-box" disabled [id]="'vehicle-box'+i" />
         <div class="box">
           <div class="row m-0">
-            <div class="col-xl-3 service ps-0">
+            <div class="col-xl-3 col-lg-3 service ps-0">
               <div [id]="'service-box-pic'+i" class="image-box">
                 <img src="{{vehicle.vehicleImage}}" class="service-car d-block w-100" alt="" />
               </div>
             </div>
-            <div class="col-xl-9 service-details">
+            <div class="col-xl-9 col-lg-9 service-details">
               <div class="row">
-                <div class="col-xl-10">
+                <div class="col-xl-10 col-lg-10">
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="service-title-content d-flex align-items-center gap-2">
                       <h3 class="m-0">{{vehicle.model}}</h3>
@@ -144,7 +144,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
+                <div class="col-lg-2 col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                   <button class="color-btn service-btn-details collapsed mb-2" type="button" data-bs-toggle="collapse"
                     (click)="collapsedDetailTransfer('detailTransfer'+i)" [attr.data-bs-target]="'#vehicledetails'+i"
                     aria-expanded="true" [attr.aria-controls]="'vehicledetails'+i">
@@ -273,6 +273,7 @@
       <div class="service-notice-icon mb-2"><i class="icon-line-alert-circle"></i></div>
       <p class="service-notice-text">Please make sure to select a track</p>
     </div>
+    <!-- Loading -->
     <div *ngIf="loading">
       <label *ngFor="let skeleton of skeletons" class="mb-0">
         <input type="radio" name="" value="" class="service-check-box" id="" disabled />
@@ -286,11 +287,11 @@
             <div class="col-lg-10 skeleton-service-details">
               <div class="row">
                 <div class="col-lg-10">
-                  <div class="flight-label d-flex align-items-center justify-content-between gap-3 mb-4">
+                  <div class="flight-label d-flex align-items-start justify-content-between gap-3 mb-4">
                     <div class="skeleton-service-title skeleton-loader skeletonprogress"></div>
                     <div class="skeleton-service-price skeleton-loader skeletonprogress"></div>
                   </div>
-                  <div class="skeleton-service-details skeleton-loader skeletonprogress"></div>
+                  <div class="skeleton-serv-details skeleton-loader skeletonprogress"></div>
                 </div>
                 <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                   <div class="skeleton-services-details-btn skeleton-loader skeletonprogress"></div>
@@ -302,8 +303,8 @@
         </div>
         <div class="clear-area"></div>
       </label>
-
     </div>
+    <!-- End loading -->
   </div>
   <!-- Sidebar
     ============================================= -->

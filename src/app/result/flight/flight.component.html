@@ -10,7 +10,7 @@
   </div>
   <div ng-app="flight-list" class="col-xl-9 services-list accordion" id="accordionFlightDetails">
     <div *ngIf="!showDetailsReturn">
-      <div class="flight-direction-list-title d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div class="flight-direction-list-title d-flex align-items-center justify-content-between flex-wrap gap-2">
         <div class="d-flex align-items-center gap-1">
           <i class="icon-line-chevron-right"></i>
           <h6>{{returnFlights.length===0 ? 'Choose the depature flight':'Choose the return flight' }}</h6>
@@ -21,7 +21,7 @@
           Flight</button>
       </div>
       <ngb-progressbar *ngIf="counterValue!=101 && counterValue!=0" class="mb-3" [value]="counterValue" />
-      <app-flight-top-filter></app-flight-top-filter>
+      <app-sort-items-bar></app-sort-items-bar>
       <!-- Loading -->
       <div *ngIf="loading">
         <label *ngFor="let skeleton of skeletons" class="mb-0">
@@ -36,11 +36,11 @@
               <div class="col-lg-10 skeleton-service-details">
                 <div class="row">
                   <div class="col-lg-10">
-                    <div class="flight-label d-flex align-items-center justify-content-between gap-3 mb-4">
+                    <div class="flight-label d-flex align-items-start justify-content-between gap-3 mb-4">
                       <div class="skeleton-service-title skeleton-loader skeletonprogress"></div>
                       <div class="skeleton-service-price skeleton-loader skeletonprogress"></div>
                     </div>
-                    <div class="skeleton-service-details skeleton-loader skeletonprogress"></div>
+                    <div class="skeleton-serv-details skeleton-loader skeletonprogress"></div>
                   </div>
                   <div class="col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                     <div class="skeleton-services-details-btn skeleton-loader skeletonprogress"></div>
@@ -52,7 +52,6 @@
           </div>
           <div class="clear-area"></div>
         </label>
-
       </div>
       <!-- End loading -->
       <div *ngIf="returnFlights.length===0 && !loading">
@@ -70,8 +69,8 @@
                 <div class="col-lg-10 service-details">
                   <div class="row">
                     <div class="col-lg-10">
-                      <div class="flight-label d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
+                      <div class="flight-label d-flex align-items-start justify-content-between">
+                        <div class="flight-label-content d-flex align-items-center gap-3">
                           <div class="d-flex align-items-center">
                             <i class="icon-line-chevron-right"></i>
                             <div class="flight-direction">Departure flight</div>
@@ -110,7 +109,7 @@
                             <span>{{flight.flightNumber}}</span>
                           </div>
                         </div>
-                        <div class="details-block text-end">
+                        <div class="details-block text-end align-items-end">
                           <div class="time-block">
                             <span class="time">{{flight.timeOfArrival}}</span>
                           </div>
@@ -243,8 +242,8 @@
                 <div class="col-lg-10 service-details">
                   <div class="row">
                     <div class="col-xl-9">
-                      <div class="flight-label d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
+                      <div class="flight-label d-flex align-items-start justify-content-between">
+                        <div class="flight-label-content d-flex align-items-center gap-3">
                           <div class="d-flex align-items-center">
                             <i class="icon-line-chevron-right"></i>
                             <div class="flight-direction">Return flight</div>
@@ -435,8 +434,8 @@
               <div class="col-lg-10 service-details">
                 <div class="row">
                   <div class="col-lg-10">
-                    <div class="flight-label d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center gap-3">
+                    <div class="flight-label d-flex align-items-start justify-content-between">
+                      <div class="flight-label-content d-flex align-items-center gap-3">
                         <div class="d-flex align-items-center">
                           <i class="icon-line-chevron-right"></i>
                           <div class="flight-direction">Departure flight</div>
@@ -587,8 +586,8 @@
               <div class="col-lg-10 service-details">
                 <div class="row">
                   <div class="col-lg-10">
-                    <div class="flight-label d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center gap-3">
+                    <div class="flight-label d-flex align-items-start justify-content-between">
+                      <div class="flight-label-content d-flex align-items-center gap-3">
                         <div class="d-flex align-items-center">
                           <i class="icon-line-chevron-right"></i>
                           <div class="flight-direction">Return flight</div>
