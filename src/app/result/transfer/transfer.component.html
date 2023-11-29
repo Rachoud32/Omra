@@ -15,8 +15,8 @@
   <div ng-app="transfer-list" class="col-xl-9 services-list transfer-list accordion" id="accordionTransferDetails">
     <div class="vehicle-box" *ngFor="let vehicle of filteredDataVehicle;let i=index">
       <label class="vehicle-box-item accordion mb-4" [attr.for]="'vehicle-box'+i">
-        <input type="radio" [attr.name]="'vehiclebox'+i" [value]="'vehiclebox'+i" [(ngModel)]="selectedTransfer"
-          class="service-check-box" disabled [id]="'vehicle-box'+i" />
+        <input type="radio" [attr.name]="'vehiclebox'+i" [value]="'vehiclebox-'+vehicle._id"
+          [(ngModel)]="selectedTransfer" class="service-check-box" disabled [id]="'vehicle-box'+i" />
         <div class="box">
           <div class="row m-0">
             <div class="col-xl-3 col-lg-3 service ps-0">
@@ -144,14 +144,15 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-2 col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
+                <div
+                  class="col-lg-2 col-lg-2 service-action-btns d-flex justify-content-between flex-column align-items-end">
                   <button class="color-btn service-btn-details collapsed mb-2" type="button" data-bs-toggle="collapse"
                     (click)="collapsedDetailTransfer('detailTransfer'+i)" [attr.data-bs-target]="'#vehicledetails'+i"
                     aria-expanded="true" [attr.aria-controls]="'vehicledetails'+i">
                     <i class="icon-line-info"></i>
                   </button>
 
-                  <button class="color-btn service-btn-select" (click)="checkTransfer('vehiclebox'+i)">
+                  <button class="color-btn service-btn-select" (click)="checkTransfer('vehiclebox-'+vehicle._id)">
                     Select
                   </button>
                 </div>
