@@ -95,9 +95,9 @@ export class FlightComponent implements OnInit {
     this.loading = true
     this.selectedFlightBack = value;
     this.startCounter(this.durationInSeconds / 2)
-    this.flightReturnData = this.flightDepartureData.flightReturns.find((data: any) => data._id === value)
+    this.flightReturnData = this.flightDepartureData.flightReturns.find((data: any) => data._id === this.selectedFlightBack)
     setTimeout(() => {
-      this.showDetailsReturn = this.showDetailsDeparture.flightReturns[value]
+      this.showDetailsReturn = this.flightReturnData
       this.loading = false
     }, (this.durationInSeconds / 2) * 1000)
     this.counterValue = 0
