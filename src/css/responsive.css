@@ -146,7 +146,7 @@
 @media (max-width: 991.98px) {	
     .services-list .service .image-box {
         margin: 0 auto;
-        width: 60%;
+        width: 90%;
     }
 
     .services-list .service.skeleton-service {
@@ -1145,14 +1145,6 @@
     .services-list .service {
         padding: 20px !important;
         min-height: 200px;
-    }
-
-    .services-list .service .image-box {
-        padding: 40px 60px;
-    }
-
-    .transfer-list .service .image-box {
-        padding: 20px 40px;
     }
 
     .hotel-features-content-limit {
