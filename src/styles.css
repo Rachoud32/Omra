@@ -4231,11 +4231,11 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 .filter-dropdown-item {
-    width: 17%;
+    width: 15.7%;
 }
 
 .transfer-filter .filter-dropdown-item {
-    width: 20%;
+    /* width: 20%; */
 }
 
 .transfer-top-filter.top-filter-section .road-filter-item {
