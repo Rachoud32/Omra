@@ -9,6 +9,7 @@ export class TransferService {
   vehiclesData() {
     return [
       {
+        _id: 1,
         vehicleImage: 'assets/transfer/1.webp',
         model: 'Toyota Camry',
         type: 'Economy',
@@ -46,6 +47,7 @@ export class TransferService {
         },
       },
       {
+        _id: 2,
         vehicleImage: 'assets/transfer/1.webp',
         model: 'Toyota Camry',
         type: 'Economy',
@@ -83,6 +85,7 @@ export class TransferService {
         },
       },
       {
+        _id: 3,
         vehicleImage: 'assets/transfer/1.webp',
         model: 'Toyota Camry',
         type: 'Economy',
@@ -120,6 +123,7 @@ export class TransferService {
         },
       },
       {
+        _id: 4,
         vehicleImage: 'assets/transfer/2.webp',
         model: 'Hyundai Santa Fe',
         type: 'SUV',
@@ -157,6 +161,7 @@ export class TransferService {
         },
       },
       {
+        _id: 5,
         vehicleImage: 'assets/transfer/2.webp',
         model: 'Hyundai Santa Fe',
         type: 'SUV',
@@ -194,6 +199,7 @@ export class TransferService {
         },
       },
       {
+        _id: 6,
         vehicleImage: 'assets/transfer/2.webp',
         model: 'Hyundai Santa Fe',
         type: 'SUV',
@@ -231,6 +237,7 @@ export class TransferService {
         },
       },
       {
+        _id: 7,
         vehicleImage: 'assets/transfer/5.webp',
         model: 'Ford Transit',
         type: 'Van',
@@ -268,6 +275,7 @@ export class TransferService {
         },
       },
       {
+        _id: 8,
         vehicleImage: 'assets/transfer/3.webp',
         model: 'Higer KLQ6952K',
         type: 'Bus',
@@ -305,6 +313,7 @@ export class TransferService {
         },
       },
       {
+        _id: 9,
         vehicleImage: 'assets/transfer/4.webp',
         model: 'High Speed 2',
         type: 'Train',
