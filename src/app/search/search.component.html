@@ -321,7 +321,7 @@
                                     </div>
                                     <div class="d-flex justify-content-end">
                                         <button class="color-btn validate-btn mt-3"
-                                            (click)="toggleDropdown('1')">Confirm</button>
+                                            (click)="toggleDropdown('1','')">Confirm</button>
                                     </div>
                                 </div>
                             </div>
@@ -678,7 +678,7 @@
                                     </div>
                                     <div class="d-flex justify-content-end">
                                         <button class="color-btn validate-btn mt-3"
-                                            (click)="toggleDropdown('2')">Confirm</button>
+                                            (click)="toggleDropdown('2','')">Confirm</button>
                                     </div>
                                 </div>
                             </div>
@@ -750,7 +750,8 @@
                     </div>
 
                     <div class="col-xl-6 d-flex justify-content-end mb-3">
-                        <button class="color-btn add-dest-btn" (click)="addNewDestination()"><i class="icon-line-plus pe-1"></i>Add another destination</button>
+                        <button class="color-btn add-dest-btn" (click)="addNewDestination()"><i
+                                class="icon-line-plus pe-1"></i>Add another destination</button>
                     </div>
 
                     <!-- Calendar -->
@@ -834,12 +835,13 @@
                                                     <i class="icon-line-moon"></i>
                                                 </div>
                                             </div>
-                                            <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i class="icon-line-cross"></i></div>
+                                            <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i
+                                                    class="icon-line-cross"></i></div>
                                         </div>
                                     </div>
                                 </div>
                             </button>
-                            <div class="dropdown-menu animate slideIn" #dropdownMenuFour>
+                            <div class="dropdown-menu animate slideIn" [attr.id]="'dropdown-'+i">
                                 <div class="d-flex flex-column justify-content-between destination-dropdown">
                                     <div class="d-flex flex-wrap align-items-center">
                                         <div class="dest-box dest-1 d-flex flex-column flex-grow-1 border-end">
@@ -886,7 +888,7 @@
                                     </div>
                                     <div class="d-flex justify-content-end">
                                         <button class="color-btn validate-btn dropdown-btn m-3"
-                                            (click)="toggleDropdown('4')">Confirm</button>
+                                            (click)="toggleDropdown('4',i)">Confirm</button>
                                     </div>
                                 </div>
                             </div>
@@ -1046,7 +1048,7 @@
                                 </div>
                                 <div class="d-flex justify-content-end">
                                     <button class="color-btn validate-btn mt-3"
-                                        (click)="toggleDropdown('3')">Confirm</button>
+                                        (click)="toggleDropdown('3','')">Confirm</button>
                                 </div>
                             </div>
                         </div>

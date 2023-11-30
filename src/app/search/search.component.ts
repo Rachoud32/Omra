@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   @ViewChild('dropdownMenuOne') dropdownMenuOne?: ElementRef;
   @ViewChild('dropdownMenuTwo') dropdownMenuTwo?: ElementRef;
   @ViewChild('dropdownMenuThree') dropdownMenuThree?: ElementRef;
-  @ViewChild('dropdownMenuFour') dropdownMenuFour?: ElementRef;
+  @ViewChild('dropdownButton') dropdownButton!: ElementRef;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -73,7 +73,8 @@ export class SearchComponent implements OnInit {
     public formatter: NgbDateParserFormatter,
     private config: NgSelectConfig,
     private toastr: ToastrService,
-    private router: Router) {
+    private router: Router,
+    private renderer: Renderer2) {
     // this.fromDate = calendar.getToday();
     // this.toDate = calendar.getToday();
     // this.todayDate = calendar.getToday();
@@ -405,22 +406,24 @@ export class SearchComponent implements OnInit {
   }
 
 
-  toggleDropdown(index: string) {
-    if (index == '1') {
+  toggleDropdown(value: any, index: any) {
+    if (value == '1') {
       const dropdownMenuElement1 = this.dropdownMenuOne?.nativeElement;
       dropdownMenuElement1.classList.remove('show')
     }
-    if (index == '2') {
+    if (value == '2') {
       const dropdownMenuElement2 = this.dropdownMenuTwo?.nativeElement;
       dropdownMenuElement2.classList.remove('show')
     }
-    if (index == '3') {
+    if (value == '3') {
       const dropdownMenuElement3 = this.dropdownMenuThree?.nativeElement;
       dropdownMenuElement3.classList.remove('show')
     }
-    if (index == '4') {
-      const dropdownMenuElement4 = this.dropdownMenuFour?.nativeElement;
-      dropdownMenuElement4.classList.remove('show')
+    if (value == '4') {
+      const element = document.getElementById('dropdown-' + index)
+      if (element) {
+        element.classList.remove('show')
+      }
     }
 
   }
