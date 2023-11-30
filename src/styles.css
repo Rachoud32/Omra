@@ -439,9 +439,37 @@ input[type=checkbox]:disabled {
 }
 
 .color-btn.validate-btn {
-    padding: 15px 30px;
+    padding: 12px 15px;
     line-height: normal;
     font-size: var(--fs-13);
+}
+
+.color-btn.add-dest-btn {
+    font-size: var(--fs-13);
+    padding: 12px 20px;
+    background: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.color-btn.add-dest-btn:hover {
+    background: var(--omra-base);
+    border-color: var(--omra-base);
+}
+
+.search-section .dropdown .remove-dest-btn {
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s linear;
+}
+
+.search-section .dropdown .remove-dest-btn i {
+    color: var(--omra-gray);
+}
+
+.search-section .dropdown .remove-dest-btn:hover i {
+    color: var(--omra-base);
 }
 
 .ng-select.custom .ng-select-container {
@@ -1050,14 +1078,21 @@ label.category-item::before {
     padding: 0;
 }
 
-.nights-nbr label {
-    font-size: var(--fs-15);
-    font-weight: 400;
+.nbr-nights-container {
+    padding: 15px 22px;
+    background: var(--omra-extra);
 }
 
-.nights-nbr label {
-    font-size: var(--fs-14);
+.nbr-nights-container .nights-label {
+    font-size: var(--fs-15);
+    color: var(--omra-second);
     font-weight: 400;
+    line-height: normal;
+}
+
+.nbr-nights-container .passengers-nbr .minus, 
+.nbr-nights-container .passengers-nbr .plus {
+    color: var(--omra-second);
 }
 
 .calendar .dropdown-menu.show {
@@ -1161,8 +1196,9 @@ label.category-item::before {
 .destination-label {
     padding: 5px 22px;
     border-bottom: 1px solid var(--omra-light-gray);
-    color: var(--omra-base);
-    font-size: var(--fs-14);
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    font-size: var(--fs-15);
     font-weight: 400;
 }
 
@@ -1212,12 +1248,6 @@ label.category-item::before {
 
 .passengers-label {
     font-size: var(--fs-14);
-    font-weight: 400;
-    line-height: normal;
-}
-
-.nights-label {
-    font-size: var(--fs-12);
     font-weight: 400;
     line-height: normal;
 }
@@ -3311,7 +3341,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     margin-bottom: 0;
     position: relative;
     top: 0px;
-    max-width: 450px;
+    max-width: 100%;
 }
 
 .hotel-box .hotel .btn-sec .read-btn {
@@ -3339,6 +3369,33 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 .hotel-box .hotel .btn-sec .rate-btn:active {
     background-color: var(--omra-black);
     color: var(--omra-white);
+}
+
+.rooms-list-btn-chevron {
+    line-height: 7px;
+    animation: appearAnimation 2s ease-in-out infinite;
+}
+
+.rooms-list-btn-chevron:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.rooms-list-btn-chevron:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.rooms-list-btn-chevron:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes appearAnimation {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .hotel-box .hotel .notices {

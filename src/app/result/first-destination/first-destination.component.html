@@ -59,7 +59,7 @@
           </div>
           <div class="hotel-content">
             <div class="row">
-              <div class="col-lg-7 z-index-3">
+              <div class="col-lg-6 z-index-3">
                 <div class="hotel-content-bottom">
                   <div class="title-sec me-4">
                     <h2 class="hotel-name text-truncate">
@@ -68,16 +68,21 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-5 z-index-3">
+              <div class="col-lg-6 z-index-3">
                 <div class="btn-sec d-flex justify-content-end">
                   <a class="read-btn hotel-details-btn d-flex align-items-center justify-content-center" role="button"
                     data-bs-toggle="modal" data-bs-target="#hotel-details"><i class="icon-line-info me-2"></i>
                     Hotel details</a>
-                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center collapsed"
+                  <a class="read-btn rate-btn d-flex align-items-center justify-content-center gap-2 collapsed"
                     [attr.href]="'#rooms-list'+i" role="button" data-bs-toggle="collapse"
                     (click)="collapsedRoomsList('rooms-list'+i)" [attr.data-bs-target]="'#rooms-list'+i"
                     aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">
-                    <i class="icon-line-tag me-2"></i> Rooms and prices
+                    <i class="icon-line-tag"></i> Rooms and prices 
+                    <div class="d-flex flex-column align-items-center">
+                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                    </div>
                   </a>
                 </div>
               </div>

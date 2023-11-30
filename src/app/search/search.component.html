@@ -734,7 +734,7 @@
             <form id="customized-search-section" *ngIf="searchFormCustom && searchType == 'custom'"
                 [formGroup]="searchFormCustom" class="third-tab search-section-tab z-index-3">
                 <div class="row p-0">
-                    <div class="col-xl-12 mt-1 mb-4">
+                    <div class="col-xl-6 d-flex align-items-center mt-1 mb-3">
                         <div class="d-flex">
                             <div class="flight-mode-item d-flex me-3">
                                 <input type="radio" class="flight-mode d-block form-check-input me-2" name="flightmode"
@@ -747,6 +747,10 @@
                                 <label for="with">Umrah pack with flight</label>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-xl-6 d-flex justify-content-end mb-3">
+                        <button class="color-btn add-dest-btn" (click)="addNewDestination()"><i class="icon-line-plus pe-1"></i>Add another destination</button>
                     </div>
 
                     <!-- Calendar -->
@@ -804,7 +808,6 @@
                         </button>
                     </div>
                     <!-- Destinations -->
-                    <button (click)="addNewDestination()">Add next destination</button>
                     <div class="col-xl-6 mb-3" formArrayName="destinations"
                         *ngFor="let dest of destinations.controls;let i=index">
 
@@ -831,7 +834,7 @@
                                                     <i class="icon-line-moon"></i>
                                                 </div>
                                             </div>
-                                            <div (click)="removeDestination(i)" *ngIf="i!=0">x</div>
+                                            <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i class="icon-line-cross"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -841,7 +844,7 @@
                                     <div class="d-flex flex-wrap align-items-center">
                                         <div class="dest-box dest-1 d-flex flex-column flex-grow-1 border-end">
                                             <div class="destination-label">Destination {{i+1}}</div>
-                                            <div class="border-bottom" [formGroupName]="i">
+                                            <div [formGroupName]="i">
                                                 <div>
                                                     <div class="select-container">
                                                         <label [attr.for]="'Makkah-'+i" class="me-3 w-100">
@@ -862,9 +865,8 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <hr />
                                                 <div
-                                                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
+                                                    class="nbr-nights-container d-flex flex-row justify-content-between nights-nbr align-items-center">
                                                     <div class="nights-label">Number of Nights</div>
                                                     <div
                                                         class="d-flex object-quantity passengers-nbr align-items-center">

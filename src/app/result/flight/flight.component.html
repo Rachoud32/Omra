@@ -16,7 +16,7 @@
           <h6>{{returnFlights.length===0 ? 'Choose the depature flight':'Choose the return flight' }}</h6>
         </div>
         <p>{{(loading && returnFlights.length == 0) ? 'Searching for flights...' : (loading && selectedFlightBack.length
-          != 0) ? 'Generating Summary' : 'Tickets prices are subject to frequent change'}}</p>
+          != 0) ? 'Generating flights summary' : 'Tickets prices are subject to frequent change'}}</p>
         <button class="color-btn change-flight-btn" *ngIf="returnFlights.length != 0" (click)="clearData()">Change
           Flight</button>
       </div>
