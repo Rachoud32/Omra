@@ -54,8 +54,6 @@ export class FirstDestinationComponent implements OnInit {
 
   checkRoom(value: string, idHotel: any) {
     this.selectedRoom = value;
-    console.log(idHotel);
-
     this.hotelDestinationOne = this.dataHotels.find((data: any) => data._id === idHotel)
     localStorage.setItem('hotelFirstDestination', JSON.stringify(this.hotelDestinationOne))
   }
@@ -72,7 +70,6 @@ export class FirstDestinationComponent implements OnInit {
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
   };
 
   collapsedRoomsList(value: any) {

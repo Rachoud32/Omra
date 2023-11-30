@@ -48,7 +48,6 @@ export class TransferTopFilterComponent implements OnInit {
   }
 
   tabFilter(selectedFilter: any) {
-    console.log(selectedFilter);
     this.selectedTab = selectedFilter
     this.sendDataToParent.emit(selectedFilter);
   }

@@ -30,8 +30,6 @@ export class BookingStepsComponent implements OnInit, OnDestroy {
       if (event.key === 'steps') {
         this.localStorageSubject.next(event.newValue);
       }
-      console.log(event);
-
     });
   }
 
@@ -45,7 +43,6 @@ export class BookingStepsComponent implements OnInit, OnDestroy {
     this.localStorageSteps = JSON.parse(localStorage.getItem('steps') || '')
     this.localStorageSubscription = this.localStorageSubject.asObservable().subscribe((newValue: any) => {
       this.localStorageSteps = newValue;
-      console.log(newValue);
 
       // Handle the updated value as needed
     });

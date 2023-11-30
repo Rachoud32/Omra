@@ -804,7 +804,10 @@
                         </button>
                     </div>
                     <!-- Destinations -->
-                    <div class="col-xl-6 mb-3">
+                    <button (click)="addNewDestination()">Add next destination</button>
+                    <div class="col-xl-6 mb-3" formArrayName="destinations"
+                        *ngFor="let dest of destinations.controls;let i=index">
+
                         <div class="dropdown w-100">
                             <button class="btn btn-dark w-100 destination-btn" type="button" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
@@ -815,36 +818,20 @@
                                     <div class="d-flex justify-content-between w-100 align-items-center">
                                         <div class="input-group d-flex">
                                             <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
-                                                *ngIf="!searchFormCustom.value.firstDestination.destinationOne">1st
-                                                destination</div>
+                                                *ngIf="!destinations.controls[i].get('destination')?.value">
+                                                Destination {{i+1}}</div>
                                             <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
-                                                *ngIf="searchFormCustom.value.firstDestination">
-                                                {{ searchFormCustom.value.firstDestination.destinationOne }}
+                                                *ngIf="destinations.controls[i].get('destination')?.value">
+                                                {{destinations.controls[i].get('destination')?.value }}
                                                 <div class="d-flex align-items-center ms-auto">
                                                     <span class="p-0 me-1"
-                                                        [class.text-muted]="searchFormCustom.get('firstDestination.nights')?.value ===0">{{
-                                                        searchFormCustom.get("firstDestination.nights")?.value }}</span>
+                                                        [class.text-muted]="destinations.controls[i].get('nights')?.value ===0">
+                                                        {{destinations.controls[i].get('nights')?.value }}
+                                                    </span>
                                                     <i class="icon-line-moon"></i>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between w-100 align-items-center">
-                                        <div class="input-group d-flex">
-                                            <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
-                                                *ngIf="!searchFormCustom.value.secondDestination.destinationTwo">2nd
-                                                destination</div>
-                                            <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
-                                                *ngIf="searchFormCustom.value.secondDestination">
-                                                {{ searchFormCustom.value.secondDestination.destinationTwo }}
-                                                <div class="d-flex align-items-center ms-auto">
-                                                    <span class="p-0 me-1"
-                                                        [class.text-muted]="searchFormCustom.get('secondDestination.nights')?.value === 0 ">{{
-                                                        searchFormCustom.get("secondDestination.nights")?.value
-                                                        }}</span>
-                                                    <i class="icon-line-moon"></i>
-                                                </div>
-                                            </div>
+                                            <div (click)="removeDestination(i)" *ngIf="i!=0">x</div>
                                         </div>
                                     </div>
                                 </div>
@@ -853,22 +840,24 @@
                                 <div class="d-flex flex-column justify-content-between destination-dropdown">
                                     <div class="d-flex flex-wrap align-items-center">
                                         <div class="dest-box dest-1 d-flex flex-column flex-grow-1 border-end">
-                                            <div class="destination-label">1st destination</div>
-                                            <div class="border-bottom" formGroupName="firstDestination">
+                                            <div class="destination-label">Destination {{i+1}}</div>
+                                            <div class="border-bottom" [formGroupName]="i">
                                                 <div>
                                                     <div class="select-container">
-                                                        <label for="Makkah" class="me-3 w-100">
+                                                        <label [attr.for]="'Makkah-'+i" class="me-3 w-100">
                                                             <input type="radio" class="form-check-input me-2"
-                                                                name="destinationOne" id="Makkah" value="Makkah"
-                                                                formControlName="destinationOne" />
+                                                                name="destination" [attr.id]="'Makkah-'+i"
+                                                                value="Makkah"
+                                                                (click)="affectDestination('Makkah',i)" />
                                                             <div class="list-item">Makkah</div>
                                                         </label>
                                                     </div>
                                                     <div class="select-container">
-                                                        <label for="Medina" class="me-3 w-100">
+                                                        <label [attr.for]="'Medina-'+i" class="me-3 w-100">
                                                             <input type="radio" class="form-check-input me-2"
-                                                                name="destinationOne" id="Medina" value="Medina"
-                                                                formControlName="destinationOne" />
+                                                                name="destination" [attr.id]="'Medina-'+i"
+                                                                value="Medina"
+                                                                (click)="affectDestination('Medina',i)" />
                                                             <div class="list-item">Medina</div>
                                                         </label>
                                                     </div>
@@ -879,56 +868,13 @@
                                                     <div class="nights-label">Number of Nights</div>
                                                     <div
                                                         class="d-flex object-quantity passengers-nbr align-items-center">
-                                                        <div class="minus" (click)="minusNightsFirstDestionation()">
+                                                        <div class="minus" (click)="minusNightsDestionation(i)">
                                                             -
                                                         </div>
                                                         <div class="quantity">
-                                                            {{ searchFormCustom.get("firstDestination.nights")?.value }}
+                                                            {{destinations.controls[i].get('nights')?.value }}
                                                         </div>
-                                                        <div class="plus" (click)="plusNightsFirstDestionation()">
-                                                            +
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="dest-box dest-2 d-flex flex-grow-1 flex-column">
-                                            <div class="destination-label">2nd destination</div>
-                                            <div class="border-bottom" formGroupName="secondDestination">
-                                                <div>
-
-                                                    <div class="select-container">
-                                                        <label for="Makkah2" class="me-3 w-100">
-                                                            <input type="radio" class="form-check-input me-2"
-                                                                name="destinationTwo" id="Makkah2" value="Makkah"
-                                                                formControlName="destinationTwo" />
-                                                            <div class="list-item">Makkah</div>
-                                                        </label>
-                                                    </div>
-                                                    <div class="select-container">
-                                                        <label for="Medinah2" class="me-3 w-100">
-                                                            <input type="radio" class="form-check-input me-2"
-                                                                name="destinationTwo" id="Medinah2" value="Medinah"
-                                                                formControlName="destinationTwo" />
-                                                            <div class="list-item">Medinah</div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div
-                                                    class="d-flex flex-row justify-content-between nights-nbr align-items-center pt-2 pb-1 pe-4 ps-4 mb-2">
-                                                    <div class="nights-label">Number of Nights</div>
-                                                    <div id="nights"
-                                                        class="d-flex object-quantity passengers-nbr align-items-center">
-                                                        <div class="minus" (click)="minusNightsSecondDestionation()">
-                                                            -
-                                                        </div>
-                                                        <div class="quantity">
-                                                            {{ searchFormCustom.get("secondDestination.nights")?.value
-                                                            }}
-                                                        </div>
-                                                        <div class="plus" (click)="plusNightsSecondDestionation()">
+                                                        <div class="plus" (click)="plusNightsDestionation(i)">
                                                             +
                                                         </div>
                                                     </div>
@@ -944,6 +890,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Passengers -->
                     <div class="col-xl-6 mb-3">
                         <div class="dropdown dropdown-guests w-100">

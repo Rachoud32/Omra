@@ -55,8 +55,6 @@ export class SecondDestinationComponent implements OnInit {
 
   checkRoom(value: string, idHotel: any) {
     this.selectedRoom = value;
-    console.log(idHotel);
-
     this.hotelDestinationTwo = this.dataHotels.find((data: any) => data._id === idHotel)
     localStorage.setItem('hotelSecondDestination', JSON.stringify(this.hotelDestinationTwo))
   }
@@ -69,13 +67,11 @@ export class SecondDestinationComponent implements OnInit {
       const index = this.selectedGroundServices.indexOf(value)
       this.selectedGroundServices.splice(index, 1);
     }
-    console.log(this.selectedGroundServices);
 
   }
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
   };
 
   collapsedRoomsList(value: any) {

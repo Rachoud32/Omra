@@ -111,14 +111,12 @@ export class SearchComponent implements OnInit {
       departureCountry: new FormControl('', [Validators.required]),
       Nationality: new FormControl('', [Validators.required]),
       path: new FormControl('', [Validators.required]),
-      firstDestination: new FormGroup({
-        destinationOne: new FormControl('', [Validators.required]),
-        nights: new FormControl(0, [Validators.required]),
-      }),
-      secondDestination: new FormGroup({
-        destinationTwo: new FormControl('', [Validators.required]),
-        nights: new FormControl(0, [Validators.required]),
-      }),
+      destinations: new FormArray([
+        new FormGroup({
+          destination: new FormControl('', [Validators.required]),
+          nights: new FormControl(0, [Validators.required]),
+        })
+      ]),
       passengersCustom: new FormArray([new FormGroup({
         adults: new FormControl(1),
         childrenCustom: new FormArray([]),
@@ -317,13 +315,10 @@ export class SearchComponent implements OnInit {
     return this.passengersCustom.at(i)?.get('childrenCustom') as FormArray
   }
 
-  get firstDestination(): FormGroup {
-    return this.searchFormCustom?.get('firstDestination') as FormGroup
+  get destinations(): FormArray {
+    return this.searchFormCustom?.get('destinations') as FormArray
   }
 
-  get secondDestination(): FormGroup {
-    return this.searchFormCustom?.get('secondDestination') as FormGroup
-  }
 
   addPassengerCustom() {
     if (this.passengersCustom.length < 3) {
@@ -344,8 +339,25 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  plusNightsFirstDestionation() {
-    const nightsFormControl = this.searchFormCustom?.get('firstDestination')?.get('nights');
+  addNewDestination() {
+    this.destinations.push(new FormGroup({
+      destination: new FormControl('', [Validators.required]),
+      nights: new FormControl(0, [Validators.required]),
+    }))
+  }
+
+  removeDestination(i: any) {
+    this.destinations.removeAt(i)
+  }
+
+  affectDestination(value: any, index: any) {
+    const destinationFormControl = this.destinations.at(index)?.get('destination');
+    if (destinationFormControl) {
+      destinationFormControl.setValue(value);
+    }
+  }
+  plusNightsDestionation(index: any) {
+    const nightsFormControl = this.destinations.at(index)?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;
       currentNightsValue += 1;
@@ -353,33 +365,15 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  minusNightsFirstDestionation() {
-    const nightsFormControl = this.searchFormCustom?.get('firstDestination')?.get('nights');
-    if (nightsFormControl && nightsFormControl.value > 0) {
-      let currentNightsValue = nightsFormControl.value;
-      currentNightsValue -= 1;
-      nightsFormControl.setValue(currentNightsValue);
-    }
-  }
-
-  plusNightsSecondDestionation() {
-    const nightsFormControl = this.searchFormCustom?.get('secondDestination')?.get('nights');
+  minusNightsDestionation(index: any) {
+    const nightsFormControl = this.destinations.at(index)?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;
-      currentNightsValue += 1;
-      nightsFormControl.setValue(currentNightsValue);
-    }
-  }
-
-  minusNightsSecondDestionation() {
-    const nightsFormControl = this.searchFormCustom?.get('secondDestination')?.get('nights');
-    if (nightsFormControl && nightsFormControl.value > 0) {
-      let currentNightsValue = nightsFormControl.value;
       currentNightsValue -= 1;
       nightsFormControl.setValue(currentNightsValue);
     }
-  }
 
+  }
   pluschildrenCustom(i: any) {
     if (this.childrenCustom(i).length < 4) {
       this.childrenCustom(i).push(new FormGroup({
