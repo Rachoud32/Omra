@@ -14,6 +14,7 @@ export class TransferComponent implements OnInit {
   noFilter?: boolean = true
   dataVehicle: any[] = []
   filteredDataVehicle: any[] = []
+  indexOfTab: any
   collapsed = true;
   selectedTransfer: string = '';
   selectedDetailTransfer: string = '';
@@ -52,6 +53,9 @@ export class TransferComponent implements OnInit {
     if (!this.noFilter) {
       this.filteredDataVehicle = []
     }
+  }
+  filterIndexFN(index: any) {
+    this.indexOfTab = index
   }
   filterFN(value: any) {
     this.loading = true

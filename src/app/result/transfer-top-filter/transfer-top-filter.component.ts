@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class TransferTopFilterComponent implements OnInit {
   @Output() sendDataToParent: EventEmitter<any> = new EventEmitter();
+  @Output() sendIndexToParent: EventEmitter<any> = new EventEmitter();
   @Output() resetFilter: EventEmitter<any> = new EventEmitter();
 
   listTabs: any[] = []
@@ -46,9 +47,13 @@ export class TransferTopFilterComponent implements OnInit {
       this.resetFilter.emit(false)
     }
   }
-
+  findIndex(index: any) {
+    this.sendIndexToParent.emit(this.filteredTabs.length != 0 ? index : index + 1);
+  }
   tabFilter(selectedFilter: any) {
     this.selectedTab = selectedFilter
+    let index = this.filteredTabs.indexOf(selectedFilter)
     this.sendDataToParent.emit(selectedFilter);
+    this.findIndex(index + 1)
   }
 }

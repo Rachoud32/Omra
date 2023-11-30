@@ -18,7 +18,8 @@
             <ul class="roads-list dropdown-menu drop-menu-sm-margin animate slideIn w-100">
                 <li class="filter-list-item" *ngFor="let item of listTabs">
                     <label for="road1" (click)="addTab(item)">
-                    {{item.departure}}<span class="color-3"><i class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span>{{item.destination}}</label>
+                        {{item.departure}}<span class="color-3"><i
+                                class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span>{{item.destination}}</label>
                 </li>
             </ul>
         </div>
@@ -31,7 +32,8 @@
             <div class="d-flex align-items-center justify-content-start flex-grow-1 gap-1 ps-3">
                 <div class="road-number">{{i+1}}</div>
                 <div class="d-flex flex-column flex-grow-1 justify-content-start p-3" (click)="tabFilter(tab)">
-                    <p class="m-0">{{tab.departure}}<span class="color-3"><i class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span></p>
+                    <p class="m-0">{{tab.departure}}<span class="color-3"><i
+                                class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span></p>
                     <p class="m-0">{{tab.destination}}</p>
                 </div>
             </div>
