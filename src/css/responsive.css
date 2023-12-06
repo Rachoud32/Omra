@@ -504,6 +504,14 @@
 }
 
 @media (max-width: 767.98px) {
+    .booked-service .service-img-container .service-img {
+        height: 270px;
+    }
+
+    .booked-service .service-img-container .service-img.flight-company {
+        height: 130px;
+        padding: 40px 15px;
+    }
 
     .booked-service .border-start {
         border: 0 !important;

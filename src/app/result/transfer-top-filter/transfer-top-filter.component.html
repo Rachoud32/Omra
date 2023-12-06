@@ -1,8 +1,6 @@
 <div class="top-filter-section transfer-top-filter mb-3">
     <h6>Choose the track</h6>
     <div class="travel-path d-flex align-items-center gap-2 mb-3" *ngIf="filteredTabs.length<3">
-
-
         <div class="filter-dropdown-item road-filter-item dropdown">
             <button type="button" class="color-btn w-100 road-btn d-flex align-items-center gap-2 mb-2"
                 data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
@@ -14,18 +12,16 @@
                     <i class="icon-line-chevron-down"></i>
                 </div>
             </button>
-
             <ul class="roads-list dropdown-menu drop-menu-sm-margin animate slideIn w-100">
                 <li class="filter-list-item" *ngFor="let item of listTabs">
                     <label for="road1" (click)="addTab(item)">
-                        {{item.departure}}<span class="color-3"><i
-                                class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span>{{item.destination}}</label>
-                </li>
+                    {{item.departure}}<span class="color-3"><i class="icon-line-arrow-right ps-1 pe-1 lh-base"></i></span>{{item.destination}}</label>
+                  </li>
             </ul>
         </div>
     </div>
     <!-- tabs -->
-    <div class="road-tabs d-flex align-items-center gap-2 mb-3">
+    <div class="road-tabs d-flex align-items-center gap-2 mb-4">
         <div *ngFor="let tab of filteredTabs;let i=index"
             class="trajectory-item d-flex align-items-center justify-content-between"
             [class.activetab]="selectedTab == tab">

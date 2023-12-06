@@ -766,7 +766,7 @@ input[type=checkbox]:disabled {
 
 .input-group span,
 .input-group .destination-input-content {
-    padding: 10px;
+    padding: 10px 15px 10px 10px;
     letter-spacing: 0;
 }
 
@@ -4211,7 +4211,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 -----------------------------------------------------------------*/
 .top-filter-section {
     background: transparent;
-    padding: 20px 0px;
+    padding: 10px 0px;
     margin-bottom: 15px;
 }
 
@@ -4306,6 +4306,13 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 .top-filter-section h6 {
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    color: var(--omra-second);
+    margin-bottom: 15px;
+}
+
+.track-title {
     text-transform: uppercase;
     font-weight: 500 !important;
     color: var(--omra-second);
@@ -4729,9 +4736,12 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 .top-filter-section .remove-road-btn {
     background: transparent;
     color: var(--omra-gray);
-    padding: 3px 5px;
+    padding: 2px 5px;
+    display: flex;
     border: 1px solid var(--omra-light-gray);
     transition: all .3s linear;
+    align-items: center;
+    justify-content: center;
 }
 
 .top-filter-section .remove-road-btn:hover {
@@ -5291,7 +5301,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 
 .service-summary-box .service-label {
     display: block;
-    font-size: clamp(1.1rem, 2.5vw, 1.375em);
+    font-size: clamp(18px, 2.5vw, 20px);
     margin-bottom: 0px;
     font-weight: 500 !important;
     color: var(--omra-base);
@@ -5301,7 +5311,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     background: var(--omra-extra);
     border: 0;
     color: var(--omra-second);
-    padding: 0px 10px;
+    padding: 1px 10px;
     font-size: var(--fs-12);
     width: fit-content;
 }
@@ -5349,20 +5359,34 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     line-height: normal;
 }
 
+.booked-service .service-sub-label2 {
+    font-size: var(--fs-16);
+    color: var(--omra-base);
+    font-weight: 400;
+    border: 0;
+    padding: 0;
+    line-height: normal;
+}
+
 .service-summary-box h5 {
     color: var(--omra-base);
-    font-size: clamp(1rem, 3.5vw, 1rem);
-    margin-bottom: 5px;
+    font-size: var(--fs-14);
+    margin-bottom: 0;
+    line-height: normal;
     font-weight: 400 !important;
+    text-transform: uppercase;
+}
+
+.service-summary-box .booked-service i {
+    font-size: var(--fs-14);
 }
 
 .booked-service .room-infos {
     display: flex;
     justify-content: flex-start;
     align-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
-    margin-bottom: 5px;
 }
 
 .booked-service .room-infos i {
@@ -5400,7 +5424,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     font-size: var(--fs-14);
     font-weight: 400 !important;
     color: var(--omra-second);
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 .booked-service .ground-service-detail-box ul li {
@@ -5408,7 +5432,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     font-size: var(--fs-14);
     margin-bottom: 2px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: normal;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5444,8 +5468,8 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 .service-summary-box .color-btn {
-    width: 28%;
-    padding: 10px;
+    /* width: 28%; */
+    padding: 10px 12px;
     font-size: var(--fs-18);
     background-color: var(--omra-second);
     border-color: var(--omra-second);
@@ -5487,6 +5511,32 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 .booked-service .service-detail-box i {
     font-size: var(--fs-14);
     color: var(--omra-second);
+}
+
+.booked-service .service-detail-box svg {
+    width: 12px;
+    fill: var(--omra-second);
+}
+
+.booked-service .service-img-container {
+    border: 1px solid var(--omra-light-gray);
+}
+
+.booked-service .service-img-container .service-img {
+    object-fit: cover;
+    height: 140px;
+}
+
+.booked-service .service-img-container .service-img.flight-company {
+    object-fit: contain;
+    height: 100px;
+    padding: 35px 15px;
+}
+
+.booked-service .service-img-container .service-img.booked-vehicle {
+    object-fit: contain;
+    height: 140px;
+    background: #fff;
 }
 
 .checkout-booking-list .booked-service h3 {
@@ -5588,6 +5638,15 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     padding: 10px 15px;
 }
 
+.user-infos .user-pay-content .form-group .form-control {
+    padding: 10px;
+}    
+
+app-booking-summary {
+    position: sticky;
+    top: 0;
+}
+
 .bookings-summary-list .service-summary-box {
     padding: 20px 30px 10px 30px;
 }
@@ -5647,6 +5706,11 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 
 .bookings-summary-list .booked-service hr {
     margin: 10px 0;
+}
+
+.services-betw-divider {
+    margin: 10px 0 !important;
+    border-style: dashed;
 }
 
 .bookings-summary-list .booked-service .more-service-details {
