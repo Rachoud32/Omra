@@ -58,7 +58,7 @@ export class SearchBarComponent implements OnInit {
           this.ariaControls = 'flightfilter';
           this.category = 'flight(s)'
         }
-        if (val.url === '/umrah-custom/result/first-destination' || val.url === '/result/second-destination') {
+        if (val.url === '/umrah-custom/result/first-destination' || val.url === '/umrah-custom/result/second-destination') {
           this.dataBsTargetValue = '#destinationfilter';
           this.ariaControls = 'destinationfilter';
           this.category = 'room(s)'
