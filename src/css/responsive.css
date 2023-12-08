@@ -146,7 +146,6 @@
 @media (max-width: 991.98px) {	
     .services-list .service .image-box {
         margin: 0 auto;
-        width: 90%;
     }
 
     .services-list .service.skeleton-service {
@@ -291,7 +290,8 @@
 
     .services-list .service .image-box img {
         border-right: 0 !important;
-        padding: 0;
+        padding: 0 60px;
+        transform: scale(0.7);
     }
 
     .services-list .service-details {
@@ -581,6 +581,76 @@
 
 
 @media (max-width: 575.98px) {
+    .search-bar .dropdown-guests .dropdown-menu {
+        max-width: 100%;
+        position: fixed;
+        height: 100%;
+        top: -10px !important;
+        z-index: 999 !important;
+    }
+
+    .modal .modal-content .modal-title {
+        font-size: var(--fs-16);
+    }
+
+    .modal-header {
+        align-items: flex-start !important;
+    }
+
+    .hotel-address {
+        font-size: var(--fs-13);
+    }
+
+    .search-result-edit .search-results-list .date-picker-btn, .search-result-edit .search-results-list .dropdown-guests {
+        margin-bottom: 0px;
+    }
+
+    .search-bar .dropdown-guests {
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    .check-form .color-btn.search-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .search-bar .picker .input-group .input-group-text,
+    .search-bar .dropdown .input-group .input-group-text {
+        padding: 0 5px 0 0 !important;
+    }
+
+    .search-bar .date-picker-btn,
+    .search-bar .passengers-btn {
+        line-height: normal;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0;
+    }
+
+    .check-form.search-results i {
+        font-size: var(--fs-14);
+    }
+
+    .services-list .service .image-box img {
+        padding: 0;
+    }
+
+    .owl-stage-outer, .owl-stage {
+        height: 40vh;
+        min-height: 40vh;
+    }
+
+    .slider-slide-bg {
+        min-height: 40vh;
+    }
+
+    .slider .slider-caption {
+        padding-top: 95px;
+        padding-left: 30px;
+        max-width: 270px;
+    }
+
     .skeleton-box .service-action-btns {
         flex-direction: row !important;
     }
@@ -626,6 +696,7 @@
     .service-details .service-action-btns {
         flex-direction: row !important;
         gap: 10px;
+        margin-top: 10px;
     }
 
     .calendar .dropdown-menu.show {
@@ -663,12 +734,6 @@
         display: none;
     }
 
-    .slider .slider-caption {
-        padding-top: 185px;
-        padding-left: 30px;
-        max-width: 270px;
-    }
-
     .slider .slider-caption h3 {
         font-size: 18px;
         text-align: left;
@@ -683,16 +748,20 @@
     app-search-bar {
         position: sticky;
         left: 0;
-        top: 22px;
-        z-index: 98;
+        top: 21px;
+        z-index: 998;
+    }
+
+    app-search-bar .search-bar-card {
+        padding: 3rem 0 0 0 !important;
     }
 
     .filter-btn-mob {
         font-size: var(--fs-18);
         padding: 0 !important;
         display: flex;
-        width: 43px !important;
-        height: 43px !important;
+        width: 35px !important;
+        height: 35px !important;
         align-items: center;
         text-align: center;
         justify-content: center;
@@ -802,9 +871,9 @@
         display: none !important;
     }
 
-    .top-filter-section, .flight-label, .travel-method, .travel-path {
+    /* .top-filter-section, .flight-label, .travel-method, .travel-path {
         flex-direction: column !important;
-    }
+    } */
 
     .list-steps .list-group-item {
         align-items: center !important;
@@ -850,9 +919,13 @@
 
     .services-list .box .color-btn.service-btn-details {
         margin-bottom: 0px !important;
-        padding: 10px 0 !important;
+        padding: 0 !important;
         height: unset;
         width: fit-content !important;
+    }
+
+    .services-list .box .color-btn.service-btn-details i {
+        font-size: 24px;
     }
 
     .services-list .box .color-btn {
@@ -926,12 +999,14 @@
         line-height: 22px;
     }
 
-    .flight-label-content {
-        flex-direction: row;
+    .flight-label .flight-label-content {
+        flex-direction: column-reverse;
+        gap: 10px !important;
         justify-content: space-between;
+        align-content: flex-end;
+        flex-wrap: wrap-reverse;
         margin-bottom: 8px;
         width: 100%;
-        gap: 10px !important;
         align-items: flex-start !important;
     }
 
@@ -953,6 +1028,15 @@
 
     .service-details .service-price {
         flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end !important;
+        justify-content: flex-end;
+        display: flex;
+        width: 100%;
+    }
+
+    .vehicle-box .service-price {
+        flex-direction: column-reverse;
         flex-wrap: wrap;
         align-items: flex-end !important;
         justify-content: flex-end;
@@ -1151,8 +1235,8 @@
     }
 
     .services-list .service {
-        padding: 20px !important;
-        min-height: 200px;
+        padding: 0 20px !important;
+        min-height: 180px;
     }
 
     .hotel-features-content-limit {

@@ -16,450 +16,456 @@
                     <p>You benefit from the best payment gateways.</p>
                 </div>
                 <div class="occupancy-card">
-                    <h6 class="guest-creds-title">Guest N°1</h6>
-                    <div class="row occupancy-content row-gap-2 mb-2">
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label>Title</label>
-                                <div class="title-select">
-                                    <div class="dropdown w-100">
-                                        <button
-                                            class="btn w-100"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            data-bs-auto-close="outside"
-                                            data-bs-display="static"
-                                            aria-expanded="false">
-                                            <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                            <div class="input-group">
-                                                <p class="m-0 text-muted">Gender</p>
-                                            </div>
-                                            <i class="icon-line-chevron-down"></i>
-                                            </div>
-                                        </button>
-                                        <div class="dropdown-menu animate slideIn">
-                                            <div>
-                                                <div class="select-container">
-                                                    <label for="mr" class="me-3 w-100">
-                                                    <input
-                                                        type="radio"
-                                                        class="form-check-input me-2"
-                                                        name="gender"
-                                                        id="mr"
-                                                        value="mr"
-                                                    />
-                                                    <div class="list-item">Mr.</div>
-                                                    </label>
+                    <h6 class="guest-creds-title d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#occupancyInfo1" aria-expanded="true" aria-controls="occupancyInfo1">
+                        Guest N°1 <i class="occupancy-collapse icon-line-chevron-down"></i></h6>
+                    <div class="collapse show" id="occupancyInfo1">
+                        <div class="row occupancy-content row-gap-2 mb-2" >
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <div class="title-select">
+                                        <div class="dropdown w-100">
+                                            <button
+                                                class="btn w-100"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                data-bs-auto-close="outside"
+                                                data-bs-display="static"
+                                                aria-expanded="false">
+                                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                                <div class="input-group">
+                                                    <p class="m-0 text-muted">Gender</p>
                                                 </div>
-                                                <div class="select-container">
-                                                    <label for="ms" class="me-3 w-100">
-                                                    <input
-                                                        type="radio"
-                                                        class="form-check-input me-2"
-                                                        name="gender"
-                                                        id="ms"
-                                                        value="ms"
-                                                    />
-                                                    <div class="list-item">Ms.</div>
-                                                    </label>
+                                                <i class="icon-line-chevron-down"></i>
+                                                </div>
+                                            </button>
+                                            <div class="dropdown-menu animate slideIn">
+                                                <div>
+                                                    <div class="select-container">
+                                                        <label for="mr" class="me-3 w-100">
+                                                        <input
+                                                            type="radio"
+                                                            class="form-check-input me-2"
+                                                            name="gender"
+                                                            id="mr"
+                                                            value="mr"
+                                                        />
+                                                        <div class="list-item">Mr.</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="select-container">
+                                                        <label for="ms" class="me-3 w-100">
+                                                        <input
+                                                            type="radio"
+                                                            class="form-check-input me-2"
+                                                            name="gender"
+                                                            id="ms"
+                                                            value="ms"
+                                                        />
+                                                        <div class="list-item">Ms.</div>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-name">First Name</label>
-                                <input
-                                type="text"
-                                name="motamar-name"
-                                id="motamar-name"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="First Name"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-name">First Name</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-name"
+                                    id="motamar-name"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="First Name"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-lastname">Last Name</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-lastname"
+                                    id="motamar-lastname"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Last Name"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-guest">Guest type</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-guest"
+                                    id="motamar-guest"
+                                    class="form-control border-form-control required"
+                                    value="Adult"
+                                    placeholder=""
+                                    disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-nationality">Nationality</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-nationality"
+                                    id="motamar-nationality"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Nationality"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-datebirth">Date of birth</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-datebirth"
+                                    id="motamar-datebirth"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of birth"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-placebirth">Place of birth</label>
+                                    <input type="text" 
+                                    name="motamar-placebirth" 
+                                    id="motamar-placebirth" 
+                                    class="form-control border-form-control required" 
+                                    value="" 
+                                    placeholder="Place of birth"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-socialstate">Social state</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-socialstate"
+                                    id="motamar-socialstate"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Social state"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-job">Job</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-job"
+                                    id="motamar-job"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Job"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-phone">Phone</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-phone"
+                                    id="motamar-phone"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Phone"
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-lastname">Last Name</label>
-                                <input
-                                type="text"
-                                name="motamar-lastname"
-                                id="motamar-lastname"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Last Name"
-                                />
+                        <div class="row occupancy-content row-gap-2">
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-passport">Passport Number</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-passport"
+                                    id="motamar-passport"
+                                    class="form-control border-form-control required" value="" placeholder="Passport Number"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-guest">Guest type</label>
-                                <input
-                                type="text"
-                                name="motamar-guest"
-                                id="motamar-guest"
-                                class="form-control border-form-control required"
-                                value="Adult"
-                                placeholder=""
-                                disabled
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-dateissue">Date of issue</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-dateissue"
+                                    id="motamar-dateissue"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of issue"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-nationality">Nationality</label>
-                                <input
-                                type="text"
-                                name="motamar-nationality"
-                                id="motamar-nationality"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Nationality"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-dateexpiry">Date of expiry</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-dateexpiry"
+                                    id="motamar-dateexpiry"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of expiry"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-datebirth">Date of birth</label>
-                                <input
-                                type="text"
-                                name="motamar-datebirth"
-                                id="motamar-datebirth"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of birth"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-placebirth">Place of birth</label>
-                                <input type="text" 
-                                name="motamar-placebirth" 
-                                id="motamar-placebirth" 
-                                class="form-control border-form-control required" 
-                                value="" 
-                                placeholder="Place of birth"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-socialstate">Social state</label>
-                                <input
-                                type="text"
-                                name="motamar-socialstate"
-                                id="motamar-socialstate"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Social state"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-job">Job</label>
-                                <input
-                                type="text"
-                                name="motamar-job"
-                                id="motamar-job"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Job"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-phone">Phone</label>
-                                <input
-                                type="text"
-                                name="motamar-phone"
-                                id="motamar-phone"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Phone"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row occupancy-content row-gap-2">
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-passport">Passport Number</label>
-                                <input
-                                type="text"
-                                name="motamar-passport"
-                                id="motamar-passport"
-                                class="form-control border-form-control required" value="" placeholder="Passport Number"/>
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-dateissue">Date of issue</label>
-                                <input
-                                type="text"
-                                name="motamar-dateissue"
-                                id="motamar-dateissue"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of issue"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-dateexpiry">Date of expiry</label>
-                                <input
-                                type="text"
-                                name="motamar-dateexpiry"
-                                id="motamar-dateexpiry"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of expiry"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-placeissue">Place of issue</label>
-                                <input
-                                type="text"
-                                name="motamar-placeissue"
-                                id="motamar-placeissue"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Place of issue"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-placeissue">Place of issue</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-placeissue"
+                                    id="motamar-placeissue"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Place of issue"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="occupancy-card mb-5">
-                    <h6 class="guest-creds-title">Guest N°2</h6>
-                    <div class="row occupancy-content row-gap-2 mb-2">
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label>Title</label>
-                                <div class="title-select">
-                                    <div class="dropdown w-100">
-                                        <button
-                                            class="btn w-100"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            data-bs-auto-close="outside"
-                                            data-bs-display="static"
-                                            aria-expanded="false">
-                                            <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                            <div class="input-group">
-                                                <p class="m-0 text-muted">Gender</p>
-                                            </div>
-                                            <i class="icon-line-chevron-down"></i>
-                                            </div>
-                                        </button>
-                                        <div class="dropdown-menu animate slideIn">
-                                            <div>
-                                                <div class="select-container">
-                                                    <label for="mr" class="me-3 w-100">
-                                                    <input
-                                                        type="radio"
-                                                        class="form-check-input me-2"
-                                                        name="gender"
-                                                        id="mr"
-                                                        value="mr"
-                                                    />
-                                                    <div class="list-item">Mr.</div>
-                                                    </label>
+                    <h6 class="guest-creds-title d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#occupancyInfo2" aria-expanded="false" aria-controls="occupancyInfo2">
+                        Guest N°2 <i class="occupancy-collapse icon-line-chevron-down"></i></h6>
+                    <div class="collapse" id="occupancyInfo2">
+                        <div class="row occupancy-content row-gap-2 mb-2">
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <div class="title-select">
+                                        <div class="dropdown w-100">
+                                            <button
+                                                class="btn w-100"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                data-bs-auto-close="outside"
+                                                data-bs-display="static"
+                                                aria-expanded="false">
+                                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                                <div class="input-group">
+                                                    <p class="m-0 text-muted">Gender</p>
                                                 </div>
-                                                <div class="select-container">
-                                                    <label for="ms" class="me-3 w-100">
-                                                    <input
-                                                        type="radio"
-                                                        class="form-check-input me-2"
-                                                        name="gender"
-                                                        id="ms"
-                                                        value="ms"
-                                                    />
-                                                    <div class="list-item">Ms.</div>
-                                                    </label>
+                                                <i class="icon-line-chevron-down"></i>
+                                                </div>
+                                            </button>
+                                            <div class="dropdown-menu animate slideIn">
+                                                <div>
+                                                    <div class="select-container">
+                                                        <label for="mr" class="me-3 w-100">
+                                                        <input
+                                                            type="radio"
+                                                            class="form-check-input me-2"
+                                                            name="gender"
+                                                            id="mr"
+                                                            value="mr"
+                                                        />
+                                                        <div class="list-item">Mr.</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="select-container">
+                                                        <label for="ms" class="me-3 w-100">
+                                                        <input
+                                                            type="radio"
+                                                            class="form-check-input me-2"
+                                                            name="gender"
+                                                            id="ms"
+                                                            value="ms"
+                                                        />
+                                                        <div class="list-item">Ms.</div>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-name">First Name</label>
-                                <input
-                                type="text"
-                                name="motamar-name"
-                                id="motamar-name"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="First Name"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-name">First Name</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-name"
+                                    id="motamar-name"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="First Name"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-lastname">Last Name</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-lastname"
+                                    id="motamar-lastname"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Last Name"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-guest">Guest type</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-guest"
+                                    id="motamar-guest"
+                                    class="form-control border-form-control required"
+                                    value="Adult"
+                                    placeholder=""
+                                    disabled
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-nationality">Nationality</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-nationality"
+                                    id="motamar-nationality"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Nationality"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-datebirth">Date of birth</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-datebirth"
+                                    id="motamar-datebirth"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of birth"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-placebirth">Place of birth</label>
+                                    <input type="text" 
+                                    name="motamar-placebirth" 
+                                    id="motamar-placebirth" 
+                                    class="form-control border-form-control required" 
+                                    value="" 
+                                    placeholder="Place of birth"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-socialstate">Social state</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-socialstate"
+                                    id="motamar-socialstate"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Social state"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-job">Job</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-job"
+                                    id="motamar-job"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Job"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-phone">Phone</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-phone"
+                                    id="motamar-phone"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Phone"
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-lastname">Last Name</label>
-                                <input
-                                type="text"
-                                name="motamar-lastname"
-                                id="motamar-lastname"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Last Name"
-                                />
+                        <div class="row occupancy-content row-gap-2">
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-passport">Passport Number</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-passport"
+                                    id="motamar-passport"
+                                    class="form-control border-form-control required" value="" placeholder="Passport Number"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-guest">Guest type</label>
-                                <input
-                                type="text"
-                                name="motamar-guest"
-                                id="motamar-guest"
-                                class="form-control border-form-control required"
-                                value="Adult"
-                                placeholder=""
-                                disabled
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-dateissue">Date of issue</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-dateissue"
+                                    id="motamar-dateissue"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of issue"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-nationality">Nationality</label>
-                                <input
-                                type="text"
-                                name="motamar-nationality"
-                                id="motamar-nationality"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Nationality"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-dateexpiry">Date of expiry</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-dateexpiry"
+                                    id="motamar-dateexpiry"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Date of expiry"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-datebirth">Date of birth</label>
-                                <input
-                                type="text"
-                                name="motamar-datebirth"
-                                id="motamar-datebirth"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of birth"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-placebirth">Place of birth</label>
-                                <input type="text" 
-                                name="motamar-placebirth" 
-                                id="motamar-placebirth" 
-                                class="form-control border-form-control required" 
-                                value="" 
-                                placeholder="Place of birth"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-socialstate">Social state</label>
-                                <input
-                                type="text"
-                                name="motamar-socialstate"
-                                id="motamar-socialstate"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Social state"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-job">Job</label>
-                                <input
-                                type="text"
-                                name="motamar-job"
-                                id="motamar-job"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Job"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-phone">Phone</label>
-                                <input
-                                type="text"
-                                name="motamar-phone"
-                                id="motamar-phone"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Phone"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row occupancy-content row-gap-2">
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-passport">Passport Number</label>
-                                <input
-                                type="text"
-                                name="motamar-passport"
-                                id="motamar-passport"
-                                class="form-control border-form-control required" value="" placeholder="Passport Number"/>
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-dateissue">Date of issue</label>
-                                <input
-                                type="text"
-                                name="motamar-dateissue"
-                                id="motamar-dateissue"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of issue"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-dateexpiry">Date of expiry</label>
-                                <input
-                                type="text"
-                                name="motamar-dateexpiry"
-                                id="motamar-dateexpiry"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Date of expiry"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xl-3">
-                            <div class="form-group">
-                                <label for="motamar-placeissue">Place of issue</label>
-                                <input
-                                type="text"
-                                name="motamar-placeissue"
-                                id="motamar-placeissue"
-                                class="form-control border-form-control required"
-                                value=""
-                                placeholder="Place of issue"
-                                />
+                            <div class="col-xl-3">
+                                <div class="form-group">
+                                    <label for="motamar-placeissue">Place of issue</label>
+                                    <input
+                                    type="text"
+                                    name="motamar-placeissue"
+                                    id="motamar-placeissue"
+                                    class="form-control border-form-control required"
+                                    value=""
+                                    placeholder="Place of issue"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -32,12 +32,12 @@
                     <div class="service-title-content d-flex align-items-center gap-2">
                       <h3 class="m-0">{{vehicle.model}}</h3>
                       <div class="d-flex align-items-center gap-1">
-                        <p class="vehicle-category">{{vehicle.category}}</p>
-                        <p class="vehicle-class" *ngIf="vehicle.class.length > 0">{{vehicle.class}}</p>
+                        <p class="vehicle-category">{{vehicle.type}}</p>
+                        <!-- <p class="vehicle-class" *ngIf="vehicle.class.length > 0">{{vehicle.class}}</p> -->
                       </div>
                     </div>
                     <div class="service-price d-flex align-items-center gap-2">
-                      <p class="vehicle-type">{{vehicle.type}}</p>
+                      <p class="vehicle-type">{{vehicle.class}}</p>
                       <div class="d-flex align-items-center">
                         <span>$</span>{{vehicle.price}}<span class="price-text ms-1"> /hour</span>
                       </div>

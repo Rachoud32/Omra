@@ -2654,9 +2654,9 @@ label.disabled .service-class-card {
     border-right: 0;
 }
 
-.service-details .nbr-items:last-child {
+/* .service-details .nbr-items:last-child {
     border-left: 0;
-}
+} */
 
 .service-details .nbr-items p {
     color: var(--omra-gray);
@@ -2766,6 +2766,7 @@ label.disabled .service-class-card {
     font-size: var(--fs-14);
     color: var(--omra-base);
     font-weight: 400;
+    white-space: nowrap;
 }
 
 .flight-label .flight-class {
@@ -5301,10 +5302,11 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 
 .service-summary-box .service-label {
     display: block;
-    font-size: clamp(18px, 2.5vw, 20px);
+    font-size: clamp(17px, 2.5vw, 19px);
     margin-bottom: 0px;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     color: var(--omra-base);
+    text-transform: capitalize;
 }
 
 .service-summary-box .service-class {
@@ -5468,9 +5470,8 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 .service-summary-box .color-btn {
-    /* width: 28%; */
     padding: 10px 12px;
-    font-size: var(--fs-18);
+    font-size: var(--fs-15);
     background-color: var(--omra-second);
     border-color: var(--omra-second);
 }
@@ -5581,10 +5582,6 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 /* ----------------------------------------------------------------
 	Motamar infos
 -----------------------------------------------------------------*/
-.user-infos hr {
-    margin: 1.5rem 0;
-}
-
 .user-infos-card {
     padding-right: 30px !important;
 }
@@ -5631,11 +5628,19 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     margin-bottom: 0;
 }
 
+.occupancy-card .guest-creds-title[aria-expanded="false"] .occupancy-collapse {
+    transform: rotate(0deg);
+}
+ 
+.occupancy-card .guest-creds-title[aria-expanded="true"] .occupancy-collapse {
+    transform: rotate(-180deg);
+}
+
 .user-infos .guest-creds-title {
     font-weight: 500 !important;
     color: var(--omra-second);
     background: var(--omra-extra);
-    padding: 10px 15px;
+    padding: 15px;
 }
 
 .user-infos .user-pay-content .form-group .form-control {

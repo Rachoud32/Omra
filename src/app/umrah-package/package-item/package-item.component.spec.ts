@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HotelPackageComponent } from './hotel-package.component';
+import { PackageItemComponent } from './package-item.component';
 
 describe('HotelPackageComponent', () => {
-  let component: HotelPackageComponent;
-  let fixture: ComponentFixture<HotelPackageComponent>;
+  let component: PackageItemComponent;
+  let fixture: ComponentFixture<PackageItemComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HotelPackageComponent]
+      declarations: [PackageItemComponent]
     });
-    fixture = TestBed.createComponent(HotelPackageComponent);
+    fixture = TestBed.createComponent(PackageItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

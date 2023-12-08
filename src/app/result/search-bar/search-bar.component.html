@@ -1,5 +1,5 @@
 <div class="row" *ngIf="SearchBar" id="searchbar" #searchbar>
-  <div class="col-xl-12 pt-5">
+  <div class="col-xl-12 pt-5 search-bar-card">
     <form id="search-form" class="check-form search-bar search-results">
       <div class="row align-items-center">
         <div class="col-xl-5 search-result-counter">
@@ -100,7 +100,7 @@
 
               <div [formGroup]="searchFormHotel">
                 <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
-                  <button class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
+                  <button class="passengers-btn btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
                   aria-expanded="false"[class.selected-item]="searchFormHotel.value.passengersHotel.length != 1 || numAdultsHotel != 1 || numChildrenHotel != 0" >
                     <div class="d-flex align-items-center">
                       <div class="input-group d-flex flex-nowrap align-items-center">
@@ -197,7 +197,7 @@
                         childHotel.get('age')?.value
                       " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                       data-bs-display="static" aria-expanded="false">
-                                      <div class="d-flex me-4 justify-content-between w-100">
+                                      <div class="d-flex me-4 justify-content-between align-items-center w-100">
                                         <div class="select-age d-flex">
                                           <p class="m-0">
                                             {{

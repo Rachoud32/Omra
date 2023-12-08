@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { UmrahPackageRoutingModule } from './umrah-package-routing.module';
 import { UmrahPackageComponent } from './umrah-package.component';
-import { HotelPackageComponent } from './hotel-package/hotel-package.component';
+import { PackageItemComponent } from './package-item/package-item.component';
+import { NgxStarsModule } from 'ngx-stars';
 
 
 @NgModule({
   declarations: [
     UmrahPackageComponent,
-    HotelPackageComponent
+    PackageItemComponent,
+    
   ],
   imports: [
     CommonModule,
-    UmrahPackageRoutingModule
+    UmrahPackageRoutingModule,
+    NgxStarsModule,
   ]
 })
 export class UmrahPackageModule { }

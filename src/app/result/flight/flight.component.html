@@ -70,15 +70,15 @@
                   <div class="row">
                     <div class="col-lg-10">
                       <div class="flight-label d-flex align-items-start justify-content-between">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-line-chevron-right"></i>
+                          <div class="flight-direction">Departure flight</div>
+                        </div>                   
                         <div class="flight-label-content d-flex align-items-center gap-3">
-                          <div class="d-flex align-items-center">
-                            <i class="icon-line-chevron-right"></i>
-                            <div class="flight-direction">Departure flight</div>
-                          </div>
                           <div class="flight-class">{{flight.class}}</div>
-                        </div>
-                        <div class="service-price">
-                          <span>$</span>{{flight.price}}<span class="price-text"> / motamar</span>
+                          <div class="service-price">
+                            <span>$</span>{{flight.price}}<span class="price-text"> / motamar</span>
+                          </div>
                         </div>
                       </div>
                       <hr>
@@ -243,15 +243,15 @@
                   <div class="row">
                     <div class="col-xl-9">
                       <div class="flight-label d-flex align-items-start justify-content-between">
-                        <div class="flight-label-content d-flex align-items-center gap-3">
-                          <div class="d-flex align-items-center">
-                            <i class="icon-line-chevron-right"></i>
-                            <div class="flight-direction">Return flight</div>
-                          </div>
-                          <div class="flight-class">{{returnFlight.class}}</div>
+                        <div class="d-flex align-items-center">
+                          <i class="icon-line-chevron-right"></i>
+                          <div class="flight-direction">Return flight</div>
                         </div>
-                        <div class="service-price">
-                          <span>$</span>{{returnFlight.price}}<span class="price-text"> / motamar</span>
+                        <div class="flight-label-content d-flex align-items-center gap-3">
+                          <div class="flight-class">{{returnFlight.class}}</div>
+                          <div class="service-price">
+                            <span>$</span>{{returnFlight.price}}<span class="price-text"> / motamar</span>
+                          </div>
                         </div>
                       </div>
                       <hr>
@@ -282,7 +282,7 @@
                             <span>{{returnFlight.flightNumber}}</span>
                           </div>
                         </div>
-                        <div class="details-block text-end">
+                        <div class="details-block text-end align-items-end">
                           <div class="time-block">
                             <span class="time">{{returnFlight.timeOfArrival}}</span>
                           </div>
@@ -435,17 +435,18 @@
                 <div class="row">
                   <div class="col-lg-10">
                     <div class="flight-label d-flex align-items-start justify-content-between">
-                      <div class="flight-label-content d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center">
-                          <i class="icon-line-chevron-right"></i>
-                          <div class="flight-direction">Departure flight</div>
-                        </div>
-                        <div class="flight-class">{{showDetailsDeparture.class}}</div>
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Departure flight</div>
                       </div>
-                      <div class="service-price">
-                        <span>$</span>{{showDetailsDeparture.price}}<span class="price-text"> / motamar</span>
+                      <div class="flight-label-content d-flex align-items-center gap-3">
+                        <div class="flight-class">{{showDetailsDeparture.class}}</div>
+                        <div class="service-price">
+                          <span>$</span>{{showDetailsDeparture.price}}<span class="price-text"> / motamar</span>
+                        </div>
                       </div>
                     </div>
+
                     <hr>
                     <div class="details-row">
                       <div class="details-block">
@@ -474,7 +475,7 @@
                           <span>{{showDetailsDeparture.flightNumber}}</span>
                         </div>
                       </div>
-                      <div class="details-block text-end">
+                      <div class="details-block text-end align-items-end">
                         <div class="time-block">
                           <span class="time">{{showDetailsDeparture.timeOfArrival}}</span>
                         </div>
@@ -587,15 +588,15 @@
                 <div class="row">
                   <div class="col-lg-10">
                     <div class="flight-label d-flex align-items-start justify-content-between">
-                      <div class="flight-label-content d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center">
-                          <i class="icon-line-chevron-right"></i>
-                          <div class="flight-direction">Return flight</div>
-                        </div>
-                        <div class="flight-class">{{showDetailsReturn.class}}</div>
+                      <div class="d-flex align-items-center">
+                        <i class="icon-line-chevron-right"></i>
+                        <div class="flight-direction">Return flight</div>
                       </div>
-                      <div class="service-price">
-                        <span>$</span>{{showDetailsReturn.price}}<span class="price-text"> / motamar</span>
+                      <div class="flight-label-content d-flex align-items-center gap-3">
+                        <div class="flight-class">{{showDetailsReturn.class}}</div>
+                        <div class="service-price">
+                          <span>$</span>{{showDetailsReturn.price}}<span class="price-text"> / motamar</span>
+                        </div>
                       </div>
                     </div>
                     <hr>
@@ -626,7 +627,7 @@
                           <span>{{showDetailsReturn.flightNumber}}</span>
                         </div>
                       </div>
-                      <div class="details-block text-end">
+                      <div class="details-block text-end align-items-end">
                         <div class="time-block">
                           <span class="time">{{showDetailsReturn.timeOfDeparture}}</span>
                         </div>
