@@ -4,21 +4,15 @@
             <div class="col-lg-4 package ps-0">
                 <div class="image-box">
                     <div class="package-offer"> 2 offers left</div>
-                    <div id="packagecarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel slide carousel-fade" data-bs-ride="carousel" [attr.id]="'packagecarousel'+i" >
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#packagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#packagecarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#packagecarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" [attr.data-bs-target]="'#packagecarousel'+i" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" [attr.data-bs-target]="#packagecarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" [attr.data-bs-target]="#packagecarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" *ngFor="let image of dataPackages[i].packagePictures">
                             <div class="carousel-item active">
-                                <img src="assets/package/1.jpg" class="package-picture d-block w-100" alt=""/>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/package/2.jpg" class="package-picture d-block w-100" alt=""/>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/package/3.jpg" class="package-picture d-block w-100" alt=""/>
+                                <img src={{image}} class="package-picture d-block w-100" alt=""/>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#packagecarousel" data-bs-slide="prev">
@@ -36,7 +30,7 @@
                 <div class="row h-100">
                     <div class="col-lg-8">
                         <div class="package-details">
-                            <h5 class="package-title m-0 lh-base">Spiritual Journey - Makkah & Madinah</h5>
+                            <h5 class="package-title m-0 lh-base">{{package.packageTitle}}</h5>
                             <div class="package-rating lh-base">
                                 <div class="d-flex align-items-center">
                                     <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4' [color]="'#f4c253'"></ngx-stars>

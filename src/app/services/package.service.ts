@@ -29,9 +29,9 @@ export class packageService {
           {
             _id: 2,
             packagePictures: [
-                "assets/package/1.jpg",
-                "assets/package/2.jpg",
-                "assets/package/3.jpg"
+                "assets/package/4.jpg",
+                "assets/package/5.jpg",
+                "assets/package/6.jpg"
             ],
             packageTitle: 'Spiritual Journey - Makkah & Madinah 2',
             packageRating: 4,
