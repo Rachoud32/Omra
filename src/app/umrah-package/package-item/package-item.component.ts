@@ -10,8 +10,11 @@ import { packageService } from 'src/app/services/package.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PackageItemComponent implements OnInit {
-  // constructor(private toastr: ToastrService, private router: Router, private packageService: packageService) { };
+  constructor(private toastr: ToastrService, private router: Router, private packageService: packageService) { };
+  
+  dataPackages: any[] = []
+
   ngOnInit(): void {
-    
+    this.dataPackages = this.packageService.dataPackages()
   }
 }

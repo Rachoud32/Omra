@@ -4168,6 +4168,111 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     transition: all .3s ease;
 }
 
+.packages-list .package-item .box p {
+    font-size: var(--fs-14);
+}
+
+.packages-list .package-item .image-box {
+    width: 100%;
+    height: 100%;
+    max-height: 240px;
+    min-height: 240px;
+    position: relative;
+}
+
+.packages-list .package-item .package-picture {
+    object-fit: cover;
+    height: 240px;
+}
+
+.packages-list .package-item .carousel-control-next, 
+.packages-list .package-item .carousel-control-prev {
+    z-index: 4;
+}
+
+.packages-list .package-item .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 5%;
+    margin-bottom: 0.5rem;
+    margin-left: 75%;
+}
+
+.packages-list .package-item .carousel-indicators [data-bs-target] {
+    width: 15px;
+}
+
+.packages-list .package-item .package-offer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: var(--omra-second);
+    color: var(--omra-white);
+    padding: 0px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 10;
+}
+
+.packages-list .package-item .package-title {
+    color: var(--omra-base);
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    position: relative;
+    top: 0px;
+    max-width: 100%;
+}
+
+.packages-list .package-item .package-type {
+    background: var(--omra-extra);
+    border: 0;
+    padding: 4px 10px;
+    display: inline-block;
+}
+
+.packages-list .package-item .package-type p {
+    color: var(--omra-second);
+    font-size: var(--fs-14);
+}
+
+.packages-list .package-item .package-theme {
+    background: var(--omra-extra);
+    border: 0;
+    padding: 4px 10px;
+    display: inline-block;
+}
+
+.packages-list .package-item .package-theme p {
+    color: var(--omra-second);
+    font-size: var(--fs-14);
+}
+
+.packages-list .package-item .package-place i,
+.packages-list .package-item .package-date i,
+.packages-list .package-item .package-period i {
+    color: var(--omra-second);
+    font-size: var(--fs-14);
+    transition: all .3s linear;
+}
+
+.packages-list .package-item .package-price {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--omra-base);
+}
+
+.packages-list .package-item .package-price span {
+    font-size: var(--fs-12);
+}
+
 /* ----------------------------------------------------------------
 	Toaster
 -----------------------------------------------------------------*/
@@ -4704,7 +4809,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     width: 33.3333333333%;
     line-height: 20px;
     color: var(--omra-gray);
-    border: 1px solid var(--omra-light-gray);
+    border: 0;
     background: var(--omra-white);
     font-size: var(--fs-16);
     margin-bottom: 0px;
@@ -4713,9 +4818,34 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     transition: all .3s linear;
 }
 
+.top-filter-section .trajectory-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: var(--omra-base);
+    bottom: -5px;
+    width: 0%;
+    height: 5px;
+    z-index: 1;
+    transition: all .5s linear;
+}
+
+.top-filter-section .trajectory-item.activetab::before {
+    width: 100%;
+}
+
+.top-filter-section .trajectory-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: var(--omra-light-gray);
+    bottom: -5px;
+    width: 100%;
+    height: 5px;
+}
+
 .top-filter-section .trajectory-item.activetab {
     background: var(--omra-white);
-    border-color: var(--omra-base);
     transform: translatey(-3%);
     box-shadow: 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
 }
