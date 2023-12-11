@@ -1,9 +1,9 @@
 <div class="package-item" *ngFor="let package of dataPackages;let i = index">
-    <div class="box p-3">
+    <div class="box mb-4 p-3">
         <div class="row m-0">
             <div class="col-lg-4 package ps-0">
                 <div class="image-box">
-                    <div class="package-offer"> 2 offers left</div>
+                    <div class="package-offer"> {{package.packagedisponiblity}} offers left</div>
                     <div class="carousel slide carousel-fade" data-bs-ride="carousel" [attr.id]="'packagecarousel-'+i">
                         <div class="carousel-indicators">
                             <button type="button" *ngFor="let x of package.packagePictures;let j=index"
@@ -37,32 +37,32 @@
                             <h5 class="package-title m-0 lh-base">{{package.packageTitle}}</h5>
                             <div class="package-rating lh-base">
                                 <div class="d-flex align-items-center">
-                                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4'
+                                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
                                         [color]="'#f4c253'"></ngx-stars>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <div class="package-type lh-base">
-                                    <p class="m-0">Individiual stay</p>
+                                    <p class="m-0">{{package.packageType}}</p>
                                 </div>
                                 <div class="package-theme lh-base">
-                                    <p class="m-0">Discover</p>
+                                    <p class="m-0">{{package.packageTheme}}</p>
                                 </div>
                             </div>
                             <div class="package-place lh-base d-flex align-items-center gap-2 mb-1">
                                 <i class="icon-line-map-pin"></i>
-                                <p class="m-0 ">Makkah - Madinah</p>
+                                <p class="m-0 ">{{package.packagePlace}}</p>
                             </div>
                             <div class="package-date lh-base d-flex align-items-center gap-2 mb-1">
                                 <i class="icon-line-calendar"></i>
-                                <p class="m-0 ">12/01/2024 - 12/01/2024</p>
+                                <p class="m-0 ">{{package.packageDate}}</p>
                             </div>
                             <div class="package-period lh-base d-flex align-items-center gap-2 mb-1">
                                 <i class="icon-line-moon"></i>
-                                <p class="m-0 ">10 days</p>
+                                <p class="m-0 ">{{package.packagePeriod}} days</p>
                             </div>
                             <div class="package-services lh-base">
-                                <p class="m-0 ">Flights and transfers included</p>
+                                <p class="m-0 ">{{package.packageServices}}</p>
                             </div>
                         </div>
                     </div>
