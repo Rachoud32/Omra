@@ -123,6 +123,10 @@ ol {
     color: var(--omra-white) !important;
 }
 
+.bg-color-extra {
+    background-color: var(--omra-extra);
+}
+
 a {
     color: var(--omra-gray);
     text-decoration: none !important;
@@ -4163,13 +4167,17 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 -----------------------------------------------------------------*/
 .packages-list .package-item .box {
     background-color: var(--omra-white);
-    border: 2px solid var(--omra-light-gray);
+    border: 5px solid var(--omra-white);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
     transition: all .3s ease;
 }
 
 .packages-list .package-item .box p {
     font-size: var(--fs-14);
+}
+
+.packages-list .package-item .package-picture-container {
+    padding-left: 0;
 }
 
 .packages-list .package-item .image-box {
@@ -4220,9 +4228,20 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     z-index: 10;
 }
 
+.packages-list .package-item .package-offer-2 {
+    position: relative;
+    background: var(--omra-second);
+    color: var(--omra-white);
+    padding: 2px 12px;
+    font-size: 13px;
+    font-weight: 400;
+    z-index: 10;
+}
+
 .packages-list .package-item .package-title {
     color: var(--omra-base);
-    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    font-size: var(--fs-18);
+    line-height: normal;
     font-weight: 500 !important;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -4244,14 +4263,14 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 .packages-list .package-item .package-theme {
-    background: var(--omra-extra);
+    background-color: rgba(5, 0, 51, 0.15);
     border: 0;
     padding: 4px 10px;
     display: inline-block;
 }
 
 .packages-list .package-item .package-theme p {
-    color: var(--omra-second);
+    color: var(--omra-base);
     font-size: var(--fs-14);
 }
 
@@ -4267,10 +4286,15 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     font-size: 30px;
     font-weight: 500;
     color: var(--omra-base);
+    line-height: 40px !important;
 }
 
 .packages-list .package-item .package-price span {
-    font-size: var(--fs-12);
+    font-size: var(--fs-16);
+}
+
+.packages-list .package-item .color-btn {
+    padding: 15px 30px;
 }
 
 /* ----------------------------------------------------------------

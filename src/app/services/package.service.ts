@@ -22,7 +22,7 @@ export class packageService {
             packageDate: '12/01/2024 - 12/01/2024',
             packagePeriod: 10,
             packageServices: 'Flights and transfers included',
-            packagePrice: 350,
+            packagePrice: 960,
             packageNbrRoom: 1,
             packageNbrPassengers: 1,
             packagedisponiblity: 2
@@ -35,14 +35,14 @@ export class packageService {
                 "assets/package/6.jpg"
             ],
             packageTitle: 'Spiritual Journey - Makkah & Madinah 2',
-            packageRating: 4,
+            packageRating: 4.5,
             packageType: 'Group stay',
             packageTheme: 'Adventure',
             packagePlace: 'Makkah - Madinah',
             packageDate: '12/01/2024 - 12/01/2024',
             packagePeriod: 10,
             packageServices: 'Flights and transfers included',
-            packagePrice: 350,
+            packagePrice: 1200,
             packageNbrRoom: 1,
             packageNbrPassengers: 1,
             packagedisponiblity: 5
@@ -55,14 +55,14 @@ export class packageService {
                 "assets/package/3.jpg"
             ],
             packageTitle: 'Spiritual Journey - Makkah & Madinah 3',
-            packageRating: 4,
+            packageRating: 3.5,
             packageType: 'All inclusive',
             packageTheme: 'Wellness',
             packagePlace: 'Makkah - Madinah',
             packageDate: '12/01/2024 - 12/01/2024',
             packagePeriod: 10,
             packageServices: 'Flights and transfers included',
-            packagePrice: 350,
+            packagePrice: 1600,
             packageNbrRoom: 1,
             packageNbrPassengers: 1,
             packagedisponiblity: 8

@@ -1,10 +1,10 @@
 <div class="package-item" *ngFor="let package of dataPackages;let i = index">
-    <div class="box mb-4 p-3">
+    <div class="box mb-4">
         <div class="row m-0">
-            <div class="col-lg-4 package ps-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 package-picture-container">
                 <div class="image-box">
-                    <div class="package-offer"> {{package.packagedisponiblity}} offers left</div>
-                    <div class="carousel slide carousel-fade" data-bs-ride="carousel" [attr.id]="'packagecarousel-'+i">
+                    <!-- <div class="package-offer"> {{package.packagedisponiblity}} offers left</div> -->
+                    <div class="carousel slide carousel-fade" data-bs-ride="true" [attr.id]="'packagecarousel-'+i">
                         <div class="carousel-indicators">
                             <button type="button" *ngFor="let x of package.packagePictures;let j=index"
                                 [attr.data-bs-target]="'#packagecarousel-'+i" [attr.data-bs-slide-to]="j"
@@ -13,7 +13,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div *ngFor="let image of package.packagePictures ;let j=index"
-                                class="carousel-item active">
+                                class="carousel-item active" data-bs-interval="4000">
                                 <img src={{image}} class="package-picture d-block w-100" alt="" />
                             </div>
                         </div>
@@ -30,9 +30,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 package-content">
+            <div class="col-xl-8 col-lg-8 col-md-8 package-content">
                 <div class="row h-100">
-                    <div class="col-lg-8">
+                    <div class="col-xl-8 col-lg-8 col-md-8 pt-3 pb-3">
                         <div class="package-details">
                             <h5 class="package-title m-0 lh-base">{{package.packageTitle}}</h5>
                             <div class="package-rating lh-base">
@@ -66,17 +66,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 border-start">
-                        <div class="d-flex flex-column mb-4">
-                            <p class="lh-base m-0 text-end">Price from</p>
-                            <div class="package-price lh-base text-end">
-                                <span>$</span>350
+                    <div class="col-xl-4 col-lg-4 col-md-4 pt-3 pb-3 bg-color-extra">
+                        <div class="d-flex flex-column align-items-end h-100 justify-content-between">
+                            <div class="d-flex flex-column align-items-end mb-4">
+                                <p class="lh-base m-0 text-end">Price from</p>
+                                <div class="package-price lh-base text-end">
+                                    <span>$</span>{{package.packagePrice}}
+                                </div>
+                                <p class="package-reservation-specs text-end m-0">
+                                    {{package.packageNbrRoom}} room | {{package.packageNbrPassengers}} guest
+                                </p>
+                                <div class="package-offer-2"> {{package.packagedisponiblity}} offers left</div>
                             </div>
-                            <p class="package-reservation-specs text-end m-0">
-                                1 room | 1 adult
-                            </p>
+                            <button type="button" class="color-btn service-btn-select float-end">Discover</button>
                         </div>
-                        <button type="button" class="color-btn service-btn-select float-end">Discover</button>
                     </div>
                 </div>
             </div>
