@@ -12,8 +12,8 @@
                                 [attr.aria-label]="'Slide '+j"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div *ngFor="let image of package.packagePictures ;let j=index"
-                                class="carousel-item active" data-bs-interval="4000">
+                            <div *ngFor="let image of package.packagePictures ;let j=index" class="carousel-item active"
+                                data-bs-interval="4000">
                                 <img src={{image}} class="package-picture d-block w-100" alt="" />
                             </div>
                         </div>
@@ -37,8 +37,8 @@
                             <h5 class="package-title m-0 lh-base">{{package.packageTitle}}</h5>
                             <div class="package-rating lh-base">
                                 <div class="d-flex align-items-center">
-                                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
-                                        [color]="'#f4c253'"></ngx-stars>
+                                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                        [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-2 mb-2">
@@ -78,7 +78,9 @@
                                 </p>
                                 <div class="package-offer-2"> {{package.packagedisponiblity}} offers left</div>
                             </div>
-                            <button type="button" class="color-btn service-btn-select float-end">Discover</button>
+                            <button type="button" class="color-btn service-btn-select float-end"
+                                [routerLink]="['package/'+package._id]"
+                                routerLinkActive="router-link-active">Discover</button>
                         </div>
                     </div>
                 </div>

@@ -5,12 +5,14 @@ import { UmrahPackageRoutingModule } from './umrah-package-routing.module';
 import { UmrahPackageComponent } from './umrah-package.component';
 import { PackageItemComponent } from './package-item/package-item.component';
 import { NgxStarsModule } from 'ngx-stars';
+import { PackageDetailsComponent } from './package-details/package-details.component';
 
 
 @NgModule({
   declarations: [
     UmrahPackageComponent,
     PackageItemComponent,
+    PackageDetailsComponent,
     
   ],
   imports: [
