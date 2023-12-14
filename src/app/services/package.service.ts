@@ -27,15 +27,16 @@ export class packageService {
         packageNbrPassengers: 1,
         packagedisponiblity: 2,
         details: {
-          packageType: 'Individiual stay',
-          packageTheme: 'Discover',
-          packagePlace: 'Makkah - Madinah',
-          packageDate: '12/01/2024 - 12/01/2024',
-          packagePeriod: 10,
-          packageServices: 'Flights and transfers included',
-          packagePrice: 960,
-          packageNbrRoom: 1,
-          packageNbrPassengers: 1,
+          Type: 'Individiual stay',
+          Theme: 'Discover',
+          Place: 'Makkah - Madinah',
+          Date: '12/01/2024 - 12/01/2024',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5
         }
       },
       {

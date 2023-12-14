@@ -6,6 +6,7 @@ import { UmrahPackageComponent } from './umrah-package.component';
 import { PackageItemComponent } from './package-item/package-item.component';
 import { NgxStarsModule } from 'ngx-stars';
 import { PackageDetailsComponent } from './package-details/package-details.component';
+import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/package-bookings-sidebar.component';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
     UmrahPackageComponent,
     PackageItemComponent,
     PackageDetailsComponent,
-    
+    PackageBookingsSidebarComponent
   ],
   imports: [
     CommonModule,

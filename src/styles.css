@@ -4244,7 +4244,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     line-height: normal;
     font-weight: 500 !important;
     text-transform: uppercase;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     position: relative;
     top: 0px;
     max-width: 100%;
@@ -4282,11 +4282,15 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     transition: all .3s linear;
 }
 
+.packages-list .package-item .package-reservation-specs {
+    font-weight: 400;
+    color: var(--omra-base);
+}
+
 .packages-list .package-item .package-price {
     font-size: 30px;
     font-weight: 500;
     color: var(--omra-base);
-    line-height: 40px !important;
 }
 
 .packages-list .package-item .package-price span {
@@ -4295,6 +4299,151 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 
 .packages-list .package-item .color-btn {
     padding: 15px 30px;
+}
+
+/* ----------------------------------------------------------------
+	Package Details
+-----------------------------------------------------------------*/
+app-package-bookings-sidebar,
+.package-inside-menu {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.package-inside-menu {
+    background: #fff;
+    border: 1px solid var(--omra-light-gray);
+}
+
+.package-inside-menu li {
+    width: 25%;
+    cursor: pointer;
+}
+
+.package-inside-menu p,
+.package-inside-menu ul {
+    margin-bottom: 0;
+}
+
+.package-inside-menu li p {
+    padding: 10px 15px;
+    font-size: var(--fs-15);
+    border-right: 1px solid var(--omra-light-gray);
+}
+
+.package-inside-menu li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: relative;
+    bottom: 0;
+    background: var(--omra-light-gray);
+    transition: all .3s linear;
+    z-index: 1;
+}
+
+.package-inside-menu li:last-child p {
+    border-right: 0;
+}
+
+.package-header .package-header-content i {
+    font-size: var(--fs-16);
+    color: var(--omra-second);
+}
+
+.package-header .package-header-content .package-details-place, 
+.package-header .package-header-content .package-details-nights {
+    font-size: var(--fs-16);
+    font-weight: 400;
+    color: var(--omra-gray);
+}
+
+.package-header .package-header-content .package-details-title {
+    color: var(--omra-base);
+    font-size: var(--fs-22);
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    margin-bottom: 5px !important;
+    position: relative;
+    top: 0px;
+    max-width: 100%;
+}
+
+.package-header .package-details-price-estim {
+    font-size: var(--fs-14);
+}
+
+.package-header .package-details-price {
+    font-size: 26px;
+}
+
+.package-cover-picture,
+.package-other-picture {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.package-cover-picture img,
+.package-other-picture img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.package-service-section {
+    background-color: var(--omra-white);
+    padding: 10px 15px;
+    margin-bottom: 40px;
+}
+
+.package-service-section h2,
+.package-details-description h2 {
+    font-size: 18px;
+    font-weight: 500 !important;
+    color: #068484;
+    padding: 10px 0px;
+    margin: 0;
+}
+
+.package-service-section .box {
+    background-color: var(--omra-white);
+    border: 2px solid var(--omra-light-gray);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
+    transition: all .3s ease;
+}
+
+.package-service-section .service .image-box {
+    width: 100%;
+    height: 100%;
+}
+
+.package-service-section .service .image-box img {
+    object-fit: contain;
+    height: 100%;
+    background: var(--omra-white);
+    padding: 15px;
+    border-right: 1px solid var(--omra-extra);
+}
+
+.package-service-section .service-details hr {
+    margin: 10px 0;
+}
+
+.package-hotel-carousel .carousel-inner {
+    height: 340px;
+    width: 100% !important;
+}
+
+.package-hotel-carousel img {
+    object-fit: cover;
+    height: 340px;
+    width: 100% !important;
+}
+
+.package-hotel-carousel .carousel-control-next, .package-hotel-carousel .carousel-control-prev {
+    z-index: 4;
 }
 
 /* ----------------------------------------------------------------
