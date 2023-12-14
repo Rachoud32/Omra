@@ -57,7 +57,19 @@ export class packageService {
         packagePrice: 1200,
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
-        packagedisponiblity: 5
+        packagedisponiblity: 5,
+        details: {
+          Type: 'Individiual stay',
+          Theme: 'Discover',
+          Place: 'Makkah - Madinah',
+          Date: '12/01/2024 - 12/01/2024',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5
+        }
       },
       {
         _id: 3,
@@ -77,7 +89,19 @@ export class packageService {
         packagePrice: 1600,
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
-        packagedisponiblity: 8
+        packagedisponiblity: 8,
+        details: {
+          Type: 'Individiual stay',
+          Theme: 'Discover',
+          Place: 'Makkah - Madinah',
+          Date: '12/01/2024 - 12/01/2024',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5
+        }
       }
     ]
   }

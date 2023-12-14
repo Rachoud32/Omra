@@ -1,315 +1,323 @@
 <section class="search-section-title page-title centred include-header include-topbar"
-    style="background-image: url('{{ package.packagePictures[0] }}')">
+  style="background-image: url('{{ package.packagePictures[0] }}')">
 </section>
 
-<section class="bg-pattern-2 pt-5 pb-5" id="overviewsection" #overviewsection>
-    <div class="content-wrap pt-0">
-        <div id="" class="content">
-            <div class="content-wrap pt-0 pb-0">
-                <div class="container">
-                    <div class="row" >
-                        <div class="col-xl-12 pt-3">
-                            <div class="heading-box">
-                                <h2 class="heading-title color-1 mb-0">Package Details</h2>
-                            </div>
-                            <p>You benefit from the best rate.</p>
-                        </div>
-                        <div class="col-xl-9 package-details-box">
-                            <div class="package-header d-flex align-items-start justify-content-between mb-3">
-                                <div class="package-header-content">
-                                    <h5 class="package-details-title">
-                                        Spiritual Journey - Makkah & Madinah
-                                    </h5>
-                                    <div class="d-flex align-items-center lh-base gap-3">
-                                      <div class="d-flex align-items-center lh-base gap-2">
-                                        <i class="icon-line-map-pin"></i>
-                                        <div class="package-details-place">{{package.details.Place}}</div>
-                                      </div>
-                                      <div class="d-flex align-items-center lh-base gap-2">
-                                        <i class="icon-line-moon"></i>
-                                        <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
-                                      </div>
-                                    </div>  
-                                </div>
-                                <div class="package-details-price">
-                                    <p class="package-details-price-estim lh-base m-0 text-end">Price from</p>
-                                    <div class="package-details-price lh-base text-end">
-                                        <span>$</span>{{package.packagePrice}}
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-xl-8 mb-4">
-                                    <div class="package-cover-picture">
-                                        <img src={{package.packagePictures[0]}} alt=""/>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 mb-4">
-                                    <div class="row gy-4">
-                                        <div class="col-xl-12">
-                                            <div class="package-other-picture">
-                                                <img src={{package.packagePictures[1]}} alt=""/>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12">
-                                            <div class="package-other-picture">
-                                                <img src={{package.packagePictures[2]}} alt=""/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="descriptionsection" class="package-details-description mb-4">
-                              <h2>Package Description</h2>
-                              <p class="lh-base">
-                              Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim pulvinar placerat. 
-                              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin purus purus, vulputate
-                              et ipsum eget, dignissim malesuada magna. Ut et tincidunt lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus
-                              cursus, lorem tellus condimentum odio, condimentum pharetra lacus mauris ac urna.</p>
-                            </div>
-
-                            <nav class="package-inside-menu mb-4">
-                                <ul class="d-flex align-items-center">
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToOverviewSection()" [class.active]="" >
-                                    <i class="icon-line-globe lh-base"></i>Overview</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToFlightSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Flight</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToHotelsSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Hotel</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToTransferSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Transfer</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToActivitiesSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Activities</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToProgramSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Program</p></li>
-                                  <li><p class="d-flex flex-column align-items-center" (click)="moveToPoliciesSection()" [class.active]="" >
-                                    <i class="icon-line-briefcase lh-base"></i>Policies</p></li>
-                                </ul>
-                            </nav>
-                            
-                            <h2>Flight Details</h2>
-                            <div id="flightsection" class="package-service-section" #flightsection>
-                              <label for="" class="">
-                                  <div class="box">
-                                    <div class="row m-0">
-                                      <div class="col-lg-2 service ps-0">
-                                        <div id="service-box-pic" class="image-box">
-                                          <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-10 service-details">
-                                        <div class="row">
-                                          <div class="col-lg-12">
-                                            <div class="flight-label d-flex align-items-start justify-content-between">
-                                              <div class="d-flex align-items-center">
-                                                <i class="icon-line-chevron-right"></i>
-                                                <div class="flight-direction">Departure flight</div>
-                                              </div>
-                                              <div class="flight-label-content d-flex align-items-center gap-3">
-                                                <div class="flight-class">Economic</div>
-                                                <div class="service-price">
-                                                  <span>$</span>1200<span class="price-text"> / motamar</span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <hr>
-                                            <div class="details-row">
-                                              <div class="details-block">
-                                                <div class="time-block">
-                                                  <span class="time">14:10</span>
-                                                </div>
-                                                <span class="port">Istanbul (IST)</span>
-                                                <div class="date-block">
-                                                  <span class="date">01 nov. 2023</span>
-                                                </div>
-                                              </div>
-                                              <div class="middle-block text-center w-100">
-                                                <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
-                                                  <i class="icon-line-clock"></i>
-                                                  <span>02:00</span>
-                                                </div>
-                                                <div class="flight-line-icon">
-                                                  <svg viewBox="0 0 715.62 566.3">
-                                                    <path
-                                                      d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
-                                                      style="stroke-width:0px;" />
-                                                  </svg>
-                                                </div>
-                                                <span class="total-stop">Direct</span>
-                                                <div class="flight-no">
-                                                  <span>TUR0606</span>
-                                                </div>
-                                              </div>
-                                              <div class="details-block text-end align-items-end">
-                                                <div class="time-block">
-                                                  <span class="time">17:10</span>
-                                                </div>
-                                                <span class="port">Jeddah (JED)</span>
-                                                <div class="date-block">
-                                                  <span class="date">01 nov. 2023</span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                              </label>
-                              <label for="" class="">
-                                  <div class="box">
-                                    <div class="row m-0">
-                                      <div class="col-lg-2 service ps-0">
-                                        <div id="service-box-pic" class="image-box">
-                                          <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-10 service-details">
-                                        <div class="row">
-                                          <div class="col-lg-12">
-                                            <div class="flight-label d-flex align-items-start justify-content-between">
-                                              <div class="d-flex align-items-center">
-                                                <i class="icon-line-chevron-right"></i>
-                                                <div class="flight-direction">Return flight</div>
-                                              </div>
-                                              <div class="flight-label-content d-flex align-items-center gap-3">
-                                                <div class="flight-class">Economic</div>
-                                                <div class="service-price">
-                                                  <span>$</span>1200<span class="price-text"> / motamar</span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <hr>
-                                            <div class="details-row">
-                                              <div class="details-block">
-                                                <div class="time-block">
-                                                  <span class="time">14:10</span>
-                                                </div>
-                                                <span class="port">Istanbul (IST)</span>
-                                                <div class="date-block">
-                                                  <span class="date">01 nov. 2023</span>
-                                                </div>
-                                              </div>
-                                              <div class="middle-block text-center w-100">
-                                                <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
-                                                  <i class="icon-line-clock"></i>
-                                                  <span>02:00</span>
-                                                </div>
-                                                <div class="flight-line-icon">
-                                                  <svg viewBox="0 0 715.62 566.3">
-                                                    <path
-                                                      d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
-                                                      style="stroke-width:0px;" />
-                                                  </svg>
-                                                </div>
-                                                <span class="total-stop">Direct</span>
-                                                <div class="flight-no">
-                                                  <span>TUR0606</span>
-                                                </div>
-                                              </div>
-                                              <div class="details-block text-end align-items-end">
-                                                <div class="time-block">
-                                                  <span class="time">17:10</span>
-                                                </div>
-                                                <span class="port">Jeddah (JED)</span>
-                                                <div class="date-block">
-                                                  <span class="date">01 nov. 2023</span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                              </label>
-                            </div>
-                            <h2>Hotel Details</h2>
-                            <div id="hotelsection" class="package-service-section" #hotelsection>
-                              <!-- Content for Section 2 -->
-                              
-                              <label for="" class="w-100">
-                                <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade" data-bs-ride="ride">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="4000">
-                                      <img src="assets/package/hotel-2/1.jpg" class="d-block w-100" alt="" />
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="4000">
-                                      <img src="assets/package/hotel-2/2.jpg" class="d-block w-100" alt="" />
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="4000">
-                                      <img src="assets/package/hotel-2/3.jpg" class="d-block w-100" alt="" />
-                                    </div>
-                                    <div class="hotel-content-top">
-                                      <div class="notices">
-                                        <div class="hotel-type d-flex align-items-center">
-                                          <i class="icon-line-ribbon me-2"></i>
-                                          <p>Business</p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselhotelpackage" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                  </button>
-                                  <button class="carousel-control-next" type="button" data-bs-target="#carouselhotelpackage" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                  </button>
-                                </div>
-                                <div class="hotel-content">
-                                  <div class="row">
-                                    <div class="col-lg-6 z-index-3">
-                                      <div class="hotel-content-bottom">
-                                        <div class="title-sec me-4">
-                                          <h2 class="hotel-name text-truncate">
-                                            Swissôtel Al Maqam Makkah
-                                          </h2>
-                                        </div>
-                                        <div class="hotel-rating">
-                                          <div class="d-flex align-items-center">
-                                            <div class="hotel-rate me-2">4.5</div>
-                                            <div>
-                                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4.5' [color]="'#f4c253'"></ngx-stars>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                            <div id="transfersection" class="package-service-section" #transfersection>
-                              <!-- Content for Section 3 -->
-                              <h2>Transfer Details</h2>
-                              <p>This is the content for Section 3.</p>
-                            </div>
-                            <div id="activitiessection" class="package-service-section" #activitiessection>
-                              <!-- Content for Section 3 -->
-                              <h2>Activities Details</h2>
-                              <p>This is the content for Section 4.</p>
-                            </div>
-                            <div id="programsection" class="package-service-section" #programsection>
-                              <!-- Content for Section 3 -->
-                              <h2>Program</h2>
-                              <p></p>
-                            </div>
-                            <div id="policiessection" class="package-service-section" #policiessection>
-                              <!-- Content for Section 3 -->
-                              <h2>Policies</h2>
-                              <p></p>
-                            </div>
-                        </div>   
-                        <div class="col-xl-3">
-                            <app-package-bookings-sidebar></app-package-bookings-sidebar>
-                        </div>
-                    </div>
-                </div>    
+<section class="bg-pattern-2 pt-5 pb-5">
+  <div class="content-wrap pt-0">
+    <div id="" class="content">
+      <div class="content-wrap pt-0 pb-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 pt-3">
+              <div class="heading-box">
+                <h2 class="heading-title color-1 mb-0">Package Details</h2>
+              </div>
+              <p>You benefit from the best rate.</p>
             </div>
+            <div class="col-xl-9 package-details-box">
+
+              <section id="overviewsection" #overviewsection>
+                <div class="package-header d-flex align-items-start justify-content-between mb-3" id="overviewsection"
+                  #overviewsection>
+                  <div class="package-header-content">
+                    <h5 class="package-details-title">
+                      Spiritual Journey - Makkah & Madinah
+                    </h5>
+                    <div class="d-flex align-items-center lh-base gap-3">
+                      <div class="d-flex align-items-center lh-base gap-2">
+                        <i class="icon-line-map-pin"></i>
+                        <div class="package-details-place">{{package.details.Place}}</div>
+                      </div>
+                      <div class="d-flex align-items-center lh-base gap-2">
+                        <i class="icon-line-moon"></i>
+                        <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="package-details-price">
+                    <p class="package-details-price-estim lh-base m-0 text-end">Price from</p>
+                    <div class="package-details-price lh-base text-end">
+                      <span>$</span>{{package.packagePrice}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xl-8 mb-4">
+                    <div class="package-cover-picture">
+                      <img src={{package.packagePictures[0]}} alt="" />
+                    </div>
+                  </div>
+                  <div class="col-xl-4 mb-4">
+                    <div class="row gy-4">
+                      <div class="col-xl-12">
+                        <div class="package-other-picture">
+                          <img src={{package.packagePictures[1]}} alt="" />
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="package-other-picture">
+                          <img src={{package.packagePictures[2]}} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="descriptionsection" class="package-details-description mb-4">
+                  <h2>Package Description</h2>
+                  <p class="lh-base">
+                    Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
+                    pulvinar
+                    placerat.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin purus
+                    purus, vulputate
+                    et ipsum eget, dignissim malesuada magna. Ut et tincidunt lacus. Fusce sed eros sem. In rutrum,
+                    sapien
+                    nec dapibus
+                    cursus, lorem tellus condimentum odio, condimentum pharetra lacus mauris ac urna.
+                  </p>
+                </div>
+
+              </section>
+              <nav class="package-inside-menu mb-4">
+                <ul class="d-flex align-items-center">
+                  <li *ngFor="let item of sections">
+                    <p class="d-flex flex-column align-items-center" [attr.id]="item.name" (click)="moveTo(item.name)">
+                      <i class="icon-line-globe lh-base"></i>{{item.name}}
+                    </p>
+                  </li>
+                </ul>
+              </nav>
+              <section id="flightsection" #flightsection>
+                <div class="package-service-section">
+                  <h2>Flight Details</h2>
+                  <label for="" class="">
+                    <div class="box">
+                      <div class="row m-0">
+                        <div class="col-lg-2 service ps-0">
+                          <div id="service-box-pic" class="image-box">
+                            <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
+                          </div>
+                        </div>
+                        <div class="col-lg-10 service-details">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="flight-label d-flex align-items-start justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <i class="icon-line-chevron-right"></i>
+                                  <div class="flight-direction">Departure flight</div>
+                                </div>
+                                <div class="flight-label-content d-flex align-items-center gap-3">
+                                  <div class="flight-class">Economic</div>
+                                  <div class="service-price">
+                                    <span>$</span>1200<span class="price-text"> / motamar</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="details-row">
+                                <div class="details-block">
+                                  <div class="time-block">
+                                    <span class="time">14:10</span>
+                                  </div>
+                                  <span class="port">Istanbul (IST)</span>
+                                  <div class="date-block">
+                                    <span class="date">01 nov. 2023</span>
+                                  </div>
+                                </div>
+                                <div class="middle-block text-center w-100">
+                                  <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                    <i class="icon-line-clock"></i>
+                                    <span>02:00</span>
+                                  </div>
+                                  <div class="flight-line-icon">
+                                    <svg viewBox="0 0 715.62 566.3">
+                                      <path
+                                        d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                        style="stroke-width:0px;" />
+                                    </svg>
+                                  </div>
+                                  <span class="total-stop">Direct</span>
+                                  <div class="flight-no">
+                                    <span>TUR0606</span>
+                                  </div>
+                                </div>
+                                <div class="details-block text-end align-items-end">
+                                  <div class="time-block">
+                                    <span class="time">17:10</span>
+                                  </div>
+                                  <span class="port">Jeddah (JED)</span>
+                                  <div class="date-block">
+                                    <span class="date">01 nov. 2023</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label for="" class="">
+                    <div class="box">
+                      <div class="row m-0">
+                        <div class="col-lg-2 service ps-0">
+                          <div id="service-box-pic" class="image-box">
+                            <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
+                          </div>
+                        </div>
+                        <div class="col-lg-10 service-details">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="flight-label d-flex align-items-start justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <i class="icon-line-chevron-right"></i>
+                                  <div class="flight-direction">Return flight</div>
+                                </div>
+                                <div class="flight-label-content d-flex align-items-center gap-3">
+                                  <div class="flight-class">Economic</div>
+                                  <div class="service-price">
+                                    <span>$</span>1200<span class="price-text"> / motamar</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="details-row">
+                                <div class="details-block">
+                                  <div class="time-block">
+                                    <span class="time">14:10</span>
+                                  </div>
+                                  <span class="port">Istanbul (IST)</span>
+                                  <div class="date-block">
+                                    <span class="date">01 nov. 2023</span>
+                                  </div>
+                                </div>
+                                <div class="middle-block text-center w-100">
+                                  <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                    <i class="icon-line-clock"></i>
+                                    <span>02:00</span>
+                                  </div>
+                                  <div class="flight-line-icon">
+                                    <svg viewBox="0 0 715.62 566.3">
+                                      <path
+                                        d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                        style="stroke-width:0px;" />
+                                    </svg>
+                                  </div>
+                                  <span class="total-stop">Direct</span>
+                                  <div class="flight-no">
+                                    <span>TUR0606</span>
+                                  </div>
+                                </div>
+                                <div class="details-block text-end align-items-end">
+                                  <div class="time-block">
+                                    <span class="time">17:10</span>
+                                  </div>
+                                  <span class="port">Jeddah (JED)</span>
+                                  <div class="date-block">
+                                    <span class="date">01 nov. 2023</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </section>
+              <section id="hotelsection" #hotelsection>
+                <div class="package-service-section">
+                  <h2>Hotel Details</h2>
+                  <!-- Content for Section 2 -->
+
+                  <label for="" class="w-100">
+                    <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade"
+                      data-bs-ride="ride">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                          <img src="assets/package/hotel-2/1.jpg" class="d-block w-100" alt="" />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                          <img src="assets/package/hotel-2/2.jpg" class="d-block w-100" alt="" />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                          <img src="assets/package/hotel-2/3.jpg" class="d-block w-100" alt="" />
+                        </div>
+                        <div class="hotel-content-top">
+                          <div class="notices">
+                            <div class="hotel-type d-flex align-items-center">
+                              <i class="icon-line-ribbon me-2"></i>
+                              <p>Business</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselhotelpackage"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselhotelpackage"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="hotel-content">
+                      <div class="row">
+                        <div class="col-lg-6 z-index-3">
+                          <div class="hotel-content-bottom">
+                            <div class="title-sec me-4">
+                              <h2 class="hotel-name text-truncate">
+                                Swissôtel Al Maqam Makkah
+                              </h2>
+                            </div>
+                            <div class="hotel-rating">
+                              <div class="d-flex align-items-center">
+                                <div class="hotel-rate me-2">4.5</div>
+                                <div>
+                                  <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4.5'
+                                    [color]="'#f4c253'"></ngx-stars>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </section>
+              <section id="transfersection" class="package-service-section" #transfersection>
+                <!-- Content for Section 3 -->
+                <h2>Transfer Details</h2>
+                <p>This is the content for Section 3.</p>
+              </section>
+              <section id="activitiessection" class="package-service-section" #activitiessection>
+                <!-- Content for Section 3 -->
+                <h2>Activities Details</h2>
+                <p>This is the content for Section 4.</p>
+              </section>
+              <section id="programsection" class="package-service-section" #programsection>
+                <!-- Content for Section 3 -->
+                <h2>Program</h2>
+                <p></p>
+              </section>
+              <section id="policiessection" class="package-service-section" #policiessection>
+                <!-- Content for Section 3 -->
+                <h2>Policies</h2>
+                <p></p>
+              </section>
+            </div>
+            <div class="col-xl-3">
+              <app-package-bookings-sidebar></app-package-bookings-sidebar>
+            </div>
+          </div>
         </div>
-    </div>                 
+      </div>
+    </div>
+  </div>
 </section>

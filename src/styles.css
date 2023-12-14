@@ -1094,7 +1094,7 @@ label.category-item::before {
     line-height: normal;
 }
 
-.nbr-nights-container .passengers-nbr .minus, 
+.nbr-nights-container .passengers-nbr .minus,
 .nbr-nights-container .passengers-nbr .plus {
     color: var(--omra-second);
 }
@@ -2962,7 +2962,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="false"] .more-booking-d
     transform: rotate(0deg);
     transition: all .05s linear;
 }
- 
+
 app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-details {
     transform: rotate(-180deg);
     transition: all .05s linear;
@@ -3394,7 +3394,9 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 }
 
 @keyframes appearAnimation {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0;
     }
 
@@ -3746,7 +3748,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.room-read-more::after, 
+.room-read-more::after,
 .ground-service-details-btn::after {
     content: "\e92e";
     position: absolute;
@@ -4193,7 +4195,7 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     height: 240px;
 }
 
-.packages-list .package-item .carousel-control-next, 
+.packages-list .package-item .carousel-control-next,
 .packages-list .package-item .carousel-control-prev {
     z-index: 4;
 }
@@ -4311,6 +4313,7 @@ app-package-bookings-sidebar,
     z-index: 99;
 }
 
+
 .package-inside-menu {
     background: #fff;
     border: 1px solid var(--omra-light-gray);
@@ -4348,12 +4351,16 @@ app-package-bookings-sidebar,
     border-right: 0;
 }
 
+.package-inside-menu li p.active {
+    border: 1px solid red;
+}
+
 .package-header .package-header-content i {
     font-size: var(--fs-16);
     color: var(--omra-second);
 }
 
-.package-header .package-header-content .package-details-place, 
+.package-header .package-header-content .package-details-place,
 .package-header .package-header-content .package-details-nights {
     font-size: var(--fs-16);
     font-weight: 400;
@@ -4442,7 +4449,8 @@ app-package-bookings-sidebar,
     width: 100% !important;
 }
 
-.package-hotel-carousel .carousel-control-next, .package-hotel-carousel .carousel-control-prev {
+.package-hotel-carousel .carousel-control-next,
+.package-hotel-carousel .carousel-control-prev {
     z-index: 4;
 }
 
@@ -5925,7 +5933,7 @@ app-package-bookings-sidebar,
 
 .user-infos .occupancy-content .form-group .form-control {
     padding: 10px;
-}    
+}
 
 .user-infos .occupancy-content .form-group .select-container label {
     margin-bottom: 0;
@@ -5934,7 +5942,7 @@ app-package-bookings-sidebar,
 .occupancy-card .guest-creds-title[aria-expanded="false"] .occupancy-collapse {
     transform: rotate(0deg);
 }
- 
+
 .occupancy-card .guest-creds-title[aria-expanded="true"] .occupancy-collapse {
     transform: rotate(-180deg);
 }
@@ -5948,7 +5956,7 @@ app-package-bookings-sidebar,
 
 .user-infos .user-pay-content .form-group .form-control {
     padding: 10px;
-}    
+}
 
 app-booking-summary {
     position: sticky;
@@ -5988,11 +5996,11 @@ app-booking-summary {
     border-bottom: 1px solid var(--omra-light-gray);
 }
 
-.bookings-summary-list  .booked-service-accordion[aria-expanded="false"].booked-service-accordion {
+.bookings-summary-list .booked-service-accordion[aria-expanded="false"].booked-service-accordion {
     margin-bottom: -1px;
 }
 
-.bookings-summary-list  .booked-service-accordion[aria-expanded="true"].booked-service-accordion {
+.bookings-summary-list .booked-service-accordion[aria-expanded="true"].booked-service-accordion {
     margin-bottom: 0px;
 }
 
@@ -6028,7 +6036,7 @@ app-booking-summary {
 .bookings-summary-list .booked-service[aria-expanded="false"] .more-service-details {
     transform: rotate(0deg);
 }
- 
+
 .bookings-summary-list .booked-service[aria-expanded="true"] .more-service-details {
     transform: rotate(-180deg);
 }
