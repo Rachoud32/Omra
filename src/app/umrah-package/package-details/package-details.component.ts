@@ -1,11 +1,14 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { packageService } from 'src/app/services/package.service';
+import lgZoom from 'lightgallery/plugins/zoom';
+import { BeforeSlideDetail } from 'lightgallery/lg-events';
 
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
-  styleUrls: ['./package-details.component.css']
+  styleUrls: ['./package-details.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PackageDetailsComponent implements OnInit {
   @ViewChild('overviewsection') public overviewsection?: ElementRef;
@@ -68,6 +71,16 @@ export class PackageDetailsComponent implements OnInit {
     private packageService: packageService,
     private route: ActivatedRoute
   ) { }
+
+  settings = {
+    counter: false,
+    plugins: [lgZoom]
+  };
+  onBeforeSlide = (detail: BeforeSlideDetail): void => {
+    const { index, prevIndex } = detail;
+    console.log(index, prevIndex);
+  };
+
   ngOnInit(): void {
     const id = this.route.snapshot.params['id']
     let data = this.packageService.dataPackages()
@@ -78,6 +91,8 @@ export class PackageDetailsComponent implements OnInit {
       }
     });
   }
+
+
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {

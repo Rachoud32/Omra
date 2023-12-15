@@ -17,9 +17,9 @@
     --omra-white: #ffffff;
     --omra-white-rgb: 255, 255, 255;
     --omra-third: #3d4892;
-    --omra-third-rgb: 5, 0, 51;
+    --omra-third-rgb: 61, 72, 148;
     --omra-base: #050033;
-    --omra-base-rgb: 61, 72, 148;
+    --omra-base-rgb: 5, 0, 51;
     --omra-second: #068484;
     --omra-second-rgb: 6, 132, 133;
     --omra-black: #1e1852;
@@ -4329,19 +4329,19 @@ app-package-bookings-sidebar,
     cursor: pointer;
 }
 
-.package-inside-menu p,
+.package-inside-menu .inside-menu-item,
 .package-inside-menu ul {
     margin-bottom: 0;
 }
 
-.package-inside-menu li p {
+.package-inside-menu li .inside-menu-item {
     padding: 10px 15px;
     font-size: var(--fs-14);
     border-right: 1px solid var(--omra-light-gray);
     border-bottom: 0;
 }
 
-.package-inside-menu li p::after {
+.package-inside-menu li .inside-menu-item::after {
     content: '';
     display: block;
     width: 100%;
@@ -4353,7 +4353,7 @@ app-package-bookings-sidebar,
     z-index: 1;
 }
 
-.package-inside-menu li p::before {
+.package-inside-menu li .inside-menu-item::before {
     content: '';
     display: block;
     width: 0%;
@@ -4365,22 +4365,31 @@ app-package-bookings-sidebar,
     z-index: 5;
 }
 
-.package-inside-menu li p:hover::before, .package-inside-menu li p.active::before {
+.package-inside-menu li .inside-menu-item:hover::before, .package-inside-menu li .inside-menu-item.active::before {
     width: 100%;
 }
 
-.package-inside-menu li:last-child p {
+.package-inside-menu li:last-child .inside-menu-item {
     border-right: 0;
 }
 
-.package-inside-menu li p.active {
+.package-inside-menu li .inside-menu-item.active {
     background: var(--omra-extra);
     color: var(--omra-second);
 }
 
-.package-inside-menu li p img {
+.package-inside-menu li .inside-menu-item img {
     height: 45px;
     padding: 10px 0;
+}
+
+.package-inside-menu li .inside-menu-item p {
+    font-size: var(--fs-14);
+    margin-bottom: 0;
+}
+
+.package-inside-menu li .inside-menu-item.active p {
+    color: var(--omra-second);
 }
 
 .package-header .package-header-content i {
@@ -4398,7 +4407,7 @@ app-package-bookings-sidebar,
 .package-header .package-header-content .package-details-title {
     color: var(--omra-base);
     font-size: var(--fs-22);
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     text-transform: uppercase;
     margin-bottom: 5px !important;
     position: relative;
@@ -4412,6 +4421,28 @@ app-package-bookings-sidebar,
 
 .package-header .package-details-price {
     font-size: 26px;
+}
+
+.package-picture-overlay {
+    background: rgba(5, 0, 51, .5);
+    position: absolute;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    padding-left: 0;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-picture-overlay p {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
 }
 
 .package-cover-picture,
@@ -4438,7 +4469,7 @@ app-package-bookings-sidebar,
     font-size: 18px;
     font-weight: 500 !important;
     color: #068484;
-    padding: 10px 0px;
+    padding: 10px 0 0;
     margin: 0;
 }
 

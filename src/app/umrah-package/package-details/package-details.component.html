@@ -17,12 +17,18 @@
             <div class="col-xl-9 package-details-box">
 
               <section id="overviewsection" #overviewsection>
-                <div class="package-header d-flex align-items-start justify-content-between mb-3">
+                <div class="package-header d-flex align-items-start justify-content-between gap-3 mb-3">
                   <div class="package-header-content">
                     <h5 class="package-details-title">
                       Spiritual Journey - Makkah & Madinah
                     </h5>
                     <div class="d-flex align-items-center lh-base gap-3 mb-2">
+                      <div class="package-details-type lh-base">
+                        <p class="m-0">Individiual stay</p>
+                      </div>
+                      <div class="package-details-theme lh-base">
+                        <p class="m-0">{{package.packageTheme}}</p>
+                      </div>
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-map-pin"></i>
                         <div class="package-details-place">{{package.details.Place}}</div>
@@ -30,12 +36,6 @@
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-moon"></i>
                         <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
-                      </div>
-                      <div class="package-details-type lh-base">
-                        <p class="m-0">Individiual stay</p>
-                      </div>
-                      <div class="package-details-theme lh-base">
-                        <p class="m-0">{{package.packageTheme}}</p>
                       </div>
                     </div>
                   </div>
@@ -47,50 +47,45 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-xl-8 mb-4">
-                    <div class="package-cover-picture">
-                      <img src={{package.packagePictures[0]}} alt="" />
-                    </div>
-                  </div>
-                  <div class="col-xl-4 mb-4">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-xl-12 mb-4">
-                        <div class="package-other-picture">
-                          <img src={{package.packagePictures[1]}} alt="" />
+                <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+                  <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
+                    <div class="row" *ngIf="image == package.packagePictures[0]" >
+                      <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'" >
+                        <div class="package-cover-picture">
+                          <img src={{package.packagePictures[0]}} alt="" />
                         </div>
                       </div>
-                      <div class="col-xl-12">
-                        <div class="package-other-picture">
-                          <img src={{package.packagePictures[2]}} alt="" />
+                      <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
+                        <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
+                          <div class="col-xl-12 mb-4">
+                            <div class="package-other-picture">
+                              <img src={{package.packagePictures[1]}} alt="" />
+                            </div>
+                          </div>
+                          <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'" style="position: relative;">
+                            <div class="package-other-picture">
+                              <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3"><p>+ {{package.packagePictures.length-3}}</p></div>
+                              <img src={{package.packagePictures[2]}} alt="" />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+                </lightgallery>
 
-                <div id="descriptionsection" class="package-details-description mb-4">
+                <div class="package-details-description mb-4">
                   <h2>Package Description</h2>
-                  <p class="lh-base">
-                    Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
-                    pulvinar
-                    placerat.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin purus
-                    purus, vulputate
-                    et ipsum eget, dignissim malesuada magna. Ut et tincidunt lacus. Fusce sed eros sem. In rutrum,
-                    sapien
-                    nec dapibus
-                    cursus, lorem tellus condimentum odio, condimentum pharetra lacus mauris ac urna.
-                  </p>
+                  <p class="lh-base">{{package.details.description}}</p>
                 </div>
               </section>
 
               <nav class="package-inside-menu mb-4">
                 <ul class="d-flex align-items-center">
                   <li *ngFor="let item of sections">
-                    <p class="d-flex flex-column align-items-center" [attr.id]="item.name" (click)="moveTo(item.name)">
-                      <img [attr.src]="item.icon" [attr.style]="item.scale"/>{{item.name}}
-                    </p>
+                    <div class="inside-menu-item d-flex flex-column align-items-center" [attr.id]="item.name" (click)="moveTo(item.name)">
+                      <img [attr.src]="item.icon" [attr.style]="item.scale"/><p>{{item.name}}</p>
+                    </div>
                   </li>
                 </ul>
               </nav>
@@ -98,6 +93,9 @@
               <section id="flightsection" #flightsection>
                 <div class="package-service-section">
                   <h2>Flight Details</h2>
+                  <p class="lh-base">
+                    Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim pulvinar placerat.
+                  </p>
                   <label for="" class="">
                     <div class="box">
                       <div class="row m-0">
@@ -234,11 +232,13 @@
                   </label>
                 </div>
               </section>
+
               <section id="hotelsection" #hotelsection>
                 <div class="package-service-section">
                   <h2>Hotel Details</h2>
-                  <!-- Content for Section 2 -->
-
+                  <p class="lh-base"> 
+                    Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim pulvinar placerat.
+                  </p>
                   <label for="" class="w-100">
                     <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade"
                       data-bs-ride="ride">
@@ -297,25 +297,41 @@
                   </label>
                 </div>
               </section>
+
               <section id="transfersection" class="package-service-section" #transfersection>
-                <!-- Content for Section 3 -->
                 <h2>Transfer Details</h2>
                 <p>This is the content for Section 3.</p>
               </section>
+
               <section id="activitiessection" class="package-service-section" #activitiessection>
                 <!-- Content for Section 3 -->
                 <h2>Activities Details</h2>
                 <p>This is the content for Section 4.</p>
               </section>
+
               <section id="programsection" class="package-service-section" #programsection>
                 <!-- Content for Section 3 -->
                 <h2>Program</h2>
                 <p></p>
               </section>
+
               <section id="policiessection" class="package-service-section" #policiessection>
-                <!-- Content for Section 3 -->
                 <h2>Policies</h2>
-                <p></p>
+                <!-- <p></p>
+                Terms And Conditions
+                <ul>
+                  <li>Umrahme reserves the right to modify the services to accommodate any unforeseen circumstances.</li>
+                  <li>Check-in for flight begins 3 hrs. before departure.</li>
+                  <li>Passport must be valid for at least six months from the date of departure.</li>
+                  <li>Early check-in or Late check-out are subject to availability and will incur extra charges.</li>
+                  <li>Any additional extras shall be paid by the guest. (Incl CC guarantee at the hotel).</li>
+                  <li>Failure to vacate the room as per the checkout time will result in additional charges.</li>
+                  <li>Trips & activities may be change or cancel due weather or any other unforeseen circumstances.</li>
+                  <li>Modifications are subject to airline, hotel & Umrahme policy, and may incur additional charges.</li>
+                  <li>Umrahme is not responsible if passengers are unable to travel due to passport or visa issues.</li>
+                  <li>Flight timings may result in early check-in or late check-out and may incur additional charges.</li>
+                  <li>Refund will not be applicable for any unutilized service.</li>
+                </ul> -->
               </section>
             </div>
             <div class="col-xl-3">

@@ -7,6 +7,7 @@ import { PackageItemComponent } from './package-item/package-item.component';
 import { NgxStarsModule } from 'ngx-stars';
 import { PackageDetailsComponent } from './package-details/package-details.component';
 import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/package-bookings-sidebar.component';
+import { LightgalleryModule } from 'lightgallery/angular';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/pack
     CommonModule,
     UmrahPackageRoutingModule,
     NgxStarsModule,
+    LightgalleryModule
   ]
 })
 export class UmrahPackageModule { }

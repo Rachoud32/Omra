@@ -12,7 +12,9 @@ export class packageService {
         packagePictures: [
           "assets/package/1.jpg",
           "assets/package/2.jpg",
-          "assets/package/3.jpg"
+          "assets/package/3.jpg",
+          "assets/package/4.jpg",
+          "assets/package/5.jpg"
         ],
         packageTitle: 'Spiritual Journey - Makkah & Madinah',
         packageRating: 4,
@@ -36,7 +38,12 @@ export class packageService {
           Price: 960,
           NbrRoom: 1,
           NbrPassengers: 1,
-          NbrNights: 5
+          NbrNights: 5,
+          description: `1 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
         }
       },
       {
@@ -44,7 +51,9 @@ export class packageService {
         packagePictures: [
           "assets/package/4.jpg",
           "assets/package/5.jpg",
-          "assets/package/6.jpg"
+          "assets/package/6.jpg",
+          "assets/package/1.jpg",
+          "assets/package/2.jpg"
         ],
         packageTitle: 'Spiritual Journey - Makkah & Madinah 2',
         packageRating: 4.5,
@@ -68,7 +77,12 @@ export class packageService {
           Price: 960,
           NbrRoom: 1,
           NbrPassengers: 1,
-          NbrNights: 5
+          NbrNights: 5,
+          description: `2 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
         }
       },
       {
@@ -76,7 +90,8 @@ export class packageService {
         packagePictures: [
           "assets/package/1.jpg",
           "assets/package/2.jpg",
-          "assets/package/3.jpg"
+          "assets/package/3.jpg",
+          "assets/package/4.jpg"
         ],
         packageTitle: 'Spiritual Journey - Makkah & Madinah 3',
         packageRating: 3.5,
@@ -100,7 +115,12 @@ export class packageService {
           Price: 960,
           NbrRoom: 1,
           NbrPassengers: 1,
-          NbrNights: 5
+          NbrNights: 5,
+          description: `3 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
         }
       }
     ]
