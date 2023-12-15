@@ -21,30 +21,44 @@ export class PackageDetailsComponent implements OnInit {
   sections: any[] = [
     {
       name: "Overview",
+      icon: "assets/overview-menu-icon.svg",
+      scale: "transform: scale(0.9);",
       id: "overviewsection"
     },
     {
       name: "Flights",
+      icon: "assets/plane-menu-icon.svg",
+      scale: "transform: scale(1);",
       id: "flightsection"
     },
     {
       name: "Hotels",
+      icon: "assets/hotel-menu-icon.svg",
+      scale: "transform: scale(1.1);",
       id: "hotelsection"
     },
     {
       name: "Transfers",
+      icon: "assets/car-menu-icon.svg",
+      scale: "transform: scale(0.7);",
       id: "transfersection"
     },
     {
       name: "Activities",
+      icon: "assets/activities-menu-icon.svg",
+      scale: "transform: scale(0.9);",
       id: "activitiessection"
     },
     {
       name: "Program",
+      icon: "assets/program-menu-icon.svg",
+      scale: "transform: scale(0.9);",
       id: "programsection"
     },
     {
       name: "Policies",
+      icon: "assets/policies-menu-icon.svg",
+      scale: "transform: scale(0.9);",
       id: "policiessection"
     },
   ]
@@ -73,7 +87,7 @@ export class PackageDetailsComponent implements OnInit {
       el?.classList.remove('active')
       if (el) {
         const rect = el.getBoundingClientRect();
-        if (rect.top <= offset + 200 && rect.bottom >= offset + 200) {
+        if (rect.top <= offset + 100 && rect.bottom >= offset + 100) {
           this.activeSection = section.name
           document.getElementById(section.name)?.classList.add('active')
         }
@@ -87,49 +101,49 @@ export class PackageDetailsComponent implements OnInit {
   moveTo(value: any) {
     if (value == 'Overview') {
       window.scrollTo({
-        top: this.overviewsection?.nativeElement.offsetTop + 320,
+        top: this.overviewsection?.nativeElement.offsetTop + 450,
         behavior: 'smooth',
       });
       this.activeSection = 'Overview'
     }
     if (value == 'Flights') {
       window.scrollTo({
-        top: this.flightsection?.nativeElement.offsetTop + 400,
+        top: this.flightsection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Flights'
     }
     if (value == 'Hotels') {
       window.scrollTo({
-        top: this.hotelsection?.nativeElement.offsetTop + 400,
+        top: this.hotelsection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Hotels'
     }
     if (value == 'Transfers') {
       window.scrollTo({
-        top: this.transfersection?.nativeElement.offsetTop + 400,
+        top: this.transfersection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Transfers'
     }
     if (value == 'Activities') {
       window.scrollTo({
-        top: this.activitiessection?.nativeElement.offsetTop + 400,
+        top: this.activitiessection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Activities'
     }
     if (value == 'Program') {
       window.scrollTo({
-        top: this.programsection?.nativeElement.offsetTop + 400,
+        top: this.programsection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Program'
     }
     if (value == 'Policies') {
       window.scrollTo({
-        top: this.policiessection?.nativeElement.offsetTop + 400,
+        top: this.policiessection?.nativeElement.offsetTop + 370,
         behavior: 'smooth',
       });
       this.activeSection = 'Policies'

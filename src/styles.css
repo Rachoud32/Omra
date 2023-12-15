@@ -654,7 +654,7 @@ input[type=checkbox]:disabled {
     padding: 20px 0 80px;
 }
 
-.search-section-title.page-title {
+.page-section-title.page-title {
     position: relative;
     width: 100%;
     height: 420px;
@@ -2283,8 +2283,6 @@ label.category-item::before {
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
     transition: all .3s ease;
 }
-
-.service-action-btns {}
 
 .service-details {
     display: block;
@@ -4167,6 +4165,10 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
 /* ----------------------------------------------------------------
 	Packages list
 -----------------------------------------------------------------*/
+app-package-details .page-title {
+    background-position: 100% 50% !important;
+}
+
 .packages-list .package-item .box {
     background-color: var(--omra-white);
     border: 5px solid var(--omra-white);
@@ -4252,26 +4254,30 @@ app-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-booking-de
     max-width: 100%;
 }
 
-.packages-list .package-item .package-type {
+.packages-list .package-item .package-type,
+.package-details-type {
     background: var(--omra-extra);
     border: 0;
     padding: 4px 10px;
     display: inline-block;
 }
 
-.packages-list .package-item .package-type p {
+.packages-list .package-item .package-type p,
+.package-details-type p {
     color: var(--omra-second);
     font-size: var(--fs-14);
 }
 
-.packages-list .package-item .package-theme {
+.packages-list .package-item .package-theme,
+.package-details-theme {
     background-color: rgba(5, 0, 51, 0.15);
     border: 0;
     padding: 4px 10px;
     display: inline-block;
 }
 
-.packages-list .package-item .package-theme p {
+.packages-list .package-item .package-theme p,
+.package-details-theme p {
     color: var(--omra-base);
     font-size: var(--fs-14);
 }
@@ -4313,14 +4319,13 @@ app-package-bookings-sidebar,
     z-index: 99;
 }
 
-
 .package-inside-menu {
     background: #fff;
-    border: 1px solid var(--omra-light-gray);
 }
 
 .package-inside-menu li {
     width: 25%;
+    position: relative;
     cursor: pointer;
 }
 
@@ -4331,20 +4336,37 @@ app-package-bookings-sidebar,
 
 .package-inside-menu li p {
     padding: 10px 15px;
-    font-size: var(--fs-15);
+    font-size: var(--fs-14);
     border-right: 1px solid var(--omra-light-gray);
+    border-bottom: 0;
 }
 
-.package-inside-menu li::after {
+.package-inside-menu li p::after {
     content: '';
     display: block;
     width: 100%;
     height: 3px;
-    position: relative;
+    position: absolute;
     bottom: 0;
     background: var(--omra-light-gray);
     transition: all .3s linear;
     z-index: 1;
+}
+
+.package-inside-menu li p::before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    background: var(--omra-base);
+    transition: all .3s linear;
+    z-index: 5;
+}
+
+.package-inside-menu li p:hover::before, .package-inside-menu li p.active::before {
+    width: 100%;
 }
 
 .package-inside-menu li:last-child p {
@@ -4352,7 +4374,13 @@ app-package-bookings-sidebar,
 }
 
 .package-inside-menu li p.active {
-    border: 1px solid red;
+    background: var(--omra-extra);
+    color: var(--omra-second);
+}
+
+.package-inside-menu li p img {
+    height: 45px;
+    padding: 10px 0;
 }
 
 .package-header .package-header-content i {
@@ -4362,8 +4390,8 @@ app-package-bookings-sidebar,
 
 .package-header .package-header-content .package-details-place,
 .package-header .package-header-content .package-details-nights {
-    font-size: var(--fs-16);
-    font-weight: 400;
+    font-size: var(--fs-15);
+    font-weight: 300;
     color: var(--omra-gray);
 }
 

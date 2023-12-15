@@ -1,4 +1,4 @@
-<section class="search-section-title page-title centred include-header include-topbar"
+<section class="page-section-title page-title centred include-header include-topbar"
   style="background-image: url('{{ package.packagePictures[0] }}')">
 </section>
 
@@ -8,7 +8,7 @@
       <div class="content-wrap pt-0 pb-0">
         <div class="container">
           <div class="row">
-            <div class="col-xl-12 pt-3">
+            <div class="col-xl-12 py-3">
               <div class="heading-box">
                 <h2 class="heading-title color-1 mb-0">Package Details</h2>
               </div>
@@ -17,13 +17,12 @@
             <div class="col-xl-9 package-details-box">
 
               <section id="overviewsection" #overviewsection>
-                <div class="package-header d-flex align-items-start justify-content-between mb-3" id="overviewsection"
-                  #overviewsection>
+                <div class="package-header d-flex align-items-start justify-content-between mb-3">
                   <div class="package-header-content">
                     <h5 class="package-details-title">
                       Spiritual Journey - Makkah & Madinah
                     </h5>
-                    <div class="d-flex align-items-center lh-base gap-3">
+                    <div class="d-flex align-items-center lh-base gap-3 mb-2">
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-map-pin"></i>
                         <div class="package-details-place">{{package.details.Place}}</div>
@@ -31,6 +30,12 @@
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-moon"></i>
                         <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                      </div>
+                      <div class="package-details-type lh-base">
+                        <p class="m-0">Individiual stay</p>
+                      </div>
+                      <div class="package-details-theme lh-base">
+                        <p class="m-0">{{package.packageTheme}}</p>
                       </div>
                     </div>
                   </div>
@@ -49,8 +54,8 @@
                     </div>
                   </div>
                   <div class="col-xl-4 mb-4">
-                    <div class="row gy-4">
-                      <div class="col-xl-12">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-xl-12 mb-4">
                         <div class="package-other-picture">
                           <img src={{package.packagePictures[1]}} alt="" />
                         </div>
@@ -78,17 +83,18 @@
                     cursus, lorem tellus condimentum odio, condimentum pharetra lacus mauris ac urna.
                   </p>
                 </div>
-
               </section>
+
               <nav class="package-inside-menu mb-4">
                 <ul class="d-flex align-items-center">
                   <li *ngFor="let item of sections">
                     <p class="d-flex flex-column align-items-center" [attr.id]="item.name" (click)="moveTo(item.name)">
-                      <i class="icon-line-globe lh-base"></i>{{item.name}}
+                      <img [attr.src]="item.icon" [attr.style]="item.scale"/>{{item.name}}
                     </p>
                   </li>
                 </ul>
               </nav>
+              
               <section id="flightsection" #flightsection>
                 <div class="package-service-section">
                   <h2>Flight Details</h2>
