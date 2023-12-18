@@ -123,6 +123,14 @@ ol {
     color: var(--omra-white) !important;
 }
 
+.bg-color-base {
+    background-color: var(--omra-base);
+}
+
+.bg-color-second {
+    background-color: var(--omra-second);
+}
+
 .bg-color-extra {
     background-color: var(--omra-extra);
 }
@@ -4170,8 +4178,9 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .box {
+    position: relative;
     background-color: var(--omra-white);
-    border: 5px solid var(--omra-white);
+    /* border: 5px solid var(--omra-white); */
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
     transition: all .3s ease;
 }
@@ -4182,24 +4191,66 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-picture-container {
     padding-left: 0;
+    padding-right: 0;
 }
 
 .packages-list .package-item .image-box {
     width: 100%;
     height: 100%;
-    max-height: 240px;
-    min-height: 240px;
     position: relative;
 }
 
 .packages-list .package-item .package-picture {
     object-fit: cover;
-    height: 240px;
+    height: 300px;
+    max-height: 300px;
 }
 
-.packages-list .package-item .carousel-control-next,
-.packages-list .package-item .carousel-control-prev {
+.packages-list .package-item .carousel {
+    height: 100%;
+}
+
+.packages-list .package-item .carousel-item {
+    height: 100%;
+    position: relative;
+}
+
+.packages-list .package-item .carousel-controls {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    left: 10px;
     z-index: 4;
+}
+
+.packages-list .package-item .carousel-control-prev, 
+.packages-list .package-item .carousel-control-next {
+    position: relative;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    font-size: var(--fs-20);
+    color: var(--omra-base);
+    text-align: center;
+    background: #f8f8f8;
+    border: 0;
+    z-index: 50;
+    opacity: 1;
+    transition: all .3s linear;
+    align-items: center;
+    justify-content: center;
+}
+
+.packages-list .package-item .carousel-control-prev {
+    right: auto;
+}
+
+.packages-list .package-item .carousel-control-prev:hover,
+.packages-list .package-item .carousel-control-next:hover, 
+.packages-list .package-item .carousel-control-prev:active, 
+.packages-list .package-item .carousel-control-next:active {
+    color: var(--omra-white);
+    background: var(--omra-base);
 }
 
 .packages-list .package-item .carousel-indicators {
@@ -4224,11 +4275,11 @@ app-package-details .page-title {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background: var(--omra-second);
+    background: var(--omra-base);
     color: var(--omra-white);
-    padding: 0px 10px;
-    font-size: 14px;
-    font-weight: 400;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 300;
     z-index: 10;
 }
 
@@ -4243,12 +4294,13 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .package-title {
-    color: var(--omra-base);
+    color: #ffffff;
     font-size: var(--fs-18);
     line-height: normal;
     font-weight: 500 !important;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    padding: 10px 15px;
+    margin-bottom: 0;
     position: relative;
     top: 0px;
     max-width: 100%;
@@ -4258,28 +4310,30 @@ app-package-details .page-title {
 .package-details-type {
     background: var(--omra-extra);
     border: 0;
-    padding: 4px 10px;
+    padding: 7px 15px;
+    white-space: nowrap;
     display: inline-block;
 }
 
 .packages-list .package-item .package-type p,
 .package-details-type p {
     color: var(--omra-second);
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
 }
 
 .packages-list .package-item .package-theme,
 .package-details-theme {
     background-color: rgba(5, 0, 51, 0.15);
     border: 0;
-    padding: 4px 10px;
+    padding: 7px 15px;
+    white-space: nowrap;
     display: inline-block;
 }
 
 .packages-list .package-item .package-theme p,
 .package-details-theme p {
     color: var(--omra-base);
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
 }
 
 .packages-list .package-item .package-place i,
@@ -4292,12 +4346,16 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-reservation-specs {
     font-weight: 400;
-    color: var(--omra-base);
+    color: var(--omra-white);
+    background: var(--omra-second);
+    padding: 5px 7px;
+    font-size: var(--fs-13) !important;
 }
 
 .packages-list .package-item .package-price {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 30px;
     color: var(--omra-base);
 }
 
@@ -4307,6 +4365,27 @@ app-package-details .page-title {
 
 .packages-list .package-item .color-btn {
     padding: 15px 30px;
+}
+
+/* .packages-list .package-item .package-rating {
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+} */
+
+.package-services .service-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border: 1px solid #c0c0c087;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-services .service-icon svg {
+    fill: var(--omra-gray);
+    opacity: 0.5;
 }
 
 /* ----------------------------------------------------------------
@@ -4464,13 +4543,41 @@ app-package-bookings-sidebar,
     margin-bottom: 40px;
 }
 
-.package-service-section h2,
-.package-details-description h2 {
-    font-size: 18px;
+.package-service-section h2 {
+    font-size: var(--fs-20);
     font-weight: 500 !important;
-    color: #068484;
+    color: var(--omra-second);
+    background: var(--omra-white);
+    padding: 10px 20px;
+    border: 1px solid var(--omra-light-gray);
+    margin-bottom: 8px;
+}
+
+.package-service-section .hotel-name {
+    font-size: var(--fs-20);
+    font-weight: 500 !important;
+    color: var(--omra-base);
+    border: 0;
     padding: 10px 0 0;
-    margin: 0;
+}
+
+.package-service-section .package-sm-title {
+    font-weight: 400 !important;
+    font-size: var(--fs-16);
+    color: var(--omra-base);
+    margin-bottom: 0;
+}
+
+.package-service-section ul {
+    list-style: circle;
+    list-style-position: inside;
+    padding-left: 5px !important;
+}
+
+.package-service-section ul li {
+    font-size: var(--fs-14);
+    font-weight: 300;
+    color: gray;
 }
 
 .package-service-section .box {
@@ -4635,10 +4742,6 @@ app-package-bookings-sidebar,
 
 .filter-dropdown-item {
     width: 15.7%;
-}
-
-.transfer-filter .filter-dropdown-item {
-    /* width: 20%; */
 }
 
 .transfer-top-filter.top-filter-section .road-filter-item {

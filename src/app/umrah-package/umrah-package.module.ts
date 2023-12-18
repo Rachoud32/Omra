@@ -8,6 +8,7 @@ import { NgxStarsModule } from 'ngx-stars';
 import { PackageDetailsComponent } from './package-details/package-details.component';
 import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/package-bookings-sidebar.component';
 import { LightgalleryModule } from 'lightgallery/angular';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     PackageBookingsSidebarComponent
   ],
   imports: [
+    NgbModule,
     CommonModule,
     UmrahPackageRoutingModule,
     NgxStarsModule,

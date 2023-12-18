@@ -26,8 +26,8 @@
                       <div class="package-details-type lh-base">
                         <p class="m-0">Individiual stay</p>
                       </div>
-                      <div class="package-details-theme lh-base">
-                        <p class="m-0">{{package.packageTheme}}</p>
+                      <div class="package-details-theme lh-base" *ngFor="let theme of package.details.Theme">
+                        <p class="m-0">{{theme}}</p>
                       </div>
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-map-pin"></i>
@@ -317,8 +317,10 @@
 
               <section id="policiessection" class="package-service-section" #policiessection>
                 <h2>Policies</h2>
-                <!-- <p></p>
-                Terms And Conditions
+                <div class="d-flex align-items-center gap-2">
+                  <i class="icon-line-chevron-right"></i>
+                  <h5 class="package-sm-title">Terms And Conditions</h5>
+                </div>
                 <ul>
                   <li>Umrahme reserves the right to modify the services to accommodate any unforeseen circumstances.</li>
                   <li>Check-in for flight begins 3 hrs. before departure.</li>
@@ -331,7 +333,46 @@
                   <li>Umrahme is not responsible if passengers are unable to travel due to passport or visa issues.</li>
                   <li>Flight timings may result in early check-in or late check-out and may incur additional charges.</li>
                   <li>Refund will not be applicable for any unutilized service.</li>
-                </ul> -->
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="icon-line-chevron-right"></i>
+                  <h5 class="package-sm-title">Cancellation Policy</h5>
+                </div>
+                <ul>
+                  <li>For any cancellation please connect with our customer support to check on the applicable policy of each
+                  travel components selected on the package.</li>
+                  <li>Our standard package policy is governed by the following conditions</li>
+                  <li>Flight part of the package is non-refundable after the booking is paid and confirmed</li>
+                  <li>Land Services ( Hotel, Transfers, Tours & Excursion)</li>
+                  <li>Partial/Full Refundable upto 14 days prior to departure subject to each travel component and its applicable
+                  policy</li>
+                  <li>Subject to a fee of 50% of the total amount from 7 to 14 days prior to departure</li>
+                  <li>Subject to a fee of 100% of the total amount from less than 7 days prior to departure date</li>
+                  <li>Subject to a fee of 100% of the total amount in case of no show</li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="icon-line-chevron-right"></i>
+                  <h5 class="package-sm-title">Inclusions</h5>
+                </div>
+                <ul>
+                  <li>Accommodation | In Madinah & Makkah</li>
+                  <li>Airport & Intercity Transfers</li>
+                  <li>Flights (optional)</li>
+                  <li>Activities (optional)</li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="icon-line-chevron-right"></i>
+                  <h5 class="package-sm-title">Exclusions</h5>
+                </div>
+                <ul>
+                  <li>Add-ons not included</li>
+                  <li>Early check-in and late check-out charges</li>
+                  <li>Anything not mentioned in Inclusions</li>
+                  <li>Room Extras</li>
+                  <li>Additional Meals</li>
+                  <li>Personal Expenses</li>
+                  <li>Hotel Parking</li>
+                </ul>
               </section>
             </div>
             <div class="col-xl-3">
