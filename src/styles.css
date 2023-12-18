@@ -4202,8 +4202,8 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-picture {
     object-fit: cover;
-    height: 300px;
-    max-height: 300px;
+    height: 305px;
+    max-height: 305px;
 }
 
 .packages-list .package-item .carousel {
@@ -4217,7 +4217,7 @@ app-package-details .page-title {
 
 .packages-list .package-item .carousel-controls {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     display: flex;
     left: 10px;
     z-index: 4;
@@ -4273,9 +4273,9 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-offer {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
-    background: var(--omra-base);
+    background: var(--omra-second);
     color: var(--omra-white);
     padding: 4px 14px;
     font-size: 13px;
@@ -4294,12 +4294,12 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .package-title {
-    color: #ffffff;
+    color: var(--omra-base);
     font-size: var(--fs-18);
     line-height: normal;
     font-weight: 500 !important;
     text-transform: uppercase;
-    padding: 10px 15px;
+    padding: 0px 15px 0px 0px;
     margin-bottom: 0;
     position: relative;
     top: 0px;
@@ -4310,7 +4310,7 @@ app-package-details .page-title {
 .package-details-type {
     background: var(--omra-extra);
     border: 0;
-    padding: 7px 15px;
+    padding: 5px 12px;
     white-space: nowrap;
     display: inline-block;
 }
@@ -4325,7 +4325,7 @@ app-package-details .page-title {
 .package-details-theme {
     background-color: rgba(5, 0, 51, 0.15);
     border: 0;
-    padding: 7px 15px;
+    padding: 5px 12px;
     white-space: nowrap;
     display: inline-block;
 }
@@ -4349,13 +4349,20 @@ app-package-details .page-title {
     color: var(--omra-white);
     background: var(--omra-second);
     padding: 5px 7px;
+    margin: 0;
     font-size: var(--fs-13) !important;
+}
+
+.packages-list .package-item .package-price-card {
+    background: var(--omra-extra);
+    width: 100%;
+    padding: 15px;
 }
 
 .packages-list .package-item .package-price {
     font-size: 30px;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 40px;
     color: var(--omra-base);
 }
 
@@ -4367,25 +4374,35 @@ app-package-details .page-title {
     padding: 15px 30px;
 }
 
-/* .packages-list .package-item .package-rating {
+.packages-list .package-item .package-rating {
     position: absolute;
     bottom: 7px;
     right: 10px;
-} */
+}
 
 .package-services .service-icon {
-    width: 40px;
-    height: 40px;
+    width: 25%;
+    gap: 1rem;
     display: flex;
-    border: 1px solid #c0c0c087;
-    padding: 6px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .package-services .service-icon svg {
-    fill: var(--omra-gray);
-    opacity: 0.5;
+    width: 30px;
+    height: 30px;
+    fill: var(--omra-second);
+}
+
+.package-services .package-include {
+    color: var(--omra-base);
+    display: inline-flex;
+    margin-bottom: 0 !important;
+    font-weight: 400;
+}
+
+.package-services i {
+    font-size: var(--fs-15);
 }
 
 /* ----------------------------------------------------------------

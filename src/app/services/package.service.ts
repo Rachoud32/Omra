@@ -21,7 +21,9 @@ export class packageService {
         packagePlace: 'Makkah - Madinah',
         packageDate: '12/01/2024 - 12/01/2024',
         packagePeriod: 10,
-        packageServices:'',
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Tours', 'Extras', 'Activities'
+        ],
         packagePrice: 960,
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
@@ -58,7 +60,9 @@ export class packageService {
         packagePlace: 'Makkah - Madinah',
         packageDate: '12/01/2024 - 12/01/2024',
         packagePeriod: 10,
-        packageServices: '',
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Activities'
+        ],
         packagePrice: 1200,
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
@@ -95,7 +99,9 @@ export class packageService {
         packagePlace: 'Makkah - Madinah',
         packageDate: '12/01/2024 - 12/01/2024',
         packagePeriod: 10,
-        packageServices: '',
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Tours'
+        ],
         packagePrice: 1600,
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
