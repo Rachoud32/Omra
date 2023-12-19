@@ -17,9 +17,22 @@ export class PackageItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataPackages = this.packageService.dataPackages()
+    console.log(this.getMaxRating());
+    console.log(this.getMinPrice());
   }
 
   getSafeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
+
+  getMaxRating(): number {
+    const values = this.dataPackages.map((item:any) => item.packageRating);
+    return Math.max(...values);
+  }
+
+  getMinPrice(): number {
+    const values = this.dataPackages.map((item:any) => item.packagePrice);
+    return Math.min(...values);
+  }
+  
 }

@@ -10,16 +10,14 @@ export class packageService {
       {
         _id: 1,
         packagePictures: [
-          "assets/package/1.jpg",
-          "assets/package/2.jpg",
-          "assets/package/3.jpg"
+          "assets/package/package-item/Umrah-1.webp"
         ],
-        packageTitle: 'Spiritual Journey - Makkah & Madinah',
+        packageTitle: 'Journey of Faith: A Pilgrimage to Makkah',
         packageRating: 4,
         packageType: 'Individiual stay',
         packageTheme: ['Discover', 'Adventure'],
-        packagePlace: 'Makkah - Madinah',
-        packageDate: '12/01/2024 - 12/01/2024',
+        packagePlace: ['Makkah - Madinah - Riyadh'],
+        packageDate: 'Ramadan',
         packagePeriod: 10,
         packageServices: [
           'Flights', 'Hotels', 'Transfers', 'Tours', 'Extras', 'Activities'
@@ -28,11 +26,14 @@ export class packageService {
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
         packagedisponiblity: 2,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '25% Today',
         details: {
           Type: 'Individiual stay',
           Theme: ['Discover', 'Discover2'],
           Place: 'Makkah - Madinah',
-          Date: '12/01/2024 - 12/01/2024',
+          Date: 'Ramadan',
           Period: 10,
           Services: 'Flights and transfers included',
           Price: 960,
@@ -49,16 +50,14 @@ export class packageService {
       {
         _id: 2,
         packagePictures: [
-          "assets/package/4.jpg",
-          "assets/package/5.jpg",
-          "assets/package/6.jpg"
+          "assets/package/package-item/Umrah-2.webp"
         ],
-        packageTitle: 'Spiritual Journey - Makkah & Madinah 2',
+        packageTitle: 'Sacred Steps: Exploring Hajj and Its Meaning',
         packageRating: 4.5,
         packageType: 'Group stay',
         packageTheme: ['Adventure', 'Wellness'],
         packagePlace: 'Makkah - Madinah',
-        packageDate: '12/01/2024 - 12/01/2024',
+        packageDate: 'Chawel',
         packagePeriod: 10,
         packageServices: [
           'Flights', 'Hotels', 'Transfers', 'Activities'
@@ -67,11 +66,14 @@ export class packageService {
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
         packagedisponiblity: 5,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '',
         details: {
           Type: 'Individiual stay',
           Theme: ['Adventure', 'Wellness'],
           Place: 'Makkah - Madinah',
-          Date: '12/01/2024 - 12/01/2024',
+          Date: 'Chawel',
           Period: 10,
           Services: 'Flights and transfers included',
           Price: 960,
@@ -88,16 +90,14 @@ export class packageService {
       {
         _id: 3,
         packagePictures: [
-          "assets/package/1.jpg",
-          "assets/package/2.jpg",
-          "assets/package/3.jpg"
+          "assets/package/package-item/Umrah-3.webp"
         ],
-        packageTitle: 'Spiritual Journey - Makkah & Madinah 3',
+        packageTitle: 'In the Shadows of the Kaaba: Stories from Makkah',
         packageRating: 3.5,
         packageType: 'All inclusive',
         packageTheme: ['Wellness'],
         packagePlace: 'Makkah - Madinah',
-        packageDate: '12/01/2024 - 12/01/2024',
+        packageDate: 'Mouled',
         packagePeriod: 10,
         packageServices: [
           'Flights', 'Hotels', 'Transfers', 'Tours'
@@ -106,14 +106,137 @@ export class packageService {
         packageNbrRoom: 1,
         packageNbrPassengers: 1,
         packagedisponiblity: 8,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '',
         details: {
           Type: 'Individiual stay',
           Theme: ['Wellness'],
           Place: 'Makkah - Madinah',
-          Date: '12/01/2024 - 12/01/2024',
+          Date: 'Mouled',
           Period: 10,
           Services: 'Flights and transfers included',
           Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5,
+          description: `3 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
+        }
+      },
+      {
+        _id: 4,
+        packagePictures: [
+          "assets/package/package-item/Umrah-4.webp"
+        ],
+        packageTitle: 'Hajj Chronicles: Reflections on the Sacred Pilgrimage',
+        packageRating: 4,
+        packageType: 'Individiual stay',
+        packageTheme: ['Discover', 'Adventure'],
+        packagePlace: ['Makkah - Madinah', 'Riyadh'],
+        packageDate: 'Ramadan',
+        packagePeriod: 10,
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Tours', 'Extras', 'Activities'
+        ],
+        packagePrice: 960,
+        packageNbrRoom: 1,
+        packageNbrPassengers: 1,
+        packagedisponiblity: 2,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '',
+        details: {
+          Type: 'Individiual stay',
+          Theme: ['Discover', 'Discover2'],
+          Place: 'Makkah - Madinah',
+          Date: 'Ramadan',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5,
+          description: `1 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
+        }
+      },
+      {
+        _id: 5,
+        packagePictures: [
+          "assets/package/package-item/Umrah-5.webp"
+        ],
+        packageTitle: 'Makkah Diaries: A Personal Account of the Holy City',
+        packageRating: 4.3,
+        packageType: 'Group stay',
+        packageTheme: ['Adventure', 'Wellness'],
+        packagePlace: 'Makkah - Madinah',
+        packageDate: 'Chawel',
+        packagePeriod: 10,
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Activities'
+        ],
+        packagePrice: 1200,
+        packageNbrRoom: 1,
+        packageNbrPassengers: 1,
+        packagedisponiblity: 5,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '',
+        details: {
+          Type: 'Individiual stay',
+          Theme: ['Adventure', 'Wellness'],
+          Place: 'Makkah - Madinah',
+          Date: 'Chawel',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 960,
+          NbrRoom: 1,
+          NbrPassengers: 1,
+          NbrNights: 5,
+          description: `2 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
+          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
+          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
+          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
+          condimentum pharetra lacus mauris ac urna.`
+        }
+      },
+      {
+        _id: 6,
+        packagePictures: [
+          "assets/package/package-item/Umrah-6.webp"
+        ],
+        packageTitle: 'Beyond the Kaaba: Spiritual Insights from Hajj',
+        packageRating: 4.4,
+        packageType: 'All inclusive',
+        packageTheme: ['Wellness'],
+        packagePlace: 'Makkah - Madinah',
+        packageDate: 'Mouled',
+        packagePeriod: 10,
+        packageServices: [
+          'Flights', 'Hotels', 'Transfers', 'Tours'
+        ],
+        packagePrice: 970,
+        packageNbrRoom: 1,
+        packageNbrPassengers: 1,
+        packagedisponiblity: 8,
+        packagebestprice: true,
+        packagetoprated: true,
+        packagepromo: '25% Today',
+        details: {
+          Type: 'Individiual stay',
+          Theme: ['Wellness'],
+          Place: 'Makkah - Madinah',
+          Date: 'Mouled',
+          Period: 10,
+          Services: 'Flights and transfers included',
+          Price: 900,
           NbrRoom: 1,
           NbrPassengers: 1,
           NbrNights: 5,

@@ -762,8 +762,10 @@ input[type=checkbox]:disabled {
 
 .input-group p {
     padding: 10px;
+    display: flex;
     font-weight: 400;
     letter-spacing: 0;
+    align-items: center;
 }
 
 .top-filter-section .input-group p {
@@ -4177,16 +4179,28 @@ app-package-details .page-title {
     background-position: 100% 50% !important;
 }
 
-.packages-list .package-item .box {
+.packages-list .package-item {
+    height: 100%;
+    display: flex;
     position: relative;
     background-color: var(--omra-white);
-    /* border: 5px solid var(--omra-white); */
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 3%);
-    transition: all .3s ease;
+    flex-direction: column;
 }
 
-.packages-list .package-item .box p {
+.packages-list .package-item .package-more-details {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    height: 100%;
+}
+
+.packages-list .package-item p {
     font-size: var(--fs-14);
+}
+
+.packages-list .package-item hr {
+    margin: 10px 0;
 }
 
 .packages-list .package-item .package-picture-container {
@@ -4196,23 +4210,30 @@ app-package-details .page-title {
 
 .packages-list .package-item .image-box {
     width: 100%;
-    height: 100%;
     position: relative;
+    /* padding: 15px 15px 0 15px; */
+    background: var(--omra-white);
 }
 
 .packages-list .package-item .package-picture {
     object-fit: cover;
-    height: 305px;
-    max-height: 305px;
+    height: 240px;
+    max-height: 240px;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(.165,.84,.44,1);
 }
 
-.packages-list .package-item .carousel {
-    height: 100%;
+.packages-list .package-item:hover .package-picture {
+    transform: scale(1.10);
 }
 
 .packages-list .package-item .carousel-item {
     height: 100%;
     position: relative;
+}
+
+.packages-list .package-item .carousel-inner:before {
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 0%);
 }
 
 .packages-list .package-item .carousel-controls {
@@ -4227,9 +4248,9 @@ app-package-details .page-title {
 .packages-list .package-item .carousel-control-next {
     position: relative;
     display: flex;
-    width: 45px;
-    height: 45px;
-    font-size: var(--fs-20);
+    width: 35px;
+    height: 35px;
+    font-size: var(--fs-16);
     color: var(--omra-base);
     text-align: center;
     background: #f8f8f8;
@@ -4277,19 +4298,9 @@ app-package-details .page-title {
     left: 10px;
     background: var(--omra-second);
     color: var(--omra-white);
-    padding: 4px 14px;
+    padding: 2px 10px;
     font-size: 13px;
     font-weight: 300;
-    z-index: 10;
-}
-
-.packages-list .package-item .package-offer-2 {
-    position: relative;
-    background: var(--omra-second);
-    color: var(--omra-white);
-    padding: 2px 12px;
-    font-size: 13px;
-    font-weight: 400;
     z-index: 10;
 }
 
@@ -4297,10 +4308,9 @@ app-package-details .page-title {
     color: var(--omra-base);
     font-size: var(--fs-18);
     line-height: normal;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     text-transform: uppercase;
-    padding: 0px 15px 0px 0px;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     position: relative;
     top: 0px;
     max-width: 100%;
@@ -4310,7 +4320,7 @@ app-package-details .page-title {
 .package-details-type {
     background: var(--omra-extra);
     border: 0;
-    padding: 5px 12px;
+    padding: 4px 8px;
     white-space: nowrap;
     display: inline-block;
 }
@@ -4318,14 +4328,14 @@ app-package-details .page-title {
 .packages-list .package-item .package-type p,
 .package-details-type p {
     color: var(--omra-second);
-    font-size: var(--fs-13);
+    font-size: var(--fs-12);
 }
 
 .packages-list .package-item .package-theme,
 .package-details-theme {
     background-color: rgba(5, 0, 51, 0.15);
     border: 0;
-    padding: 5px 12px;
+    padding: 4px 8px;
     white-space: nowrap;
     display: inline-block;
 }
@@ -4333,36 +4343,33 @@ app-package-details .page-title {
 .packages-list .package-item .package-theme p,
 .package-details-theme p {
     color: var(--omra-base);
-    font-size: var(--fs-13);
+    font-size: var(--fs-12);
 }
 
 .packages-list .package-item .package-place i,
 .packages-list .package-item .package-date i,
 .packages-list .package-item .package-period i {
     color: var(--omra-second);
-    font-size: var(--fs-14);
-    transition: all .3s linear;
+    font-size: var(--fs-16);
 }
 
 .packages-list .package-item .package-reservation-specs {
-    font-weight: 400;
-    color: var(--omra-white);
-    background: var(--omra-second);
+    font-weight: 300;
+    color: var(--omra-second);
+    background: var(--omra-extra);
     padding: 5px 7px;
     margin: 0;
     font-size: var(--fs-13) !important;
 }
 
 .packages-list .package-item .package-price-card {
-    background: var(--omra-extra);
     width: 100%;
-    padding: 15px;
 }
 
 .packages-list .package-item .package-price {
     font-size: 30px;
     font-weight: 600;
-    line-height: 40px;
+    line-height: normal;
     color: var(--omra-base);
 }
 
@@ -4374,15 +4381,9 @@ app-package-details .page-title {
     padding: 15px 30px;
 }
 
-.packages-list .package-item .package-rating {
-    position: absolute;
-    bottom: 7px;
-    right: 10px;
-}
-
 .package-services .service-icon {
-    width: 25%;
-    gap: 1rem;
+    width: 30%;
+    gap: .5rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -4394,15 +4395,80 @@ app-package-details .page-title {
     fill: var(--omra-second);
 }
 
+.package-services .service-icon img {
+    width: 30px;
+    height: 30px;
+}
+
 .package-services .package-include {
     color: var(--omra-base);
     display: inline-flex;
     margin-bottom: 0 !important;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .package-services i {
     font-size: var(--fs-15);
+}
+
+.package-item .package-best-labels {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.package-item .package-label {
+    position: relative;
+    z-index: 10;
+    color: var(--omra-white);
+    font-weight: 300;
+    font-size: var(--fs-13);
+    background: var(--bs-orange);
+    padding: 0px 10px;
+}
+
+.package-item .package-label.bestoffer {
+    background: #5eb13c;
+}
+
+.package-item .package-label.toprated {
+    background: #015093;
+}
+
+.package-item .package-label.promo {
+    background: #d52f2f;
+}
+
+.packages-list .color-btn.show-more {
+    background: var(--omra-second);
+    border: var(--omra-second);
+}
+
+.packages-list .color-btn.show-more:hover {
+    background: var(--omra-base);
+    border: var(--omra-base);
+}
+
+.back-link {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    transition: all .3s linear;
+}
+
+.back-link p, .back-link i {
+    color: var(--omra-gray);
+    font-weight: 400;
+    transition: all .3s linear;
+}
+
+.back-link:hover p {
+    color: var(--omra-base);
+}
+
+.back-link:hover i {
+    color: var(--omra-second);
 }
 
 /* ----------------------------------------------------------------

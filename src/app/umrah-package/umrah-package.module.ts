@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UmrahPackageRoutingModule } from './umrah-package-routing.module';
 import { UmrahPackageComponent } from './umrah-package.component';
 import { PackageItemComponent } from './package-item/package-item.component';
@@ -9,6 +10,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/package-bookings-sidebar.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PackageSearchBarComponent } from './package-search-bar/package-search-bar.component';
 
 
 @NgModule({
@@ -16,9 +18,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UmrahPackageComponent,
     PackageItemComponent,
     PackageDetailsComponent,
-    PackageBookingsSidebarComponent
+    PackageBookingsSidebarComponent,
+    PackageSearchBarComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     CommonModule,
     UmrahPackageRoutingModule,
