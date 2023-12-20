@@ -4293,12 +4293,10 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .package-offer {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: relative;
     background: var(--omra-second);
     color: var(--omra-white);
-    padding: 2px 10px;
+    padding: 5px 10px;
     font-size: 13px;
     font-weight: 300;
     z-index: 10;
@@ -4554,6 +4552,12 @@ app-package-bookings-sidebar,
     color: var(--omra-second);
 }
 
+.package-header {
+    background: var(--omra-white);
+    padding: 25px 20px 20px 20px;
+    /* border-bottom: 5px solid var(--omra-extra); */
+}
+
 .package-header .package-header-content i {
     font-size: var(--fs-16);
     color: var(--omra-second);
@@ -4564,17 +4568,50 @@ app-package-bookings-sidebar,
     font-size: var(--fs-15);
     font-weight: 300;
     color: var(--omra-gray);
+    white-space: nowrap;
 }
 
 .package-header .package-header-content .package-details-title {
     color: var(--omra-base);
-    font-size: var(--fs-22);
+    font-size: 24px;
     font-weight: 600 !important;
     text-transform: uppercase;
-    margin-bottom: 5px !important;
+    margin-bottom: 0px !important;
     position: relative;
     top: 0px;
     max-width: 100%;
+}
+
+.package-details-description h2 {
+    font-size: var(--fs-20);
+    font-weight: 500 !important;
+    color: var(--omra-second);
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.package-details-description p {
+    font-size: var(--fs-15);
+    line-height: 1.875;
+    margin-bottom: 0;
+}
+
+.list-packages-date {
+    background: var(--omra-white);
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--omra-light-gray);
+}
+
+.list-packages-date p {
+    font-size: var(--fs-18);
+    font-weight: 400 !important;
+    color: var(--omra-base);
+    line-height: normal;
+}
+
+.list-packages-date i {
+    color: var(--omra-second);
+    line-height: normal;
 }
 
 .package-header .package-details-price-estim {

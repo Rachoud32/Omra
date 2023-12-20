@@ -14,69 +14,86 @@
               </div>
               <p>You benefit from the best rate.</p>
             </div>
-            <div class="col-xl-9 package-details-box">
 
-              <section id="overviewsection" #overviewsection>
-                <div class="package-header d-flex align-items-start justify-content-between gap-3 mb-3">
-                  <div class="package-header-content">
-                    <h5 class="package-details-title">
-                      Spiritual Journey - Makkah & Madinah
-                    </h5>
-                    <div class="d-flex align-items-center lh-base gap-3 mb-2">
-                      <div class="package-details-type lh-base">
-                        <p class="m-0">Individiual stay</p>
+            <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+              <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
+                <div class="row" *ngIf="image == package.packagePictures[0]" >
+                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'" >
+                    <div class="package-cover-picture">
+                      <img src={{package.packagePictures[0]}} alt="" />
+                    </div>
+                  </div>
+                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
+                    <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
+                      <div class="col-xl-12 mb-4">
+                        <div class="package-other-picture">
+                          <img src={{package.packagePictures[1]}} alt="" />
+                        </div>
                       </div>
-                      <div class="package-details-theme lh-base" *ngFor="let theme of package.details.Theme">
-                        <p class="m-0">{{theme}}</p>
-                      </div>
-                      <div class="d-flex align-items-center lh-base gap-2">
-                        <i class="icon-line-map-pin"></i>
-                        <div class="package-details-place">{{package.details.Place}}</div>
-                      </div>
-                      <div class="d-flex align-items-center lh-base gap-2">
-                        <i class="icon-line-moon"></i>
-                        <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                      <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'" style="position: relative;">
+                        <div class="package-other-picture">
+                          <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3"><p>+ {{package.packagePictures.length-3}}</p></div>
+                          <img src={{package.packagePictures[2]}} alt="" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="package-details-price">
-                    <p class="package-details-price-estim lh-base m-0 text-end">Price from</p>
-                    <div class="package-details-price lh-base text-end">
-                      <span>$</span>{{package.packagePrice}}
+                </div>
+              </a>
+            </lightgallery>
+
+            <div class="col-xl-9 package-details-box">
+              <section id="overviewsection" #overviewsection>
+                <div class="package-header d-flex align-items-start justify-content-between gap-3 mb-3">
+                  <div class="package-header-content w-100">
+                    <div class="d-flex align-items-start justify-content-between gap-5">
+                      <div class="d-flex flex-column row-gap-2">
+                        <h5 class="package-details-title">
+                          Spiritual Journey - Makkah & Madinah
+                        </h5>
+                        <div class="d-flex flex-wrap align-items-center lh-base gap-2 mb-2">
+                          <div class="package-details-type lh-base">
+                            <p class="m-0">{{package.packageType}}</p>
+                          </div>
+                          <div class="package-details-theme lh-base" *ngFor="let theme of package.packageTheme">
+                            <p class="m-0">{{theme}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column align-items-end lh-base row-gap-1 mb-2">
+                        <div class="d-flex align-items-center lh-base gap-2">
+                          <i class="icon-line-map-pin"></i>
+                          <div class="package-details-place">{{package.details.Place}}</div>
+                        </div>
+                        <div class="d-flex align-items-center lh-base gap-2">
+                          <i class="icon-line-moon"></i>
+                          <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 lh-base">
+                          <div class="d-flex align-items-center">
+                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                  [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
+                          </div>
+                          <div class="d-flex align-items-center gap-1">
+                              <p class="mb-0">{{package.packageRating}}</p>
+                              <p class="mb-0">(207)</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-                  <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
-                    <div class="row" *ngIf="image == package.packagePictures[0]" >
-                      <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'" >
-                        <div class="package-cover-picture">
-                          <img src={{package.packagePictures[0]}} alt="" />
-                        </div>
-                      </div>
-                      <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
-                        <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
-                          <div class="col-xl-12 mb-4">
-                            <div class="package-other-picture">
-                              <img src={{package.packagePictures[1]}} alt="" />
-                            </div>
-                          </div>
-                          <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'" style="position: relative;">
-                            <div class="package-other-picture">
-                              <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3"><p>+ {{package.packagePictures.length-3}}</p></div>
-                              <img src={{package.packagePictures[2]}} alt="" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </lightgallery>
-
                 <div class="package-details-description mb-4">
-                  <h2>Package Description</h2>
-                  <p class="lh-base">{{package.details.description}}</p>
+                  <h2>About this package</h2>
+                  <p>{{package.details.description}}</p>
+                </div>
+
+                <app-package-calendar></app-package-calendar>
+
+                <div class="list-packages-date d-flex align-items-center gap-2">
+                  <i class="icon-line-calendar"></i>
+                  <p class="mb-0">List of packages availables on the date of 26/01/24</p>
                 </div>
               </section>
 
@@ -304,13 +321,11 @@
               </section>
 
               <section id="activitiessection" class="package-service-section" #activitiessection>
-                <!-- Content for Section 3 -->
                 <h2>Activities Details</h2>
                 <p>This is the content for Section 4.</p>
               </section>
 
               <section id="programsection" class="package-service-section" #programsection>
-                <!-- Content for Section 3 -->
                 <h2>Program</h2>
                 <p></p>
               </section>

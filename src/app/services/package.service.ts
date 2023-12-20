@@ -10,12 +10,16 @@ export class packageService {
       {
         _id: 1,
         packagePictures: [
-          "assets/package/package-item/Umrah-1.webp"
+          "assets/package/package-item/Umrah-1.webp",
+          "assets/package/package-item/Umrah-2.webp",
+          "assets/package/package-item/Umrah-3.webp",
+          "assets/package/package-item/Umrah-4.webp",
+          "assets/package/package-item/Umrah-5.webp"
         ],
         packageTitle: 'Journey of Faith: A Pilgrimage to Makkah',
         packageRating: 4,
         packageType: 'Individiual stay',
-        packageTheme: ['Discover', 'Adventure'],
+        packageTheme: ['Discover', 'Adventure', 'Linguistics', 'Wellness', 'Beach'],
         packagePlace: ['Makkah - Madinah - Riyadh'],
         packageDate: 'Ramadan',
         packagePeriod: 10,
@@ -31,7 +35,6 @@ export class packageService {
         packagepromo: '25% Today',
         details: {
           Type: 'Individiual stay',
-          Theme: ['Discover', 'Discover2'],
           Place: 'Makkah - Madinah',
           Date: 'Ramadan',
           Period: 10,
@@ -40,11 +43,9 @@ export class packageService {
           NbrRoom: 1,
           NbrPassengers: 1,
           NbrNights: 5,
-          description: `1 Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur 
-          enim pulvinar placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere 
-          cubilia curae; Proin purus purus, vulputate et ipsum eget, dignissim malesuada magna. Ut et tincidunt 
-          lacus. Fusce sed eros sem. In rutrum, sapien nec dapibus cursus, lorem tellus condimentum odio, 
-          condimentum pharetra lacus mauris ac urna.`
+          description: `The spiritual journey in Makkah and Madinah is a transformative pilgrimage for Muslims. Makkah, with the sacred Kaaba, 
+          is the focal point of the Hajj pilgrimage, while Madinah, home to the Prophet's Mosque, offers a serene space for reflection and prayer. 
+          These cities symbolize deep spiritual connection, fostering unity and a sense of profound devotion among believers.`
         }
       },
       {

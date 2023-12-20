@@ -11,6 +11,7 @@ import { PackageBookingsSidebarComponent } from './package-bookings-sidebar/pack
 import { LightgalleryModule } from 'lightgallery/angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PackageSearchBarComponent } from './package-search-bar/package-search-bar.component';
+import { PackageCalendarComponent } from './package-calendar/package-calendar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PackageSearchBarComponent } from './package-search-bar/package-search-b
     PackageItemComponent,
     PackageDetailsComponent,
     PackageBookingsSidebarComponent,
-    PackageSearchBarComponent
+    PackageSearchBarComponent,
+    PackageCalendarComponent
   ],
   imports: [
     FormsModule,
