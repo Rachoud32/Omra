@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +12,9 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PackageSearchBarComponent } from './package-search-bar/package-search-bar.component';
 import { PackageCalendarComponent } from './package-calendar/package-calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { PackageCalenderHeaderComponent } from './package-calender-header/package-calender-header.component';
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { PackageCalendarComponent } from './package-calendar/package-calendar.co
     PackageDetailsComponent,
     PackageBookingsSidebarComponent,
     PackageSearchBarComponent,
-    PackageCalendarComponent
+    PackageCalendarComponent,
+    PackageCalenderHeaderComponent
   ],
   imports: [
     FormsModule,
@@ -30,7 +34,13 @@ import { PackageCalendarComponent } from './package-calendar/package-calendar.co
     CommonModule,
     UmrahPackageRoutingModule,
     NgxStarsModule,
-    LightgalleryModule
-  ]
+    LightgalleryModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UmrahPackageModule { }
