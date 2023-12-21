@@ -8,7 +8,7 @@
       <div class="content-wrap pt-0 pb-0">
         <div class="container">
           <div class="row">
-            <div class="col-xl-12 py-3">
+            <div class="col-xl-12 py-3" id="overviewsection" #overviewsection>
               <div class="heading-box">
                 <h2 class="heading-title color-1 mb-0">Package Details</h2>
               </div>
@@ -17,22 +17,27 @@
 
             <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
               <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
-                <div class="row" *ngIf="image == package.packagePictures[0]" >
-                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'" >
+                <div class="row" *ngIf="image == package.packagePictures[0]">
+                  <div
+                    [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'">
                     <div class="package-cover-picture">
                       <img src={{package.packagePictures[0]}} alt="" />
                     </div>
                   </div>
-                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
+                  <div
+                    [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
                     <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
                       <div class="col-xl-12 mb-4">
                         <div class="package-other-picture">
                           <img src={{package.packagePictures[1]}} alt="" />
                         </div>
                       </div>
-                      <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'" style="position: relative;">
+                      <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'"
+                        style="position: relative;">
                         <div class="package-other-picture">
-                          <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3"><p>+ {{package.packagePictures.length-3}}</p></div>
+                          <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3">
+                            <p>+ {{package.packagePictures.length-3}}</p>
+                          </div>
                           <img src={{package.packagePictures[2]}} alt="" />
                         </div>
                       </div>
@@ -73,11 +78,11 @@
 
                       <div class="d-flex align-items-center gap-2 lh-base">
                         <div class="package-details-rating d-flex align-items-center">
-                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
+                          <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
+                            [color]="'#f4c253'"></ngx-stars>
                         </div>
                         <div class="package-details-rating-text d-flex align-items-center gap-1">
-                            <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
+                          <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
                         </div>
                       </div>
                     </div>
@@ -87,15 +92,15 @@
             </div>
 
             <div class="col-xl-9 package-details-box">
-              <section id="overviewsection" #overviewsection>
-                
+              <section>
+
                 <div class="package-details-description mb-4">
                   <h2>About this package</h2>
                   <p>{{package.details.description}}</p>
                 </div>
 
                 <!-- <app-package-calendar></app-package-calendar> -->
-              
+
                 <div class="list-package-offers d-flex align-items-center gap-2 mt-5">
                   <i class="icon-line-calendar"></i>
                   <p class="mb-0">List of offers availables on the date of 26/01/24</p>
@@ -140,10 +145,20 @@
               </section>
 
               <nav class="package-inside-menu mb-4">
-                <ul class="d-flex align-items-center" id="myTab" role="tablist">
-                  <li *ngFor="let item of sections">
-                    <div class="inside-menu-item d-flex flex-column align-items-center" data-bs-toggle="tab" data-bs-target="item.name" [attr.id]="item.name">
-                      <img [attr.src]="item.icon" [attr.style]="item.scale"/><p>{{item.name}}</p>
+                <ul class="d-flex align-items-center nav nav-tabs" id="myTab" role="tablist">
+                  <!-- <li>
+                    <div class="inside-menu-item d-flex flex-column align-items-center" id="overviewsection"
+                      (click)="moveTo('Overview')">
+                      <img src="assets/overview-menu-icon.svg" style="transform: scale(0.9)" />
+                      <p>Overview</p>
+                    </div>
+                  </li> -->
+                  <li *ngFor="let item of sections" class="nav-item">
+                    <div class="nav-link inside-menu-item d-flex flex-column align-items-center" [attr.id]="item.name"
+                      data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" role="tab" [attr.aria-controls]="item.id"
+                      aria-selected="false">
+                      <img [attr.src]="item.icon" [attr.style]="item.scale" />
+                      <p>{{item.name}}</p>
                     </div>
                   </li>
                 </ul>
@@ -158,13 +173,15 @@
                   </li>
                 </ul>
               </nav> -->
-              
-              <div class="tab-content" id="item.name">
-                <section id="flightsection" class="tab-pane fade show active" role="tabpanel" aria-labelledby="flightsection" tabindex="0" #flightsection>
+
+              <div class="tab-content" id="myTabContent">
+                <section id="flightsection" class="tab-pane fade" role="tabpanel" aria-labelledby="flightsection"
+                  tabindex="0" #flightsection>
                   <div class="package-service-section">
                     <h2>Flight Details</h2>
                     <p class="lh-base">
-                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim pulvinar placerat.
+                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
+                      pulvinar placerat.
                     </p>
                     <label for="" class="">
                       <div class="box">
@@ -303,11 +320,13 @@
                   </div>
                 </section>
 
-                <section id="hotelsection" class="tab-pane fade" role="tabpanel" aria-labelledby="hotelsection" tabindex="0" #hotelsection>
+                <section id="hotelsection" class="tab-pane fade" role="tabpanel" aria-labelledby="hotelsection"
+                  tabindex="0" #hotelsection>
                   <div class="package-service-section">
                     <h2>Hotel Details</h2>
-                    <p class="lh-base"> 
-                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim pulvinar placerat.
+                    <p class="lh-base">
+                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
+                      pulvinar placerat.
                     </p>
                     <label for="" class="w-100">
                       <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade"
@@ -368,38 +387,47 @@
                   </div>
                 </section>
 
-                <section id="transfersection" class="package-service-section tab-pane fade" role="tabpanel" aria-labelledby="transfersection" tabindex="0" #transfersection>
+                <section id="transfersection" class="package-service-section tab-pane fade" role="tabpanel"
+                  aria-labelledby="transfersection" tabindex="0" #transfersection>
                   <h2>Transfer Details</h2>
                   <p>This is the content for Section 3.</p>
                 </section>
 
-                <section id="activitiessection" class="package-service-section tab-pane fade" role="tabpanel" aria-labelledby="activitiessection" tabindex="0" #activitiessection>
+                <section id="activitiessection" class="package-service-section tab-pane fade" role="tabpanel"
+                  aria-labelledby="activitiessection" tabindex="0" #activitiessection>
                   <h2>Activities Details</h2>
                   <p>This is the content for Section 4.</p>
                 </section>
 
-                <section id="programsection" class="package-service-section tab-pane fade" role="tabpanel" aria-labelledby="programsection" tabindex="0" #programsection>
+                <section id="programsection" class="package-service-section tab-pane fade" role="tabpanel"
+                  aria-labelledby="programsection" tabindex="0" #programsection>
                   <h2>Program</h2>
                   <p></p>
                 </section>
 
-                <section id="policiessection" class="package-service-section tab-pane fade" role="tabpanel" aria-labelledby="policiessection" tabindex="0" #policiessection>
+                <section id="policiessection" class="package-service-section tab-pane fade" role="tabpanel"
+                  aria-labelledby="policiessection" tabindex="0" #policiessection>
                   <h2>Policies</h2>
                   <div class="d-flex align-items-center gap-2">
                     <i class="icon-line-chevron-right"></i>
                     <h5 class="package-sm-title">Terms And Conditions</h5>
                   </div>
                   <ul>
-                    <li>Umrahme reserves the right to modify the services to accommodate any unforeseen circumstances.</li>
+                    <li>Umrahme reserves the right to modify the services to accommodate any unforeseen circumstances.
+                    </li>
                     <li>Check-in for flight begins 3 hrs. before departure.</li>
                     <li>Passport must be valid for at least six months from the date of departure.</li>
                     <li>Early check-in or Late check-out are subject to availability and will incur extra charges.</li>
                     <li>Any additional extras shall be paid by the guest. (Incl CC guarantee at the hotel).</li>
                     <li>Failure to vacate the room as per the checkout time will result in additional charges.</li>
-                    <li>Trips & activities may be change or cancel due weather or any other unforeseen circumstances.</li>
-                    <li>Modifications are subject to airline, hotel & Umrahme policy, and may incur additional charges.</li>
-                    <li>Umrahme is not responsible if passengers are unable to travel due to passport or visa issues.</li>
-                    <li>Flight timings may result in early check-in or late check-out and may incur additional charges.</li>
+                    <li>Trips & activities may be change or cancel due weather or any other unforeseen circumstances.
+                    </li>
+                    <li>Modifications are subject to airline, hotel & Umrahme policy, and may incur additional charges.
+                    </li>
+                    <li>Umrahme is not responsible if passengers are unable to travel due to passport or visa issues.
+                    </li>
+                    <li>Flight timings may result in early check-in or late check-out and may incur additional charges.
+                    </li>
                     <li>Refund will not be applicable for any unutilized service.</li>
                   </ul>
                   <div class="d-flex align-items-center gap-2">
@@ -407,13 +435,15 @@
                     <h5 class="package-sm-title">Cancellation Policy</h5>
                   </div>
                   <ul>
-                    <li>For any cancellation please connect with our customer support to check on the applicable policy of each
-                    travel components selected on the package.</li>
+                    <li>For any cancellation please connect with our customer support to check on the applicable policy
+                      of each
+                      travel components selected on the package.</li>
                     <li>Our standard package policy is governed by the following conditions</li>
                     <li>Flight part of the package is non-refundable after the booking is paid and confirmed</li>
                     <li>Land Services ( Hotel, Transfers, Tours & Excursion)</li>
-                    <li>Partial/Full Refundable upto 14 days prior to departure subject to each travel component and its applicable
-                    policy</li>
+                    <li>Partial/Full Refundable upto 14 days prior to departure subject to each travel component and its
+                      applicable
+                      policy</li>
                     <li>Subject to a fee of 50% of the total amount from 7 to 14 days prior to departure</li>
                     <li>Subject to a fee of 100% of the total amount from less than 7 days prior to departure date</li>
                     <li>Subject to a fee of 100% of the total amount in case of no show</li>

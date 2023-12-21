@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { packageService } from 'src/app/services/package.service';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
@@ -23,12 +23,6 @@ export class PackageDetailsComponent implements OnInit {
   selectedOffer: string = '';
 
   sections: any[] = [
-    {
-      name: "Overview",
-      icon: "assets/overview-menu-icon.svg",
-      scale: "transform: scale(0.9);",
-      id: "overviewsection"
-    },
     {
       name: "Flights",
       icon: "assets/plane-menu-icon.svg",
@@ -86,85 +80,23 @@ export class PackageDetailsComponent implements OnInit {
     const id = this.route.snapshot.params['id']
     let data = this.packageService.dataPackages()
     this.package = data.find((el) => id == el._id)
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.onScroll(); // Trigger onScroll when the route changes
-      }
-    });
+
   }
 
 
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    const offset = this.el.nativeElement.offsetTop;
-    this.sections.forEach((section) => {
-      const el = document.getElementById(section.id);
-      el?.classList.remove('active')
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= offset + 100 && rect.bottom >= offset + 100) {
-          this.activeSection = section.name
-          document.getElementById(section.name)?.classList.add('active')
-        }
-        else {
-          document.getElementById(section.name)?.classList.remove('active')
-        }
-      }
-    });
-  }
 
-  moveTo(value: any) {
-    if (value == 'Overview') {
-      window.scrollTo({
-        top: this.overviewsection?.nativeElement.offsetTop + 450,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Overview'
-    }
-    if (value == 'Flights') {
-      window.scrollTo({
-        top: this.flightsection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Flights'
-    }
-    if (value == 'Hotels') {
-      window.scrollTo({
-        top: this.hotelsection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Hotels'
-    }
-    if (value == 'Transfers') {
-      window.scrollTo({
-        top: this.transfersection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Transfers'
-    }
-    if (value == 'Activities') {
-      window.scrollTo({
-        top: this.activitiessection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Activities'
-    }
-    if (value == 'Program') {
-      window.scrollTo({
-        top: this.programsection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Program'
-    }
-    if (value == 'Policies') {
-      window.scrollTo({
-        top: this.policiessection?.nativeElement.offsetTop + 370,
-        behavior: 'smooth',
-      });
-      this.activeSection = 'Policies'
-    }
-  }
+
+  // moveTo(value: any) {
+  //   if (value == 'Overview') {
+  //     window.scrollTo({
+  //       top: this.overviewsection?.nativeElement.offsetTop + 450,
+  //       behavior: 'smooth',
+  //     });
+  //     this.activeSection = 'Overview'
+  //   }
+
+  // }
 
   checkOffer(value: string) {
     this.selectedOffer = value;
