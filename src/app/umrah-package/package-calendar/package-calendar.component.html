@@ -9,7 +9,7 @@
   </div>
   <ul>
     <li *ngFor="let event of day.events">
-      ${{ event.title }}
+      <p class="mb-0"><span>$</span>{{ event.title }}</p>
     </li>
   </ul>
 </ng-template>
@@ -18,8 +18,8 @@
   <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events"
     [cellTemplate]="customCellTemplate">
   </mwl-calendar-month-view>
-  <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events">
+  <!-- <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events">
   </mwl-calendar-week-view>
   <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events">
-  </mwl-calendar-day-view>
+  </mwl-calendar-day-view> -->
 </div>

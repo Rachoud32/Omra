@@ -4596,20 +4596,20 @@ app-package-bookings-sidebar,
     margin-bottom: 0;
 }
 
-.list-packages-date {
+.list-package-offers {
     background: var(--omra-white);
     padding: 15px 20px;
     border-bottom: 1px solid var(--omra-light-gray);
 }
 
-.list-packages-date p {
+.list-package-offers p {
     font-size: var(--fs-18);
     font-weight: 400 !important;
     color: var(--omra-base);
     line-height: normal;
 }
 
-.list-packages-date i {
+.list-package-offers i {
     color: var(--omra-second);
     line-height: normal;
 }
@@ -4738,6 +4738,122 @@ app-package-bookings-sidebar,
 .package-hotel-carousel .carousel-control-next,
 .package-hotel-carousel .carousel-control-prev {
     z-index: 4;
+}
+/* ----------------------------------------------------------------
+	Package Calender Details
+-----------------------------------------------------------------*/
+app-package-calender-header {
+    margin-bottom: 20px;
+}
+
+.package-calendar-header {
+    background: var(--omra-base);
+    padding: 10px 20px;
+}
+
+.package-calendar-month {
+    font-size: var(--fs-20);
+    font-weight: 400 !important;
+    color: var(--omra-white);
+    margin-bottom: 0;
+}
+
+.calendar-chevron-btn {
+    background: transparent;
+    padding: 0;
+    color: var(--omra-white);
+    font-size: var(--fs-20);
+    cursor: pointer;
+}
+
+.cal-month-view .cal-header .cal-cell {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px 0 !important;
+    line-height: 24px;
+    background: var(--omra-second);
+    color: var(--omra-white);
+}
+
+.cal-month-view .cal-cell-row .cal-cell:hover, .cal-month-view .cal-cell.cal-has-events.cal-open {
+    background-color: var(--omra-second);
+}
+
+.cal-month-view .cal-header .cal-cell:hover {
+    background-color: var(--omra-second) !important;
+}
+
+.cal-month-view .cal-days {
+    border-color: var(--omra-light-gray) !important;
+}
+
+.cal-month-view .cal-day-cell {
+    min-height: 80px !important;
+}
+
+.cal-month-view .cal-days .cal-cell-row {
+    border-bottom-color: var(--omra-light-gray) !important;
+}
+
+.cal-month-view .cal-cell-top {
+    min-height: 50px !important;
+    height: 50px;
+}
+
+.cal-month-view .cal-day-number {
+    font-size: var(--fs-18) !important;
+    color: var(--omra-gray) !important;
+    margin-top: 10px !important;
+    opacity: 0.8 !important;
+    line-height: normal;
+}
+
+.cal-month-view .cal-day-badge {
+    margin-top: 10px !important;
+    padding: 5px 8px !important;
+    font-size: var(--fs-12) !important;
+    font-weight: 400 !important;
+    border-radius: 0 !important;
+    background: var(--omra-second) !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today {
+    background-color: var(--omra-extra) !important;
+}
+
+.cal-month-view .cal-day-cell ul {
+    margin-bottom: 0 !important;
+}
+
+.cal-month-view .cal-day-cell ul li {
+    padding: 0 10px;
+}
+
+.cal-month-view .cal-day-cell ul li p {
+    font-size: var(--fs-18);
+    color: var(--omra-base);
+    font-weight: 400;
+}
+
+.cal-month-view .cal-day-cell ul li p span {
+    font-size: var(--fs-12);
+}
+
+.cal-month-view .cal-out-month .cal-day-badge, .cal-month-view .cal-out-month .cal-event,
+.cal-month-view .cal-out-month ul li {
+    opacity: 0.3 !important;
+}
+
+.cal-month-view .cal-day-cell.cal-past {
+    background: #f5f5f5 !important;
+}
+
+.cal-month-view .cal-day-cell.cal-past ul li p,
+.cal-month-view .cal-day-cell.cal-past .cal-day-badge {
+    opacity: 0.3;
 }
 
 /* ----------------------------------------------------------------

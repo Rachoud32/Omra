@@ -1,37 +1,31 @@
-<div class="row text-center">
-    <div class="col-md-4">
-        <div class="btn-group">
-            <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+<div class="package-calendar-header container">
+
+        <div class="d-flex align-items-center justify-content-between gap-4">
+            <div class="calendar-chevron-btn" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
                 (viewDateChange)="viewDateChange.next(viewDate)">
-                Previous
+                <i class="icon-line-chevron-left"></i>
             </div>
-            <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate"
+            <h3 class="package-calendar-month">{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</h3>
+            <div class="calendar-chevron-btn" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
                 (viewDateChange)="viewDateChange.next(viewDate)">
-                Today
-            </div>
-            <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
-                (viewDateChange)="viewDateChange.next(viewDate)">
-                Next
+                <i class="icon-line-chevron-right"></i>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h3>{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</h3>
-    </div>
-    <div class="col-md-4">
-        <div class="btn-group">
-            <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Month)"
-                [class.active]="view === CalendarView.Month">
-                Month
+        <!-- <div class="col-md-4">
+            <div class="btn-group">
+                <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Month)"
+                    [class.active]="view === CalendarView.Month">
+                    Month
+                </div>
+                <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Week)"
+                    [class.active]="view === CalendarView.Week">
+                    Week
+                </div>
+                <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Day)"
+                    [class.active]="view === CalendarView.Day">
+                    Day
+                </div>
             </div>
-            <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Week)"
-                [class.active]="view === CalendarView.Week">
-                Week
-            </div>
-            <div class="btn btn-primary" (click)="viewChange.emit(CalendarView.Day)"
-                [class.active]="view === CalendarView.Day">
-                Day
-            </div>
-        </div>
-    </div>
+        </div> -->
+  
 </div>
