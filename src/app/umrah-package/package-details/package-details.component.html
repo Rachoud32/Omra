@@ -43,14 +43,14 @@
             </lightgallery>
 
             <div class="col-xl-12">
-              <div class="package-header d-flex align-items-start justify-content-between gap-3 mb-3">
+              <div class="package-header d-flex align-items-center justify-content-between gap-3 mb-4">
                 <div class="package-header-content w-100">
-                  <div class="d-flex align-items-start justify-content-between gap-5">
+                  <div class="d-flex align-items-center justify-content-between gap-5">
                     <div class="d-flex flex-column row-gap-2">
                       <h5 class="package-details-title">
                         Spiritual Journey - Makkah & Madinah
                       </h5>
-                      <div class="d-flex flex-wrap align-items-center lh-base gap-2 mb-2">
+                      <div class="d-flex flex-wrap align-items-center lh-base gap-2">
                         <div class="package-details-type lh-base">
                           <p class="m-0">{{package.packageType}}</p>
                         </div>
@@ -59,23 +59,25 @@
                         </div>
                       </div>
                     </div>
-                    <div class="d-flex flex-column align-items-end lh-base row-gap-1 mb-2">
+
+                    <div class="d-flex align-items-center gap-4">
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-map-pin"></i>
                         <div class="package-details-place">{{package.details.Place}}</div>
                       </div>
+
                       <div class="d-flex align-items-center lh-base gap-2">
                         <i class="icon-line-moon"></i>
                         <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
                       </div>
+
                       <div class="d-flex align-items-center gap-2 lh-base">
-                        <div class="d-flex align-items-center">
+                        <div class="package-details-rating d-flex align-items-center">
                             <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
                                 [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
                         </div>
-                        <div class="d-flex align-items-center gap-1">
-                            <p class="mb-0">{{package.packageRating}}</p>
-                            <p class="mb-0">(207)</p>
+                        <div class="package-details-rating-text d-flex align-items-center gap-1">
+                            <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
                         </div>
                       </div>
                     </div>
@@ -87,7 +89,6 @@
             <div class="col-xl-9 package-details-box">
               <section id="overviewsection" #overviewsection>
                 
-
                 <div class="package-details-description mb-4">
                   <h2>About this package</h2>
                   <p>{{package.details.description}}</p>
@@ -95,10 +96,47 @@
 
                 <!-- <app-package-calendar></app-package-calendar> -->
               
-                <div class="list-package-offers d-flex align-items-center gap-2 my-5">
+                <div class="list-package-offers d-flex align-items-center gap-2 mt-5">
                   <i class="icon-line-calendar"></i>
                   <p class="mb-0">List of offers availables on the date of 26/01/24</p>
                 </div>
+                <!-- <div class="package-service-section">
+                  <div class="row">
+                    <div class="col-md-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
+                      <input [attr.id]="offer.title" type="radio" name="package-offer" [attr.value]="offer.title" (click)="checkOffer(offer.title)" [checked]="selectedOffer == offer.title">
+                      <label class="package-offer-card" [attr.for]="offer.title">
+                        <div class="package-offer-header d-flex align-items-center justify-content-between gap-3 mb-1 px-3">
+                          <div class="title">{{offer.title}}</div>
+                          <p class="mb-0"><span>$</span>{{offer.price}}</p>
+                        </div>
+                        <hr>
+                        <div class="package-offer-body d-flex align-items-center justify-content-between gap-3 px-3">
+                          <div class="offer-detail d-flex align-items-center gap-2">
+                            <i class="icon-line-clock"></i>
+                            <div class="d-flex flex-column column-gap-1">
+                              <p class="mb-0">Duration</p>
+                              <div>{{offer.nbrdays}}</div>
+                            </div>
+                          </div>
+                          <div class="offer-detail d-flex align-items-center gap-2">
+                            <i class="icon-line-clock"></i>
+                            <div class="d-flex flex-column column-gap-1">
+                              <p class="mb-0">Departure Type</p>
+                              <div>{{offer.departuretype}}</div>
+                            </div>  
+                          </div>
+                          <div class="offer-detail d-flex align-items-center gap-2">
+                            <i class="icon-line-clock"></i>
+                            <div class="d-flex flex-column column-gap-1">
+                              <p class="mb-0">Arrangement</p>
+                              <div>{{offer.arrangementtype}}</div>
+                            </div>
+                          </div>    
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div> -->
               </section>
 
               <nav class="package-inside-menu mb-4">
@@ -121,7 +159,7 @@
                 </ul>
               </nav> -->
               
-              <div class="tab-content" id="myTabContent">
+              <div class="tab-content" id="item.name">
                 <section id="flightsection" class="tab-pane fade show active" role="tabpanel" aria-labelledby="flightsection" tabindex="0" #flightsection>
                   <div class="package-service-section">
                     <h2>Flight Details</h2>

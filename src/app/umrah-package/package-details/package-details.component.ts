@@ -20,6 +20,7 @@ export class PackageDetailsComponent implements OnInit {
   @ViewChild('policiessection') public policiessection?: ElementRef;
   package: any
   activeSection: any
+  selectedOffer: string = '';
 
   sections: any[] = [
     {
@@ -163,5 +164,9 @@ export class PackageDetailsComponent implements OnInit {
       });
       this.activeSection = 'Policies'
     }
+  }
+
+  checkOffer(value: string) {
+    this.selectedOffer = value;
   }
 }

@@ -45,7 +45,49 @@ export class packageService {
           NbrNights: 5,
           description: `The spiritual journey in Makkah and Madinah is a transformative pilgrimage for Muslims. Makkah, with the sacred Kaaba, 
           is the focal point of the Hajj pilgrimage, while Madinah, home to the Prophet's Mosque, offers a serene space for reflection and prayer. 
-          These cities symbolize deep spiritual connection, fostering unity and a sense of profound devotion among believers.`
+          These cities symbolize deep spiritual connection, fostering unity and a sense of profound devotion among believers.`,
+          offers: [
+            {
+              title : 'Offer 1',
+              price : '1000',
+              nbrdays: '4',
+              nbrnights:'3',
+              departuretype:'guaranteed',
+              arrangementtype:'LPD',
+            },
+            {
+              title : 'Offer 2',
+              price : '960',
+              nbrdays: '5',
+              nbrnights:'4',
+              departuretype:'not guaranteed',
+              arrangementtype:'LPD',
+            },
+            {
+              title : 'Offer 3',
+              price : '960',
+              nbrdays: '5',
+              nbrnights:'4',
+              departuretype:'not guaranteed',
+              arrangementtype:'LPD',
+            },
+            {
+              title : 'Offer 4',
+              price : '960',
+              nbrdays: '5',
+              nbrnights:'4',
+              departuretype:'not guaranteed',
+              arrangementtype:'LPD',
+            },
+            {
+              title : 'Offer 5',
+              price : '960',
+              nbrdays: '5',
+              nbrnights:'4',
+              departuretype:'not guaranteed',
+              arrangementtype:'LPD',
+            },
+          ] ,
         }
       },
       {

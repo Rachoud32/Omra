@@ -4554,21 +4554,34 @@ app-package-bookings-sidebar,
 
 .package-header {
     background: var(--omra-white);
-    padding: 25px 20px 20px 20px;
+    padding: 25px 20px;
     /* border-bottom: 5px solid var(--omra-extra); */
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
 
 .package-header .package-header-content i {
-    font-size: var(--fs-16);
+    font-size: var(--fs-18);
     color: var(--omra-second);
+    background: var(--omra-extra);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .package-header .package-header-content .package-details-place,
 .package-header .package-header-content .package-details-nights {
     font-size: var(--fs-15);
     font-weight: 300;
-    color: var(--omra-gray);
+    color: var(--omra-base);
     white-space: nowrap;
+}
+
+.package-details-rating-text p {
+    font-size: var(--fs-15);
+    font-weight: 300;
+    color: var(--omra-base);
 }
 
 .package-header .package-header-content .package-details-title {
@@ -4611,6 +4624,7 @@ app-package-bookings-sidebar,
 
 .list-package-offers i {
     color: var(--omra-second);
+    padding-bottom: 3px;
     line-height: normal;
 }
 
@@ -4739,6 +4753,47 @@ app-package-bookings-sidebar,
 .package-hotel-carousel .carousel-control-prev {
     z-index: 4;
 }
+
+.package-offer-item input[type="radio"]:checked+label:before,
+input[type="radio"]:not(:checked)+label:before,
+.package-offer-item input[type="radio"]:checked+label::after,
+input[type="radio"]:not(:checked)+label::after {
+    display: none;
+}
+
+.package-offer-card {
+    border: 1px solid var(--omra-light-gray);
+    border-bottom: 5px solid var(--omra-light-gray);
+    margin-bottom: 15px;
+    padding: 15px 0px !important;
+    width: 100%;
+    font-size: var(--fs-14);
+}
+
+.package-offer-card hr {
+    margin: 10px 0 15px;
+}
+
+.package-offer-card .title {
+    font-size: var(--fs-16);
+    color: var(--omra-black);
+}
+
+.package-offer-card .offer-detail i {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-offer-card .offer-detail p {
+    line-height: normal;
+    font-size: var(--fs-13);
+}
+
 /* ----------------------------------------------------------------
 	Package Calender Details
 -----------------------------------------------------------------*/
