@@ -25,7 +25,7 @@ export class FlightService {
         flightNumber: "TUR0606",
         details: {
           class: "First",
-          baggage: "1 piece of checked baggage (per ad.)",
+          luggage: "1 piece of checked luggage (per ad.)",
           timeOfDeparture: "14:10",
           timeOfArrival: "17:10",
           duration: "02:00",
@@ -51,7 +51,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -78,7 +78,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -105,7 +105,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -135,7 +135,7 @@ export class FlightService {
         flightNumber: "TUR0606",
         details: {
           class: "First",
-          baggage: "1 piece of checked baggage (per ad.)",
+          luggage: "1 piece of checked luggage (per ad.)",
           timeOfDeparture: "14:10",
           timeOfArrival: "17:10",
           duration: "02:00",
@@ -161,7 +161,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -188,7 +188,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -215,7 +215,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -245,7 +245,7 @@ export class FlightService {
         flightNumber: "TUR0606",
         details: {
           class: "First",
-          baggage: "1 piece of checked baggage (per ad.)",
+          luggage: "1 piece of checked luggage (per ad.)",
           timeOfDeparture: "14:10",
           timeOfArrival: "17:10",
           duration: "02:00",
@@ -271,7 +271,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -298,7 +298,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -325,7 +325,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -355,7 +355,7 @@ export class FlightService {
         flightNumber: "TUR0606",
         details: {
           class: "First",
-          baggage: "1 piece of checked baggage (per ad.)",
+          luggage: "1 piece of checked luggage (per ad.)",
           timeOfDeparture: "14:10",
           timeOfArrival: "17:10",
           duration: "02:00",
@@ -381,7 +381,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -408,7 +408,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",
@@ -435,7 +435,7 @@ export class FlightService {
             flightNumber: "TUR0606",
             details: {
               class: "First",
-              baggage: "1 piece of checked baggage (per ad.)",
+              luggage: "1 piece of checked luggage (per ad.)",
               timeOfDeparture: "14:10",
               timeOfArrival: "17:10",
               duration: "02:00",

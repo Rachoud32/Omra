@@ -50,39 +50,47 @@
             <div class="col-xl-12">
               <div class="package-header d-flex align-items-center justify-content-between gap-3 mb-4">
                 <div class="package-header-content w-100">
-                  <div class="d-flex align-items-center justify-content-between gap-5">
-                    <div class="d-flex flex-column row-gap-2">
-                      <h5 class="package-details-title">
-                        Spiritual Journey - Makkah & Madinah
-                      </h5>
-                      <div class="d-flex flex-wrap align-items-center lh-base gap-2">
-                        <div class="package-details-type lh-base">
-                          <p class="m-0">{{package.packageType}}</p>
+                  
+                  <div class="package-header-card d-flex align-items-center justify-content-between gap-5">
+                    <div class="container">
+                      <div class="row gy-3">
+                        <div class="col-xl-6 col-lg-12 col-md-12">
+                          <div class="d-flex flex-column row-gap-2">
+                            <h5 class="package-details-title">
+                              Spiritual Journey - Makkah & Madinah
+                            </h5>
+                            <div class="d-flex flex-wrap align-items-center lh-base gap-2">
+                              <div class="package-details-type lh-base">
+                                <p class="m-0">{{package.packageType}}</p>
+                              </div>
+                              <div class="package-details-theme lh-base" *ngFor="let theme of package.packageTheme">
+                                <p class="m-0">{{theme}}</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="package-details-theme lh-base" *ngFor="let theme of package.packageTheme">
-                          <p class="m-0">{{theme}}</p>
-                        </div>
-                      </div>
-                    </div>
+                        <div class="col-xl-6 col-lg-12 col-md-12">
+                          <div class="header-hotel-details d-flex align-items-center gap-4">
+                            <div class="d-flex align-items-center lh-base gap-2">
+                              <i class="icon-line-map-pin"></i>
+                              <div class="package-details-place">{{package.details.Place}}</div>
+                            </div>
 
-                    <div class="d-flex align-items-center gap-4">
-                      <div class="d-flex align-items-center lh-base gap-2">
-                        <i class="icon-line-map-pin"></i>
-                        <div class="package-details-place">{{package.details.Place}}</div>
-                      </div>
+                            <div class="d-flex align-items-center lh-base gap-2">
+                              <i class="icon-line-moon"></i>
+                              <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                            </div>
 
-                      <div class="d-flex align-items-center lh-base gap-2">
-                        <i class="icon-line-moon"></i>
-                        <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-2 lh-base">
-                        <div class="package-details-rating d-flex align-items-center">
-                          <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
-                            [color]="'#f4c253'"></ngx-stars>
-                        </div>
-                        <div class="package-details-rating-text d-flex align-items-center gap-1">
-                          <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
+                            <div class="d-flex align-items-center gap-2 lh-base">
+                              <div class="package-details-rating d-flex align-items-center">
+                                <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
+                                  [color]="'#f4c253'"></ngx-stars>
+                              </div>
+                              <div class="package-details-rating-text d-flex align-items-center gap-1">
+                                <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -99,53 +107,55 @@
                   <p>{{package.details.description}}</p>
                 </div>
 
-                <!-- <app-package-calendar></app-package-calendar> -->
+                <app-package-calendar></app-package-calendar>
 
                 <div class="list-package-offers d-flex align-items-center gap-2 mt-5">
                   <i class="icon-line-calendar"></i>
                   <p class="mb-0">List of offers availables on the date of 26/01/24</p>
                 </div>
-                <!-- <div class="package-service-section">
+                <div class="package-service-section package-list-offers-section">
                   <div class="row">
                     <div class="col-md-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
-                      <input [attr.id]="offer.title" type="radio" name="package-offer" [attr.value]="offer.title" (click)="checkOffer(offer.title)" [checked]="selectedOffer == offer.title">
-                      <label class="package-offer-card" [attr.for]="offer.title">
-                        <div class="package-offer-header d-flex align-items-center justify-content-between gap-3 mb-1 px-3">
-                          <div class="title">{{offer.title}}</div>
-                          <p class="mb-0"><span>$</span>{{offer.price}}</p>
-                        </div>
-                        <hr>
-                        <div class="package-offer-body d-flex align-items-center justify-content-between gap-3 px-3">
-                          <div class="offer-detail d-flex align-items-center gap-2">
-                            <i class="icon-line-clock"></i>
-                            <div class="d-flex flex-column column-gap-1">
-                              <p class="mb-0">Duration</p>
-                              <div>{{offer.nbrdays}}</div>
-                            </div>
+                      <input [attr.id]="offer.title" type="radio" name="package-offer" [attr.value]="offer.title" [checked]="selectedOffer == offer.title">
+                      <label [attr.for]="offer.title" (click)="checkOffer(offer.title)">
+                        <div class="package-offer-card">
+                          <div class="package-offer-header d-flex align-items-center justify-content-between gap-3 px-3">
+                            <div class="title">{{offer.title}}</div>
+                            <p class="package-offer-price mb-0"><span>$</span>{{offer.price}}</p>
                           </div>
-                          <div class="offer-detail d-flex align-items-center gap-2">
-                            <i class="icon-line-clock"></i>
-                            <div class="d-flex flex-column column-gap-1">
-                              <p class="mb-0">Departure Type</p>
-                              <div>{{offer.departuretype}}</div>
-                            </div>  
-                          </div>
-                          <div class="offer-detail d-flex align-items-center gap-2">
-                            <i class="icon-line-clock"></i>
-                            <div class="d-flex flex-column column-gap-1">
-                              <p class="mb-0">Arrangement</p>
-                              <div>{{offer.arrangementtype}}</div>
+                          <hr>
+                          <div class="package-offer-body d-flex flex-wrap align-items-center justify-content-between gap-3 px-3">
+                            <div class="offer-detail d-flex align-items-center gap-2">
+                              <i class="icon-line-clock"></i>
+                              <div class="d-flex flex-column column-gap-1">
+                                <p class="offer-label mb-0">Duration</p>
+                                <div class="offer-text">{{offer.nbrdays}} days</div>
+                              </div>
                             </div>
-                          </div>    
+                            <div class="offer-detail d-flex align-items-center gap-2">
+                              <i class="icon-line-check"></i>
+                              <div class="d-flex flex-column column-gap-1">
+                                <p class="offer-label mb-0">Departure Type</p>
+                                <div class="offer-text">{{offer.departuretype}}</div>
+                              </div>  
+                            </div>
+                            <div class="offer-detail d-flex align-items-center gap-2">
+                              <i class="icon-line-briefcase"></i>
+                              <div class="d-flex flex-column column-gap-1">
+                                <p class="offer-label mb-0">Arrangement</p>
+                                <div class="offer-text">{{offer.arrangementtype}}</div>
+                              </div>
+                            </div>    
+                          </div>
                         </div>
                       </label>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </section>
 
-              <nav class="package-inside-menu mb-4">
-                <ul class="d-flex align-items-center nav nav-tabs" id="myTab" role="tablist">
+              <nav class="package-inside-menu">
+                <ul class="d-flex align-items-center" id="myTab" role="tablist">
                   <!-- <li>
                     <div class="inside-menu-item d-flex flex-column align-items-center" id="overviewsection"
                       (click)="moveTo('Overview')">
@@ -154,9 +164,9 @@
                     </div>
                   </li> -->
                   <li *ngFor="let item of sections" class="nav-item">
-                    <div class="nav-link inside-menu-item d-flex flex-column align-items-center" [attr.id]="item.name"
+                    <div [attr.class]="'nav-link inside-menu-item d-flex flex-column align-items-center '+(item.id == 'flightsection' && 'active')" [attr.id]="item.name"
                       data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" role="tab" [attr.aria-controls]="item.id"
-                      aria-selected="false">
+                      [attr.aria-selected]="item.id == 'flightsection'">
                       <img [attr.src]="item.icon" [attr.style]="item.scale" />
                       <p>{{item.name}}</p>
                     </div>
@@ -174,216 +184,490 @@
                 </ul>
               </nav> -->
 
-              <div class="tab-content" id="myTabContent">
-                <section id="flightsection" class="tab-pane fade" role="tabpanel" aria-labelledby="flightsection"
+              <div class="package-offer-details tab-content" id="myTabContent">
+                <section id="flightsection" class="package-flights tab-pane fade show active" role="tabpanel" aria-labelledby="flightsection"
                   tabindex="0" #flightsection>
                   <div class="package-service-section">
                     <h2>Flight Details</h2>
-                    <p class="lh-base">
-                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
-                      pulvinar placerat.
-                    </p>
-                    <label for="" class="">
-                      <div class="box">
-                        <div class="row m-0">
-                          <div class="col-lg-2 service ps-0">
-                            <div id="service-box-pic" class="image-box">
-                              <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
-                            </div>
-                          </div>
-                          <div class="col-lg-10 service-details">
-                            <div class="row">
-                              <div class="col-lg-12">
-                                <div class="flight-label d-flex align-items-start justify-content-between">
-                                  <div class="d-flex align-items-center">
-                                    <i class="icon-line-chevron-right"></i>
-                                    <div class="flight-direction">Departure flight</div>
-                                  </div>
-                                  <div class="flight-label-content d-flex align-items-center gap-3">
-                                    <div class="flight-class">Economic</div>
-                                    <div class="service-price">
-                                      <span>$</span>1200<span class="price-text"> / motamar</span>
-                                    </div>
-                                  </div>
+                    <div class="row gy-3">
+                      <div class="col-xl-6 col-md-6">
+                        <label for="" class="">
+                          <div class="box">
+                            <div class="row m-0">
+                              <div class="col-lg-12 service h-100">
+                                <div id="service-box-pic" class="image-box">
+                                  <img src="assets/flight/turkish-air-offer.webp" class="d-block w-100" alt="" />
                                 </div>
-                                <hr>
-                                <div class="details-row">
-                                  <div class="details-block">
-                                    <div class="time-block">
-                                      <span class="time">14:10</span>
+                              </div>
+                              <div class="col-lg-12 service-details">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="flight-label d-flex align-items-center justify-content-between">
+                                      <div class="flight-direction">Departure flight</div>
+                                      <div class="flight-class">Economic</div>
                                     </div>
-                                    <span class="port">Istanbul (IST)</span>
-                                    <div class="date-block">
-                                      <span class="date">01 nov. 2023</span>
-                                    </div>
-                                  </div>
-                                  <div class="middle-block text-center w-100">
-                                    <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
-                                      <i class="icon-line-clock"></i>
-                                      <span>02:00</span>
-                                    </div>
-                                    <div class="flight-line-icon">
-                                      <svg viewBox="0 0 715.62 566.3">
-                                        <path
-                                          d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
-                                          style="stroke-width:0px;" />
-                                      </svg>
-                                    </div>
-                                    <span class="total-stop">Direct</span>
-                                    <div class="flight-no">
-                                      <span>TUR0606</span>
-                                    </div>
-                                  </div>
-                                  <div class="details-block text-end align-items-end">
-                                    <div class="time-block">
-                                      <span class="time">17:10</span>
-                                    </div>
-                                    <span class="port">Jeddah (JED)</span>
-                                    <div class="date-block">
-                                      <span class="date">01 nov. 2023</span>
+                                    <hr>
+                                    <div class="details-row">
+                                      <div class="details-block">
+                                        <div class="time-block">
+                                          <span class="time">14:10</span>
+                                        </div>
+                                        <span class="port">Istanbul (IST)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                      <div class="middle-block text-center w-100">
+                                        <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                          <i class="icon-line-clock"></i>
+                                          <span>02:00</span>
+                                        </div>
+                                        <div class="flight-line-icon">
+                                          <svg viewBox="0 0 715.62 566.3">
+                                            <path
+                                              d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                              style="stroke-width:0px;" />
+                                          </svg>
+                                        </div>
+                                        <span class="total-stop">Direct</span>
+                                        <div class="flight-no">
+                                          <span>TUR0606</span>
+                                        </div>
+                                      </div>
+                                      <div class="details-block text-end align-items-end">
+                                        <div class="time-block">
+                                          <span class="time">17:10</span>
+                                        </div>
+                                        <span class="port">Jeddah (JED)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </label>
                       </div>
-                    </label>
-                    <label for="" class="">
-                      <div class="box">
-                        <div class="row m-0">
-                          <div class="col-lg-2 service ps-0">
-                            <div id="service-box-pic" class="image-box">
-                              <img src="assets/flight/turkish-airlines.svg" class="d-block w-100" alt="" />
-                            </div>
-                          </div>
-                          <div class="col-lg-10 service-details">
-                            <div class="row">
-                              <div class="col-lg-12">
-                                <div class="flight-label d-flex align-items-start justify-content-between">
-                                  <div class="d-flex align-items-center">
-                                    <i class="icon-line-chevron-right"></i>
-                                    <div class="flight-direction">Return flight</div>
-                                  </div>
-                                  <div class="flight-label-content d-flex align-items-center gap-3">
-                                    <div class="flight-class">Economic</div>
-                                    <div class="service-price">
-                                      <span>$</span>1200<span class="price-text"> / motamar</span>
-                                    </div>
-                                  </div>
+                      <div class="col-xl-6 col-md-6">
+                        <label for="" class="">
+                          <div class="box">
+                            <div class="row m-0">
+                              <div class="col-lg-12 service h-100">
+                                <div id="service-box-pic" class="image-box">
+                                  <img src="assets/flight/saudia-airlines-offer.webp" class="d-block w-100" alt="" />
                                 </div>
-                                <hr>
-                                <div class="details-row">
-                                  <div class="details-block">
-                                    <div class="time-block">
-                                      <span class="time">14:10</span>
+                              </div>
+                              <div class="col-lg-12 service-details">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="flight-label d-flex align-items-center justify-content-between">
+                                      <div class="flight-direction">Return flight</div>
+                                      <div class="flight-class">Economic</div>
                                     </div>
-                                    <span class="port">Istanbul (IST)</span>
-                                    <div class="date-block">
-                                      <span class="date">01 nov. 2023</span>
-                                    </div>
-                                  </div>
-                                  <div class="middle-block text-center w-100">
-                                    <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
-                                      <i class="icon-line-clock"></i>
-                                      <span>02:00</span>
-                                    </div>
-                                    <div class="flight-line-icon">
-                                      <svg viewBox="0 0 715.62 566.3">
-                                        <path
-                                          d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
-                                          style="stroke-width:0px;" />
-                                      </svg>
-                                    </div>
-                                    <span class="total-stop">Direct</span>
-                                    <div class="flight-no">
-                                      <span>TUR0606</span>
-                                    </div>
-                                  </div>
-                                  <div class="details-block text-end align-items-end">
-                                    <div class="time-block">
-                                      <span class="time">17:10</span>
-                                    </div>
-                                    <span class="port">Jeddah (JED)</span>
-                                    <div class="date-block">
-                                      <span class="date">01 nov. 2023</span>
+                                    <hr>
+                                    <div class="details-row">
+                                      <div class="details-block">
+                                        <div class="time-block">
+                                          <span class="time">14:10</span>
+                                        </div>
+                                        <span class="port">Istanbul (IST)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                      <div class="middle-block text-center w-100">
+                                        <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                          <i class="icon-line-clock"></i>
+                                          <span>02:00</span>
+                                        </div>
+                                        <div class="flight-line-icon">
+                                          <svg viewBox="0 0 715.62 566.3">
+                                            <path
+                                              d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                              style="stroke-width:0px;" />
+                                          </svg>
+                                        </div>
+                                        <span class="total-stop">Direct</span>
+                                        <div class="flight-no">
+                                          <span>TUR0606</span>
+                                        </div>
+                                      </div>
+                                      <div class="details-block text-end align-items-end">
+                                        <div class="time-block">
+                                          <span class="time">17:10</span>
+                                        </div>
+                                        <span class="port">Jeddah (JED)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </label>
                       </div>
-                    </label>
+                      <div class="col-xl-6 col-md-6">
+                        <label for="" class="">
+                          <div class="box">
+                            <div class="row m-0">
+                              <div class="col-lg-12 service h-100">
+                                <div id="service-box-pic" class="image-box">
+                                  <img src="assets/flight/turkish-air-offer.webp" class="d-block w-100" alt="" />
+                                </div>
+                              </div>
+                              <div class="col-lg-12 service-details">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="flight-label d-flex align-items-center justify-content-between">
+                                      <div class="flight-direction">Departure flight</div>
+                                      <div class="flight-class">Economic</div>
+                                    </div>
+                                    <hr>
+                                    <div class="details-row">
+                                      <div class="details-block">
+                                        <div class="time-block">
+                                          <span class="time">14:10</span>
+                                        </div>
+                                        <span class="port">Istanbul (IST)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                      <div class="middle-block text-center w-100">
+                                        <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                          <i class="icon-line-clock"></i>
+                                          <span>02:00</span>
+                                        </div>
+                                        <div class="flight-line-icon">
+                                          <svg viewBox="0 0 715.62 566.3">
+                                            <path
+                                              d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                              style="stroke-width:0px;" />
+                                          </svg>
+                                        </div>
+                                        <span class="total-stop">Direct</span>
+                                        <div class="flight-no">
+                                          <span>TUR0606</span>
+                                        </div>
+                                      </div>
+                                      <div class="details-block text-end align-items-end">
+                                        <div class="time-block">
+                                          <span class="time">17:10</span>
+                                        </div>
+                                        <span class="port">Jeddah (JED)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-xl-6 col-md-6">
+                        <label for="" class="">
+                          <div class="box">
+                            <div class="row m-0">
+                              <div class="col-lg-12 service h-100">
+                                <div id="service-box-pic" class="image-box">
+                                  <img src="assets/flight/saudia-airlines-offer.webp" class="d-block w-100" alt="" />
+                                </div>
+                              </div>
+                              <div class="col-lg-12 service-details">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="flight-label d-flex align-items-center justify-content-between">
+                                      <div class="flight-direction">Return flight</div>
+                                      <div class="flight-class">Economic</div>
+                                    </div>
+                                    <hr>
+                                    <div class="details-row">
+                                      <div class="details-block">
+                                        <div class="time-block">
+                                          <span class="time">14:10</span>
+                                        </div>
+                                        <span class="port">Istanbul (IST)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                      <div class="middle-block text-center w-100">
+                                        <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
+                                          <i class="icon-line-clock"></i>
+                                          <span>02:00</span>
+                                        </div>
+                                        <div class="flight-line-icon">
+                                          <svg viewBox="0 0 715.62 566.3">
+                                            <path
+                                              d="m707.25,322.74l-47.49-64.01c-35.12-47.69-67.65-63.79-128.91-63.79h-45.87l-63.22-135.14-.07-.14C404.38,23.42,367.25,0,327.08,0h-105.3l42.34,194.94h-90.75c-24.06-51.83-59.69-75.13-114.03-75.13H0l18.94,125.19.33,1.18c11.21,40.13,34.33,75.1,66.86,101.12,34.9,27.92,78.72,43.29,123.41,43.29h53.79l-43.89,175.69h106.1c39.96,0,76.93-23.18,94.35-59.11l64.19-116.58h188.94c16.15,0,30.7-8.95,37.99-23.36,7.29-14.41,5.86-31.44-3.75-44.5ZM271.4,40h55.68c24.82,0,47.77,14.45,58.49,36.83l55.26,118.11h-135.77l-33.65-154.94Zm113.18,448.37l-.53,1.03c-10.71,22.42-33.68,36.9-58.52,36.9h-54.88l33.89-135.69h133.86l-53.83,97.76Zm290.73-139.17c-.71,1.41-1.82,1.41-2.29,1.41H209.54c-35.64,0-70.59-12.26-98.42-34.53-25.64-20.51-43.95-47.98-53-79.51l-11.61-76.76h12.84c41.92,0,64.22,16.94,82.26,62.49l5,12.64h384.25c48.45,0,69.23,10.21,96.74,47.57l47.49,64.01c.28.38.94,1.27.22,2.68Z"
+                                              style="stroke-width:0px;" />
+                                          </svg>
+                                        </div>
+                                        <span class="total-stop">Direct</span>
+                                        <div class="flight-no">
+                                          <span>TUR0606</span>
+                                        </div>
+                                      </div>
+                                      <div class="details-block text-end align-items-end">
+                                        <div class="time-block">
+                                          <span class="time">17:10</span>
+                                        </div>
+                                        <span class="port">Jeddah (JED)</span>
+                                        <div class="date-block">
+                                          <span class="date">01 nov. 2023</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </section>
 
-                <section id="hotelsection" class="tab-pane fade" role="tabpanel" aria-labelledby="hotelsection"
+                <section id="hotelsection" class="package-hotels tab-pane fade" role="tabpanel" aria-labelledby="hotelsection"
                   tabindex="0" #hotelsection>
                   <div class="package-service-section">
                     <h2>Hotel Details</h2>
-                    <p class="lh-base">
-                      Maecenas et turpis sed nulla porttitor vestibulum eu ac dui. Mauris faucibus consectetur enim
-                      pulvinar placerat.
-                    </p>
-                    <label for="" class="w-100">
-                      <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade"
-                        data-bs-ride="ride">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active" data-bs-interval="4000">
-                            <img src="assets/package/hotel-2/1.jpg" class="d-block w-100" alt="" />
-                          </div>
-                          <div class="carousel-item" data-bs-interval="4000">
-                            <img src="assets/package/hotel-2/2.jpg" class="d-block w-100" alt="" />
-                          </div>
-                          <div class="carousel-item" data-bs-interval="4000">
-                            <img src="assets/package/hotel-2/3.jpg" class="d-block w-100" alt="" />
-                          </div>
-                          <div class="hotel-content-top">
-                            <div class="notices">
-                              <div class="hotel-type d-flex align-items-center">
-                                <i class="icon-line-ribbon me-2"></i>
-                                <p>Business</p>
+                    <div class="row gy-3">
+                      <div class="col-xl-12">
+                        <label for="" class="w-100">
+                          <div class="package-hotel-card">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-xl-4 ps-0">
+                                  <div id="carouselhotelpackage" class="package-hotel-carousel carousel slide carousel-fade"
+                                    data-bs-ride="ride">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="assets/package/hotel-2/1.jpg" class="d-block w-100" alt="" />
+                                      </div>
+                                      <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="assets/package/hotel-2/2.jpg" class="d-block w-100" alt="" />
+                                      </div>
+                                      <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="assets/package/hotel-2/3.jpg" class="d-block w-100" alt="" />
+                                      </div>
+                                      <div class="hotel-content-top">
+                                        <div class="notices">
+                                          <div class="hotel-type d-flex align-items-center">
+                                            <i class="icon-line-ribbon me-2"></i>
+                                            <p>Business</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-controls">
+                                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselhotelpackage"
+                                        data-bs-slide="prev">
+                                        <i class="icon-line-chevron-left"></i>
+                                        <span class="visually-hidden">Previous</span>
+                                      </button>
+                                      <button class="carousel-control-next" type="button" data-bs-target="#carouselhotelpackage"
+                                        data-bs-slide="next">
+                                        <i class="icon-line-chevron-right"></i>
+                                        <span class="visually-hidden">Next</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-xl-8 py-3">
+                                  <div class="hotel-content">
+                                    <div class="hotel-content-bottom">
+                                      <div class="hotel-infos d-flex align-items-center justify-content-between gap-3">
+                                        <div class="d-flex flex-column justify-content-start lh-base">
+                                          <div class="hotel-rating">
+                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4.5'
+                                              [color]="'#f4c253'"></ngx-stars>
+                                          </div>
+                                          <div class="hotel-name me-4">
+                                            <h2 class="text-truncate">
+                                              Swissôtel Al Maqam Makkah
+                                            </h2>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-1">
+                                          <div class="hotel-rate me-2">4.5</div>
+                                          <div class="hotel-review d-flex flex-column justify-content-start lh-base">
+                                            <span class="mb-0">Excellent</span>
+                                            <p class="mb-0">(1,186 Reviews)</p>
+                                          </div>  
+                                        </div>  
+                                      </div> 
+                                      <hr>
+                                      <div class="d-flex flex-column row-gap-1">
+                                        <div class="hotel-address">
+                                          <div class="d-flex align-items-center gap-2 lh-base">
+                                            <i class="icon-line-map-pin"></i>
+                                            <p class="mb-0 lh-base">Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia</p>
+                                          </div>
+                                        </div>
+                                        <div class="hotel-class">
+                                          <div class="d-flex align-items-center gap-2 lh-base">
+                                            <i class="icon-line-ribbon"></i>
+                                            <p class="mb-0">Luxury Hotel</p>
+                                          </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                          <div class="hotel-checkin">
+                                            <div class="d-flex align-items-center gap-2 lh-base">
+                                              <i class="icon-line-calendar"></i>
+                                              <p class="mb-0">12/12/24</p>
+                                            </div>
+                                          </div>
+                                          <i class="icon-line-arrow-right"></i>
+                                          <div class="hotel-checkout">
+                                            <p class="mb-0">12/12/24</p>
+                                          </div>
+                                          </div>
+                                          <div class="hotel-arangement">
+                                            <div class="d-flex align-items-center gap-2 lh-base">
+                                              <i class="icon-line-briefcase"></i>
+                                              <div class="d-flex align-items-center gap-2">
+                                                <p class="mb-0">LPD</p>
+                                                <p class="mb-0">DP</p>
+                                                <p class="mb-0">PC</p>
+                                                <p class="mb-0">Ai</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>  
+                                    </div>
+                                  </div>
+                                </div>  
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselhotelpackage"
-                          data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselhotelpackage"
-                          data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-                      <div class="hotel-content">
-                        <div class="row">
-                          <div class="col-lg-6 z-index-3">
-                            <div class="hotel-content-bottom">
-                              <div class="title-sec me-4">
-                                <h2 class="hotel-name text-truncate">
-                                  Swissôtel Al Maqam Makkah
-                                </h2>
-                              </div>
-                              <div class="hotel-rating">
-                                <div class="d-flex align-items-center">
-                                  <div class="hotel-rate me-2">4.5</div>
-                                  <div>
-                                    <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='4.5'
-                                      [color]="'#f4c253'"></ngx-stars>
+                          <div class="package-hotel-rooms-card">
+                            <!--- Room 1 --->
+                            <div class="package-hotel-room-item">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center bg-color-base">
+                                    <h5>Room 1</h5>
                                   </div>
+                                  <div class="room-specs col-xl-6 col-lg-6 col-md-12 border-end py-4">
+                                    <div class="room-specs-content d-flex align-items-center gap-5">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <i class="icon-line-eye"></i>
+                                        <div class="view lh-base">
+                                          <p class="mb-0 lh-base">View</p>
+                                          <span>Desert</span>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-3">
+                                        <i class="icon-line-users"></i>
+                                        <div class="guests lh-base">
+                                          <div class="d-flex align-items-center gap-3">
+                                            <div class="min-guests d-flex flex-column">
+                                              <p class="mb-0 lh-base">Min guests</p>
+                                              <span>2</span>
+                                            </div> 
+                                            <div class="vr"></div> 
+                                            <div class="max-guests d-flex flex-column">
+                                              <p class="mb-0 lh-base">Max guests</p>
+                                              <span>4</span>
+                                            </div>  
+                                          </div>
+                                        </div>
+                                      </div>  
+                                    </div>   
+                                  </div>
+                                  <div class="room-type col-xl-4 col-lg-4 col-md-12 py-4">
+                                    <div class="room-type-content lh-base">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="room-type-icon">
+                                          <svg viewBox="0 0 800 800">
+                                            <path d="M751.4,431.6c-5.8-14.1-14.9-26.3-26.4-35.7c0-62.7-0.1-108.4-5.1-145.5c-5.8-43.5-18.6-73-41.3-95.7
+                                              s-52.2-35.4-95.7-41.3c-38-5.1-84.8-5.1-149.6-5.1h-66.7c-64.8,0-111.7,0-149.6,5.1c-43.5,5.8-73,18.6-95.7,41.3
+                                              S85.9,206.9,80,250.4c-5,37.2-5.1,82.8-5.1,145.5c-11.5,9.4-20.5,21.6-26.4,35.7c-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4
+                                              c9.4,22.6,27,40.2,49.6,49.6c12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25V625h416.7v41.7
+                                              c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.8c18.5-0.4,31.3-1.8,43.4-6.8c22.6-9.4,40.2-27,49.6-49.6c7-16.8,7-35.2,7-68.4
+                                              C758.3,466.8,758.3,448.4,751.4,431.6z M366.7,158.3h66.7c118.7,0,178.2,0,209.9,31.7c29.5,29.5,31.6,83.1,31.7,185.9
+                                              c-9.3-0.8-20-1-33.3-1v-25c0-67.5,0-104.6-26.8-131.5s-64-26.8-131.5-26.8H316.7c-67.5,0-104.6,0-131.5,26.8
+                                              c-26.8,26.8-26.8,64-26.8,131.5v25c-13.3,0-24.1,0.2-33.3,1c0.1-102.8,2.2-156.4,31.7-185.9C188.5,158.3,248,158.3,366.7,158.3z
+                                              M208.3,375v-25c0-58.2,0.5-84.4,12.2-96.1c11.7-11.7,37.9-12.2,96.1-12.2H375V375H208.3z M425,241.7h58.3
+                                              c58.2,0,84.4,0.5,96.1,12.2c11.7,11.7,12.2,37.9,12.2,96.1v25H425V241.7z M705.2,549.3c-4.3,10.3-12.3,18.3-22.5,22.5
+                                              c-7.7,3.2-22.4,3.2-49.3,3.2H166.7c-26.8,0-41.6,0-49.3-3.2c-10.3-4.3-18.3-12.3-22.5-22.5c-3.2-7.7-3.2-22.4-3.2-49.3
+                                              c0-26.8,0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6c7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2
+                                              c10.3,4.3,18.3,12.3,22.5,22.5c3.2,7.7,3.2,22.4,3.2,49.3C708.3,526.8,708.3,541.6,705.2,549.3z"/>
+                                          </svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                          <p class="mb-0 lh-base">Room type</p>
+                                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#room-type-modal">
+                                            {{ selectedRoomType ? selectedRoomType : 'Click here to select a type' }}
+                                          </button>
+                                        </div>
+                                      </div>  
+                                    </div>
+                                  </div>
+
+                                  <div class="pack-hotel-room-types-modal modal modal-lg fade" id="room-type-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="room-type-modal-label" aria-hidden="true"
+                                  [ngClass]="{ 'show': isModalOpen }">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                  
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Choose a room type</h4>
+                                          <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                  
+                                        <!-- Modal Body -->
+                                        <div class="modal-body">
+                                          <form>
+                                            <div class="form-group">
+                                              <div class="row gy-2">
+                                                <div class="col-md-6" *ngFor="let room of roomsTypes">
+                                                  <div class="form-check">
+                                                    <input
+                                                      class="form-check-input"
+                                                      type="radio"
+                                                      name="roomsTypes"
+                                                      id="{{ room }}"
+                                                      [(ngModel)]="selectedRoomType"
+                                                      [value]="room"
+                                                    />
+                                                    <label class="form-check-label" for="{{ room }}">
+                                                      {{ room }}
+                                                    </label>
+                                                  </div>
+                                                </div>  
+                                              </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                  
+                                        <!-- Modal Footer -->
+                                        <div class="modal-footer">
+                                          <button type="color-btn" class="color-btn" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </label>
+                        
                       </div>
-                    </label>
+                    </div>
                   </div>
                 </section>
 

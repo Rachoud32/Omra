@@ -581,6 +581,84 @@
 
 
 @media (max-width: 575.98px) {
+    .package-header-card .header-hotel-details {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: .5rem !important;
+    }
+
+    .package-header {
+        padding: 15px 5px;
+    }
+
+    .package-header .package-header-content i {
+        font-size: var(--fs-14) !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .package-details-box .package-inside-menu li {
+        width: 100%;
+    }
+
+    .package-details-box .package-inside-menu li .inside-menu-item {
+        padding: 0;
+        font-size: var(--fs-12);
+    }
+
+    .package-details-box .package-inside-menu li .inside-menu-item p {
+        font-size: var(--fs-12);
+        margin-bottom: 0;
+    }
+
+    .package-details-box .package-inside-menu li .inside-menu-item img {
+        height: 40px;
+        padding: 16px 0 5px;
+    }
+
+    .package-hotels .package-hotel-card .hotel-content-bottom .hotel-infos {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+
+    .package-hotels .package-hotel-room-item .room-number {
+        padding: 10px !important;
+    }
+
+    .package-hotels .package-hotel-room-item .room-specs-content {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+
+    .package-hotels .package-hotel-room-item .room-specs {
+        border-right: 0 !important;
+    }
+
+    .package-hotels .package-hotel-room-item .room-type {
+        border-top: 1px solid var(--omra-light-gray);
+        border-right: 0 !important;
+    }
+
+    .package-details-box .cal-month-view .cal-day-number {
+        font-size: var(--fs-14) !important;
+        margin-top: 10px !important;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .package-details-box .cal-month-view .cal-day-badge {
+        margin-left: 5px;
+        padding: 4px 7px !important;
+        font-size: var(--fs-10) !important;
+    }
+
+    .cal-month-view .cal-day-cell ul li p {
+        font-size: var(--fs-15);
+    }
+
     .search-bar .dropdown-guests .dropdown-menu {
         max-width: 100%;
         position: fixed;
@@ -591,6 +669,8 @@
 
     .modal .modal-content .modal-title {
         font-size: var(--fs-16);
+        padding: 4px 7px !important;
+        font-size: var(--fs-10) !important;
     }
 
     .modal-header {

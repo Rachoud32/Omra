@@ -4236,7 +4236,8 @@ app-package-details .page-title {
     background: linear-gradient(30deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 0%);
 }
 
-.packages-list .package-item .carousel-controls {
+.packages-list .package-item .carousel-controls,
+.package-offer-details .carousel-controls {
     position: absolute;
     bottom: 10px;
     display: flex;
@@ -4245,7 +4246,9 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .carousel-control-prev, 
-.packages-list .package-item .carousel-control-next {
+.packages-list .package-item .carousel-control-next,
+.package-offer-details .carousel-control-prev,
+.package-offer-details .carousel-control-next {
     position: relative;
     display: flex;
     width: 35px;
@@ -4262,14 +4265,19 @@ app-package-details .page-title {
     justify-content: center;
 }
 
-.packages-list .package-item .carousel-control-prev {
+.packages-list .package-item .carousel-control-prev,
+.package-offer-details .carousel-control-prev {
     right: auto;
 }
 
 .packages-list .package-item .carousel-control-prev:hover,
 .packages-list .package-item .carousel-control-next:hover, 
 .packages-list .package-item .carousel-control-prev:active, 
-.packages-list .package-item .carousel-control-next:active {
+.packages-list .package-item .carousel-control-next:active,
+.package-offer-details .carousel-control-prev:hover,
+.package-offer-details .carousel-control-next:hover, 
+.package-offer-details .carousel-control-prev:active, 
+.package-offer-details .carousel-control-next:active {
     color: var(--omra-white);
     background: var(--omra-base);
 }
@@ -4476,7 +4484,7 @@ app-package-bookings-sidebar,
 .package-inside-menu {
     position: sticky;
     top: 0;
-    z-index: 99;
+    z-index: 970;
 }
 
 .package-inside-menu {
@@ -4497,20 +4505,9 @@ app-package-bookings-sidebar,
 .package-inside-menu li .inside-menu-item {
     padding: 10px 15px;
     font-size: var(--fs-14);
-    border-right: 1px solid var(--omra-light-gray);
+    border-right: 1px solid #dbdbdb;
     border-bottom: 0;
-}
-
-.package-inside-menu li .inside-menu-item::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: 0;
     background: var(--omra-light-gray);
-    transition: all .3s linear;
-    z-index: 1;
 }
 
 .package-inside-menu li .inside-menu-item::before {
@@ -4519,8 +4516,8 @@ app-package-bookings-sidebar,
     width: 0%;
     height: 3px;
     position: absolute;
-    bottom: 0;
-    background: var(--omra-base);
+    top: 0;
+    background: var(--omra-second);
     transition: all .3s linear;
     z-index: 5;
 }
@@ -4534,14 +4531,23 @@ app-package-bookings-sidebar,
 }
 
 .package-inside-menu li .inside-menu-item.active {
-    background: var(--omra-extra);
+    background: var(--omra-white);
     color: var(--omra-second);
 }
 
 .package-inside-menu li .inside-menu-item img {
     height: 45px;
     padding: 10px 0;
+    filter: grayscale(1);
+    opacity: 0.4;
+    transition: all .3s linear;
 }
+
+.package-inside-menu li .inside-menu-item.active img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
 
 .package-inside-menu li .inside-menu-item p {
     font-size: var(--fs-14);
@@ -4551,6 +4557,7 @@ app-package-bookings-sidebar,
 .package-inside-menu li .inside-menu-item.active p {
     color: var(--omra-second);
 }
+
 
 .package-header {
     background: var(--omra-white);
@@ -4616,16 +4623,17 @@ app-package-bookings-sidebar,
 }
 
 .list-package-offers p {
-    font-size: var(--fs-18);
-    font-weight: 400 !important;
+    font-size: var(--fs-16);
+    font-weight: 500 !important;
     color: var(--omra-base);
     line-height: normal;
 }
 
 .list-package-offers i {
     color: var(--omra-second);
-    padding-bottom: 3px;
+    padding-bottom: 2px;
     line-height: normal;
+    font-size: var(--fs-16);
 }
 
 .package-header .package-details-price-estim {
@@ -4675,15 +4683,15 @@ app-package-bookings-sidebar,
     background-color: var(--omra-white);
     padding: 10px 15px;
     margin-bottom: 40px;
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
 
 .package-service-section h2 {
     font-size: var(--fs-20);
     font-weight: 500 !important;
-    color: var(--omra-second);
+    color: var(--omra-base);
     background: var(--omra-white);
-    padding: 10px 20px;
-    border: 1px solid var(--omra-light-gray);
+    padding: 10px 0px;
     margin-bottom: 8px;
 }
 
@@ -4738,14 +4746,18 @@ app-package-bookings-sidebar,
     margin: 10px 0;
 }
 
+.package-hotels .package-hotel-card {
+    border: 1px solid var(--omra-light-gray);
+}
+
 .package-hotel-carousel .carousel-inner {
-    height: 340px;
+    height: 240px;
     width: 100% !important;
 }
 
 .package-hotel-carousel img {
     object-fit: cover;
-    height: 340px;
+    height: 240px;
     width: 100% !important;
 }
 
@@ -4754,6 +4766,160 @@ app-package-bookings-sidebar,
     z-index: 4;
 }
 
+.package-hotels .border-end {
+    border-color: var(--omra-light-gray) !important;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-name {
+    border: 0;
+    line-height: normal;
+    padding: 0;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-name h2 {
+    font-size: var(--fs-20);
+    font-weight: 500 !important;
+    color: var(--omra-base);
+    background: var(--omra-white);
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-rate {
+    background: var(--omra-second);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-15);
+    font-weight: 500;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-review span {
+    font-size: var(--fs-16);
+    font-weight: 500;
+    color: var(--omra-base);
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-review p {
+    font-size: var(--fs-14);
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
+    font-size: var(--fs-14);
+    line-height: normal;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-content-bottom .hotel-arangement p {
+    border: 1px solid var(--omra-light-gray);
+    width: 55px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-content-bottom i {
+    font-size: var(--fs-16);
+    color: var(--omra-second);
+}
+
+.package-hotels .package-hotel-rooms-card {
+    border: 1px solid var(--omra-light-gray);
+    border-top: 0;
+    padding: 20px 15px;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item:last-child {
+    margin-bottom: 0;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item {
+    border: 1px solid var(--omra-light-gray);
+    margin-bottom: 20px;
+    /* padding: 15px; */
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item h5 {
+    color: var(--omra-white);
+    font-weight: 500 !important;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item p {
+    color: var(--omra-gray);
+    font-weight: 400;
+    font-size: var(--fs-14);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item span {
+    font-size: var(--fs-14);
+    color: var(--omra-base);
+    font-weight: 400;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item i {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-16);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-type .room-type-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--omra-extra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-type .room-type-icon svg {
+    width: 20px;
+    fill: var(--omra-second);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-type button {
+    background: transparent;
+    font-size: var(--fs-14);
+    color: var(--omra-base);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+}
+
+.pack-hotel-room-types-modal .form-check {
+    padding-left: 0 !important;
+}
+
+.pack-hotel-room-types-modal [type="radio"]:checked+label:before, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:before,
+.pack-hotel-room-types-modal [type="radio"]:checked+label:after, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:after {
+    display: none;
+}
+
+.pack-hotel-room-types-modal [type="radio"]:checked+label, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label {
+    display: flex;
+    border: 1px solid var(--omra-light-gray);
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s linear;
+}
+
+.pack-hotel-room-types-modal [type="radio"]:checked+label {
+    border-color: var(--omra-second);
+    background-color: var(--omra-extra);
+}
+
+
 .package-offer-item input[type="radio"]:checked+label:before,
 input[type="radio"]:not(:checked)+label:before,
 .package-offer-item input[type="radio"]:checked+label::after,
@@ -4761,13 +4927,46 @@ input[type="radio"]:not(:checked)+label::after {
     display: none;
 }
 
-.package-offer-card {
+.package-service-section.package-list-offers-section {
+    padding: 20px 15px 10px;
+}
+
+.package-offer-item label {
+    position: relative;
+    padding-left: 0 !important;
+    cursor: pointer;
+    line-height: normal;
+    color: var(--omra-gray);
+    width: 100%;
+}
+
+.package-offer-item [type="radio"]:checked + label .package-offer-card, .package-offer-item [type="radio"]:not(:checked) + label .package-offer-card {
+    position: relative;
     border: 1px solid var(--omra-light-gray);
-    border-bottom: 5px solid var(--omra-light-gray);
-    margin-bottom: 15px;
+    border-bottom: 4px solid var(--omra-light-gray);
+    margin-bottom: 10px;
     padding: 15px 0px !important;
     width: 100%;
     font-size: var(--fs-14);
+    transition: all .3s linear;
+}
+
+.package-offer-item [type="radio"]:checked + label .package-offer-card:before,
+.package-offer-item [type="radio"]:not(:checked) + label .package-offer-card:before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background: var(--omra-base);
+    transition: all .5s linear;
+    z-index: 5;
+}
+
+.package-offer-item [type="radio"]:checked +label .package-offer-card::before {
+    width: 100%;
 }
 
 .package-offer-card hr {
@@ -4776,7 +4975,13 @@ input[type="radio"]:not(:checked)+label::after {
 
 .package-offer-card .title {
     font-size: var(--fs-16);
-    color: var(--omra-black);
+    color: var(--omra-base);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 330px;
+    width: 330px;
 }
 
 .package-offer-card .offer-detail i {
@@ -4789,9 +4994,46 @@ input[type="radio"]:not(:checked)+label::after {
     justify-content: center;
 }
 
-.package-offer-card .offer-detail p {
+.package-offer-card .offer-detail .offer-label {
     line-height: normal;
-    font-size: var(--fs-13);
+    font-size: var(--fs-12);
+}
+
+.package-offer-card .offer-detail .offer-text {
+    color: var(--omra-base);
+    line-height: normal;
+}
+
+.package-offer-card .package-offer-price {
+    color: var(--omra-second);
+    font-weight: 500;
+}
+
+.package-offer-card .package-offer-price span {
+    font-size: var(--fs-12);
+}
+
+.package-flights .box {
+    border: 1px solid var(--omra-light-gray);
+    box-shadow: 0 10px 20px 3px rgb(0 0 0 / 0%);
+}
+
+.package-flights .service .image-box {
+    margin-top: 10px;
+}
+
+.package-flights .service .image-box img {
+    padding: 0px;
+    border-right: 0;
+    background: transparent;
+    transform: scale(0.9);
+}
+
+.package-flights .flight-label .flight-direction {
+    font-size: var(--fs-14);
+    color: var(--omra-base);
+    font-weight: 400;
+    white-space: nowrap;
 }
 
 /* ----------------------------------------------------------------
@@ -5943,8 +6185,12 @@ app-package-calender-header {
     width: 2px;
 }
 
+.modal-header, .modal-footer, .modal-body {
+    padding: 20px !important;
+}
+
 .modal .modal-content {
-    padding: 20px 30px;
+    padding: 0;
     border-radius: 0;
     border: 0;
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
@@ -5995,10 +6241,6 @@ app-package-calender-header {
 .modal-header img {
     margin: 0 auto;
     width: 160px;
-}
-
-.modal-body {
-    padding: 30px 20px 10px !important;
 }
 
 .modal-body h4 {

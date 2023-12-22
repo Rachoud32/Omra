@@ -48,7 +48,7 @@ export class packageService {
           These cities symbolize deep spiritual connection, fostering unity and a sense of profound devotion among believers.`,
           offers: [
             {
-              title : 'Offer 1',
+              title : 'A Pilgrimage to Makkah',
               price : '1000',
               nbrdays: '4',
               nbrnights:'3',
