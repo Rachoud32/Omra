@@ -9,7 +9,7 @@
         <div class="container">
           <div class="row">
             <app-package-search-bar></app-package-search-bar>
-            
+
             <div class="col-xl-12 py-3" id="overviewsection" #overviewsection>
               <button class="back-link d-flex align-items-center gap-2" routerLink="/umrah-package/result">
                 <i class="icon-line-chevron-left"></i>
@@ -26,7 +26,8 @@
                       <img src={{package.packagePictures[0]}} alt="" />
                     </div>
                   </div>
-                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
+                  <div
+                    [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
                     <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
                       <div class="col-xl-12 mb-4">
                         <div class="package-other-picture">
@@ -82,8 +83,8 @@
 
                           <div class="d-flex align-items-center gap-2 lh-base">
                             <div class="package-details-rating d-flex align-items-center">
-                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='package.packageRating'
-                                [color]="'#f4c253'"></ngx-stars>
+                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
                             </div>
                             <div class="package-details-rating-text d-flex align-items-center gap-1">
                               <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
@@ -118,10 +119,12 @@
                 <p class="mb-3 lh-base">Select an offer to continue the process of booking.</p>
                 <div class="row">
                   <div class="col-md-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
-                    <input [attr.id]="offer.id" type="radio" name="package-offer" [attr.value]="offer.title" [checked]="selectedOffer == offer.id">
+                    <input [attr.id]="offer.id" type="radio" name="package-offer" [attr.value]="offer.title"
+                      [checked]="selectedOffer == offer.id">
                     <label [attr.for]="offer.title" (click)="checkOffer(offer.id)">
                       <div class="package-offer-card">
-                        <div class="package-offer-header d-flex align-items-center justify-content-between gap-3 px-3 mb-1">
+                        <div
+                          class="package-offer-header d-flex align-items-center justify-content-between gap-3 px-3 mb-1">
                           <div class="title">{{offer.title}}</div>
                           <p class="package-offer-price mb-0"><span>$</span>{{offer.price}}</p>
                         </div>
@@ -133,7 +136,8 @@
                           <div class="departure-text">{{offer.departurecity}}</div>
                         </div>
                         <hr>
-                        <div class="package-offer-body d-flex flex-wrap align-items-center justify-content-between gap-3 px-3">
+                        <div
+                          class="package-offer-body d-flex flex-wrap align-items-center justify-content-between gap-3 px-3">
                           <div class="offer-detail d-flex align-items-center gap-2">
                             <i class="icon-line-clock"></i>
                             <div class="d-flex flex-column column-gap-1">
@@ -146,7 +150,7 @@
                             <div class="d-flex flex-column column-gap-1">
                               <p class="offer-label mb-0">Departure Type</p>
                               <div class="offer-text">{{offer.departuretype}}</div>
-                            </div>  
+                            </div>
                           </div>
                           <div class="offer-detail d-flex align-items-center gap-2">
                             <i class="icon-line-briefcase"></i>
@@ -154,7 +158,7 @@
                               <p class="offer-label mb-0">Arrangement</p>
                               <div class="offer-text">{{offer.arrangementtype}}</div>
                             </div>
-                          </div>    
+                          </div>
                         </div>
                       </div>
                     </label>
@@ -165,9 +169,10 @@
               <nav class="package-inside-menu mb-4">
                 <ul class="d-flex align-items-center" id="myTab" role="tablist">
                   <li *ngFor="let item of sections" class="nav-item">
-                    <div [attr.class]="'nav-link inside-menu-item d-flex flex-column align-items-center '+(item.id == 'flightsection' && 'active')" [attr.id]="item.name"
-                      data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" role="tab" [attr.aria-controls]="item.id"
-                      [attr.aria-selected]="item.id == 'flightsection'">
+                    <div
+                      [attr.class]="'nav-link inside-menu-item d-flex flex-column align-items-center '+(item.id == 'flightsection' && 'active')"
+                      [attr.id]="item.name" data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" role="tab"
+                      [attr.aria-controls]="item.id" [attr.aria-selected]="item.id == 'flightsection'">
                       <img [attr.src]="item.icon" [attr.style]="item.scale" [attr.alt]="item.name" />
                       <p>{{item.name}}</p>
                     </div>
@@ -176,7 +181,8 @@
               </nav>
 
               <div class="package-offer-details tab-content" id="myTabContent">
-                <section id="flightsection" class="package-flights tab-pane fade show active" role="tabpanel" aria-labelledby="flightsection" tabindex="0" #flightsection>
+                <section id="flightsection" class="package-flights tab-pane fade show active" role="tabpanel"
+                  aria-labelledby="flightsection" tabindex="0" #flightsection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Flights</h2>
                     <p>Your most suitable flight options.</p>
@@ -188,7 +194,8 @@
                               <div class="flight-header d-flex align-items-center justify-content-between p-3">
                                 <div class="d-flex flex-column justify-content-start row-gap-1">
                                   <div class="flight-direction">Departure flight</div>
-                                  <div class="flight-company">via<span class="color-3 ps-1">{{flight.flightcompany}}</span></div>
+                                  <div class="flight-company">via<span
+                                      class="color-3 ps-1">{{flight.flightcompany}}</span></div>
                                 </div>
                                 <div class="flight-class">{{flight.class}}</div>
                               </div>
@@ -202,7 +209,7 @@
                                     <div class="date-block">
                                       <span class="date">{{flight.dateOfDeparture}}</span>
                                     </div>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <div class="middle-block text-center w-100">
                                   <div class="flight-duration d-flex align-items-center justify-content-center gap-2">
@@ -216,7 +223,8 @@
                                         style="stroke-width:0px;" />
                                     </svg>
                                   </div>
-                                  <span class="total-stop">{{flight.stops.length == 0 ? 'Direct' : flight.stops.length == 1 ? flight.stops.length + ' stop' : flight.stops.length + ' stops' }}</span>
+                                  <span class="total-stop">{{flight.stops.length == 0 ? 'Direct' : flight.stops.length
+                                    == 1 ? flight.stops.length + ' stop' : flight.stops.length + ' stops' }}</span>
                                   <div class="flight-number">
                                     <span>{{flight.flightNumber}}</span>
                                   </div>
@@ -230,7 +238,7 @@
                                     <div class="date-block">
                                       <span class="date">{{flight.dateOfArrival}}</span>
                                     </div>
-                                  </div>  
+                                  </div>
                                 </div>
                               </div>
                               <div class="more-details p-3">
@@ -239,12 +247,14 @@
                                   <p class="mb-0">{{flight.stops.length}} stop{{flight.stops.length == 1 ?
                                     ' through' : flight.stops.length == 0 ?
                                     's' : 's through'}} {{flight.stops.length >= 3 ?
-                                    flight.stops.slice(0,flight.stops.length-1).join(', ') + ' and ' + flight.stops[flight.stops.length-1] :
+                                    flight.stops.slice(0,flight.stops.length-1).join(', ') + ' and ' +
+                                    flight.stops[flight.stops.length-1] :
                                     flight.stops.join(' and ')}}</p>
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
                                   <i class="icon-line-briefcase"></i>
-                                  <p class="mb-0">{{flight.luggage}} piece{{flight.luggage > 1 ? "s" : ""}} of checked luggage (per ad.)</p>
+                                  <p class="mb-0">{{flight.luggage}} piece{{flight.luggage > 1 ? "s" : ""}} of checked
+                                    luggage (per ad.)</p>
                                 </div>
                               </div>
                             </div>
@@ -252,14 +262,15 @@
                         </label>
                       </div>
 
-                      <div class="col-xl-6 col-md-6" >
+                      <div class="col-xl-6 col-md-6">
                         <label class="w-100" [attr.for]="'flight-box-'+i">
                           <div class="box">
                             <div class="service-details p-0">
                               <div class="flight-header d-flex align-items-center justify-content-between p-3">
                                 <div class="d-flex flex-column justify-content-start row-gap-1">
                                   <div class="flight-direction">Return flight</div>
-                                  <div class="flight-company">via<span class="color-3 ps-1">{{flight.flightReturn.flightcompany}}</span></div>
+                                  <div class="flight-company">via<span
+                                      class="color-3 ps-1">{{flight.flightReturn.flightcompany}}</span></div>
                                 </div>
                                 <div class="flight-class">{{flight.flightReturn.class}}</div>
                               </div>
@@ -287,7 +298,9 @@
                                         style="stroke-width:0px;" />
                                     </svg>
                                   </div>
-                                  <span class="total-stop">{{flight.flightReturn.stops.length == 0 ? 'Direct' : flight.flightReturn.stops.length == 1 ? flight.flightReturn.stops.length + ' stop' : flight.flightReturn.stops.length + ' stops' }}</span>
+                                  <span class="total-stop">{{flight.flightReturn.stops.length == 0 ? 'Direct' :
+                                    flight.flightReturn.stops.length == 1 ? flight.flightReturn.stops.length + ' stop' :
+                                    flight.flightReturn.stops.length + ' stops' }}</span>
                                   <div class="flight-number">
                                     <span>{{flight.flightReturn.flightNumber}}</span>
                                   </div>
@@ -307,15 +320,18 @@
                               <div class="more-details p-3">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                   <i class="icon-line-alert-octagon"></i>
-                                  <p class="mb-0">{{flight.flightReturn.stops.length}} stop{{flight.flightReturn.stops.length == 1 ?
+                                  <p class="mb-0">{{flight.flightReturn.stops.length}}
+                                    stop{{flight.flightReturn.stops.length == 1 ?
                                     ' through' : flight.flightReturn.stops.length == 0 ?
                                     's' : 's through'}} {{flight.flightReturn.stops.length >= 3 ?
-                                    flight.flightReturn.stops.slice(0,flight.flightReturn.stops.length-1).join(', ') + ' and ' + flight.flightReturn.stops[flight.flightReturn.stops.length-1] :
+                                    flight.flightReturn.stops.slice(0,flight.flightReturn.stops.length-1).join(', ') + '
+                                    and ' + flight.flightReturn.stops[flight.flightReturn.stops.length-1] :
                                     flight.flightReturn.stops.join(' and ')}}</p>
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
                                   <i class="icon-line-briefcase"></i>
-                                  <p class="mb-0">{{flight.flightReturn.luggage}} piece{{flight.flightReturn.luggage > 1 ? "s" : ""}} of checked luggage (per ad.)</p>
+                                  <p class="mb-0">{{flight.flightReturn.luggage}} piece{{flight.flightReturn.luggage > 1
+                                    ? "s" : ""}} of checked luggage (per ad.)</p>
                                 </div>
                               </div>
                             </div>
@@ -326,46 +342,51 @@
                   </div>
                 </section>
 
-                <section id="hotelsection" class="package-hotels tab-pane fade" role="tabpanel" aria-labelledby="hotelsection" tabindex="0" #hotelsection>
+                <section id="hotelsection" class="package-hotels tab-pane fade" role="tabpanel"
+                  aria-labelledby="hotelsection" tabindex="0" #hotelsection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Hotels</h2>
                     <p>Exclusive Choice of Hotels at Affordable Prices.</p>
                     <div class="row gy-3" *ngFor="let hotel of package.details.hotels;let i = index">
                       <div class="col-xl-12">
                         <h2 class="destination-label">First Destination</h2>
-                        <label for="" class="w-100 mb-4" >
+                        <label for="" class="w-100 mb-4">
                           <div class="package-hotel-card">
                             <div class="container">
                               <div class="row">
                                 <div class="col-xl-4 ps-0">
-                                  <div [attr.id]="'carouselhotel'+i" class="package-hotel-carousel image-box carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                                  <div [attr.id]="'carouselhotel'+i"
+                                    class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
+                                    data-bs-ride="carousel">
                                     <div class="carousel-inner h-100">
-                                      <div *ngFor="let image of package.details.hotels[i].images" class="carousel-item h-100 active" data-bs-interval="4000000">
+                                      <div *ngFor="let image of package.details.hotels[i].images"
+                                        class="carousel-item h-100 active" data-bs-interval="4000000">
                                         <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
                                       </div>
-                                    </div>  
+                                    </div>
                                     <div class="carousel-controls">
-                                      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
-                                        data-bs-slide="prev">
+                                      <button class="carousel-control-prev" type="button"
+                                        [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
                                         <i class="icon-line-chevron-left"></i>
                                         <span class="visually-hidden">Previous</span>
                                       </button>
-                                      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
-                                        data-bs-slide="next">
+                                      <button class="carousel-control-next" type="button"
+                                        [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
                                         <i class="icon-line-chevron-right"></i>
                                         <span class="visually-hidden">Next</span>
                                       </button>
                                     </div>
                                   </div>
-                                </div>  
+                                </div>
                                 <div class="col-xl-8 py-3">
                                   <div class="hotel-content">
                                     <div class="hotel-content-bottom">
-                                      <div class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                      <div
+                                        class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
                                         <div class="d-flex flex-column justify-content-start lh-base">
                                           <div class="hotel-rating">
-                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='hotel.rating'
-                                              [color]="'#f4c253'"></ngx-stars>
+                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                              [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
                                           </div>
                                           <div class="hotel-name me-4">
                                             <h2 class="text-truncate">
@@ -378,9 +399,9 @@
                                           <div class="hotel-review d-flex flex-column justify-content-start lh-base">
                                             <span class="mb-0">Excellent</span>
                                             <p class="mb-0">(100 Reviews)</p>
-                                          </div>  
-                                        </div>  
-                                      </div> 
+                                          </div>
+                                        </div>
+                                      </div>
                                       <hr>
                                       <div class="d-flex flex-column row-gap-1">
                                         <div class="hotel-description mb-2">
@@ -400,7 +421,7 @@
                                                 <p class="mb-0">{{hotel.type}}</p>
                                               </div>
                                             </div>
-                                          </div>  
+                                          </div>
                                           <div class="col-xl-6">
                                             <div class="d-flex align-items-center gap-2 mb-2">
                                               <div class="hotel-checkin">
@@ -422,22 +443,24 @@
                                                 <p class="mb-0">Ai</p>
                                               </div>
                                             </div>
-                                          </div>  
+                                          </div>
                                         </div>
-                                      </div>  
+                                      </div>
                                     </div>
                                   </div>
-                                </div>  
+                                </div>
                               </div>
                             </div>
                           </div>
 
-                          <div class="package-hotel-rooms-card" >
+                          <div class="package-hotel-rooms-card">
                             <p class="mb-1">Select a room type to continue the process of booking.</p>
-                            <div class="package-hotel-room-item" *ngFor="let room of hotel.rooms;let i=index" [attr.id]="'room'+i">
+                            <div class="package-hotel-room-item" *ngFor="let room of hotel.rooms;let i=index"
+                              [attr.id]="'room'+i">
                               <div class="container">
                                 <div class="row">
-                                  <div class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center">
+                                  <div
+                                    class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center">
                                     <h5>Room {{room.id}}</h5>
                                   </div>
                                   <div class="room-specs col-xl-6 col-lg-6 col-md-12 border-end py-4">
@@ -449,15 +472,15 @@
                                             <div class="min-guests d-flex flex-column">
                                               <p class="mb-0 lh-base">Min guests</p>
                                               <span>{{room.minguests}}</span>
-                                            </div> 
-                                            <div class="vr"></div> 
+                                            </div>
+                                            <div class="vr"></div>
                                             <div class="max-guests d-flex flex-column">
                                               <p class="mb-0 lh-base">Max guests</p>
                                               <span>{{room.maxguests}}</span>
-                                            </div>  
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>  
+                                      </div>
                                       <div class="d-flex align-items-center gap-3">
                                         <i class="icon-line-eye"></i>
                                         <div class="view lh-base">
@@ -465,14 +488,15 @@
                                           <span>{{room.view}}</span>
                                         </div>
                                       </div>
-                                    </div>   
+                                    </div>
                                   </div>
                                   <div class="room-type col-xl-4 col-lg-4 col-md-12 py-4">
                                     <div class="room-type-content lh-base">
                                       <div class="d-flex align-items-center gap-3">
                                         <div class="room-type-icon">
                                           <svg viewBox="0 0 800 800">
-                                            <path d="M751.4,431.6c-5.8-14.1-14.9-26.3-26.4-35.7c0-62.7-0.1-108.4-5.1-145.5c-5.8-43.5-18.6-73-41.3-95.7
+                                            <path
+                                              d="M751.4,431.6c-5.8-14.1-14.9-26.3-26.4-35.7c0-62.7-0.1-108.4-5.1-145.5c-5.8-43.5-18.6-73-41.3-95.7
                                               s-52.2-35.4-95.7-41.3c-38-5.1-84.8-5.1-149.6-5.1h-66.7c-64.8,0-111.7,0-149.6,5.1c-43.5,5.8-73,18.6-95.7,41.3
                                               S85.9,206.9,80,250.4c-5,37.2-5.1,82.8-5.1,145.5c-11.5,9.4-20.5,21.6-26.4,35.7c-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4
                                               c9.4,22.6,27,40.2,49.6,49.6c12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25V625h416.7v41.7
@@ -484,50 +508,58 @@
                                               c58.2,0,84.4,0.5,96.1,12.2c11.7,11.7,12.2,37.9,12.2,96.1v25H425V241.7z M705.2,549.3c-4.3,10.3-12.3,18.3-22.5,22.5
                                               c-7.7,3.2-22.4,3.2-49.3,3.2H166.7c-26.8,0-41.6,0-49.3-3.2c-10.3-4.3-18.3-12.3-22.5-22.5c-3.2-7.7-3.2-22.4-3.2-49.3
                                               c0-26.8,0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6c7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2
-                                              c10.3,4.3,18.3,12.3,22.5,22.5c3.2,7.7,3.2,22.4,3.2,49.3C708.3,526.8,708.3,541.6,705.2,549.3z"/>
+                                              c10.3,4.3,18.3,12.3,22.5,22.5c3.2,7.7,3.2,22.4,3.2,49.3C708.3,526.8,708.3,541.6,705.2,549.3z" />
                                           </svg>
                                         </div>
                                         <div class="d-flex flex-column">
                                           <p class="mb-0 lh-base">Room type</p>
-                                          <p class="mb-0 lh-base">Work in progress...</p>
+                                          <!-- <p class="mb-0 lh-base">Work in progress...</p> -->
                                           <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#room-type-modal">
                                             {{ selectedRoomType ? selectedRoomType : 'Click here to select a type' }}
                                           </button> -->
-                                          <!-- <a class="read-btn rate-btn d-flex align-items-center justify-content-center gap-2 collapsed"
+
+                                          <a class="read-btn rate-btn d-flex align-items-center justify-content-center gap-2 collapsed"
                                             [attr.href]="'#rooms-list'+i" role="button" data-bs-toggle="collapse"
-                                            (click)="collapsedPackRoomsList('rooms-list'+i)" [attr.data-bs-target]="'#rooms-list'+i"
-                                            aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">
-                                            {{ selectedPackRoomsList ? room.title : 'Click here to select a type' }}
-                                          </a>   -->
+                                            (click)="collapsedPackRoomsList('rooms-list'+i)"
+                                            [attr.data-bs-target]="'#rooms-list'+i" aria-expanded="true"
+                                            [attr.aria-controls]="'#rooms-list'+i">
+                                            {{'Click here to select a type'}}
+                                          </a>
                                         </div>
-                                      </div>  
+                                      </div>
                                     </div>
                                   </div>
                                   <div [attr.id]="'rooms-list'+i" class="rooms-list accordion-collapse collapse"
-                                    [class.show]="selectedPackRoomsList==='rooms-list'+i" data-bs-parent="#accordionFirstDestRoomsList">
+                                    [class.show]="selectedPackRoomsList==='rooms-list'+i"
+                                    data-bs-parent="#accordionFirstDestRoomsList">
                                     <div class="container">
                                       <div class="row">
-                                        <div class="col-xl-6 col-lg-6" *ngFor="let room of hotel.rooms;let j=index">
+                                        <div class="col-xl-6 col-lg-6" *ngFor="let type of room.types;let j=index">
                                           <div class="room-box">
                                             <div class="room-item">
                                               <div class="rooms-container">
                                                 <label [attr.for]="'roombox-'+room._id">
                                                   <input type="radio" name="radio" [attr.id]="'roombox-'+room._id"
-                                                  [value]="'roombox-'+room._id" [(ngModel)]="selectedPackRoomsList" disabled />
+                                                    [value]="'roombox-'+room._id" [(ngModel)]="selectedPackRoomsList"
+                                                    disabled />
 
-                                                  <div class="box" [class.active]="selectedPackRoomsList===room._id">
+                                                  <div class="box" (click)="checkRoom(type.title,room.id,hotel._id)">
                                                     <div class="package-room-card">
                                                       <div class="room-details-content">
-                                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                                          <div class="d-flex flex-column justify-content-start row-gap-1">
+                                                        <div
+                                                          class="d-flex align-items-center justify-content-between gap-3">
+                                                          <div
+                                                            class="d-flex flex-column justify-content-start row-gap-1">
                                                             <div class="title">
-                                                              {{room.title}}
+                                                              {{type.title}}
                                                             </div>
-                                                            <div class="color-3">{{room.pension}}</div>
+                                                            <div class="color-3">{{type.pension}}</div>
                                                           </div>
                                                           <div class="price-content">
                                                             <div class="price d-flex">
-                                                              <div class="text-end"><span>$</span>{{room.price}}<span>/Adult</span></div>
+                                                              <div class="text-end">
+                                                                <span>$</span>{{type.price}}<span>/Adult</span>
+                                                              </div>
                                                               <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
                                                             </div>
                                                           </div>
@@ -538,23 +570,18 @@
                                                         <div class="room-options d-flex align-items-center gap-3 mb-3">
                                                           <div class="room-option d-flex gap-2">
                                                             <i class="icon-wifi-full"></i>
-                                                            <p class="mb-0 lh-base">Free WiFi</p>
+                                                            <p class="mb-0 lh-base">{{type.wifi}}</p>
                                                           </div>
                                                           <div class="room-option d-flex gap-2">
                                                             <i class="icon-line-coffee"></i>
-                                                            <p class="mb-0 lh-base">Free breakfast</p>
+                                                            <p class="mb-0 lh-base">{{type.breakfast}}</p>
                                                           </div>
                                                           <div class="room-option d-flex gap-2">
                                                             <i class="icon-line-users"></i>
-                                                            <p class="mb-0 lh-base">Sleeps {{room.advantages.sleeps}}</p>
+                                                            <p class="mb-0 lh-base">Sleeps {{type.sleeps}}
+                                                            </p>
                                                           </div>
                                                         </div>
-                                                        <!--<hr>
-                                                         <div class="link">
-                                                          <button class="color-btn" (click)="checkRoom('roombox-'+room.id,hotel._id)">
-                                                            Select
-                                                          </button>
-                                                        </div> -->
                                                       </div>
                                                     </div>
                                                   </div>
@@ -581,34 +608,38 @@
                             <div class="container">
                               <div class="row">
                                 <div class="col-xl-4 ps-0">
-                                  <div [attr.id]="'carouselhotel'+i" class="package-hotel-carousel image-box carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                                  <div [attr.id]="'carouselhotel'+i"
+                                    class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
+                                    data-bs-ride="carousel">
                                     <div class="carousel-inner h-100">
-                                      <div *ngFor="let imagedest2 of package.details.hotels[i].secondDestination.images" class="carousel-item h-100 active" data-bs-interval="4000000">
+                                      <div *ngFor="let imagedest2 of package.details.hotels[i].secondDestination.images"
+                                        class="carousel-item h-100 active" data-bs-interval="4000000">
                                         <img src={{imagedest2}} class="image-box d-block w-100 h-100" alt="" />
                                       </div>
-                                    </div>  
+                                    </div>
                                     <div class="carousel-controls">
-                                      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
-                                        data-bs-slide="prev">
+                                      <button class="carousel-control-prev" type="button"
+                                        [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
                                         <i class="icon-line-chevron-left"></i>
                                         <span class="visually-hidden">Previous</span>
                                       </button>
-                                      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselhotel'+i"
-                                        data-bs-slide="next">
+                                      <button class="carousel-control-next" type="button"
+                                        [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
                                         <i class="icon-line-chevron-right"></i>
                                         <span class="visually-hidden">Next</span>
                                       </button>
                                     </div>
                                   </div>
-                                </div>  
+                                </div>
                                 <div class="col-xl-8 py-3">
                                   <div class="hotel-content">
                                     <div class="hotel-content-bottom">
-                                      <div class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                      <div
+                                        class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
                                         <div class="d-flex flex-column justify-content-start lh-base">
                                           <div class="hotel-rating">
-                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [initialStars]='hotel.rating'
-                                              [color]="'#f4c253'"></ngx-stars>
+                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                              [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
                                           </div>
                                           <div class="hotel-name me-4">
                                             <h2 class="text-truncate">
@@ -621,9 +652,9 @@
                                           <div class="hotel-review d-flex flex-column justify-content-start lh-base">
                                             <span class="mb-0">Excellent</span>
                                             <p class="mb-0">(100 Reviews)</p>
-                                          </div>  
-                                        </div>  
-                                      </div> 
+                                          </div>
+                                        </div>
+                                      </div>
                                       <hr>
                                       <div class="d-flex flex-column row-gap-1">
                                         <div class="hotel-description mb-2">
@@ -643,7 +674,7 @@
                                                 <p class="mb-0">{{hotel.secondDestination.type}}</p>
                                               </div>
                                             </div>
-                                          </div>  
+                                          </div>
                                           <div class="col-xl-6">
                                             <div class="d-flex align-items-center gap-2 mb-2">
                                               <div class="hotel-checkin">
@@ -665,22 +696,24 @@
                                                 <p class="mb-0">Ai</p>
                                               </div>
                                             </div>
-                                          </div>  
+                                          </div>
                                         </div>
-                                      </div>  
+                                      </div>
                                     </div>
                                   </div>
-                                </div>  
+                                </div>
                               </div>
                             </div>
                           </div>
 
-                          <div class="package-hotel-rooms-card" >
+                          <div class="package-hotel-rooms-card">
                             <p class="mb-1">Select a room type to continue the process of booking.</p>
-                            <div class="package-hotel-room-item" *ngFor="let room of hotel.rooms;let i=index" [attr.id]="'room'+i">
+                            <div class="package-hotel-room-item" *ngFor="let room of hotel.rooms;let i=index"
+                              [attr.id]="'room'+i">
                               <div class="container">
                                 <div class="row">
-                                  <div class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center">
+                                  <div
+                                    class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center">
                                     <h5>Room {{room.id}}</h5>
                                   </div>
                                   <div class="room-specs col-xl-6 col-lg-6 col-md-12 border-end py-4">
@@ -692,15 +725,15 @@
                                             <div class="min-guests d-flex flex-column">
                                               <p class="mb-0 lh-base">Min guests</p>
                                               <span>{{room.minguests}}</span>
-                                            </div> 
-                                            <div class="vr"></div> 
+                                            </div>
+                                            <div class="vr"></div>
                                             <div class="max-guests d-flex flex-column">
                                               <p class="mb-0 lh-base">Max guests</p>
                                               <span>{{room.maxguests}}</span>
-                                            </div>  
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>  
+                                      </div>
                                       <div class="d-flex align-items-center gap-3">
                                         <i class="icon-line-eye"></i>
                                         <div class="view lh-base">
@@ -708,14 +741,15 @@
                                           <span>{{room.view}}</span>
                                         </div>
                                       </div>
-                                    </div>   
+                                    </div>
                                   </div>
                                   <div class="room-type col-xl-4 col-lg-4 col-md-12 py-4">
                                     <div class="room-type-content lh-base">
                                       <div class="d-flex align-items-center gap-3">
                                         <div class="room-type-icon">
                                           <svg viewBox="0 0 800 800">
-                                            <path d="M751.4,431.6c-5.8-14.1-14.9-26.3-26.4-35.7c0-62.7-0.1-108.4-5.1-145.5c-5.8-43.5-18.6-73-41.3-95.7
+                                            <path
+                                              d="M751.4,431.6c-5.8-14.1-14.9-26.3-26.4-35.7c0-62.7-0.1-108.4-5.1-145.5c-5.8-43.5-18.6-73-41.3-95.7
                                               s-52.2-35.4-95.7-41.3c-38-5.1-84.8-5.1-149.6-5.1h-66.7c-64.8,0-111.7,0-149.6,5.1c-43.5,5.8-73,18.6-95.7,41.3
                                               S85.9,206.9,80,250.4c-5,37.2-5.1,82.8-5.1,145.5c-11.5,9.4-20.5,21.6-26.4,35.7c-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4
                                               c9.4,22.6,27,40.2,49.6,49.6c12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25V625h416.7v41.7
@@ -727,42 +761,47 @@
                                               c58.2,0,84.4,0.5,96.1,12.2c11.7,11.7,12.2,37.9,12.2,96.1v25H425V241.7z M705.2,549.3c-4.3,10.3-12.3,18.3-22.5,22.5
                                               c-7.7,3.2-22.4,3.2-49.3,3.2H166.7c-26.8,0-41.6,0-49.3-3.2c-10.3-4.3-18.3-12.3-22.5-22.5c-3.2-7.7-3.2-22.4-3.2-49.3
                                               c0-26.8,0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6c7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2
-                                              c10.3,4.3,18.3,12.3,22.5,22.5c3.2,7.7,3.2,22.4,3.2,49.3C708.3,526.8,708.3,541.6,705.2,549.3z"/>
+                                              c10.3,4.3,18.3,12.3,22.5,22.5c3.2,7.7,3.2,22.4,3.2,49.3C708.3,526.8,708.3,541.6,705.2,549.3z" />
                                           </svg>
                                         </div>
                                         <div class="d-flex flex-column">
                                           <p class="mb-0 lh-base">Room type</p>
-                                          <p class="mb-0 lh-base">Work in progress...</p>
+                                          <!-- <p class="mb-0 lh-base">Work in progress...</p> -->
                                           <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#room-type-modal">
                                             {{ selectedRoomType ? selectedRoomType : 'Click here to select a type' }}
                                           </button> -->
-                                          <!-- <a class="read-btn rate-btn d-flex align-items-center justify-content-center gap-2 collapsed"
+                                          <a class="read-btn rate-btn d-flex align-items-center justify-content-center gap-2 collapsed"
                                             [attr.href]="'#rooms-list'+i" role="button" data-bs-toggle="collapse"
-                                            (click)="collapsedPackRoomsList('rooms-list'+i)" [attr.data-bs-target]="'#rooms-list'+i"
-                                            aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">
+                                            (click)="collapsedPackRoomsList('rooms-list'+i)"
+                                            [attr.data-bs-target]="'#rooms-list'+i" aria-expanded="true"
+                                            [attr.aria-controls]="'#rooms-list'+i">
                                             {{ selectedPackRoomsList ? room.title : 'Click here to select a type' }}
-                                          </a>   -->
+                                          </a>
                                         </div>
-                                      </div>  
+                                      </div>
                                     </div>
                                   </div>
                                   <div [attr.id]="'rooms-list'+i" class="rooms-list accordion-collapse collapse"
-                                    [class.show]="selectedPackRoomsList==='rooms-list'+i" data-bs-parent="#accordionFirstDestRoomsList">
+                                    [class.show]="selectedPackRoomsList==='rooms-list'+i"
+                                    data-bs-parent="#accordionFirstDestRoomsList">
                                     <div class="container">
                                       <div class="row">
-                                        <div class="col-xl-6 col-lg-6" *ngFor="let room of hotel.rooms;let j=index">
+                                        <div class="col-xl-6 col-lg-6" *ngFor="let type of room.types;let j=index">
                                           <div class="room-box">
                                             <div class="room-item">
                                               <div class="rooms-container">
                                                 <label [attr.for]="'roombox-'+room._id">
                                                   <input type="radio" name="radio" [attr.id]="'roombox-'+room._id"
-                                                  [value]="'roombox-'+room._id" [(ngModel)]="selectedPackRoomsList" disabled />
+                                                    [value]="'roombox-'+room._id" [(ngModel)]="selectedPackRoomsList"
+                                                    disabled />
 
-                                                  <div class="box" [class.active]="selectedPackRoomsList===room._id">
+                                                  <div class="box" (click)="checkRoom(type.title,room.id,hotel._id)">
                                                     <div class="package-room-card">
                                                       <div class="room-details-content">
-                                                        <div class="d-flex align-items-center justify-content-between gap-3">
-                                                          <div class="d-flex flex-column justify-content-start row-gap-1">
+                                                        <div
+                                                          class="d-flex align-items-center justify-content-between gap-3">
+                                                          <div
+                                                            class="d-flex flex-column justify-content-start row-gap-1">
                                                             <div class="title">
                                                               {{room.title}}
                                                             </div>
@@ -770,7 +809,9 @@
                                                           </div>
                                                           <div class="price-content">
                                                             <div class="price d-flex">
-                                                              <div class="text-end"><span>$</span>{{room.price}}<span>/Adult</span></div>
+                                                              <div class="text-end">
+                                                                <span>$</span>{{room.price}}<span>/Adult</span>
+                                                              </div>
                                                               <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
                                                             </div>
                                                           </div>
@@ -789,15 +830,10 @@
                                                           </div>
                                                           <div class="room-option d-flex gap-2">
                                                             <i class="icon-line-users"></i>
-                                                            <p class="mb-0 lh-base">Sleeps {{room.advantages.sleeps}}</p>
+                                                            <p class="mb-0 lh-base">Sleeps
+                                                            </p>
                                                           </div>
                                                         </div>
-                                                        <!--<hr>
-                                                         <div class="link">
-                                                          <button class="color-btn" (click)="checkRoom('roombox-'+room.id,hotel._id)">
-                                                            Select
-                                                          </button>
-                                                        </div> -->
                                                       </div>
                                                     </div>
                                                   </div>
@@ -819,7 +855,8 @@
                   </div>
                 </section>
 
-                <section id="transfersection" class="package-transfers tab-pane fade" role="tabpanel" aria-labelledby="transfersection" tabindex="0" #transfersection>
+                <section id="transfersection" class="package-transfers tab-pane fade" role="tabpanel"
+                  aria-labelledby="transfersection" tabindex="0" #transfersection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Transfers</h2>
                     <p>Top ways to experience nearby attractions.</p>
@@ -833,7 +870,7 @@
                                   <div class="d-flex flex-column align-items-start row-gap-1">
                                     <h3 class="vehicle-model mb-0">{{vehicle.model}}</h3>
                                     <span class="vehicle-type">{{vehicle.type}}</span>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <div class="vehicle-class">{{vehicle.class}}</div>
                               </div>
@@ -848,14 +885,14 @@
                                       <span class="date">{{vehicle.dateOfDeparture}}</span>
                                     </div>
                                   </div>
-              
+
                                   <div class="col-xl-4 col-xl-4 col-md-4 col-sm-4 middle-block text-center">
-                                    <div class="transfer-duration d-flex align-items-center justify-content-center gap-2">
+                                    <div
+                                      class="transfer-duration d-flex align-items-center justify-content-center gap-2">
                                       <i class="icon-line-clock"></i>
                                       <span>{{vehicle.duration}}</span>
                                     </div>
-                                    <div class="transfer-line-icon"
-                                      *ngIf="vehicle.type === 'Sedan'">
+                                    <div class="transfer-line-icon" *ngIf="vehicle.type === 'Sedan'">
                                       <svg viewBox="0 0 822.66 414.65">
                                         <path
                                           d="m821.05,288.94l-8.64-32.58c-17.85-67.33-78.97-114.36-148.63-114.36h-48.43l-85.76-95.34C502.93,17.01,463.3,0,420.88,0h-151.06c-51.58,0-98.79,25.38-123.2,66.25l-45.26,75.75H0v105.83c0,18.14,4.91,35.97,14.21,51.55,17.81,29.85,50.26,48.54,84.96,49.05,9.04,37.92,43.18,66.22,83.83,66.22s74.78-28.28,83.83-66.19h287.16c9.05,37.91,43.18,66.19,83.83,66.19s74.78-28.28,83.83-66.19h53.63c14.82,0,28.51-6.74,37.55-18.48s12.04-26.7,8.25-41.03ZM499.86,73.41l61.7,68.59h-187.7V40h47.02c30.64,0,60.17,12.49,78.99,33.41Zm-318.91,13.36c17.23-28.84,51.28-46.76,88.86-46.76h64.04v102h-185.91l33-55.24Zm2.04,287.88c-25.47,0-46.19-20.72-46.19-46.19s20.72-46.19,46.19-46.19,46.19,20.72,46.19,46.19-20.72,46.19-46.19,46.19Zm454.81,0c-25.47,0-46.19-20.72-46.19-46.19s20.72-46.19,46.19-46.19,46.19,20.72,46.19,46.19-20.72,46.19-46.19,46.19Zm143.3-69.07c-.83,1.07-2.69,2.88-5.84,2.88h-53.63c-9.05-37.91-43.18-66.19-83.83-66.19s-74.78,28.28-83.83,66.19h-287.16c-9.05-37.91-43.18-66.19-83.83-66.19s-74.77,28.27-83.82,66.17c-20.69-.5-39.99-11.72-50.62-29.54-5.6-9.39-8.56-20.12-8.56-31.06v-65.83h623.79c51.54,0,96.76,34.79,109.96,84.61l8.64,32.58c.81,3.05-.46,5.31-1.28,6.39Z"
@@ -897,13 +934,15 @@
                                           style="stroke-width:0px;" />
                                       </svg>
                                     </div>
-              
+
                                     <span class="total-stop"
-                                      *ngIf="vehicle.type === 'Train' || vehicle.type === 'Bus'">{{vehicle.stops.length == 0 ? 'Direct' 
-                                      : vehicle.stops.length == 1 ? vehicle.stops.length + ' stop' : vehicle.stops.length + ' stops' }}
+                                      *ngIf="vehicle.type === 'Train' || vehicle.type === 'Bus'">{{vehicle.stops.length
+                                      == 0 ? 'Direct'
+                                      : vehicle.stops.length == 1 ? vehicle.stops.length + ' stop' :
+                                      vehicle.stops.length + ' stops' }}
                                     </span>
                                   </div>
-              
+
                                   <div class="details-block text-end align-items-end">
                                     <div class="time-block">
                                       <span class="time">{{vehicle.timeOfArrival}}</span>
@@ -914,37 +953,40 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>  
+                              </div>
                               <div class="more-details p-3">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                   <div class="d-flex align-items-center gap-2">
                                     <i class="icon-line-users"></i>
                                     <p class="mb-0"><span>{{vehicle.nbrpassengers}}</span> passengers</p>
                                   </div>
-                                  
+
                                 </div>
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                   <i class="icon-line-alert-octagon"></i>
                                   <p class="mb-0">{{vehicle.stops.length}} stop{{vehicle.stops.length == 1 ?
                                     ' through' : vehicle.stops.length == 0 ?
                                     's' : 's through'}} {{vehicle.stops.length >= 3 ?
-                                    vehicle.stops.slice(0,vehicle.stops.length-1).join(', ') + ' and ' + vehicle.stops[vehicle.stops.length-1] :
+                                    vehicle.stops.slice(0,vehicle.stops.length-1).join(', ') + ' and ' +
+                                    vehicle.stops[vehicle.stops.length-1] :
                                     vehicle.stops.join(' and ')}}</p>
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
                                   <i class="icon-line-briefcase"></i>
-                                  <p class="mb-0">{{vehicle.luggage}} piece{{vehicle.luggage > 1 ? "s" : ""}} of checked luggage (per ad.)</p>
+                                  <p class="mb-0">{{vehicle.luggage}} piece{{vehicle.luggage > 1 ? "s" : ""}} of checked
+                                    luggage (per ad.)</p>
                                 </div>
                               </div>
-                            </div>  
+                            </div>
                           </div>
-                        </label>    
+                        </label>
                       </div>
-                    </div>    
+                    </div>
                   </div>
                 </section>
 
-                <section id="activitiessection" class="package-activities tab-pane fade" role="tabpanel" aria-labelledby="activitiessection" tabindex="0" #activitiessection>
+                <section id="activitiessection" class="package-activities tab-pane fade" role="tabpanel"
+                  aria-labelledby="activitiessection" tabindex="0" #activitiessection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Activities</h2>
                     <p>Immerse yourself in activities that will amplify the richness of your experiences.</p>
@@ -952,64 +994,66 @@
                       <div class="col-lg-12" *ngFor="let activity of package.details.activities;let i=index">
                         <div class="package-activity-card">
                           <div class="container">
-                          <div class="row">
-                            <div class="col-lg-4">
-                              <div class="activity-picture">
-                                <img src="{{activity.picture}}" class="d-block w-100" alt="" />
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <div class="activity-picture">
+                                  <img src="{{activity.picture}}" class="d-block w-100" alt="" />
+                                </div>
                               </div>
-                            </div>
-                            <div class="col-lg-8 py-3 px-3">
-                              <div class="activity-title mb-3">
-                                <h2>{{activity.title}}</h2>
-                                <!-- <div class="activity-location d-flex align-items-start gap-2 lh-base">
+                              <div class="col-lg-8 py-3 px-3">
+                                <div class="activity-title mb-3">
+                                  <h2>{{activity.title}}</h2>
+                                  <!-- <div class="activity-location d-flex align-items-start gap-2 lh-base">
                                   <i class="icon-line-map-pin"></i>
                                   <p class="mb-0 lh-base">{{activity.location}}</p>
                                 </div> -->
-                              </div>
+                                </div>
 
-                              <div class="activity-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
-                                <div class="activity-location">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-map-pin"></i>
-                                    <div class="activity-text lh-base">
-                                      <p class="mb-0">Location</p>
-                                      <span>{{activity.location}}</span>
-                                    </div>  
-                                  </div>  
+                                <div
+                                  class="activity-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
+                                  <div class="activity-location">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-map-pin"></i>
+                                      <div class="activity-text lh-base">
+                                        <p class="mb-0">Location</p>
+                                        <span>{{activity.location}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="activity-duration">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-calendar"></i>
+                                      <div class="activity-text lh-base">
+                                        <p class="mb-0">Date</p>
+                                        <span>{{activity.date}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="activity-place">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-clock"></i>
+                                      <div class="activity-text lh-base">
+                                        <p class="mb-0">Time</p>
+                                        <span>{{activity.time}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="activity-duration">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-calendar"></i>
-                                    <div class="activity-text lh-base">
-                                      <p class="mb-0">Date</p>
-                                      <span>{{activity.date}}</span>
-                                    </div>  
-                                  </div>  
+                                <hr>
+                                <div class="activity-description">
+                                  <p>{{activity.description}}</p>
                                 </div>
-                                <div class="activity-place">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-clock"></i>
-                                    <div class="activity-text lh-base">
-                                      <p class="mb-0">Time</p>
-                                      <span>{{activity.time}}</span>
-                                    </div>  
-                                  </div>  
-                                </div>
-                              </div>
-                              <hr>
-                              <div class="activity-description">
-                                <p>{{activity.description}}</p>
                               </div>
                             </div>
                           </div>
-                        </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                <section id="visitssection" class="package-visits tab-pane fade" role="tabpanel" aria-labelledby="visitssection" tabindex="0" #visitssection>
+                <section id="visitssection" class="package-visits tab-pane fade" role="tabpanel"
+                  aria-labelledby="visitssection" tabindex="0" #visitssection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Visits</h2>
                     <p>Delve into your experiences, savoring every moment.</p>
@@ -1017,92 +1061,99 @@
                       <div class="col-lg-12" *ngFor="let visit of package.details.visits;let i=index">
                         <div class="package-visit-card">
                           <div class="container">
-                          <div class="row">
-                            <div class="col-lg-4">
-                              <div class="visit-picture">
-                                <img src="{{visit.picture}}" class="d-block w-100" alt="" />
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <div class="visit-picture">
+                                  <img src="{{visit.picture}}" class="d-block w-100" alt="" />
+                                </div>
                               </div>
-                            </div>
-                            <div class="col-lg-8 py-3 px-3">
-                              <div class="visit-title mb-3">
-                                <h2>{{visit.title}}</h2>
-                              </div>
-                              <div class="visit-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
-                                <div class="visit-date">
+                              <div class="col-lg-8 py-3 px-3">
+                                <div class="visit-title mb-3">
+                                  <h2>{{visit.title}}</h2>
+                                </div>
+                                <div class="visit-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
+                                  <div class="visit-date">
                                     <div class="d-flex align-items-center gap-2">
                                       <i class="icon-line-calendar"></i>
                                       <div class="visit-text lh-base">
                                         <p class="mb-0">Visit Date</p>
                                         <span>{{visit.date}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="visit-duration">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-clock"></i>
+                                      <div class="visit-text lh-base">
+                                        <p class="mb-0">Visit Duration</p>
+                                        <span>{{visit.duration}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="visit-place">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-map-pin"></i>
+                                      <div class="visit-text lh-base">
+                                        <p class="mb-0">Place to Visit</p>
+                                        <span>{{visit.placeVisit}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="visit-starttime">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <i class="icon-line-clock"></i>
+                                      <div class="visit-text lh-base">
+                                        <p class="mb-0">Start time</p>
+                                        <span>{{visit.startTime}}</span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="visit-duration">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-clock"></i>
-                                    <div class="visit-text lh-base">
-                                      <p class="mb-0">Visit Duration</p>
-                                      <span>{{visit.duration}}</span>
-                                    </div>  
-                                  </div>  
+                                <hr>
+                                <div class="visit-description">
+                                  <p>{{visit.description}}</p>
                                 </div>
-                                <div class="visit-place">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-map-pin"></i>
-                                    <div class="visit-text lh-base">
-                                      <p class="mb-0">Place to Visit</p>
-                                      <span>{{visit.placeVisit}}</span>
-                                    </div>  
-                                  </div>  
-                                </div>
-                                <div class="visit-starttime">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="icon-line-clock"></i>
-                                    <div class="visit-text lh-base">
-                                      <p class="mb-0">Start time</p>
-                                      <span>{{visit.startTime}}</span>
-                                    </div>  
-                                  </div>  
-                                </div>
-                              </div>
-                              <hr>
-                              <div class="visit-description">
-                                <p>{{visit.description}}</p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        </div>
                       </div>
-                    </div>  
+                    </div>
                   </div>
                 </section>
 
-                <section id="plansection" class="package-plan tab-pane fade" role="tabpanel" aria-labelledby="plansection" tabindex="0" #plansection>
+                <section id="plansection" class="package-plan tab-pane fade" role="tabpanel"
+                  aria-labelledby="plansection" tabindex="0" #plansection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Plan Details</h2>
                     <p>Embark on an unconventional plan to fully relish the experience.</p>
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                       <div class="accordion-item">
                         <h3 class="accordion-header">
-                          <button class="accordion-button d-flex align-items-center justify-content-between pe-3 gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                              <div class="d-flex align-items-center gap-3">
-                                <div class="plan-day">Day 1</div>
-                                <div class="plan-title d-flex align-items-center gap-2">
-                                  <i class="icon-line-chevron-right"></i>
-                                  <span>Jeddah Makkah</span>
-                                </div>
+                          <button class="accordion-button d-flex align-items-center justify-content-between pe-3 gap-3"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                            aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            <div class="d-flex align-items-center gap-3">
+                              <div class="plan-day">Day 1</div>
+                              <div class="plan-title d-flex align-items-center gap-2">
+                                <i class="icon-line-chevron-right"></i>
+                                <span>Jeddah Makkah</span>
                               </div>
-                              <i class="collapse-icon icon-line-chevron-down"></i>
+                            </div>
+                            <i class="collapse-icon icon-line-chevron-down"></i>
                           </button>
                         </h3>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                           <div class="accordion-body">
                             <p>
-                              According to your international flight schedule, we will be waiting for you in Jeddah airport. 
-                              Transfer to your hotel in Makkah. After check-in and have a quick shower, your local guide will 
-                              meet you in hotel lobby and walk together to the Haram-Masjeed al Haram to perform your first Umrah. 
-                              Once you finish the Umrah, you can either return to hotel or stay in Haram on your own. Rest of 
+                              According to your international flight schedule, we will be waiting for you in Jeddah
+                              airport.
+                              Transfer to your hotel in Makkah. After check-in and have a quick shower, your local guide
+                              will
+                              meet you in hotel lobby and walk together to the Haram-Masjeed al Haram to perform your
+                              first Umrah.
+                              Once you finish the Umrah, you can either return to hotel or stay in Haram on your own.
+                              Rest of
                               the day at your pace. Overnight in Makkah.
                             </p>
                           </div>
@@ -1110,7 +1161,10 @@
                       </div>
                       <div class="accordion-item">
                         <h3 class="accordion-header">
-                          <button class="accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                          <button
+                            class="accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                             <div class="d-flex align-items-center gap-3">
                               <div class="plan-day">Day 2</div>
                               <div class="plan-title d-flex align-items-center gap-2">
@@ -1124,12 +1178,18 @@
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                           <div class="accordion-body">
                             <p>
-                              Breakfast at the hotel and early departure from your hotel for Ziyarats in Makkah with your English speaking driver.
-                              Today you will visit Maqbarat el Ma'la(Cemetery) resting place of Hazrat Khadijah bint Khuwaylid, first wife of our
-                              beloved Nabi(Saw), His first Son and many other Sahabis. The visit will be outside the fences from a distance. 
-                              Continue to Arafat to feel the atmosphere of Hajj where the millions gather in Hajj season for waqfa and du'a 
-                              (If you want to perform Umrah once more, you can get to Ikhram here as the Arafat also a Miqat -Haram border-point
-                              to enter Ikhram). Muzdalifah, Jamarat etc. We will return to our hotel before noon prayer. Rest of the day at 
+                              Breakfast at the hotel and early departure from your hotel for Ziyarats in Makkah with
+                              your English speaking driver.
+                              Today you will visit Maqbarat el Ma'la(Cemetery) resting place of Hazrat Khadijah bint
+                              Khuwaylid, first wife of our
+                              beloved Nabi(Saw), His first Son and many other Sahabis. The visit will be outside the
+                              fences from a distance.
+                              Continue to Arafat to feel the atmosphere of Hajj where the millions gather in Hajj season
+                              for waqfa and du'a
+                              (If you want to perform Umrah once more, you can get to Ikhram here as the Arafat also a
+                              Miqat -Haram border-point
+                              to enter Ikhram). Muzdalifah, Jamarat etc. We will return to our hotel before noon prayer.
+                              Rest of the day at
                               your own pace. Overnight in Makkah.
                             </p>
                           </div>
@@ -1137,7 +1197,10 @@
                       </div>
                       <div class="accordion-item">
                         <h3 class="accordion-header">
-                          <button class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          <button
+                            class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
                             <div class="d-flex align-items-center gap-3">
                               <div class="plan-day">Day 3</div>
                               <div class="plan-title d-flex align-items-center gap-2">
@@ -1150,13 +1213,18 @@
                         </h3>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                           <div class="accordion-body">
-                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you want, you can visit Noor Mountain where cave of Hira is located on your own. Overnight in Makkah.</p>
+                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you want,
+                              you can visit Noor Mountain where cave of Hira is located on your own. Overnight in
+                              Makkah.</p>
                           </div>
                         </div>
                       </div>
                       <div class="accordion-item">
                         <h3 class="accordion-header">
-                          <button class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                          <button
+                            class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
                             <div class="d-flex align-items-center gap-3">
                               <div class="plan-day">Day 4</div>
                               <div class="plan-title d-flex align-items-center gap-2">
@@ -1169,13 +1237,18 @@
                         </h3>
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                           <div class="accordion-body">
-                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you want to visit Taif city, then we can arrange a day trip with additional cost. Overnight in Makkah.</p>
+                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you want
+                              to visit Taif city, then we can arrange a day trip with additional cost. Overnight in
+                              Makkah.</p>
                           </div>
                         </div>
                       </div>
                       <div class="accordion-item">
                         <h3 class="accordion-header">
-                          <button class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                          <button
+                            class="accordion-button accordion-button d-flex align-items-center justify-content-between pe-3 gap-3 collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                             <div class="d-flex align-items-center gap-3">
                               <div class="plan-day">Day 5</div>
                               <div class="plan-title d-flex align-items-center gap-2">
@@ -1188,7 +1261,9 @@
                         </h3>
                         <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
                           <div class="accordion-body">
-                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you would like, we can also arrange an additional Al Ji'ranah Umrah where Nabi(saw) entered Ikhram to perform Umrah after battle of Hunayn. Overnight in Makkah.</p>
+                            <p>Breakfast at the hotel and you can make your ibadah at your heart's content. If you would
+                              like, we can also arrange an additional Al Ji'ranah Umrah where Nabi(saw) entered Ikhram
+                              to perform Umrah after battle of Hunayn. Overnight in Makkah.</p>
                           </div>
                         </div>
                       </div>
@@ -1196,39 +1271,40 @@
                   </div>
                 </section>
 
-                <section id="policiessection" class="package-policies tab-pane fade" role="tabpanel" aria-labelledby="policiessection" tabindex="0" #policiessection>
+                <section id="policiessection" class="package-policies tab-pane fade" role="tabpanel"
+                  aria-labelledby="policiessection" tabindex="0" #policiessection>
                   <div class="package-service-section mb-0">
                     <h2>Policies</h2>
-                      <div class="row">
-                        <div class="col-xol-6 col-lg-6">
-                          <div class="d-flex align-items-center gap-2">
-                            <i class="icon-line-chevron-right"></i>
-                            <h5 class="package-sm-title">Inclusions</h5>
-                          </div>
-                          <ul class="inclusions">
-                            <li>Accommodation | In Madinah & Makkah</li>
-                            <li>Airport & Intercity Transfers</li>
-                            <li>Flights (optional)</li>
-                            <li>Activities (optional)</li>
-                          </ul>
+                    <div class="row">
+                      <div class="col-xol-6 col-lg-6">
+                        <div class="d-flex align-items-center gap-2">
+                          <i class="icon-line-chevron-right"></i>
+                          <h5 class="package-sm-title">Inclusions</h5>
                         </div>
-                        <div class="col-xol-6 col-lg-6">
-                          <div class="d-flex align-items-center gap-2">
-                            <i class="icon-line-chevron-right"></i>
-                            <h5 class="package-sm-title">Exclusions</h5>
-                          </div>
-                          <ul class="exclusions">
-                            <li>Add-ons not included</li>
-                            <li>Early check-in and late check-out charges</li>
-                            <li>Anything not mentioned in Inclusions</li>
-                            <li>Room Extras</li>
-                            <li>Additional Meals</li>
-                            <li>Personal Expenses</li>
-                            <li>Hotel Parking</li>
-                          </ul>
-                        </div>
+                        <ul class="inclusions">
+                          <li>Accommodation | In Madinah & Makkah</li>
+                          <li>Airport & Intercity Transfers</li>
+                          <li>Flights (optional)</li>
+                          <li>Activities (optional)</li>
+                        </ul>
                       </div>
-                    <hr> 
+                      <div class="col-xol-6 col-lg-6">
+                        <div class="d-flex align-items-center gap-2">
+                          <i class="icon-line-chevron-right"></i>
+                          <h5 class="package-sm-title">Exclusions</h5>
+                        </div>
+                        <ul class="exclusions">
+                          <li>Add-ons not included</li>
+                          <li>Early check-in and late check-out charges</li>
+                          <li>Anything not mentioned in Inclusions</li>
+                          <li>Room Extras</li>
+                          <li>Additional Meals</li>
+                          <li>Personal Expenses</li>
+                          <li>Hotel Parking</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <hr>
                     <div class="d-flex align-items-center gap-2">
                       <i class="icon-line-chevron-right"></i>
                       <h5 class="package-sm-title">Terms And Conditions</h5>
@@ -1238,36 +1314,42 @@
                       </li>
                       <li>Check-in for flight begins 3 hrs. before departure.</li>
                       <li>Passport must be valid for at least six months from the date of departure.</li>
-                      <li>Early check-in or Late check-out are subject to availability and will incur extra charges.</li>
+                      <li>Early check-in or Late check-out are subject to availability and will incur extra charges.
+                      </li>
                       <li>Any additional extras shall be paid by the guest. (Incl CC guarantee at the hotel).</li>
                       <li>Failure to vacate the room as per the checkout time will result in additional charges.</li>
                       <li>Trips & activities may be change or cancel due weather or any other unforeseen circumstances.
                       </li>
-                      <li>Modifications are subject to airline, hotel & Umrahme policy, and may incur additional charges.
+                      <li>Modifications are subject to airline, hotel & Umrahme policy, and may incur additional
+                        charges.
                       </li>
                       <li>Umrahme is not responsible if passengers are unable to travel due to passport or visa issues.
                       </li>
-                      <li>Flight timings may result in early check-in or late check-out and may incur additional charges.
+                      <li>Flight timings may result in early check-in or late check-out and may incur additional
+                        charges.
                       </li>
                       <li>Refund will not be applicable for any unutilized service.</li>
                     </ul>
-                    <hr> 
+                    <hr>
                     <div class="d-flex align-items-center gap-2">
                       <i class="icon-line-chevron-right"></i>
                       <h5 class="package-sm-title">Cancellation Policy</h5>
                     </div>
                     <ul>
-                      <li>For any cancellation please connect with our customer support to check on the applicable policy
+                      <li>For any cancellation please connect with our customer support to check on the applicable
+                        policy
                         of each
                         travel components selected on the package.</li>
                       <li>Our standard package policy is governed by the following conditions</li>
                       <li>Flight part of the package is non-refundable after the booking is paid and confirmed</li>
                       <li>Land Services ( Hotel, Transfers, Tours & Excursion)</li>
-                      <li>Partial/Full Refundable upto 14 days prior to departure subject to each travel component and its
+                      <li>Partial/Full Refundable upto 14 days prior to departure subject to each travel component and
+                        its
                         applicable
                         policy</li>
                       <li>Subject to a fee of 50% of the total amount from 7 to 14 days prior to departure</li>
-                      <li>Subject to a fee of 100% of the total amount from less than 7 days prior to departure date</li>
+                      <li>Subject to a fee of 100% of the total amount from less than 7 days prior to departure date
+                      </li>
                       <li>Subject to a fee of 100% of the total amount in case of no show</li>
                     </ul>
                   </div>

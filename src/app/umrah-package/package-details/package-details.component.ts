@@ -30,31 +30,8 @@ export class PackageDetailsComponent implements OnInit {
   activeSection: any;
   selectedOffer: string = '';
   selectedRoomType: string | null = null;
-  selectedPackRoomsList : string = ''
-  isModalOpen = false;
-  selectedRoomType2: string | null = null;
-  isModalOpen2 = false;
-  roomsTypes = [
-    'Standard Room',
-    'Double Room',
-    'Twin Room',
-    'Queen Room',
-    'King Room',
-    'Suite',
-    'Junior Suite',
-    'Presidential Suite',
-    'Family Room',
-    'Connecting Rooms',
-    'Adjoining Rooms',
-    'Accessible Room',
-    'Pet-friendly Room',
-    'Executive Room',
-    'Penthouse',
-    'Cabana',
-    'Loft',
-    'Smoking/Non-smoking Rooms'
-  ];
-
+  selectedPackRoomsList: string = ''
+  types: any[] = []
   sections: any[] = [
     {
       name: 'Flights',
@@ -103,22 +80,17 @@ export class PackageDetailsComponent implements OnInit {
   dataHotelsFirst: any[] = []
   dataHotelsSecond: any[] = []
   hotelDestinationOne: any
+  settings = {
+    counter: false,
+    plugins: [lgZoom],
+  };
 
   constructor(
     private el: ElementRef,
     private router: Router,
     private packageService: packageService,
     private route: ActivatedRoute,
-  ) {}
-
-  settings = {
-    counter: false,
-    plugins: [lgZoom],
-  };
-  onBeforeSlide = (detail: BeforeSlideDetail): void => {
-    const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
-  };
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -126,27 +98,27 @@ export class PackageDetailsComponent implements OnInit {
     this.package = data.find((el) => id == el._id);
   }
 
-  openModal() {
-    this.isModalOpen = true;
-  }
-
-  closeModal(room: string | null) {
-    this.isModalOpen = false;
-
-    if (room !== null) {
-      this.selectedRoomType = room;
-    }
-  }
+  onBeforeSlide = (detail: BeforeSlideDetail): void => {
+    const { index, prevIndex } = detail;
+    console.log(index, prevIndex);
+  };
 
   checkOffer(value: string) {
     this.selectedOffer = value;
   }
 
-  checkRoom(value: string, idHotel: any) {
-    let data = this.packageService.dataPackages();
-    this.selectedPackRoomsList = value;
+  checkRoom(type: string, idRoom: any, idHotel: any) {
+    let data: any[] = this.packageService.dataPackages();
     this.hotelDestinationOne = data.find((data: any) => data._id === idHotel)
-    localStorage.setItem('hotelFirstDestination', JSON.stringify(this.hotelDestinationOne))
+    let hotel = this.hotelDestinationOne?.details.hotels.find((data: any) => data._id == idHotel)
+    if (hotel) {
+      const room = hotel.rooms.find((data: any) => data.id == idRoom)
+      if (room) {
+        localStorage.setItem('roomHotelFirstDestination', JSON.stringify({ room: room.id, title: type }))
+      }
+
+    }
+
   }
 
   collapsedPackRoomsList(value: any) {

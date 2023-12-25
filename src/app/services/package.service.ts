@@ -50,52 +50,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -113,7 +113,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -154,36 +154,56 @@ export class packageService {
               rooms: [
                 {
                   id: 1,
-                  title: 'Standard Room',
-                  pension: 'LPD',
-                  price: 350,
                   tva: true,
                   minguests: 1,
                   maxguests: 2,
                   view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  types: [
+                    {
+                      pension: 'LPD',
+                      price: 350,
+                      title: 'Standard Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    },
+                    {
+                      price: 320,
+                      pension: 'LPD',
+                      title: 'Double Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    }
+                  ]
                 },
                 {
                   id: 2,
-                  title: 'Double Room',
-                  pension: 'LPD',
-                  price: 320,
                   tva: true,
                   minguests: 2,
                   maxguests: 4,
                   view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  types: [
+                    {
+                      price: 400,
+                      pension: 'LPD',
+                      title: 'Standard Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    },
+                    {
+                      price: 380,
+                      pension: 'LPD',
+                      title: 'Double Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    }
+                  ]
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -323,7 +343,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -332,7 +352,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -341,7 +361,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
@@ -412,52 +432,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -475,7 +495,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -545,7 +565,7 @@ export class packageService {
                   }
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -685,7 +705,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -694,7 +714,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -703,7 +723,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
@@ -774,52 +794,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -837,7 +857,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -907,7 +927,7 @@ export class packageService {
                   }
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -1047,7 +1067,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -1056,7 +1076,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -1065,7 +1085,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
@@ -1136,52 +1156,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -1199,7 +1219,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -1269,7 +1289,7 @@ export class packageService {
                   }
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -1409,7 +1429,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -1418,7 +1438,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -1427,7 +1447,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
@@ -1498,52 +1518,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -1561,7 +1581,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -1631,7 +1651,7 @@ export class packageService {
                   }
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -1771,7 +1791,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -1780,7 +1800,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -1789,7 +1809,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
@@ -1860,52 +1880,52 @@ export class packageService {
           offers: [
             {
               id: 1,
-              title : 'A Pilgrimage to Makkah',
-              price : '1000',
+              title: 'A Pilgrimage to Makkah',
+              price: '1000',
               nbrdays: '4',
-              nbrnights:'3',
-              departuretype:'guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '3',
+              departuretype: 'guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 2,
-              title : 'A Pilgrimage to Madinah',
-              price : '960',
+              title: 'A Pilgrimage to Madinah',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'Belgium'
             },
             {
               id: 3,
-              title : 'A Pilgrimage to Makkah 2',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
             {
               id: 4,
-              title : 'A Pilgrimage to Madinah 2',
-              price : '960',
+              title: 'A Pilgrimage to Madinah 2',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'UK'
             },
             {
               id: 5,
-              title : 'A Pilgrimage to Makkah 3',
-              price : '960',
+              title: 'A Pilgrimage to Makkah 3',
+              price: '960',
               nbrdays: '5',
-              nbrnights:'4',
-              departuretype:'not guaranteed',
-              arrangementtype:'LPD',
+              nbrnights: '4',
+              departuretype: 'not guaranteed',
+              arrangementtype: 'LPD',
               departurecity: 'France'
             },
           ],
@@ -1923,7 +1943,7 @@ export class packageService {
               stops: [],
               flightNumber: "TUR0606",
               luggage: 1,
-              flightReturn:{
+              flightReturn: {
                 flightcompany: 'Saudia Airlines',
                 class: "Economic",
                 timeOfDeparture: "14:10",
@@ -1993,7 +2013,7 @@ export class packageService {
                   }
                 }
               ],
-              secondDestination : {
+              secondDestination: {
                 _id: 1,
                 hotelName: 'Sofitel Shahd al Madinah',
                 type: 'Business Hotel',
@@ -2133,7 +2153,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
               date: '01/11/2024',
-              time:'09:30'
+              time: '09:30'
             },
             {
               id: 2,
@@ -2142,7 +2162,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
               date: '08/11/2024',
-              time:'08:00'
+              time: '08:00'
             },
             {
               id: 3,
@@ -2151,7 +2171,7 @@ export class packageService {
               location: 'Madinah, Saudi Arabia',
               description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               date: '10/11/2024',
-              time:'10:30'
+              time: '10:30'
             },
           ],
           visits: [
