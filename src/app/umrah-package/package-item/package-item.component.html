@@ -9,16 +9,24 @@
                             <img src={{image}} class="package-picture d-block w-100" alt="" />
                         </div>
                     </div>
-                    <div class="package-best-labels d-flex align-items-center column-gap-2">
-                        <div class="package-label bestoffer d-flex align-items-center" *ngIf="package.packagePrice == getMinPrice()">
+                    <div class="package-best-labels d-flex flex-wrap align-items-center gap-2">
+                        <div class="package-label pack-available d-flex align-items-center gap-2">
+                            <i class="icon-line-bell"></i>
+                            {{package.packagedisponiblity}} offers left
+                        </div>
+                        <div class="package-label bestoffer" *ngIf="package.packagePrice == getMinPrice()">
                             Best Rate
                         </div>
-                        <div class="package-label toprated d-flex align-items-center" *ngIf="package.packageRating == getMaxRating()">
+                        <div class="package-label toprated" *ngIf="package.packageRating == getMaxRating()">
                             Top Rated
                         </div>
-                        <div class="package-label promo d-flex align-items-center" *ngIf="package.packagepromo.length != ''">
+                        <div class="package-label promo" *ngIf="package.packagepromo.length != ''">
                             {{package.packagepromo}}
                         </div>
+                    </div>
+                    <div class="best-rate-notice">
+                        <p class="m-0">starts from</p>
+                        <div class="price"><span>$</span>250</div>
                     </div>
                     <div class="carousel-controls" *ngIf="package.packagePictures.length > 1">
                         <button class="carousel-control-prev" type="button"
@@ -37,10 +45,13 @@
 
             <div class="package-more-details px-3 my-3">
                 <div class="d-flex flex-column justify-content-between">
-                    <div>
-                        <div class="d-flex align-items-center mb-1">
-                            <h5 class="package-title lh-base">{{package.packageTitle}}</h5>
-                        </div>
+                    <div class="d-flex flex-column">
+                        <h5 class="package-title lh-base">{{package.packageTitle}} 
+                            <div class="package-rating">
+                                <ngx-stars class="lh-base" [readonly]="true" [size]="1" [maxStars]="5"
+                                [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
+                            </div>
+                        </h5>    
                         <div class="package-details">
                             <div class="d-flex flex-wrap align-items-center gap-2">
                                 <div class="package-type lh-base">
@@ -57,18 +68,30 @@
                                 <i class="icon-line-map-pin"></i>
                                 <p class="m-0 ">{{package.packagePlace}}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-2">    
-                                <div class="package-date lh-base d-flex align-items-center gap-2">
+                            <div class="d-flex flex-wrap align-items-center column-gap-3 row-gap-2">    
+                                <div class="package-info package-date lh-base d-flex align-items-center gap-2">
                                     <i class="icon-line-calendar"></i>
                                     <p class="m-0 ">{{package.packageDate}}</p>
                                 </div>
-                                <div class="package-period lh-base d-flex align-items-center gap-2">
+                                <div class="package-info package-period lh-base d-flex align-items-center gap-2">
                                     <i class="icon-line-moon"></i>
                                     <p class="m-0 ">{{package.packagePeriod}} days</p>
                                 </div>
+                                <div class="package-info package-rooms lh-base d-flex align-items-center gap-2">
+                                    <i class="icon-line-ribbon"></i>
+                                    <p class="lh-base mb-0">{{package.packageNbrRoom}} room</p>
+                                </div>
+                                <div class="package-info package-guests lh-base d-flex align-items-center gap-2">
+                                    <i class="icon-line-users"></i>
+                                    <p class="lh-base mb-0">{{package.packageNbrPassengers}} guest</p>
+                                </div>
+                                <div class="package-info package-departurecity flex-wrap lh-base d-flex align-items-center gap-2">
+                                    <p class="package-departurecity-label mb-0 lh-base">Departure City</p>
+                                    <p class="mb-0 lh-base">{{package.packageDeparturecities}}</p>
+                                </div>
                             </div>
                             <hr>
-                            <div class="package-services lh-base">
+                            <div class="package-services lh-base mb-4">
                                 <div class="d-flex align-items-center mb-2 gap-1">
                                     <i class="icon-line-chevron-right"></i>
                                     <p class="package-include mb-2">Included Services</p>
@@ -85,39 +108,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex flex-column align-items-end justify-content-between mb-3">
-                            <div class="package-price-card d-flex align-items-end justify-content-between">
-                                <div class="package-rating d-flex flex-column align-items-start lh-base gap-2">
-                                    <div class="package-offer d-flex align-items-center gap-2">
-                                        <i class="icon-line-bell"></i>
-                                        {{package.packagedisponiblity}} offers left
-                                    </div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="d-flex align-items-center">
-                                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                                [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <p class="mb-0">{{package.packageRating}}</p>
-                                            <p class="mb-0">(207)</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex flex-column justify-content-start align-items-end">
-                                    <p class="lh-base m-0 text-end color">Price starts from</p>
-                                    <div class="package-price text-end">
-                                        <span>$</span>{{package.packagePrice}}
-                                    </div>
-                                    <p class="package-reservation-specs text-end lh-base">
-                                        {{package.packageNbrRoom}} room - {{package.packageNbrPassengers}} guest
-                                    </p>
-                                </div>
-                            </div>
-                        </div>         
-                    </div>                         
+                        </div>        
+                    </div>                     
                     <button type="button" class="color-btn service-btn-select float-end w-100"
                     [routerLink]="['package/'+package._id]"
                     routerLinkActive="router-link-active">Discover</button>

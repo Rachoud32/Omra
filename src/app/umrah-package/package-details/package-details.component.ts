@@ -16,6 +16,7 @@ import { BeforeSlideDetail } from 'lightgallery/lg-events';
   styleUrls: ['./package-details.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class PackageDetailsComponent implements OnInit {
   @ViewChild('overviewsection') public overviewsection?: ElementRef;
   @ViewChild('flightsection') public flightsection?: ElementRef;
@@ -29,6 +30,7 @@ export class PackageDetailsComponent implements OnInit {
   activeSection: any;
   selectedOffer: string = '';
   selectedRoomType: string | null = null;
+  selectedPackRoomsList : string = ''
   isModalOpen = false;
   selectedRoomType2: string | null = null;
   isModalOpen2 = false;
@@ -79,10 +81,16 @@ export class PackageDetailsComponent implements OnInit {
       id: 'activitiessection',
     },
     {
-      name: 'Program',
-      icon: 'assets/program-menu-icon.svg',
+      name: 'Visits',
+      icon: 'assets/visits-menu-icon.svg',
+      scale: 'transform: scale(0.8);',
+      id: 'visitssection',
+    },
+    {
+      name: 'Plan',
+      icon: 'assets/plan-menu-icon.svg',
       scale: 'transform: scale(0.9);',
-      id: 'programsection',
+      id: 'plansection',
     },
     {
       name: 'Policies',
@@ -92,11 +100,15 @@ export class PackageDetailsComponent implements OnInit {
     },
   ];
 
+  dataHotelsFirst: any[] = []
+  dataHotelsSecond: any[] = []
+  hotelDestinationOne: any
+
   constructor(
     private el: ElementRef,
     private router: Router,
     private packageService: packageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   settings = {
@@ -114,17 +126,6 @@ export class PackageDetailsComponent implements OnInit {
     this.package = data.find((el) => id == el._id);
   }
 
-  // moveTo(value: any) {
-  //   if (value == 'Overview') {
-  //     window.scrollTo({
-  //       top: this.overviewsection?.nativeElement.offsetTop + 450,
-  //       behavior: 'smooth',
-  //     });
-  //     this.activeSection = 'Overview'
-  //   }
-
-  // }
-
   openModal() {
     this.isModalOpen = true;
   }
@@ -139,5 +140,16 @@ export class PackageDetailsComponent implements OnInit {
 
   checkOffer(value: string) {
     this.selectedOffer = value;
+  }
+
+  checkRoom(value: string, idHotel: any) {
+    let data = this.packageService.dataPackages();
+    this.selectedPackRoomsList = value;
+    this.hotelDestinationOne = data.find((data: any) => data._id === idHotel)
+    localStorage.setItem('hotelFirstDestination', JSON.stringify(this.hotelDestinationOne))
+  }
+
+  collapsedPackRoomsList(value: any) {
+    this.selectedPackRoomsList = value
   }
 }

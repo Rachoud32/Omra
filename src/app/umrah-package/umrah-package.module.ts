@@ -15,6 +15,7 @@ import { PackageCalendarComponent } from './package-calendar/package-calendar.co
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PackageCalenderHeaderComponent } from './package-calender-header/package-calender-header.component';
+import { PackageBookingsMobComponent } from './package-bookings-mob/package-bookings-mob.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PackageCalenderHeaderComponent } from './package-calender-header/packag
     PackageBookingsSidebarComponent,
     PackageSearchBarComponent,
     PackageCalendarComponent,
-    PackageCalenderHeaderComponent
+    PackageCalenderHeaderComponent,
+    PackageBookingsMobComponent
   ],
   imports: [
     FormsModule,

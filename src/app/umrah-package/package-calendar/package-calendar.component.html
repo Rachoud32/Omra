@@ -9,7 +9,10 @@
   </div>
   <ul>
     <li *ngFor="let event of day.events">
-      <p class="mb-0"><span>$</span>{{ event.title }}</p>
+      <div class="d-flex flex-column">
+        <span class="price-start lh-base">Starts from</span>
+        <p class="mb-0 lh-base"><span>$</span>{{ event.title }}</p>
+      </div>
     </li>
   </ul>
 </ng-template>

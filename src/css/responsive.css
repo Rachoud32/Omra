@@ -40,6 +40,7 @@
 
     .service-summary-box .color-btn:hover,
     app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn:hover,
+    app-package-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn:hover,
     .check-form .color-btn:hover,
     .color-btn.filter-btn-mob:hover {
         background-color: var(--omra-second);
@@ -85,24 +86,31 @@
         padding-right: 15px !important;
     }
 
-    app-bookings-sidebar {
+    app-bookings-sidebar,
+    app-package-bookings-sidebar {
         display: none;
     }
 
-    app-bookings-mob {
+    app-bookings-mob,
+    app-package-bookings-mob {
         display: block;
     }
 
-    app-bookings-mob .search-items-price {
+    app-bookings-mob .search-items-price,
+    app-package-bookings-mob .search-items-price {
         padding: 6px 20px;
     }
 
-    app-bookings-mob .search-sidebar-details .search-total-label, app-bookings-mob .search-total-price {
+    app-bookings-mob .search-sidebar-details .search-total-label,
+    app-bookings-mob .search-total-price,
+    app-package-bookings-mob .search-sidebar-details .search-total-label,
+    app-package-bookings-mob .search-total-price {
         font-size: 18px;
         line-height: normal;
     }
 
-    app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn {
+    app-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn,
+    app-package-bookings-mob .search-sidebar-details .search-sidebar-header .color-btn {
         font-size: 12px;
         height: 38px;
         display: flex;
@@ -114,17 +122,20 @@
         justify-content: center;
     }
 
-    app-bookings-mob .search-sidebar-details .search-sidebar-header {
+    app-bookings-mob .search-sidebar-details .search-sidebar-header,
+    app-package-bookings-mob .search-sidebar-details .search-sidebar-header {
         background: var(--omra-base);
         border-top: 1px solid #435d6e;
         padding: 8px 20px;
     }
 
-    app-bookings-mob .search-sidebar-details .search-sidebar-header a {
+    app-bookings-mob .search-sidebar-details .search-sidebar-header a,
+    app-package-bookings-mob .search-sidebar-details .search-sidebar-header a {
         color: var(--omra-white);
     }
 
-    app-bookings-mob .search-sidebar-content {
+    app-bookings-mob .search-sidebar-content,
+    app-package-bookings-mob .search-sidebar-content {
         padding: 20px 0;
         border-top: 2px solid var(--omra-base);
     }
@@ -203,11 +214,6 @@
         flex-wrap: nowrap;
     }
 
-    .check-form .justify-content-end,
-    .check-form .col-xl-4 div {
-        justify-content: center;
-    }
-    
     .check-form .search-results-list {
         flex-direction: column;
     }
@@ -577,6 +583,11 @@
     .booked-service .room-label:before {
         display: none;
     }
+    
+    .package-details-box .package-inside-menu li .inside-menu-item p {
+        display: none;
+    }
+
 }
 
 
@@ -597,6 +608,14 @@
         width: 30px !important;
         height: 30px !important;
     }
+  
+    .package-details-box .package-inside-menu {
+        width: 107% !important;
+        padding: 0;
+        position: sticky;
+        margin: 0 -15px;
+        left: 0;
+    }
 
     .package-details-box .package-inside-menu li {
         width: 100%;
@@ -613,8 +632,12 @@
     }
 
     .package-details-box .package-inside-menu li .inside-menu-item img {
-        height: 40px;
-        padding: 16px 0 5px;
+        height: 60px;
+        padding: 20px 0 18px;
+    }
+
+    .package-details-box .package-inside-menu li .inside-menu-item p {
+        display: none;
     }
 
     .package-hotels .package-hotel-card .hotel-content-bottom .hotel-infos {
@@ -665,6 +688,7 @@
         height: 100%;
         top: -10px !important;
         z-index: 999 !important;
+        max-height: 100%;
     }
 
     .modal .modal-content .modal-title {

@@ -1,8 +1,8 @@
 <div class="row" id="packagesearchbar" #packagesearchbar>
     <div class="col-xl-12 pt-3 search-bar-card">
       <form id="search-form" class="check-form search-bar search-results">
-        <div class="row align-items-center">
-          <div class="col-xl-5 search-result-counter">
+        <div class="row align-items-center g-2">
+          <div class="col-xl-4 search-result-counter">
             <div class="d-flex align-items-center gap-2">
               <div class="search-bar-icon">
                 <div>
@@ -13,196 +13,247 @@
             </div>
           </div>
           
-          <div class="col-xl-7 search-result-edit">
+          <div class="col-xl-8 search-result-edit">
             <div class="d-flex justify-content-end align-items-center search-results-list gap-3">
               <div class="search-form-edit d-flex align-items-center justify-content-end gap-3">
-
-                <div [formGroup]="searchFormPackage">
-                  <div class="dropdown w-100">
-                      <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100"
-                          type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                          data-bs-display="static" aria-expanded="false">
-                          <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                              <div class="input-group d-flex">
-                                  <span class="input-group-text"><i class="icon-line-calendar"></i></span>
-                                  <p class="m-0" *ngIf="searchFormPackage.value.period">
-                                      {{ searchFormPackage.value.period }}
-                                  </p>
-                                  <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.period">
-                                      Period
-                                  </p>
+                <div class="row g-3">
+                  <div class="col-xl-3">
+                    <div [formGroup]="searchFormPackage">
+                      <div class="dropdown w-100">
+                          <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100"
+                              type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                              data-bs-display="static" aria-expanded="false">
+                              <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                  <div class="input-group d-flex">
+                                      <span class="input-group-text"><i class="icon-line-calendar"></i></span>
+                                      <p class="m-0" *ngIf="searchFormPackage.value.period">
+                                          {{ searchFormPackage.value.period }}
+                                      </p>
+                                      <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.period">
+                                          Period
+                                      </p>
+                                  </div>
+                                  <i class="icon-end icon-line-chevron-down"></i>
                               </div>
-                              <i class="icon-end icon-line-chevron-down"></i>
-                          </div>
-                      </button>
-                      <div class="dropdown-menu animate slideIn">
-                          <div class="select-container">
-                              <label for="Mouled" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2" id="Mouled"
-                                      value="Mouled" formControlName="period" />
-                                  <div class="list-item">Mouled</div>
-                              </label>
-                          </div>
-                          <div class="select-container">
-                              <label for="Ramadan" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2" id="Ramadan"
-                                      value="Ramadan" formControlName="period" />
-                                  <div class="list-item">Ramadan</div>
-                              </label>
-                          </div>
-                          <div class="select-container">
-                              <label for="Chawel" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2" id="Chawel"
-                                      value="Chawel" formControlName="period" />
-                                  <div class="list-item">Chawel</div>
-                              </label>
-                          </div>
-                          <div class="select-container">
-                              <label for="Winter holidays" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2"
-                                      id="Winter holidays" value="Winter holidays" formControlName="period" />
-                                  <div class="list-item">Winter holidays</div>
-                              </label>
-                          </div>
-                          <div class="select-container">
-                              <label for="Vacancy Spring" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2"
-                                      id="Vacancy Spring" value="Vacancy Spring" formControlName="period" />
-                                  <div class="list-item">Spring holidays</div>
-                              </label>
-                          </div>
-                          <div class="select-container">
-                              <label for="Other" class="me-3 w-100">
-                                  <input type="radio" name="period" class="form-check-input me-2" id="Other"
-                                      value="Other" formControlName="period" />
-                                  <div class="list-item">Other</div>
-                              </label>
+                          </button>
+                          <div class="dropdown-menu animate slideIn">
+                              <div class="select-container">
+                                  <label for="Mouled" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2" id="Mouled"
+                                          value="Mouled" formControlName="period" />
+                                      <div class="list-item">Mouled</div>
+                                  </label>
+                              </div>
+                              <div class="select-container">
+                                  <label for="Ramadan" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2" id="Ramadan"
+                                          value="Ramadan" formControlName="period" />
+                                      <div class="list-item">Ramadan</div>
+                                  </label>
+                              </div>
+                              <div class="select-container">
+                                  <label for="Chawel" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2" id="Chawel"
+                                          value="Chawel" formControlName="period" />
+                                      <div class="list-item">Chawel</div>
+                                  </label>
+                              </div>
+                              <div class="select-container">
+                                  <label for="Winter holidays" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2"
+                                          id="Winter holidays" value="Winter holidays" formControlName="period" />
+                                      <div class="list-item">Winter holidays</div>
+                                  </label>
+                              </div>
+                              <div class="select-container">
+                                  <label for="Vacancy Spring" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2"
+                                          id="Vacancy Spring" value="Vacancy Spring" formControlName="period" />
+                                      <div class="list-item">Spring holidays</div>
+                                  </label>
+                              </div>
+                              <div class="select-container">
+                                  <label for="Other" class="me-3 w-100">
+                                      <input type="radio" name="period" class="form-check-input me-2" id="Other"
+                                          value="Other" formControlName="period" />
+                                      <div class="list-item">Other</div>
+                                  </label>
+                              </div>
                           </div>
                       </div>
-                  </div>
-                </div>
+                    </div>
+                  </div>  
 
-                <div [formGroup]="searchFormPackage">
-                  <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
-                    <button class="passengers-btn btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                    aria-expanded="false"[class.selected-item]="searchFormPackage.value.passengers.length != 1 || numAdults != 1 || numChildren != 0" >
-                      <div class="d-flex align-items-center">
-                        <div class="input-group d-flex flex-nowrap align-items-center">
-                          <span class="input-group-text"><i class="icon-line-users"></i></span>
-                          <p class="m-0" [class.text-muted]="searchFormPackage.value.passengers.length === 1 && numAdults === 1 && numChildren === 0" 
-                            *ngIf="searchFormPackage.value.passengers.length">
-                            {{
-                            searchFormPackage.value.passengers.length
-                            }}&nbsp;Room{{
-                            searchFormPackage.value.passengers.length > 1
-                            ? "s"
-                            : ""
-                            }}
-                            &nbsp;{{ numAdults }}&nbsp;Adult{{
-                            numAdults > 1 ? "s" : ""
-                            }}
-                            &nbsp;{{
-                            (numChildren == 0 || numChildren == 1)
-                            ? numChildren +
-                            "&nbsp;Child" : numChildren +"&nbsp;Children"
-                            }}
-                          </p>
+                  <div class="col-xl-4">
+                    <div [formGroup]="searchFormPackage">
+                      <div class="dropdown w-100">
+                        <button [class.selected-item]="searchFormPackage.value.departureCity"
+                            class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
+                            <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                <div class="input-group d-flex">
+                                    <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
+                                    <p class="m-0" *ngIf="searchFormPackage.value.departureCity">
+                                        {{ searchFormPackage.value.departureCity }}
+                                    </p>
+                                    <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.departureCity">
+                                        Departure city
+                                    </p>
+                                </div>
+                                <i class="icon-end icon-line-chevron-down"></i>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu animate slideIn">
+                            <div class="select-container">
+                                <label for="Belgium4" class="me-3 w-100">
+                                    <input type="radio" class="form-check-input me-2" name="departureCity"
+                                        id="Belgium4" value="Belgium" formControlName="departureCity" />
+                                    <div class="list-item">Belgium</div>
+                                </label>
+                            </div>
+                            <div class="select-container">
+                                <label for="France4" class="me-3 w-100">
+                                    <input type="radio" class="form-check-input me-2" name="departureCity"
+                                        id="France4" value="France" formControlName="departureCity" />
+                                    <div class="list-item">France</div>
+                                </label>
+                            </div>
+                            <div class="select-container">
+                                <label for="UK4" class="me-3 w-100">
+                                    <input type="radio" class="form-check-input me-2" name="departureCity"
+                                        id="UK4" value="UK" formControlName="departureCity" />
+                                    <div class="list-item">UK</div>
+                                </label>
+                            </div>
                         </div>
-                      </div>
-                    </button>
-                    <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuPackage>
-                      <div formArrayName="passengers">
-                        <div class="d-flex flex-column">
-                          <div class="d-flex justify-content-between mb-3">
-                            <div class="passengers-label">Room</div>
-                            <div class="d-flex object-quantity passengers-nbr align-items-center">
-                              <div class="minus" (click)="deletePassenger()">-</div>
-                              <div class="quantity">{{ passengers.length }}</div>
-                              <div class="plus" (click)="addPassenger()">+</div>
+                      </div>   
+                    </div>
+                  </div>  
+
+                  <div class="col-xl-5">
+                    <div [formGroup]="searchFormPackage">
+                      <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
+                        <button class="passengers-btn btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
+                        aria-expanded="false"[class.selected-item]="searchFormPackage.value.passengers.length != 1 || numAdults != 1 || numChildren != 0" >
+                          <div class="d-flex align-items-center">
+                            <div class="input-group d-flex flex-nowrap align-items-center">
+                              <span class="input-group-text"><i class="icon-line-users"></i></span>
+                              <p class="m-0" [class.text-muted]="searchFormPackage.value.passengers.length === 1 && numAdults === 1 && numChildren === 0" 
+                                *ngIf="searchFormPackage.value.passengers.length">
+                                {{
+                                searchFormPackage.value.passengers.length
+                                }}&nbsp;Room{{
+                                searchFormPackage.value.passengers.length > 1
+                                ? "s"
+                                : ""
+                                }}
+                                &nbsp;{{ numAdults }}&nbsp;Adult{{
+                                numAdults > 1 ? "s" : ""
+                                }}
+                                &nbsp;{{
+                                (numChildren == 0 || numChildren == 1)
+                                ? numChildren +
+                                "&nbsp;Child" : numChildren +"&nbsp;Children"
+                                }}
+                              </p>
                             </div>
                           </div>
-                        </div>
-                        <div *ngFor="
-                          let passenger of passengers.controls;
-                          let i = index
-                        ">
-                          <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
-                            <div class="room-specifics d-flex flex-column">
-                              <div class="d-flex justify-content-between">
-                                <div class="room-quantity">
-                                  {{ passenger.get("room")?.value }}
+                        </button>
+                        <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuPackage>
+                          <div formArrayName="passengers">
+                            <div class="d-flex flex-column">
+                              <div class="d-flex justify-content-between mb-3">
+                                <div class="passengers-label">Room</div>
+                                <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                  <div class="minus" (click)="deletePassenger()">-</div>
+                                  <div class="quantity">{{ passengers.length }}</div>
+                                  <div class="plus" (click)="addPassenger()">+</div>
                                 </div>
                               </div>
-                              <div class="room-passengers-details">
-                                <div class="passengers-nbr-block d-flex gap-2">
-                                  <div class="d-flex w-100">
-                                    <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
-                                      <div class="passengers-label me-1">Adults</div>
-                                      <div class="d-flex object-quantity passengers-nbr align-items-center">
-                                        <div class="minus" (click)="minusadults(i)">
-                                          -
-                                        </div>
-                                        <div class="quantity">
-                                          {{ passenger.get("adults")?.value }}
-                                        </div>
-                                        <div class="plus" (click)="plusadults(i)">
-                                          +
-                                        </div>
-                                      </div>
+                            </div>
+                            <div *ngFor="
+                              let passenger of passengers.controls;
+                              let i = index
+                            ">
+                              <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
+                                <div class="room-specifics d-flex flex-column">
+                                  <div class="d-flex justify-content-between">
+                                    <div class="room-quantity">
+                                      {{ passenger.get("room")?.value }}
                                     </div>
                                   </div>
-  
-                                  <div class="d-flex w-100">
-                                    <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
-                                      <div class="passengers-label me-1">Children</div>
-                                      <div class="d-flex object-quantity passengers-nbr align-items-center">
-                                        <div class="minus" (click)="minuschildren(i)">
-                                          -
-                                        </div>
-                                        <div class="quantity">
-                                          {{
-                                          passenger.get("children")?.value.length
-                                          }}
-                                        </div>
-                                        <div class="plus" (click)="pluschildren(i)">
-                                          +
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="child-age col-6 mb-2" formArrayName="children" *ngFor="
-                      let child of children(i).controls;
-                      let k = index
-                    ">
-                                    <div [formGroupName]="k" class="dropdown">
-                                      <button [class.selected-item]="
-                          child.get('age')?.value
-                        " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                        data-bs-display="static" aria-expanded="false">
-                                        <div class="d-flex me-4 justify-content-between align-items-center w-100">
-                                          <div class="select-age d-flex">
-                                            <p class="m-0">
-                                              {{
-                                              child.get("age")?.value === ""
-                                              ? "1"
-                                              : child.get("age")?.value
-                                              }}
-                                            </p>
+                                  <div class="room-passengers-details">
+                                    <div class="passengers-nbr-block d-flex gap-2">
+                                      <div class="d-flex w-100">
+                                        <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                          <div class="passengers-label me-1">Adults</div>
+                                          <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                            <div class="minus" (click)="minusadults(i)">
+                                              -
+                                            </div>
+                                            <div class="quantity">
+                                              {{ passenger.get("adults")?.value }}
+                                            </div>
+                                            <div class="plus" (click)="plusadults(i)">
+                                              +
+                                            </div>
                                           </div>
-                                          <i class="icon-line-chevron-down"></i>
                                         </div>
-                                      </button>
-                                      <div class="dropdown-menu dropdown-menu-end animate slideIn">
-                                        <div class="select-container" *ngFor="
-                            let item of ageNumbers;
-                            let j = index
-                          ">
-                                          <input type="radio" [value]="item" [id]="'k' + k + 'j' + j"
-                                            class="form-check-input me-2" formControlName="age" />
-                                          <label [for]="'k' + k + 'j' + j" class="list-item w-100">
-                                            {{ item }}</label>
+                                      </div>
+      
+                                      <div class="d-flex w-100">
+                                        <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                          <div class="passengers-label me-1">Children</div>
+                                          <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                            <div class="minus" (click)="minuschildren(i)">
+                                              -
+                                            </div>
+                                            <div class="quantity">
+                                              {{
+                                              passenger.get("children")?.value.length
+                                              }}
+                                            </div>
+                                            <div class="plus" (click)="pluschildren(i)">
+                                              +
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="child-age col-6 mb-2" formArrayName="children" *ngFor="
+                          let child of children(i).controls;
+                          let k = index
+                        ">
+                                        <div [formGroupName]="k" class="dropdown">
+                                          <button [class.selected-item]="
+                              child.get('age')?.value
+                            " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                            data-bs-display="static" aria-expanded="false">
+                                            <div class="d-flex me-4 justify-content-between align-items-center w-100">
+                                              <div class="select-age d-flex">
+                                                <p class="m-0">
+                                                  {{
+                                                  child.get("age")?.value === ""
+                                                  ? "1"
+                                                  : child.get("age")?.value
+                                                  }}
+                                                </p>
+                                              </div>
+                                              <i class="icon-line-chevron-down"></i>
+                                            </div>
+                                          </button>
+                                          <div class="dropdown-menu dropdown-menu-end animate slideIn">
+                                            <div class="select-container" *ngFor="
+                                let item of ageNumbers;
+                                let j = index
+                              ">
+                                              <input type="radio" [value]="item" [id]="'k' + k + 'j' + j"
+                                                class="form-check-input me-2" formControlName="age" />
+                                              <label [for]="'k' + k + 'j' + j" class="list-item w-100">
+                                                {{ item }}</label>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -211,12 +262,12 @@
                               </div>
                             </div>
                           </div>
+                          <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
                         </div>
                       </div>
-                      <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
                     </div>
                   </div>
-                </div>
+                </div>  
               </div>
               
               <div class="search-form-btns d-flex align-items-center gap-2 justify-content-start">

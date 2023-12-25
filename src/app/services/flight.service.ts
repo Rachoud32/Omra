@@ -12,6 +12,7 @@ export class FlightService {
       {
         _id: 1,
         flightImage: "assets/flight/turkish-airlines.svg",
+        flightcompany: 'Turkish Airlines',
         class: "Economic",
         price: "1200",
         timeOfDeparture: "14:10",
@@ -38,6 +39,7 @@ export class FlightService {
           {
             _id: 1,
             flightImage: "assets/flight/turkish-airlines.svg",
+            flightcompany: 'Turkish Airlines',
             class: "Economic",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -65,6 +67,7 @@ export class FlightService {
           {
             _id: 2,
             flightImage: "assets/flight/qatar-airways.svg",
+            flightcompany: 'Qatar Airways',
             class: "Business",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -92,6 +95,7 @@ export class FlightService {
           {
             _id: 3,
             flightImage: "assets/flight/air-france.svg",
+            flightcompany: 'Air France',
             class: "First",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -122,6 +126,7 @@ export class FlightService {
       {
         _id: 2,
         flightImage: "assets/flight/qatar-airways.svg",
+        flightcompany: 'Qatar Airways',
         class: "Business",
         price: "1500",
         timeOfDeparture: "14:10",
@@ -135,7 +140,7 @@ export class FlightService {
         flightNumber: "TUR0606",
         details: {
           class: "First",
-          luggage: "1 piece of checked luggage (per ad.)",
+          luggage: ['1', '2', '3'],
           timeOfDeparture: "14:10",
           timeOfArrival: "17:10",
           duration: "02:00",
@@ -148,6 +153,7 @@ export class FlightService {
           {
             _id: 1,
             flightImage: "assets/flight/turkish-airlines.svg",
+            flightcompany: 'Turkish Airlines',
             class: "Economic",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -175,6 +181,7 @@ export class FlightService {
           {
             _id: 2,
             flightImage: "assets/flight/qatar-airways.svg",
+            flightcompany: 'Qatar Airways',
             class: "Business",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -202,6 +209,7 @@ export class FlightService {
           {
             _id: 3,
             flightImage: "assets/flight/saudi-airlines.svg",
+            flightcompany: 'Saudia Airlines',
             class: "First",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -232,6 +240,7 @@ export class FlightService {
       {
         _id: 3,
         flightImage: "assets/flight/saudi-airlines.svg",
+        flightcompany: 'Saudia Airlines',
         class: "First",
         price: "1000",
         timeOfDeparture: "14:10",
@@ -258,6 +267,7 @@ export class FlightService {
           {
             _id: 1,
             flightImage: "assets/flight/turkish-airlines.svg",
+            flightcompany: 'Turkish Airlines',
             class: "Economic",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -285,6 +295,7 @@ export class FlightService {
           {
             _id: 2,
             flightImage: "assets/flight/qatar-airways.svg",
+            flightcompany: 'Qatar Airways',
             class: "Business",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -312,6 +323,7 @@ export class FlightService {
           {
             _id: 3,
             flightImage: "assets/flight/saudi-airlines.svg",
+            flightcompany: 'Saudia Airlines',
             class: "First",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -342,6 +354,7 @@ export class FlightService {
       {
         _id: 4,
         flightImage: "assets/flight/air-france.svg",
+        flightcompany: 'Air France',
         class: "Economic",
         price: "1200",
         timeOfDeparture: "14:10",
@@ -368,6 +381,7 @@ export class FlightService {
           {
             _id: 1,
             flightImage: "assets/flight/turkish-airlines.svg",
+            flightcompany: 'Turkish Airlines',
             class: "Economic",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -395,6 +409,7 @@ export class FlightService {
           {
             _id: 2,
             flightImage: "assets/flight/qatar-airways.svg",
+            flightcompany: 'Qatar Airways',
             class: "Business",
             price: "1200",
             timeOfDeparture: "14:10",
@@ -422,6 +437,7 @@ export class FlightService {
           {
             _id: 3,
             flightImage: "assets/flight/saudi-airlines.svg",
+            flightcompany: 'Saudia Airlines',
             class: "First",
             price: "1200",
             timeOfDeparture: "14:10",
