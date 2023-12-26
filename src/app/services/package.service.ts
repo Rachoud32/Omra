@@ -56,7 +56,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -66,7 +67,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -76,7 +78,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -86,7 +89,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -96,7 +100,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+              
             },
           ],
           flights: [
@@ -135,6 +141,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              pension: 'LPD',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -517,6 +527,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 15,
+              datecheckin: '01/01/2024',
+              datecheckout: '15/01/2024',
+              pension: 'DP',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -879,6 +893,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 15,
+              datecheckin: '01/01/2024',
+              datecheckout: '15/01/2024',
+              pension: 'PC',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -1241,6 +1259,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              pension: 'LPD',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -1603,6 +1625,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              pension: 'LPD',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -1965,6 +1991,10 @@ export class packageService {
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              pension: 'LPD',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",

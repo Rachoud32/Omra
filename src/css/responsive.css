@@ -64,7 +64,16 @@
     }
 }
 
-@media (max-width: 1199.98px) {	
+@media (max-width: 1199.98px) {
+    
+    .package-hotels .hotel-gallery-box {
+        padding-right: 0 !important;
+    }
+
+    .package-hotels .skeleton-box .skeleton-service-img {
+        height: 270px !important;
+    }
+
     .service-details .details-row {
         margin-bottom: 0 !important;
     }

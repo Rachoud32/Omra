@@ -3095,6 +3095,12 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     overflow-x: hidden;
 }
 
+.package-sidebar .search-sidebar-list {
+    max-height: 300px;
+    min-height: 150px;
+    height: fit-content;
+}
+
 .search-sidebar-list .details-content .card.card-body {
     padding: 8px 0px 0px;
     font-size: var(--fs-13);
@@ -4281,6 +4287,7 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-title .package-rating {
     display: inline-block;
+    transform: scale(0.9);
 }
 
 .packages-list .package-item .package-type,
@@ -4319,9 +4326,20 @@ app-package-details .page-title {
     font-size: var(--fs-16);
 }
 
+.packages-list .package-item .package-departurecity {
+    background: var(--omra-extra);
+    width: fit-content;
+    padding: 2px 8px;
+}
+
 .packages-list .package-item .package-departurecity-label {
     font-weight: 300;
-    color: var(--omra-gray);
+    color: var(--omra-second);
+}
+
+.packages-list .package-item .package-departurecity-text {
+    font-weight: 400;
+    color: var(--omra-second);
 }
 
 .packages-list .package-item .package-reservation-specs {
@@ -4708,15 +4726,24 @@ app-package-bookings-sidebar,
     margin-bottom: 0;
 }
 
-.package-hotels h2.destination-label {
+.package-hotels .destination-label {
     background: var(--omra-base);
-    padding: 12px 15px;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.package-hotels .destination-label h2 {
+    background: transparent;
     color: var(--omra-white);
     font-size: var(--fs-16);
     font-weight: 400 !important;
-    /* margin-bottom: 10px; */
-    position: relative;
-    top: 2px;
+}
+
+.package-hotels .destination-label p {
+    font-size: var(--fs-14);
+    line-height: normal;
+    color: var(--omra-white);
 }
 
 .package-service-section .hotel-name {
@@ -5016,11 +5043,12 @@ input[type="radio"]:not(:checked)+label::after {
     width: 100%;
 }
 
-.package-offer-item [type="radio"]:checked + label .package-offer-card, .package-offer-item [type="radio"]:not(:checked) + label .package-offer-card {
+.package-offer-item [type="radio"]:checked + label .package-offer-card, 
+.package-offer-item [type="radio"]:not(:checked) + label .package-offer-card {
     position: relative;
     border: 1px solid var(--omra-light-gray);
     margin-bottom: 10px;
-    padding: 15px 0px !important;
+    padding: 15px 0px 25px !important;
     width: 100%;
     font-size: var(--fs-14);
     transform: translateY(0px);
@@ -5034,16 +5062,23 @@ input[type="radio"]:not(:checked)+label::after {
     width: 0%;
     height: 4px;
     position: absolute;
-    bottom: -3px;
+    bottom: -1px;
     left: 0;
-    background: var(--omra-extra);
+    background: var(--omra-base);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 0%);
     z-index: 5;
     transition: all .5s linear;
 }
 
+.package-offer-item [type="radio"] +label:hover .package-offer-card {
+    border-color: var(--omra-base);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
+}
+
+
 .package-offer-item [type="radio"]:checked +label .package-offer-card {
-    border-color: var(--omra-white);
+    border-color: var(--omra-base);
     border-bottom-color: var(--omra-light-gray);
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
@@ -5059,13 +5094,13 @@ input[type="radio"]:not(:checked)+label::after {
 
 .package-offer-card .package-offer-header .title {
     font-size: var(--fs-16);
-    color: var(--omra-gray);
-    font-weight: 400;
+    color: var(--omra-base);
+    font-weight: 500;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    max-width: 330px;
-    width: 330px;
+    max-width: 300px;
+    width: 300px;
     transition: all .3s linear;
 }
 
@@ -5085,7 +5120,12 @@ input[type="radio"]:not(:checked)+label::after {
 }
 
 .package-offer-card .package-offer-header .departure-text {
-    font-weight: 400;
+    font-weight: 300;
+}
+
+.package-offer-card .package-offer-header .departure-label svg {
+    width: 20px;
+    fill: var(--omra-second);
 }
 
 .package-offer-card .offer-detail i {
@@ -5108,14 +5148,23 @@ input[type="radio"]:not(:checked)+label::after {
     line-height: normal;
 }
 
-.package-offer-card .package-offer-price {
+.package-offer-card .package-offer-price .price {
     color: var(--omra-second);
     font-size: var(--fs-18);
+    font-weight: 500;
+    text-align: right;
+}
+
+.package-offer-card .package-offer-price .price span {
+    color: var(--omra-second);
+    font-size: var(--fs-12);
     font-weight: 500;
 }
 
 .package-offer-card .package-offer-price span {
     font-size: var(--fs-12);
+    color: var(--omra-gray);
+    font-weight: 300;
 }
 
 /* ----------------------------------------------------------------
@@ -5341,6 +5390,64 @@ input[type="radio"]:not(:checked)+label::after {
     line-height: normal;
 }
 
+
+.more-state {
+    display: none;
+}
+  
+.more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.more-state:checked ~ .more-wrap .more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.more-state ~ .more-trigger:before {
+    content: '+';
+    color: #fff;
+    display: inline-block;
+    background: #8af;
+    line-height:1em;
+    border-radius: .5em;
+    width: 1em;
+    font-weight:600;
+    transition: all .3s ease;
+}
+.more-state ~ .more-trigger:after {
+    content: ' show more';
+    transition: all .3s ease;
+}
+
+.more-state:checked ~ .more-trigger:before {
+    content: '-';
+    background: #f69;
+}
+.more-state:checked ~ .more-trigger:after {
+    content: ' show less';
+
+}
+
+.more-trigger {
+    margin-left:20px;
+    cursor: pointer;
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: .25em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1), 0 -40px 16px -10px #fff;
+}
+
+.more-state:checked ~ .more-trigger {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+  
+
 /* ----------------------------------------------------------------
 	Package - Plan
 -----------------------------------------------------------------*/
@@ -5390,6 +5497,11 @@ input[type="radio"]:not(:checked)+label::after {
 
 .package-plan .accordion-button .plan-title {
     padding: 20px 25px 20px 0;
+}
+
+.package-plan .accordion-button .plan-date {
+    font-weight: 300;
+    color: var(--omra-base);
 }
 
 .package-plan .accordion-button .collapse-icon {
@@ -7506,7 +7618,7 @@ app-booking-summary {
     height: 100% !important;
 }
 
-.skeleton-service-title {
+.skeleton-service {
     width: 50%;
     height: 24px !important;
 }
@@ -7542,6 +7654,54 @@ app-booking-summary {
 
 .skeleton-box .box.skeleton-box {
     height: 100%;
+}
+
+.skeleton-box .skeleton-service-flex {
+    width: 50%;
+}
+
+.package-hotels .skeleton-box {
+    border: 1px solid var(--omra-light-gray);
+}
+
+.skeleton-box .hotel-rating .skeleton-service {
+    width: 30%;
+    height: 18px;
+}
+
+.skeleton-box .hotel-name .skeleton-service {
+    width: 80%;
+    height: 30px;
+}
+
+.skeleton-box .hotel-name .skeleton-service {
+    width: 80%;
+    height: 30px;
+}
+
+.skeleton-box .hotel-rate .skeleton-service {
+    height: 40px !important;
+    width: 40px;
+}
+
+.skeleton-box .hotel-review span.skeleton-service {
+    width: 80px;
+    height: 20px !important;
+}
+
+.skeleton-box .hotel-review p.skeleton-service {
+    width: 80px;
+    height: 15px !important;
+}
+
+.skeleton-box  .hotel-info-card .hotel-description {
+    width: 100%;
+    height: 70px !important;
+}
+
+.skeleton-box  .hotel-info-card .hotel-details {
+    width: 100%;
+    height: 50px !important;
 }
 
 /* ----------------------------------------------------------------

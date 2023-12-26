@@ -64,11 +64,11 @@
                         </div>
                         <hr>
                         <div class="package-details">    
-                            <div class="package-place flex-wrap lh-base d-flex align-items-center gap-2 mb-2">
+                            <div class="package-place flex-wrap lh-base d-flex align-items-center gap-2 mb-1">
                                 <i class="icon-line-map-pin"></i>
                                 <p class="m-0 ">{{package.packagePlace}}</p>
                             </div>
-                            <div class="d-flex flex-wrap align-items-center column-gap-3 row-gap-2">    
+                            <div class="d-flex flex-wrap align-items-center column-gap-3 row-gap-2 mb-2">    
                                 <div class="package-info package-date lh-base d-flex align-items-center gap-2">
                                     <i class="icon-line-calendar"></i>
                                     <p class="m-0 ">{{package.packageDate}}</p>
@@ -77,18 +77,10 @@
                                     <i class="icon-line-moon"></i>
                                     <p class="m-0 ">{{package.packagePeriod}} days</p>
                                 </div>
-                                <div class="package-info package-rooms lh-base d-flex align-items-center gap-2">
-                                    <i class="icon-line-ribbon"></i>
-                                    <p class="lh-base mb-0">{{package.packageNbrRoom}} room</p>
-                                </div>
-                                <div class="package-info package-guests lh-base d-flex align-items-center gap-2">
-                                    <i class="icon-line-users"></i>
-                                    <p class="lh-base mb-0">{{package.packageNbrPassengers}} guest</p>
-                                </div>
-                                <div class="package-info package-departurecity flex-wrap lh-base d-flex align-items-center gap-2">
-                                    <p class="package-departurecity-label mb-0 lh-base">Departure City</p>
-                                    <p class="mb-0 lh-base">{{package.packageDeparturecities}}</p>
-                                </div>
+                            </div>
+                            <div class="package-departurecity flex-wrap lh-base d-flex align-items-center gap-2">
+                                <p class="package-departurecity-label mb-0 lh-base">Departure City</p>
+                                <p class="package-departurecity-text mb-0 lh-base">{{package.packageDeparturecities}}</p>
                             </div>
                             <hr>
                             <div class="package-services lh-base mb-4">
