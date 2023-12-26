@@ -144,6 +144,139 @@ export class packageService {
               duration: 10,
               datecheckin: '01/12/2023',
               datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              images: [
+                "assets/package/hotel-2/1.jpg",
+                "assets/package/hotel-2/2.jpg",
+                "assets/package/hotel-2/3.jpg",
+                "assets/package/hotel-2/4.jpg"
+              ],
+              details: {
+                title: 'Swissôtel Al Maqam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  id: 1,
+                  tva: true,
+                  minguests: 1,
+                  maxguests: 2,
+                  view: 'Desert',
+                  types: [
+                    {
+                      pension: 'LPD',
+                      price: 350,
+                      title: 'Standard Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    },
+                    {
+                      price: 320,
+                      pension: 'LPD',
+                      title: 'Double Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    }
+                  ]
+                },
+                {
+                  id: 2,
+                  tva: true,
+                  minguests: 2,
+                  maxguests: 4,
+                  view: 'City',
+                  types: [
+                    {
+                      price: 400,
+                      pension: 'LPD',
+                      title: 'Standard Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    },
+                    {
+                      price: 380,
+                      pension: 'LPD',
+                      title: 'Double Room',
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    }
+                  ]
+                }
+              ],
+              secondDestination: {
+                _id: 1,
+                hotelName: 'Sofitel Shahd al Madinah',
+                type: 'Business Hotel',
+                rating: 4.3,
+                images: [
+                  "assets/package/hotel-4/1.jpg",
+                  "assets/package/hotel-4/2.jpg",
+                  "assets/package/hotel-4/3.jpg",
+                  "assets/package/hotel-4/4.jpg",
+                  "assets/package/hotel-4/5.jpg",
+                  "assets/package/hotel-4/6.jpg"
+                ],
+                details: {
+                  title: 'Sofitel Shahd al Madinah',
+                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+                  description: `
+                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+                  with elegant French hospitality.
+                  `,
+                },
+                rooms: [
+                  {
+                    id: 1,
+                    title: 'Two Bedroom Suite City View',
+                    policy: '$25 Cancellation',
+                    price: 350,
+                    tva: true,
+                    minguests: 2,
+                    maxguests: 4,
+                    advantages: {
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 5
+                    }
+                  },
+                  {
+                    id: 2,
+                    title: 'Two Bedroom Suite City View',
+                    policy: '$25 Cancellation',
+                    price: 320,
+                    tva: true,
+                    advantages: {
+                      wifi: 'Free Wifi',
+                      breakfast: 'Free breakfast',
+                      sleeps: 2
+                    }
+                  },
+                ]
+              }
+            },{
+              _id: 2,
+              hotelName: 'Swissôtel Al Maqam Makkah',
+              type: 'Luxury Hotel',
+              rating: 4.5,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '08:00',
+              timecheckout: '14:00',
               pension: 'LPD',
               images: [
                 "assets/package/hotel-2/1.jpg",

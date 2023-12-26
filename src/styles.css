@@ -4738,6 +4738,7 @@ app-package-bookings-sidebar,
     color: var(--omra-white);
     font-size: var(--fs-16);
     font-weight: 400 !important;
+    padding: 0;
 }
 
 .package-hotels .destination-label p {
@@ -4869,6 +4870,10 @@ app-package-bookings-sidebar,
     font-weight: 500;
 }
 
+ngx-stars .stars-line {
+    line-height: 0px;
+}
+
 .package-hotels .package-hotel-card .hotel-content .hotel-review span {
     font-size: var(--fs-16);
     font-weight: 500;
@@ -4884,12 +4889,23 @@ app-package-bookings-sidebar,
     line-height: normal;
 }
 
-.package-hotels .package-hotel-card .hotel-content .hotel-content-bottom .hotel-arangement p {
+.package-hotels .package-hotel-card .hotel-arangement p {
     background: var(--omra-extra);
     color: var(--omra-second);
     font-size: var(--fs-13);
     width: 45px;
-    height: 25px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-hotels .package-hotel-card .hotel-checkin .checkin-label,
+.package-hotels .package-hotel-card .hotel-checkout .checkout-label {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    font-size: var(--fs-13);
+    padding: 5px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5355,6 +5371,7 @@ input[type="radio"]:not(:checked)+label::after {
 .package-activities .package-activity-card .activity-description p {
     line-height: 24px;
     font-size: var(--fs-14);
+    margin-bottom: 0;
 }
 
 .package-visits .package-visit-card .visit-details .visit-text,
@@ -5549,6 +5566,7 @@ input[type="radio"]:not(:checked)+label::after {
 .package-policies .exclusions,
 .package-policies .inclusions {
     list-style: none;
+    margin-bottom: 0;
 }
 
 .package-policies .inclusions li::before {
@@ -7658,6 +7676,10 @@ app-booking-summary {
 
 .skeleton-box .skeleton-service-flex {
     width: 50%;
+}
+
+.package-hotels .skeleton-box {
+    box-shadow: none;
 }
 
 .package-hotels .skeleton-box {

@@ -22,7 +22,7 @@
                 <div class="package-header-content">
                   <div class="container">
                     <div class="row gy-3 package-header-card align-items-center">
-                      <div class="col-xl-6 col-lg-12 col-md-12">
+                      <div class="col-xl-6 col-lg-12">
                         <div class="d-flex flex-column row-gap-2">
                           <h5 class="package-details-title">
                             {{package.packageTitle}}
@@ -37,7 +37,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-xl-6 col-lg-12 col-md-12">
+                      <div class="col-xl-6 col-lg-12">
                         <div class="header-hotel-details d-flex align-items-center justify-content-end gap-4">
                           <div class="d-flex align-items-center lh-base gap-2">
                             <i class="icon-line-map-pin"></i>
@@ -126,7 +126,7 @@
               <div class="package-service-section package-list-offers-section">
                 <p class="mb-3 lh-base">Select an offer to continue the process of booking.</p>
                 <div class="row">
-                  <div class="col-md-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
+                  <div class="col-lg-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
                     <input [attr.id]="offer.id" type="radio" name="package-offer" [attr.value]="offer.title"
                       [checked]="selectedOffer == offer.id">
                     <label [attr.for]="offer.title" (click)="checkOffer(offer.id)">
@@ -198,7 +198,7 @@
                     <h2 class="mb-0 pb-0">Flights</h2>
                     <p>Your most suitable flight options.</p>
                     <div class="row gy-3" *ngFor="let flight of package.details.flights;let i=index">
-                      <div class="col-xl-6 col-md-6">
+                      <div class="col-xl-6 col-lg-6">
                         <label class="w-100" [attr.for]="'flight-box-'+i">
                           <div class="box">
                             <div class="service-details p-0">
@@ -273,7 +273,7 @@
                         </label>
                       </div>
 
-                      <div class="col-xl-6 col-md-6">
+                      <div class="col-xl-6 col-lg-6">
                         <label class="w-100" [attr.for]="'flight-box-'+i">
                           <div class="box">
                             <div class="service-details p-0">
@@ -358,60 +358,61 @@
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Hotels</h2>
                     <p>Exclusive Choice of Hotels at Affordable Prices.</p>
-                    <div class="row gy-3" *ngFor="let hotel of package.details.hotels;let i = index">
-                      <div class="col-xl-12">
-                        <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
-                          <h2>{{destinationTwoRooms.length===0 ? 'First Destination':'Second Destination' }}</h2>
-                          <p class="mb-0 lh-base">{{(loading && destinationTwoRooms.length == 0) ? 'Fetching data...' : (loading && destinationTwoRooms.length
-                            != 0) ? 'Generating summary' : ''}}</p>
-                        </div>
-                        <!-- Loading -->
-                        <div *ngIf="loading">
-                          <label *ngFor="let skeleton of skeletons" class="mb-0 w-100">
-                            <div class="skeleton-box box">
-                              <div class="container">
-                                <div class="row">
-                                  <div class="hotel-gallery-box col-xl-4 ps-0">
-                                    <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
-                                  </div>
-                                  <div class="col-xl-8 py-3">
-                                    <div class="hotel-content">
-                                      <div class="hotel-content-bottom">
-                                        <div class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
-                                          <div class="skeleton-service-flex d-flex flex-column justify-content-start lh-base">
-                                            <div class="hotel-rating">
-                                              <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                            </div>
-                                            <div class="hotel-name me-4">
-                                              <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                            </div>
-                                          </div>
-                                          <div class="d-flex align-items-center gap-1">
-                                            <div class="hotel-rate me-2">
-                                              <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                            </div>
-                                            <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                              <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
-                                              <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
-                                            </div>
-                                          </div>
+                    <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
+                      <h2>{{destinationTwoRooms.length===0 ? 'First Destination':'Second Destination' }}</h2>
+                      <p class="mb-0 lh-base">{{(loading && destinationTwoRooms.length == 0) ? 'Fetching data...' : (loading && destinationTwoRooms.length
+                        != 0) ? 'Generating summary' : ''}}</p>
+                    </div>
+                    <div *ngIf="loading">
+                      <label *ngFor="let skeleton of skeletons" class="mb-0 w-100">
+                        <div class="skeleton-box box">
+                          <div class="container">
+                            <div class="row">
+                              <div class="hotel-gallery-box col-xl-4 ps-0">
+                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
+                              </div>
+                              <div class="col-xl-8 py-3">
+                                <div class="hotel-content">
+                                  <div class="hotel-content-bottom">
+                                    <div class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                      <div class="skeleton-service-flex d-flex flex-column justify-content-start lh-base">
+                                        <div class="hotel-rating">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
                                         </div>
-                                        <hr>
-                                        <div class="d-flex flex-column row-gap-1">
-                                          <div class="hotel-info-card w-100 mb-2">
-                                            <p class="mb-3 hotel-description skeleton-loader skeletonprogress"></p>
-                                            <p class="mb-0 hotel-details skeleton-service skeleton-loader skeletonprogress"></p>
-                                          </div>
+                                        <div class="hotel-name me-4">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
                                         </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="hotel-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="hotel-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex flex-column row-gap-1">
+                                      <div class="hotel-info-card w-100 mb-2">
+                                        <p class="mb-3 hotel-description skeleton-loader skeletonprogress"></p>
+                                        <p class="mb-0 hotel-details skeleton-service skeleton-loader skeletonprogress"></p>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>    
+                              </div>
                             </div>
-                            <div class="clear-area"></div>
-                          </label>
+                          </div>    
                         </div>
+                        <div class="clear-area"></div>
+                      </label>
+                    </div>
+                    <div class="row gy-3" *ngFor="let hotel of package.details.hotels;let i = index">
+                      <div class="col-xl-12">
+                        <!-- Loading -->
+                        
                         <div *ngIf="!loading">
                           <label for="" class="w-100 mb-4">
                             <div class="package-hotel-card">
@@ -446,10 +447,13 @@
                                       <div class="hotel-content-bottom">
                                         <div
                                           class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
-                                          <div class="d-flex flex-column justify-content-start lh-base">
-                                            <div class="hotel-rating">
-                                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                                [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
+                                          <div class="d-flex flex-column justify-content-start row-gap-2 lh-base">
+                                            <div class="d-flex align-items-center gap-3">
+                                              <div class="hotel-rating">
+                                                <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                                  [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
+                                              </div>
+                                              <div class="hotel-arangement"><p class="mb-0">{{hotel.pension}}</p></div>
                                             </div>
                                             <div class="hotel-name me-4">
                                               <h2 class="text-truncate">
@@ -471,7 +475,7 @@
                                             <p class="mb-0">{{hotel.details.description}}</p>
                                           </div>
                                           <div class="row">
-                                            <div class="col-xl-6">
+                                            <div class="col-xl-6 mb-2">
                                               <div class="hotel-address mb-2">
                                                 <div class="d-flex align-items-start gap-2 lh-base">
                                                   <i class="icon-line-map-pin"></i>
@@ -486,21 +490,31 @@
                                               </div>
                                             </div>
                                             <div class="col-xl-6">
-                                              <div class="d-flex align-items-center gap-2 mb-2">
+                                              <div class="d-flex align-items-center column-gap-4 row-gap-2 mb-2">
                                                 <div class="hotel-checkin">
+                                                  <p class="checkin-label mb-2">Check In</p>
                                                   <div class="d-flex align-items-center gap-2 lh-base">
                                                     <i class="icon-line-calendar"></i>
                                                     <p class="mb-0">{{hotel.datecheckin}}</p>
                                                   </div>
+                                                  <div class="d-flex align-items-center gap-2 lh-base">
+                                                    <i class="icon-line-clock"></i>
+                                                    <p class="mb-0">{{hotel.timecheckin}}</p>
+                                                  </div>
                                                 </div>
-                                                <i class="icon-line-arrow-right"></i>
+                                             
                                                 <div class="hotel-checkout">
-                                                  <p class="mb-0">{{hotel.datecheckout}}</p>
-                                                </div>
-                                              </div>
-                                              <div class="hotel-arangement">
-                                                <div class="d-flex align-items-center gap-2">
-                                                  <p class="mb-0">{{hotel.pension}}</p>
+                                                  <p class="checkout-label mb-2">Check Out</p>
+                                                  <div class="d-flex align-items-center gap-2 lh-base">
+                                                    <i class="icon-line-calendar"></i>
+                                                    <p class="mb-0">{{hotel.datecheckout}}</p>
+                                                  </div>
+                                                  <div class="hotel-checkout">
+                                                    <div class="d-flex align-items-center gap-2 lh-base">
+                                                      <i class="icon-line-clock"></i>
+                                                      <p class="mb-0">{{hotel.timecheckout}}</p>
+                                                    </div>
+                                                  </div>
                                                 </div>
                                               </div>
                                             </div>
@@ -519,10 +533,10 @@
                                 <div class="container">
                                   <div class="row">
                                     <div
-                                      class="room-number col-xl-2 col-lg-2 col-md-12 border-end py-4 d-flex align-items-center justify-content-center">
+                                      class="room-number col-xl-2 col-lg-2 border-end py-4 d-flex align-items-center justify-content-center">
                                       <h5>Room {{room.id}}</h5>
                                     </div>
-                                    <div class="room-specs col-xl-6 col-lg-6 col-md-12 border-end py-4">
+                                    <div class="room-specs col-xl-6 col-lg-6 border-end py-4">
                                       <div class="room-specs-content d-flex align-items-center gap-5">
                                         <div class="d-flex align-items-center gap-3">
                                           <i class="icon-line-users"></i>
@@ -916,7 +930,7 @@
                     <h2 class="mb-0 pb-0">Transfers</h2>
                     <p>Top ways to experience nearby attractions.</p>
                     <div class="row gy-3">
-                      <div class="col-xl-6 col-md-6" *ngFor="let vehicle of package.details.transfers;let i=index">
+                      <div class="col-xl-6 col-lg-6" *ngFor="let vehicle of package.details.transfers;let i=index">
                         <label class="w-100">
                           <div class="box">
                             <div class="service-details p-0">
@@ -1050,7 +1064,7 @@
                         <div class="package-activity-card">
                           <div class="container">
                             <div class="row">
-                              <div class="col-lg-4">
+                              <div class="col-lg-4 package-activity-image">
                                 <div class="activity-picture">
                                   <img src="{{activity.picture}}" class="d-block w-100" alt="" />
                                 </div>
@@ -1117,7 +1131,7 @@
                         <div class="package-visit-card">
                           <div class="container">
                             <div class="row">
-                              <div class="col-lg-4">
+                              <div class="col-lg-4 package-visit-image">
                                 <div class="visit-picture">
                                   <img src="{{visit.picture}}" class="d-block w-100" alt="" />
                                 </div>

@@ -66,7 +66,14 @@
 
 @media (max-width: 1199.98px) {
     
-    .package-hotels .hotel-gallery-box {
+    .package-visits .package-visit-card .visit-picture, .package-activities .package-activity-card .activity-picture,
+    .package-visits .package-visit-card .visit-picture img, .package-activities .package-activity-card .activity-picture img {
+        height: 300px;
+    }
+
+    .package-hotels .hotel-gallery-box,
+    .package-activities .package-activity-image,
+    .package-visits .package-visit-image {
         padding-right: 0 !important;
     }
 
