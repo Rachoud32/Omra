@@ -102,7 +102,7 @@ export class packageService {
               arrangementtype: 'LPD',
               departurecity: 'France',
               airport: `Nice Côte d'Azur Airport`
-              
+
             },
           ],
           flights: [
@@ -135,7 +135,7 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
@@ -165,109 +165,33 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  types: [
-                    {
-                      pension: 'LPD',
-                      price: 350,
-                      title: 'Standard Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    },
-                    {
-                      price: 320,
-                      pension: 'LPD',
-                      title: 'Double Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  ]
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  types: [
-                    {
-                      price: 400,
-                      pension: 'LPD',
-                      title: 'Standard Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    },
-                    {
-                      price: 380,
-                      pension: 'LPD',
-                      title: 'Double Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  ]
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
-                },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
-            },{
+
+            },
+            {
               _id: 2,
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
@@ -296,110 +220,111 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  types: [
-                    {
-                      pension: 'LPD',
-                      price: 350,
-                      title: 'Standard Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    },
-                    {
-                      price: 320,
-                      pension: 'LPD',
-                      title: 'Double Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  ]
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  types: [
-                    {
-                      price: 400,
-                      pension: 'LPD',
-                      title: 'Standard Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    },
-                    {
-                      price: 380,
-                      pension: 'LPD',
-                      title: 'Double Room',
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  ]
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
-                },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Business Hotel',
+            rating: 4.3,
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Business Hotel',
+            rating: 4.3,
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
+
           transfers: [
             {
               model: 'Toyota Camry',

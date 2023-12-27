@@ -72,35 +72,32 @@ export class PackageDetailsComponent implements OnInit {
       id: 'policiessection',
     },
   ];
-
+  destinationTitle = 'First destination'
   package: any;
   activeSection: any;
   selectedOffer: string = '';
 
   loading = false
   skeletons: any[] = [1, 2]
-  destinationOneRooms: any[] = [];
-  destinationTwoRooms: any[] = [];
   counterValue = 0;
   targetValue = 100;
   durationInSeconds = 4;
-  showDetailsDestinationOne: any
-  showDetailsDestinationTwo: any
-  selectedRoomDest1: string = '';
-  selectedRoomDest2: string = '';
-
-  selectedRoomType: string = '';
   selectedPackRoomsList: string = ''
-  types: any[] = []
-
-  dataHotelsFirst: any[] = []
-  dataHotelsSecond: any[] = []
-  hotelDestinationOne: any
 
   settings = {
     counter: false,
     plugins: [lgZoom],
   };
+
+  roomsSelectionFirstDest: any = {
+    hotel: null,
+    rooms: []
+  }
+  roomsSelectionSecondDest: any = {
+    hotel: null,
+    rooms: []
+  }
+  summary: any
 
   constructor(
     private el: ElementRef,
@@ -116,13 +113,29 @@ export class PackageDetailsComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     let data = this.packageService.dataPackages();
     this.package = data.find((el) => id == el._id);
+    let rooms = Number(localStorage.getItem('roomNumberPackage')) || 0
+    for (let i = 0; i < rooms; i++) {
+      this.roomsSelectionFirstDest.rooms.push(
+        {
+          room: 'Room ' + (i + 1),
+          selectedType: null
+        }
+      )
+      this.roomsSelectionSecondDest.rooms.push(
+        {
+          room: 'Room ' + (i + 1),
+          selectedType: null
+        }
+      )
+    }
+
   }
 
   startCounter(value: any) {
     const interval$ = interval((value * 1000) / this.targetValue);
     interval$
       .pipe(
-        take(this.targetValue + 1) // +1 to include the target value
+        take(this.targetValue + 1)
       )
       .subscribe(() => {
         this.counterValue++;
@@ -130,33 +143,49 @@ export class PackageDetailsComponent implements OnInit {
   }
 
   goToNextStep = () => {
-    if (this.selectedRoomType != '') {
-      if (this.showDetailsDestinationOne) {
-        const data = {
-          firstDestination: true,
-          secondDestination: false,
-          summary: false,
+    let firstverify = true
+    if (this.destinationTitle == "Second destination") {
+      let secondverify = true
+      this.roomsSelectionSecondDest.rooms.map((el: any) => {
+        if (el.selectedType == null) {
+          secondverify = false
         }
-        localStorage.setItem('steps', JSON.stringify(data))
-        window.location.href = 'umrah-package/result/package/'
+      })
+      if (secondverify) {
+        this.destinationTitle = "Summary"
+        this.loading = true
+        setTimeout(() => {
+          this.loading = false
+        }, 2000)
+
+      } else {
+        this.toastr.info("Please select the type of every room of your second destination before proceeding.")
       }
-      else {
-        this.toastr.info("Please select a room for your first destination before proceeding.")
+    }
+    if (this.destinationTitle == "First destination") {
+      this.roomsSelectionFirstDest.rooms.map((el: any) => {
+        if (el.selectedType == null) {
+          firstverify = false
+        }
+      })
+      if (firstverify) {
+        this.destinationTitle = "Second destination"
+        this.loading = true
+        setTimeout(() => {
+          this.loading = false
+        }, 2000)
+
+      } else {
+        this.toastr.info("Please select the type of every room of your first destination before proceeding.")
       }
-    } else {
-      this.toastr.info("Please select a room for your Second destination before proceeding.")
     }
   }
-  
-  clearData() {
-    this.showDetailsDestinationOne = null
-    this.showDetailsDestinationTwo = null
-    this.selectedRoomDest1 = '';
-    this.selectedRoomDest2 = '';
-    this.destinationTwoRooms = []
+
+  clearChange() {
+    this.destinationTitle = 'First destination'
   }
 
-  chooseSection () {
+  chooseSection() {
     this.loading = true
     setTimeout(() => {
       this.loading = false
@@ -165,23 +194,29 @@ export class PackageDetailsComponent implements OnInit {
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
   };
 
   checkOffer(value: string) {
     this.selectedOffer = value;
   }
 
-  checkRoom(type: string, idRoom: any, idHotel: any) {
-    let data: any[] = this.packageService.dataPackages();
-    this.hotelDestinationOne = data.find((data: any) => data._id === idHotel)
-    let hotel = this.hotelDestinationOne?.details.hotels.find((data: any) => data._id == idHotel)
-    if (hotel) {
-      const room = hotel.rooms.find((data: any) => data.id == idRoom)
-      if (room) {
-        localStorage.setItem('roomHotelFirstDestination', JSON.stringify({ room: room.id, title: type }))
-      }
+  selectType(data: any, hotel: any, room: any) {
+    console.log({ data, hotel, room });
+
+    if (this.destinationTitle == 'First destination') {
+      let roomData = this.roomsSelectionFirstDest.rooms.find((el: any) => room == el.room)
+      roomData.selectedType = data
+      this.roomsSelectionFirstDest.hotel = hotel
+      console.log(this.roomsSelectionFirstDest);
     }
+    if (this.destinationTitle == 'Second destination') {
+      let roomData = this.roomsSelectionSecondDest.rooms.find((el: any) => room == el.room)
+      roomData.selectedType = data
+      this.roomsSelectionSecondDest.hotel = hotel
+      console.log(this.roomsSelectionSecondDest);
+    }
+
+
   }
 
   collapsedPackRoomsList(value: any) {

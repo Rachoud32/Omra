@@ -278,7 +278,11 @@ h6 {
     padding: 0 0 120px 0;
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
     color: unset !important;
     background-color: transparent !important;
     border-color: var(--omra-light-gray) !important;
@@ -4193,7 +4197,7 @@ app-package-details .page-title {
     height: 270px;
     max-height: 270px;
     transform: scale(1);
-    transition: all 1s cubic-bezier(.165,.84,.44,1);
+    transition: all 1s cubic-bezier(.165, .84, .44, 1);
 }
 
 .packages-list .package-item:hover .package-picture {
@@ -4218,7 +4222,7 @@ app-package-details .page-title {
     z-index: 4;
 }
 
-.packages-list .package-item .carousel-control-prev, 
+.packages-list .package-item .carousel-control-prev,
 .packages-list .package-item .carousel-control-next,
 .package-offer-details .carousel-control-prev,
 .package-offer-details .carousel-control-next {
@@ -4244,12 +4248,12 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .carousel-control-prev:hover,
-.packages-list .package-item .carousel-control-next:hover, 
-.packages-list .package-item .carousel-control-prev:active, 
+.packages-list .package-item .carousel-control-next:hover,
+.packages-list .package-item .carousel-control-prev:active,
 .packages-list .package-item .carousel-control-next:active,
 .package-offer-details .carousel-control-prev:hover,
-.package-offer-details .carousel-control-next:hover, 
-.package-offer-details .carousel-control-prev:active, 
+.package-offer-details .carousel-control-next:hover,
+.package-offer-details .carousel-control-prev:active,
 .package-offer-details .carousel-control-next:active {
     color: var(--omra-white);
     background: var(--omra-base);
@@ -4484,7 +4488,8 @@ app-package-details .page-title {
     transition: all .3s linear;
 }
 
-.back-link p, .back-link i {
+.back-link p,
+.back-link i {
     color: var(--omra-gray);
     font-weight: 400;
     transition: all .3s linear;
@@ -4543,7 +4548,8 @@ app-package-bookings-sidebar,
     z-index: 5;
 }
 
-.package-inside-menu li .inside-menu-item:hover::before, .package-inside-menu li .inside-menu-item.active::before {
+.package-inside-menu li .inside-menu-item:hover::before,
+.package-inside-menu li .inside-menu-item.active::before {
     width: 100%;
 }
 
@@ -4802,7 +4808,8 @@ app-package-bookings-sidebar,
     border: 1px solid var(--omra-light-gray);
 }
 
-.package-hotel-card .carousel-control-next:focus, .package-hotel-card .carousel-control-prev:focus {
+.package-hotel-card .carousel-control-next:focus,
+.package-hotel-card .carousel-control-prev:focus {
     color: var(--omra-base);
     background: var(--omra-white);
     opacity: 1 !important;
@@ -4976,6 +4983,11 @@ ngx-stars .stars-line {
     padding: 10px 20px;
 }
 
+
+.package-hotel-rooms-card .box.active {
+    border: 1px solid var(--omra-second) !important;
+}
+
 .package-hotel-rooms-card input[type=radio]:not(:checked)+.box {
     border: 1px solid var(--omra-light-gray);
 }
@@ -5017,12 +5029,15 @@ ngx-stars .stars-line {
     padding-left: 0 !important;
 }
 
-.pack-hotel-room-types-modal [type="radio"]:checked+label:before, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:before,
-.pack-hotel-room-types-modal [type="radio"]:checked+label:after, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:after {
+.pack-hotel-room-types-modal [type="radio"]:checked+label:before,
+.pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:before,
+.pack-hotel-room-types-modal [type="radio"]:checked+label:after,
+.pack-hotel-room-types-modal [type="radio"]:not(:checked)+label:after {
     display: none;
 }
 
-.pack-hotel-room-types-modal [type="radio"]:checked+label, .pack-hotel-room-types-modal [type="radio"]:not(:checked)+label {
+.pack-hotel-room-types-modal [type="radio"]:checked+label,
+.pack-hotel-room-types-modal [type="radio"]:not(:checked)+label {
     display: flex;
     border: 1px solid var(--omra-light-gray);
     padding: 15px 20px;
@@ -5059,8 +5074,8 @@ input[type="radio"]:not(:checked)+label::after {
     width: 100%;
 }
 
-.package-offer-item [type="radio"]:checked + label .package-offer-card, 
-.package-offer-item [type="radio"]:not(:checked) + label .package-offer-card {
+.package-offer-item [type="radio"]:checked+label .package-offer-card,
+.package-offer-item [type="radio"]:not(:checked)+label .package-offer-card {
     position: relative;
     border: 1px solid var(--omra-light-gray);
     margin-bottom: 10px;
@@ -5071,8 +5086,8 @@ input[type="radio"]:not(:checked)+label::after {
     transition: all .3s linear;
 }
 
-.package-offer-item [type="radio"]:checked + label .package-offer-card:before,
-.package-offer-item [type="radio"]:not(:checked) + label .package-offer-card:before {
+.package-offer-item [type="radio"]:checked+label .package-offer-card:before,
+.package-offer-item [type="radio"]:not(:checked)+label .package-offer-card:before {
     content: '';
     display: block;
     width: 0%;
@@ -5086,21 +5101,21 @@ input[type="radio"]:not(:checked)+label::after {
     transition: all .5s linear;
 }
 
-.package-offer-item [type="radio"] +label:hover .package-offer-card {
+.package-offer-item [type="radio"]+label:hover .package-offer-card {
     border-color: var(--omra-base);
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
 
 
-.package-offer-item [type="radio"]:checked +label .package-offer-card {
+.package-offer-item [type="radio"]:checked+label .package-offer-card {
     border-color: var(--omra-base);
     border-bottom-color: var(--omra-light-gray);
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
 
-.package-offer-item [type="radio"]:checked +label .package-offer-card::before {
+.package-offer-item [type="radio"]:checked+label .package-offer-card::before {
     width: 100%;
 }
 
@@ -5120,7 +5135,7 @@ input[type="radio"]:not(:checked)+label::after {
     transition: all .3s linear;
 }
 
-.package-offer-item [type="radio"]:checked +label .package-offer-header .title {
+.package-offer-item [type="radio"]:checked+label .package-offer-header .title {
     color: var(--omra-base);
 }
 
@@ -5186,7 +5201,8 @@ input[type="radio"]:not(:checked)+label::after {
 /* ----------------------------------------------------------------
 	Package - Flights and Transfers
 -----------------------------------------------------------------*/
-.package-flights .box, .package-transfers .box {
+.package-flights .box,
+.package-transfers .box {
     border: 1px solid var(--omra-light-gray);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 0%);
 }
@@ -5411,7 +5427,7 @@ input[type="radio"]:not(:checked)+label::after {
 .more-state {
     display: none;
 }
-  
+
 .more-target {
     opacity: 0;
     max-height: 0;
@@ -5419,51 +5435,53 @@ input[type="radio"]:not(:checked)+label::after {
     transition: .25s ease;
 }
 
-.more-state:checked ~ .more-wrap .more-target {
+.more-state:checked~.more-wrap .more-target {
     opacity: 1;
     font-size: inherit;
     max-height: 999em;
 }
 
-.more-state ~ .more-trigger:before {
+.more-state~.more-trigger:before {
     content: '+';
     color: #fff;
     display: inline-block;
     background: #8af;
-    line-height:1em;
+    line-height: 1em;
     border-radius: .5em;
     width: 1em;
-    font-weight:600;
+    font-weight: 600;
     transition: all .3s ease;
 }
-.more-state ~ .more-trigger:after {
+
+.more-state~.more-trigger:after {
     content: ' show more';
     transition: all .3s ease;
 }
 
-.more-state:checked ~ .more-trigger:before {
+.more-state:checked~.more-trigger:before {
     content: '-';
     background: #f69;
 }
-.more-state:checked ~ .more-trigger:after {
+
+.more-state:checked~.more-trigger:after {
     content: ' show less';
 
 }
 
 .more-trigger {
-    margin-left:20px;
+    margin-left: 20px;
     cursor: pointer;
     font-size: .9em;
     line-height: 2;
     border: 1px solid #ddd;
     border-radius: .25em;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1), 0 -40px 16px -10px #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 -40px 16px -10px #fff;
 }
 
-.more-state:checked ~ .more-trigger {
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.more-state:checked~.more-trigger {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-  
+
 
 /* ----------------------------------------------------------------
 	Package - Plan
@@ -5478,7 +5496,8 @@ input[type="radio"]:not(:checked)+label::after {
     margin-bottom: 20px;
 }
 
-.package-plan h2, .accordion-header {
+.package-plan h2,
+.accordion-header {
     padding: 0;
     margin: 0;
 }
@@ -5641,11 +5660,13 @@ app-package-calendar {
     transition: all .3s linear;
 }
 
-.cal-month-view .cal-day-cell, .cal-month-view .cal-days .cal-cell-row {
+.cal-month-view .cal-day-cell,
+.cal-month-view .cal-days .cal-cell-row {
     transition: all .3s linear;
 }
 
-.cal-month-view .cal-cell-row .cal-cell:hover, .cal-month-view .cal-cell.cal-has-events.cal-open {
+.cal-month-view .cal-cell-row .cal-cell:hover,
+.cal-month-view .cal-cell.cal-has-events.cal-open {
     background-color: var(--omra-second);
 }
 
@@ -5718,7 +5739,8 @@ app-package-calendar {
     font-size: var(--fs-12);
 }
 
-.cal-month-view .cal-out-month .cal-day-badge, .cal-month-view .cal-out-month .cal-event,
+.cal-month-view .cal-out-month .cal-day-badge,
+.cal-month-view .cal-out-month .cal-event,
 .cal-month-view .cal-out-month ul li {
     opacity: 0.3 !important;
 }
@@ -6765,7 +6787,9 @@ app-package-calendar {
     width: 2px;
 }
 
-.modal-header, .modal-footer, .modal-body {
+.modal-header,
+.modal-footer,
+.modal-body {
     padding: 20px !important;
 }
 
@@ -7716,12 +7740,12 @@ app-booking-summary {
     height: 15px !important;
 }
 
-.skeleton-box  .hotel-info-card .hotel-description {
+.skeleton-box .hotel-info-card .hotel-description {
     width: 100%;
     height: 70px !important;
 }
 
-.skeleton-box  .hotel-info-card .hotel-details {
+.skeleton-box .hotel-info-card .hotel-details {
     width: 100%;
     height: 50px !important;
 }

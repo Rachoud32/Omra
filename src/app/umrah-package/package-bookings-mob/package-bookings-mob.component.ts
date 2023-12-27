@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-package-bookings-mob',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./package-bookings-mob.component.css']
 })
 export class PackageBookingsMobComponent {
+  @Input() eventgoToNextStep!: Function;
 
+  goToNextStep() {
+    if (this.eventgoToNextStep) {
+      this.eventgoToNextStep();
+      // window.scrollTo(0, 420);
+    }
+  }
 }

@@ -433,6 +433,8 @@ export class SearchComponent implements OnInit {
       // to be integrated
     }
     if (this.searchType === 'package') {
+      let data = this.searchFormPackage?.get('passengers')?.value.length
+      localStorage.setItem('roomNumberPackage', data)
       this.router.navigateByUrl('/umrah-package/result')
     }
     if (this.searchType === 'custom') {
