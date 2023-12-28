@@ -178,9 +178,8 @@ body .text-muted {
     color: #bababa !important;
 }
 
-.border-start,
-.border-end {
-    border-color: #dee2e6 !important;
+.border-start.border-start, .border-end.border-end, .border-bottom.border-bottom, .border-top.border-top, .border.border {
+    border-color: var(--omra-light-gray) !important;
 }
 
 label {
@@ -450,6 +449,35 @@ input[type=checkbox]:disabled {
 .category-btn [type="radio"]:checked+label,
 .category-btn [type="radio"]:not(:checked)+label {
     line-height: unset;
+}
+
+/* ----------------------------------------------------------------
+	Read More
+-----------------------------------------------------------------*/
+.limitTextHeight {
+    height: 40px;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.read-more-btn {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--omra-base);
+    transition: opacity 0.3s ease;
+}
+
+.read-more-content, .read-more-btn {
+    transition: opacity 0.3s ease;
+}
+
+.fade-in-out {
+    transition: opacity 0.3s ease;
+}
+
+.fade-in-out-hidden {
+    opacity: 0;
 }
 
 /*----------------------------------------------------
@@ -2497,7 +2525,8 @@ label.category-item::before {
     fill: var(--omra-white);
 }
 
-.change-flight-btn {
+.change-flight-btn, 
+.change-destination-btn {
     background: var(--omra-white);
     border-color: var(--omra-white);
     color: var(--omra-base);
@@ -2505,7 +2534,8 @@ label.category-item::before {
     font-size: var(--fs-12) !important;
 }
 
-.change-flight-btn:hover {
+.change-flight-btn:hover
+, .change-destination-btn:hover {
     background: var(--omra-second);
     border-color: var(--omra-second);
     color: var(--omra-white);
@@ -3631,6 +3661,10 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 2%);
 }
 
+.rooms-container label {
+    margin-bottom: 0;
+}
+
 .room-box {
     margin-bottom: 15px;
 }
@@ -3808,6 +3842,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 
 .rooms-container .box .price-content .price span {
     font-size: var(--fs-12);
+    font-weight: 500;
 }
 
 .rooms-container .box .price-content .link .color-btn,
@@ -4727,6 +4762,11 @@ app-package-bookings-sidebar,
     padding: 15px;
 }
 
+.package-hotels ngb-progressbar {
+    position: relative;
+    top: -1px;
+}
+
 .package-hotels .package-service-section h2 {
     padding: 5px 0 0 0;
     margin-bottom: 0;
@@ -4734,8 +4774,7 @@ app-package-bookings-sidebar,
 
 .package-hotels .destination-label {
     background: var(--omra-base);
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 12px 20px;
     position: relative;
 }
 
@@ -4748,9 +4787,11 @@ app-package-bookings-sidebar,
 }
 
 .package-hotels .destination-label p {
+    margin-bottom: 0;
     font-size: var(--fs-14);
     line-height: normal;
     color: var(--omra-white);
+    padding: 15px 0;
 }
 
 .package-service-section .hotel-name {
@@ -4827,17 +4868,12 @@ app-package-bookings-sidebar,
 
 .package-hotel-carousel img {
     object-fit: cover;
-    height: 270px !important;
     width: 100% !important;
 }
 
 .package-hotel-carousel .carousel-control-next,
 .package-hotel-carousel .carousel-control-prev {
     z-index: 4;
-}
-
-.package-hotels .border-end {
-    border-color: var(--omra-light-gray) !important;
 }
 
 .package-hotels .package-hotel-card .hotel-content hr {
@@ -4912,7 +4948,8 @@ ngx-stars .stars-line {
     background: var(--omra-extra);
     color: var(--omra-second);
     font-size: var(--fs-13);
-    padding: 5px 10px;
+    width: fit-content;
+    padding: 3px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4934,17 +4971,29 @@ ngx-stars .stars-line {
     padding: 20px 15px;
 }
 
+.package-hotels .package-hotel-rooms-card .rooms-list {
+    border: 1px solid var(--omra-light-gray);
+    border-top: 0 !important;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .row .divider-room {
+    margin: 0;
+}
+
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item:last-child {
     margin-bottom: 0;
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item {
-    border: 1px solid var(--omra-light-gray);
     margin-bottom: 20px;
-    /* padding: 15px; */
 }
 
-.package-hotels .package-hotel-rooms-card .package-hotel-room-item h5 {
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number,
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-specs {
+    border-right: 0 !important;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number h5 {
     color: var(--omra-base);
     font-weight: 500 !important;
     margin-bottom: 0;
@@ -4952,9 +5001,27 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item p {
+    color: var(--omra-second);
+    font-weight: 400;
+    font-size: var(--fs-14);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-options p {
     color: var(--omra-gray);
     font-weight: 300;
     font-size: var(--fs-14);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-options i {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-14);
+    padding: 0;
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item span {
@@ -4983,18 +5050,56 @@ ngx-stars .stars-line {
     padding: 10px 20px;
 }
 
+.package-hotel-rooms-card .box {
+    cursor: pointer;
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 0%);
+    transform: translateY(0px);
+    transition: all .3s linear;
+}
 
-.package-hotel-rooms-card .box.active {
-    border: 1px solid var(--omra-second) !important;
+.package-hotel-rooms-card .box:before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background: var(--omra-base);
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 0%);
+    z-index: 5;
+    transition: all .5s linear;
+}
+
+.package-hotel-rooms-card .box.active,
+.package-hotel-rooms-card .box:hover {
+    border-color: var(--omra-base) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%) !important;
+}
+
+.package-hotel-rooms-card .box.active:before {
+    width: 100%;
 }
 
 .package-hotel-rooms-card input[type=radio]:not(:checked)+.box {
     border: 1px solid var(--omra-light-gray);
 }
 
-.package-hotel-rooms-card .rooms-list {
-    padding: 20px 0 5px;
-    border-top: 1px solid var(--omra-light-gray);
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .package-room-list-btn i {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    background: none;
+    line-height: normal;
+}
+
+.package-hotels .package-room-list-btn[aria-expanded="false"] .rooms-list i {
+    transform: rotate(0deg);
+}
+
+.package-hotels .package-room-list-btn[aria-expanded="true"] .rooms-list i {
+    transform: rotate(-180deg);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-type .room-type-icon {
@@ -5049,6 +5154,107 @@ ngx-stars .stars-line {
 .pack-hotel-room-types-modal [type="radio"]:checked+label {
     border-color: var(--omra-second);
     background-color: var(--omra-extra);
+}
+
+.package-hotels .package-rooms-summary .box {
+    border: 0;
+    box-shadow: none;
+}
+
+.package-hotels .package-rooms-summary h4 {
+    font-size: var(--fs-14);
+    font-weight: 400 !important;
+    color: var(--omra-base);
+    margin-bottom: 0;
+    line-height: normal;
+}
+
+.package-hotels .package-rooms-summary hr {
+    margin: 10px 0;
+}
+
+.package-hotels .package-rooms-summary .room-number {
+    background: var(--omra-extra);
+    border: 1px solid var(--omra-extra);
+}
+
+.package-hotels .package-rooms-summary .room-number .room-number-title {
+    font-size: var(--fs-16);
+    font-weight: 400;
+    color: var(--omra-second);
+}
+
+.package-hotels .package-rooms-summary .room-number svg {
+    width: 20px;
+    fill: var(--omra-second);
+}
+
+.package-hotels .package-rooms-summary .selected-room-title {
+    font-size: var(--fs-18);
+    font-weight: 500;
+    color: var(--omra-base);
+    line-height: normal;
+}
+
+.package-hotels .package-rooms-summary .selected-room-price {
+    font-size: var(--fs-22);
+    font-weight: 500;
+    color: var(--omra-base);
+    flex-direction: column;
+}
+
+.package-hotels .package-rooms-summary .selected-room-price span {
+    font-size: var(--fs-12);
+}
+
+.package-hotels .package-rooms-summary .selected-room-price .price-text,
+.package-hotels  .room-details-content .room-header .price-text {
+    font-weight: 300;
+    color: var(--omra-gray);
+    font-size: var(--fs-12);
+}
+
+.package-hotels .package-rooms-summary .selected-roomd-details {
+    border: 1px solid var(--omra-light-gray);
+    border-top: 0px !important;
+}
+
+.package-hotels .package-rooms-summary .selected-room-service p {
+    font-size: var(--fs-14);
+    color: var(--omra-gray);
+}
+
+.package-hotels .package-rooms-summary .selected-room-service i {
+    font-size: var(--fs-14);
+    color: var(--omra-second);
+}
+
+.package-hotels .room-details-content .room-header i {
+    background: transparent;
+    color: var(--omra-second);
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--fs-14);
+    padding: 0;
+}
+
+.package-hotels .room-details-content .room-header p {
+    color: var(--omra-gray);
+    font-size: var(--fs-14);
+    font-weight: 300;
+}
+
+.package-hotels .room-details-content hr {
+    margin: 12px 0 15px 0;
+}
+
+.package-hotels .package-rooms-summary .room-choice {
+    font-size: var(--fs-16);
+    background: #050033;
+    color: var(--omra-white);
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 5px 15px;
 }
 
 /* ----------------------------------------------------------------
@@ -5107,10 +5313,8 @@ input[type="radio"]:not(:checked)+label::after {
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
 
-
 .package-offer-item [type="radio"]:checked+label .package-offer-card {
     border-color: var(--omra-base);
-    border-bottom-color: var(--omra-light-gray);
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%);
 }
@@ -5126,7 +5330,7 @@ input[type="radio"]:not(:checked)+label::after {
 .package-offer-card .package-offer-header .title {
     font-size: var(--fs-16);
     color: var(--omra-base);
-    font-weight: 500;
+    font-weight: 400;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -7704,6 +7908,10 @@ app-booking-summary {
 
 .package-hotels .skeleton-box {
     box-shadow: none;
+}
+
+.package-hotels .hotel-skeletons-list label:last-child {
+    margin-bottom: 0 !important;
 }
 
 .package-hotels .skeleton-box {

@@ -11,12 +11,24 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
   styleUrls: ['./package-details.component.css'],
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(300) // Adjust the duration as needed
+      ]),
+      transition(':leave',
+        animate(300, style({ opacity: 0 })))
+    ])
+  ]
 })
 
 export class PackageDetailsComponent implements OnInit {
@@ -82,7 +94,10 @@ export class PackageDetailsComponent implements OnInit {
   counterValue = 0;
   targetValue = 100;
   durationInSeconds = 4;
-  selectedPackRoomsList: string = ''
+  selectedPackRoomsList: string | null = null;
+
+  RoomDestinationOneData: any
+  RoomDestinationTwoData: any
 
   settings = {
     counter: false,
@@ -98,6 +113,7 @@ export class PackageDetailsComponent implements OnInit {
     rooms: []
   }
   summary: any
+  isReadMore = true;
 
   constructor(
     private el: ElementRef,
@@ -106,7 +122,6 @@ export class PackageDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private toastr: ToastrService
   ) { }
-
   ngOnInit(): void {
     this.loading = true
     this.startCounter(this.durationInSeconds)
@@ -128,9 +143,7 @@ export class PackageDetailsComponent implements OnInit {
         }
       )
     }
-
   }
-
   startCounter(value: any) {
     const interval$ = interval((value * 1000) / this.targetValue);
     interval$
@@ -141,7 +154,6 @@ export class PackageDetailsComponent implements OnInit {
         this.counterValue++;
       });
   }
-
   goToNextStep = () => {
     let firstverify = true
     if (this.destinationTitle == "Second destination") {
@@ -154,10 +166,11 @@ export class PackageDetailsComponent implements OnInit {
       if (secondverify) {
         this.destinationTitle = "Summary"
         this.loading = true
+        this.startCounter(this.durationInSeconds / 2)
         setTimeout(() => {
           this.loading = false
-        }, 2000)
-
+        }, 3000)
+        this.counterValue = 0
       } else {
         this.toastr.info("Please select the type of every room of your second destination before proceeding.")
       }
@@ -171,35 +184,31 @@ export class PackageDetailsComponent implements OnInit {
       if (firstverify) {
         this.destinationTitle = "Second destination"
         this.loading = true
+        this.startCounter(this.durationInSeconds / 2)
         setTimeout(() => {
           this.loading = false
-        }, 2000)
-
+        }, 3000)
+        this.counterValue = 0
       } else {
         this.toastr.info("Please select the type of every room of your first destination before proceeding.")
       }
     }
   }
-
   clearChange() {
     this.destinationTitle = 'First destination'
   }
-
   chooseSection() {
     this.loading = true
     setTimeout(() => {
       this.loading = false
-    }, 2000)
+    }, 3000)
   }
-
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
   };
-
   checkOffer(value: string) {
     this.selectedOffer = value;
   }
-
   selectType(data: any, hotel: any, room: any) {
     console.log({ data, hotel, room });
 
@@ -215,11 +224,15 @@ export class PackageDetailsComponent implements OnInit {
       this.roomsSelectionSecondDest.hotel = hotel
       console.log(this.roomsSelectionSecondDest);
     }
-
-
   }
-
-  collapsedPackRoomsList(value: any) {
-    this.selectedPackRoomsList = value
+  collapsedPackRoomsList(accordionId: string, accordionButton: any): void {
+    const dataBsTarget = accordionButton.getAttribute('data-bs-target');
+    const ariaControls = accordionButton.getAttribute('aria-controls');
+    console.log('data-bs-target:', dataBsTarget);
+    console.log('aria-controls:', ariaControls);
+  }
+  showText(index: number) {
+    this.isReadMore = !this.isReadMore;
+    console.log(`Clicked on item at index ${index}`)
   }
 }

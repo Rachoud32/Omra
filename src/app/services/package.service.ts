@@ -147,6 +147,7 @@ export class packageService {
               timecheckin: '09:00',
               timecheckout: '16:00',
               pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -161,6 +162,14 @@ export class packageService {
                 in the world and overlooking the holy 
                 Grand Mosque, Hajar Tower combines 
                 traditions with modern comforts. 
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts.
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts.
                 `,
               },
               rooms: [
@@ -193,23 +202,24 @@ export class packageService {
             },
             {
               _id: 2,
-              hotelName: 'Swissôtel Al Maqam Makkah',
-              type: 'Luxury Hotel',
-              rating: 4.5,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
               duration: 10,
               datecheckin: '01/12/2023',
               datecheckout: '10/12/2023',
-              timecheckin: '08:00',
-              timecheckout: '14:00',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
               pension: 'LPD',
+              nbrnights:'9',
               images: [
-                "assets/package/hotel-2/1.jpg",
-                "assets/package/hotel-2/2.jpg",
-                "assets/package/hotel-2/3.jpg",
-                "assets/package/hotel-2/4.jpg"
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
               ],
               details: {
-                title: 'Swissôtel Al Maqam Makkah',
+                title: 'Pullman ZamZam Makkah',
                 location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
                 description: `
                 Located in one of the tallest buildings 
@@ -240,8 +250,15 @@ export class packageService {
           secondDestinations: [{
             _id: 1,
             hotelName: 'Sofitel Shahd al Madinah',
-            type: 'Business Hotel',
+            type: 'Luxury Hotel',
             rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
             images: [
               "assets/package/hotel-4/1.jpg",
               "assets/package/hotel-4/2.jpg",
@@ -279,25 +296,32 @@ export class packageService {
           },
           {
             _id: 2,
-            hotelName: 'Sofitel Shahd al Madinah',
+            hotelName: 'Pullman Zamzam Madinah',
             type: 'Business Hotel',
-            rating: 4.3,
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
             images: [
-              "assets/package/hotel-4/1.jpg",
-              "assets/package/hotel-4/2.jpg",
-              "assets/package/hotel-4/3.jpg",
-              "assets/package/hotel-4/4.jpg",
-              "assets/package/hotel-4/5.jpg",
-              "assets/package/hotel-4/6.jpg"
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
             ],
             details: {
-              title: 'Sofitel Shahd al Madinah',
-              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
               description: `
-              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-              with elegant French hospitality.
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
               `,
             },
             rooms: [
@@ -324,7 +348,6 @@ export class packageService {
               }
             ]
           }],
-
           transfers: [
             {
               model: 'Toyota Camry',
@@ -506,7 +529,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -516,7 +540,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -526,7 +551,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -536,7 +562,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -546,7 +573,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+
             },
           ],
           flights: [
@@ -579,16 +608,19 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
-              duration: 15,
-              datecheckin: '01/01/2024',
-              datecheckout: '15/01/2024',
-              pension: 'DP',
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -607,90 +639,180 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
                   title: 'Standard Room',
-                  pension: 'LPD',
                   price: 350,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
                   title: 'Double Room',
-                  pension: 'LPD',
                   price: 320,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
+
+            },
+            {
+              _id: 2,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
+              images: [
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
+              ],
+              details: {
+                title: 'Pullman ZamZam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+                {
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
+                }
+              ],
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Luxury Hotel',
+            rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Pullman Zamzam Madinah',
+            type: 'Business Hotel',
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
+            ],
+            details: {
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
+              description: `
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
           transfers: [
             {
               model: 'Toyota Camry',
@@ -872,7 +994,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -882,7 +1005,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -892,7 +1016,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -902,7 +1027,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -912,7 +1038,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+
             },
           ],
           flights: [
@@ -945,16 +1073,19 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
               type: 'Luxury Hotel',
               rating: 4.5,
-              duration: 15,
-              datecheckin: '01/01/2024',
-              datecheckout: '15/01/2024',
-              pension: 'PC',
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -973,90 +1104,180 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
                   title: 'Standard Room',
-                  pension: 'LPD',
                   price: 350,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
                   title: 'Double Room',
-                  pension: 'LPD',
                   price: 320,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
+
+            },
+            {
+              _id: 2,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
+              images: [
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
+              ],
+              details: {
+                title: 'Pullman ZamZam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+                {
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
+                }
+              ],
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Luxury Hotel',
+            rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Pullman Zamzam Madinah',
+            type: 'Business Hotel',
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
+            ],
+            details: {
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
+              description: `
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
           transfers: [
             {
               model: 'Toyota Camry',
@@ -1238,7 +1459,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -1248,7 +1470,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -1258,7 +1481,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -1268,7 +1492,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -1278,7 +1503,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+
             },
           ],
           flights: [
@@ -1311,7 +1538,7 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
@@ -1320,7 +1547,10 @@ export class packageService {
               duration: 10,
               datecheckin: '01/12/2023',
               datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
               pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -1339,90 +1569,180 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
                   title: 'Standard Room',
-                  pension: 'LPD',
                   price: 350,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
                   title: 'Double Room',
-                  pension: 'LPD',
                   price: 320,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
+
+            },
+            {
+              _id: 2,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
+              images: [
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
+              ],
+              details: {
+                title: 'Pullman ZamZam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+                {
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
+                }
+              ],
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Luxury Hotel',
+            rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Pullman Zamzam Madinah',
+            type: 'Business Hotel',
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
+            ],
+            details: {
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
+              description: `
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
           transfers: [
             {
               model: 'Toyota Camry',
@@ -1604,7 +1924,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -1614,7 +1935,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -1624,7 +1946,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -1634,7 +1957,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -1644,7 +1968,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+
             },
           ],
           flights: [
@@ -1677,7 +2003,7 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
@@ -1686,7 +2012,10 @@ export class packageService {
               duration: 10,
               datecheckin: '01/12/2023',
               datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
               pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -1705,90 +2034,180 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
                   title: 'Standard Room',
-                  pension: 'LPD',
                   price: 350,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
                   title: 'Double Room',
-                  pension: 'LPD',
                   price: 320,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
+
+            },
+            {
+              _id: 2,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
+              images: [
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
+              ],
+              details: {
+                title: 'Pullman ZamZam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+                {
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
+                }
+              ],
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Luxury Hotel',
+            rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Pullman Zamzam Madinah',
+            type: 'Business Hotel',
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
+            ],
+            details: {
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
+              description: `
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
           transfers: [
             {
               model: 'Toyota Camry',
@@ -1970,7 +2389,8 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Charles de Gaulle Airport'
             },
             {
               id: 2,
@@ -1980,7 +2400,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'Belgium'
+              departurecity: 'Belgium',
+              airport: 'Brussels Airport'
             },
             {
               id: 3,
@@ -1990,7 +2411,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: 'Lyon-Saint Exupéry Airport'
             },
             {
               id: 4,
@@ -2000,7 +2422,8 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'UK'
+              departurecity: 'UK',
+              airport: 'Manchester Airport'
             },
             {
               id: 5,
@@ -2010,7 +2433,9 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
-              departurecity: 'France'
+              departurecity: 'France',
+              airport: `Nice Côte d'Azur Airport`
+
             },
           ],
           flights: [
@@ -2043,7 +2468,7 @@ export class packageService {
               }
             }
           ],
-          hotels: [
+          firstDestinations: [
             {
               _id: 1,
               hotelName: 'Swissôtel Al Maqam Makkah',
@@ -2052,7 +2477,10 @@ export class packageService {
               duration: 10,
               datecheckin: '01/12/2023',
               datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
               pension: 'LPD',
+              nbrnights:'9',
               images: [
                 "assets/package/hotel-2/1.jpg",
                 "assets/package/hotel-2/2.jpg",
@@ -2071,90 +2499,180 @@ export class packageService {
               },
               rooms: [
                 {
-                  id: 1,
                   title: 'Standard Room',
-                  pension: 'LPD',
                   price: 350,
-                  tva: true,
-                  minguests: 1,
-                  maxguests: 2,
-                  view: 'Desert',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 2
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'City',
+                  sleeps: 2
                 },
                 {
-                  id: 2,
                   title: 'Double Room',
-                  pension: 'LPD',
                   price: 320,
-                  tva: true,
-                  minguests: 2,
-                  maxguests: 4,
-                  view: 'City',
-                  advantages: {
-                    wifi: 'Free Wifi',
-                    breakfast: 'Free breakfast',
-                    sleeps: 4
-                  }
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
+                },
+                {
+                  title: 'Suite',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  view: 'Desert',
+                  sleeps: 2
                 }
               ],
-              secondDestination: {
-                _id: 1,
-                hotelName: 'Sofitel Shahd al Madinah',
-                type: 'Business Hotel',
-                rating: 4.3,
-                images: [
-                  "assets/package/hotel-4/1.jpg",
-                  "assets/package/hotel-4/2.jpg",
-                  "assets/package/hotel-4/3.jpg",
-                  "assets/package/hotel-4/4.jpg",
-                  "assets/package/hotel-4/5.jpg",
-                  "assets/package/hotel-4/6.jpg"
-                ],
-                details: {
-                  title: 'Sofitel Shahd al Madinah',
-                  location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
-                  description: `
-                  Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
-                  steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
-                  Saudi Arabia's most sacred sites, seamlessly connects local traditions 
-                  with elegant French hospitality.
-                  `,
+
+            },
+            {
+              _id: 2,
+              hotelName: 'Pullman ZamZam Makkah',
+              type: 'Resort Hotel',
+              rating: 4,
+              duration: 10,
+              datecheckin: '01/12/2023',
+              datecheckout: '10/12/2023',
+              timecheckin: '09:00',
+              timecheckout: '16:00',
+              pension: 'LPD',
+              nbrnights:'9',
+              images: [
+                "assets/package/hotel-3/1.jpg",
+                "assets/package/hotel-3/2.jpg",
+                "assets/package/hotel-3/3.jpg",
+                "assets/package/hotel-3/4.jpg"
+              ],
+              details: {
+                title: 'Pullman ZamZam Makkah',
+                location: 'Abraj Al Bait - Near King Abdul Aziz Gate, 21955 Makkah, Saudi Arabia',
+                description: `
+                Located in one of the tallest buildings 
+                in the world and overlooking the holy 
+                Grand Mosque, Hajar Tower combines 
+                traditions with modern comforts. 
+                `,
+              },
+              rooms: [
+                {
+                  title: 'Standard Room',
+                  price: 350,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
                 },
-                rooms: [
-                  {
-                    id: 1,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 350,
-                    tva: true,
-                    minguests: 2,
-                    maxguests: 4,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 5
-                    }
-                  },
-                  {
-                    id: 2,
-                    title: 'Two Bedroom Suite City View',
-                    policy: '$25 Cancellation',
-                    price: 320,
-                    tva: true,
-                    advantages: {
-                      wifi: 'Free Wifi',
-                      breakfast: 'Free breakfast',
-                      sleeps: 2
-                    }
-                  },
-                ]
-              }
+                {
+                  title: 'Double Room',
+                  price: 320,
+                  wifi: 'Free Wifi',
+                  breakfast: 'Free breakfast',
+                  sleeps: 2
+                }
+              ],
+
             }
           ],
+          secondDestinations: [{
+            _id: 1,
+            hotelName: 'Sofitel Shahd al Madinah',
+            type: 'Luxury Hotel',
+            rating: 4.3,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-4/1.jpg",
+              "assets/package/hotel-4/2.jpg",
+              "assets/package/hotel-4/3.jpg",
+              "assets/package/hotel-4/4.jpg",
+              "assets/package/hotel-4/5.jpg",
+              "assets/package/hotel-4/6.jpg"
+            ],
+            details: {
+              title: 'Sofitel Shahd al Madinah',
+              location: 'King Fahd Road Building 2943, 0 Al Madinah, Saudi Arabia',
+              description: `
+              Experience profound spiritual luxury at Sofitel Shahd Al Madinah, a few 
+              steps away from Al Masjid Al Nabawi. Our 5-star retreat, near one of 
+              Saudi Arabia's most sacred sites, seamlessly connects local traditions 
+              with elegant French hospitality.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          },
+          {
+            _id: 2,
+            hotelName: 'Pullman Zamzam Madinah',
+            type: 'Business Hotel',
+            rating: 4,
+            duration: 10,
+            datecheckin: '01/12/2023',
+            datecheckout: '10/12/2023',
+            timecheckin: '09:00',
+            timecheckout: '16:00',
+            pension: 'LPD',
+            nbrnights:'9',
+            images: [
+              "assets/package/hotel-5/1.jpg",
+              "assets/package/hotel-5/2.jpg",
+              "assets/package/hotel-5/3.jpg",
+              "assets/package/hotel-5/4.jpg",
+              "assets/package/hotel-5/5.jpg"
+            ],
+            details: {
+              title: 'Pullman Zamzam Madinah',
+              location: 'Amr Bin Al Gmoh Street Madina, 41499 Madina, Saudi Arabia',
+              description: `
+              For the journey of a lifetime to one of the purest places on earth… 
+              Pullman understands the unique path that many faithful followers take 
+              before or after Hajj and Umrah. Pullman Zamzam Madina recently opened 
+              its doors to offer unparalleled peace and a warm Arabic welcome for 
+              pilgrims to this holy sanctuary.
+              `,
+            },
+            rooms: [
+              {
+                title: 'Standard Room',
+                price: 350,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Double Room',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              },
+              {
+                title: 'Suite',
+                price: 320,
+                wifi: 'Free Wifi',
+                breakfast: 'Free breakfast',
+                sleeps: 2
+              }
+            ]
+          }],
           transfers: [
             {
               model: 'Toyota Camry',
