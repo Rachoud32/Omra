@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxUiLoaderConfig, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
 import { FooterComponent } from './footer/footer.component';
 import { UmrahPackageModule } from './umrah-package/umrah-package.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
@@ -39,6 +39,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CommonModule,
     HttpClientModule,
     BrowserModule,
+    NoopAnimationsModule,
     SearchModule,
     ResultModule,
     UmrahPackageModule,

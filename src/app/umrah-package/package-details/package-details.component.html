@@ -487,12 +487,20 @@
                                         <hr>
                                         <div class="d-flex flex-column row-gap-1">
                                           <div class="hotel-description mb-2">
-                                              <p class="mb-0 read-more-content" [ngClass]="{'limitTextHeight': isReadMore}" 
-                                              *ngIf="isReadMore || hotel.details.description.length < 1000" >{{hotel.details.description}}</p>
-                                              <button [attr.id]="'read-more'+ k" class="read-more-btn" type="button" (click)="showText(k)" *ngIf="!isReadMore || hotel.details.description.length > 100">
-                                                {{ isReadMore ? 'Read More': 'Read Less' }}
-                                              </button>
+                                            <p class="mb-0 read-more-content" [@textAnimation]="isReadMore[k] ? 'show' : 'hide'">{{displayText(hotel.details.description, k)}}
+                                              <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
+                                              [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
+                                              {{ isReadMore[k] ? 'Read Less': 'Read More' }}
+                                            </button>
+                                            </p>
                                           </div>
+                                          <!-- <div class="hotel-description mb-2">
+                                            <p class="mb-0 read-more-content" [@textAnimation]="isReadMore[k] ? 'show' : 'hide'">{{hotel.details.description}}</p>
+                                            <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
+                                            [ngStyle]="{'display': hotel.details.description.length > 500 ? 'block' : 'none'}">
+                                              {{ isReadMore[k] ? 'Read Less': 'Read More' }}
+                                            </button>
+                                          </div> -->
                                           <div class="row">
                                             <div class="col-xl-6 mb-2">
                                               <div class="hotel-address mb-2">

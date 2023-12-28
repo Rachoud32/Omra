@@ -16,6 +16,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PackageCalenderHeaderComponent } from './package-calender-header/package-calender-header.component';
 import { PackageBookingsMobComponent } from './package-bookings-mob/package-bookings-mob.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { PackageBookingsMobComponent } from './package-bookings-mob/package-book
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     NgbModule,
     CommonModule,
     UmrahPackageRoutingModule,

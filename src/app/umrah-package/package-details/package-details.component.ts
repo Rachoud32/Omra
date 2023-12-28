@@ -19,15 +19,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   styleUrls: ['./package-details.component.css'],
   encapsulation: ViewEncapsulation.None,
   animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate(300) // Adjust the duration as needed
-      ]),
-      transition(':leave',
-        animate(300, style({ opacity: 0 })))
-    ])
+    trigger('textAnimation', [
+      state('show', style({ height: '*' })),
+      state('hide', style({ height: '*', overflow: 'hidden'})),
+      transition('show <=> hide', animate('300ms ease-in-out')),
+    ]),
   ]
 })
 
@@ -113,7 +109,7 @@ export class PackageDetailsComponent implements OnInit {
     rooms: []
   }
   summary: any
-  isReadMore = true;
+  isReadMore: boolean[] = [];
 
   constructor(
     private el: ElementRef,
@@ -232,7 +228,13 @@ export class PackageDetailsComponent implements OnInit {
     console.log('aria-controls:', ariaControls);
   }
   showText(index: number) {
-    this.isReadMore = !this.isReadMore;
-    console.log(`Clicked on item at index ${index}`)
+    this.isReadMore[index] = !this.isReadMore[index];
+  }
+  displayText(text: string, index: number) {
+    if (this.isReadMore[index]) {
+      return text 
+    } else { 
+      return text.slice(0, 180) + '...'
+    }
   }
 }

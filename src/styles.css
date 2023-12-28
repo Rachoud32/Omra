@@ -454,30 +454,22 @@ input[type=checkbox]:disabled {
 /* ----------------------------------------------------------------
 	Read More
 -----------------------------------------------------------------*/
-.limitTextHeight {
-    height: 40px;
-    overflow: hidden;
-    transition: opacity 0.3s ease;
-}
-
 .read-more-btn {
     border: 0;
     background: transparent;
     padding: 0;
     color: var(--omra-base);
-    transition: opacity 0.3s ease;
+    font-size: var(--fs-12);
+    transition: all .3s linear;
 }
 
-.read-more-content, .read-more-btn {
-    transition: opacity 0.3s ease;
+.read-more-content .read-more-btn {
+    display: inline-block !important;
 }
 
-.fade-in-out {
-    transition: opacity 0.3s ease;
-}
-
-.fade-in-out-hidden {
-    opacity: 0;
+.show,
+.hide {
+    transition: all .8s linear;
 }
 
 /*----------------------------------------------------
@@ -3843,6 +3835,11 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 .rooms-container .box .price-content .price span {
     font-size: var(--fs-12);
     font-weight: 500;
+}
+
+.rooms-container .box .price-content .price .price-text {
+    font-size: var(--fs-12);
+    font-weight: 300;
 }
 
 .rooms-container .box .price-content .link .color-btn,

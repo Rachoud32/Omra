@@ -608,6 +608,7 @@
 
 
 @media (max-width: 575.98px) {
+
     .package-header-card .header-hotel-details {
         flex-direction: column;
         justify-content: flex-start !important;
