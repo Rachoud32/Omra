@@ -77,6 +77,10 @@
         padding-right: 0 !important;
     }
 
+    .package-hotels .hotel-gallery-box {
+        height: 330px;
+    }
+
     .package-hotels .skeleton-box .skeleton-service-img {
         height: 270px !important;
     }
@@ -526,6 +530,10 @@
 }
 
 @media (max-width: 767.98px) {
+    .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number {
+        padding: 8px 20px;
+    }
+
     .booked-service .service-img-container .service-img {
         height: 270px;
     }

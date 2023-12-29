@@ -20,11 +20,22 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('textAnimation', [
-      state('show', style({ height: '*' })),
-      state('hide', style({ height: '*', overflow: 'hidden'})),
-      transition('show <=> hide', animate('300ms ease-in-out')),
+      state('show', style({
+        'max-height': '999rem', // Adjust the value based on your content
+        opacity: 1,
+      })),
+      state('hide', style({
+        'max-height': '60px', // Adjust the value to show a couple of lines initially
+        opacity: 1,
+      })),
+      transition('show => hide', [
+        animate('0.6s ease-out')
+      ]),
+      transition('hide => show', [
+        animate('0.6s ease-in')
+      ]),
     ]),
-  ]
+  ],
 })
 
 export class PackageDetailsComponent implements OnInit {
@@ -84,6 +95,7 @@ export class PackageDetailsComponent implements OnInit {
   package: any;
   activeSection: any;
   selectedOffer: string = '';
+  selectedHotelRoomsList: string = ''
 
   loading = false
   skeletons: any[] = [1, 2]
@@ -236,5 +248,8 @@ export class PackageDetailsComponent implements OnInit {
     } else { 
       return text.slice(0, 180) + '...'
     }
+  }
+  collapsedHotelRoomsList(value: any) {
+    this.selectedHotelRoomsList = value
   }
 }
