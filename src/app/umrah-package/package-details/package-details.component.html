@@ -1180,7 +1180,12 @@
                                 </div>
                                 <hr>
                                 <div class="activity-description">
-                                  <p>{{activity.description}}</p>
+                                  <p class="mb-0 read-more-content">{{displayActivity(activity.description, i)}}
+                                    <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
+                                      [ngStyle]="{'display': activity.description.length > 180 ? 'block' : 'none'}">
+                                      {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                    </button>
+                                  </p>
                                 </div>
                               </div>
                             </div>
@@ -1250,7 +1255,12 @@
                                 </div>
                                 <hr>
                                 <div class="visit-description">
-                                  <p>{{visit.description}}</p>
+                                  <p class="mb-0 read-more-content">{{displayVisit(visit.description, i)}}
+                                    <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
+                                      [ngStyle]="{'display': visit.description.length > 180 ? 'block' : 'none'}">
+                                      {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                    </button>
+                                  </p>
                                 </div>
                               </div>
                             </div>

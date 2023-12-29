@@ -17,25 +17,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
   styleUrls: ['./package-details.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('textAnimation', [
-      state('show', style({
-        'max-height': '999rem', // Adjust the value based on your content
-        opacity: 1,
-      })),
-      state('hide', style({
-        'max-height': '60px', // Adjust the value to show a couple of lines initially
-        opacity: 1,
-      })),
-      transition('show => hide', [
-        animate('0.6s ease-out')
-      ]),
-      transition('hide => show', [
-        animate('0.6s ease-in')
-      ]),
-    ]),
-  ],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class PackageDetailsComponent implements OnInit {
@@ -247,6 +229,20 @@ export class PackageDetailsComponent implements OnInit {
       return text 
     } else { 
       return text.slice(0, 180) + '...'
+    }
+  }
+  displayActivity(text: string, index: number) {
+    if (this.isReadMore[index]) {
+      return text 
+    } else { 
+      return text.slice(0, 150) + '...'
+    }
+  }
+  displayVisit(text: string, index: number) {
+    if (this.isReadMore[index]) {
+      return text 
+    } else { 
+      return text.slice(0, 150) + '...'
     }
   }
   collapsedHotelRoomsList(value: any) {
