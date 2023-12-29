@@ -2540,7 +2540,7 @@ label.category-item::before {
 
 .subservice-list-title {
     padding: 10px 20px 10px;
-    font-size: 16px;
+    font-size: var(--fs-16);
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3464,7 +3464,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .hotel-box .hotel .hotel-rate {
-    color: #fff;
+    color: var(--omra-white);
     font-weight: 500;
     padding-bottom: 4px;
 }
@@ -3590,7 +3590,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 .hotel-box .carousel-control-prev:focus,
 .hotel-box .carousel-control-prev:hover {
     color: var(--omra-base);
-    background-color: #fff;
+    background-color: var(--omra-white);
     text-decoration: none;
     outline: 0;
     opacity: 1;
@@ -4548,7 +4548,7 @@ app-package-bookings-sidebar,
 }
 
 .package-inside-menu {
-    background: #fff;
+    background: var(--omra-white);
 }
 
 .package-inside-menu li {
@@ -4718,7 +4718,7 @@ app-package-bookings-sidebar,
 }
 
 .package-picture-overlay p {
-    color: #ffffff;
+    color: var(--omra-white);
     font-size: 24px;
     font-weight: 500;
     margin: 0;
@@ -4902,7 +4902,7 @@ app-package-bookings-sidebar,
 
 .package-hotels .package-hotel-card .hotel-content .hotel-rate {
     background: var(--omra-second);
-    color: #fff;
+    color: var(--omra-white);
     width: 40px;
     height: 40px;
     display: flex;
@@ -5692,7 +5692,7 @@ input[type="radio"]:not(:checked)+label::after {
 
 .more-state~.more-trigger:before {
     content: '+';
-    color: #fff;
+    color: var(--omra-white);
     display: inline-block;
     background: #8af;
     line-height: 1em;
@@ -5724,7 +5724,7 @@ input[type="radio"]:not(:checked)+label::after {
     line-height: 2;
     border: 1px solid #ddd;
     border-radius: .25em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 -40px 16px -10px #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 -40px 16px -10px var(--omra-white);
 }
 
 .more-state:checked~.more-trigger {
@@ -5786,7 +5786,7 @@ input[type="radio"]:not(:checked)+label::after {
 
 .package-plan .accordion-button .plan-date {
     font-weight: 300;
-    color: var(--omra-base);
+    color: var(--omra-gray);
 }
 
 .package-plan .accordion-button .collapse-icon {
@@ -5877,7 +5877,7 @@ app-package-calendar {
 
 .calendar-card {
     padding: 20px 15px;
-    background: #fff;
+    background: var(--omra-white);
 }
 
 .calender-title {
@@ -5899,7 +5899,7 @@ app-package-calendar {
 .cal-month-view .cal-header .cal-cell {
     text-align: center;
     width: 100%;
-    font-size: 14px;
+    font-size: var(--fs-14);
     text-transform: uppercase;
     font-weight: 400;
     padding: 10px 0 !important;
@@ -6727,7 +6727,7 @@ app-package-calendar {
 }
 
 .transfer-duration-card p {
-    font-size: 16px;
+    font-size: var(--fs-16px);
     font-weight: 400;
     color: var(--omra-gray);
     margin-bottom: 0;
@@ -6745,7 +6745,7 @@ app-package-calendar {
 }
 
 .transfer-duration-card span {
-    font-size: 12px;
+    font-size: var(--fs-12);
 }
 
 .transfer-duration-filter [type="radio"]:checked+label,
@@ -6984,7 +6984,7 @@ app-package-calendar {
 }
 
 .share-modal .input-share {
-    font-size: 14px !important;
+    font-size: var(--fs-14) !important;
 }
 
 .share-icons {
@@ -7398,7 +7398,7 @@ app-package-calendar {
 .booked-service .service-img-container .service-img.booked-vehicle {
     object-fit: contain;
     height: 140px;
-    background: #fff;
+    background: var(--omra-white);
 }
 
 .checkout-booking-list .booked-service h3 {
@@ -7845,7 +7845,7 @@ app-booking-summary {
 .social-network__icons__list__btn>svg {
     width: 40px;
     height: 40px;
-    fill: #fff;
+    fill: var(--omra-white);
     transition: fill .3s ease-in-out;
 }
 

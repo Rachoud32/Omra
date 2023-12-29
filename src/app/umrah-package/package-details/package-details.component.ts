@@ -11,7 +11,6 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-package-details',

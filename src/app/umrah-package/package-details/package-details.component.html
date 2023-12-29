@@ -494,7 +494,7 @@
                                           <hr>
                                           <div class="d-flex flex-column row-gap-1">
                                             <div class="hotel-description mb-2">
-                                              <p class="mb-0 read-more-content" [@textAnimation]="isReadMore[i] ? 'show' : 'hide'">{{displayText(hotel.details.description, i)}}
+                                              <p class="mb-0 read-more-content">{{displayText(hotel.details.description, i)}}
                                                 <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
                                                 [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
                                                 {{ isReadMore[i] ? 'Read Less': 'Read More' }}
@@ -727,7 +727,7 @@
                                           <hr>
                                           <div class="d-flex flex-column row-gap-1">
                                             <div class="hotel-description mb-2">
-                                              <p class="mb-0 read-more-content" [@textAnimation]="isReadMore[k] ? 'show' : 'hide'">
+                                              <p class="mb-0 read-more-content">
                                                 {{displayText(hotel.details.description, k)}}
                                                 <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
                                                   [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
