@@ -3105,7 +3105,6 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     font-size: var(--fs-14);
 }
 
-
 .search-sidebar-details .search-details .search-details-label i {
     color: var(--omra-second);
     font-size: var(--fs-13);
@@ -3246,6 +3245,57 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 
 .search-sidebar-footer .color-btn {
     padding: 20px 30px;
+}
+
+/************************* Package Sidebar *************************/
+
+.package-sidebar .search-sidebar-list {
+    max-height: 300px;
+    min-height: 150px;
+}
+
+.package-sidebar .destination-title {
+    color: var(--omra-white);
+    padding: 0;
+}
+
+.package-sidebar .room-label {
+    font-size: var(--fs-14);
+    color: var(--omra-second);
+}
+
+.package-sidebar .booked-service-price {
+    font-size: var(--fs-16);
+    font-weight: 500;
+}
+
+.package-sidebar .search-sidebar-list hr {
+    margin: 6px 0 10px;
+}
+
+.package-sidebar .booked-service-label {
+    text-transform: capitalize;
+    font-size: var(--fs-16);
+    color: var(--omra-base);
+    font-weight: 500;
+}
+
+.package-sidebar .search-sidebar-list .details-content .booked-service-details svg {
+    width: 20px;
+    height: 30px;
+    padding: 6px 0 6px 0;
+    fill: var(--omra-second);
+}
+
+.package-sidebar .search-sidebar-list .details-content p {
+    font-size: var(--fs-14);
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.package-sidebar .search-sidebar-list .details-content .card.card-body {
+    padding: 0px;
 }
 
 /* ----------------------------------------------------------------
