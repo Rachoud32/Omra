@@ -4648,7 +4648,7 @@ app-package-bookings-sidebar,
 
 .package-inside-menu li .inside-menu-item img {
     height: 45px;
-    padding: 10px 0;
+    padding: 10px 0 5px;
     filter: grayscale(1);
     opacity: 0.4;
     transition: all .3s linear;
@@ -4659,10 +4659,9 @@ app-package-bookings-sidebar,
     opacity: 1;
 }
 
-
 .package-inside-menu li .inside-menu-item p {
     font-size: var(--fs-14);
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .package-inside-menu li .inside-menu-item.active p {
@@ -4802,6 +4801,44 @@ app-package-bookings-sidebar,
     padding: 10px 0px;
     margin-bottom: 8px;
     text-transform: uppercase;
+}
+
+.package-inside-menu .hotel-flash {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #d52f2f;
+    width: 100%;
+    height: 18px;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-inside-menu .hotel-flash p {
+    color: var(--omra-white) !important;
+    font-size: var(--fs-12) !important;
+    font-weight: 400;
+}
+
+.blink {
+    animation: blinker 2.5s linear infinite;
+}
+  
+@keyframes blinker {
+    0% {
+        opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ----------------------------------------------------------------
@@ -5038,11 +5075,6 @@ ngx-stars .stars-line {
     padding: 20px 15px;
 }
 
-/* .package-hotels .package-hotel-rooms-card .rooms-list {
-    border: 1px solid var(--omra-light-gray);
-    border-top: 0 !important;
-} */
-
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .row .divider-room {
     margin: 0;
 }
@@ -5156,30 +5188,12 @@ ngx-stars .stars-line {
     transition: all .3s linear;
 }
 
-/* .package-hotel-rooms-card .box:before {
-    content: '';
-    display: block;
-    width: 0%;
-    height: 4px;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    background: var(--omra-base);
-    box-shadow: 0 10px 10px 1px rgb(0 0 0 / 0%);
-    z-index: 5;
-    transition: all .5s linear;
-} */
-
 .package-hotel-rooms-card .box:hover,
 .package-hotel-rooms-card .box.active {
     border-color: var(--omra-base) !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%) !important;
 }
-
-/* .package-hotel-rooms-card .box.active:before {
-    width: 100%;
-} */
 
 .package-hotel-rooms-card input[type=radio]:not(:checked)+.box {
     border: 1px solid var(--omra-light-gray);

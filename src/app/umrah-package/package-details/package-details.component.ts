@@ -33,43 +33,43 @@ export class PackageDetailsComponent implements OnInit {
       name: 'Flights',
       icon: 'assets/plane-menu-icon.svg',
       scale: 'transform: scale(1);',
-      id: 'flightsection',
+      id: 'flightsection'
     },
     {
       name: 'Hotels',
       icon: 'assets/hotel-menu-icon.svg',
       scale: 'transform: scale(1.1);',
-      id: 'hotelsection',
+      id: 'hotelsection'
     },
     {
       name: 'Transfers',
       icon: 'assets/car-menu-icon.svg',
       scale: 'transform: scale(0.7);',
-      id: 'transfersection',
+      id: 'transfersection'
     },
     {
       name: 'Activities',
       icon: 'assets/activities-menu-icon.svg',
       scale: 'transform: scale(0.9);',
-      id: 'activitiessection',
+      id: 'activitiessection'
     },
     {
       name: 'Visits',
       icon: 'assets/visits-menu-icon.svg',
       scale: 'transform: scale(0.8);',
-      id: 'visitssection',
+      id: 'visitssection'
     },
     {
       name: 'Plan',
       icon: 'assets/plan-menu-icon.svg',
       scale: 'transform: scale(0.9);',
-      id: 'plansection',
+      id: 'plansection'
     },
     {
       name: 'Policies',
       icon: 'assets/policies-menu-icon.svg',
       scale: 'transform: scale(0.9);',
-      id: 'policiessection',
+      id: 'policiessection'
     },
   ];
   destinationTitle = 'First destination'

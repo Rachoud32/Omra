@@ -190,6 +190,7 @@
                       [attr.id]="item.name" data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" role="tab"
                       [attr.aria-controls]="item.id" [attr.aria-selected]="item.id == 'flightsection'"
                       (click)="chooseSection()">
+                      <div class="hotel-flash" *ngIf="item.id == 'hotelsection'"><p class="mb-0 lh-base blink">1/2</p></div>
                       <img [attr.src]="item.icon" [attr.style]="item.scale" [attr.alt]="item.name" />
                       <p>{{item.name}}</p>
                     </div>
@@ -362,8 +363,18 @@
                 <section id="hotelsection" class="package-hotels tab-pane fade" role="tabpanel"
                   aria-labelledby="hotelsection" tabindex="0" #hotelsection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Hotels</h2>
-                    <p>Exclusive Choice of Hotels at Affordable Prices.</p>
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                      <div class="d-flex flex-column justify-content-start">
+                        <h2 class="mb-0 pb-0">Hotels</h2>
+                        <p class="mb-0 lh-base">Exclusive Choice of Hotels at Affordable Prices.</p>
+                      </div>
+                      <!-- <div class="destination-counter" *ngIf="destinationTitle =='First destination'">
+                        1/2
+                      </div>
+                      <div class="destination-counter" *ngIf="destinationTitle =='Second destination'">
+                        2/2
+                      </div> -->
+                    </div>
                     <div class="destination-label d-flex align-items-center justify-content-between flex-wrap column-gap-2">
                       <h2>{{destinationTitle }}</h2>
                       <p class="mb-0 lh-base">{{(loading && (destinationTitle =='First destination' || destinationTitle
