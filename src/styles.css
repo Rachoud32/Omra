@@ -5082,13 +5082,13 @@ ngx-stars .stars-line {
 
 .package-hotels .package-hotel-rooms-card .room-details-content p {
     color: var(--omra-second);
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--fs-14);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-description p {
     color: var(--omra-gray);
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--fs-13);
 }
 
