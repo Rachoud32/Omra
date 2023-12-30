@@ -121,13 +121,19 @@ export class PackageDetailsComponent implements OnInit {
     for (let i = 0; i < rooms; i++) {
       this.roomsSelectionFirstDest.rooms.push(
         {
-          room: 'Room ' + (i + 1),
+          room: 'Room ',
+          roomStyle: 'room-label',
+          index: i + 1,
+          indexStyle: 'room-index',
           selectedType: null
         }
       )
       this.roomsSelectionSecondDest.rooms.push(
         {
-          room: 'Room ' + (i + 1),
+          room: 'Room ',
+          roomStyle: 'room-label',
+          index: i + 1,
+          indexStyle: 'room-index',
           selectedType: null
         }
       )

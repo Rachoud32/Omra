@@ -3121,8 +3121,8 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .package-sidebar .search-sidebar-list {
-    max-height: 300px;
-    min-height: 150px;
+    max-height: 230px;
+    min-height: 190px;
     height: fit-content;
 }
 
@@ -3282,7 +3282,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 
 .package-sidebar .search-sidebar-list .details-content .booked-service-details svg {
     width: 20px;
-    height: 30px;
+    height: 25px;
     padding: 6px 0 6px 0;
     fill: var(--omra-second);
 }
@@ -4422,6 +4422,7 @@ app-package-details .page-title {
 
 .packages-list .package-item .package-departurecity-label {
     font-weight: 300;
+    font-size: var(--fs-13);
     color: var(--omra-second);
 }
 
@@ -4491,7 +4492,7 @@ app-package-details .page-title {
 .package-item .best-rate-notice {
     position: absolute;
     background: var(--omra-base);
-    padding: 15px 8px 0;
+    padding: 10px 7px 0;
     text-align: center;
     display: block;
     top: 10px;
@@ -4505,8 +4506,8 @@ app-package-details .page-title {
 
 .package-item .best-rate-notice .price {
     line-height: normal;
-    padding: 5px 0 10px;
-    font-size: 26px;
+    padding: 2px 0 8px;
+    font-size: 22px;
 }
 
 .package-item .best-rate-notice .price span {
@@ -4515,7 +4516,7 @@ app-package-details .page-title {
 
 .package-item .best-rate-notice p {
     color: var(--omra-white);
-    font-size: var(--fs-10);
+    font-size: 8px;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
@@ -4806,7 +4807,7 @@ app-package-bookings-sidebar,
 .package-inside-menu .hotel-flash {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     background: #d52f2f;
     width: 100%;
     height: 18px;
@@ -4814,6 +4815,7 @@ app-package-bookings-sidebar,
     z-index: 10;
     align-items: center;
     justify-content: center;
+    transition: all .3s linear;
 }
 
 .package-inside-menu .hotel-flash p {
@@ -4860,7 +4862,7 @@ app-package-bookings-sidebar,
 
 .package-hotels .destination-label {
     background: var(--omra-base);
-    padding: 12px 20px;
+    padding: 10px 30px;
     position: relative;
 }
 
@@ -5093,9 +5095,15 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number {
-    padding: 0 20px;
+    padding: 0 20px 0 0;
     background: var(--omra-white);
     position: relative;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number p {
+    font-size: var(--fs-14);
+    font-weight: 300;
+    color: var(--omra-gray);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number svg {
@@ -5105,11 +5113,14 @@ ngx-stars .stars-line {
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number h5 {
     color: var(--omra-second);
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     margin-bottom: 0;
     text-align: center;
-    padding: 12px 0;
+    padding: 6px 8px;
+    margin: 5px;
     font-size: var(--fs-16);
+    width: 60px;
+    background: var(--omra-extra);
 }
 
 .package-hotels .package-hotel-rooms-card .room-details-content p {
@@ -5129,7 +5140,7 @@ ngx-stars .stars-line {
     background: var(--omra-second);
     padding: 5px 10px;
     font-weight: 300;
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-accomodation {
@@ -5190,7 +5201,7 @@ ngx-stars .stars-line {
 
 .package-hotel-rooms-card .box:hover,
 .package-hotel-rooms-card .box.active {
-    border-color: var(--omra-base) !important;
+    border-color: var(--omra-second) !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 10px 1px rgb(0 0 0 / 3%) !important;
 }
@@ -5234,14 +5245,20 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn {
-    padding: 10px 20px;
+    padding: 10px 15px;
     width: 100%;
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
     text-transform: capitalize;
-    color: var(--omra-second);
+    color: var(--omra-gray);
     border: 0;
-    background: var(--omra-extra);
+    background: var(--omra-white);
     position: relative;
+    border-left: 1px solid var(--omra-light-gray);
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn:hover {
+    color: var(--omra-base);
+    background: var(--omra-extra);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn i {
@@ -5285,6 +5302,12 @@ ngx-stars .stars-line {
 .package-hotels .package-rooms-summary .room-number {
     background: var(--omra-extra);
     border: 1px solid var(--omra-extra);
+}
+
+.room-label {
+    font-weight: 400;
+    font-size: var(--fs-13);
+    margin-bottom: 3px;
 }
 
 .package-hotels .package-rooms-summary .room-number .room-number-title {

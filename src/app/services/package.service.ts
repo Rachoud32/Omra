@@ -307,20 +307,26 @@ export class packageService {
                 title: 'Standard Room',
                 price: 350,
                 description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
-                  ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               },
               {
                 title: 'Double Room',
                 price: 320,
                 description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
-                  ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               }
             ]
@@ -360,30 +366,39 @@ export class packageService {
                 title: 'Standard Room',
                 price: 350,
                 description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
-                  ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               },
               {
                 title: 'Double Room',
                 price: 320,
                 description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
-                  ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               },
               {
                 title: 'Suite',
                 price: 320,
                 description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
-                  ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               }
             ]
@@ -811,15 +826,27 @@ export class packageService {
               {
                 title: 'Standard Room',
                 price: 350,
+                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               },
               {
                 title: 'Double Room',
                 price: 320,
+                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Nam viverra neque ut dolor luctus maximus. Curabitur pellentesque, 
+                ante et ornare scelerisque, tortor sapien venenatis purus.`,
+                accomodationType: 'Deluxe King Room',
+                available: 1,
                 wifi: 'Free Wifi',
                 breakfast: 'Free breakfast',
+                view: 'Desert',
                 sleeps: 2
               }
             ]
