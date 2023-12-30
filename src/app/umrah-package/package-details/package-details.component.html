@@ -1,5 +1,5 @@
 <section class="page-section-title page-title centred include-header include-topbar"
-  style="background-image: url('{{ package.packagePictures[0] }}')">
+  style="background-image: url(assets/page-title-2.jpg);">
 </section>
 
 <section class="bg-pattern-2 pt-5 pb-5">
@@ -186,9 +186,9 @@
                 <ul class="d-flex align-items-center" id="myTab" role="tablist">
                   <li *ngFor="let item of sections" class="nav-item">
                     <div
-                      [attr.class]="'nav-link inside-menu-item d-flex flex-column align-items-center '+(item.id == 'flightsection' && 'active')"
+                      [attr.class]="'nav-link inside-menu-item d-flex flex-column align-items-center '+(item.id == 'hotelsection' && 'active')"
                       [attr.id]="item.name" data-bs-toggle="tab" [attr.data-bs-target]="'#'+item.id" ropackagele="tab"
-                      [attr.aria-controls]="item.id" [attr.aria-selected]="item.id == 'flightsection'"
+                      [attr.aria-controls]="item.id" [attr.aria-selected]="item.id == 'hotelsection'"
                       (click)="chooseSection()">
                       <div *ngIf="item.id == 'hotelsection'">
                         <div class="hotel-flash" *ngIf="destinationTitle =='First destination' || destinationTitle =='Second destination'">
@@ -204,7 +204,7 @@
               </nav>
 
               <div class="package-offer-details tab-content" id="myTabContent">
-                <section id="flightsection" class="package-flights tab-pane fade show active" role="tabpanel"
+                <section id="flightsection" class="package-flights tab-pane fade" role="tabpanel"
                   aria-labelledby="flightsection" tabindex="0" #flightsection>
                   <div class="package-service-section mb-0">
                     <h2 class="mb-0 pb-0">Flights</h2>
@@ -365,7 +365,7 @@
                   </div>
                 </section>
 
-                <section id="hotelsection" class="package-hotels tab-pane fade" role="tabpanel"
+                <section id="hotelsection" class="package-hotels tab-pane fade show active" role="tabpanel"
                   aria-labelledby="hotelsection" tabindex="0" #hotelsection>
                   <div class="package-service-section mb-0">
                     <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
@@ -569,7 +569,7 @@
                                         <div class="room-number col-xl-9 col-lg-9">
                                           <div class="d-flex align-items-center column-gap-3">
                                             <h5>
-                                              <div class="room-label" [ngClass]="room.roomStyle">{{ room.room }}</div>
+                                              <div class="room-label" [ngClass]="room.roomStyle">{{ room.label }}</div>
                                               <div class="room-index" [ngClass]="room.indexStyle">{{ room.index }}</div>
                                             </h5>
                                             <p class="mb-0 lh-base" *ngIf="!room.selectedType?.title" >

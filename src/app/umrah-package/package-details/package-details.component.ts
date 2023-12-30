@@ -31,16 +31,16 @@ export class PackageDetailsComponent implements OnInit {
 
   sections: any[] = [
     {
-      name: 'Flights',
-      icon: 'assets/plane-menu-icon.svg',
-      scale: 'transform: scale(1);',
-      id: 'flightsection'
-    },
-    {
       name: 'Hotels',
       icon: 'assets/hotel-menu-icon.svg',
       scale: 'transform: scale(1.1);',
       id: 'hotelsection'
+    },
+    {
+      name: 'Flights',
+      icon: 'assets/plane-menu-icon.svg',
+      scale: 'transform: scale(1);',
+      id: 'flightsection'
     },
     {
       name: 'Transfers',
@@ -126,8 +126,9 @@ export class PackageDetailsComponent implements OnInit {
     for (let i = 0; i < rooms; i++) {
       this.roomsSelectionFirstDest.rooms.push(
         {
-          room: 'Room ',
+          room: 'Room ' + (i + 1),
           roomStyle: 'room-label',
+          label: 'Room ',
           index: i + 1,
           indexStyle: 'room-index',
           selectedType: null
@@ -135,14 +136,18 @@ export class PackageDetailsComponent implements OnInit {
       )
       this.roomsSelectionSecondDest.rooms.push(
         {
-          room: 'Room ',
+          room: 'Room ' + (i + 1),
           roomStyle: 'room-label',
+          label: 'Room ',
           index: i + 1,
           indexStyle: 'room-index',
           selectedType: null
         }
       )
     }
+    setTimeout(() => {
+      this.loading = false
+    }, 3000)
   }
   startCounter(value: any) {
     const interval$ = interval((value * 1000) / this.targetValue);
