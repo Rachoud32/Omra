@@ -1,4 +1,22 @@
 :root {
+    --omra-font: 'Rubik', sans-serif;
+    --omra-gray: #828282;
+    --omra-gray-rgb: 130, 130, 130;
+    --omra-light-gray: #eeeeee;
+    --omra-light-gray-rgb: 238, 238, 238;
+    --omra-white: #ffffff;
+    --omra-white-rgb: 255, 255, 255;
+    --omra-third: #3d4892;
+    --omra-third-rgb: 61, 72, 148;
+    --omra-base: #050033;
+    --omra-base-rgb: 5, 0, 51;
+    --omra-second: #068484;
+    --omra-second-rgb: 6, 132, 133;
+    --omra-black: #1e1852;
+    --omra-black-rgb: 30, 24, 82;
+    --omra-extra: #e1f0f0;
+    --omra-extra-rgb: 225, 240, 240;
+    --omra-bdr-radius: 3px;
     --fs-10: 10px;
     --fs-11: 11px;
     --fs-12: 12px;
@@ -74,7 +92,14 @@
 
     app-footer {
         position: relative;
+    }
+
+    .footer-with-specific-component {
         bottom: 89px;
+    }
+
+    .footer-without-specific-component {
+        bottom: 0;
     }
 
     .road-tabs {
@@ -530,11 +555,13 @@
         border: 0 !important;
     }
 
-    .flight-direction-list-title {
+    .flight-direction-list-title,
+    .package-hotels .destination-label {
         padding: 15px 20px;
     }
 
-    .flight-direction-list-title p {
+    .flight-direction-list-title p,
+    .package-hotels .destination-label p {
         padding: 0;
     }
     
@@ -595,6 +622,10 @@
         display: none;
     }
 
+    .package-details-box .package-inside-menu li .inside-menu-item p.blink {
+        display: block;
+    }
+
 }
 
 
@@ -618,11 +649,11 @@
     }
   
     .package-details-box .package-inside-menu {
-        width: 107% !important;
+        width: 100% !important;
         padding: 0;
         position: sticky;
         margin: 0 -15px;
-        left: 0;
+        left: 12px;
     }
 
     .package-details-box .package-inside-menu li {
@@ -640,8 +671,9 @@
     }
 
     .package-details-box .package-inside-menu li .inside-menu-item img {
-        height: 60px;
-        padding: 20px 0 18px;
+        height: 58px;
+        padding: 20px 0 20px;
+        margin-bottom: 5px;
     }
 
     .package-details-box .package-inside-menu li .inside-menu-item p {
@@ -733,7 +765,8 @@
     }
 
     .search-bar .date-picker-btn,
-    .search-bar .passengers-btn {
+    .search-bar .passengers-btn,
+    .search-bar .dropdown .btn {
         line-height: normal;
         border: 0 !important;
         padding: 0 !important;
@@ -1346,6 +1379,10 @@
         display: none;
     }
 
+    .package-flights .details-row .middle-block {
+        display: block;
+    }
+
     .services-list .service {
         padding: 0 20px !important;
         min-height: 180px;
@@ -1355,5 +1392,36 @@
         padding: 0px;
         max-height: none;
     }
+
+    #packagesearchbar .search-form-edit .row {
+        --bs-gutter-y: 0;
+    }
+
+    .list-package-offers p {
+        font-size: var(--fs-14);
+    }
+
+    .list-package-offers i {
+        color: var(--omra-white);
+        line-height: normal;
+        font-size: var(--fs-20);
+        background: var(--omra-second);
+        width: 50px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .package-details-description p {
+        font-size: var(--fs-14);
+        line-height: 24px;
+    }
+
+    .package-calendar-month {
+        font-size: var(--fs-18);
+    }
+
+
 }
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouteConfigLoadStart, RouteConfigLoadEnd } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

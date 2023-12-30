@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
 import { FlightService } from 'src/app/services/flight.service';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-flight',
@@ -28,9 +29,10 @@ export class FlightComponent implements OnInit {
   flightDepartureData: any
   flightReturnData: any
 
-  constructor(private toastr: ToastrService, private router: Router, private flightService: FlightService) { };
+  constructor(private toastr: ToastrService, private router: Router, private flightService: FlightService, private pageService: PageService) { };
 
   ngOnInit(): void {
+    this.pageService.setSpecificComponentPresent(true);
     this.loading = true
     this.startCounter(this.durationInSeconds)
     setTimeout(() => {

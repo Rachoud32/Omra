@@ -11,6 +11,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-package-details',
@@ -109,9 +110,13 @@ export class PackageDetailsComponent implements OnInit {
     private router: Router,
     private packageService: packageService,
     private route: ActivatedRoute,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private pageService: PageService
   ) { }
+
+
   ngOnInit(): void {
+    this.pageService.setSpecificComponentPresent(true);
     this.loading = true
     this.startCounter(this.durationInSeconds)
     const id = this.route.snapshot.params['id'];

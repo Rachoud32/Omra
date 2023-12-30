@@ -4,6 +4,7 @@ import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { HotelService } from 'src/app/services/hotel.service';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-first-destination',
@@ -28,8 +29,9 @@ export class FirstDestinationComponent implements OnInit {
 
   dataHotels: any[] = []
 
-  constructor(private toastr: ToastrService, private router: Router, private hotelService: HotelService) { };
+  constructor(private toastr: ToastrService, private router: Router, private hotelService: HotelService, private pageService: PageService) { };
   ngOnInit(): void {
+    this.pageService.setSpecificComponentPresent(true);
     this.localStorageSteps = JSON.parse(localStorage.getItem('steps') || '')
     this.dataHotels = this.hotelService.dataFirstDestination()
   }

@@ -1047,6 +1047,11 @@ label.category-item::before {
     text-transform: uppercase;
 }
 
+[type="radio"]:checked+label:before, [type="radio"]:not(:checked)+label:before,
+[type="radio"]:checked+label:after, [type="radio"]:not(:checked)+label:after {
+    display: block !important;
+}
+
 .search-container form input[type=radio] {
     display: none;
 }
@@ -1250,6 +1255,14 @@ label.category-item::before {
     color: var(--omra-second);
     font-size: var(--fs-15);
     font-weight: 400;
+}
+
+.destination-label i {
+    width: 20px;
+    line-height: normal;
+    font-size: var(--fs-18);
+    color: var(--omra-white);
+    fill: var(--omra-white);
 }
 
 .dropdown-guests .dropdown-menu.show {
@@ -6579,14 +6592,14 @@ app-package-calendar {
 
 .flight-top-filter .service-filter-card h5 {
     margin-bottom: 0;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     color: var(--omra-base);
     font-size: var(--fs-16);
 }
 
 .flight-top-filter .service-filter-card p {
     margin-bottom: 0;
-    font-size: var(--fs-12);
+    font-size: var(--fs-13);
     padding-right: 20px;
 }
 

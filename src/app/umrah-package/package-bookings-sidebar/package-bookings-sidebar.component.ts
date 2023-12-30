@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class PackageBookingsSidebarComponent {
   @Input() eventgoToNextStep!: Function;
-
+  
   goToNextStep() {
     if (this.eventgoToNextStep) {
       this.eventgoToNextStep();

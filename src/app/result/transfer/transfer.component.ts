@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { PageService } from 'src/app/services/page.service';
 import { TransferService } from 'src/app/services/transfer.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { TransferService } from 'src/app/services/transfer.service';
   templateUrl: './transfer.component.html',
   styleUrls: ['./transfer.component.css'],
 })
+
 export class TransferComponent implements OnInit {
   loading = false
   skeletons: any[] = [1, 2, 3]
@@ -19,11 +21,10 @@ export class TransferComponent implements OnInit {
   selectedTransfer: string = '';
   selectedDetailTransfer: string = '';
 
-
-  constructor(private toastr: ToastrService, private router: Router, private transferService: TransferService) { }
+  constructor(private toastr: ToastrService, private router: Router, private transferService: TransferService, private pageService: PageService) { }
   ngOnInit(): void {
+    this.pageService.setSpecificComponentPresent(true);
     this.dataVehicle = this.transferService.vehiclesData()
-
   }
 
   goToNextStep = () => {

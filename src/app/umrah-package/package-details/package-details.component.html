@@ -50,7 +50,7 @@
                           </div>
 
                           <div class="d-flex align-items-center gap-2 lh-base">
-                            <div class="package-details-rating d-flex align-items-center">
+                            <div class="package-details-rating z-index-3 d-flex align-items-center">
                               <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
                                 [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
                             </div>
@@ -114,7 +114,7 @@
             <div class="col-xl-9 package-details-box">
               <div class="calendar-card">
                 <h2 class="calender-title mb-0">Dates & Prices</h2>
-                <p>select the date to have the best suitable offer for you.</p>
+                <p class="lh-base">select the date to have the best suitable offer for you.</p>
                 <app-package-calendar></app-package-calendar>
               </div>
 
@@ -182,7 +182,7 @@
                 </div>
               </div>
 
-              <nav class="package-inside-menu mb-4">
+              <nav id="services-navigation" class="package-inside-menu mb-4">
                 <ul class="d-flex align-items-center" id="myTab" role="tablist">
                   <li *ngFor="let item of sections" class="nav-item">
                     <div
@@ -380,11 +380,14 @@
                         2/2
                       </div> -->
                     </div>
-                    <div class="destination-label d-flex align-items-center justify-content-between flex-wrap column-gap-2">
-                      <h2>{{destinationTitle }}</h2>
+                    <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
+                      <div class="d-flex align-items-center gap-1">
+                        <i class="icon-line-chevron-right"></i>
+                        <h2>{{destinationTitle }}</h2>
+                      </div>
                       <p class="mb-0 lh-base">{{(loading && (destinationTitle =='First destination' || destinationTitle
                         =='Second destination')) ? 'Searching for hotels...' :
-                        loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change.'}}
+                        loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change'}}
                       </p>
                       <button class="color-btn change-destination-btn" *ngIf="(!loading && destinationTitle =='Summary') 
                       || (!loading && destinationTitle =='Second destination')" (click)="clearChange()">Change</button>
