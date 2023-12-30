@@ -373,12 +373,6 @@
                         <h2 class="mb-0 pb-0">Hotels</h2>
                         <p class="mb-0 lh-base">Exclusive Choice of Hotels at Affordable Prices.</p>
                       </div>
-                      <!-- <div class="destination-counter" *ngIf="destinationTitle =='First destination'">
-                        1/2
-                      </div>
-                      <div class="destination-counter" *ngIf="destinationTitle =='Second destination'">
-                        2/2
-                      </div> -->
                     </div>
                     <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="d-flex align-items-center gap-1">
@@ -573,7 +567,7 @@
                                       <div class="row room-type-container align-items-center border">
                                        
                                         <div class="room-number col-xl-9 col-lg-9">
-                                          <div class="d-flex align-items-center column-gap-3" *ngFor="let room of roomsSelectionFirstDest.rooms">
+                                          <div class="d-flex align-items-center column-gap-3">
                                             <h5>
                                               <div class="room-label" [ngClass]="room.roomStyle">{{ room.room }}</div>
                                               <div class="room-index" [ngClass]="room.indexStyle">{{ room.index }}</div>
