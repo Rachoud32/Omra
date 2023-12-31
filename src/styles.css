@@ -5399,6 +5399,7 @@ ngx-stars .stars-line {
     border-radius: 0;
     background: var(--omra-extra);
     position: relative;
+    border-radius: var(--bdr-radius-3);
 }
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn[aria-expanded="true"] {
