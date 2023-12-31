@@ -780,7 +780,7 @@
                           <div class="container py-4 px-4">
                             <h4 class="room-choice">Choice 1/2</h4>
                             <div class="row mb-4">
-                              <div [class]="room.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionFirstDest.rooms;let i = index">
+                              <div [class]="roomsSelectionFirstDest.rooms.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionFirstDest.rooms;let i = index">
                                 <div class="box selected-rooms-card">
                                   <div class="selected-room-details flex align-items-center gap-3 p-3">
                                     <div class="room-number mb-2">
@@ -819,7 +819,7 @@
                             </div>
                             <h4 class="room-choice">Choice 2/2</h4>
                             <div class="row">
-                              <div class="col-xl-6 col-lg-6" *ngFor="let room of roomsSelectionSecondDest.rooms;let i = index">
+                              <div [class]="roomsSelectionSecondDest.rooms.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionSecondDest.rooms;let i = index">
                                 <div class="box selected-rooms-card">
                                   <div class="selected-room-details flex align-items-center gap-3 p-3">
                                     <div class="room-number mb-2">

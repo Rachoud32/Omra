@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CalendarEvent, CalendarDateFormatter, CalendarView } from 'angular-calendar';
-// import { CustomDateFormatter } from './custom-date-formatter.provider';
+import { CustomDateFormatter } from './custom-date-formatter.provider';
 
 @Component({
   selector: 'app-package-calendar',
@@ -10,7 +10,7 @@ import { CalendarEvent, CalendarDateFormatter, CalendarView } from 'angular-cale
   providers: [
     {
       provide: CalendarDateFormatter,
-      // useClass: CustomDateFormatter,
+      useClass: CustomDateFormatter,
     },
   ],
 })
@@ -40,6 +40,4 @@ export class PackageCalendarComponent {
       end: new Date(2024, 0, 1), // January 1, 2024 (whole day)
     }
   ]
-
-
 }
