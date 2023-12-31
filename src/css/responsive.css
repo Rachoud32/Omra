@@ -67,6 +67,10 @@
 
 @media (max-width: 1199.98px) {
     
+    .package-hotels .package-hotel-card .hotel-details {
+        margin-bottom: 1rem;
+    }
+    
     .package-visits .package-visit-card .visit-picture, .package-activities .package-activity-card .activity-picture,
     .package-visits .package-visit-card .visit-picture img, .package-activities .package-activity-card .activity-picture img {
         height: 300px;
@@ -182,7 +186,8 @@
 
 }
 
-@media (max-width: 991.98px) {	
+@media (max-width: 991.98px) {
+
     .services-list .service .image-box {
         margin: 0 auto;
     }

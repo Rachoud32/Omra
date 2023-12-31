@@ -92,18 +92,6 @@ export class packageService {
               departurecity: 'UK',
               airport: 'Manchester Airport'
             },
-            {
-              id: 5,
-              title: 'A Pilgrimage to Makkah 3',
-              price: '960',
-              nbrdays: '5',
-              nbrnights: '4',
-              departuretype: 'not guaranteed',
-              arrangementtype: 'LPD',
-              departurecity: 'France',
-              airport: `Nice Côte d'Azur Airport`
-
-            },
           ],
           flights: [
             {

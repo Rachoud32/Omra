@@ -10,52 +10,52 @@
           <div class="row">
             <app-package-search-bar></app-package-search-bar>
 
-            <div class="col-xl-12 py-3" id="overviewsection" #overviewsection>
+            <!-- <div class="col-xl-12 py-3">
               <button class="back-link d-flex align-items-center gap-2" routerLink="/umrah-package/result">
                 <i class="icon-line-chevron-left"></i>
                 <p class="mb-0">Return to Packages List</p>
               </button>
-            </div>
+            </div> -->
 
-            <div class="col-xl-12">
+            <div class="col-xl-12 pt-5">
               <div class="package-header mb-4">
                 <div class="package-header-content">
-                  <div class="container">
-                    <div class="row gy-3 package-header-card align-items-center">
-                      <div class="col-xl-6 col-lg-12">
-                        <div class="d-flex flex-column row-gap-3">
-                          <h5 class="package-details-title">
-                            {{package.packageTitle}}
-                          </h5>
-                          <div class="d-flex flex-wrap align-items-center lh-base gap-2">
-                            <div class="package-details-type lh-base">
-                              <p class="m-0">{{package.packageType}}</p>
-                            </div>
-                            <div class="package-details-theme lh-base" *ngFor="let theme of package.packageTheme">
-                              <p class="m-0">{{theme}}</p>
-                            </div>
+                  <div class="row gy-3 package-header-card align-items-center">
+                    <div class="col-xl-6 col-lg-12">
+                      <div class="d-flex flex-column column-gap-3 row-gap-2">
+                        <h5 class="package-details-title">
+                          {{package.packageTitle}}
+                        </h5>
+                        <div class="d-flex flex-wrap align-items-center lh-base gap-2">
+                          <div class="package-details-rating z-index-3 d-flex align-items-center">
+                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                              [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
+                          </div>
+                          <div class="package-details-type lh-base">
+                            <p class="m-0">{{package.packageType}}</p>
+                          </div>
+                          <div class="package-details-theme lh-base" *ngFor="let theme of package.packageTheme">
+                            <p class="m-0">{{theme}}</p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-xl-6 col-lg-12">
-                        <div class="header-hotel-details d-flex align-items-center justify-content-end gap-4">
-                          <div class="d-flex align-items-center lh-base gap-2">
-                            <i class="icon-line-map-pin"></i>
-                            <div class="package-details-place">{{package.details.Place}}</div>
-                          </div>
-
-                          <div class="d-flex align-items-center lh-base gap-2">
-                            <i class="icon-line-moon"></i>
-                            <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
-                          </div>
-
-                          <div class="d-flex align-items-center gap-2 lh-base">
-                            <div class="package-details-rating z-index-3 d-flex align-items-center">
-                              <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
-                            </div>
-                            <div class="package-details-rating-text d-flex align-items-center gap-1">
-                              <p class="mb-0">{{package.packageRating}} <span>(207)</span></p>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                      <div class="header-hotel-details d-flex align-items-center justify-content-end gap-4">
+                        <div class="d-flex align-items-center lh-base gap-2">
+                          <i class="icon-line-map-pin"></i>
+                          <div class="package-details-place">{{package.details.Place}}</div>
+                        </div>
+                        <div class="d-flex align-items-center lh-base gap-2">
+                          <i class="icon-line-moon"></i>
+                          <div class="package-details-nights">{{package.details.NbrNights}} Nights</div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 lh-base">
+                          <div class="package-details-rating-text d-flex align-items-center gap-2">
+                            <div class="package-rate">{{package.packageRating}}</div>
+                            <div class="package-review d-flex flex-column justify-content-start lh-base">
+                              <span class="mb-0 lh-base">Excellent</span>
+                              <p class="mb-0">(207 Reviews)</p>
                             </div>
                           </div>
                         </div>
@@ -69,22 +69,19 @@
             <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
               <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
                 <div class="row" *ngIf="image == package.packagePictures[0]">
-                  <div
-                    [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'">
+                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'">
                     <div class="package-cover-picture">
                       <img src={{package.packagePictures[0]}} alt="" />
                     </div>
                   </div>
-                  <div
-                    [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
+                  <div [class]="package.packagePictures.length == 2 ? 'col-xl-6' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4' : 'd-none'">
                     <div class="row" style="height: 100%;" *ngIf="package.packagePictures.length > 1">
                       <div class="col-xl-12 mb-4">
                         <div class="package-other-picture">
                           <img src={{package.packagePictures[1]}} alt="" />
                         </div>
                       </div>
-                      <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'"
-                        style="position: relative;">
+                      <div [class]="package.packagePictures.length > 2 ? 'col-xl-12' : 'd-none'" style="position: relative;">
                         <div class="package-other-picture">
                           <div class="package-picture-overlay" *ngIf="package.packagePictures.length > 3">
                             <p>+ {{package.packagePictures.length-3}}</p>
@@ -99,11 +96,11 @@
             </lightgallery>
 
             <div class="col-xl-12">
-              <div class="package-header mb-4">
+              <div class="package-description mb-4">
                 <div class="package-header-content">
                   <div class="container">
                     <div class="package-details-description">
-                      <h2>About this package</h2>
+                      <h2 class="sec-title">About this package</h2>
                       <p>{{package.details.description}}</p>
                     </div>
                   </div>
@@ -112,18 +109,38 @@
             </div>
 
             <div class="col-xl-9 package-details-box">
-              <div class="calendar-card">
-                <h2 class="calender-title mb-0">Dates & Prices</h2>
-                <p class="lh-base">select the date to have the best suitable offer for you.</p>
+              <div class="calendar-card mb-4">
+                <h2 class="sec-title">Dates & Prices</h2>
+                <p class="lh-base">Select the date to have the best suitable offer for you.</p>
                 <app-package-calendar></app-package-calendar>
               </div>
 
-              <div class="list-package-offers d-flex align-items-center gap-2 mt-5">
-                <i class="icon-line-list"></i>
-                <p class="mb-0">List of offers availables on the date of 26/01/24</p>
-              </div>
+              <!-- <div class="offers-skeletons-list package-service-section package-list-offers-section" *ngIf="!loading">
+                <p class="mb-3 lh-base">Select an offer to continue the process of booking.</p>
+                <div class="row" *ngFor="let skeleton of skeletons">
+                  <div class="col-lg-6 package-offer-item">
+                    <div class="package-offer-card">
+                      <div class="package-offer-header d-flex flex-wrap align-items-start justify-content-between column-gap-3 row-gap-2 px-3 mb-1">
+                        <div class="d-flex flex-column row-gap-1">
+                          <div class="title skeleton-service skeleton-loader skeletonprogress"></div>
+                          <div class="d-flex align-items-center justify-content-start gap-3">
+                            <div class="departure-label d-flex align-items-center gap-2">
+                              <div class="departure-text skeleton-service skeleton-loader skeletonprogress"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="package-offer-price d-flex flex-column mb-0 text-end">
+                          <span class="mb-0 lh-base skeleton-service skeleton-loader skeletonprogress"></span>
+                          <p class="price mb-0 lh-base skeleton-service skeleton-loader skeletonprogress"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+              </div> -->
 
               <div class="package-service-section package-list-offers-section">
+                <h2 class="sec-title">Offers available on 26/01/24</h2>
                 <p class="mb-3 lh-base">Select an offer to continue the process of booking.</p>
                 <div class="row">
                   <div class="col-lg-6 package-offer-item" *ngFor="let offer of package.details.offers,let i = index">
@@ -131,10 +148,10 @@
                       [checked]="selectedOffer == offer.id">
                     <label [attr.for]="offer.title" (click)="checkOffer(offer.id)">
                       <div class="package-offer-card">
-                        <div
-                          class="package-offer-header d-flex flex-wrap align-items-start justify-content-between column-gap-3 row-gap-2 px-3 mb-1">
-                          <div class="d-flex flex-column row-gap-1">
-                            <div class="title">{{offer.title}}</div>
+                        <div class="package-offer-header d-flex flex-wrap align-items-start justify-content-between column-gap-3 row-gap-2 px-3 mb-1">
+                          <div class="d-flex flex-column">
+                            <div class="offer-number mb-2">Offer {{offer.id}}</div>
+                            <div class="title mb-1">{{offer.title}}</div>
                             <div class="d-flex align-items-center justify-content-start gap-3">
                               <div class="departure-label d-flex align-items-center gap-2">
                                 <svg viewBox="0 0 715.62 566.3">
@@ -147,8 +164,8 @@
                             </div>
                           </div>
                           <div class="package-offer-price d-flex flex-column mb-0 text-end">
-                            <span class="mb-0 lh-base">Starts from</span>
-                            <p class="price mb-0 lh-base"><span>$</span>{{offer.price}}</p>
+                            <span class="mb-0">Starts from</span>
+                            <p class="price mb-0"><span>$</span>{{offer.price}}</p>
                           </div>
                         </div>
                         <hr>
@@ -191,9 +208,9 @@
                       [attr.aria-controls]="item.id" [attr.aria-selected]="item.id == 'hotelsection'"
                       (click)="chooseSection()">
                       <div *ngIf="item.id == 'hotelsection'">
-                        <div class="hotel-flash" *ngIf="destinationTitle =='First destination' || destinationTitle =='Second destination'">
-                          <p class="mb-0 lh-base blink" *ngIf="destinationTitle =='First destination'">1/2</p>
-                          <p class="mb-0 lh-base blink" *ngIf="destinationTitle =='Second destination'">2/2</p>
+                        <div class="hotel-flash" *ngIf="destinationTitle =='Makkah' || destinationTitle =='Madinah'">
+                          <p class="mb-0 lh-base blink" *ngIf="destinationTitle =='Makkah'">1/2</p>
+                          <p class="mb-0 lh-base blink" *ngIf="destinationTitle =='Madinah'">2/2</p>
                         </div>
                       </div>
                       <img [attr.src]="item.icon" [attr.style]="item.scale" [attr.alt]="item.name" />
@@ -203,12 +220,654 @@
                 </ul>
               </nav>
 
-              <div class="package-offer-details tab-content" id="myTabContent">
+              <div class="package-offer-details tab-content" id="myTabContent">      
+                <section id="hotelsection" class="package-hotels tab-pane fade show active" role="tabpanel"
+                  aria-labelledby="hotelsection" tabindex="0" #hotelsection>
+                  <div class="package-service-section mb-0">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                      <div class="d-flex flex-column justify-content-start">
+                        <h2 class="sec-title">Hotels</h2>
+                        <p class="mb-0 lh-base">Exclusive Choice of Hotels at Affordable Prices.</p>
+                      </div>
+                      <div class="booking-alert d-flex align-items-center gap-2" *ngIf="!selectedHotelRoomsList">
+                        <i class="icon-line-info"></i>
+                        <p class="mb-0">Choose your room(s) to finish the process</p>
+                      </div>
+                    </div>
+                    <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="icon-line-map-pin" *ngIf="destinationTitle =='Makkah' || destinationTitle =='Madinah'"></i>
+                        <i class="icon-line-paper" *ngIf="destinationTitle =='Summary'"></i>
+                        <h2>{{destinationTitle }}</h2>
+                      </div>
+                      <p class="mb-0 lh-base">{{(loading && (destinationTitle =='Makkah' || destinationTitle
+                        =='Madinah')) ? 'Searching for hotels...' :
+                        loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change'}}
+                      </p>
+                      <button class="color-btn change-destination-btn d-flex align-items-center gap-2" *ngIf="(!loading && destinationTitle =='Summary') 
+                      || (!loading && destinationTitle =='Madinah')" (click)="clearChange()"><i class="icon-refresh2"></i> Change</button>
+                    </div>
+                    <ngb-progressbar *ngIf="counterValue!=101 && counterValue!=0" [value]="counterValue" />
+
+                    <div class="hotel-skeletons-list mt-4" *ngIf="loading">
+                      <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
+                        <div class="skeleton-box box">
+                          <div class="container">
+                            <div class="row">
+                              <div class="hotel-gallery-box col-xl-4 ps-0">
+                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
+                              </div>
+                              <div class="col-xl-8 py-3">
+                                <div class="hotel-content">
+                                  <div class="hotel-content-bottom">
+                                    <div
+                                      class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                      <div
+                                        class="skeleton-service-flex d-flex flex-column justify-content-start lh-base">
+                                        <div class="hotel-rating">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="hotel-name me-4">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="hotel-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="hotel-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex flex-column row-gap-1">
+                                      <div class="hotel-info-card w-100 mb-2">
+                                        <p class="mb-3 hotel-description skeleton-loader skeletonprogress"></p>
+                                        <p class="mb-0 hotel-details skeleton-service skeleton-loader skeletonprogress">
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div id="FirstDestHotelRoomsList">
+                      <div *ngFor="let hotel of package.details.firstDestinations; let i = index">
+                        <div class="row mt-3" *ngIf="!loading && destinationTitle =='Makkah'">
+                          <div class="col-xl-12">
+                            <label for="" class="w-100">
+                              <div class="package-hotel-card">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="hotel-gallery-box col-xl-4 ps-0">
+                                      <div [attr.id]="'carouselhotel'+ i"
+                                        class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-inner h-100">
+                                          <div *ngFor="let image of package.details.firstDestinations[i].images"
+                                            class="carousel-item h-100 active" data-bs-interval="4000000">
+                                            <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
+                                          </div>
+                                        </div>
+                                        <div class="carousel-controls">
+                                          <button class="carousel-control-prev" type="button"
+                                            [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
+                                            <i class="icon-line-chevron-left"></i>
+                                            <span class="visually-hidden">Previous</span>
+                                          </button>
+                                          <button class="carousel-control-next" type="button"
+                                            [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
+                                            <i class="icon-line-chevron-right"></i>
+                                            <span class="visually-hidden">Next</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-xl-8 py-3">
+                                      <div class="hotel-content">
+                                        <div class="hotel-content-bottom">
+                                          <div
+                                            class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                            <div class="d-flex flex-column justify-content-start row-gap-1 lh-base">
+                                              <div class="hotel-name me-4">
+                                                <h2 class="text-truncate">
+                                                  {{hotel.hotelName}}
+                                                </h2>
+                                              </div>
+                                              <div class="d-flex align-items-center gap-3">
+                                                <div class="hotel-rating">
+                                                  <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                                    [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
+                                                </div>
+                                                <div class="hotel-class">
+                                                  <div class="d-flex align-items-center gap-1 lh-base">
+                                                    <i class="icon-line-ribbon"></i>
+                                                    <p class="mb-0">{{hotel.type}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-arangement">
+                                                  <p class="mb-0">{{hotel.pension}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-1">
+                                              <div class="hotel-rate me-2">{{hotel.rating}}</div>
+                                              <div class="hotel-review d-flex flex-column justify-content-start lh-base">
+                                                <span class="mb-0">Excellent</span>
+                                                <p class="mb-0">(100 Reviews)</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="d-flex flex-column row-gap-1">
+                                            <div class="hotel-description mb-2">
+                                              <p class="mb-0 read-more-content">{{displayText(hotel.details.description, i)}}
+                                                <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
+                                                [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
+                                                {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                              </button>
+                                              </p>
+                                            </div>
+                                            <div class="row">
+                                              <div class="hotel-details col-xl-7">
+                                                <div class="hotel-address mb-3">
+                                                  <div class="d-flex align-items-start gap-2 lh-base">
+                                                    <i class="icon-line-map-pin"></i>
+                                                    <p class="mb-0 lh-base">{{hotel.details.location}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-checkin">
+                                                  <div class="d-flex align-items-center gap-2 mb-1">
+                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
+                                                    <p class="mb-0">Check in at {{hotel.datecheckin}} in {{hotel.timecheckin}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-checkout">
+                                                  <div class="d-flex align-items-center gap-2">
+                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
+                                                    <p class="mb-0">Check out at {{hotel.datecheckout}} in {{hotel.timecheckout}}</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-5 d-flex justify-content-last">
+                                                <div class="d-flex flex-column align-items-start justify-content-end column-gap-4 row-gap-2 w-100">                                            
+                                                  <button class="color-btn list-hotelrooms-btn w-100 d-flex align-items-center justify-content-between gap-2 collapsed"
+                                                  [attr.href]="'#firstdest-hotel-rooms-list'+i" role="button" data-bs-toggle="collapse"
+                                                  (click)="collapsedHotelRoomsList('firstdest-hotel-rooms-list'+i)" [attr.data-bs-target]="'#firstdest-hotel-rooms-list'+i"
+                                                  aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">Rooms and prices
+                                                    <div class="d-flex flex-column align-items-center">
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                    </div>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div [attr.id]="'firstdest-hotel-rooms-list'+i" class="accordion-collapse collapse" 
+                              [class.show]="selectedHotelRoomsList==='firstdest-hotel-rooms-list'+i" data-bs-parent="#FirstDestHotelRoomsList">
+                                <div class="package-hotel-rooms-card" id="accordionFirstDestRoomsList">
+                                  <div class="package-hotel-room-item"
+                                    *ngFor="let room of roomsSelectionFirstDest.rooms;let j=index" [attr.id]="'accordionFirstDestRoomsList' + i">
+                                    <div class="container">
+                                      <div class="row room-type-container align-items-center">
+                                        <button class="color-btn expand-btn d-flex align-items-center justify-content-between gap-2 collapsed lh-base"
+                                          type="button"
+                                          data-bs-toggle="collapse"
+                                          #accordionButton
+                                          (click)="collapsedPackRoomsList('rooms-list-first-dest' + i, accordionButton)"
+                                          [attr.data-bs-target]="'#collapse-rooms-list-first-dest' + i + '-' + (j + 1)" 
+                                          aria-expanded="true"
+                                          [attr.aria-controls]="'collapse-rooms-list-first-dest' + i + '-' + (j + 1)">   
+                                          <div class="room-number col-xl-12 col-lg-12">
+                                            <div class="d-flex align-items-center justify-content-between column-gap-2">
+                                              <div class="d-flex align-items-center column-gap-3">
+                                                <h5>
+                                                  <div class="room-index" [ngClass]="room.indexStyle">{{ room.index }}</div>
+                                                </h5>
+                                                <p class="mb-0 lh-base" *ngIf="!room.selectedType?.title" >
+                                                  Select a room type to proceed with the process
+                                                </p>
+                                                <p class="mb-0 lh-base" *ngIf="room.selectedType?.title" >
+                                                  You have chosen the {{room.selectedType?.title}} at {{hotel.hotelName}}
+                                                </p>
+                                              </div>
+                                              <i class="icon-line-chevron-down"></i>
+                                            </div>
+                                          </div>
+                                        </button>
+                                        <div [attr.id]="'collapse-rooms-list-first-dest' + i + '-' + (j + 1)"
+                                          class="accordion-collapse collapse"
+                                          [class.show]="selectedPackRoomsList === 'rooms-list-first-dest' + i"
+                                          data-bs-parent="#accordionFirstDestRoomsList">
+                                          <div class="rooms-list container p-0">
+                                            <div class="row pt-4 pb-2 gy-4">
+                                              <div class="col-xl-6 col-lg-6" *ngFor="let type of hotel.rooms;let j=index">
+                                                <div class="room-box">
+                                                  <div class="room-item">
+                                                    <div class="rooms-container">
+                                                      <label [attr.for]="'roombox-'+j" (click)="selectType(type,hotel,room.room)">
+                                                        <input type="radio" name="radio" [attr.id]="'roombox-'+j"
+                                                          [value]="type" [(ngModel)]="selectedPackRoomsList"
+                                                          [checked]="type== room.room" disabled />
+                                                        <div class="box" [class.active]="room.selectedType == type">
+                                                          <div class="package-room-card">
+                                                            <div class="room-details-content">
+                                                              <div class="room-header d-flex align-items-start justify-content-between gap-3">
+                                                                <div class="d-flex flex-column justify-content-center row-gap-1">
+                                                                  <div class="title">
+                                                                    {{type.title}}
+                                                                  </div>
+                                                                  <div class="d-flex align-items-center gap-2">
+                                                                    <i class="icon-line-eye lh-base"></i>
+                                                                    <p class="mb-0 lh-base">{{type.view}} view
+                                                                    </p>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="price-content">
+                                                                  <div class="price d-flex">
+                                                                    <div class="text-end">
+                                                                      <span>$</span>{{type.price}}<span class="price-text">/Adult</span>
+                                                                    </div>
+                                                                    <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <hr>
+                                                              <div class="room-description">
+                                                                <p class="mb-0 lh-base">{{type.description}}</p>
+                                                              </div>
+                                                              <hr>
+                                                              <div class="d-flex align-items-center justify-content-between gap-3">
+                                                                <div class="room-accomodation mb-0 lh-base">{{type.accomodationType}}</div>
+                                                                <div class="room-available mb-0 lh-base">Room {{type.available}}/6</div>
+                                                              </div>
+                                                              <hr>
+                                                              <div class="room-options d-flex flex-wrap align-items-center mb-1 column-gap-3 row-gap-2">
+                                                                <div class="room-option d-flex gap-2">
+                                                                  <i class="icon-wifi-full"></i>
+                                                                  <p class="mb-0 lh-base">{{type.wifi}}</p>
+                                                                </div>
+                                                                <div class="room-option d-flex gap-2">
+                                                                  <i class="icon-line-coffee"></i>
+                                                                  <p class="mb-0 lh-base">{{type.breakfast}}</p>
+                                                                </div>
+                                                                <div class="room-option d-flex gap-2">
+                                                                  <i class="icon-line-users"></i>
+                                                                  <p class="mb-0 lh-base">Receives {{type.sleeps}}
+                                                                  </p>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="SecondDestnHoteltRoomsList">
+                      <div *ngFor="let hotel of package.details.secondDestinations;let k = index" >
+                        <div class="row mt-3" *ngIf="!loading && destinationTitle =='Madinah'">
+                          <div class="col-xl-12">
+                            <label for="" class="w-100">
+                              <div class="package-hotel-card">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="hotel-gallery-box col-xl-4 ps-0">
+                                      <div [attr.id]="'carouselhotel'+ k"
+                                        class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-inner h-100">
+                                          <div *ngFor="let image of package.details.secondDestinations[k].images"
+                                            class="carousel-item h-100 active" data-bs-interval="4000000">
+                                            <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
+                                          </div>
+                                        </div>
+                                        <div class="carousel-controls">
+                                          <button class="carousel-control-prev" type="button"
+                                            [attr.data-bs-target]="'#carouselhotel' + k" data-bs-slide="prev">
+                                            <i class="icon-line-chevron-left"></i>
+                                            <span class="visually-hidden">Previous</span>
+                                          </button>
+                                          <button class="carousel-control-next" type="button"
+                                            [attr.data-bs-target]="'#carouselhotel'+ k" data-bs-slide="next">
+                                            <i class="icon-line-chevron-right"></i>
+                                            <span class="visually-hidden">Next</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-xl-8 py-3">
+                                      <div class="hotel-content">
+                                        <div class="hotel-content-bottom">
+                                          <div
+                                            class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
+                                            <div class="d-flex flex-column justify-content-start row-gap-1 lh-base">
+                                              <div class="hotel-name me-4">
+                                                <h2 class="text-truncate">
+                                                  {{hotel.hotelName}}
+                                                </h2>
+                                              </div>
+                                              <div class="d-flex align-items-center gap-3">
+                                                <div class="hotel-rating">
+                                                  <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
+                                                    [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
+                                                </div>
+                                                <div class="hotel-class">
+                                                  <div class="d-flex align-items-center gap-1 lh-base">
+                                                    <i class="icon-line-ribbon"></i>
+                                                    <p class="mb-0">{{hotel.type}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-arangement">
+                                                  <p class="mb-0">{{hotel.pension}}</p>
+                                                </div>        
+                                              </div>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-1">
+                                              <div class="hotel-rate me-2">{{hotel.rating}}</div>
+                                              <div class="hotel-review d-flex flex-column justify-content-start lh-base">
+                                                <span class="mb-0">Excellent</span>
+                                                <p class="mb-0">(100 Reviews)</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <hr>
+                                          <div class="d-flex flex-column row-gap-1">
+                                            <div class="hotel-description mb-2">
+                                              <p class="mb-0 read-more-content">
+                                                {{displayText(hotel.details.description, k)}}
+                                                <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
+                                                  [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
+                                                  {{ isReadMore[k] ? 'Read Less': 'Read More' }}
+                                                </button>
+                                              </p>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-xl-7 mb-3">
+                                                <div class="hotel-address mb-2">
+                                                  <div class="d-flex align-items-start gap-2 lh-base">
+                                                    <i class="icon-line-map-pin"></i>
+                                                    <p class="mb-0 lh-base">{{hotel.details.location}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-checkin">
+                                                  <div class="d-flex align-items-center gap-2 mb-1">
+                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
+                                                    <p class="mb-0">Check in at {{hotel.datecheckin}} in {{hotel.timecheckin}}</p>
+                                                  </div>
+                                                </div>
+                                                <div class="hotel-checkout">
+                                                  <div class="d-flex align-items-center gap-2">
+                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
+                                                    <p class="mb-0">Check in at {{hotel.datecheckout}} in {{hotel.timecheckout}}</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-5 d-flex justify-content-last">
+                                                <div class="d-flex flex-column align-items-start justify-content-end column-gap-4 row-gap-2 w-100">                                            
+                                                  <button class="color-btn list-hotelrooms-btn w-100 d-flex align-items-center justify-content-between gap-2 collapsed"
+                                                  [attr.href]="'#seconddest-hotel-rooms-list'+ k" role="button" data-bs-toggle="collapse"
+                                                  (click)="collapsedHotelRoomsList('seconddest-hotel-rooms-list'+ k)" [attr.data-bs-target]="'#seconddest-hotel-rooms-list'+ k"
+                                                  aria-expanded="true" [attr.aria-controls]="'#rooms-list'+ k">Rooms and prices
+                                                    <div class="d-flex flex-column align-items-center">
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
+                                                    </div>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div [attr.id]="'seconddest-hotel-rooms-list'+ k" class="accordion-collapse collapse" 
+                              [class.show]="selectedHotelRoomsList==='seconddest-hotel-rooms-list'+ k" data-bs-parent="#SecondDestnHoteltRoomsList">
+                                <div class="package-hotel-rooms-card" id="accordionSecondDestRoomsList">
+                                  <div class="package-hotel-room-item"
+                                    *ngFor="let room of roomsSelectionSecondDest.rooms;let m=index" [attr.id]="'accordionSecondDestRoomsList' + k" id="accordionSecondDestRoomsList">
+                                    <div class="container">
+                                      <div class="row room-type-container align-items-center border">
+                                        <button class="color-btn expand-btn d-flex align-items-center justify-content-between gap-2 collapsed lh-base"
+                                          type="button"
+                                          data-bs-toggle="collapse"
+                                          #accordionButton
+                                          (click)="collapsedPackRoomsList('rooms-list-second-dest' + k, accordionButton)"
+                                          [attr.data-bs-target]="'#collapse-rooms-list-second-dest' + k + '-' + (m + 1)" 
+                                          aria-expanded="true"
+                                          [attr.aria-controls]="'collapse-rooms-list-second-dest' + k + '-' + (m + 1)">
+                                          <div class="room-number col-xl-12 col-lg-12">
+                                            <div class="d-flex align-items-center justify-content-between column-gap-2">
+                                              <div class="d-flex align-items-center column-gap-3">
+                                                <h5>
+                                                  <div class="room-index" [ngClass]="room.indexStyle">{{ room.index }}</div>
+                                                </h5>
+                                                <p class="mb-0 lh-base" *ngIf="!room.selectedType?.title" >
+                                                  Select a room type to proceed with the process
+                                                </p>
+                                                <p class="mb-0 lh-base" *ngIf="room.selectedType?.title" >
+                                                  You have chosen the {{room.selectedType?.title}} at {{hotel.hotelName}}
+                                                </p>
+                                              </div>
+                                              <i class="icon-line-chevron-down"></i>
+                                            </div>
+                                          </div>
+                                        </button>
+
+                                        <div [attr.id]="'collapse-rooms-list-second-dest' + k + '-' + (m + 1)"
+                                            class="accordion-collapse collapse"
+                                            [class.show]="selectedPackRoomsList === 'rooms-list-second-dest' + k"
+                                            data-bs-parent="#accordionSecondDestRoomsList">
+                                            <div class="rooms-list container p-0">
+                                              <div class="row pt-4 pb-2 gy-4">
+                                              <div class="col-xl-6 col-lg-6" *ngFor="let type of hotel.rooms;let m=index">
+                                                <div class="room-box">
+                                                  <div class="room-item">
+                                                    <div class="rooms-container">
+                                                      <label [attr.for]="'roombox-'+m" (click)="selectType(type,hotel,room.room)">
+                                                        <input type="radio" name="radio" [attr.id]="'roombox-'+m"
+                                                        [value]="type" [(ngModel)]="selectedPackRoomsList"
+                                                        [checked]="type== room.room" disabled />
+                                                        <div class="box"[class.active]="room.selectedType == type">
+                                                        <div class="package-room-card">
+                                                          <div class="room-details-content">
+                                                            <div class="room-header d-flex align-items-start justify-content-between gap-3">
+                                                              <div class="d-flex flex-column justify-content-center row-gap-1">
+                                                                <div class="title">
+                                                                  {{type.title}}
+                                                                </div>
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                  <i class="icon-line-eye lh-base"></i>
+                                                                  <p class="mb-0 lh-base">{{type.view}} view
+                                                                  </p>
+                                                                </div>
+                                                              </div>
+                                                              <div class="price-content">
+                                                                <div class="price d-flex">
+                                                                  <div class="text-end">
+                                                                    <span>$</span>{{type.price}}<span class="price-text">/Adult</span>
+                                                                  </div>
+                                                                  <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="room-description">
+                                                              <p class="mb-0 lh-base">{{type.description}}</p>
+                                                            </div>
+                                                            <hr>
+                                                              <div class="d-flex align-items-center justify-content-between gap-3">
+                                                                <div class="room-accomodation mb-0 lh-base">{{type.accomodationType}}</div>
+                                                                <div class="room-available mb-0 lh-base">Room {{type.available}}/6</div>
+                                                              </div>
+                                                              <hr>
+                                                            <div class="room-options d-flex flex-wrap align-items-center mb-1 column-gap-3 row-gap-2">
+                                                              <div class="room-option d-flex gap-2">
+                                                                <i class="icon-wifi-full"></i>
+                                                                <p class="mb-0 lh-base">{{type.wifi}}</p>
+                                                              </div>
+                                                              <div class="room-option d-flex gap-2">
+                                                                <i class="icon-line-coffee"></i>
+                                                                <p class="mb-0 lh-base">{{type.breakfast}}</p>
+                                                              </div>
+                                                              <div class="room-option d-flex gap-2">
+                                                                <i class="icon-line-users"></i>
+                                                                <p class="mb-0 lh-base">Receives {{type.sleeps}}
+                                                                </p>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>  
+                            </label>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>  
+
+                    <div class="package-rooms-summary row gy-3 mt-3" *ngIf="!loading && destinationTitle =='Summary'">
+                      <div class="col-xl-12">
+                        <div class="package-hotel-card">
+                          <div class="container py-4 px-4">
+                            <h4 class="room-choice">Choice 1/2</h4>
+                            <div class="row mb-4">
+                              <div [class]="room.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionFirstDest.rooms;let i = index">
+                                <div class="box selected-rooms-card">
+                                  <div class="selected-room-details flex align-items-center gap-3 p-3">
+                                    <div class="room-number mb-2">
+                                      <div class="room-number-title lh-base">Room {{i+1}}</div>
+                                    </div>
+                                    <div class="d-flex align-items-start justify-content-between gap-2">
+                                      <div class="d-flex flex-column align-items-start">
+                                        <div class="selected-room-title">{{room.selectedType.title}}</div>
+                                        <p class="selected-room-view mb-0 lh-base">{{room.selectedType.view}} view</p>
+                                      </div>
+                                      <p class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></p>
+                                    </div>
+                                    <hr>
+                                    <div class="selected-room-hotelname d-flex align-items-center gap-1">
+                                      <i class="icon-line-map-pin"></i>
+                                      <h4>{{roomsSelectionFirstDest.hotel.hotelName}}</h4>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex align-items-start gap-3">
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-line-users"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.sleeps}}</p>
+                                      </div> 
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-wifi-full"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.wifi}}</p>
+                                      </div>  
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-line-coffee"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.breakfast}}</p>
+                                      </div>  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <h4 class="room-choice">Choice 2/2</h4>
+                            <div class="row">
+                              <div class="col-xl-6 col-lg-6" *ngFor="let room of roomsSelectionSecondDest.rooms;let i = index">
+                                <div class="box selected-rooms-card">
+                                  <div class="selected-room-details flex align-items-center gap-3 p-3">
+                                    <div class="room-number mb-2">
+                                      <div class="room-number-title lh-base">Room {{i+1}}</div>
+                                    </div>
+                                    <div class="d-flex align-items-start justify-content-between gap-2">
+                                      <div class="d-flex flex-column align-items-start">
+                                        <div class="selected-room-title">{{room.selectedType.title}}</div>
+                                        <p class="selected-room-view mb-0 lh-base">{{room.selectedType.view}} view</p>
+                                      </div>
+                                      <p class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></p>
+                                    </div>
+                                    <hr>
+                                    <div class="selected-room-hotelname d-flex align-items-center gap-1">
+                                      <i class="icon-line-map-pin"></i>
+                                      <h4>{{roomsSelectionFirstDest.hotel.hotelName}}</h4>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex align-items-start gap-3">
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-line-users"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.sleeps}}</p>
+                                      </div> 
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-wifi-full"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.wifi}}</p>
+                                      </div>  
+                                      <div class="selected-room-service d-flex align-items-center gap-2">
+                                        <i class="icon-line-coffee"></i>
+                                        <p class="mb-0 lh-base">{{room.selectedType.breakfast}}</p>
+                                      </div>  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 <section id="flightsection" class="package-flights tab-pane fade" role="tabpanel"
                   aria-labelledby="flightsection" tabindex="0" #flightsection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Flights</h2>
-                    <p>Your most suitable flight options.</p>
+                    <h2 class="sec-title">Flights</h2>
+                    <p class="mb-3 lh-base">Your most suitable flight options.</p>
                     <div class="row gy-3" *ngFor="let flight of package.details.flights;let i=index">
                       <div class="col-xl-6 col-lg-6">
                         <label class="w-100" [attr.for]="'flight-box-'+i">
@@ -365,662 +1024,11 @@
                   </div>
                 </section>
 
-                <section id="hotelsection" class="package-hotels tab-pane fade show active" role="tabpanel"
-                  aria-labelledby="hotelsection" tabindex="0" #hotelsection>
-                  <div class="package-service-section mb-0">
-                    <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
-                      <div class="d-flex flex-column justify-content-start">
-                        <h2 class="mb-0 pb-0">Hotels</h2>
-                        <p class="mb-0 lh-base">Exclusive Choice of Hotels at Affordable Prices.</p>
-                      </div>
-                    </div>
-                    <div class="destination-label d-flex align-items-center justify-content-between flex-wrap gap-2">
-                      <div class="d-flex align-items-center gap-1">
-                        <i class="icon-line-chevron-right"></i>
-                        <h2>{{destinationTitle }}</h2>
-                      </div>
-                      <p class="mb-0 lh-base">{{(loading && (destinationTitle =='First destination' || destinationTitle
-                        =='Second destination')) ? 'Searching for hotels...' :
-                        loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change'}}
-                      </p>
-                      <button class="color-btn change-destination-btn" *ngIf="(!loading && destinationTitle =='Summary') 
-                      || (!loading && destinationTitle =='Second destination')" (click)="clearChange()">Change</button>
-                    </div>
-                    <ngb-progressbar *ngIf="counterValue!=101 && counterValue!=0" [value]="counterValue" />
-
-                    <div class="hotel-skeletons-list mt-4" *ngIf="loading">
-                      <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
-                        <div class="skeleton-box box">
-                          <div class="container">
-                            <div class="row">
-                              <div class="hotel-gallery-box col-xl-4 ps-0">
-                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
-                              </div>
-                              <div class="col-xl-8 py-3">
-                                <div class="hotel-content">
-                                  <div class="hotel-content-bottom">
-                                    <div
-                                      class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
-                                      <div
-                                        class="skeleton-service-flex d-flex flex-column justify-content-start lh-base">
-                                        <div class="hotel-rating">
-                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                        </div>
-                                        <div class="hotel-name me-4">
-                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                        </div>
-                                      </div>
-                                      <div class="d-flex align-items-center gap-1">
-                                        <div class="hotel-rate me-2">
-                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
-                                        </div>
-                                        <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
-                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <hr>
-                                    <div class="d-flex flex-column row-gap-1">
-                                      <div class="hotel-info-card w-100 mb-2">
-                                        <p class="mb-3 hotel-description skeleton-loader skeletonprogress"></p>
-                                        <p class="mb-0 hotel-details skeleton-service skeleton-loader skeletonprogress">
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-
-                    <div id="FirstDestHotelRoomsList">
-                      <div *ngFor="let hotel of package.details.firstDestinations; let i = index">
-                        <div class="row mt-3" *ngIf="!loading && destinationTitle =='First destination'">
-                          <div class="col-xl-12">
-                            <label for="" class="w-100">
-                              <div class="package-hotel-card">
-                                <div class="container">
-                                  <div class="row">
-                                    <div class="hotel-gallery-box col-xl-4 ps-0">
-                                      <div [attr.id]="'carouselhotel'+ i"
-                                        class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
-                                        data-bs-ride="carousel">
-                                        <div class="carousel-inner h-100">
-                                          <div *ngFor="let image of package.details.firstDestinations[i].images"
-                                            class="carousel-item h-100 active" data-bs-interval="4000000">
-                                            <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
-                                          </div>
-                                        </div>
-                                        <div class="carousel-controls">
-                                          <button class="carousel-control-prev" type="button"
-                                            [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="prev">
-                                            <i class="icon-line-chevron-left"></i>
-                                            <span class="visually-hidden">Previous</span>
-                                          </button>
-                                          <button class="carousel-control-next" type="button"
-                                            [attr.data-bs-target]="'#carouselhotel'+i" data-bs-slide="next">
-                                            <i class="icon-line-chevron-right"></i>
-                                            <span class="visually-hidden">Next</span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-xl-8 py-3">
-                                      <div class="hotel-content">
-                                        <div class="hotel-content-bottom">
-                                          <div
-                                            class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
-                                            <div class="d-flex flex-column justify-content-start row-gap-1 lh-base">
-                                              <div class="hotel-name me-4">
-                                                <h2 class="text-truncate">
-                                                  {{hotel.hotelName}}
-                                                </h2>
-                                              </div>
-                                              <div class="d-flex align-items-center gap-3">
-                                                <div class="hotel-rating">
-                                                  <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                                    [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
-                                                </div>
-                                                <div class="hotel-class">
-                                                  <div class="d-flex align-items-center gap-1 lh-base">
-                                                    <i class="icon-line-ribbon"></i>
-                                                    <p class="mb-0">{{hotel.type}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-arangement">
-                                                  <p class="mb-0">{{hotel.pension}}</p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="d-flex align-items-center gap-1">
-                                              <div class="hotel-rate me-2">{{hotel.rating}}</div>
-                                              <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                                <span class="mb-0">Excellent</span>
-                                                <p class="mb-0">(100 Reviews)</p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <hr>
-                                          <div class="d-flex flex-column row-gap-1">
-                                            <div class="hotel-description mb-2">
-                                              <p class="mb-0 read-more-content">{{displayText(hotel.details.description, i)}}
-                                                <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
-                                                [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
-                                                {{ isReadMore[i] ? 'Read Less': 'Read More' }}
-                                              </button>
-                                              </p>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col-xl-7 mb-3">
-                                                <div class="hotel-address mb-3">
-                                                  <div class="d-flex align-items-start gap-2 lh-base">
-                                                    <i class="icon-line-map-pin"></i>
-                                                    <p class="mb-0 lh-base">{{hotel.details.location}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-checkin">
-                                                  <div class="d-flex align-items-center gap-2 mb-1">
-                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
-                                                    <p class="mb-0">Check in at {{hotel.datecheckin}} in {{hotel.timecheckin}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-checkout">
-                                                  <div class="d-flex align-items-center gap-2">
-                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
-                                                    <p class="mb-0">Check in at {{hotel.datecheckout}} in {{hotel.timecheckout}}</p>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div class="col-xl-5 d-flex justify-content-last">
-                                                <div class="d-flex flex-column align-items-start justify-content-end column-gap-4 row-gap-2 w-100">                                            
-                                                  <button class="color-btn list-hotelrooms-btn w-100 d-flex align-items-center justify-content-between gap-2 collapsed"
-                                                  [attr.href]="'#firstdest-hotel-rooms-list'+i" role="button" data-bs-toggle="collapse"
-                                                  (click)="collapsedHotelRoomsList('firstdest-hotel-rooms-list'+i)" [attr.data-bs-target]="'#firstdest-hotel-rooms-list'+i"
-                                                  aria-expanded="true" [attr.aria-controls]="'#rooms-list'+i">Rooms and prices
-                                                    <div class="d-flex flex-column align-items-center">
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                    </div>
-                                                  </button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div [attr.id]="'firstdest-hotel-rooms-list'+i" class="accordion-collapse collapse" 
-                              [class.show]="selectedHotelRoomsList==='firstdest-hotel-rooms-list'+i" data-bs-parent="#FirstDestHotelRoomsList">
-                                <div class="package-hotel-rooms-card" id="accordionFirstDestRoomsList">
-                                  <div class="package-hotel-room-item"
-                                    *ngFor="let room of roomsSelectionFirstDest.rooms;let j=index" [attr.id]="'accordionFirstDestRoomsList' + i">
-                                    <div class="container">
-                                      <div class="row room-type-container align-items-center border">
-                                       
-                                        <div class="room-number col-xl-9 col-lg-9">
-                                          <div class="d-flex align-items-center column-gap-3">
-                                            <h5>
-                                              <div class="room-label" [ngClass]="room.roomStyle">{{ room.label }}</div>
-                                              <div class="room-index" [ngClass]="room.indexStyle">{{ room.index }}</div>
-                                            </h5>
-                                            <p class="mb-0 lh-base" *ngIf="!room.selectedType?.title" >
-                                              Please select a room type to proceed with the process.
-                                            </p>
-                                            <p class="mb-0 lh-base" *ngIf="room.selectedType?.title" >
-                                              You have chosen the <span class="color">{{room.selectedType?.title}}</span> at <span class="color-3">{{hotel.hotelName}}</span>
-                                            </p>
-                                          </div>
-                                        </div>
-                                        <div class="room-type col-xl-3 col-lg-3">
-                                          <div class="room-type-content lh-base">
-                                            <button class="color-btn expand-btn d-flex align-items-center justify-content-between gap-2 collapsed lh-base"
-                                                  type="button"
-                                                  data-bs-toggle="collapse"
-                                                  #accordionButton
-                                                  (click)="collapsedPackRoomsList('rooms-list-first-dest' + i, accordionButton)"
-                                                  [attr.data-bs-target]="'#collapse-rooms-list-first-dest' + i + '-' + (j + 1)" 
-                                                  aria-expanded="true"
-                                                  [attr.aria-controls]="'collapse-rooms-list-first-dest' + i + '-' + (j + 1)">
-                                              Click here to select a type <i class="icon-line-chevron-down"></i>
-                                            </button>
-                                          </div>
-                                        </div>
-                                        <div [attr.id]="'collapse-rooms-list-first-dest' + i + '-' + (j + 1)"
-                                          class="rooms-list accordion-collapse collapse"
-                                          [class.show]="selectedPackRoomsList === 'rooms-list-first-dest' + i"
-                                          data-bs-parent="#accordionFirstDestRoomsList">
-                                          <div class="container p-0">
-                                            <div class="row py-3 gy-3">
-                                              <div class="col-xl-6 col-lg-6" *ngFor="let type of hotel.rooms;let j=index">
-                                                <div class="room-box">
-                                                  <div class="room-item">
-                                                    <div class="rooms-container">
-                                                      <label [attr.for]="'roombox-'+j" (click)="selectType(type,hotel,room.room)">
-                                                        <input type="radio" name="radio" [attr.id]="'roombox-'+j"
-                                                          [value]="type" [(ngModel)]="selectedPackRoomsList"
-                                                          [checked]="type== room.room" disabled />
-                                                        <div class="box"
-                                                          [class.active]="room.selectedType == type">
-                                                          <div class="package-room-card">
-                                                            <div class="room-details-content">
-                                                              <div class="room-header d-flex align-items-start justify-content-between gap-3">
-                                                                <div class="d-flex flex-column justify-content-center row-gap-1">
-                                                                  <div class="title">
-                                                                    {{type.title}}
-                                                                  </div>
-                                                                  <div class="d-flex align-items-center gap-2">
-                                                                    <i class="icon-line-eye lh-base"></i>
-                                                                    <p class="mb-0 lh-base">{{type.view}} view
-                                                                    </p>
-                                                                  </div>
-                                                                </div>
-                                                                <div class="price-content">
-                                                                  <div class="price d-flex">
-                                                                    <div class="text-end">
-                                                                      <span>$</span>{{type.price}}<span class="price-text">/Adult</span>
-                                                                    </div>
-                                                                    <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                              <hr>
-                                                              <div class="room-description">
-                                                                <p class="mb-0 lh-base">{{type.description}}</p>
-                                                              </div>
-                                                              <hr>
-                                                              <div class="d-flex align-items-center justify-content-between gap-3">
-                                                                <div class="room-accomodation mb-0 lh-base">{{type.accomodationType}}</div>
-                                                                <div class="room-available mb-0 lh-base">Room {{type.available}}/6</div>
-                                                              </div>
-                                                              <hr>
-                                                              <div class="room-options d-flex flex-wrap align-items-center mb-1 column-gap-3 row-gap-2">
-                                                                <div class="room-option d-flex gap-2">
-                                                                  <i class="icon-wifi-full"></i>
-                                                                  <p class="mb-0 lh-base">{{type.wifi}}</p>
-                                                                </div>
-                                                                <div class="room-option d-flex gap-2">
-                                                                  <i class="icon-line-coffee"></i>
-                                                                  <p class="mb-0 lh-base">{{type.breakfast}}</p>
-                                                                </div>
-                                                                <div class="room-option d-flex gap-2">
-                                                                  <i class="icon-line-users"></i>
-                                                                  <p class="mb-0 lh-base">Receives {{type.sleeps}}
-                                                                  </p>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </label>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="SecondDestnHoteltRoomsList">
-                      <div *ngFor="let hotel of package.details.secondDestinations;let k = index" >
-                        <div class="row mt-3" *ngIf="!loading && destinationTitle =='Second destination'">
-                          <div class="col-xl-12">
-                            <label for="" class="w-100">
-                              <div class="package-hotel-card">
-                                <div class="container">
-                                  <div class="row">
-                                    <div class="hotel-gallery-box col-xl-4 ps-0">
-                                      <div [attr.id]="'carouselhotel'+ k"
-                                        class="package-hotel-carousel image-box carousel slide carousel-fade h-100"
-                                        data-bs-ride="carousel">
-                                        <div class="carousel-inner h-100">
-                                          <div *ngFor="let image of package.details.secondDestinations[k].images"
-                                            class="carousel-item h-100 active" data-bs-interval="4000000">
-                                            <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
-                                          </div>
-                                        </div>
-                                        <div class="carousel-controls">
-                                          <button class="carousel-control-prev" type="button"
-                                            [attr.data-bs-target]="'#carouselhotel' + k" data-bs-slide="prev">
-                                            <i class="icon-line-chevron-left"></i>
-                                            <span class="visually-hidden">Previous</span>
-                                          </button>
-                                          <button class="carousel-control-next" type="button"
-                                            [attr.data-bs-target]="'#carouselhotel'+ k" data-bs-slide="next">
-                                            <i class="icon-line-chevron-right"></i>
-                                            <span class="visually-hidden">Next</span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-xl-8 py-3">
-                                      <div class="hotel-content">
-                                        <div class="hotel-content-bottom">
-                                          <div
-                                            class="hotel-infos d-flex flex-wrap align-items-center justify-content-between column-gap-3 row-gap-2">
-                                            <div class="d-flex flex-column justify-content-start row-gap-1 lh-base">
-                                              <div class="hotel-name me-4">
-                                                <h2 class="text-truncate">
-                                                  {{hotel.hotelName}}
-                                                </h2>
-                                              </div>
-                                              <div class="d-flex align-items-center gap-3">
-                                                <div class="hotel-rating">
-                                                  <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                                                    [initialStars]='hotel.rating' [color]="'#f4c253'"></ngx-stars>
-                                                </div>
-                                                <div class="hotel-class">
-                                                  <div class="d-flex align-items-center gap-1 lh-base">
-                                                    <i class="icon-line-ribbon"></i>
-                                                    <p class="mb-0">{{hotel.type}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-arangement">
-                                                  <p class="mb-0">{{hotel.pension}}</p>
-                                                </div>        
-                                              </div>
-                                            </div>
-                                            <div class="d-flex align-items-center gap-1">
-                                              <div class="hotel-rate me-2">{{hotel.rating}}</div>
-                                              <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                                <span class="mb-0">Excellent</span>
-                                                <p class="mb-0">(100 Reviews)</p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <hr>
-                                          <div class="d-flex flex-column row-gap-1">
-                                            <div class="hotel-description mb-2">
-                                              <p class="mb-0 read-more-content">
-                                                {{displayText(hotel.details.description, k)}}
-                                                <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
-                                                  [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
-                                                  {{ isReadMore[k] ? 'Read Less': 'Read More' }}
-                                                </button>
-                                              </p>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col-xl-7 mb-3">
-                                                <div class="hotel-address mb-2">
-                                                  <div class="d-flex align-items-start gap-2 lh-base">
-                                                    <i class="icon-line-map-pin"></i>
-                                                    <p class="mb-0 lh-base">{{hotel.details.location}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-checkin">
-                                                  <div class="d-flex align-items-center gap-2 mb-1">
-                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
-                                                    <p class="mb-0">Check in at {{hotel.datecheckin}} in {{hotel.timecheckin}}</p>
-                                                  </div>
-                                                </div>
-                                                <div class="hotel-checkout">
-                                                  <div class="d-flex align-items-center gap-2">
-                                                    <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
-                                                    <p class="mb-0">Check in at {{hotel.datecheckout}} in {{hotel.timecheckout}}</p>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div class="col-xl-5 d-flex justify-content-last">
-                                                <div class="d-flex flex-column align-items-start justify-content-end column-gap-4 row-gap-2 w-100">                                            
-                                                  <button class="color-btn list-hotelrooms-btn w-100 d-flex align-items-center justify-content-between gap-2 collapsed"
-                                                  [attr.href]="'#seconddest-hotel-rooms-list'+ k" role="button" data-bs-toggle="collapse"
-                                                  (click)="collapsedHotelRoomsList('seconddest-hotel-rooms-list'+ k)" [attr.data-bs-target]="'#seconddest-hotel-rooms-list'+ k"
-                                                  aria-expanded="true" [attr.aria-controls]="'#rooms-list'+ k">Rooms and prices
-                                                    <div class="d-flex flex-column align-items-center">
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                      <i class="rooms-list-btn-chevron icon-line-chevron-down"></i>
-                                                    </div>
-                                                  </button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div [attr.id]="'seconddest-hotel-rooms-list'+ k" class="accordion-collapse collapse" 
-                              [class.show]="selectedHotelRoomsList==='seconddest-hotel-rooms-list'+ k" data-bs-parent="#SecondDestnHoteltRoomsList">
-                                <div class="package-hotel-rooms-card" id="accordionSecondDestRoomsList">
-                                  <div class="package-hotel-room-item"
-                                    *ngFor="let room of roomsSelectionSecondDest.rooms;let m=index" [attr.id]="'accordionSecondDestRoomsList' + k" id="accordionSecondDestRoomsList">
-                                    <div class="container">
-                                      <div class="row room-type-container align-items-center border">
-                                        <div class="room-number col-xl-6 col-lg-6 d-flex align-items-center justify-content-start gap-2">
-                                          <svg viewBox="0 0 716.72 583.4">
-                                            <path d="m709.9,323.3c-5.8-14.1-14.9-26.3-26.4-35.7,0-62.7-.1-108.4-5.1-145.5-5.8-43.5-18.6-73-41.3-95.7s-52.2-35.4-95.7-41.3C503.4,0,456.6,0,391.8,0h-66.7c-64.8,0-111.7,0-149.6,5.1-43.5,5.8-73,18.6-95.7,41.3s-35.4,52.2-41.3,95.7c-5,37.2-5.1,82.8-5.1,145.5-11.5,9.4-20.5,21.6-26.4,35.7-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4c9.4,22.6,27,40.2,49.6,49.6,12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.6h416.7v41.7c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.8c18.5-.4,31.3-1.8,43.4-6.8,22.6-9.4,40.2-27,49.6-49.6,7-16.8,7-35.2,7-68.4.1-33.3.1-51.7-6.8-68.5ZM325.2,50h66.7c118.7,0,178.2,0,209.9,31.7,29.5,29.5,31.6,83.1,31.7,185.9-9.3-.8-20-1-33.3-1v-25c0-67.5,0-104.6-26.8-131.5s-64-26.8-131.5-26.8h-166.7c-67.5,0-104.6,0-131.5,26.8-26.8,26.8-26.8,64-26.8,131.5v25c-13.3,0-24.1.2-33.3,1,.1-102.8,2.2-156.4,31.7-185.9,31.7-31.7,91.2-31.7,209.9-31.7Zm-158.4,216.7v-25c0-58.2.5-84.4,12.2-96.1,11.7-11.7,37.9-12.2,96.1-12.2h58.4v133.3h-166.7Zm216.7-133.3h58.3c58.2,0,84.4.5,96.1,12.2,11.7,11.7,12.2,37.9,12.2,96.1v25h-166.6v-133.3Zm280.2,307.6c-4.3,10.3-12.3,18.3-22.5,22.5-7.7,3.2-22.4,3.2-49.3,3.2H125.2c-26.8,0-41.6,0-49.3-3.2-10.3-4.3-18.3-12.3-22.5-22.5-3.2-7.7-3.2-22.4-3.2-49.3s0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6,7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2,10.3,4.3,18.3,12.3,22.5,22.5,3.2,7.7,3.2,22.4,3.2,49.3-.1,26.9-.1,41.7-3.2,49.4Z" style="stroke-width: 0px;"></path>
-                                          </svg>
-                                          <h5>{{room.room}}</h5>
-                                        </div>
-                                        <div class="room-type col-xl-6 col-lg-6">
-                                          <div class="room-type-content lh-base">
-                                            <button class="color-btn expand-btn d-flex align-items-center justify-content-between gap-2 collapsed lh-base"
-                                                  type="button"
-                                                  data-bs-toggle="collapse"
-                                                  #accordionButton
-                                                  (click)="collapsedPackRoomsList('rooms-list-second-dest' + k, accordionButton)"
-                                                  [attr.data-bs-target]="'#collapse-rooms-list-second-dest' + k + '-' + (m + 1)" 
-                                                  aria-expanded="true"
-                                                  [attr.aria-controls]="'collapse-rooms-list-second-dest' + k + '-' + (m + 1)">
-                                              Click here to select a type <i class="icon-line-chevron-down"></i>
-                                            </button>
-                                          </div>
-                                        </div>
-
-                                        <div [attr.id]="'collapse-rooms-list-second-dest' + k + '-' + (m + 1)"
-                                            class="rooms-list accordion-collapse collapse"
-                                            [class.show]="selectedPackRoomsList === 'rooms-list-second-dest' + k"
-                                            data-bs-parent="#accordionSecondDestRoomsList">
-                                            <div class="container p-0">
-                                              <div class="row py-3 px-2 gy-3">
-                                              <div class="col-xl-6 col-lg-6" *ngFor="let type of hotel.rooms;let m=index">
-                                                <div class="room-box">
-                                                  <div class="room-item">
-                                                    <div class="rooms-container">
-                                                      <label [attr.for]="'roombox-'+m" (click)="selectType(type,hotel,room.room)">
-                                                        <input type="radio" name="radio" [attr.id]="'roombox-'+m"
-                                                        [value]="type" [(ngModel)]="selectedPackRoomsList"
-                                                        [checked]="type== room.room" disabled />
-                                                        <div class="box"[class.active]="room.selectedType == type">
-                                                        <div class="package-room-card">
-                                                          <div class="room-details-content">
-                                                            <div class="room-header d-flex align-items-start justify-content-between gap-3">
-                                                              <div class="d-flex flex-column justify-content-center row-gap-1">
-                                                                <div class="title">
-                                                                  {{type.title}}
-                                                                </div>
-                                                                <div class="d-flex align-items-center gap-2">
-                                                                  <i class="icon-line-eye lh-base"></i>
-                                                                  <p class="mb-0 lh-base">{{type.view}} view
-                                                                  </p>
-                                                                </div>
-                                                              </div>
-                                                              <div class="price-content">
-                                                                <div class="price d-flex">
-                                                                  <div class="text-end">
-                                                                    <span>$</span>{{type.price}}<span class="price-text">/Adult</span>
-                                                                  </div>
-                                                                  <div class="tva">{{room.tva ? 'TVA included': ''}}</div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                            <hr>
-                                                            <div class="room-description">
-                                                              <p class="mb-0 lh-base">{{type.description}}</p>
-                                                            </div>
-                                                            <hr>
-                                                              <div class="d-flex align-items-center justify-content-between gap-3">
-                                                                <div class="room-accomodation mb-0 lh-base">{{type.accomodationType}}</div>
-                                                                <div class="room-available mb-0 lh-base">Room {{type.available}}/6</div>
-                                                              </div>
-                                                              <hr>
-                                                            <div class="room-options d-flex flex-wrap align-items-center mb-1 column-gap-3 row-gap-2">
-                                                              <div class="room-option d-flex gap-2">
-                                                                <i class="icon-wifi-full"></i>
-                                                                <p class="mb-0 lh-base">{{type.wifi}}</p>
-                                                              </div>
-                                                              <div class="room-option d-flex gap-2">
-                                                                <i class="icon-line-coffee"></i>
-                                                                <p class="mb-0 lh-base">{{type.breakfast}}</p>
-                                                              </div>
-                                                              <div class="room-option d-flex gap-2">
-                                                                <i class="icon-line-users"></i>
-                                                                <p class="mb-0 lh-base">Receives {{type.sleeps}}
-                                                                </p>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </label>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>  
-                            </label>
-                          </div>
-                        </div>
-                      </div>  
-                    </div>  
-
-                    <div class="package-rooms-summary row gy-3 mt-3" *ngIf="!loading && destinationTitle =='Summary'">
-                      <div class="col-xl-12">
-
-                          <div class="package-hotel-card">
-                            <div class="container py-4 px-4">
-                              <h4 class="room-choice">Choice 1/2</h4>
-                              <div class="row mb-4">
-                                <div class="col-xl-6 col-lg-6" *ngFor="let room of roomsSelectionFirstDest.rooms;let i = index">
-                                  <div class="box selected-rooms-card">
-                                    <div class="room-number d-flex align-items-center justify-content-between gap-3 p-3">
-                                      <div class="d-flex align-items-center justify-content-between gap-2">
-                                        <svg class="lh-base" viewBox="0 0 716.72 583.4">
-                                          <path d="m709.9,323.3c-5.8-14.1-14.9-26.3-26.4-35.7,0-62.7-.1-108.4-5.1-145.5-5.8-43.5-18.6-73-41.3-95.7s-52.2-35.4-95.7-41.3C503.4,0,456.6,0,391.8,0h-66.7c-64.8,0-111.7,0-149.6,5.1-43.5,5.8-73,18.6-95.7,41.3s-35.4,52.2-41.3,95.7c-5,37.2-5.1,82.8-5.1,145.5-11.5,9.4-20.5,21.6-26.4,35.7-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4c9.4,22.6,27,40.2,49.6,49.6,12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.6h416.7v41.7c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.8c18.5-.4,31.3-1.8,43.4-6.8,22.6-9.4,40.2-27,49.6-49.6,7-16.8,7-35.2,7-68.4.1-33.3.1-51.7-6.8-68.5ZM325.2,50h66.7c118.7,0,178.2,0,209.9,31.7,29.5,29.5,31.6,83.1,31.7,185.9-9.3-.8-20-1-33.3-1v-25c0-67.5,0-104.6-26.8-131.5s-64-26.8-131.5-26.8h-166.7c-67.5,0-104.6,0-131.5,26.8-26.8,26.8-26.8,64-26.8,131.5v25c-13.3,0-24.1.2-33.3,1,.1-102.8,2.2-156.4,31.7-185.9,31.7-31.7,91.2-31.7,209.9-31.7Zm-158.4,216.7v-25c0-58.2.5-84.4,12.2-96.1,11.7-11.7,37.9-12.2,96.1-12.2h58.4v133.3h-166.7Zm216.7-133.3h58.3c58.2,0,84.4.5,96.1,12.2,11.7,11.7,12.2,37.9,12.2,96.1v25h-166.6v-133.3Zm280.2,307.6c-4.3,10.3-12.3,18.3-22.5,22.5-7.7,3.2-22.4,3.2-49.3,3.2H125.2c-26.8,0-41.6,0-49.3-3.2-10.3-4.3-18.3-12.3-22.5-22.5-3.2-7.7-3.2-22.4-3.2-49.3s0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6,7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2,10.3,4.3,18.3,12.3,22.5,22.5,3.2,7.7,3.2,22.4,3.2,49.3-.1,26.9-.1,41.7-3.2,49.4Z" style="stroke-width: 0px;"></path>
-                                        </svg>
-                                        <div class="room-number-title lh-base">Room {{i+1}}</div>
-                                      </div>
-                                      <h4>{{roomsSelectionFirstDest.hotel.hotelName}}</h4>
-                                    </div>
-                                    <div class="selected-roomd-details flex align-items-center gap-3 p-3 pt-2">
-                                      <div class="d-flex align-items-center justify-content-between gap-2">
-                                        <div class="d-flex flex-column align-items-start">
-                                          <div class="selected-room-title">{{room.selectedType.title}}</div>
-                                        </div>
-                                        <div class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></div>
-                                      </div>
-                                      <hr>
-                                      <div class="d-flex align-items-start gap-3">
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-eye"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.view}}</p>
-                                        </div>
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.sleeps}}</p>
-                                        </div>  
-                                      </div>
-                                      <div class="d-flex align-items-start gap-3">
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.wifi}}</p>
-                                        </div>  
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.breakfast}}</p>
-                                        </div>  
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <h4 class="room-choice">Choice 2/2</h4>
-                              <div class="row">
-                                <div class="col-xl-6 col-lg-6" *ngFor="let room of roomsSelectionSecondDest.rooms;let i = index">
-                                  <div class="box selected-rooms-card">
-                                    <div class="room-number d-flex align-items-center justify-content-between gap-3 p-3">
-                                      <div class="d-flex align-items-center justify-content-between gap-2">
-                                        <svg class="lh-base" viewBox="0 0 716.72 583.4">
-                                          <path d="m709.9,323.3c-5.8-14.1-14.9-26.3-26.4-35.7,0-62.7-.1-108.4-5.1-145.5-5.8-43.5-18.6-73-41.3-95.7s-52.2-35.4-95.7-41.3C503.4,0,456.6,0,391.8,0h-66.7c-64.8,0-111.7,0-149.6,5.1-43.5,5.8-73,18.6-95.7,41.3s-35.4,52.2-41.3,95.7c-5,37.2-5.1,82.8-5.1,145.5-11.5,9.4-20.5,21.6-26.4,35.7-7,16.8-7,35.2-7,68.4s0,51.6,7,68.4c9.4,22.6,27,40.2,49.6,49.6,12.1,5,24.9,6.4,43.4,6.8v41.8c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.6h416.7v41.7c0,13.8,11.2,25,25,25s25-11.2,25-25v-41.8c18.5-.4,31.3-1.8,43.4-6.8,22.6-9.4,40.2-27,49.6-49.6,7-16.8,7-35.2,7-68.4.1-33.3.1-51.7-6.8-68.5ZM325.2,50h66.7c118.7,0,178.2,0,209.9,31.7,29.5,29.5,31.6,83.1,31.7,185.9-9.3-.8-20-1-33.3-1v-25c0-67.5,0-104.6-26.8-131.5s-64-26.8-131.5-26.8h-166.7c-67.5,0-104.6,0-131.5,26.8-26.8,26.8-26.8,64-26.8,131.5v25c-13.3,0-24.1.2-33.3,1,.1-102.8,2.2-156.4,31.7-185.9,31.7-31.7,91.2-31.7,209.9-31.7Zm-158.4,216.7v-25c0-58.2.5-84.4,12.2-96.1,11.7-11.7,37.9-12.2,96.1-12.2h58.4v133.3h-166.7Zm216.7-133.3h58.3c58.2,0,84.4.5,96.1,12.2,11.7,11.7,12.2,37.9,12.2,96.1v25h-166.6v-133.3Zm280.2,307.6c-4.3,10.3-12.3,18.3-22.5,22.5-7.7,3.2-22.4,3.2-49.3,3.2H125.2c-26.8,0-41.6,0-49.3-3.2-10.3-4.3-18.3-12.3-22.5-22.5-3.2-7.7-3.2-22.4-3.2-49.3s0-41.6,3.2-49.3c4.3-10.3,12.3-18.3,22.5-22.6,7.7-3.2,22.4-3.2,49.3-3.2h466.7c26.8,0,41.6,0,49.3,3.2,10.3,4.3,18.3,12.3,22.5,22.5,3.2,7.7,3.2,22.4,3.2,49.3-.1,26.9-.1,41.7-3.2,49.4Z" style="stroke-width: 0px;"></path>
-                                        </svg>
-                                        <div class="room-number-title lh-base">Room {{i+1}}</div>
-                                      </div>
-                                      <h4>{{roomsSelectionFirstDest.hotel.hotelName}}</h4>
-                                    </div>
-                                    <div class="selected-roomd-details flex align-items-center gap-3 p-3 pt-2">
-                                      <div class="d-flex align-items-center justify-content-between gap-2">
-                                        <div class="d-flex flex-column align-items-start">
-                                          <div class="selected-room-title">{{room.selectedType.title}}</div>
-                                        </div>
-                                        <div class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></div>
-                                      </div>
-                                      <hr>
-                                      <div class="d-flex align-items-start gap-3">
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-eye"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.view}}</p>
-                                        </div>
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.sleeps}}</p>
-                                        </div>  
-                                      </div>
-                                      <div class="d-flex align-items-start gap-3">
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.wifi}}</p>
-                                        </div>  
-                                        <div class="selected-room-service d-flex align-items-center gap-2">
-                                          <i class="icon-line-users"></i>
-                                          <p class="mb-0 lh-base">{{room.selectedType.breakfast}}</p>
-                                        </div>  
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                   
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
                 <section id="transfersection" class="package-transfers tab-pane fade" role="tabpanel"
                   aria-labelledby="transfersection" tabindex="0" #transfersection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Transfers</h2>
-                    <p>Top ways to experience nearby attractions.</p>
+                    <h2 class="sec-title">Transfers</h2>
+                    <p class="mb-3 lh-base">Top ways to experience nearby attractions.</p>
                     <div class="row gy-3">
                       <div class="col-xl-6 col-lg-6" *ngFor="let vehicle of package.details.transfers;let i=index">
                         <label class="w-100">
@@ -1115,15 +1123,14 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="more-details p-3">
-                                <div class="d-flex align-items-center gap-2 mb-2">
+                              <div class="more-details row-gap-2 column-gap-3 p-3">
+                                <div class="d-flex align-items-center gap-2">
                                   <div class="d-flex align-items-center gap-2">
                                     <i class="icon-line-users"></i>
                                     <p class="mb-0"><span>{{vehicle.nbrpassengers}}</span> passengers</p>
                                   </div>
-
                                 </div>
-                                <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="d-flex align-items-center gap-2">
                                   <i class="icon-line-alert-octagon"></i>
                                   <p class="mb-0">{{vehicle.stops.length}} stop{{vehicle.stops.length == 1 ?
                                     ' through' : vehicle.stops.length == 0 ?
@@ -1149,8 +1156,8 @@
                 <section id="activitiessection" class="package-activities tab-pane fade" role="tabpanel"
                   aria-labelledby="activitiessection" tabindex="0" #activitiessection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Activities</h2>
-                    <p>Immerse yourself in activities that will amplify the richness of your experiences.</p>
+                    <h2 class="sec-title">Activities</h2>
+                    <p class="mb-3 lh-base">Immerse yourself in activities that will amplify the richness of your experiences.</p>
                     <div class="row gy-3">
                       <div class="col-lg-12" *ngFor="let activity of package.details.activities;let i=index">
                         <div class="package-activity-card">
@@ -1164,12 +1171,7 @@
                               <div class="col-lg-8 py-3 px-3">
                                 <div class="activity-title mb-3">
                                   <h2>{{activity.title}}</h2>
-                                  <!-- <div class="activity-location d-flex align-items-start gap-2 lh-base">
-                                  <i class="icon-line-map-pin"></i>
-                                  <p class="mb-0 lh-base">{{activity.location}}</p>
-                                </div> -->
                                 </div>
-
                                 <div
                                   class="activity-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
                                   <div class="activity-location">
@@ -1221,8 +1223,8 @@
                 <section id="visitssection" class="package-visits tab-pane fade" role="tabpanel"
                   aria-labelledby="visitssection" tabindex="0" #visitssection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Visits</h2>
-                    <p>Delve into your experiences, savoring every moment.</p>
+                    <h2 class="sec-title">Visits</h2>
+                    <p class="mb-3 lh-base">Delve into your experiences, savoring every moment.</p>
                     <div class="row gy-3">
                       <div class="col-lg-12" *ngFor="let visit of package.details.visits;let i=index">
                         <div class="package-visit-card">
@@ -1296,8 +1298,8 @@
                 <section id="plansection" class="package-plan tab-pane fade" role="tabpanel"
                   aria-labelledby="plansection" tabindex="0" #plansection>
                   <div class="package-service-section mb-0">
-                    <h2 class="mb-0 pb-0">Plan Details</h2>
-                    <p>Embark on an unconventional plan to fully relish the experience.</p>
+                    <h2 class="sec-title">Plan</h2>
+                    <p class="mb-3 lh-base">Embark on an unconventional plan to fully relish the experience.</p>
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                       <div class="accordion-item">
                         <h3 class="accordion-header">
@@ -1310,7 +1312,6 @@
                                 <i class="icon-line-chevron-right"></i>
                                 <span>Jeddah Makkah</span>
                               </div>
-
                             </div>
                             <div class="d-flex align-items-center gap-3">
                               <p class="plan-date mb-0 lh-base">12/10/2023</p>
@@ -1461,7 +1462,7 @@
                 <section id="policiessection" class="package-policies tab-pane fade" role="tabpanel"
                   aria-labelledby="policiessection" tabindex="0" #policiessection>
                   <div class="package-service-section mb-0">
-                    <h2>Policies</h2>
+                    <h2 class="sec-title">Policies</h2>
                     <div class="row">
                       <div class="col-xol-6 col-lg-6">
                         <div class="d-flex align-items-center gap-2">

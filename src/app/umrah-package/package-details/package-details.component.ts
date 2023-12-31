@@ -73,7 +73,7 @@ export class PackageDetailsComponent implements OnInit {
       id: 'policiessection'
     },
   ];
-  destinationTitle = 'First destination'
+  destinationTitle = 'Makkah'
   package: any;
   activeSection: any;
   selectedOffer: string = '';
@@ -161,7 +161,7 @@ export class PackageDetailsComponent implements OnInit {
   }
   goToNextStep = () => {
     let firstverify = true
-    if (this.destinationTitle == "Second destination") {
+    if (this.destinationTitle == "Madinah") {
       let secondverify = true
       this.roomsSelectionSecondDest.rooms.map((el: any) => {
         if (el.selectedType == null) {
@@ -180,14 +180,14 @@ export class PackageDetailsComponent implements OnInit {
         this.toastr.info("Please select the type of every room of your second destination before proceeding.")
       }
     }
-    if (this.destinationTitle == "First destination") {
+    if (this.destinationTitle == "Makkah") {
       this.roomsSelectionFirstDest.rooms.map((el: any) => {
         if (el.selectedType == null) {
           firstverify = false
         }
       })
       if (firstverify) {
-        this.destinationTitle = "Second destination"
+        this.destinationTitle = "Madinah"
         this.loading = true
         this.startCounter(this.durationInSeconds / 2)
         setTimeout(() => {
@@ -200,7 +200,7 @@ export class PackageDetailsComponent implements OnInit {
     }
   }
   clearChange() {
-    this.destinationTitle = 'First destination'
+    this.destinationTitle = 'Makkah'
   }
   chooseSection() {
     this.loading = true
@@ -217,13 +217,13 @@ export class PackageDetailsComponent implements OnInit {
   selectType(data: any, hotel: any, room: any) {
     console.log({ data, hotel, room });
 
-    if (this.destinationTitle == 'First destination') {
+    if (this.destinationTitle == 'Makkah') {
       let roomData = this.roomsSelectionFirstDest.rooms.find((el: any) => room == el.room)
       roomData.selectedType = data
       this.roomsSelectionFirstDest.hotel = hotel
       console.log(this.roomsSelectionFirstDest);
     }
-    if (this.destinationTitle == 'Second destination') {
+    if (this.destinationTitle == 'Madinah') {
       let roomData = this.roomsSelectionSecondDest.rooms.find((el: any) => room == el.room)
       roomData.selectedType = data
       this.roomsSelectionSecondDest.hotel = hotel
