@@ -5564,12 +5564,22 @@ ngx-stars .stars-line {
 
 .package-hotels .package-hotel-rooms-card .selected-room-label .selected-room-price {
     font-weight: 500;
+    color: var(--omra-second);
+    transition: all .3s linear;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn[aria-expanded="true"] .selected-room-price {
     color: var(--omra-white);
 }
 
 .package-hotels .package-hotel-rooms-card .selected-room-label .selected-room-price span {
     font-size: var(--fs-10);
     font-weight: 500;
+    color: var(--omra-second);
+    transition: all .3s linear;
+}
+
+.package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn[aria-expanded="true"] span {
     color: var(--omra-white);
 }
 

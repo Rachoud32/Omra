@@ -549,6 +549,13 @@
 }
 
 @media (max-width: 767.98px) {
+
+    .package-inside-menu .hotel-flash {
+        bottom: 4px;
+        height: 14px;
+        border-radius: var(--bdr-radius-3);
+    }
+    
     .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number {
         padding: 8px 20px;
     }
