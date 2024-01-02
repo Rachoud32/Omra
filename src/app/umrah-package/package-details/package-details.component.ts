@@ -80,7 +80,10 @@ export class PackageDetailsComponent implements OnInit {
   selectedHotelRoomsList: string = ''
 
   loading = false
+  loadingsection = false
+  loadinghotel = false
   skeletons: any[] = [1, 2]
+  navskeletons: any[] = [1, 2, 3, 4, 5, 6, 7]
   counterValue = 0;
   targetValue = 100;
   durationInSeconds = 4;
@@ -118,6 +121,7 @@ export class PackageDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.pageService.setSpecificComponentPresent(true);
     this.loading = true
+    this.loadinghotel = true
     this.startCounter(this.durationInSeconds)
     const id = this.route.snapshot.params['id'];
     let data = this.packageService.dataPackages();
@@ -147,6 +151,7 @@ export class PackageDetailsComponent implements OnInit {
     }
     setTimeout(() => {
       this.loading = false
+      this.loadinghotel = false
     }, 3000)
   }
   startCounter(value: any) {
@@ -170,10 +175,10 @@ export class PackageDetailsComponent implements OnInit {
       })
       if (secondverify) {
         this.destinationTitle = "Summary"
-        this.loading = true
+        this.loadinghotel = true
         this.startCounter(this.durationInSeconds / 2)
         setTimeout(() => {
-          this.loading = false
+          this.loadinghotel = false
         }, 3000)
         this.counterValue = 0
       } else {
@@ -188,10 +193,10 @@ export class PackageDetailsComponent implements OnInit {
       })
       if (firstverify) {
         this.destinationTitle = "Madinah"
-        this.loading = true
+        this.loadinghotel = true
         this.startCounter(this.durationInSeconds / 2)
         setTimeout(() => {
-          this.loading = false
+          this.loadinghotel = false
         }, 3000)
         this.counterValue = 0
       } else {
@@ -199,15 +204,21 @@ export class PackageDetailsComponent implements OnInit {
       }
     }
   }
+
   clearChange() {
     this.destinationTitle = 'Makkah'
   }
-  chooseSection() {
-    this.loading = true
+
+  chooseSection(sectionId: string) {
+    console.log(`Tab clicked: ${sectionId}`);
+    this.loadingsection = true
+    this.loadinghotel = true
     setTimeout(() => {
-      this.loading = false
+      this.loadingsection = false
+      this.loadinghotel = false
     }, 3000)
   }
+
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
   };

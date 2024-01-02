@@ -8,8 +8,8 @@
     --omra-white-rgb: 255, 255, 255;
     --omra-third: #3d4892;
     --omra-third-rgb: 61, 72, 148;
-    --omra-base: #050033;
-    --omra-base-rgb: 5, 0, 51;
+    --omra-primary: #050033;
+    --omra-primary-rgb: 5, 0, 51;
     --omra-second: #068484;
     --omra-second-rgb: 6, 132, 133;
     --omra-black: #1e1852;
@@ -34,8 +34,8 @@
     /* .color-btn:hover, 
     .hotel-box .hotel .btn-sec .rate-btn:hover,
     .hotel-box .hotel .hotel-details-btn:hover {
-        background: var(--omra-base);
-        border-color: var(--omra-base);
+        background: var(--omra-primary);
+        border-color: var(--omra-primary);
         color: var(--omra-white);
     } */
 
@@ -156,9 +156,10 @@
 
     app-bookings-mob .search-sidebar-details .search-sidebar-header,
     app-package-bookings-mob .search-sidebar-details .search-sidebar-header {
-        background: var(--omra-base);
+        background: var(--omra-primary);
         border-top: 1px solid #435d6e;
         padding: 8px 20px;
+        border-radius: 0;
     }
 
     app-bookings-mob .search-sidebar-details .search-sidebar-header a,
@@ -169,7 +170,7 @@
     app-bookings-mob .search-sidebar-content,
     app-package-bookings-mob .search-sidebar-content {
         padding: 20px 0;
-        border-top: 2px solid var(--omra-base);
+        border-top: 2px solid var(--omra-primary);
     }
 
     .ground-service-date {
@@ -187,6 +188,11 @@
 }
 
 @media (max-width: 991.98px) {
+
+    .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn i {
+        width: 100%;
+        height: 20px;
+    }
 
     .services-list .service .image-box {
         margin: 0 auto;
@@ -347,7 +353,7 @@
     }
 
     .hotel-box .hotel .hotel-content .hotel-details-btn {
-        background-color: var(--omra-base);
+        background-color: var(--omra-primary);
         color: var(--omra-white);
         border-right: 1px solid var(--omra-white);
     }
@@ -633,8 +639,36 @@
 
 }
 
-
 @media (max-width: 575.98px) {
+
+    .package-hotels .booking-alert {
+        gap: 1rem !important;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .package-hotels .booking-alert i {
+        color: var(--omra-white);
+        font-size: var(--fs-16);
+        background: var(--omra-second);
+        padding: 0px 8px;
+        text-align: center;
+        border-radius: var(--bdr-radius-5);
+    }
+
+    .package-hotels .booking-alert p {
+        color: var(--omra-second);
+        font-size: var(--fs-13);
+        line-height: 16px;
+    }
+
+    .rooms-list .col-xl-6 {
+        padding: 0;
+    }
+
+    .package-hotels .package-hotel-rooms-card .package-hotel-room-item .room-number p {
+        font-size: var(--fs-12);
+    }
 
     .package-header-card .header-hotel-details {
         flex-direction: column;
@@ -840,7 +874,8 @@
     .rooms-container .room-details-content .room-options {
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 20px !important;
+        margin-bottom: 5px !important;
+        align-items: flex-start !important;
     }
 
     .service-details .service-action-btns {
