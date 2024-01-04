@@ -8380,42 +8380,42 @@ app-booking-summary {
     border: 1px solid var(--omra-light-gray);
 }
 
-.skeleton-box .hotel-rating .skeleton-service {
+.package-hotels .skeleton-box .hotel-rating .skeleton-service {
     width: 30%;
     height: 18px;
 }
 
-.skeleton-box .hotel-name .skeleton-service {
+.package-hotels.skeleton-box .hotel-name .skeleton-service {
     width: 80%;
     height: 30px;
 }
 
-.skeleton-box .hotel-name .skeleton-service {
+.package-hotels.skeleton-box .hotel-name .skeleton-service {
     width: 80%;
     height: 30px;
 }
 
-.skeleton-box .hotel-rate .skeleton-service {
+.package-hotels.skeleton-box .hotel-rate .skeleton-service {
     height: 40px !important;
     width: 40px;
 }
 
-.skeleton-box .hotel-review span.skeleton-service {
+.package-hotels .skeleton-box .hotel-review span.skeleton-service {
     width: 80px;
     height: 20px !important;
 }
 
-.skeleton-box .hotel-review p.skeleton-service {
+.package-hotels .skeleton-box .hotel-review p.skeleton-service {
     width: 80px;
     height: 15px !important;
 }
 
-.skeleton-box .hotel-info-card .hotel-description {
+.package-hotels .skeleton-box .hotel-info-card .hotel-description {
     width: 100%;
     height: 70px !important;
 }
 
-.skeleton-box .hotel-info-card .hotel-details {
+.package-hotels .skeleton-box .hotel-info-card .hotel-details {
     width: 100%;
     height: 50px !important;
 }
@@ -8529,6 +8529,52 @@ app-booking-summary {
     height: 60px !important;
 }
 
+.package-activities .skeleton-box .skeleton-service-flex,
+.package-visits .skeleton-box .skeleton-service-flex {
+    width: 100%;
+}
+
+.package-activities .skeleton-box .activity-name .skeleton-service,
+.package-visits .skeleton-box .visit-name .skeleton-service {
+    width: 50%;
+    height: 24px !important;
+}
+
+.package-activities .skeleton-box .activity-rate,
+.package-visits .skeleton-box .visit-rate {
+    height: 40px !important;
+    width: 40px;
+}
+
+.package-activities .skeleton-box .activity-rate .skeleton-service,
+.package-visits .skeleton-box .visit-rate .skeleton-service {
+    width: 100%;
+    height: 40px !important;
+}
+
+.package-activities .skeleton-box .activity-review span.skeleton-service,
+.package-visits .skeleton-box .visit-review span.skeleton-service {
+    width: 80px;
+    height: 20px !important;
+}
+
+.package-activities .skeleton-box .activity-review p.skeleton-service,
+.package-visits .skeleton-box .visit-review p.skeleton-service {
+    width: 80px;
+    height: 15px !important;
+}
+
+.package-activities .skeleton-box .activity-info-card .activity-description,
+.package-visits .skeleton-box .visit-info-card .visit-description {
+    width: 100%;
+    height: 70px !important;
+    margin-bottom: 5px !important;
+}
+
+.package-activities hr,
+.package-visits hr {
+    margin: 10px 0;
+}
 
 
 /* ----------------------------------------------------------------

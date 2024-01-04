@@ -281,7 +281,7 @@
                         <div class="d-flex align-items-center gap-2">
                           <i class="icon-line-map-pin" *ngIf="destinationTitle =='Makkah' || destinationTitle =='Madinah'"></i>
                           <i class="icon-line-paper" *ngIf="destinationTitle =='Summary'"></i>
-                          <div class="d-flex align-items-center gap-2"><h2>{{destinationTitle}}</h2> | <span class="duration">3 <i class="icon-line-moon"></i></span></div>
+                          <div class="d-flex align-items-center gap-2"><h2>{{destinationTitle}}</h2><span class="duration" *ngIf="destinationTitle !='Summary'"><span class="color-3 me-1">|</span> 3 <i class="icon-line-moon"></i></span></div>
                         </div>
                         <p class="mb-0 lh-base">{{(loading && (destinationTitle =='Makkah' || destinationTitle
                           =='Madinah')) ? 'Searching for hotels...' :
@@ -347,7 +347,7 @@
 
                       <div id="FirstDestHotelRoomsList">
                         <div *ngFor="let hotel of package.details.firstDestinations; let i = index">
-                          <div class="row mt-3" *ngIf="!loadinghotel && destinationTitle =='Makkah'">
+                          <div class="row mt-3 gy-3" *ngIf="!loadinghotel && destinationTitle =='Makkah'">
                             <div class="col-xl-12">
                               <label for="" class="w-100">
                                 <div class="package-hotel-card">
@@ -589,7 +589,7 @@
 
                       <div id="SecondDestnHoteltRoomsList">
                         <div *ngFor="let hotel of package.details.secondDestinations;let k = index" >
-                          <div class="row mt-3" *ngIf="!loadinghotel && destinationTitle =='Madinah'">
+                          <div class="row mt-3 gy-3" *ngIf="!loadinghotel && destinationTitle =='Madinah'">
                             <div class="col-xl-12">
                               <label for="" class="w-100">
                                 <div class="package-hotel-card">
@@ -1160,7 +1160,6 @@
                   <div class="package-service-section mb-0">
                     <h2 class="sec-title">Transfers</h2>
                     <p class="mb-3 lh-base">Top ways to experience nearby attractions.</p>
-                    
                     <!---- Transfers Skeletons ---->
                     <div class="flight-transfer-skeletons package-service-section package-list-offers-section" *ngIf="loadingsection">
                       <div class="row gy-3">
@@ -1324,6 +1323,69 @@
                   <div class="package-service-section mb-0">
                     <h2 class="sec-title">Activities</h2>
                     <p class="mb-3 lh-base">Immerse yourself in activities that will amplify the richness of your experiences.</p>
+
+                    <!---- Activities Skeletons ---->
+                    <div class="activities-skeletons-list mt-4" *ngIf="loadingsection">
+                      <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
+                        <div class="skeleton-box box">
+                          <div class="container">
+                            <div class="row">
+                              <div class="activity-gallery-box col-xl-4 ps-0">
+                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
+                              </div>
+                              <div class="col-xl-8 py-3">
+                                <div class="activity-content">
+                                  <div class="activity-content-bottom">
+                                    <div class="skeleton-service-flex d-flex flex-column justify-content-start lh-base mb-3">
+                                      <div class="activity-name me-4">
+                                        <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                      </div>
+                                    </div>
+                                    <div class="activity-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="activity-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="activity-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="activity-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="activity-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="activity-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="activity-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex flex-column">
+                                      <div class="activity-info-card w-100">
+                                        <p class="mb-3 activity-description skeleton-loader skeletonprogress"></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <!---- Activities ---->
                     <div *ngIf="!loadingsection">
                       <div class="row gy-3">
                         <div class="col-lg-12" *ngFor="let activity of package.details.activities;let i=index">
@@ -1385,6 +1447,7 @@
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </section>
 
@@ -1394,6 +1457,68 @@
                   <div class="package-service-section mb-0">
                     <h2 class="sec-title">Visits</h2>
                     <p class="mb-3 lh-base">Delve into your experiences, savoring every moment.</p>
+                    <!---- Visits Skeletons ---->
+                    <div class="visits-skeletons-list mt-4" *ngIf="loadingsection">
+                      <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
+                        <div class="skeleton-box box">
+                          <div class="container">
+                            <div class="row">
+                              <div class="visit-gallery-box col-xl-4 ps-0">
+                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
+                              </div>
+                              <div class="col-xl-8 py-3">
+                                <div class="visit-content">
+                                  <div class="visit-content-bottom">
+                                    <div class="skeleton-service-flex d-flex flex-column justify-content-start lh-base mb-3">
+                                      <div class="visit-name me-4">
+                                        <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                      </div>
+                                    </div>
+                                    <div class="visit-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex flex-column">
+                                      <div class="visit-info-card w-100">
+                                        <p class="mb-3 visit-description skeleton-loader skeletonprogress"></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+  
+                    <!---- Visits ---->
                     <div *ngIf="!loadingsection">
                       <div class="row gy-3">
                         <div class="col-lg-12" *ngFor="let visit of package.details.visits;let i=index">
@@ -1472,6 +1597,68 @@
                   <div class="package-service-section mb-0">
                     <h2 class="sec-title">Plan</h2>
                     <p class="mb-3 lh-base">Embark on an unconventional plan to fully relish the experience.</p>
+                    <!---- Plan Skeletons ---->
+                    <div class="visits-skeletons-list mt-4" *ngIf="loadingsection">
+                      <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
+                        <div class="skeleton-box box">
+                          <div class="container">
+                            <div class="row">
+                              <div class="visit-gallery-box col-xl-4 ps-0">
+                                <div class="skeleton-service-img skeleton-loader skeletonprogress"></div>
+                              </div>
+                              <div class="col-xl-8 py-3">
+                                <div class="visit-content">
+                                  <div class="visit-content-bottom">
+                                    <div class="skeleton-service-flex d-flex flex-column justify-content-start lh-base mb-3">
+                                      <div class="visit-name me-4">
+                                        <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                      </div>
+                                    </div>
+                                    <div class="visit-details d-flex flex-wrap align-items-center column-gap-4 row-gap-2">
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex align-items-center gap-1">
+                                        <div class="visit-rate me-2">
+                                          <div class="skeleton-service skeleton-loader skeletonprogress"></div>
+                                        </div>
+                                        <div class="visit-review d-flex flex-column justify-content-start lh-base">
+                                          <span class="mb-1 skeleton-service skeleton-loader skeletonprogress"></span>
+                                          <p class="mb-0 skeleton-service skeleton-loader skeletonprogress"></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex flex-column">
+                                      <div class="visit-info-card w-100">
+                                        <p class="mb-3 visit-description skeleton-loader skeletonprogress"></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    
+                    <!---- Plan ---->
                     <div *ngIf="!loadingsection">
                       <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
