@@ -1,0 +1,600 @@
+<section class="page-section-title page-title centred include-header include-topbar"
+  style="background-image: url(assets/page-title-2.jpg);">
+</section>
+
+<section class="bg-pattern-2 pt-5 pb-5">
+    <div class="content-wrap pt-0">
+      <div id="" class="content">
+        <div class="content-wrap pt-0 pb-0">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-12 pt-3 justify-content-start">
+                    <div class="heading-box">
+                      <h2 class="heading-title color-1 mb-0">Select a ground service</h2>
+                    </div>
+                    <p>You benefit from the best rate.</p>
+                </div>
+                <div class="col-xl-9">
+                    <div class="postcontent">
+                        <div class="ground-services-list" id="ground-services-list">
+                            <input type="checkbox" name="groundServiceBox1" id="groundServiceBox1" class="ground-service-check-box"
+                            value="groundServiceBox1" />
+                            <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox1')">
+                            <div class="row m-0">
+                                <div class="col-xl-3 ground-service">
+                                <div class="image-box">
+                                    <img src="assets/ground-services/1.jpg" class="d-block w-100" alt="El Ksar Hotel ground-services" />
+                                </div>
+                                </div>
+                                <div class="col-xl-9">
+                                <div class="ground-service-details">
+                                    <div class="row">
+                                    <div class="col-xl-10 mb-2">
+                                        <div class="d-flex align-items-start justify-content-between">
+                                        <div>
+                                            <h3>Al-Baqi</h3>
+                                            <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                                            data-bs-target="#ground-service-details" aria-expanded="false"
+                                            aria-controls="ground-service-details">More details</a>
+                                        </div>
+                                        <div class="text-end mb-3">
+                                            <div class="ground-service-price">
+                                            <span>$</span>80
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div id="ground-service-details" class="collapse">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            <p class="mb-2">
+                                                Suspendisse potenti. Etiam accumsan dui velit, sit
+                                                amet porta odio ultricies at In et velit porta,
+                                                pulvinar nisl et, congue sem.
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <hr />
+                                        <p class="ground-service-text mb-2">
+                                        Please choose which days to have the ground-service
+                                        </p>
+                                        <ul class="mb-2">
+                                        <li>
+                                            <label for="ground-service-date"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date2"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date2" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date3"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date3" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                                        <div class="link float-end">
+                                            <button (click)="checkGroundService('groundServiceBox1')"
+                                            class="color-btn ground-service-btn-select">
+                                            {{selectedGroundServices.includes('groundServiceBox1') ? 'Remove' : 'Add'}}
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                
+                            <input type="checkbox" name="groundServiceBox2" id="groundServiceBox2" class="ground-service-check-box"
+                            value="groundServiceBox2" />
+                            <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox2')">
+                            <div class="row m-0">
+                                <div class="col-xl-3 ground-service">
+                                <div class="image-box">
+                                    <img src="assets/ground-services/2.jpg" class="d-block w-100" alt="El Ksar Hotel ground-services" />
+                                </div>
+                                </div>
+                                <div class="col-xl-9">
+                                <div class="ground-service-details">
+                                    <div class="row">
+                                    <div class="col-xl-10 mb-2">
+                                        <div class="d-flex align-items-start justify-content-between">
+                                        <div>
+                                            <h3>Mount Uhud</h3>
+                                            <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                                            data-bs-target="#ground-service-details1" aria-expanded="false"
+                                            aria-controls="ground-service-details1">More details</a>
+                                        </div>
+                                        <div class="text-end mb-3">
+                                            <div class="ground-service-price">
+                                            <span>$</span>80
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div id="ground-service-details1" class="collapse">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            <p class="mb-2">
+                                                Suspendisse potenti. Etiam accumsan dui velit, sit
+                                                amet porta odio ultricies at In et velit porta,
+                                                pulvinar nisl et, congue sem.
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <hr />
+                                        <p class="ground-service-text mb-2">
+                                        Please choose which days to have the ground-service
+                                        </p>
+                                        <ul class="mb-2">
+                                        <li>
+                                            <label for="ground-service-date4"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date4" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date5"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date5" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date6"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date6" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                                        <div class="link float-end">
+                                            <button (click)="checkGroundService('groundServiceBox2')"
+                                            class="color-btn ground-service-btn-select">
+                                            {{selectedGroundServices.includes('groundServiceBox2') ? 'Remove' : 'Add'}}
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                
+                            <input type="checkbox" name="groundServiceBox3" id="groundServiceBox3" class="ground-service-check-box"
+                            value="groundServiceBox3" />
+                            <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox3')">
+                            <div class="row m-0">
+                                <div class="col-xl-3 ground-service">
+                                <div class="image-box">
+                                    <img src="assets/ground-services/3.jpg" class="d-block w-100" alt="El Ksar Hotel ground-services" />
+                                </div>
+                                </div>
+                                <div class="col-xl-9">
+                                <div class="ground-service-details">
+                                    <div class="row">
+                                    <div class="col-xl-10 mb-2">
+                                        <div class="d-flex align-items-start justify-content-between">
+                                        <div>
+                                            <h3>The Mosque of the Two Qiblahs</h3>
+                                            <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                                            data-bs-target="#ground-service-details2" aria-expanded="false"
+                                            aria-controls="ground-service-details2">More details</a>
+                                        </div>
+                                        <div class="text-end mb-3">
+                                            <div class="ground-service-price">
+                                            <span>$</span>80
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div id="ground-service-details2" class="collapse">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            <p class="mb-2">
+                                                Suspendisse potenti. Etiam accumsan dui velit, sit
+                                                amet porta odio ultricies at In et velit porta,
+                                                pulvinar nisl et, congue sem.
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <hr />
+                                        <p class="ground-service-text mb-2">
+                                        Please choose which days to have the ground-service
+                                        </p>
+                                        <ul class="mb-2">
+                                        <li>
+                                            <label for="ground-service-date7"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date7" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date8"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date8" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date9"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date9" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                                        <div class="link float-end">
+                                            <button (click)="checkGroundService('groundServiceBox3')"
+                                            class="color-btn ground-service-btn-select">
+                                            {{selectedGroundServices.includes('groundServiceBox3') ? 'Remove' : 'Add'}}
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                
+                            <input type="checkbox" name="groundServiceBox4" id="groundServiceBox4" class="ground-service-check-box"
+                            value="groundServiceBox4" />
+                            <div class="box mb-4" [class.active]="selectedGroundServices.includes('groundServiceBox4')">
+                            <div class="row m-0">
+                                <div class="col-xl-3 ground-service">
+                                <div class="image-box">
+                                    <img src="assets/ground-services/4.jpg" class="d-block w-100" alt="El Ksar Hotel ground-services" />
+                                </div>
+                                </div>
+                                <div class="col-xl-9">
+                                <div class="ground-service-details">
+                                    <div class="row">
+                                    <div class="col-xl-10 mb-2">
+                                        <div class="d-flex align-items-start justify-content-between">
+                                        <div>
+                                            <h3>Quba Mosque</h3>
+                                            <a class="ground-service-details-btn" data-bs-toggle="collapse"
+                                            data-bs-target="#ground-service-details3" aria-expanded="false"
+                                            aria-controls="ground-service-details3">More details</a>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="ground-service-price">
+                                            <span>$</span>80
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div id="ground-service-details3" class="collapse">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            <p class="mb-2">
+                                                Suspendisse potenti. Etiam accumsan dui velit, sit
+                                                amet porta odio ultricies at In et velit porta,
+                                                pulvinar nisl et, congue sem.
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                
+                                        <hr />
+                                        <p class="ground-service-text mb-2">
+                                        Please choose which days to have the ground-service
+                                        </p>
+                                        <ul class="mb-2">
+                                        <li>
+                                            <label for="ground-service-date10"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date10" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date11"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date11" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <label for="ground-service-date12"
+                                            class="ground-service-date d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <input type="checkbox" id="ground-service-date12" /> 08/15/2022 - 08/16/2022
+                                            </div>
+                                            </label>
+                                            <div
+                                            class="d-flex object-quantity ground-service-quantity justify-content-end align-items-center flex-column">
+                                            <div class="d-flex align-items-center mb-1 ms-auto">
+                                                <div><span>$</span>10 / adult</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">1</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-auto">
+                                                <div><span>$</span>5 / child</div>
+                                                <div class="ms-2">
+                                                <div class="minus">-</div>
+                                                <div class="quantity">0</div>
+                                                <div class="plus">+</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="d-flex align-items-end h-100 flex-column justify-content-end">
+                                        <div class="link float-end">
+                                            <button (click)="checkGroundService('groundServiceBox4')"
+                                            class="color-btn ground-service-btn-select">
+                                            {{selectedGroundServices.includes('groundServiceBox4') ? 'Remove' : 'Add'}}
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <app-package-bookings-sidebar></app-package-bookings-sidebar>
+                    <!-- <app-package-bookings-sidebar [eventgoToNextStep]="goToNextStep"></app-package-bookings-sidebar> -->
+                </div>
+                <div class="col-xl-3">
+                    <!-- <app-package-bookings-mob [eventgoToNextStep]="goToNextStep"></app-package-bookings-mob> -->
+                    <app-package-bookings-mob></app-package-bookings-mob>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>            

@@ -26,9 +26,9 @@
     --omra-black-rgb: 30, 24, 82;
     --omra-extra: #e1f0f0;
     --omra-extra-rgb: 225, 240, 240;
-    --bdr-radius-3: 3px;
-    --bdr-radius-5: 5px;
-    --bdr-radius-10: 10px;
+    --bdr-radius-3: 0px;
+    --bdr-radius-5: 0px;
+    --bdr-radius-10: 0px;
     --fs-10: 10px;
     --fs-11: 11px;
     --fs-12: 12px;
@@ -299,8 +299,8 @@ h6 {
     border-color: var(--omra-light-gray) !important;
 }
 
-.carousel-control-next { border-radius: 0 3px 3px 0; }
-.carousel-control-prev { border-radius: 3px 0 0 3px; }
+/* .carousel-control-next { border-radius: 0 3px 3px 0; }
+.carousel-control-prev { border-radius: 3px 0 0 3px; } */
 
 /* ----------------------------------------------------------------
 	Tooltips
@@ -2565,7 +2565,16 @@ label.category-item::before {
     font-size: var(--fs-12) !important;
 }
 
-.package-hotels .color-btn.change-destination-btn i {
+.next-destination-btn {
+    background: var(--omra-white);
+    border-color: var(--omra-white);
+    color: var(--omra-primary);
+    padding: 10px 15px !important;
+    font-size: var(--fs-12) !important;
+}
+
+.package-hotels .color-btn.change-destination-btn i,
+.package-hotels .color-btn.next-destination-btn i {
     background: transparent;
     color: var(--omra-primary);
     padding: 0;
@@ -2575,13 +2584,15 @@ label.category-item::before {
 }
 
 .change-flight-btn:hover, 
-.change-destination-btn:hover {
+.change-destination-btn:hover,
+.next-destination-btn:hover {
     background: var(--omra-second);
     border-color: var(--omra-second);
     color: var(--omra-white);
 }
 
-.package-hotels .color-btn.change-destination-btn:hover i {
+.package-hotels .color-btn.change-destination-btn:hover i,
+.package-hotels .color-btn.next-destination-btn:hover i {
     color: var(--omra-white);
 }
 
@@ -3088,7 +3099,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     position: relative;
     padding: 15px 20px;
     background: var(--omra-second);
-    border-radius: 5px 5px 0 0;
+    /* border-radius: 5px 5px 0 0; */
 }
 
 .search-sidebar-details .title {
@@ -3173,12 +3184,6 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     margin-top: 15px;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.package-sidebar .search-sidebar-list {
-    max-height: 230px;
-    min-height: 190px;
-    height: fit-content;
 }
 
 .search-sidebar-list .details-content .card.card-body {
@@ -3305,14 +3310,15 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 
 .search-sidebar-footer .color-btn {
     padding: 20px 30px;
-    border-radius: 0 0 5px 5px;
+    /* border-radius: 0 0 5px 5px; */
 }
 
 /************************* Package Sidebar *************************/
 
 .package-sidebar .search-sidebar-list {
-    max-height: 300px;
+    max-height: 270px;
     min-height: 150px;
+    height: fit-content;
 }
 
 .package-sidebar .destination-title {
@@ -3322,10 +3328,37 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     border-radius: var(--bdr-radius-5);
 }
 
+.package-sidebar .search-details-block-content .duration {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    width: fit-content;
+    line-height: normal;
+    padding: 5px 10px;
+    border-radius: var(--bdr-radius-5);
+}
+
 .package-sidebar .room-label {
     font-size: var(--fs-14);
     color: var(--omra-second);
     font-weight: 400 !important;
+}
+
+.package-sidebar .checking-time .hotel-checkin p,
+.package-sidebar .checking-time .hotel-checkout p {
+    font-size: var(--fs-14);
+}
+
+.package-sidebar .checking-time .hotel-checkin i,
+.package-sidebar .checking-time .hotel-checkout i {
+    background: var(--omra-extra);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--bdr-radius-5);
+    justify-content: center;
+    font-size: var(--fs-13);
+    color: var(--omra-second);
 }
 
 .package-sidebar .booked-service-price {
@@ -4560,15 +4593,16 @@ app-package-details .page-title {
 
 .package-item .best-rate-notice {
     position: absolute;
-    background: var(--omra-second);
-    padding: 10px 12px 0;
+    background: var(--omra-primary);
+    padding: 10px 7px 0;
     text-align: center;
     display: block;
-    bottom: 4px;
-    right: 0px;
+    top: 10px;
+    right: 10px;
     font-size: var(--fs-22);
     font-weight: 600;
     color: var(--omra-white);
+    border-bottom: 4px solid var(--omra-second);
     z-index: 4;
 }
 
@@ -4746,6 +4780,33 @@ app-package-bookings-sidebar,
 .package-description {
     background: var(--omra-white);
     padding: 20px 5px;
+}
+
+.package-details-duration i {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--bdr-radius-5);
+}
+
+.package-details-duration .destination {
+    color: var(--omra-gray);
+    font-size: var(--fs-15);
+    text-align: left;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.package-details-duration .duration {
+    font-size: var(--fs-16);
+    font-weight: 400;
+    color: var(--omra-primary);
+    line-height: normal;
+    text-align: left;
 }
 
 .package-header .package-header-content i {
@@ -4963,6 +5024,10 @@ app-package-bookings-sidebar,
     padding: 5px 15px;
     position: relative;
     border-radius: var(--bdr-radius-3);
+    position: sticky;
+    top: 6.4rem;
+    z-index: 90;
+    border: 0;
 }
 
 .package-hotels .destination-label i {
@@ -4974,6 +5039,25 @@ app-package-bookings-sidebar,
     justify-content: center;
     font-size: var(--fs-14);
     border-radius: var(--bdr-radius-5);
+}
+
+.package-hotels .destination-label .duration {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 3px;
+    background: transparent;
+    color: var(--omra-extra);
+    font-size: var(--fs-13);
+}
+
+.package-hotels .destination-label .duration i {
+    background: transparent;
+    padding: 0;
+    color: var(--omra-extra);
+    display: flex;
+    width: fit-content;
+    line-height: normal;
 }
 
 .package-hotels .destination-label h2 {
@@ -5557,9 +5641,28 @@ ngx-stars .stars-line {
     color: var(--omra-white);
     width: fit-content;
     font-weight: 400 !important;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     padding: 7px 15px;
     border-radius: var(--bdr-radius-5);
+}
+
+.package-hotels .package-rooms-summary .duration {
+    background: var(--omra-extra);
+    color: var(--omra-second);
+    padding: 0px 10px;
+    font-size: var(--fs-16);
+    height: 33px;
+    line-height: normal;
+}
+
+.package-hotels .package-rooms-summary .hotel-checkin p,
+.package-hotels .package-rooms-summary .hotel-checkout p {
+    font-size: var(--fs-15);
+}
+
+.package-hotels .package-rooms-summary .checkin-label i,
+.package-hotels .package-rooms-summary .checkout-label i {
+    color: var(--omra-second);
 }
 
 .package-hotels .package-hotel-rooms-card .selected-room-label .selected-room-price {
@@ -6328,7 +6431,7 @@ app-package-calendar {
     position: relative;
     overflow: hidden;
     margin: 0 0 6px;
-    padding: 15px 15px 15px 50px;
+    padding: 15px 15px 15px 55px !important;
     width: 300px;
     border-radius: 0 !important;
     background-position: 15px center;
@@ -6338,7 +6441,7 @@ app-package-calendar {
 }
 
 .toast-info {
-    background-color: var(--omra-second) !important;
+    background-color: var(--omra-primary) !important;
     background-image: url(assets/warning.svg) !important;
 }
 
@@ -6350,9 +6453,9 @@ app-package-calendar {
 }
 
 .toast-progress {
-    background-color: var(--omra-primary) !important;
-    opacity: 0.6 !important;
-    height: 2px !important;
+    background-color: var(--omra-second) !important;
+    opacity: 0.9 !important;
+    height: 4px !important;
 }
 
 /* ----------------------------------------------------------------

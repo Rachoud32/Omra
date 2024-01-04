@@ -17,6 +17,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PackageCalenderHeaderComponent } from './package-calender-header/package-calender-header.component';
 import { PackageBookingsMobComponent } from './package-bookings-mob/package-bookings-mob.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PackageExtrasComponent } from './package-extras/package-extras.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PackageSearchBarComponent,
     PackageCalendarComponent,
     PackageCalenderHeaderComponent,
-    PackageBookingsMobComponent
+    PackageBookingsMobComponent,
+    PackageExtrasComponent
   ],
   imports: [
     FormsModule,
@@ -42,6 +45,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
+    }),
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      positionClass: 'toast-top-right',
+      progressBar: true,
+      preventDuplicates: true,
+      enableHtml: true
     }),
 
   ],

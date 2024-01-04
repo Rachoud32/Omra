@@ -17,6 +17,7 @@
               </button>
             </div> -->
 
+            <!---- Package Header ---->
             <div class="col-xl-12 pt-5">
               <div class="package-header mb-4">
                 <div class="package-header-content">
@@ -66,6 +67,7 @@
               </div>
             </div>
 
+            <!---- Package Gallery ---->
             <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
               <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
                 <div class="row" *ngIf="image == package.packagePictures[0]">
@@ -95,13 +97,32 @@
               </a>
             </lightgallery>
 
+            <!---- Package Description ---->
             <div class="col-xl-12">
               <div class="package-description mb-4">
                 <div class="package-header-content">
                   <div class="container">
-                    <div class="package-details-description">
-                      <h2 class="sec-title">About this package</h2>
-                      <p>{{package.details.description}}</p>
+                    <div class="row gy-3 gx-5">
+                      <div class="col-xl-10 package-details-description">
+                        <h2 class="sec-title">About this package</h2>
+                        <p>{{package.details.description}}</p>
+                      </div>
+                      <div class="col-xl-2 package-details-duration">
+                        <div class="d-flex align-items-center justify-content-start lh-base column-gap-3 row-gap-1 mb-3">
+                          <i class="icon-line-moon"></i>
+                          <div class="d-flex flex-column align-items-start lh-base column-gap-2 row-gap-1">
+                            <div class="duration">3 Nights</div>
+                            <div class="destination">in Makkah</div>  
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-start lh-base column-gap-3 row-gap-1">
+                          <i class="icon-line-moon"></i>
+                          <div class="d-flex flex-column align-items-start lh-base column-gap-2 row-gap-1">
+                            <div class="duration">2 Nights</div>
+                            <div class="destination">in Madinah</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,6 +130,7 @@
             </div>
 
             <div class="col-xl-9 package-details-box">
+              <!---- Package Calendar ---->
               <div class="calendar-card mb-4">
                 <h2 class="sec-title">Dates & Prices</h2>
                 <p class="lh-base">Select the date to have the best suitable offer for you.</p>
@@ -259,14 +281,18 @@
                         <div class="d-flex align-items-center gap-2">
                           <i class="icon-line-map-pin" *ngIf="destinationTitle =='Makkah' || destinationTitle =='Madinah'"></i>
                           <i class="icon-line-paper" *ngIf="destinationTitle =='Summary'"></i>
-                          <h2>{{destinationTitle }}</h2>
+                          <div class="d-flex align-items-center gap-2"><h2>{{destinationTitle}}</h2> | <span class="duration">3 <i class="icon-line-moon"></i></span></div>
                         </div>
                         <p class="mb-0 lh-base">{{(loading && (destinationTitle =='Makkah' || destinationTitle
                           =='Madinah')) ? 'Searching for hotels...' :
                           loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change'}}
                         </p>
-                        <button class="color-btn change-destination-btn d-flex align-items-center gap-2" *ngIf="(!loading && destinationTitle =='Summary') 
-                        || (!loading && destinationTitle =='Madinah')" (click)="clearChange()"><i class="icon-refresh2"></i> Change</button>
+                        <div class="d-flex align-items-center gap-2">
+                          <button class="color-btn change-destination-btn d-flex align-items-center gap-2" *ngIf="(!loading && destinationTitle =='Summary') 
+                          || (!loading && destinationTitle =='Madinah')" (click)="clearChange()"><i class="icon-line-repeat"></i> Change</button>
+                          <button class="color-btn next-destination-btn d-flex align-items-center gap-2" (click)="goToNextDestination()" *ngIf="destinationTitle !='Summary'">
+                            Next <i class="icon-line-chevron-right"></i></button>
+                        </div>
                       </div>
                       <ngb-progressbar *ngIf="counterValue!=101 && counterValue!=0" [value]="counterValue" />
 
@@ -689,7 +715,7 @@
                                     <div class="package-hotel-room-item"
                                       *ngFor="let room of roomsSelectionSecondDest.rooms;let m=index" [attr.id]="'accordionSecondDestRoomsList' + k" id="accordionSecondDestRoomsList">
                                       <div class="container">
-                                        <div class="row room-type-container align-items-center border">
+                                        <div class="row room-type-container align-items-center">
                                           <button class="color-btn expand-btn d-flex align-items-center justify-content-between gap-2 collapsed lh-base"
                                             type="button"
                                             data-bs-toggle="collapse"
@@ -809,7 +835,26 @@
                         <div class="col-xl-12">
                           <div class="package-hotel-card">
                             <div class="container py-4 px-4">
-                              <h4 class="room-choice">Makkah</h4>
+                              <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                <div class="d-flex align-items-center mb-3">
+                                  <h4 class="room-choice">Madinah</h4>
+                                  <div class="duration d-flex align-items-center gap-1">3 <i class="icon-line-moon"></i></div>
+                                </div>
+                                <div class="d-flex align-items-center row-gap-1 column-gap-3 mb-3">
+                                  <div class="hotel-checkin">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
+                                      <p class="mb-0">01/12/2023 - 09:00</p>
+                                    </div>
+                                  </div>
+                                  <div class="hotel-checkout">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
+                                      <p class="mb-0">10/12/2023 - 16:00</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                               <div class="row mb-4">
                                 <div [class]="roomsSelectionFirstDest.rooms.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionFirstDest.rooms;let i = index">
                                   <div class="box selected-rooms-card">
@@ -848,7 +893,26 @@
                                   </div>
                                 </div>
                               </div>
-                              <h4 class="room-choice">Madinah</h4>
+                              <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                <div class="d-flex align-items-center mb-3">
+                                  <h4 class="room-choice">Madinah</h4>
+                                  <div class="duration d-flex align-items-center gap-1">3 <i class="icon-line-moon"></i></div>
+                                </div>
+                                <div class="d-flex align-items-center row-gap-1 column-gap-3 mb-3">
+                                  <div class="hotel-checkin">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <p class="checkin-label m-0"><i class="icon-line-arrow-right"></i></p>
+                                      <p class="mb-0">01/12/2023 - 09:00</p>
+                                    </div>
+                                  </div>
+                                  <div class="hotel-checkout">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <p class="checkin-label m-0"><i class="icon-line-arrow-left"></i></p>
+                                      <p class="mb-0">10/12/2023 - 16:00</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                               <div class="row">
                                 <div [class]="roomsSelectionSecondDest.rooms.length < 2 ? 'col-xl-12 col-lg-12' : 'col-xl-6 col-lg-6'" *ngFor="let room of roomsSelectionSecondDest.rooms;let i = index">
                                   <div class="box selected-rooms-card">
@@ -1089,8 +1153,6 @@
                     </div>
                   </div>
                 </section>
-
-                
 
                 <!---- Transfers nav menu content ---->   
                 <section id="transfersection" class="package-transfers tab-pane fade" role="tabpanel"

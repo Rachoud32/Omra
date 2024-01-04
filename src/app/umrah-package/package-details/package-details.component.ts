@@ -78,6 +78,8 @@ export class PackageDetailsComponent implements OnInit {
   activeSection: any;
   selectedOffer: string = '';
   selectedHotelRoomsList: string = ''
+  firstverify = false
+  secondverify = false
 
   loading = false
   loadingsection = false
@@ -164,16 +166,14 @@ export class PackageDetailsComponent implements OnInit {
         this.counterValue++;
       });
   }
-  goToNextStep = () => {
-    let firstverify = true
+  goToNextDestination() {
     if (this.destinationTitle == "Madinah") {
-      let secondverify = true
       this.roomsSelectionSecondDest.rooms.map((el: any) => {
         if (el.selectedType == null) {
-          secondverify = false
+          this.secondverify = false
         }
       })
-      if (secondverify) {
+      if (this.secondverify) {
         this.destinationTitle = "Summary"
         this.loadinghotel = true
         this.startCounter(this.durationInSeconds / 2)
@@ -188,10 +188,10 @@ export class PackageDetailsComponent implements OnInit {
     if (this.destinationTitle == "Makkah") {
       this.roomsSelectionFirstDest.rooms.map((el: any) => {
         if (el.selectedType == null) {
-          firstverify = false
+          this.firstverify = false
         }
       })
-      if (firstverify) {
+      if (this.firstverify) {
         this.destinationTitle = "Madinah"
         this.loadinghotel = true
         this.startCounter(this.durationInSeconds / 2)
@@ -202,6 +202,18 @@ export class PackageDetailsComponent implements OnInit {
       } else {
         this.toastr.info("Please select the type of every room of your first destination before proceeding.")
       }
+    }
+  }
+
+  goToNextStep = () => {
+    if (this.firstverify && this.secondverify && this.destinationTitle == "Summary") {
+      window.location.href = 'umrah-package/result/package/:id/extras';
+    }
+    if (!this.firstverify) {
+      this.toastr.info("Please select the type of every room of your first destination before proceeding.")
+    }
+    if (!this.secondverify && this.firstverify) {
+      this.toastr.info("Please select the type of every room of your Second destination before proceeding.")
     }
   }
 
@@ -229,12 +241,14 @@ export class PackageDetailsComponent implements OnInit {
     console.log({ data, hotel, room });
 
     if (this.destinationTitle == 'Makkah') {
+      this.firstverify = true
       let roomData = this.roomsSelectionFirstDest.rooms.find((el: any) => room == el.room)
       roomData.selectedType = data
       this.roomsSelectionFirstDest.hotel = hotel
       console.log(this.roomsSelectionFirstDest);
     }
     if (this.destinationTitle == 'Madinah') {
+      this.secondverify = true
       let roomData = this.roomsSelectionSecondDest.rooms.find((el: any) => room == el.room)
       roomData.selectedType = data
       this.roomsSelectionSecondDest.hotel = hotel

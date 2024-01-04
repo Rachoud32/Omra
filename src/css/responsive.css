@@ -549,6 +549,10 @@
 }
 
 @media (max-width: 767.98px) {
+    .package-hotels .destination-label {
+        padding: 5px 15px;
+        top: 3.9rem;
+    }
 
     .package-inside-menu .hotel-flash {
         bottom: 4px;
@@ -575,7 +579,7 @@
 
     .flight-direction-list-title,
     .package-hotels .destination-label {
-        padding: 15px 20px;
+        padding: 15px;
     }
 
     .flight-direction-list-title p,
@@ -647,6 +651,10 @@
 }
 
 @media (max-width: 575.98px) {
+
+    .package-hotels .destination-label p {
+        display: none;
+    }
 
     .package-hotels .booking-alert {
         gap: 1rem !important;
