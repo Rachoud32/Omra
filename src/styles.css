@@ -3212,7 +3212,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .search-sidebar-list .booked-service-details i {
-    color: var(--omra-second);
+    color: var(--omra-primary);
     font-size: var(--fs-14);
     width: 20px;
     height: 20px;
@@ -3382,7 +3382,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     width: 20px;
     height: 25px;
     padding: 6px 0 6px 0;
-    fill: var(--omra-second);
+    fill: var(--omra-primary);
 }
 
 .package-sidebar .search-sidebar-list .details-content p {
