@@ -66,7 +66,33 @@ export class SearchComponent implements OnInit {
     { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
     { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
     { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
-    { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
+    { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' }
+  ];
+  countries = [
+    { country: 'Algeria', region: 'Africa'},
+    { country: 'Morocco', region: 'Africa'},
+    { country: 'Bahrain', region: 'Asia' },
+    { country: 'Kuwait', region: 'Asia' },
+    { country: 'France', region: 'Europe'},
+    { country: 'Italy', region: 'Europe'},
+    { country: 'UK', region: 'Europe' },
+    { country: 'Australia', region: 'Oceania' }
+  ];
+  periods = [
+    { month: 'Mouled'},
+    { month: 'Ramadan'},
+    { month: 'Chawel'},
+    { month: 'Winter holidays'},
+    { month: 'Spring holidays'},
+    { month: 'Other'},
+  ];
+  durations = [
+    { duration: '10'},
+    { duration: '15'},
+    { duration: '20'},
+    { duration: '25'},
+    { duration: '30'},
+    { duration: '35'},
   ];
 
   constructor(private calendar: NgbCalendar,
@@ -79,7 +105,7 @@ export class SearchComponent implements OnInit {
     // this.toDate = calendar.getToday();
     // this.todayDate = calendar.getToday();
     this.today = calendar.getToday()
-    this.config.notFoundText = 'Hotel not found';
+    this.config.notFoundText = 'Not found';
   }
 
   ngOnInit(): void {
@@ -94,9 +120,9 @@ export class SearchComponent implements OnInit {
       })]),
     })
     this.searchFormPackage = new FormGroup({
-      departureCity: new FormControl('', [Validators.required]),
-      period: new FormControl('', [Validators.required]),
-      duration: new FormControl('', [Validators.required]),
+      departureCity: new FormControl(null, [Validators.required]),
+      period: new FormControl(null, [Validators.required]),
+      duration: new FormControl(null, [Validators.required]),
       flight: new FormControl('', [Validators.required]),
       passengers: new FormArray([new FormGroup({
         adults: new FormControl(1),
@@ -108,9 +134,9 @@ export class SearchComponent implements OnInit {
       flightmode: new FormControl(''),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
-      residenceCountry: new FormControl('', [Validators.required]),
-      departureCountry: new FormControl('', [Validators.required]),
-      Nationality: new FormControl('', [Validators.required]),
+      residenceCountry: new FormControl(null, [Validators.required]),
+      departureCountry: new FormControl(null, [Validators.required]),
+      Nationality: new FormControl(null, [Validators.required]),
       path: new FormControl('', [Validators.required]),
       destinations: new FormArray([
         new FormGroup({
@@ -404,7 +430,6 @@ export class SearchComponent implements OnInit {
       this.numAdultsCustom -= 1
     }
   }
-
 
   toggleDropdown(value: any, index: any) {
     if (value == '1') {

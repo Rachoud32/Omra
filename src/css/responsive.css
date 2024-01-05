@@ -66,11 +66,41 @@
 }
 
 @media (max-width: 1199.98px) {
+    .search-results p {
+        width: unset;
+    }
+
+    .search-result-counter {
+        padding-top: .25rem;
+        padding-bottom: .75rem;
+    }
+
+    .gallery-item .package-other-pics {
+        display: none !important;
+    }
+
+    .package-header-content .package-details-duration {
+        flex-direction: row !important;
+    }
+
+    .package-header-content .package-header-card {
+        align-items: flex-start !important;
+    }
     
+    .search-result-edit .search-results-list {
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+    }
+
     .package-hotels .package-hotel-card .hotel-details {
         margin-bottom: 1rem;
     }
     
+    .package-header .package-details-rating-text .package-review p {
+        line-height: 18px !important;
+        font-size: 12px;
+    }
+
     .package-visits .package-visit-card .visit-picture, .package-activities .package-activity-card .activity-picture,
     .package-visits .package-visit-card .visit-picture img, .package-activities .package-activity-card .activity-picture img {
         height: 300px;
@@ -83,7 +113,7 @@
     }
 
     .package-hotels .hotel-gallery-box {
-        height: 330px;
+        height: 210px;
     }
 
     .package-hotels .skeleton-box .skeleton-service-img {
@@ -188,6 +218,10 @@
 }
 
 @media (max-width: 991.98px) {
+
+    .package-header-content .header-hotel-details {
+        justify-content: space-between !important;
+    }
 
     .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn i {
         width: 100%;
@@ -384,10 +418,6 @@
         height: 280px;
     }
 
-    .rooms-container .box .price {
-        display: none !important;
-    }
-
     .rooms-container .box .price-content {
         padding: 0px 15px 15px 0px;
     }
@@ -549,6 +579,129 @@
 }
 
 @media (max-width: 767.98px) {
+    .package-header .package-header-content .package-details-place, 
+    .package-header .package-header-content .package-details-nights {
+        font-size: var(--fs-14);
+    }
+
+    .header-hotel-details .package-details-rating {
+        display: none !important;
+    }
+
+    .package-hotels .destination-label p,
+    .color-btn.next-destination-btn span,
+    .color-btn.change-destination-btn span {
+        display: none;
+    }
+
+    .package-calendar-header {
+        padding: 5px 20px !important;
+    }
+
+    .package-calendar-month {
+        font-size: var(--fs-16);
+    }
+
+    .cal-month-view .cal-days {
+        min-height: 300px;
+        max-height: 370px;
+        height: 365px;
+        overflow: hidden;
+        overflow-y: scroll;
+        border-bottom: 1px solid var(--omra-light-gray) !important;
+    }
+
+    .cal-month-view .cal-days .cal-cell-row {
+        flex-direction: column;
+    }
+
+    .cal-month-view .cal-cell-row.cal-header {
+        display: none;
+    }
+
+    .cal-month-view .cal-day-cell:not(:last-child) {
+        border: 0 !important;
+    }
+
+    .cal-month-view .cal-day-cell {
+        min-height: fit-content !important;
+        padding: 5px 5px;
+    }
+
+    .cal-month-view .cal-day-cell:not(.cal-has-events) {
+        display: none;
+    }
+
+    .cal-month-view .cal-cell-top {
+        min-height: 35px !important;
+        height: 35px;
+        max-height: 45px;
+        padding: 0 10px;
+    }
+
+    .cal-cell-row .cal-day-cell.cal-past,
+    .cal-cell-row .cal-day-cell.cal-out-month {
+        display: none;
+    }
+    
+    .cal-month-view .cal-day-cell ul li div.d-flex {
+        flex-direction: row!important;
+        align-items: center!important;
+        gap: 1rem!important;
+    }
+
+    .cal-month-view .cal-day-cell ul li .price-start {
+        font-size: var(--fs-12);
+        text-align: center;
+    }
+
+    .cal-month-view .cal-day-cell ul li p {
+        font-size: var(--fs-18);
+        margin-bottom: 0px !important;
+    }
+
+    .cal-day-number .day-name {
+        display: block;
+    }
+
+    .package-details-box .cal-month-view .cal-day-number {
+        font-size: var(--fs-14) !important;
+        margin-top: 10px !important;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .package-details-box .cal-month-view .cal-day-badge {
+        margin-left: 0;
+        padding: 4px 7px !important;
+        font-size: var(--fs-10) !important;
+    }
+
+    .cal-month-view .cal-day-cell ul li p {
+        font-size: var(--fs-15);
+    }
+
+    .package-item .best-rate-notice p {
+        font-size: 8px;
+    }
+
+    .package-item .best-rate-notice .price {
+        font-size: 22px;
+    }
+
+    .packages-list .package-item .package-picture {
+        height: 210px;
+    }
+
+    .package-item .package-label {
+        font-size: var(--fs-12);
+        padding: 0px 8px;
+    }
+
+    .package-item .package-label i {
+        display: none;
+    }
+
     .package-hotels .destination-label {
         padding: 5px 15px;
         top: 3.9rem;
@@ -652,7 +805,41 @@
 
 @media (max-width: 575.98px) {
 
-    .package-hotels .destination-label p {
+
+    .package-inside-menu .hotel-flash {
+        left: 20%;
+        width: 50%;
+        padding: 0px 15px;
+    }
+
+    .package-offer-card .package-offer-price {
+        padding: 5px;
+    }
+
+    .package-offer-card .package-offer-price span {
+        font-size: var(--fs-11);
+        line-height: 22px;
+    }
+
+    .package-offer-card .package-offer-price .price {
+        font-size: var(--fs-20);
+        line-height: 0;
+        text-align: center;
+    }
+
+    .package-offer-card .package-offer-header .departure-text {
+        max-width: 200px;
+        width: 200px;
+    }
+
+    .package-offer-card .package-offer-header .title {
+        white-space: unset;
+        max-width: 200px;
+        width: 200px;
+        text-overflow: unset;
+    }
+
+    .package-offer-card .package-offer-header .departure-label svg {
         display: none;
     }
 
@@ -686,10 +873,12 @@
     }
 
     .package-header-card .header-hotel-details {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: flex-start !important;
         align-items: flex-start !important;
-        gap: .5rem !important;
+        column-gap: 1rem !important;
+        row-gap: .5rem !important;
     }
 
     .package-header {
@@ -697,17 +886,31 @@
     }
 
     .package-header .package-header-content i {
-        font-size: var(--fs-14) !important;
-        width: 30px !important;
-        height: 30px !important;
+        font-size: var(--fs-16) !important;
     }
   
+    .package-header .package-header-content .package-details-title {
+        font-size: 21px;
+    }
+
+    .gallery-item .package-cover-picture img {
+        height: 220px;
+    }
+
     .package-details-box .package-inside-menu {
         width: 100% !important;
         padding: 0;
         position: sticky;
         margin: 0 -15px;
         left: 12px;
+    }
+
+    .sec-title {
+        font-size: var(--fs-18) !important;
+    }    
+
+    .package-details-duration .duration {
+        font-size: var(--fs-14);
     }
 
     .package-details-box .package-inside-menu li {
@@ -759,23 +962,6 @@
         border-right: 0 !important;
     }
 
-    .package-details-box .cal-month-view .cal-day-number {
-        font-size: var(--fs-14) !important;
-        margin-top: 10px !important;
-        margin-right: 5px;
-        margin-bottom: 10px;
-    }
-
-    .package-details-box .cal-month-view .cal-day-badge {
-        margin-left: 5px;
-        padding: 4px 7px !important;
-        font-size: var(--fs-10) !important;
-    }
-
-    .cal-month-view .cal-day-cell ul li p {
-        font-size: var(--fs-15);
-    }
-
     .search-bar .dropdown-guests .dropdown-menu {
         max-width: 100%;
         position: fixed;
@@ -803,7 +989,7 @@
         margin-bottom: 0px;
     }
 
-    .search-bar .dropdown-guests {
+    .customize-searchbar .dropdown-guests {
         min-width: 240px;
         max-width: 240px;
     }
@@ -813,18 +999,27 @@
         height: 35px;
     }
 
-    .search-bar .picker .input-group .input-group-text,
-    .search-bar .dropdown .input-group .input-group-text {
+    .customize-searchbar .picker .input-group .input-group-text,
+    .customize-searchbar .dropdown .input-group .input-group-text {
         padding: 0 5px 0 0 !important;
     }
 
-    .search-bar .date-picker-btn,
-    .search-bar .passengers-btn,
-    .search-bar .dropdown .btn {
+    .customize-searchbar .date-picker-btn,
+    .customize-searchbar .passengers-btn,
+    .customize-searchbar .dropdown .btn {
         line-height: normal;
         border: 0 !important;
         padding: 0 !important;
         margin: 0;
+    }
+
+    .package-searchbar .dropdown .btn {
+        padding: 2px 3px;
+    }
+
+    .ng-select.ng-select-single .ng-select-container .ng-value-container, .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value,
+    .ng-select.custom .ng-select-container .ng-value-container .ng-input>input {
+        font-size: var(--fs-14) !important;
     }
 
     .check-form.search-results i {
@@ -991,8 +1186,12 @@
     }
 
     .search-bar .input-group span, .input-group .destination-input-content, .search-results p {
-        padding: 7px;
+        padding: 7px 7px 7px 15px;
         font-size: var(--fs-14);
+    }
+
+    .search-form-btns {
+        flex: 0;
     }
 
     .search-bar .input-group .input-group-text {

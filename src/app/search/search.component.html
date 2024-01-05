@@ -167,19 +167,19 @@
                         <div class="col-xl-6 mb-3">
                             <div class="dropdown dropdown-guests w-100" #dropdownElement>
                                 <button [class.selected-item]="
-                    searchFormHotel.value.passengersHotel.length != 1 ||
-                    numAdultsHotel != 1 ||
-                    numChildrenHotel != 0
-                  " class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                    searchFormHotel.value.passengersHotel.length != 1 ||
+                                    numAdultsHotel != 1 ||
+                                    numChildrenHotel != 0
+                                    " class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                     data-bs-display="static" aria-expanded="false">
                                     <div class="d-flex me-4 justify-content-between w-100 align-items-center">
                                         <div class="input-group d-flex">
                                             <span class="input-group-text"><i class="icon-line-users"></i></span>
                                             <p class="m-0" [class.text-muted]="
-                          searchFormHotel.value.passengersHotel.length === 1 &&
-                          numAdultsHotel === 1 &&
-                          numChildrenHotel === 0
-                        " *ngIf="searchFormHotel.value.passengersHotel.length">
+                                                searchFormHotel.value.passengersHotel.length === 1 &&
+                                                numAdultsHotel === 1 &&
+                                                numChildrenHotel === 0
+                                                " *ngIf="searchFormHotel.value.passengersHotel.length">
                                                 {{
                                                 searchFormHotel.value.passengersHotel.length
                                                 }}&nbsp;Room{{
@@ -226,7 +226,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="room-passengers-details">
-                                                        <div class="passengers-nbr-block d-flex gap-2">
+                                                        <div class="passengers-nbr-block d-flex column-gap-4">
                                                             <div class="d-flex w-100">
                                                                 <div
                                                                     class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
@@ -380,149 +380,42 @@
                     <div class="row p-0">
                         <!-- Destination -->
                         <div class="col-xl-6 mb-3">
-                            <div class="dropdown w-100">
-                                <button [class.selected-item]="searchFormPackage.value.departureCity"
-                                    class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
-                                    data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
-                                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                        <div class="input-group d-flex">
-                                            <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                                            <p class="m-0" *ngIf="searchFormPackage.value.departureCity">
-                                                {{ searchFormPackage.value.departureCity }}
-                                            </p>
-                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.departureCity">
-                                                Departure city
-                                            </p>
-                                        </div>
-                                        <i class="icon-end icon-line-chevron-down"></i>
-                                    </div>
-                                </button>
-                                <div class="dropdown-menu animate slideIn">
-                                    <div class="select-container">
-                                        <label for="Belgium4" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCity"
-                                                id="Belgium4" value="Belgium" formControlName="departureCity" />
-                                            <div class="list-item">Belgium</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="France4" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCity"
-                                                id="France4" value="France" formControlName="departureCity" />
-                                            <div class="list-item">France</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="UK4" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCity"
-                                                id="UK4" value="UK" formControlName="departureCity" />
-                                            <div class="list-item">UK</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            <ng-select class="custom" formControlName="departureCity" [items]="countries" groupBy="region"
+                                placeholder="Departure City" bindLabel="country" bindValue="country" dropdownPosition="bottom">
+                                <ng-template ng-label-tmp let-item="item">
+                                    {{item.country}}
+                                </ng-template>
+                                <ng-template ng-optgroup-tmp let-item="item" let-index="index">
+                                    {{item.region}}
+                                </ng-template>
+                                <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                    <b [ngOptionHighlight]="search">{{item.country}}</b>
+                                </ng-template>
+                            </ng-select>
                         </div>
                         <!-- Period -->
                         <div class="col-xl-6 mb-3">
-                            <div class="dropdown w-100">
-                                <button [class.selected-item]="searchFormPackage.value.period" class="btn w-100"
-                                    type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    data-bs-display="static" aria-expanded="false">
-                                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                        <div class="input-group d-flex">
-                                            <span class="input-group-text"><i class="icon-line-calendar"></i></span>
-                                            <p class="m-0" *ngIf="searchFormPackage.value.period">
-                                                {{ searchFormPackage.value.period }}
-                                            </p>
-                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.period">
-                                                Period
-                                            </p>
-                                        </div>
-                                        <i class="icon-end icon-line-chevron-down"></i>
-                                    </div>
-                                </button>
-                                <div class="dropdown-menu animate slideIn">
-                                    <div class="select-container">
-                                        <label for="Mouled" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2" id="Mouled"
-                                                value="Mouled" formControlName="period" />
-                                            <div class="list-item">Mouled</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="Ramadan" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2" id="Ramadan"
-                                                value="Ramadan" formControlName="period" />
-                                            <div class="list-item">Ramadan</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="Chawel" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2" id="Chawel"
-                                                value="Chawel" formControlName="period" />
-                                            <div class="list-item">Chawel</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="Winter holidays" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2"
-                                                id="Winter holidays" value="Winter holidays" formControlName="period" />
-                                            <div class="list-item">Winter holidays</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="Vacancy Spring" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2"
-                                                id="Vacancy Spring" value="Vacancy Spring" formControlName="period" />
-                                            <div class="list-item">Spring holidays</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="Other" class="me-3 w-100">
-                                            <input type="radio" name="period" class="form-check-input me-2" id="Other"
-                                                value="Other" formControlName="period" />
-                                            <div class="list-item">Other</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            <ng-select class="custom" formControlName="period" [items]="periods" groupBy=""
+                                placeholder="Period" bindLabel="month" bindValue="month" dropdownPosition="bottom">
+                                <ng-template ng-label-tmp let-item="item">
+                                    {{item.month}}
+                                </ng-template>
+                                <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                    <b [ngOptionHighlight]="search">{{item.month}}</b>
+                                </ng-template>
+                            </ng-select>
                         </div>
                         <!-- Duration -->
                         <div class="col-xl-6 mb-3">
-                            <div class="dropdown w-100">
-                                <button [class.selected-item]="searchFormPackage.value.duration" class="btn w-100"
-                                    type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                    data-bs-display="static" aria-expanded="false">
-                                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                        <div class="input-group d-flex">
-                                            <span class="input-group-text"><i class="icon-line-clock"></i></span>
-                                            <p class="m-0" *ngIf="searchFormPackage.value.duration">
-                                                {{ searchFormPackage.value.duration + " days" }}
-                                            </p>
-                                            <p class="m-0 text-muted" *ngIf="!searchFormPackage.value.duration">
-                                                Duration
-                                            </p>
-                                        </div>
-                                        <i class="icon-end icon-line-chevron-down"></i>
-                                    </div>
-                                </button>
-                                <div class="dropdown-menu animate slideIn">
-                                    <div class="select-container">
-                                        <label for="15 days" class="me-3 w-100">
-                                            <input type="radio" name="duration" class="form-check-input me-2"
-                                                id="15 days" value="15" formControlName="duration" />
-                                            <div class="list-item">15 days</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="10 days" class="me-3 w-100">
-                                            <input type="radio" name="duration" class="form-check-input me-2"
-                                                id="10 days" value="10" formControlName="duration" />
-                                            <div class="list-item">10 days</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            <ng-select class="custom" formControlName="duration" [items]="durations" groupBy=""
+                                placeholder="Duration" bindLabel="duration" bindValue="duration" dropdownPosition="bottom">
+                                <ng-template ng-label-tmp let-item="item">
+                                    {{item.duration}}
+                                </ng-template>
+                                <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                    <b [ngOptionHighlight]="search">{{item.duration}}</b>
+                                </ng-template>
+                            </ng-select>
                         </div>
                         <!-- Passengers -->
                         <div class="col-xl-6 mb-3">
@@ -575,10 +468,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div *ngFor="
-                          let passenger of passengers.controls;
-                          let i = index
-                        ">
+                                        <div *ngFor="let passenger of passengers.controls;let i = index">
                                             <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
                                                 <div class="room-specifics d-flex flex-column">
                                                     <div class="d-flex justify-content-between">
@@ -587,7 +477,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="room-passengers-details">
-                                                        <div class="passengers-nbr-block d-flex gap-2">
+                                                        <div class="passengers-nbr-block d-flex column-gap-4">
                                                             <div class="d-flex w-100">
                                                                 <div
                                                                     class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
@@ -956,7 +846,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="room-passengers-details">
-                                                    <div class="passengers-nbr-block d-flex gap-2">
+                                                    <div class="passengers-nbr-block d-flex column-gap-4">
                                                         <div class="d-flex w-100">
                                                             <div
                                                                 class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
@@ -1094,141 +984,43 @@
                         </div>
                     </div>
                     <!-- Place of departure -->
-                    <div class="col-xl-6 mb-3"
-                        *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
-                        <div class="dropdown w-100">
-                            <button class="btn btn-dark w-100" type="button"
-                                [class.selected-item]="searchFormCustom.value.departureCountry"
-                                data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                                aria-expanded="false">
-                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                    <div class="input-group d-flex">
-                                        <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                                        <p class="m-0" *ngIf="searchFormCustom.value.departureCountry">{{
-                                            searchFormCustom.value.departureCountry }}</p>
-                                        <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.departureCountry">Place
-                                            of departure</p>
-                                    </div>
-                                    <i class="icon-end icon-line-chevron-down"></i>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div>
-                                    <div class="select-container">
-                                        <label for="Belgium3" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="Belgium3" value="Belgium" formControlName="departureCountry" />
-                                            <div class="list-item">Belgium</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="France3" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="France3" value="France" formControlName="departureCountry" />
-                                            <div class="list-item">France</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="UK3" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="departureCountry"
-                                                id="UK3" value="UK" formControlName="departureCountry" />
-                                            <div class="list-item">UK</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-6 mb-3" *ngIf="searchFormCustom.value.flightmode === 'Umrah package with flight'">
+                        <ng-select class="custom" formControlName="departureCountry" [items]="countries" groupBy="region"
+                            placeholder="Place of departure" bindLabel="country" bindValue="country" dropdownPosition="bottom">
+                            <ng-template ng-label-tmp let-item="item">
+                                {{item.country}}
+                            </ng-template>
+                            <ng-template ng-optgroup-tmp let-item="item" let-index="index">
+                                {{item.region}}
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                <b [ngOptionHighlight]="search">{{item.country}}</b>
+                            </ng-template>
+                        </ng-select>
                     </div>
                     <!-- Nationality -->
                     <div class="col-xl-6 mb-3">
-                        <div class="dropdown w-100">
-                            <button class="btn btn-dark w-100" type="button"
-                                [class.selected-item]="searchFormCustom.value.Nationality" data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
-                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                    <div class="input-group d-flex">
-                                        <span class="input-group-text"><i class="icon-line-map-pin"></i></span>
-                                        <p class="m-0" *ngIf="searchFormCustom.value.Nationality"> {{
-                                            searchFormCustom.value.Nationality }}
-                                        </p>
-                                        <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.Nationality">
-                                            Nationality</p>
-                                    </div>
-                                    <i class="icon-end icon-line-chevron-down"></i>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div>
-                                    <div class="select-container">
-                                        <label for="Belgium2" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="Belgium2" value="Belgium" formControlName="Nationality" />
-                                            <div class="list-item">Belgium</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="France2" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="France2" value="France" formControlName="Nationality" />
-                                            <div class="list-item">France</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="UK2" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="Nationality"
-                                                id="UK2" value="UK" formControlName="Nationality" />
-                                            <div class="list-item">UK</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ng-select class="custom" formControlName="Nationality" [items]="countries"
+                            placeholder="Nationality" bindLabel="country" bindValue="country" dropdownPosition="bottom">
+                            <ng-template ng-label-tmp let-item="item">
+                                {{item.country}}
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                <b [ngOptionHighlight]="search">{{item.country}}</b>
+                            </ng-template>
+                        </ng-select>
                     </div>
                     <!-- Country -->
                     <div class="col-xl-6 mb-3">
-                        <div class="dropdown w-100">
-                            <button class="btn btn-dark w-100" type="button"
-                                [class.selected-item]="searchFormCustom.value.residenceCountry"
-                                data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                                aria-expanded="false">
-                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
-                                    <div class="input-group d-flex">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                class="icon-line-map-pin"></i></span>
-                                        <p class="m-0" *ngIf="searchFormCustom.value.residenceCountry">{{
-                                            searchFormCustom.value.residenceCountry }}</p>
-                                        <p class="m-0 text-muted" *ngIf="!searchFormCustom.value.residenceCountry">
-                                            Residence Country</p>
-                                    </div>
-                                    <i class="icon-end icon-line-chevron-down"></i>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu animate slideIn">
-                                <div>
-                                    <div class="select-container">
-                                        <label for="Belgium" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="Belgium" value="Belgium" formControlName="residenceCountry" />
-                                            <div class="list-item">Belgium</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="France" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="France" value="France" formControlName="residenceCountry" />
-                                            <div class="list-item">France</div>
-                                        </label>
-                                    </div>
-                                    <div class="select-container">
-                                        <label for="UK" class="me-3 w-100">
-                                            <input type="radio" class="form-check-input me-2" name="residenceCountry"
-                                                id="UK" value="UK" formControlName="residenceCountry" />
-                                            <div class="list-item">UK</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ng-select class="custom" formControlName="residenceCountry" [items]="countries"
+                            placeholder="Residence country" bindLabel="country" bindValue="country" dropdownPosition="bottom">
+                            <ng-template ng-label-tmp let-item="item">
+                                {{item.country}}
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                                <b [ngOptionHighlight]="search">{{item.country}}</b>
+                            </ng-template>
+                        </ng-select>
                     </div>
                     <!---- More criteria ---->
                     <div class="col-xl-12">

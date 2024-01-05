@@ -19,6 +19,8 @@ import { PackageBookingsMobComponent } from './package-bookings-mob/package-book
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackageExtrasComponent } from './package-extras/package-extras.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     FormsModule,
+    NgSelectModule,
     ReactiveFormsModule,
+    NgOptionHighlightModule,
     BrowserAnimationsModule,
     NgbModule,
     CommonModule,

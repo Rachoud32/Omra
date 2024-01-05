@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgSelectConfig } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-package-search-bar',
@@ -22,11 +23,33 @@ export class PackageSearchBarComponent implements OnInit {
   numChildren = 0
   numChildrenHotel = 0
   numChildrenCustom = 0
+  countries = [
+    { country: 'Algeria', region: 'Africa'},
+    { country: 'Morocco', region: 'Africa'},
+    { country: 'Bahrain', region: 'Asia' },
+    { country: 'Kuwait', region: 'Asia' },
+    { country: 'France', region: 'Europe'},
+    { country: 'Italy', region: 'Europe'},
+    { country: 'UK', region: 'Europe' },
+    { country: 'Australia', region: 'Oceania' }
+  ];
+  periods = [
+    { month: 'Mouled'},
+    { month: 'Ramadan'},
+    { month: 'Chawel'},
+    { month: 'Winter holidays'},
+    { month: 'Spring holidays'},
+    { month: 'Other'},
+  ];
+
+  constructor(private config: NgSelectConfig) {
+    this.config.notFoundText = 'Not found';
+  }
 
   ngOnInit(): void {
     this.searchFormPackage = new FormGroup({
-      departureCity: new FormControl('', [Validators.required]),
-      period: new FormControl('', [Validators.required]),
+      departureCity: new FormControl(null, [Validators.required]),
+      period: new FormControl(null, [Validators.required]),
       duration: new FormControl('', [Validators.required]),
       flight: new FormControl('', [Validators.required]),
       passengers: new FormArray([new FormGroup({

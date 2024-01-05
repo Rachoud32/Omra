@@ -43,6 +43,24 @@ export class SearchBarComponent implements OnInit {
     { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
     { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
   ];
+  countries = [
+    { country: 'Algeria', region: 'Africa'},
+    { country: 'Morocco', region: 'Africa'},
+    { country: 'Bahrain', region: 'Asia' },
+    { country: 'Kuwait', region: 'Asia' },
+    { country: 'France', region: 'Europe'},
+    { country: 'Italy', region: 'Europe'},
+    { country: 'UK', region: 'Europe' },
+    { country: 'Australia', region: 'Oceania' }
+  ];
+  periods = [
+    { month: 'Mouled'},
+    { month: 'Ramadan'},
+    { month: 'Chawel'},
+    { month: 'Winter holidays'},
+    { month: 'Spring holidays'},
+    { month: 'Other'},
+  ];
 
 
   constructor(private router: Router, private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService) {

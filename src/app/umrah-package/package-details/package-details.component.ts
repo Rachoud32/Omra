@@ -109,6 +109,7 @@ export class PackageDetailsComponent implements OnInit {
   }
   summary: any
   isReadMore: boolean[] = [];
+  isShowMore: boolean = false;
 
   constructor(
     private el: ElementRef,
@@ -261,11 +262,21 @@ export class PackageDetailsComponent implements OnInit {
     console.log('data-bs-target:', dataBsTarget);
     console.log('aria-controls:', ariaControls);
   }
+  showMore() {
+    this.isShowMore = !this.isShowMore;
+  }
   showText(index: number) {
     this.isReadMore[index] = !this.isReadMore[index];
   }
   displayText(text: string, index: number) {
     if (this.isReadMore[index]) {
+      return text 
+    } else { 
+      return text.slice(0, 180) + '...'
+    }
+  }
+  displayMore(text: string) {
+    if (this.isShowMore) {
       return text 
     } else { 
       return text.slice(0, 180) + '...'
