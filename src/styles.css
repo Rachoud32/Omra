@@ -1741,10 +1741,6 @@ label.category-item::before {
     transition: all .3s linear;
 }
 
-.package-searchbar .dropdown .btn {
-    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
-}
-
 .search-bar .date-picker-btn {
     padding-right: 10px !important;
 }
@@ -1802,7 +1798,10 @@ label.category-item::before {
     color: var(--omra-gray);
     cursor: auto;
     position: relative;
-    top: 6px;
+}
+
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow {
+    top: 0 !important;
 }
 
 
@@ -4180,51 +4179,72 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 /* ----------------------------------------------------------------
 	Ground Services
 -----------------------------------------------------------------*/
-.ground-services-list {
+
+.ground-services-list .ground-service-item {
     border-radius: 0 !important;
     border: 0;
     background: transparent;
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 1%);
 }
 
-.ground-services-list .ground-service-check-box {
+.ground-services-list .ground-service-item:last-child .box {
+    margin-bottom: 0 !important;
+}
+
+.ground-service-destination i {
+    width: 40px;
+    height: 40px;
+    background: var(--omra-extra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--omra-second);
+}
+
+.ground-service-destination .ground-service-destination-text {
+    color: var(--omra-primary);
+    font-weight: 300;
+}
+
+.ground-service-item .ground-service-check-box {
     display: none;
 }
 
-.ground-services-list .box {
+.ground-service-item .box {
     background-color: var(--omra-white);
     border: 2px solid var(--omra-white);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 1%);
     transition: all .3s ease;
 }
 
-.ground-services-list .box.active {
+.ground-service-item .box.active {
     background-color: var(--omra-white);
     border: 2px solid var(--omra-second);
     box-shadow: 0 10px 20px 3px rgb(0 0 0 / 4%);
 }
 
-.ground-services-list .ground-service {
+.ground-service-item .ground-service {
     background: var(--omra-white);
     position: relative;
     overflow: hidden;
-    padding: 20px 20px;
+    padding: 20px 20px 0;
     border-radius: 0;
     border: 0;
     transform: translateY(0px);
     transition: all .3s linear;
 }
 
-.ground-services-list .ground-service .image-box {
+.ground-service-item .ground-service .image-box {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.ground-services-list .ground-service .image-box img {
+.ground-service-item .ground-service .image-box img {
     object-fit: cover;
-    min-height: 160px;
+    min-height: 210px;
     max-height: 280px;
+    object-position: center;
 }
 
 .ground-service-details {
@@ -4240,12 +4260,17 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .ground-service-details h3 {
-    margin-bottom: -8px;
+    margin-bottom: 0;
     line-height: normal;
     font-size: var(--fs-18);
     font-weight: 500 !important;
     color: var(--omra-primary);
     text-transform: uppercase;
+}
+
+.ground-service-details i {
+    font-size: 13px;
+    color: var(--omra-second);
 }
 
 .ground-service-details label {
@@ -4263,6 +4288,20 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     font-weight: 300;
     font-size: var(--fs-14);
     margin-bottom: 0;
+    line-height: 22px !important;
+}
+
+.ground-service-details .ground-service-date-container {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    min-height: 135px;
+    height: 150px;
+}
+
+.ground-service-details ul {
+    margin-right: 15px;
+    margin-bottom: 0;
+    padding-top: 1px !important;
 }
 
 .ground-service-details ul li {
@@ -4273,15 +4312,6 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     display: flex;
     justify-content: space-between;
 }
-
-/* .ground-service-details ul li:before {
-    content: '';
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 1px;
-    background: red;
-} */
 
 .ground-service-details a {
     text-decoration: none !important;
@@ -4301,6 +4331,12 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     font-weight: 600;
     line-height: normal;
     color: var(--omra-primary);
+}
+
+.ground-service-price .price-text {
+    font-weight: 300;
+    color: var(--omra-gray);
+    font-size: var(--fs-14);
 }
 
 .ground-service-price span {
@@ -4354,8 +4390,8 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .ground-service-details .link .color-btn {
-    padding: 10px 18px;
-    font-size: var(--fs-11);
+    padding: 10px 24px;
+    font-size: var(--fs-12);
     line-height: normal;
     border-radius: 0px;
     cursor: pointer;
@@ -4850,7 +4886,7 @@ app-package-bookings-sidebar,
 
 .package-details-duration .duration {
     font-size: var(--fs-16);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--omra-primary);
     line-height: normal;
     text-align: left;
@@ -4876,7 +4912,7 @@ app-package-bookings-sidebar,
 .package-header .package-header-content .package-details-place,
 .package-header .package-header-content .package-details-nights {
     font-size: var(--fs-15);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--omra-primary);
     white-space: nowrap;
     line-height: 22px;
@@ -5077,8 +5113,8 @@ app-package-bookings-sidebar,
     padding: 5px 15px;
     position: relative;
     border-radius: var(--bdr-radius-3);
-    position: sticky;
-    top: 6.4rem;
+    /* position: sticky;
+    top: 6.4rem; */
     z-index: 90;
     border: 0;
 }
@@ -5283,16 +5319,13 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
-    font-size: var(--fs-14);
+    font-size: var(--fs-12);
 }
 
 .package-header .package-details-rating-text .package-review p {
     font-size: var(--fs-12);
-    line-height: normal;
-}
-
-.package-header .package-details-rating-text .package-review p {
     line-height: 15px !important;
+    color: var(--omra-gray);
 }
 
 .package-hotels .package-hotel-card .hotel-arangement p {
@@ -5580,6 +5613,10 @@ ngx-stars .stars-line {
     box-shadow: none;
 }
 
+.package-hotels .package-rooms-summary .package-hotel-card {
+    border: 0;
+}
+
 .package-hotels .package-rooms-summary .selected-room-hotelname h4,
 .selected-room-view {
     font-size: var(--fs-14);
@@ -5609,12 +5646,12 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-rooms-summary .room-number .room-number-title {
-    font-size: var(--fs-12);
+    font-size: var(--fs-14);
     font-weight: 400;
     width: fit-content;
     color: var(--omra-white);
     background: var(--omra-second);
-    padding: 2px 10px;
+    padding: 6px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5714,11 +5751,13 @@ ngx-stars .stars-line {
     font-size: var(--fs-16);
     height: 33px;
     line-height: normal;
+    font-weight: 400;
 }
 
 .package-hotels .package-rooms-summary .hotel-checkin p,
 .package-hotels .package-rooms-summary .hotel-checkout p {
     font-size: var(--fs-15);
+    line-height: normal;
 }
 
 .package-hotels .package-rooms-summary .checkin-label i,
@@ -5745,6 +5784,11 @@ ngx-stars .stars-line {
 
 .package-hotels .package-hotel-rooms-card .package-hotel-room-item .color-btn.expand-btn[aria-expanded="true"] span {
     color: var(--omra-white);
+}
+
+.package-hotels .package-rooms-summary .change-room-specs-btn {
+    padding: 8px 10px;
+    font-size: 13px;
 }
 
 /* ----------------------------------------------------------------

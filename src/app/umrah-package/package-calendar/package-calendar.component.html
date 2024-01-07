@@ -2,13 +2,13 @@
 </app-package-calender-header>
 
 <ng-template #customCellTemplate let-day="day" let-locale="locale">
-  <div class="cal-cell-top" *ngFor="let event of day.events">
+  <div class="cal-cell-top">
     <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{day.badgeTotal}}</span>
     <span class="cal-day-number d-flex align-items-center gap-1"><span class="day-name">{{day.date | calendarDate:'dayViewTitle':locale | slice:0:3}}, </span>{{day.date | calendarDate:'monthViewDayNumber':locale}}</span>
   </div>
   <ul>
     <li *ngFor="let event of day.events">
-      <div class="d-flex flex-column" *ngIf="event.title != ''">
+      <div class="d-flex flex-column">
         <span class="price-start lh-base">Starts from</span>
         <p class="mb-0 lh-base"><span>$</span>{{ event.title }}</p>
       </div>

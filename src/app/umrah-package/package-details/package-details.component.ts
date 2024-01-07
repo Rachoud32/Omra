@@ -110,6 +110,7 @@ export class PackageDetailsComponent implements OnInit {
   summary: any
   isReadMore: boolean[] = [];
   isShowMore: boolean = false;
+  id: any
 
   constructor(
     private el: ElementRef,
@@ -126,9 +127,9 @@ export class PackageDetailsComponent implements OnInit {
     this.loading = true
     this.loadinghotel = true
     this.startCounter(this.durationInSeconds)
-    const id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     let data = this.packageService.dataPackages();
-    this.package = data.find((el) => id == el._id);
+    this.package = data.find((el) => this.id == el._id);
     let rooms = Number(localStorage.getItem('roomNumberPackage')) || 0
     for (let i = 0; i < rooms; i++) {
       this.roomsSelectionFirstDest.rooms.push(
@@ -200,6 +201,7 @@ export class PackageDetailsComponent implements OnInit {
           this.loadinghotel = false
         }, 3000)
         this.counterValue = 0
+
       } else {
         this.toastr.info("Please select the type of every room of your first destination before proceeding.")
       }
@@ -208,7 +210,8 @@ export class PackageDetailsComponent implements OnInit {
 
   goToNextStep = () => {
     if (this.firstverify && this.secondverify && this.destinationTitle == "Summary") {
-      window.location.href = 'umrah-package/result/package/:id/extras';
+      this.router.navigate(['umrah-package/result/package',this.id,'extras']);
+      window.scrollTo(0, 0)
     }
     if (!this.firstverify) {
       this.toastr.info("Please select the type of every room of your first destination before proceeding.")
@@ -220,6 +223,14 @@ export class PackageDetailsComponent implements OnInit {
 
   clearChange() {
     this.destinationTitle = 'Makkah'
+  }
+
+  clearFirstChange() {
+    this.destinationTitle = 'Makkah'
+  }
+
+  clearSecondChange() {
+    this.destinationTitle = 'Madinah'
   }
 
   chooseSection(sectionId: string) {
@@ -247,6 +258,7 @@ export class PackageDetailsComponent implements OnInit {
       roomData.selectedType = data
       this.roomsSelectionFirstDest.hotel = hotel
       console.log(this.roomsSelectionFirstDest);
+      localStorage.setItem('selectedroomFirstDestData', JSON.stringify(this.roomsSelectionFirstDest.hotel))
     }
     if (this.destinationTitle == 'Madinah') {
       this.secondverify = true
@@ -254,6 +266,7 @@ export class PackageDetailsComponent implements OnInit {
       roomData.selectedType = data
       this.roomsSelectionSecondDest.hotel = hotel
       console.log(this.roomsSelectionSecondDest);
+      localStorage.setItem('selectedroomSecondDestData', JSON.stringify(this.roomsSelectionSecondDest.hotel))
     }
   }
   collapsedPackRoomsList(accordionId: string, accordionButton: any): void {
@@ -279,7 +292,7 @@ export class PackageDetailsComponent implements OnInit {
     if (this.isShowMore) {
       return text 
     } else { 
-      return text.slice(0, 180) + '...'
+      return text.slice(0, 350) + '...'
     }
   }
   displayActivity(text: string, index: number) {

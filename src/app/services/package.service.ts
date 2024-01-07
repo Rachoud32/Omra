@@ -201,7 +201,32 @@ export class packageService {
                   sleeps: 2
                 }
               ],
-
+              extras: [
+                {
+                  id: 1,
+                  title: 'Al Baqi Cemetery',
+                  price: 80,
+                  picture: 'assets/activities/1.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
+                },
+                {
+                  id: 2,
+                  title: 'Mount Uhud',
+                  price: 90,
+                  picture: 'assets/activities/2.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
+                },
+                {
+                  id: 3,
+                  title: 'The Mosque of the Two Qiblahs',
+                  price: 70,
+                  picture: 'assets/activities/3.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
+                }
+              ]
             },
             {
               _id: 2,
@@ -257,10 +282,37 @@ export class packageService {
                   sleeps: 2
                 }
               ],
+              extras : [
+                {
+                  id: 1,
+                  title: 'Al Baqi Cemetery',
+                  price: 80,
+                  picture: 'assets/activities/1.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
+                },
+                {
+                  id: 2,
+                  title: 'Mount Uhud',
+                  price: 90,
+                  picture: 'assets/activities/2.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
+                },
+                {
+                  id: 3,
+                  title: 'The Mosque of the Two Qiblahs',
+                  price: 70,
+                  picture: 'assets/activities/3.jpg',
+                  location: 'Makkah, Saudi Arabia',
+                  description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
+                }
+              ]
 
             }
           ],
-          secondDestinations: [{
+          secondDestinations: [
+            {
             _id: 1,
             hotelName: 'Sofitel Shahd al Madinah',
             type: 'Luxury Hotel',
@@ -316,6 +368,32 @@ export class packageService {
                 breakfast: 'Free breakfast',
                 view: 'Desert',
                 sleeps: 2
+              }
+            ],
+            extras : [
+              {
+                id: 1,
+                title: 'Al Baqi Cemetery',
+                price: 80,
+                picture: 'assets/activities/1.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
+              },
+              {
+                id: 2,
+                title: 'Mount Uhud',
+                price: 90,
+                picture: 'assets/activities/2.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
+              },
+              {
+                id: 3,
+                title: 'The Mosque of the Two Qiblahs',
+                price: 70,
+                picture: 'assets/activities/3.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
               }
             ]
           },
@@ -389,8 +467,35 @@ export class packageService {
                 view: 'Desert',
                 sleeps: 2
               }
+            ],
+            extras : [
+              {
+                id: 1,
+                title: 'Al Baqi Cemetery',
+                price: 80,
+                picture: 'assets/activities/1.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `Jannat al-Baqīʿ is the oldest and the first Islamic cemetery of Medina in the Hejazi region of present-day Saudi Arabia. It is also known as Baqīʿ al-Gharqad.`,
+              },
+              {
+                id: 2,
+                title: 'Mount Uhud',
+                price: 90,
+                picture: 'assets/activities/2.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `Mount Uhud is a mountain north of Medina, in the Hejazi region of Saudi Arabia. It is 1,077 m high and 7.5 km long. It was the site of the second battle between the Islamic prophet Muhammad and the polytheists of his tribe of Quraysh.`,
+              },
+              {
+                id: 3,
+                title: 'The Mosque of the Two Qiblahs',
+                price: 70,
+                picture: 'assets/activities/3.jpg',
+                location: 'Madinah, Saudi Arabia',
+                description: `It is one of the earliest mosques in Islam. It was established during the Prophet’s time for an outlying neighborhood of Madinah. Its significance lies in the fact that after the Prophet received a commandment to change the qiblah or prayer direction from al-Masjid al-Aqsa in Jerusalem to al-Masjid al-Haram (Ka’bah) in Makkah, the entire congregation led by a companion in this mosque changed direction in prayer.`,
+              }
             ]
-          }],
+            }
+          ],
           transfers: [
             {
               model: 'Toyota Camry',
@@ -521,7 +626,8 @@ export class packageService {
               placeVisit: 'Jeddah',
               startTime: '10:00'
             },
-          ]
+          ],
+
         }
       },
       {

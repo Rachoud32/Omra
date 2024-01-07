@@ -66,6 +66,14 @@
 }
 
 @media (max-width: 1199.98px) {
+    .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+        top: 3px !important;
+    }
+
+    .package-searchbar .ng-select.custom .ng-select-container .ng-value-container .ng-input>input {
+        top: 0px;
+    }
+    
     .search-results p {
         width: unset;
     }
@@ -647,7 +655,13 @@
     .cal-month-view .cal-day-cell ul li div.d-flex {
         flex-direction: row!important;
         align-items: center!important;
-        gap: 1rem!important;
+        column-gap: 0.5rem !important;
+        justify-content: flex-end;
+    }
+
+    .cal-month-view .cal-day-number {
+        float: left !important;
+        font-weight: 500 !important;
     }
 
     .cal-month-view .cal-day-cell ul li .price-start {
@@ -667,12 +681,13 @@
     .package-details-box .cal-month-view .cal-day-number {
         font-size: var(--fs-14) !important;
         margin-top: 10px !important;
-        margin-right: 0;
+        margin-right: 0 !important;
         margin-bottom: 10px;
     }
 
     .package-details-box .cal-month-view .cal-day-badge {
-        margin-left: 0;
+        margin-left: 0px;
+        margin-right: 10px;
         padding: 4px 7px !important;
         font-size: var(--fs-10) !important;
     }
@@ -805,6 +820,19 @@
 
 @media (max-width: 575.98px) {
 
+    .package-hotels .package-rooms-summary .hotel-checkin i,
+    .package-hotels .package-rooms-summary .hotel-checkout i {
+        height: 35px;
+        width: 35px;
+    }
+
+    .package-hotels .package-rooms-summary .hotel-checkin p, .package-hotels .package-rooms-summary .hotel-checkout p {
+        font-size: var(--fs-13);
+    }
+
+    .package-hotels .package-rooms-summary .selected-room-service p {
+        line-height: 16px !important;
+    }
 
     .package-inside-menu .hotel-flash {
         left: 20%;
@@ -969,6 +997,19 @@
         top: -10px !important;
         z-index: 999 !important;
         max-height: 100%;
+    }
+
+    .search-bar .ng-dropdown-panel {
+        max-width: 100%;
+        position: fixed;
+        height: 100%;
+        top: -10px !important;
+        max-height: 100%;
+    }
+
+    .search-bar .ng-dropdown-panel .scroll-host {
+        max-height: none !important;
+        min-height: 270px !important;
     }
 
     .modal .modal-content .modal-title {

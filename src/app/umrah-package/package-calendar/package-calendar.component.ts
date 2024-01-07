@@ -92,7 +92,23 @@ export class PackageCalendarComponent {
     },
     {
       title: '860',
-      start: new Date(2024, 1, 11),
+      start: new Date(2024, 2, 1),
+    },
+    {
+      title: '860',
+      start: new Date(2024, 2, 2),
+    },
+    {
+      title: '860',
+      start: new Date(2024, 2, 4),
+    },
+    {
+      title: '860',
+      start: new Date(2024, 2, 6),
+    },
+    {
+      title: '860',
+      start: new Date(2024, 2, 7),
     }
   ]
 }
