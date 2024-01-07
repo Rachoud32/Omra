@@ -67,6 +67,15 @@
 
 @media (max-width: 1199.98px) {
 
+    .check-form .search-results-list {
+        flex-direction: column;
+    }
+
+    .check-form .color-btn.search-btn,
+    .check-form .color-btn.close-btn {
+        width: 100px;
+    }
+
     .gallery-item .package-cover-picture img {
         height: 350px;
     }
@@ -299,10 +308,6 @@
     .top-filter-sector {
         flex-wrap: nowrap;
     }
-
-    .check-form .search-results-list {
-        flex-direction: column;
-    }
     
     .check-form .search-results-list .me-4 {
         margin-right: 0 !important;
@@ -313,7 +318,6 @@
     }
 
     .search-result-edit .search-results-list {
-        gap: 5px !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
     }
@@ -593,6 +597,10 @@
 
 @media (max-width: 767.98px) {
 
+    .search-form-btns .color-btn.close-btn {
+        display: block;
+    }
+
     .nav-skeletons.package-inside-menu li .inside-menu-item {
         height: 70px;
     }
@@ -871,14 +879,14 @@
     }
 
     .package-offer-card .package-offer-header .departure-text {
-        max-width: 200px;
-        width: 200px;
+        max-width: 180px;
+        width: 180px;
     }
 
     .package-offer-card .package-offer-header .title {
         white-space: unset;
-        max-width: 200px;
-        width: 200px;
+        max-width: 180px;
+        width: 180px;
         text-overflow: unset;
     }
 
@@ -1050,9 +1058,9 @@
         max-width: 240px;
     }
 
-    .check-form .color-btn.search-btn {
-        width: 35px;
-        height: 35px;
+    .check-form .search-form-btns .color-btn {
+        width: 50%;
+        height: 40px;
     }
 
     .customize-searchbar .picker .input-group .input-group-text,
@@ -1220,20 +1228,11 @@
 
     .check-form .search-form-edit {
         flex-direction: column;
-        align-items: flex-start !important;
-        gap: 0em !important;
-        flex: 1;
         font-size: var(--fs-13);
     }
 
     .check-form .search-result-counter {
         display: none;
-    }
-
-    .check-form .search-results-list {
-        flex-direction: row !important;
-        align-items: flex-end !important;
-        flex-wrap: nowrap;
     }
 
     .check-form .search-form-btns {

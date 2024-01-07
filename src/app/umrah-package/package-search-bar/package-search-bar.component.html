@@ -1,5 +1,22 @@
 <div class="package-searchbar row" id="packagesearchbar" #packagesearchbar>
-    <div class="col-xl-12 pt-3 search-bar-card">
+    <div class="search-display-type col-xl-12 pt-3" [ngClass]="{'d-none': !searchMobile}" >
+      <button class="selected-search-infos-btn d-flex align-items-center justify-content-between gap-2 w-100" type="button" (click)="editSearch()">
+        <span class="d-flex flex-column align-items-start justify-content-between gap-1">
+          <div class="d-flex align-items-center gap-2">
+            <i class="icon-line-search"></i>
+            <span class="search-label lh-base">Your search</span>
+          </div>
+          <span class="search-text-content d-flex align-items-center gap-1">
+            <span class="lh-base">Ramadan,</span>
+            <span class="lh-base">France,</span> 
+            <span class="lh-base">2 guests</span>
+          </span>
+        </span>
+        <i class="edit-icon icon-line-edit-3"></i>
+      </button>
+    </div>  
+
+    <div class="col-xl-12 pt-3 search-bar-card search-display-type" [ngClass]="{'d-none': searchMobile}" >
       <form id="search-form" class="check-form search-bar search-results">
         <div class="row align-items-center">
           <div class="col-xl-3 search-result-counter">
@@ -10,11 +27,11 @@
               <p class="mb-0">6 <span>Packages</span> Found according to your search.</p>
             </div>
           </div>
-          
+        
           <div class="col-xl-9 search-result-edit">
             <div class="d-flex justify-content-end align-items-center search-results-list gap-3">
               <div class="search-form-edit d-flex align-items-stretch justify-content-start gap-3 w-100">
-                <div class="row w-100 d-flex row-gap-2 flex-grow-1">
+                <div class="row row-gap-2 flex-grow-1">
                   <div class="col-xl-3">
                     <div class="package-period h-100" [formGroup]="searchFormPackage">
                       <ng-select class="custom" formControlName="period" [items]="periods" groupBy=""
@@ -186,8 +203,9 @@
                 </div>  
               </div>
               
-              <div class="search-form-btns d-flex align-items-center gap-2 justify-content-start">
-                <button class="color-btn search-btn"><i class="icon-line-search m-0"></i></button>
+              <div class="search-form-btns d-flex align-items-center gap-2 justify-content-end">
+                <button class="color-btn search-btn" type="submit"><i class="icon-line-search m-0"></i></button>
+                <button class="color-btn close-btn" type="button" (click)="editSearch()"><i class="icon-line-cross m-0"></i></button>
               </div>
   
             </div>

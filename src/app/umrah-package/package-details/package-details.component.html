@@ -82,6 +82,9 @@
                   <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'">
                     <div class="package-cover-picture">
                       <img src={{package.packagePictures[0]}} alt="" />
+                      <!-- <div class="gallery-overlay">
+                        <i class="icon-line-expand" aria-hidden="true"></i>Gallery
+                      </div> -->
                     </div>
                   </div>
                   <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 package-other-pics' : package.packagePictures.length > 2 ? 'col-xl-4 mb-4 package-other-pics' : 'd-none'">
@@ -192,7 +195,7 @@
                       [checked]="selectedOffer == offer.id">
                     <label [attr.for]="offer.title" (click)="checkOffer(offer.id)">
                       <div class="package-offer-card">
-                        <div class="package-offer-header d-flex flex-wrap align-items-start justify-content-between column-gap-3 row-gap-2 px-3 mb-1">
+                        <div class="package-offer-header d-flex flex-wrap align-items-start justify-content-between row-gap-2 px-3 mb-1">
                           <div class="d-flex flex-column">
                             <div class="offer-number mb-2">Offer {{offer.id}}</div>
                             <div class="title mb-1">{{offer.title}}</div>
@@ -303,8 +306,7 @@
                           loading && destinationTitle =='Summary' ? 'Generating hotel rooms summary' : 'Room prices are subject to frequent change'}}
                         </p>
                         <div class="d-flex align-items-center gap-2">
-                          <button class="color-btn change-destination-btn d-flex align-items-center gap-2" *ngIf="(!loading && destinationTitle =='Summary') 
-                          || (!loading && destinationTitle =='Madinah')" (click)="clearChange()"><i class="icon-line-chevron-left"></i> <span>Previous</span></button>
+                          <button class="color-btn change-destination-btn d-flex align-items-center gap-2" *ngIf="!loading && destinationTitle =='Madinah'" (click)="clearChange()"><i class="icon-line-chevron-left"></i> <span>Previous</span></button>
                           <button class="color-btn next-destination-btn d-flex align-items-center gap-2" (click)="goToNextDestination()" *ngIf="destinationTitle !='Summary'">
                             <span>Next</span> <i class="icon-line-chevron-right"></i></button>
                         </div>
@@ -882,7 +884,7 @@
                                         <p class="selected-room-view mb-0 lh-base">{{room.selectedType.view}} view</p>
                                       </div>
                                       <div class="d-flex flex-column align-items-end">
-                                        <button class="color-btn change-room-specs-btn mb-3" *ngIf="!loading && destinationTitle =='Summary'" (click)="clearFirstChange()">change</button>
+                                        <button class="color-btn change-room-specs-btn mb-3" *ngIf="!loading && destinationTitle =='Summary'" (click)="clearFirstChange()"><i class="icon-line-edit-3"></i></button>
                                         <p class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></p>
                                       </div>
                                     </div>
@@ -943,7 +945,7 @@
                                         <p class="selected-room-view mb-0 lh-base">{{room.selectedType.view}} view</p>
                                       </div>
                                       <div class="d-flex flex-column align-items-end">
-                                        <button class="color-btn change-room-specs-btn mb-3" *ngIf="!loading && destinationTitle =='Summary'" (click)="clearSecondChange()">change</button>
+                                        <button class="color-btn change-room-specs-btn mb-3" *ngIf="!loading && destinationTitle =='Summary'" (click)="clearSecondChange()"><i class="icon-line-edit-3"></i></button>
                                         <p class="selected-room-price lh-base"><span>$</span>{{room.selectedType.price}}<span class="price-text">/adult</span></p>
                                       </div>
                                     </div>

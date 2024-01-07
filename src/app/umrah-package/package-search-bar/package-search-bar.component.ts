@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgSelectConfig } from '@ng-select/ng-select';
 
@@ -9,6 +10,7 @@ import { NgSelectConfig } from '@ng-select/ng-select';
 })
 export class PackageSearchBarComponent implements OnInit {
   @ViewChild('dropdownMenuPackage') dropdownMenuPackage?: ElementRef;
+
   SearchBar: boolean = true;
   category: string = '';
   dataBsTargetValue = ''
@@ -23,6 +25,7 @@ export class PackageSearchBarComponent implements OnInit {
   numChildren = 0
   numChildrenHotel = 0
   numChildrenCustom = 0
+  searchMobile: boolean = false
   countries = [
     { country: 'Algeria', region: 'Africa'},
     { country: 'Morocco', region: 'Africa'},
@@ -58,6 +61,7 @@ export class PackageSearchBarComponent implements OnInit {
         room: new FormControl("Room 1"),
       })]),
     })
+    this.searchMobile = window.innerWidth <= 767.98
   }
 
   get passengers(): FormArray {
@@ -122,6 +126,19 @@ export class PackageSearchBarComponent implements OnInit {
       const dropdownMenuElement1 = this.dropdownMenuPackage?.nativeElement;
       dropdownMenuElement1.classList.remove('show')
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkWindowSize();
+  }
+
+  checkWindowSize(): void {
+    this.searchMobile = window.innerWidth <= 767.98;
+  }
+
+  editSearch(): void {
+    this.searchMobile = !this.searchMobile
   }
 
 }
