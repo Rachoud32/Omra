@@ -612,6 +612,20 @@ input[type=checkbox]:disabled {
     margin-right: 20px;
 }
 
+.package-period .ng-value-container:before,
+.search-bar .package-period .ng-value-container:before {
+    content: "\e927";
+}
+
+.search-bar .package-departure .ng-value-container:before {
+    content: "\e994";
+}
+
+.package-duration .ng-value-container:before,
+.search-bar .package-duration .ng-value-container:before {
+    content: "\e939";
+}
+
 .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
     top: 6px;
     left: 0;

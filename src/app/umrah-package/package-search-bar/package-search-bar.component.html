@@ -16,7 +16,7 @@
               <div class="search-form-edit d-flex align-items-stretch justify-content-start gap-3 w-100">
                 <div class="row w-100 d-flex row-gap-2 flex-grow-1">
                   <div class="col-xl-3">
-                    <div class="h-100" [formGroup]="searchFormPackage">
+                    <div class="package-period h-100" [formGroup]="searchFormPackage">
                       <ng-select class="custom" formControlName="period" [items]="periods" groupBy=""
                           placeholder="Period" bindLabel="month" bindValue="month" dropdownPosition="bottom">
                           <ng-template ng-label-tmp let-item="item">
@@ -30,7 +30,7 @@
                   </div>  
 
                   <div class="col-xl-4">
-                    <div class="h-100" [formGroup]="searchFormPackage">
+                    <div class="package-departure h-100" [formGroup]="searchFormPackage">
                       <ng-select class="custom" formControlName="departureCity" [items]="countries" groupBy="region"
                           placeholder="Departure City" bindLabel="country" bindValue="country" dropdownPosition="bottom">
                           <ng-template ng-label-tmp let-item="item">
