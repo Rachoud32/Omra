@@ -311,6 +311,7 @@
                       </div>
                       <ngb-progressbar *ngIf="counterValue!=101 && counterValue!=0" [value]="counterValue" />
 
+                       <!---- Skeletons Hotels ---->     
                       <div class="hotel-skeletons-list mt-4" *ngIf="loadinghotel">
                         <label *ngFor="let skeleton of skeletons" class="mb-4 w-100">
                           <div class="skeleton-box box">

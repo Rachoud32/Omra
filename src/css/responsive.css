@@ -66,6 +66,11 @@
 }
 
 @media (max-width: 1199.98px) {
+
+    .gallery-item .package-cover-picture img {
+        height: 350px;
+    }
+
     .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
         top: 3px !important;
     }
@@ -125,7 +130,7 @@
     }
 
     .package-hotels .skeleton-box .skeleton-service-img {
-        height: 270px !important;
+        height: 210px !important;
     }
 
     .service-details .details-row {
@@ -587,6 +592,11 @@
 }
 
 @media (max-width: 767.98px) {
+
+    .nav-skeletons.package-inside-menu li .inside-menu-item {
+        height: 70px;
+    }
+
     .package-header .package-header-content .package-details-place, 
     .package-header .package-header-content .package-details-nights {
         font-size: var(--fs-14);
@@ -718,8 +728,9 @@
     }
 
     .package-hotels .destination-label {
-        padding: 5px 15px;
+        position: sticky;
         top: 3.9rem;
+        margin: 0 -15px;
     }
 
     .package-inside-menu .hotel-flash {
@@ -814,6 +825,10 @@
 
     .package-details-box .package-inside-menu li .inside-menu-item p.blink {
         display: block;
+    }
+
+    .package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
+        font-size: var(--fs-14);
     }
 
 }
@@ -922,7 +937,7 @@
     }
 
     .gallery-item .package-cover-picture img {
-        height: 220px;
+        height: 280px;
     }
 
     .package-details-box .package-inside-menu {
@@ -1227,7 +1242,7 @@
     }
 
     .search-bar .input-group span, .input-group .destination-input-content, .search-results p {
-        padding: 7px 7px 7px 15px;
+        padding: 7px 7px 7px 9px;
         font-size: var(--fs-14);
     }
 

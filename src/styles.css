@@ -4203,7 +4203,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 
 .ground-service-destination .ground-service-destination-text {
     color: var(--omra-primary);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .ground-service-item .ground-service-check-box {
@@ -5319,7 +5319,7 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
-    font-size: var(--fs-12);
+    font-size: var(--fs-14);
 }
 
 .package-header .package-details-rating-text .package-review p {
