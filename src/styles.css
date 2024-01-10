@@ -853,10 +853,6 @@ input[type=checkbox]:disabled {
     transition: all .3s linear;
 }
 
-.search-section .dropdown .btn.destination-btn {
-    padding-right: 0px !important;
-}
-
 .input-group {
     position: relative;
     display: -ms-flexbox;
@@ -869,7 +865,7 @@ input[type=checkbox]:disabled {
 }
 
 .input-group .input-group-text {
-    padding: 8px 12px !important;
+    padding: 8px 10px 8px 12px !important;
     text-align: center;
     border: 0;
     border-radius: 0 !important;

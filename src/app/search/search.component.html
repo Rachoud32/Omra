@@ -721,17 +721,17 @@
                                                 <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
                                                     *ngIf="destinations.controls[i].get('destination')?.value">
                                                     {{destinations.controls[i].get('destination')?.value }}
-                                                    <div class="d-flex align-items-center ms-auto">
-                                                        <span class="p-0 me-1"
-                                                            [class.text-muted]="destinations.controls[i].get('nights')?.value ===0">
-                                                            {{destinations.controls[i].get('nights')?.value }}
-                                                        </span>
-                                                        <i class="icon-line-moon"></i>
-                                                    </div>
                                                 </div>
                                                 <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i
                                                         class="icon-line-cross"></i></div>
                                             </div>
+                                        </div>
+                                        <div class="d-flex align-items-center ms-auto">
+                                            <span class="p-0 me-1"
+                                                [class.text-muted]="destinations.controls[i].get('nights')?.value ===0">
+                                                {{destinations.controls[i].get('nights')?.value }}
+                                            </span>
+                                            <i class="icon-line-moon"></i>
                                         </div>
                                     </div>    
                                 </div>
