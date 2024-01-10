@@ -9,22 +9,10 @@
           <div class="container">
             <div class="row">
                 <div class="col-lg-12 pt-3 justify-content-start mb-4">
-                    <div class="d-flex align-items-center justify-content-between gap-3">
+                    <div class="extras-page-title d-flex align-items-center justify-content-between gap-3">
                         <div class="d-flex flex-column">
                             <div class="heading-box">
-                                <h2 class="heading-title color-1 mb-0" *ngIf="step == 'step1'">Select a ground service 1/2</h2>
-                                <h2 class="heading-title color-1 mb-0" *ngIf="step == 'step2'">Select a ground service 2/2</h2>
-                            </div>
-                        </div>
-                        <div class="ground-service-destination d-flex align-items-center gap-3">
-                            <i class="icon-line-map-pin"></i>
-                            <div class="d-flex flex-column align-items-start" *ngIf="step == 'step1'">
-                                <p class="ground-service-destination-label mb-0 lh-base">First destination</p> 
-                                <p class="ground-service-destination-text mb-0 lh-base">Makkah, Saudi Arabia</p>
-                            </div>
-                            <div class="d-flex flex-column align-items-start" *ngIf="step == 'step2'">
-                                <p class="ground-service-destination-label mb-0 lh-base">Second destination</p> 
-                                <p class="ground-service-destination-text mb-0 lh-base">Madinah, Saudi Arabia</p>
+                                <h2 class="heading-title color-1 mb-0">Extras</h2>
                             </div>
                         </div>
                     </div>
@@ -62,7 +50,7 @@
                                                     <p class="mb-0 read-more-content">{{displayMore(package.details.description)}}
                                                         <button id="read-more-package" class="read-more-btn" type="button" (click)="showMore()"
                                                         [ngStyle]="{'display': package.details.description.length > 350 ? 'block' : 'none'}">
-                                                        {{ isShowMore ? 'Read Less': 'Read More' }}
+                                                        {{ isShowMore ? 'Read Less': 'Read more' }}
                                                         </button>
                                                     </p>
                                                     <hr />
@@ -197,7 +185,7 @@
                                                     <p class="mb-0 read-more-content">{{displayMore(package.details.description)}}
                                                         <button id="read-more-package" class="read-more-btn" type="button" (click)="showMore()"
                                                         [ngStyle]="{'display': package.details.description.length > 350 ? 'block' : 'none'}">
-                                                        {{ isShowMore ? 'Read Less': 'Read More' }}
+                                                        {{ isShowMore ? 'Read Less': 'Read more' }}
                                                         </button>
                                                     </p>
                                                     <hr />

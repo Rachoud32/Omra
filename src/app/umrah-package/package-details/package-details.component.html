@@ -10,28 +10,17 @@
           <div class="row">
             <app-package-search-bar></app-package-search-bar>
 
-            <!-- <div class="col-xl-12 py-3">
-              <button class="back-link d-flex align-items-center gap-2" routerLink="/umrah-package/result">
-                <i class="icon-line-chevron-left"></i>
-                <p class="mb-0">Return to Packages List</p>
-              </button>
-            </div> -->
-
             <!---- Package Header ---->
-            <div class="col-xl-12 pt-5">
+            <div class="col-xl-12 pt-4">
               <div class="package-header mb-4">
                 <div class="package-header-content container">
                   <div class="row gy-3 package-header-card align-items-center">
                     <div class="col-xl-6 col-lg-6">
-                      <div class="d-flex flex-column column-gap-3 row-gap-2">
+                      <div class="d-flex flex-column column-gap-3 row-gap-1">
                         <h5 class="package-details-title">
                           {{package.packageTitle}}
                         </h5>
                         <div class="d-flex flex-wrap align-items-center lh-base gap-2">
-                          <div class="package-details-rating z-index-3 d-flex align-items-center">
-                            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5"
-                              [initialStars]='package.packageRating' [color]="'#f4c253'"></ngx-stars>
-                          </div>
                           <div class="package-details-type lh-base">
                             <p class="m-0">{{package.packageType}}</p>
                           </div>
@@ -64,7 +53,7 @@
                             <div class="package-rate">{{package.packageRating}}</div>
                             <div class="package-review d-flex flex-column justify-content-start lh-base">
                               <span class="mb-0 lh-base">{{package.packageRating >= 4 ? 'Luxurious' : package.packageRating >= 3 ? 'Elegant' : package.packageRating >= 2 ? 'Standard' : package.packageRating >= 1 ? 'Modest' : 'Basic'}}</span>
-                              <p class="mb-0">(207 Reviews)</p>
+                              <p class="mb-0">(100 Reviews)</p>
                             </div>
                           </div>
                         </div>
@@ -76,7 +65,7 @@
             </div>
 
             <!---- Package Gallery ---->
-            <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+            <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide" *ngIf="!galleryMobile">
               <a *ngFor="let image of package.packagePictures" class="gallery-item" [attr.data-src]="image">
                 <div class="row" *ngIf="image == package.packagePictures[0]">
                   <div [class]="package.packagePictures.length == 2 ? 'col-xl-6 mb-4' : package.packagePictures.length == 1 ? 'col-xl-12 mb-4' : 'col-xl-8 mb-4'">
@@ -108,6 +97,33 @@
               </a>
             </lightgallery>
 
+            <div div class="col-xl-12" *ngIf="galleryMobile">
+              <div class="package-gallery-box ps-0">
+                <div id="carouselpackage" class="package-carousel carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                  <div class="carousel-inner h-100">
+                    <div *ngFor="let image of package.packagePictures"
+                      class="carousel-item h-100 active" data-bs-interval="4000">
+                      <img src={{image}} class="package-picture d-block w-100 h-100" alt="" />
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between gap-3">
+                    <div class="carousel-controls">
+                      <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselpackage" data-bs-slide="prev">
+                        <i class="icon-line-chevron-left"></i>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselpackage" data-bs-slide="next">
+                        <i class="icon-line-chevron-right"></i>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!---- Package Description ---->
             <div class="col-xl-12">
               <div class="package-description mb-4">
@@ -119,7 +135,7 @@
                         <p class="mb-0 read-more-content">{{displayMore(package.details.description)}}
                           <button id="read-more-package" class="read-more-btn" type="button" (click)="showMore()"
                           [ngStyle]="{'display': package.details.description.length > 350 ? 'block' : 'none'}">
-                          {{ isShowMore ? 'Read Less': 'Read More' }}
+                          {{ isShowMore ? 'Read Less': 'Read more' }}
                           </button>
                         </p>
                       </div>
@@ -231,11 +247,11 @@
                               <div class="offer-text">{{offer.departuretype}}</div>
                             </div>
                           </div>
-                          <div class="offer-detail d-flex align-items-center gap-2">
-                            <i class="icon-line-briefcase"></i>
+                          <div class="offer-detail d-flex align-items-center gap-2" *ngIf="offer.departuretype == 'not guaranteed'">
+                            <i class="icon-line-users"></i>
                             <div class="d-flex flex-column column-gap-1">
-                              <p class="offer-label mb-0">Arrangement</p>
-                              <div class="offer-text">{{offer.arrangementtype}}</div>
+                              <p class="offer-label mb-0">Min/Max Seats</p>
+                              <div class="offer-text">{{offer.maxpersons}}</div>
                             </div>
                           </div>
                         </div>
@@ -377,7 +393,7 @@
                                           data-bs-ride="carousel">
                                           <div class="carousel-inner h-100">
                                             <div *ngFor="let image of package.details.firstDestinations[i].images"
-                                              class="carousel-item h-100 active" data-bs-interval="4000000">
+                                              class="carousel-item h-100 active" data-bs-interval="4000">
                                               <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
                                             </div>
                                           </div>
@@ -425,7 +441,7 @@
                                               <div class="d-flex align-items-center gap-1">
                                                 <div class="hotel-rate me-2">{{hotel.rating}}</div>
                                                 <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                                  <span class="mb-0">Excellent</span>
+                                                  <span class="mb-0 lh-base">{{package.packageRating >= 4 ? 'Luxurious' : package.packageRating >= 3 ? 'Elegant' : package.packageRating >= 2 ? 'Standard' : package.packageRating >= 1 ? 'Modest' : 'Basic'}}</span>
                                                   <p class="mb-0">(100 Reviews)</p>
                                                 </div>
                                               </div>
@@ -436,7 +452,7 @@
                                                 <p class="mb-0 read-more-content">{{displayText(hotel.details.description, i)}}
                                                   <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
                                                   [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
-                                                  {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                                  {{ isReadMore[i] ? 'Read Less': 'Read more' }}
                                                 </button>
                                                 </p>
                                               </div>
@@ -618,7 +634,7 @@
                                           data-bs-ride="carousel">
                                           <div class="carousel-inner h-100">
                                             <div *ngFor="let image of package.details.secondDestinations[k].images"
-                                              class="carousel-item h-100 active" data-bs-interval="4000000">
+                                              class="carousel-item h-100 active" data-bs-interval="4000">
                                               <img src={{image}} class="image-box d-block w-100 h-100" alt="" />
                                             </div>
                                           </div>
@@ -666,7 +682,7 @@
                                               <div class="d-flex align-items-center gap-1">
                                                 <div class="hotel-rate me-2">{{hotel.rating}}</div>
                                                 <div class="hotel-review d-flex flex-column justify-content-start lh-base">
-                                                  <span class="mb-0">Excellent</span>
+                                                  <span class="mb-0 lh-base">{{package.packageRating >= 4 ? 'Luxurious' : package.packageRating >= 3 ? 'Elegant' : package.packageRating >= 2 ? 'Standard' : package.packageRating >= 1 ? 'Modest' : 'Basic'}}</span>
                                                   <p class="mb-0">(100 Reviews)</p>
                                                 </div>
                                               </div>
@@ -678,7 +694,7 @@
                                                   {{displayText(hotel.details.description, k)}}
                                                   <button [attr.id]="'read-more '+ k" class="read-more-btn" type="button" (click)="showText(k)"
                                                     [ngStyle]="{'display': hotel.details.description.length > 180 ? 'block' : 'none'}">
-                                                    {{ isReadMore[k] ? 'Read Less': 'Read More' }}
+                                                    {{ isReadMore[k] ? 'Read Less': 'Read more' }}
                                                   </button>
                                                 </p>
                                               </div>
@@ -1458,7 +1474,7 @@
                                     <p class="mb-0 read-more-content">{{displayActivity(activity.description, i)}}
                                       <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
                                         [ngStyle]="{'display': activity.description.length > 180 ? 'block' : 'none'}">
-                                        {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                        {{ isReadMore[i] ? 'Read Less': 'Read more' }}
                                       </button>
                                     </p>
                                   </div>
@@ -1599,7 +1615,7 @@
                                     <p class="mb-0 read-more-content">{{displayVisit(visit.description, i)}}
                                       <button [attr.id]="'read-more '+ i" class="read-more-btn" type="button" (click)="showText(i)"
                                         [ngStyle]="{'display': visit.description.length > 180 ? 'block' : 'none'}">
-                                        {{ isReadMore[i] ? 'Read Less': 'Read More' }}
+                                        {{ isReadMore[i] ? 'Read Less': 'Read more' }}
                                       </button>
                                     </p>
                                   </div>

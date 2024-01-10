@@ -56,6 +56,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },
@@ -67,6 +68,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'Belgium',
               airport: 'Brussels Airport'
             },
@@ -78,6 +80,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Lyon-Saint Exupéry Airport'
             },
@@ -89,6 +92,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'UK',
               airport: 'Manchester Airport'
             },
@@ -678,6 +682,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },
@@ -689,6 +694,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'Belgium',
               airport: 'Brussels Airport'
             },
@@ -700,6 +706,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Lyon-Saint Exupéry Airport'
             },
@@ -711,6 +718,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'UK',
               airport: 'Manchester Airport'
             },
@@ -722,6 +730,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: `Nice Côte d'Azur Airport`
 
@@ -1198,6 +1207,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },
@@ -1209,6 +1219,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'Belgium',
               airport: 'Brussels Airport'
             },
@@ -1220,6 +1231,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Lyon-Saint Exupéry Airport'
             },
@@ -1231,6 +1243,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'UK',
               airport: 'Manchester Airport'
             },
@@ -1242,6 +1255,7 @@ export class packageService {
               nbrnights: '4',
               departuretype: 'not guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: `Nice Côte d'Azur Airport`
 
@@ -1708,6 +1722,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },
@@ -2218,6 +2233,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },
@@ -2728,6 +2744,7 @@ export class packageService {
               nbrnights: '3',
               departuretype: 'guaranteed',
               arrangementtype: 'LPD',
+              maxpersons: 15,
               departurecity: 'France',
               airport: 'Charles de Gaulle Airport'
             },

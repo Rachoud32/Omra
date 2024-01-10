@@ -1,8 +1,26 @@
 <div class="customize-searchbar row" *ngIf="SearchBar" id="searchbar" #searchbar>
-  <div class="col-xl-12 pt-5 search-bar-card">
+  <div class="search-display-type col-xl-12 pt-3" *ngIf="customSearchMobile" >
+    <button class="selected-search-infos-btn d-flex align-items-center justify-content-between gap-2 w-100" type="button"
+     data-bs-toggle="modal" data-bs-target="#custom-search-modal">
+      <span class="d-flex align-items-center justify-content-between column-gap-2">
+        <i class="search-icon icon-line-search"></i>
+        <div class="d-flex flex-column align-items-start">
+          <span class="search-label lh-base">Your search</span>
+          <span class="search-text-content d-flex align-items-center gap-1">
+            <span class="lh-base">Ramadan,</span>
+            <span class="lh-base">France,</span> 
+            <span class="lh-base">2 guests</span>
+          </span>
+        </div>
+      </span>
+      <i class="edit-icon icon-line-edit-3"></i>
+    </button>
+  </div>  
+
+  <div class="col-xl-12 pt-3 search-bar-card" *ngIf="!customSearchMobile">
     <form id="search-form" class="check-form search-bar search-results">
       <div class="row align-items-center">
-        <div class="col-xl-5 search-result-counter">
+        <div class="col-xl-4 search-result-counter">
           <div class="d-flex align-items-center gap-2">
             <div class="search-bar-icon">
               <div *ngIf="category==='room(s)'">
@@ -43,32 +61,30 @@
                 </svg>
               </div>
             </div>
-            <p class="mb-0">3 <span>{{category}}</span> Found according to your search.</p>
+            <p class="search-result-text mb-0">3 <span>{{category}}</span> Found according to your search.</p>
           </div>
         </div>
         
-        <div class="col-xl-7 search-result-edit">
-          <div class="d-flex justify-content-between align-items-end search-results-list gap-3">
-            <div class="search-form-edit d-flex align-items-center justify-content-end gap-3">
+        <div class="col-xl-8 search-result-edit">
+          <div class="d-flex justify-content-end align-items-end search-results-list gap-3">
+            <div class="search-form-edit d-flex align-items-center justify-content-end row-gap-1 column-gap-3">
               <div class="dp-hidden position-absolute calendar">
-                <div>
-                  <input name="datepicker" class="calendar-input" ngbDatepicker #datepicker="ngbDatepicker"
-                    [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
-                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!" [minDate]="today"
-                    tabindex="-1" [footerTemplate]="footerTemplate" #d="ngbDatepicker" />
-                  <ng-template #t let-date let-focused="focused">
-                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
-                      [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
-                      (mouseleave)="hoveredDate = null">
-                      {{ date.day }}
-                    </span>
-                  </ng-template>
-                  <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
-                    <div class="datepicker-footer d-flex justify-content-end">
-                      <button class="color-btn validate-btn" (click)="checkDates() && d.close()">Confirm</button>
-                    </div>
-                  </ng-template>
-                </div>
+                <input name="datepicker" class="calendar-input" ngbDatepicker #datepicker="ngbDatepicker"
+                  [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                  style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!" [minDate]="today"
+                  tabindex="-1" [footerTemplate]="footerTemplate" #d="ngbDatepicker" />
+                <ng-template #t let-date let-focused="focused">
+                  <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+                <ng-template #footerTemplate let-date="date" let-datepicker="datepicker">
+                  <div class="datepicker-footer d-flex justify-content-end">
+                    <button class="color-btn validate-btn" (click)="checkDates() && d.close()">Confirm</button>
+                  </div>
+                </ng-template>
               </div>
               <button class="btn btn-primary d-flex align-items-center date-picker-btn" (click)="datepicker.toggle()"
                 type="button">
@@ -98,139 +114,162 @@
                 </div>
               </button>
 
-              <div [formGroup]="searchFormHotel">
+              <div [formGroup]="searchFormCustom">
                 <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
-                  <button class="passengers-btn btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static"
-                  aria-expanded="false"[class.selected-item]="searchFormHotel.value.passengersHotel.length != 1 || numAdultsHotel != 1 || numChildrenHotel != 0" >
-                    <div class="d-flex align-items-center">
-                      <div class="input-group d-flex flex-nowrap align-items-center">
-                        <span class="input-group-text"><i class="icon-line-users"></i></span>
-                        <p class="m-0" [class.text-muted]="searchFormHotel.value.passengersHotel.length === 1 && numAdultsHotel === 1 && numChildrenHotel === 0" 
-                          *ngIf="searchFormHotel.value.passengersHotel.length">
-                          {{
-                          searchFormHotel.value.passengersHotel.length
-                          }}&nbsp;Room{{
-                          searchFormHotel.value.passengersHotel.length > 1
-                          ? "s"
-                          : ""
-                          }}
-                          &nbsp;{{ numAdultsHotel }}&nbsp;Adult{{
-                          numAdultsHotel > 1 ? "s" : ""
-                          }}
-                          &nbsp;{{
-                          (numChildrenHotel == 0 || numChildrenHotel == 1)
-                          ? numChildrenHotel +
-                          "&nbsp;Child" : numChildrenHotel +"&nbsp;Children"
-                          }}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                  <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuOne>
-                    <div formArrayName="passengersHotel">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex justify-content-between mb-3">
-                          <div class="passengers-label">Room</div>
-                          <div class="d-flex object-quantity passengers-nbr align-items-center">
-                            <div class="minus" (click)="deletePassengerhotel()">-</div>
-                            <div class="quantity">{{ passengersHotel.length }}</div>
-                            <div class="plus" (click)="addPassengerhotel()">+</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngFor="
-                        let passenger of passengersHotel.controls;
-                        let i = index
-                      ">
-                        <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
-                          <div class="room-specifics d-flex flex-column">
-                            <div class="d-flex justify-content-between">
-                              <div class="room-quantity">
-                                {{ passenger.get("room")?.value }}
-                              </div>
-                            </div>
-                            <div class="room-passengers-details">
-                              <div class="passengers-nbr-block d-flex gap-2">
-                                <div class="d-flex w-100">
-                                  <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
-                                    <div class="passengers-label me-1">Adults</div>
-                                    <div class="d-flex object-quantity passengers-nbr align-items-center">
-                                      <div class="minus" (click)="minusadultshotel(i)">
-                                        -
-                                      </div>
-                                      <div class="quantity">
-                                        {{ passenger.get("adults")?.value }}
-                                      </div>
-                                      <div class="plus" (click)="plusadultshotel(i)">
-                                        +
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="d-flex w-100">
-                                  <div class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
-                                    <div class="passengers-label me-1">Children</div>
-                                    <div class="d-flex object-quantity passengers-nbr align-items-center">
-                                      <div class="minus" (click)="minuschildrenhotel(i)">
-                                        -
-                                      </div>
-                                      <div class="quantity">
-                                        {{
-                                        passenger.get("childrenHotel")?.value.length
-                                        }}
-                                      </div>
-                                      <div class="plus" (click)="pluschildrenhotel(i)">
-                                        +
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="child-age col-6 mb-2" formArrayName="childrenHotel" *ngFor="
-                    let childHotel of childrenHotel(i).controls;
-                    let k = index
-                  ">
-                                  <div [formGroupName]="k" class="dropdown">
-                                    <button [class.selected-item]="
-                        childHotel.get('age')?.value
-                      " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                      data-bs-display="static" aria-expanded="false">
-                                      <div class="d-flex me-4 justify-content-between align-items-center w-100">
-                                        <div class="select-age d-flex">
-                                          <p class="m-0">
-                                            {{
-                                            childHotel.get("age")?.value === ""
-                                            ? "1"
-                                            : childHotel.get("age")?.value
-                                            }}
-                                          </p>
+                  <button [class.selected-item]="
+                        searchFormCustom.value.passengersCustom.length != 1 ||
+                        numAdultsCustom != 1 ||
+                        numChildrenCustom != 0
+                      " class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                    data-bs-display="static" aria-expanded="false">
+                                    <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                        <div class="input-group d-flex">
+                                            <span class="input-group-text"><i class="icon-line-users"></i></span>
+                                            <p class="m-0" [class.text-muted]="
+                              searchFormCustom.value.passengersCustom.length === 1 &&
+                              numAdultsCustom === 1 &&
+                              numChildrenCustom === 0
+                            " *ngIf="searchFormCustom.value.passengersCustom.length">
+                                                {{ searchFormCustom.value.passengersCustom.length }}&nbsp;Room{{
+                                                searchFormCustom.value.passengersCustom.length > 1 ? "s" : ""
+                                                }}
+                                                &nbsp;{{ numAdultsCustom }}&nbsp;Adult{{
+                                                numAdultsCustom > 1 ? "s" : ""
+                                                }}
+                                                &nbsp;{{
+                                                numChildrenCustom !== 0
+                                                ? numChildrenCustom +
+                                                "&nbsp;Child" +
+                                                (numChildrenCustom > 1 ? "ren" : "")
+                                                : ""
+                                                }}
+                                            </p>
                                         </div>
-                                        <i class="icon-line-chevron-down"></i>
-                                      </div>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end animate slideIn">
-                                      <div class="select-container" *ngFor="
-                          let item of ageNumbers;
-                          let j = index
-                        ">
-                                        <input type="radio" [value]="item" [id]="'k' + k + 'j' + j"
-                                          class="form-check-input me-2" formControlName="age" />
-                                        <label [for]="'k' + k + 'j' + j" class="list-item w-100">
-                                          {{ item }}</label>
-                                      </div>
+                                        <i class="icon-end icon-line-plus"></i>
                                     </div>
-                                  </div>
+                                </button>
+                                <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuThree>
+                                    <div formArrayName="passengersCustom">
+                                        <div class="d-flex flex-column">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <div class="passengers-label">Room</div>
+                                                <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                                    <div class="minus" (click)="deletePassengerCustom()">
+                                                        -
+                                                    </div>
+                                                    <div class="quantity">{{ passengersCustom.length }}</div>
+                                                    <div class="plus" (click)="addPassengerCustom()">+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngFor="
+                                          let passenger of passengersCustom.controls;
+                                          let i = index
+                                        ">
+                                            <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
+                                                <div class="room-specifics d-flex flex-column">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="room-quantity">
+                                                            {{ passenger.get("room")?.value }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="room-passengers-details">
+                                                        <div class="passengers-nbr-block d-flex column-gap-4">
+                                                            <div class="d-flex w-100">
+                                                                <div
+                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
+                                                                    <div class="passengers-label me-1">Adults</div>
+                                                                    <div
+                                                                        class="d-flex object-quantity passengers-nbr align-items-center">
+                                                                        <div class="minus" (click)="minusadultsCustom(i)">
+                                                                            -
+                                                                        </div>
+                                                                        <div class="quantity">
+                                                                            {{ passenger.get("adults")?.value }}
+                                                                        </div>
+                                                                        <div class="plus" (click)="plusadultsCustom(i)">
+                                                                            +
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex w-100">
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center w-100 mb-2">
+                                                                    <div class="passengers-label me-1">Children</div>
+                                                                    <div
+                                                                        class="d-flex object-quantity passengers-nbr align-items-center">
+                                                                        <div class="minus" (click)="minuschildrenCustom(i)">
+                                                                            -
+                                                                        </div>
+                                                                        <div class="quantity">
+                                                                            {{
+                                                                            passenger.get("childrenCustom")?.value.length
+                                                                            }}
+                                                                        </div>
+                                                                        <div class="plus" (click)="pluschildrenCustom(i)">
+                                                                            +
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="row">
+                                                            <div class="child-age col-6 mb-2" formArrayName="childrenCustom"
+                                                                *ngFor="
+                                                              let child of childrenCustom(i).controls;
+                                                              let k = index
+                                                            ">
+                                                                <div [formGroupName]="k" class="dropdown">
+                                                                    <p class="childs-label lh-base">Child {{k + 1}} Age</p>
+                                                                    <button [class.selected-item]="
+                                                                    child.get('age')?.value
+                                                                    " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                                                    data-bs-auto-close="outside"
+                                                                    data-bs-display="static" aria-expanded="false">
+                                                                        <div
+                                                                            class="d-flex me-4 justify-content-between w-100">
+                                                                            <div class="select-age d-flex">
+                                                                                <p class="m-0">
+                                                                                    {{
+                                                                                    child.get("age")?.value === ""
+                                                                                    ? "1"
+                                                                                    : child.get("age")?.value
+                                                                                    }}
+                                                                                </p>
+                                                                            </div>
+                                                                            <i class="icon-line-chevron-down"></i>
+                                                                        </div>
+                                                                    </button>
+                                                                    <div
+                                                                        class="dropdown-menu dropdown-menu-end animate slideIn">
+                                                                        <div class="select-container" *ngFor="
+                                            let item of ageNumbers;
+                                            let j = index
+                                          ">
+                                                                            <input type="radio" [value]="item"
+                                                                                [id]="'k' + k + 'j' + j"
+                                                                                class="form-check-input me-2"
+                                                                                formControlName="age" />
+                                                                            <label [for]="'k' + k + 'j' + j"
+                                                                                class="list-item w-100">
+                                                                                {{ item }}</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="color-btn validate-btn mt-3"
+                                            (click)="toggleDropdown('1')">Confirm</button>
+                                    </div>
                                 </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="color-btn validate-btn mt-3" (click)="toggleDropdown('1')">Confirm</button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -248,3 +287,202 @@
     </form>
   </div>
 </div>
+
+<div class="modal fade" id="custom-search-modal" tabindex="-1" aria-labelledby="customSearchModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">Custom Search</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-form-edit d-flex flex-column align-items-stretch justify-content-start gap-3 w-100 mb-3">
+          <div class="dp-hidden position-absolute calendar">
+            <div class="">
+                <input name="datepicker" class="calendar-input" ngbDatepicker
+                    #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                    (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t1"
+                    style="border: 0; padding: 0" outsideDays="hidden" [startDate]="fromDate!"
+                    [minDate]="today" tabindex="-1" [footerTemplate]="footerTemplate1"
+                    #d="ngbDatepicker" />
+                <ng-template #t1 let-date let-focused="focused">
+                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                        [class.faded]="isHovered(date) || isInside(date)"
+                        (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+                        {{ date.day }}
+                    </span>
+                </ng-template>
+                <ng-template #footerTemplate1 let-date="date" let-datepicker="datepicker">
+                    <div class="datepicker-footer d-flex justify-content-end">
+                        <button class="color-btn validate-btn"
+                            (click)="applyDate(date);checkDates() && d.close()">Confirm</button>
+                    </div>
+                </ng-template>
+            </div>
+          </div>
+          <div [formGroup]="searchFormCustom">
+            <div class="dropdown dropdown-end dropdown-guests" #dropdownElement>
+              <button [class.selected-item]="
+                    searchFormCustom.value.passengersCustom.length != 1 ||
+                    numAdultsCustom != 1 ||
+                    numChildrenCustom != 0
+                  " class="btn w-100" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                data-bs-display="static" aria-expanded="false">
+                                <div class="d-flex me-4 justify-content-between w-100 align-items-center">
+                                    <div class="input-group d-flex">
+                                        <span class="input-group-text"><i class="icon-line-users"></i></span>
+                                        <p class="m-0" [class.text-muted]="
+                          searchFormCustom.value.passengersCustom.length === 1 &&
+                          numAdultsCustom === 1 &&
+                          numChildrenCustom === 0
+                        " *ngIf="searchFormCustom.value.passengersCustom.length">
+                                            {{ searchFormCustom.value.passengersCustom.length }}&nbsp;Room{{
+                                            searchFormCustom.value.passengersCustom.length > 1 ? "s" : ""
+                                            }}
+                                            &nbsp;{{ numAdultsCustom }}&nbsp;Adult{{
+                                            numAdultsCustom > 1 ? "s" : ""
+                                            }}
+                                            &nbsp;{{
+                                            numChildrenCustom !== 0
+                                            ? numChildrenCustom +
+                                            "&nbsp;Child" +
+                                            (numChildrenCustom > 1 ? "ren" : "")
+                                            : ""
+                                            }}
+                                        </p>
+                                    </div>
+                                    <i class="icon-end icon-line-plus"></i>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuThree>
+                                <div formArrayName="passengersCustom">
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div class="passengers-label">Room</div>
+                                            <div class="d-flex object-quantity passengers-nbr align-items-center">
+                                                <div class="minus" (click)="deletePassengerCustom()">
+                                                    -
+                                                </div>
+                                                <div class="quantity">{{ passengersCustom.length }}</div>
+                                                <div class="plus" (click)="addPassengerCustom()">+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="
+                        let passenger of passengersCustom.controls;
+                        let i = index
+                      ">
+                                        <div [formGroupName]="i" class="room-guest-item d-flex flex-column mb-1">
+                                            <div class="room-specifics d-flex flex-column">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="room-quantity">
+                                                        {{ passenger.get("room")?.value }}
+                                                    </div>
+                                                </div>
+                                                <div class="room-passengers-details">
+                                                    <div class="passengers-nbr-block d-flex column-gap-4">
+                                                        <div class="d-flex w-100">
+                                                            <div
+                                                                class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
+                                                                <div class="passengers-label me-1">Adults</div>
+                                                                <div
+                                                                    class="d-flex object-quantity passengers-nbr align-items-center">
+                                                                    <div class="minus" (click)="minusadultsCustom(i)">
+                                                                        -
+                                                                    </div>
+                                                                    <div class="quantity">
+                                                                        {{ passenger.get("adults")?.value }}
+                                                                    </div>
+                                                                    <div class="plus" (click)="plusadultsCustom(i)">
+                                                                        +
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex w-100">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center w-100 mb-2">
+                                                                <div class="passengers-label me-1">Children</div>
+                                                                <div
+                                                                    class="d-flex object-quantity passengers-nbr align-items-center">
+                                                                    <div class="minus" (click)="minuschildrenCustom(i)">
+                                                                        -
+                                                                    </div>
+                                                                    <div class="quantity">
+                                                                        {{
+                                                                        passenger.get("childrenCustom")?.value.length
+                                                                        }}
+                                                                    </div>
+                                                                    <div class="plus" (click)="pluschildrenCustom(i)">
+                                                                        +
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="child-age col-6 mb-2" formArrayName="childrenCustom"
+                                                            *ngFor="
+                                  let child of childrenCustom(i).controls;
+                                  let k = index
+                                ">
+                                                            <div [formGroupName]="k" class="dropdown">
+                                                                <p class="childs-label lh-base">Child {{k + 1}} Age</p>
+                                                                <button [class.selected-item]="
+                                      child.get('age')?.value
+                                    " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
+                                                                    data-bs-auto-close="outside"
+                                                                    data-bs-display="static" aria-expanded="false">
+                                                                    <div
+                                                                        class="d-flex me-4 justify-content-between w-100">
+                                                                        <div class="select-age d-flex">
+                                                                            <p class="m-0">
+                                                                                {{
+                                                                                child.get("age")?.value === ""
+                                                                                ? "1"
+                                                                                : child.get("age")?.value
+                                                                                }}
+                                                                            </p>
+                                                                        </div>
+                                                                        <i class="icon-line-chevron-down"></i>
+                                                                    </div>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end animate slideIn">
+                                                                    <div class="select-container" *ngFor="
+                                        let item of ageNumbers;
+                                        let j = index
+                                      ">
+                                                                        <input type="radio" [value]="item"
+                                                                            [id]="'k' + k + 'j' + j"
+                                                                            class="form-check-input me-2"
+                                                                            formControlName="age" />
+                                                                        <label [for]="'k' + k + 'j' + j"
+                                                                            class="list-item w-100">
+                                                                            {{ item }}</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button class="color-btn validate-btn mt-3"
+                                        (click)="toggleDropdown('1')">Confirm</button>
+                                </div>
+                            </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-form-btns d-flex align-items-center gap-2 justify-content-end">
+          <button class="color-btn search-btn" type="submit"><i class="icon-line-search m-0"></i></button>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div> 

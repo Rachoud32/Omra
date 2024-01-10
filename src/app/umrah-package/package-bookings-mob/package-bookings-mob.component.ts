@@ -1,35 +1,39 @@
-import { Component, Input } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-package-bookings-mob',
   templateUrl: './package-bookings-mob.component.html',
-  styleUrls: ['./package-bookings-mob.component.css']
+  styleUrls: ['./package-bookings-mob.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0,
+        display: 'none'
+      })),
+      state('*', style({
+        opacity: 1,
+        display: 'block'
+      })),
+      transition('void <=> *', animate(300)),
+    ]),
+  ],
 })
-export class PackageBookingsMobComponent {
+export class PackageBookingsMobComponent implements OnInit {
   @Input() eventgoToNextStep!: Function;
+  isCollapsed = true;
+
+  ngOnInit(): void {
+    // You can add any initialization logic here
+  }
+
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
   goToNextStep() {
     if (this.eventgoToNextStep) {
-      this.eventgoToNextStep();
-
-      const targetDiv = document.getElementById('services-navigation');
-      
-      if (targetDiv) {
-        // Use ScrollToOptions type for scrollOptions
-        const scrollOptions: ScrollToOptions = {
-            top: targetDiv.offsetTop,
-            behavior: 'smooth'
-        };
-
-        // Check if 'scrollTo' function supports 'options' parameter
-        if ('scrollBehavior' in document.documentElement.style) {
-            // Scroll to the target div
-            window.scrollTo(scrollOptions);
-        } else {
-            // Use the old way of scrolling for browsers that don't support 'scrollBehavior'
-            window.scrollTo(scrollOptions.left || 0, scrollOptions.top || 0);
-        }
-      }
+      this.eventgoToNextStep()
     }
   }
 }

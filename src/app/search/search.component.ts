@@ -63,20 +63,20 @@ export class SearchComponent implements OnInit {
   today: any
   hotels = [
     { name: 'All Hotels' },
-    { name: 'Movenpick Makkah Hajar Tower', city: 'Makkah' },
-    { name: 'Swissotel Al Maqam Makkah', city: 'Makkah' },
-    { name: 'Pullman ZamZam Makkah', city: 'Makkah' },
-    { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' }
+    { name: 'Movenpick Makkah Hajar Tower'},
+    { name: 'Swissotel Al Maqam Makkah'},
+    { name: 'Pullman ZamZam Makkah'},
+    { name: 'Anwar Al Madinah Mövenpick'}
   ];
   countries = [
-    { country: 'Algeria', region: 'Africa'},
-    { country: 'Morocco', region: 'Africa'},
-    { country: 'Bahrain', region: 'Asia' },
-    { country: 'Kuwait', region: 'Asia' },
-    { country: 'France', region: 'Europe'},
-    { country: 'Italy', region: 'Europe'},
-    { country: 'UK', region: 'Europe' },
-    { country: 'Australia', region: 'Oceania' }
+    { country: 'Algeria'},
+    { country: 'Morocco'},
+    { country: 'Bahrain'},
+    { country: 'Kuwait'},
+    { country: 'France'},
+    { country: 'Italy'},
+    { country: 'UK'},
+    { country: 'Australia'}
   ];
   periods = [
     { month: 'Mouled'},
@@ -203,6 +203,7 @@ export class SearchComponent implements OnInit {
       return true
     }
   }
+  
   applyDate(date: NgbDateStruct): void {
     this.selectedDate = date
     let data = {
@@ -383,7 +384,7 @@ export class SearchComponent implements OnInit {
       destinationFormControl.setValue(value);
     }
   }
-  plusNightsDestionation(index: any) {
+  plusNightsDestination(index: any) {
     const nightsFormControl = this.destinations.at(index)?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;
@@ -392,7 +393,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  minusNightsDestionation(index: any) {
+  minusNightsDestination(index: any) {
     const nightsFormControl = this.destinations.at(index)?.get('nights');
     if (nightsFormControl) {
       let currentNightsValue = nightsFormControl.value;

@@ -109,6 +109,7 @@ body::-webkit-scrollbar-thumb {
 
 body {
     font-family: var(--omra-font) !important;
+    position: relative;
     font-weight: 500 !important;
     font-size: var(--fs-18) !important;
     line-height: 2 !important;
@@ -116,7 +117,6 @@ body {
     font-variant-ligatures: none;
     -webkit-font-smoothing: antialiased;
     scrollbar-width: thin;
-    scrollbar-color: var(--omra-second) var(--omra-light-gray) transparent;
 }
 
 p {
@@ -314,6 +314,7 @@ h6 {
     color: unset !important;
     background-color: transparent !important;
     border-color: var(--omra-light-gray) !important;
+    border-radius: 0 !important;
 }
 
 /* .carousel-control-next { border-radius: 0 3px 3px 0; }
@@ -484,7 +485,57 @@ input[type=checkbox]:disabled {
 }
 
 /* ----------------------------------------------------------------
-	Read More
+	Buttons
+-----------------------------------------------------------------*/
+.color-btn {
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 15px 48px;
+    font-size: var(--fs-14);
+    line-height: normal;
+    border-radius: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--omra-white);
+    border: 2px solid var(--omra-primary);
+    background: var(--omra-primary);
+    border-radius: var(--bdr-radius-5);
+    transition: all .3s linear;
+}
+
+.color-btn:hover,
+.color-btn:active {
+    background-color: var(--omra-second);
+    border-color: var(--omra-second);
+}
+
+.colorinv-btn {
+    color: var(--omra-white);
+    border: 2px solid var(--omra-second);
+    background: var(--omra-second);
+}
+
+.colorinv-btn:hover,
+.colorinv-btn:active {
+    color: var(--omra-white);
+    border: 2px solid var(--omra-primary);
+    background: var(--omra-primary);
+}
+
+.bordered-btn-sm {
+    border: 1px solid var(--omra-light-gray) !important;
+    border-radius: 0 !important;
+}
+
+.bordered-btn-sm i {
+    font-size: var(--fs-14);
+    color: var(--omra-second);
+}
+
+/* ----------------------------------------------------------------
+	Read more
 -----------------------------------------------------------------*/
 .read-more-btn {
     border: 0;
@@ -494,6 +545,11 @@ input[type=checkbox]:disabled {
     font-size: var(--fs-12);
     transition: all .3s linear;
 }
+
+.read-more-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
 
 .read-more-content .read-more-btn {
     display: inline-block !important;
@@ -583,8 +639,8 @@ input[type=checkbox]:disabled {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: var(--fs-16);
-    font-weight: 400;
+    font-size: var(--fs-14);
+    font-weight: 300;
 }
 
 .ng-select .ng-select-container .ng-value-container .ng-input>input {
@@ -663,13 +719,13 @@ input[type=checkbox]:disabled {
 }
 
 .ng-select.custom b {
-    font-weight: 400;
-    font-size: var(--fs-15);
+    font-weight: 300;
+    font-size: var(--fs-14);
 }
 
 .ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
     color: var(--omra-gray);
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--fs-16);
 }
 
@@ -692,11 +748,11 @@ input[type=checkbox]:disabled {
 
 .ng-select.custom .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup {
     padding: 2px 15px;
-    font-size: var(--fs-14);
+    font-size: var(--fs-13);
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--omra-second);
-    background: var(--omra-extra);
+    color: var(--omra-primary);
+    background: rgb(238 238 238 / 25%);
 }
 
 .ng-select.custom .ng-clear-wrapper .ng-clear {
@@ -772,11 +828,13 @@ input[type=checkbox]:disabled {
 
 .date-picker-btn .text-muted {
     color: #bababa !important;
+    font-size: var(--fs-14);
+    font-weight: 300;
 }
 
 .search-section .dropdown .btn .text-muted {
     color: #bababa !important;
-    font-weight: 400;
+    font-weight: 300;
     transition: all .3s linear;
 }
 
@@ -810,18 +868,6 @@ input[type=checkbox]:disabled {
     width: 100%;
 }
 
-.input-group-custom {
-    padding: 8px 12px !important;
-    text-align: center;
-    border: 0;
-    border-radius: 0 !important;
-    background: var(--omra-white) !important;
-    border-color: var(--omra-light-gray);
-    color: var(--omra-second) !important;
-    font-size: var(--fs-18) !important;
-    transition: all .3s linear;
-}
-
 .input-group .input-group-text {
     padding: 8px 12px !important;
     text-align: center;
@@ -845,9 +891,10 @@ input[type=checkbox]:disabled {
 .input-group p {
     padding: 10px;
     display: flex;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0;
     align-items: center;
+    font-size: var(--fs-14);
 }
 
 .top-filter-section .input-group p {
@@ -862,8 +909,10 @@ input[type=checkbox]:disabled {
 
 .input-group span,
 .input-group .destination-input-content {
-    padding: 10px 15px 10px 10px;
+    padding: 9px 15px 9px 10px;
     letter-spacing: 0;
+    font-size: var(--fs-14);
+    font-weight: 300;
 }
 
 .bi::before,
@@ -901,43 +950,6 @@ input[type=checkbox]:disabled {
     margin: 0;
     font-weight: 400;
     color: var(--omra-primary);
-}
-
-.color-btn {
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    padding: 15px 48px;
-    font-size: var(--fs-14);
-    line-height: normal;
-    border-radius: 0px;
-    cursor: pointer;
-    text-transform: uppercase;
-    color: var(--omra-white);
-    border: 2px solid var(--omra-primary);
-    background: var(--omra-primary);
-    border-radius: var(--bdr-radius-5);
-    transition: all .3s linear;
-}
-
-.color-btn:hover,
-.color-btn:active {
-    background-color: var(--omra-second);
-    border-color: var(--omra-second);
-}
-
-.colorinv-btn {
-    color: var(--omra-white);
-    border: 2px solid var(--omra-second);
-    background: var(--omra-second);
-}
-
-.colorinv-btn:hover,
-.colorinv-btn:active {
-    color: var(--omra-white);
-    border: 2px solid var(--omra-primary);
-    background: var(--omra-primary);
 }
 
 .category-box {
@@ -1150,8 +1162,8 @@ label.category-item::before {
 }
 
 .search-container .list-item {
-    font-weight: 400;
-    font-size: var(--fs-15);
+    font-weight: 300;
+    font-size: var(--fs-14);
 }
 
 .sub-select .list-item {
@@ -1286,7 +1298,6 @@ label.category-item::before {
 }
 
 .dropdown-menu.show {
-
     width: 100%;
     top: 100% !important;
     margin-top: 8px !important;
@@ -1298,7 +1309,6 @@ label.category-item::before {
     box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 3%);
     padding: 0;
     overflow-x: hidden;
-    max-height: 150px;
     overflow-y: scroll;
     transition: all .3s linear;
 }
@@ -1342,13 +1352,6 @@ label.category-item::before {
 }
 
 .child-age .dropdown-menu.show {
-    margin-top: 8px !important;
-    max-width: 150px !important;
-    min-width: 90px !important;
-    max-height: 90px;
-}
-
-.child-age .dropdown-menu.show {
     padding: 0 !important;
 }
 
@@ -1363,15 +1366,27 @@ label.category-item::before {
 
 .select-age p {
     font-size: var(--fs-13);
+    font-weight: 400;
 }
 
 .room-quantity {
-    color: var(--omra-primary)
+    color: var(--omra-primary);
+    font-weight: 400;
 }
 
 .passengers-label {
     font-size: var(--fs-14);
-    font-weight: 400;
+    font-weight: 300;
+    color: var(--omra-gray);
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.childs-label {
+    font-size: var(--fs-12);    
+    margin-bottom: 5px;
+    font-weight: 300;
+    color: var(--omra-gray);
     line-height: normal;
 }
 
@@ -1412,8 +1427,8 @@ label.category-item::before {
     min-width: 50px;
     width: 50px;
     text-align: center;
-    font-size: var(--fs-13);
-    font-weight: 400;
+    font-size: var(--fs-14);
+    font-weight: 300;
     border: 1px solid #dee2e6;
     background: white;
     display: inline-block;
@@ -1523,8 +1538,8 @@ label.category-item::before {
     display: block;
     width: 100%;
     padding: 11px 20px 11px 10px;
-    font-size: var(--fs-16);
-    font-weight: 400;
+    font-size: var(--fs-14);
+    font-weight: 300;
     color: var(--omra-gray);
     background-color: var(--omra-white);
     border: 1px solid var(--omra-light-gray);
@@ -1554,8 +1569,8 @@ label.category-item::before {
 
 .criteria-form input::placeholder {
     color: #bababa !important;
-    font-weight: 400;
-    font-size: var(--fs-16);
+    font-weight: 300;
+    font-size: var(--fs-14);
 }
 
 .criteria-group:hover .input-group span,
@@ -1632,7 +1647,7 @@ label.category-item::before {
 ----------------------------------------------------*/
 .heading-title {
     line-height: 1.25 !important;
-    font-size: clamp(1rem, 7vw, 2.2rem) !important;
+    font-size: clamp(1rem, 7vw, 2rem) !important;
     text-transform: uppercase;
     color: var(--omra-primary);
 }
@@ -1667,8 +1682,9 @@ label.category-item::before {
     border-color: var(--omra-white);
     background-color: var(--omra-white);
     border: 0;
-    padding: 10px 15px !important;
+    padding: 15px !important;
     box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+    z-index: 1;
 }
 
 .selected-search-infos-btn .search-label {
@@ -1692,6 +1708,18 @@ label.category-item::before {
     color: var(--omra-second);
 }
 
+.selected-search-infos-btn .search-icon {
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-18);
+    color: var(--omra-second);
+    width: 40px;
+    height: 40px;
+    background: var(--omra-extra);
+}
+
 .selected-search-infos-btn .edit-icon {
     width: 40px;
     height: 40px;
@@ -1701,8 +1729,8 @@ label.category-item::before {
     color: var(--omra-primary);
 }
 
-.search-form-btns  .color-btn.close-btn {
-    display: none;
+.search-form-btns .color-btn.close-btn {
+    display: none !important;
 }
 
 .summary-search {
@@ -1713,10 +1741,12 @@ label.category-item::before {
     padding: 15px 20px;
 }
 
-.search-results p {
-    font-size: var(--fs-15);
+.search-results .search-result-text {
+    font-size: var(--fs-14);
     line-height: normal;
-    width: 240px;
+    max-width: 500px;
+    min-width: 240px;
+    line-height: 18px;
 }
 
 .filter-btn-mob {
@@ -1796,10 +1826,9 @@ label.category-item::before {
     color: var(--omra-white) !important;
 }
 
-/* .search-bar .dropdown-guests {
-    min-width: 270px;
-    max-width: 350px;
-} */
+.search-bar .dropdown-guests i {
+    font-size: var(--fs-14);
+}
 
 .search-bar .dropdown .btn {
     background: var(--omra-white);
@@ -1825,13 +1854,18 @@ label.category-item::before {
 
 .search-bar .input-group span,
 .input-group .destination-input-content {
-    font-size: var(--fs-15);
+    font-size: var(--fs-14);
+    font-weight: 300;
+}
+
+.search-bar .dropdown-guests .passengers-btn {
+    min-width: 280px;
+    max-width: 1000px;
 }
 
 .search-bar .dropdown-guests .dropdown-menu {
-    min-width: 250px;
-    max-width: 100%;
     max-height: 300px;
+    overflow-y: scroll;
 }
 
 .check-form .date-picker-btn {
@@ -1844,15 +1878,20 @@ label.category-item::before {
     background-color: var(--omra-white) !important;
 }
 
+.search-bar .dropdown-guests .child-age .dropdown-menu {
+    max-height: 120px !important;
+    height: 120px !important;
+    overflow-y: scroll;
+}
+
 .search-bar .passengers-nbr-block {
     flex-wrap: wrap;
     gap: 5px !important;
 }
 
-.search-bar .search-results p {
-    font-size: var(--fs-15);
-    line-height: normal;
-    width: 240px;
+.search-bar .search-results .search-result-text {
+    font-size: var(--fs-14);
+    line-height: 19px;
 }
 
 .search-bar .child-age .dropdown .btn {
@@ -1872,6 +1911,10 @@ label.category-item::before {
 
 .ng-select.ng-select-opened>.ng-select-container .ng-arrow {
     top: 0 !important;
+}
+
+.customize-searchbar .modal.show .modal-dialog {
+    z-index: 1060 !important;
 }
 
 
@@ -3169,7 +3212,7 @@ app-package-bookings-sidebar {
 app-bookings-mob,
 app-package-bookings-mob {
     position: fixed;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     z-index: 998;
@@ -3295,6 +3338,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     padding: 0px 15px;
     margin-right: 10px;
     margin-top: 15px;
+    margin-bottom: 15px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -3369,7 +3413,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 }
 
 .search-items-price {
-    padding: 0 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
 }
 
 .search-sidebar-price {
@@ -3404,6 +3448,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     align-content: center;
     font-weight: 300;
     color: var(--omra-gray);
+    border-top: 1px solid var(--omra-light-gray);
     font-size: var(--fs-14);
 }
 
@@ -3426,31 +3471,58 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     /* border-radius: 0 0 5px 5px; */
 }
 
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(5 0 51 / 30%);
+    z-index: -1;
+}
+
 /************************* Package Sidebar *************************/
 
 .package-sidebar .search-sidebar-list {
-    max-height: 270px;
+    max-height: 280px;
     min-height: 150px;
     height: fit-content;
 }
 
 .package-sidebar .destination-title {
-    background: var(--omra-primary);
+    border: 1px solid var(--omra-light-gray);
+    width: -moz-fit-content;
     width: fit-content;
-    padding: 3px 10px;
-    border-radius: var(--bdr-radius-5);
-}
-
-.package-sidebar .search-details-block-content .duration {
-    background: var(--omra-extra);
-    color: var(--omra-second);
-    width: fit-content;
-    line-height: normal;
+    width: 100%;
     padding: 5px 10px;
     border-radius: var(--bdr-radius-5);
 }
 
+.package-sidebar .search-details-block-content .duration {
+    border: 1px solid var(--omra-light-gray);
+    color: var(--omra-primary);
+    width: -moz-fit-content;
+    width: fit-content;
+    line-height: normal;
+    border-left: 0;
+    padding: 7px 10px;
+    border-radius: var(--bdr-radius-5);
+}
+
+.package-sidebar .search-details-block-content .duration i {
+    color: var(--omra-second);
+    line-height: 17px;
+    font-size: var(--fs-13);
+}
+
 .package-sidebar .room-label {
+    font-size: var(--fs-14);
+    color: var(--omra-second);
+    font-weight: 400 !important;
+}
+
+.package-sidebar .extra-label {
     font-size: var(--fs-14);
     color: var(--omra-second);
     font-weight: 400 !important;
@@ -3480,6 +3552,12 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
     color: var(--omra-primary);
 }
 
+.package-sidebar .extra-price {
+    font-size: var(--fs-14);
+    font-weight: 500;
+    color: var(--omra-primary);
+}
+
 .package-sidebar .search-sidebar-list hr {
     margin: 6px 0 10px;
 }
@@ -3487,7 +3565,7 @@ app-package-bookings-mob .search-sidebar-header a[aria-expanded="true"] .more-bo
 .package-sidebar .booked-service-label {
     text-transform: capitalize;
     font-size: var(--fs-14);
-    color: #ffffff;
+    color: var(--omra-primary);
     font-weight: 400;
 }
 
@@ -4494,6 +4572,10 @@ app-package-details .page-title {
     height: 100%;
 }
 
+.packages-list .package-item .package-more-details > * {
+    flex: 1;
+}
+
 .packages-list .package-item .package-more-details:before {
     content: '';
     position: absolute;
@@ -4547,7 +4629,8 @@ app-package-details .page-title {
 }
 
 .packages-list .package-item .carousel-controls,
-.package-offer-details .carousel-controls {
+.package-offer-details .carousel-controls,
+.package-gallery-box .carousel-controls {
     position: absolute;
     bottom: 12px;
     display: flex;
@@ -4558,7 +4641,9 @@ app-package-details .page-title {
 .packages-list .package-item .carousel-control-prev,
 .packages-list .package-item .carousel-control-next,
 .package-offer-details .carousel-control-prev,
-.package-offer-details .carousel-control-next {
+.package-offer-details .carousel-control-next,
+.package-gallery-box .carousel-control-prev,
+.package-gallery-box .carousel-control-next {
     position: relative;
     display: flex;
     width: 35px;
@@ -4587,7 +4672,11 @@ app-package-details .page-title {
 .package-offer-details .carousel-control-prev:hover,
 .package-offer-details .carousel-control-next:hover,
 .package-offer-details .carousel-control-prev:active,
-.package-offer-details .carousel-control-next:active {
+.package-offer-details .carousel-control-next:active,
+.package-gallery-box .carousel-control-prev:hover,
+.package-gallery-box .carousel-control-next:hover,
+.package-gallery-box .carousel-control-prev:active,
+.package-gallery-box .carousel-control-next:active {
     color: var(--omra-white);
     background: var(--omra-primary);
 }
@@ -4813,6 +4902,7 @@ app-package-details .page-title {
 .packages-list .color-btn.show-more {
     background: var(--omra-second);
     border: var(--omra-second);
+    padding: 20px 0;
 }
 
 .packages-list .color-btn.show-more:hover {
@@ -5028,6 +5118,24 @@ app-package-bookings-sidebar,
     background: var(--omra-second);
     align-items: center;
 }
+
+.package-gallery-box .image-box {
+    width: 100%;
+    position: relative;
+    background: var(--omra-white);
+}
+
+.package-gallery-box .package-picture {
+    object-fit: cover;
+    height: 270px;
+    max-height: 350px;
+    transition: all 1s cubic-bezier(.165, .84, .44, 1);
+}
+
+#lightGalleryContainer {
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+  }
 
 .package-details-description p {
     font-size: var(--fs-16);
@@ -5338,7 +5446,9 @@ app-package-bookings-sidebar,
 }
 
 .package-hotel-card .carousel-control-next:focus,
-.package-hotel-card .carousel-control-prev:focus {
+.package-hotel-card .carousel-control-prev:focus,
+.package-gallery-box .carousel-control-next:focus,
+.package-gallery-box .carousel-control-prev:focus {
     color: var(--omra-primary);
     background: var(--omra-white);
     opacity: 1 !important;
@@ -5410,7 +5520,7 @@ ngx-stars .stars-line {
 .package-hotels .package-hotel-card .hotel-content .hotel-review span,
 .package-header .package-details-rating-text .package-review span {
     font-size: var(--fs-16);
-    font-weight: 500;
+    font-weight: 400;
     color: var(--omra-primary);
 }
 
@@ -5419,7 +5529,7 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
-    font-size: var(--fs-14);
+    font-size: var(--fs-12);
 }
 
 .package-header .package-details-rating-text .package-review p {
@@ -7532,7 +7642,6 @@ app-package-calendar {
     color: var(--omra-primary);
     font-weight: 500 !important;
     font-size: var(--fs-18) !important;
-    letter-spacing: 0.6px;
 }
 
 .share-modal .modal-body {
@@ -7622,6 +7731,15 @@ app-package-calendar {
     width: 2px;
 }
 
+.modal-backdrop {
+    background-color: rgb(5 0 51 / 30%) !important;
+}
+
+.modal-backdrop.show {
+    --bs-backdrop-zindex: 997 !important;
+    z-index: 997 !important;
+}
+
 .modal-header,
 .modal-footer,
 .modal-body {
@@ -7668,7 +7786,7 @@ app-package-calendar {
 
 .modal p {
     font-size: var(--fs-14);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 24px;
 }
 

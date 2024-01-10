@@ -221,8 +221,7 @@
 
     app-bookings-mob .search-sidebar-content,
     app-package-bookings-mob .search-sidebar-content {
-        padding: 20px 0;
-        border-top: 2px solid var(--omra-primary);
+        padding: 25px 0 5px;
     }
 
     .ground-service-date {
@@ -235,11 +234,21 @@
 
     .ground-service-details ul li {
         flex-direction: column;
+        gap: .25rem;
     }
 
 }
 
 @media (max-width: 991.98px) {
+    .extras-page-title.extras-page-title {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: .25rem !important;
+    }
+
+    .ground-service-destination {
+        align-items: flex-start !important;
+    }
 
     .package-header-content .header-hotel-details {
         justify-content: space-between !important;
@@ -546,6 +555,10 @@
         text-align: center !important;
     }
 
+    .search-results .search-result-text {
+        text-align: left !important;
+    }
+
     .room-bill-details {
         position: relative;
         width: 100% !important;
@@ -596,6 +609,16 @@
 }
 
 @media (max-width: 767.98px) {
+
+    .ground-service-details .ground-service-date-container {
+        height: unset;
+        max-height: unset; 
+        overflow: unset;
+    }
+
+    .ground-service-details ul {
+        margin-right: 0;
+    }
 
     .search-form-btns .color-btn.close-btn {
         display: block;
@@ -842,6 +865,17 @@
 }
 
 @media (max-width: 575.98px) {
+    .ground-service-price {
+        font-size: 26px;
+    }
+
+    .ground-service-price .price-text {
+        font-size: var(--fs-13);
+    }
+
+    .ground-service-details p {
+        font-size: var(--fs-13);
+    }
 
     .package-hotels .package-rooms-summary .hotel-checkin i,
     .package-hotels .package-rooms-summary .hotel-checkout i {
@@ -941,7 +975,8 @@
     }
   
     .package-header .package-header-content .package-details-title {
-        font-size: 21px;
+        font-size: var(--fs-18);
+        margin-bottom: 5px !important;
     }
 
     .gallery-item .package-cover-picture img {
@@ -1037,12 +1072,7 @@
 
     .modal .modal-content .modal-title {
         font-size: var(--fs-16);
-        padding: 4px 7px !important;
-        font-size: var(--fs-10) !important;
-    }
-
-    .modal-header {
-        align-items: flex-start !important;
+        padding: 0 !important;
     }
 
     .hotel-address {
@@ -1059,22 +1089,12 @@
     }
 
     .check-form .search-form-btns .color-btn {
-        width: 50%;
         height: 40px;
     }
 
     .customize-searchbar .picker .input-group .input-group-text,
     .customize-searchbar .dropdown .input-group .input-group-text {
         padding: 0 5px 0 0 !important;
-    }
-
-    .customize-searchbar .date-picker-btn,
-    .customize-searchbar .passengers-btn,
-    .customize-searchbar .dropdown .btn {
-        line-height: normal;
-        border: 0 !important;
-        padding: 0 !important;
-        margin: 0;
     }
 
     .package-searchbar .dropdown .btn {
@@ -1170,7 +1190,11 @@
     .select-age p {
         font-size: var(--fs-12);
     }
-    
+
+    .search-form-edit {
+        align-items: flex-start;
+    }
+
     .search-form-edit .calendar {
         top: 8px;
         left: 15px;
@@ -1208,7 +1232,6 @@
         position: sticky;
         left: 0;
         top: 21px;
-        z-index: 998;
     }
 
     app-search-bar .search-bar-card {
@@ -1240,9 +1263,25 @@
         align-items: flex-end !important;
     }
 
-    .search-bar .input-group span, .input-group .destination-input-content, .search-results p {
+    .search-bar .input-group span, .search-results p {
         padding: 7px 7px 7px 9px;
         font-size: var(--fs-14);
+    }
+
+    .input-group .destination-input-content {
+        padding: 0 12px 0 0;
+    }
+
+    .input-group .destination-input-content .input-group-text {
+        padding: 0 12px 0 12px !important;
+    }
+
+    .road-btn .input-group p {
+        padding: 0 !important;
+    }
+
+    .road-btn .input-group-text, .destination-btn .input-group-text {
+        padding: 0px 19px 0 12px !important;
     }
 
     .search-form-btns {
@@ -1255,6 +1294,37 @@
 
     .search-result-edit .search-results-list .dropdown-guests {
         margin-bottom: 0px;
+    }
+
+    .dropdown-guests .passengers-btn {
+        width: 100%;
+        position: relative;
+        padding: 10px 15px 10px 0px;
+        border: 1px solid var(--omra-light-gray);
+        background: var(--omra-white);
+        border-radius: 0;
+        color: var(--omra-gray);
+    }
+
+    .search-section .dropdown .btn {
+        padding: 10px 15px 10px 0;
+    }
+
+    .dropdown-guests .passengers-btn:hover,
+    .dropdown-guests .passengers-btn:focus {
+        border-color: var(--omra-light-gray);
+    }
+
+    .dropdown-guests .passengers-btn .icon-line-users {
+        font-size: var(--fs-14);
+    }
+
+    .dropdown-guests .input-group p {
+        padding: 0;
+    }
+
+    .dropdown-guests .input-group .input-group-text {
+        padding: 0px 19px 0 12px !important;
     }
 
     .carousel-inner:before {
@@ -1536,7 +1606,7 @@
     }
 
     .input-group span, .input-group .destination-input-content {
-        font-size: var(--fs-14);
+        font-size: var(--fs-14) !important;
     }
 
     .list-item {
@@ -1566,14 +1636,6 @@
 
     .picker:last-child {
         width: 100% !important;
-    }
-
-    .input-group-custom {
-        display: none !important;
-    }
-
-    .destination-btn-content {
-        flex-direction: column;
     }
 
     .input-group .destination-input-content {

@@ -1,6 +1,7 @@
 import {
   Component,
   ElementRef,
+  HostListener,
   OnInit,
   ViewChild,
   ViewEncapsulation,
@@ -12,6 +13,7 @@ import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { ToastrService } from 'ngx-toastr';
 import { interval, take } from 'rxjs';
 import { PageService } from 'src/app/services/page.service';
+import lightGallery from 'lightgallery';
 
 @Component({
   selector: 'app-package-details',
@@ -80,7 +82,7 @@ export class PackageDetailsComponent implements OnInit {
   selectedHotelRoomsList: string = ''
   firstverify = false
   secondverify = false
-
+  galleryMobile: boolean = false
   loading = false
   loadingsection = false
   loadinghotel = false
@@ -110,6 +112,7 @@ export class PackageDetailsComponent implements OnInit {
   summary: any
   isReadMore: boolean[] = [];
   isShowMore: boolean = false;
+  maxHeight?: number;
   id: any
 
   constructor(
@@ -121,8 +124,8 @@ export class PackageDetailsComponent implements OnInit {
     private pageService: PageService
   ) { }
 
-
   ngOnInit(): void {
+    this.galleryMobile = window.innerWidth <= 1199.98
     this.pageService.setSpecificComponentPresent(true);
     this.loading = true
     this.loadinghotel = true
@@ -158,6 +161,7 @@ export class PackageDetailsComponent implements OnInit {
       this.loadinghotel = false
     }, 3000)
   }
+
   startCounter(value: any) {
     const interval$ = interval((value * 1000) / this.targetValue);
     interval$
@@ -168,6 +172,7 @@ export class PackageDetailsComponent implements OnInit {
         this.counterValue++;
       });
   }
+
   goToNextDestination() {
     if (this.destinationTitle == "Madinah") {
       this.roomsSelectionSecondDest.rooms.map((el: any) => {
@@ -246,9 +251,11 @@ export class PackageDetailsComponent implements OnInit {
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
   };
+
   checkOffer(value: string) {
     this.selectedOffer = value;
   }
+
   selectType(data: any, hotel: any, room: any) {
     console.log({ data, hotel, room });
 
@@ -269,18 +276,22 @@ export class PackageDetailsComponent implements OnInit {
       localStorage.setItem('selectedroomSecondDestData', JSON.stringify(this.roomsSelectionSecondDest.hotel))
     }
   }
+
   collapsedPackRoomsList(accordionId: string, accordionButton: any): void {
     const dataBsTarget = accordionButton.getAttribute('data-bs-target');
     const ariaControls = accordionButton.getAttribute('aria-controls');
     console.log('data-bs-target:', dataBsTarget);
     console.log('aria-controls:', ariaControls);
   }
+
   showMore() {
     this.isShowMore = !this.isShowMore;
   }
+
   showText(index: number) {
     this.isReadMore[index] = !this.isReadMore[index];
   }
+
   displayText(text: string, index: number) {
     if (this.isReadMore[index]) {
       return text 
@@ -288,6 +299,7 @@ export class PackageDetailsComponent implements OnInit {
       return text.slice(0, 180) + '...'
     }
   }
+
   displayMore(text: string) {
     if (this.isShowMore) {
       return text 
@@ -295,6 +307,7 @@ export class PackageDetailsComponent implements OnInit {
       return text.slice(0, 350) + '...'
     }
   }
+
   displayActivity(text: string, index: number) {
     if (this.isReadMore[index]) {
       return text 
@@ -302,6 +315,7 @@ export class PackageDetailsComponent implements OnInit {
       return text.slice(0, 150) + '...'
     }
   }
+
   displayVisit(text: string, index: number) {
     if (this.isReadMore[index]) {
       return text 
@@ -309,7 +323,18 @@ export class PackageDetailsComponent implements OnInit {
       return text.slice(0, 150) + '...'
     }
   }
+
   collapsedHotelRoomsList(value: any) {
     this.selectedHotelRoomsList = value
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkWindowSize();
+  }
+
+  checkWindowSize(): void {
+    this.galleryMobile = window.innerWidth <= 1199.98;
+  }
+
 }

@@ -205,7 +205,7 @@
                                 <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuOne>
                                     <div formArrayName="passengersHotel">
                                         <div class="d-flex flex-column">
-                                            <div class="d-flex justify-content-between mb-3">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <div class="passengers-label">Room</div>
                                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                                     <div class="minus" (click)="deletePassengerhotel()">-</div>
@@ -229,7 +229,7 @@
                                                         <div class="passengers-nbr-block d-flex column-gap-4">
                                                             <div class="d-flex w-100">
                                                                 <div
-                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
                                                                     <div class="passengers-label me-1">Adults</div>
                                                                     <div
                                                                         class="d-flex object-quantity passengers-nbr align-items-center">
@@ -249,7 +249,7 @@
 
                                                             <div class="d-flex w-100">
                                                                 <div
-                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-2">
+                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
                                                                     <div class="passengers-label me-1">Children</div>
                                                                     <div
                                                                         class="d-flex object-quantity passengers-nbr align-items-center">
@@ -277,6 +277,7 @@
                                   let k = index
                                 ">
                                                                 <div [formGroupName]="k" class="dropdown">
+                                                                    <p class="childs-label lh-base">Child {{k + 1}} Age</p>
                                                                     <button [class.selected-item]="
                                       childHotel.get('age')?.value
                                     " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
@@ -459,7 +460,7 @@
                                 <div class="dropdown-menu drop-menu-sm-margin animate slideIn" #dropdownMenuTwo>
                                     <div formArrayName="passengers">
                                         <div class="d-flex flex-column">
-                                            <div class="d-flex justify-content-between mb-3">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <div class="passengers-label">Room</div>
                                                 <div class="d-flex object-quantity passengers-nbr align-items-center">
                                                     <div class="minus" (click)="deletePassenger()">-</div>
@@ -480,7 +481,7 @@
                                                         <div class="passengers-nbr-block d-flex column-gap-4">
                                                             <div class="d-flex w-100">
                                                                 <div
-                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
+                                                                    class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
                                                                     <div class="passengers-label me-1">Adults</div>
                                                                     <div
                                                                         class="d-flex object-quantity passengers-nbr align-items-center">
@@ -522,8 +523,9 @@
                                                                 *ngFor="
                                     let child of children(i).controls;
                                     let k = index
-                                  ">
+                                  ">                            
                                                                 <div [formGroupName]="k" class="dropdown">
+                                                                    <p class="childs-label lh-base">Child {{k + 1}} Age</p>
                                                                     <button [class.selected-item]="
                                         child.get('age')?.value
                                       " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
@@ -705,30 +707,33 @@
                         <div class="dropdown w-100">
                             <button class="btn btn-dark w-100 destination-btn" type="button" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
-                                <div class="destination-btn-content d-flex align-items-center justify-content-between">
-                                    <div class="">
-                                        <span class="input-group-custom"><i class="icon-line-map-pin"></i></span>
-                                    </div>
-                                    <div class="d-flex justify-content-between w-100 align-items-center">
-                                        <div class="input-group d-flex">
-                                            <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
-                                                *ngIf="!destinations.controls[i].get('destination')?.value">
-                                                Destination {{i+1}}</div>
-                                            <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
-                                                *ngIf="destinations.controls[i].get('destination')?.value">
-                                                {{destinations.controls[i].get('destination')?.value }}
-                                                <div class="d-flex align-items-center ms-auto">
-                                                    <span class="p-0 me-1"
-                                                        [class.text-muted]="destinations.controls[i].get('nights')?.value ===0">
-                                                        {{destinations.controls[i].get('nights')?.value }}
-                                                    </span>
-                                                    <i class="icon-line-moon"></i>
+                                <div class="destination-btn-content me-4 justify-content-between w-100 align-items-center">
+                                    <div class="input-group d-flex">
+                                        <span class="input-group-text">
+                                            <i class="icon-line-map-pin"></i>
+                                        </span>
+                                    
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="input-group d-flex">
+                                                <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1 text-muted"
+                                                    *ngIf="!destinations.controls[i].get('destination')?.value">
+                                                    Destination {{i+1}}</div>
+                                                <div class="destination-input-content m-0 d-flex justify-content-between align-items-center flex-grow-1"
+                                                    *ngIf="destinations.controls[i].get('destination')?.value">
+                                                    {{destinations.controls[i].get('destination')?.value }}
+                                                    <div class="d-flex align-items-center ms-auto">
+                                                        <span class="p-0 me-1"
+                                                            [class.text-muted]="destinations.controls[i].get('nights')?.value ===0">
+                                                            {{destinations.controls[i].get('nights')?.value }}
+                                                        </span>
+                                                        <i class="icon-line-moon"></i>
+                                                    </div>
                                                 </div>
+                                                <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i
+                                                        class="icon-line-cross"></i></div>
                                             </div>
-                                            <div class="remove-dest-btn" (click)="removeDestination(i)" *ngIf="i!=0"><i
-                                                    class="icon-line-cross"></i></div>
                                         </div>
-                                    </div>
+                                    </div>    
                                 </div>
                             </button>
                             <div class="dropdown-menu animate slideIn" [attr.id]="'dropdown-'+i">
@@ -762,13 +767,13 @@
                                                     <div class="nights-label">Number of Nights</div>
                                                     <div
                                                         class="d-flex object-quantity passengers-nbr align-items-center">
-                                                        <div class="minus" (click)="minusNightsDestionation(i)">
+                                                        <div class="minus" (click)="minusNightsDestination(i)">
                                                             -
                                                         </div>
                                                         <div class="quantity">
                                                             {{destinations.controls[i].get('nights')?.value }}
                                                         </div>
-                                                        <div class="plus" (click)="plusNightsDestionation(i)">
+                                                        <div class="plus" (click)="plusNightsDestination(i)">
                                                             +
                                                         </div>
                                                     </div>
@@ -849,7 +854,7 @@
                                                     <div class="passengers-nbr-block d-flex column-gap-4">
                                                         <div class="d-flex w-100">
                                                             <div
-                                                                class="room-adults d-flex justify-content-between align-items-center w-100 mb-2 ">
+                                                                class="room-adults d-flex justify-content-between align-items-center w-100 mb-3">
                                                                 <div class="passengers-label me-1">Adults</div>
                                                                 <div
                                                                     class="d-flex object-quantity passengers-nbr align-items-center">
@@ -894,6 +899,7 @@
                                   let k = index
                                 ">
                                                             <div [formGroupName]="k" class="dropdown">
+                                                                <p class="childs-label lh-base">Child {{k + 1}} Age</p>
                                                                 <button [class.selected-item]="
                                       child.get('age')?.value
                                     " class="btn btn-dark w-100" type="button" data-bs-toggle="dropdown"
@@ -946,7 +952,7 @@
                     <!-- Road -->
                     <div class="col-xl-6 mb-3">
                         <div class="dropdown w-100">
-                            <button class="btn btn-dark w-100" type="button"
+                            <button class="road-btn btn btn-dark w-100" type="button"
                                 [class.selected-item]="searchFormCustom.value.path" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">
                                 <div class="d-flex me-4 justify-content-between w-100 align-items-center">

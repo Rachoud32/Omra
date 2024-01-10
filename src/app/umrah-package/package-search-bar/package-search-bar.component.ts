@@ -27,14 +27,14 @@ export class PackageSearchBarComponent implements OnInit {
   numChildrenCustom = 0
   searchMobile: boolean = false
   countries = [
-    { country: 'Algeria', region: 'Africa'},
-    { country: 'Morocco', region: 'Africa'},
-    { country: 'Bahrain', region: 'Asia' },
-    { country: 'Kuwait', region: 'Asia' },
-    { country: 'France', region: 'Europe'},
-    { country: 'Italy', region: 'Europe'},
-    { country: 'UK', region: 'Europe' },
-    { country: 'Australia', region: 'Oceania' }
+    { country: 'Algeria'},
+    { country: 'Morocco'},
+    { country: 'Bahrain'},
+    { country: 'Kuwait'},
+    { country: 'France'},
+    { country: 'Italy'},
+    { country: 'UK'},
+    { country: 'Australia'}
   ];
   periods = [
     { month: 'Mouled'},
@@ -135,10 +135,6 @@ export class PackageSearchBarComponent implements OnInit {
 
   checkWindowSize(): void {
     this.searchMobile = window.innerWidth <= 767.98;
-  }
-
-  editSearch(): void {
-    this.searchMobile = !this.searchMobile
   }
 
 }

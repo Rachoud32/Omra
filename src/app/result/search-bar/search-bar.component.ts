@@ -1,7 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
-import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -15,25 +15,21 @@ export class SearchBarComponent implements OnInit {
   category: string = '';
   dataBsTargetValue = ''
   ariaControls = ''
+  customSearchMobile: boolean = false
 
   hoveredDate: NgbDate | null = null;
   fromDate!: NgbDate | null;
   toDate!: NgbDate | null;
   todayDate!: NgbDate;
   today: any
-
   formattedFromDate: string = ''
   formattedToDate: string = ''
 
   ageNumbers: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  searchFormHotel!: FormGroup
+  searchFormCustom!: FormGroup
   selectedDate: any
-  searchType = 'hotel'
-  numAdults = 1
-  numAdultsHotel = 1
+  searchType = 'custom'
   numAdultsCustom = 1
-  numChildren = 0
-  numChildrenHotel = 0
   numChildrenCustom = 0
   dropdownOpen = false;
   hotels = [
@@ -44,14 +40,14 @@ export class SearchBarComponent implements OnInit {
     { name: 'Anwar Al Madinah Mövenpick', city: 'Madinah' },
   ];
   countries = [
-    { country: 'Algeria', region: 'Africa'},
-    { country: 'Morocco', region: 'Africa'},
-    { country: 'Bahrain', region: 'Asia' },
-    { country: 'Kuwait', region: 'Asia' },
-    { country: 'France', region: 'Europe'},
-    { country: 'Italy', region: 'Europe'},
-    { country: 'UK', region: 'Europe' },
-    { country: 'Australia', region: 'Oceania' }
+    { country: 'Algeria'},
+    { country: 'Morocco'},
+    { country: 'Bahrain'},
+    { country: 'Kuwait'},
+    { country: 'France'},
+    { country: 'Italy'},
+    { country: 'UK'},
+    { country: 'Australia'}
   ];
   periods = [
     { month: 'Mouled'},
@@ -61,7 +57,6 @@ export class SearchBarComponent implements OnInit {
     { month: 'Spring holidays'},
     { month: 'Other'},
   ];
-
 
   constructor(private router: Router, private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private config: NgSelectConfig, private toastr: ToastrService) {
     this.router.events.subscribe((val) => {
@@ -90,14 +85,25 @@ export class SearchBarComponent implements OnInit {
     });
     this.today = calendar.getToday()
   }
+
   ngOnInit(): void {
-    this.searchFormHotel = new FormGroup({
-      hotelName: new FormControl(null, [Validators.required]),
+    this.searchFormCustom = new FormGroup({
+      flightmode: new FormControl(''),
       fromDate: new FormControl({}),
       toDate: new FormControl({}),
-      passengersHotel: new FormArray([new FormGroup({
+      residenceCountry: new FormControl(null, [Validators.required]),
+      departureCountry: new FormControl(null, [Validators.required]),
+      Nationality: new FormControl(null, [Validators.required]),
+      path: new FormControl('', [Validators.required]),
+      destinations: new FormArray([
+        new FormGroup({
+          destination: new FormControl('', [Validators.required]),
+          nights: new FormControl(0, [Validators.required]),
+        })
+      ]),
+      passengersCustom: new FormArray([new FormGroup({
         adults: new FormControl(1),
-        childrenHotel: new FormArray([]),
+        childrenCustom: new FormArray([]),
         room: new FormControl("Room 1"),
       })]),
     })
@@ -107,6 +113,7 @@ export class SearchBarComponent implements OnInit {
     this.toDate = dates.toDate;
     this.formattedFromDate = this.formatter.format(this.fromDate).substring(5)
     this.formattedToDate = this.formatter.format(this.toDate).substring(5)
+    this.customSearchMobile = window.innerWidth <= 767.98
   }
 
   onDateSelection(date: NgbDate) {
@@ -163,61 +170,110 @@ export class SearchBarComponent implements OnInit {
       return true
     }
   }
-
-  get passengersHotel(): FormArray {
-    return this.searchFormHotel?.get('passengersHotel') as FormArray
+  applyDate(date: NgbDateStruct): void {
+    this.selectedDate = date
+    let data = {
+      fromDate: this.fromDate,
+      toDate: this.toDate,
+    }
+    localStorage.setItem('dates', JSON.stringify(data))
   }
 
-  childrenHotel(i: any): FormArray {
-    return this.passengersHotel.at(i)?.get('childrenHotel') as FormArray
+  get passengersCustom(): FormArray {
+    return this.searchFormCustom?.get('passengersCustom') as FormArray
   }
 
-  addPassengerhotel() {
-    if (this.passengersHotel.length < 3) {
-      this.passengersHotel.push(new FormGroup({
+  childrenCustom(i: any): FormArray {
+    return this.passengersCustom.at(i)?.get('childrenCustom') as FormArray
+  }
+
+  get destinations(): FormArray {
+    return this.searchFormCustom?.get('destinations') as FormArray
+  }
+
+  addPassengerCustom() {
+    if (this.passengersCustom.length < 3) {
+      this.passengersCustom.push(new FormGroup({
         adults: new FormControl(1),
-        childrenHotel: new FormArray([]),
-        room: new FormControl("Room " + (this.passengersHotel.length + 1)),
+        childrenCustom: new FormArray([]),
+        room: new FormControl("Room " + (this.passengersCustom.length + 1)),
       }))
-      this.numAdultsHotel += 1
+      this.numAdultsCustom += 1
     }
   }
 
-  deletePassengerhotel() {
-    if (this.passengersHotel.length > 1) {
-      this.numAdultsHotel = this.numAdultsHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('adults')?.value
-      this.numChildrenHotel = this.numChildrenHotel - this.passengersHotel.at(this.passengersHotel.length - 1).get('childrenHotel')?.value.length
-      this.passengersHotel.removeAt(this.passengersHotel.length - 1)
+  deletePassengerCustom() {
+    if (this.passengersCustom.length > 1) {
+      this.numAdultsCustom = this.numAdultsCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('adults')?.value
+      this.numChildrenCustom = this.numChildrenCustom - this.passengersCustom.at(this.passengersCustom.length - 1).get('childrenCustom')?.value.length
+      this.passengersCustom.removeAt(this.passengersCustom.length - 1)
     }
   }
 
-  pluschildrenhotel(i: any) {
-    if (this.childrenHotel(i).length < 4) {
-      this.childrenHotel(i).push(new FormGroup({
+  addNewDestination() {
+    this.destinations.push(new FormGroup({
+      destination: new FormControl('', [Validators.required]),
+      nights: new FormControl(0, [Validators.required]),
+    }))
+  }
+
+  removeDestination(i: any) {
+    this.destinations.removeAt(i)
+  }
+
+  affectDestination(value: any, index: any) {
+    const destinationFormControl = this.destinations.at(index)?.get('destination');
+    if (destinationFormControl) {
+      destinationFormControl.setValue(value);
+    }
+  }
+
+  plusNightsDestination(index: any) {
+    const nightsFormControl = this.destinations.at(index)?.get('nights');
+    if (nightsFormControl) {
+      let currentNightsValue = nightsFormControl.value;
+      currentNightsValue += 1;
+      nightsFormControl.setValue(currentNightsValue);
+    }
+  }
+
+  minusNightsDestination(index: any) {
+    const nightsFormControl = this.destinations.at(index)?.get('nights');
+    if (nightsFormControl) {
+      let currentNightsValue = nightsFormControl.value;
+      currentNightsValue -= 1;
+      nightsFormControl.setValue(currentNightsValue);
+    }
+
+  }
+
+  pluschildrenCustom(i: any) {
+    if (this.childrenCustom(i).length < 4) {
+      this.childrenCustom(i).push(new FormGroup({
         age: new FormControl("")
       }))
-      this.numChildrenHotel += 1
+      this.numChildrenCustom += 1
     }
   }
 
-  minuschildrenhotel(i: any) {
-    if (this.childrenHotel(i).length > 0) {
-      this.childrenHotel(i).removeAt(this.childrenHotel(i).length - 1)
-      this.numChildrenHotel -= 1
+  minuschildrenCustom(i: any) {
+    if (this.childrenCustom(i).length > 0) {
+      this.childrenCustom(i).removeAt(this.childrenCustom(i).length - 1)
+      this.numChildrenCustom -= 1
     }
   }
 
-  plusadultshotel(i: any) {
-    if (this.passengersHotel.at(i).get('adults')?.value < 5) {
-      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value + 1)
-      this.numAdultsHotel += 1
+  plusadultsCustom(i: any) {
+    if (this.passengersCustom.at(i).get('adults')?.value < 5) {
+      this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value + 1)
+      this.numAdultsCustom += 1
     }
   }
 
-  minusadultshotel(i: any) {
-    if (this.passengersHotel.at(i).get('adults')?.value > 1) {
-      this.passengersHotel.at(i).get('adults')?.setValue(this.passengersHotel.at(i).get('adults')?.value - 1)
-      this.numAdultsHotel -= 1
+  minusadultsCustom(i: any) {
+    if (this.passengersCustom.at(i).get('adults')?.value > 1) {
+      this.passengersCustom.at(i).get('adults')?.setValue(this.passengersCustom.at(i).get('adults')?.value - 1)
+      this.numAdultsCustom -= 1
     }
   }
 
@@ -226,6 +282,15 @@ export class SearchBarComponent implements OnInit {
       const dropdownMenuElement1 = this.dropdownMenuOne?.nativeElement;
       dropdownMenuElement1.classList.remove('show')
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkWindowSize();
+  }
+
+  checkWindowSize(): void {
+    this.customSearchMobile = window.innerWidth <= 767.98;
   }
 
 }
