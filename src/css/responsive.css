@@ -268,8 +268,12 @@
         min-height: 240px;
     }
 
+    .skeleton-box .service {
+        padding: 0 0;
+    }
+
     .skeleton-box .skeleton-service-img {
-        height: 220px !important;
+        height: 260px !important;
     }
 
     .skeleton-box .skeleton-service .image-box {

@@ -5525,6 +5525,10 @@ ngx-stars .stars-line {
 }
 
 .package-hotels .package-hotel-card .hotel-content .hotel-content-bottom p {
+    font-size: var(--fs-14);
+}
+
+.package-hotels .package-hotel-card .hotel-content .hotel-content-bottom .hotel-review p {
     font-size: var(--fs-12);
 }
 
